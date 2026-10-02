@@ -349,3 +349,98 @@ If they paste samples, produce all three, then check the voice summary against t
 Before showing it, compare each proof sample to their originals. If a sample uses a word or rhythm they would never use, fix it. Cut clichés like "dream home", "nestled", and "don't hesitate to reach out". Never use anything on their avoid list. Show the result and ask: "Does this sound like you? Tell me what to change." Revise until they approve.
 
 Save: the Edge fields to the Master Profile's Edge section, and everything else to the Voice Profile page using the template. Then continue the general procedure (confirm, save, say where it is saved).
+
+---
+
+# STAGE 4 — Objection Bank (about 10 minutes)
+
+Template: `templates/objection-bank.md`. Creates the **Objection Bank** page. Follow the general procedure in `SKILL.md`.
+
+Before starting, open the Voice Profile page and the Edge section if they exist. You will write in the member's voice and use their proof point. If Stage 3 is not done, say: "This works best after Stage 3 (voice and edge), because I'll write the answers in your voice. Want to do that first, or go ahead now with a general voice?" Follow their choice.
+
+Intro: "Sellers push back in predictable ways. I've already written answers to the five most common objections, and I'll rewrite them in your voice with your real proof points. You'll end up with a bank you can reuse on calls, in texts, and in follow-up. Two quick questions first."
+
+Show the five objections so they know what is covered:
+1. "We'll wait for the market to get better."
+2. "We're going to try selling it ourselves."
+3. "Another agent will do it for less."
+4. "We want to list higher than your number."
+5. "We're just looking / not ready yet."
+
+**O1 — Extra objections**
+> "Which other objections do you hear a lot? Add as many as you like, or say 'none'."
+Store: extra_objections
+
+**O2 — Proof points**
+> "What proof points can I use in your answers? Results, stats, steps in your process, or client testimonials. Paste whatever you have. I won't make anything up. Where I don't have proof for an answer, I'll mark it [ADD PROOF] so you can fill it in later."
+Pre-fill from `proof_point` on the Edge section if one exists, and ask "Anything else to add?"
+Store: proof_points
+
+Then build the page from the template: rewrite all five drafts and any extra objections in the member's voice, put one specific proof point in each response (or `[ADD PROOF]`), and run the template's final check. Show the member the finished bank (the full text of each response) and ask for changes. Save per the general procedure.
+
+When saved, tell the member: "Your Objection Bank is saved as a page under your Master Profile. You don't need to save it anywhere else, because the Hi5 skills read it from Notion. To add an objection or fill in an [ADD PROOF] spot later, run /hi5-setup and choose Redo a stage."
+
+---
+
+# STAGE 5 — Neighborhoods (about 10 minutes per area)
+
+Template: `templates/neighborhood-profile.md`. Creates one **Neighborhood – [Name]** page per area. Follow the general procedure in `SKILL.md`. This stage is repeatable: run it once for each area. From the re-run menu, "Add a neighborhood" runs this stage for one new area.
+
+Check the `neighborhoods` list in Page IDs. If the area already has a page, ask "Replace it or add to it?"
+
+Intro: "A neighborhood fact file gives me real local detail to draw on in your listings, posts, and emails. It covers the place, the homes, and the amenities, and never who lives there. Twelve short questions, four groups. Which neighborhood or area would you like to start with?"
+Store: area_name
+
+Ask the questions one at a time. Skip anything about who lives there. If the member describes residents, school quality, or safety, say kindly: "I'll leave that part out, since it can read as steering under Fair Housing. Let's stick to the place, the homes, and the amenities." and move on.
+
+## Group 1 — Market facts you can verify
+
+**N1 — Homes and prices**
+> "What's the typical price range in [area], and what are the most common home styles and lot sizes?"
+
+**N2 — Pace**
+> "How fast are homes selling there lately, and how does inventory feel? Share any numbers you can verify. I'll mark them to double-check, with a date."
+
+**N3 — HOA and community details**
+> "Is there an HOA or community association? What are the fees, what do they cover, and what rules come up often?"
+
+## Group 2 — Lifestyle and amenities
+
+**N4 — Close by**
+> "What parks, trails, dining, and shopping nearby do you point people to?"
+
+**N5 — Getting around**
+> "How do people get around? Main routes, access to highways or transit, and typical drive times to downtown or major employers."
+
+**N6 — Events and seasons**
+> "What events or seasonal happenings are part of life in [area]?"
+
+## Group 3 — Insider knowledge
+
+**N7 — Best streets for a feature**
+> "Which streets or sections are best for specific features, like flat lots, mature trees, bigger yards, or walkable access?"
+
+**N8 — What surprises newcomers**
+> "What tends to surprise people who are new to [area]?"
+
+**N9 — Seasonal quirks**
+> "Are there seasonal quirks you've personally seen, like traffic patterns, drainage after heavy rain, or busy times of year? I'll tell readers to verify anything like that with the official source."
+
+## Group 4 — Buyer and seller considerations
+
+**N10 — What sells fast**
+> "What types of homes sell fastest in [area], and what do those homes usually have in common?"
+
+**N11 — Inspection and maintenance**
+> "What inspection issues or maintenance items come up often with homes there?"
+
+**N12 — Questions and prep**
+> "What should buyers ask about before buying in [area], and what should sellers know before listing?"
+
+Then build the page from the template, mark every stat [VERIFY + DATE], and run the template's rules, including removing any line that describes residents, school quality, or safety as fact. Show the member the Snapshot and Content Angles and ask whether it looks right. Save per the general procedure, and add the area to the `neighborhoods` list.
+
+Update Setup Status: `stage_5_neighborhoods: complete <date> (N areas)`.
+
+When saved, tell the member: "Your [area] fact file is saved as a page under your Master Profile. To add another area later, run /hi5-setup and choose Add a neighborhood. To refresh the numbers, choose Redo a stage."
+
+Ask: "Want to add another area now, or stop here?"
