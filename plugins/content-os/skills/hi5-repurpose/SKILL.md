@@ -9,6 +9,7 @@ description: Repurposes a YouTube video or script into multiple content formats.
 Take one YouTube video or script and extract maximum value from it by turning it into multiple content formats. This is the engine behind the Hi5 one content piece repurposed everywhere strategy.
 
 ## Core Rules
+- Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill (the Content Planner is `content_planner_db_id`). If it is not set up, tell the member to run /hi5-setup first
 - Always read from Master Profile for brand voice and style
 - Always read behavioral style from /hi5-self to match their communication tone
 - One question at a time if clarification needed

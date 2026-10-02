@@ -1,23 +1,22 @@
 ---
 name: hi5-yt-research
-description: Search YouTube by keyword or competitor channel, score keyword opportunity, generate tailored video ideas, and push them to the Notion Idea Bank. Run this whenever you want new content ideas.
+description: Search YouTube by keyword or competitor channel, score keyword opportunity, generate tailored video ideas, and add them to your Notion Content Planner. Run this whenever you want new content ideas.
 ---
 
 # /hi5-yt-research — YouTube Intelligence
 
 You are running a YouTube research session for this member. By the end, a set
-of scored, tailored video ideas will be pushed to their Notion Idea Bank.
+of scored, tailored video ideas will be added to their Content Planner in Notion as Ideas.
 
 ## Step 1 — Read the Master Profile
 
-Before doing anything else, retrieve the Master Profile from Notion using
-`MASTER_PROFILE_ID`. You need:
-- Niche / industry
-- Channel goal and content model type
-- Content categories
-- Competitor channel IDs
-- Voice card (for idea titles that sound like them)
-- Operator preferences
+Before doing anything else, find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill. If it is not set up, tell the member to run /hi5-setup first and stop. If the member has more than one channel, ask which one first. You need:
+- `niche` and `industry`
+- `channel_goal` and `content_model`
+- `content_categories`
+- `competitor_channel_ids`
+- The Voice Profile page (for idea titles that sound like them)
+- Operator preferences (`output_format`, `number_of_options`, `explanation_level`)
 - YouTube Data API key (from Claude Project Instructions as `YOUTUBE_API_KEY`)
 
 ## Step 2 — Clarify the Research Focus
@@ -99,7 +98,7 @@ For the keyword(s) researched, score competition and opportunity:
 - Trend score > 40 AND competition = Low or Medium → Medium
 - All others → Low
 
-Update the Notion Keyword Tracker (`KEYWORD_TRACKER_ID`) with a new row or
+Update the Notion Keyword Tracker (`keyword_tracker_db_id`) with a new row or
 update the existing row for this keyword. Fields to write: Keyword, Competition
 Level, Trend Score, Trend Direction, Opportunity Score, YouTube Video Count,
 Avg Views Top 10, Last Updated.
@@ -112,7 +111,7 @@ ideas. Each idea must:
 - Be an original angle — do not copy competitor titles
 - Match one of the member's Content Categories
 - Align with their Channel Goal
-- Use title language that sounds like them (apply Voice Card)
+- Use title language that sounds like them (apply the Voice Profile)
 - Be tagged with: Content Category, Goal alignment, Trend Score, Source
 
 For each idea, present:
@@ -125,12 +124,13 @@ For each idea, present:
 - **Source** — YouTube Research / Competitor Pull
 
 Ask: "Here are 5 ideas based on your research. Want to push all of them to
-your Idea Bank, select specific ones, or make any changes first?"
+your Content Planner, select specific ones, or make any changes first?"
 
-## Step 7 — Push to Notion Idea Bank
+## Step 7 — Add to the Content Planner
 
-Once the member confirms, create a new row in `CONTENT_PLANNER_ID` for each
-approved idea with Status set to "Idea" and all fields populated.
+Once the member confirms, create a new row in the Content Planner (`content_planner_db_id`) for each
+approved idea with Status set to "Idea" and all fields populated. Title is the video title; put the
+hook in Hook / Angle. Set Deliverable Type from `default_deliverable_type` (Long Form if not set).
 
-Confirm: "Done — [X] ideas are now in your Idea Bank in Notion. Run /hi5-yt-plan when
+Confirm: "Done — [X] ideas are now in your Content Planner in Notion. Run /hi5-yt-plan when
 you're ready to schedule them."

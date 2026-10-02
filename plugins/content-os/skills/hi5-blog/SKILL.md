@@ -9,6 +9,7 @@ description: Writes a full SEO-optimized blog post from a YouTube video, script,
 Turn YouTube content into SEO-optimized blog posts that drive organic traffic. One video becomes one article that works for search, your website, and email content.
 
 ## Core Rules
+- Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill (the Content Planner is `content_planner_db_id`). If it is not set up, tell the member to run /hi5-setup first
 - Read Master Profile for market, niche, and brand voice
 - Read behavioral style from /hi5-self for tone
 - Target local SEO keywords where relevant for real estate

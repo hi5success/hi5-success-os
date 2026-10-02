@@ -11,29 +11,27 @@ will be pushed to the video's Notion page when done.
 
 ## Step 1 — Read the Master Profile
 
-Retrieve the Master Profile from Notion using `MASTER_PROFILE_ID`. You need
-the full Voice Card and Operator Preferences. These are non-negotiable inputs
-for every script — do not skip this step.
+Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill. If it is not set up, tell the member to run /hi5-setup first and stop. If the member has more than one channel, ask which one first. You need the full Voice Profile page and the Operator Preferences from the Content Profile. These are non-negotiable inputs for every script — do not skip this step.
 
-Voice Card fields to extract:
-- Vocabulary Style
-- Sentence Length and Rhythm
-- Phrases Used Constantly
-- Phrases Never Used
-- Energy Level
-- CTA Style
+Voice Profile fields to extract (from the Voice Profile page):
+- `vocabulary_style`
+- `sentence_rhythm`
+- `phrases_used`
+- `phrases_never_used`
+- `energy_level`
+- `cta_style`
 
 Operator Preferences to extract:
-- Script Depth (Outline only / Full word-for-word script)
-- Output Format (Bullets / Prose)
-- Explanation Level
+- `script_depth` (Outline only / Full word-for-word script)
+- `output_format` (Bullets / Prose)
+- `explanation_level`
 
 ## Step 2 — Identify the Video
 
 Ask: "Which video do you want to script? You can give me the title or describe
 it and I'll find it in your Content Calendar."
 
-Query `CONTENT_PLANNER_ID` to find the matching row. Retrieve: Title, Hook /
+Query the Content Planner (`content_planner_db_id`) to find the matching row. Retrieve: Title, Hook /
 Angle, Target Keyword, Content Category, Goal, Reference Video URLs (if any).
 
 If no match is found, say: "I couldn't find that video in your Content
@@ -53,7 +51,7 @@ Ask: "Does this look right, or do you want to adjust the angle before I write?"
 
 ## Step 4 — Write the Script
 
-Apply the Voice Card throughout. This is the most important instruction in
+Apply the Voice Profile throughout. This is the most important instruction in
 this command. Specifically:
 
 - Use their vocabulary style — casual if they're casual, direct if they're
@@ -111,7 +109,7 @@ Make any requested revisions before pushing to Notion.
 ## Step 6 — Push to Notion
 
 Once the member approves the script, update the video's row in
-`CONTENT_PLANNER_ID`:
+the Content Planner (`content_planner_db_id`):
 - Status → "Scripted"
 - Add the script content to the page body of that row's Notion page
 

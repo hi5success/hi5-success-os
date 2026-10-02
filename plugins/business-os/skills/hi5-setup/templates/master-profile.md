@@ -34,8 +34,9 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - marketing_hub_db_id
 - skill_guide_page_id
 - keyword_tracker_db_id (added by /hi5-yt-setup)
+- channel_pages (added by /hi5-yt-setup, only with multiple channels): `Name = page id` pairs, comma separated
 - compliance_page_id (added by Stage 2)
-- voice_profile_page_id (added by Stage 3)
+- voice_profile_page_id (added by Stage 3, or by /hi5-yt-setup if the member has not done Stage 3)
 - objection_bank_page_id (added by Stage 4)
 - neighborhoods: `Name = page id` pairs, comma separated (added by Stage 5)
 
@@ -73,6 +74,12 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 
 ### Self Profile
 Written by /hi5-self. Not part of /hi5-setup.
+
+### Content Profile
+Added by /hi5-yt-setup (Content OS). Not created by /hi5-setup; the skeleton does not include it. Fields: `channels` (list of channel names), `offer`, `youtube_audience`, `affiliate_links`, `channel_goal`, `content_model`, `posting_frequency`, `weekly_rhythm`, `recording_schedule`, `edit_turnaround_days`, `competitor_channel_ids`, `content_categories`, `distribution`, `default_deliverable_type`, `primary_platform`, and the operator preferences `output_format`, `script_depth`, `number_of_options`, `explanation_level`. With more than one channel, each extra channel is a child page "Channel – [name]" whose fields override these.
+
+### Voice Profile (child page, not a section)
+A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `energy_level`, `cta_style`, `phrases_used`, `phrases_never_used`. Stage 3 of /hi5-setup defines and extends it; /hi5-yt-setup creates it only if the member has not done Stage 3 yet.
 
 Later stages and commits add more sections to this layout (compliance links, voice, business context). Add them here when they are defined.
 
