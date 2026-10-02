@@ -23,16 +23,14 @@ Generate a comprehensive, personalized business plan based on the member's Maste
 ## OPENING
 
 Read from Master Profile:
-- PROFILE.name
-- PROFILE.industry
-- PROFILE.re_role (if real estate)
-- PROFILE.primary_market
-- PROFILE.behavioral_style
-- PROFILE.success_vision
-- PROFILE.biggest_blocker
+- name, industry, role, primary_market, niche
+- price_range, market_conditions, focus, lead_sources_ranked, goal_12_month (from /hi5-setup)
+- behavioral_style, success_vision, biggest_blocker (from /hi5-self)
+
+Setup owns niche, focus, ranked lead sources, and the 12-month goal. Never ask for them again. Only ask below for the numbers. If a field is missing from the profile, ask the original question.
 
 Open with:
-> "Alright [name] — let's build your business plan. I already know your market is [market], you are a [role], and your vision is [success_vision]. Now I need your numbers and goals so we can build something real.
+> "Alright [name] — let's build your business plan. I already know your market is [market], you are a [role], your goal is [goal_12_month], and your vision is [success_vision]. Now I need your numbers and goals so we can build something real.
 >
 > A few questions and then I will put it all together for you."
 
@@ -70,7 +68,7 @@ Claude calculates internally:
 - Diagnose: lead problem / conversion problem / market problem
 
 **Q5 — Average Sale Price**
-> "What is the average sale price in your market?"
+> "You told me you typically work in [price_range]. What is the average sale price?"
 Store: BIZPLAN.avg_sale_price
 
 **Q6 — Buyer Seller Split**
@@ -82,6 +80,7 @@ Store: BIZPLAN.buyer_seller_split
 ## LEAD SOURCES
 
 **Q7 — Top Source**
+> If lead_sources_ranked exists, say: "Your biggest lead source is [first item in lead_sources_ranked]. Is that still true?" and store it. Only if the field is missing, ask the question below.
 > "What is your number one source of leads right now?"
 >
 > A) Sphere of influence / referrals
@@ -152,6 +151,7 @@ Store: BIZPLAN.marketing_goals
 ## GOALS
 
 **Q13 — GCI Goal**
+> If goal_12_month exists, say: "Your 12-month goal is [goal_12_month]. Let's turn it into numbers." Then ask:
 > "What is your GCI goal for the next 12 months?"
 Store: BIZPLAN.gci_goal
 
@@ -164,6 +164,7 @@ Claude calculates internally:
 Store: BIZPLAN.transaction_goal
 
 **Q15 — Niche**
+> Skip this question if niche is in the Master Profile. Otherwise ask:
 > "Do you focus on a specific niche or client type?"
 >
 > A) Luxury / high end

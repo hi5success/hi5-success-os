@@ -54,7 +54,7 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - primary_market: main city or area. Fully online members give their main audience region or "online"
 - surrounding_areas
 - market_reach (generic flow): local, regional, national, or online
-- niche: their specific focus within the industry
+- niche: their specific focus within the industry (asked in Stage 1)
 
 ### Tools
 - website
@@ -72,6 +72,21 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - brand_font
 - branding_interest: yes or no (a follow-up from Hi5 Biz Solutions)
 
+### Business
+- price_range (real estate): typical price range of the homes they work with
+- market_conditions: what their market is doing right now, in their words
+- focus (real estate): buyers, sellers, or both
+- offer (any industry): what they sell or offer, with the typical price
+- lead_sources_ranked: lead or customer sources, biggest first
+- goal_12_month: their 12-month goal in their own words. /hi5-bizplan turns it into numbers
+
+### Edge
+Written by Stage 3.
+- client_situations: the 2 or 3 situations they handle best, described as situations, never as demographics
+- differentiator
+- proof_point: `[ADD PROOF]` if they had none
+- client_words: three words their best clients would use
+
 ### Self Profile
 Written by /hi5-self. Not part of /hi5-setup.
 
@@ -82,7 +97,7 @@ Added by /hi5-yt-setup (Content OS). Not created by /hi5-setup; the skeleton doe
 A child page of the Master Profile created by Stage 2, ID in `compliance_page_id`. Its Inputs section holds `disclosure_line`, `last_confirmed`, and (real estate) `protected_class_jurisdictions`, `brokerage_ad_rules`, `sms_consent_status`, or (any industry) `industry_rules`, `messaging_consent_status`, `brand_policy`. Below the inputs are the guardrails every writing skill follows. Templates: `compliance-real-estate.md`, `compliance-generic.md`.
 
 ### Voice Profile (child page, not a section)
-A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `energy_level`, `cta_style`, `phrases_used`, `phrases_never_used`. Stage 3 of /hi5-setup defines and extends it; /hi5-yt-setup creates it only if the member has not done Stage 3 yet.
+A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `emoji_use`, `preferred_length`, `phrases_used`, `phrases_never_used`, `how_to_come_across`, `energy_level`, `cta_style`, followed by a voice summary, proof samples, and gaps. Stage 3 of /hi5-setup creates it (template `voice-profile.md`). /hi5-yt-setup adds `energy_level` and `cta_style` if missing, and creates the page only if the member has not done Stage 3.
 
 Later stages and commits add more sections to this layout (compliance links, voice, business context). Add them here when they are defined.
 

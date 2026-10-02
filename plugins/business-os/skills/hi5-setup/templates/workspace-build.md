@@ -83,7 +83,7 @@ Every email sequence, newsletter issue, website page, landing page, SEO plan, an
 | Date | date | |
 
 ## 4. Master Profile page
-Write the skeleton from `master-profile.md` into the Master Profile page: the heading 2 sections in order (Setup Status, Page IDs, Identity, Market, Tools, Presence, Brand, Self Profile) with empty field bullets, then fill in Setup Status and Page IDs from what you just created.
+Write the skeleton from `master-profile.md` into the Master Profile page: the heading 2 sections in order (Setup Status, Page IDs, Identity, Market, Tools, Presence, Brand, Business, Edge, Self Profile) with empty field bullets, then fill in Setup Status and Page IDs from what you just created.
 
 ## Dashboard content
 Write this on the Dashboard page:

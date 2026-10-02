@@ -27,7 +27,7 @@ Setup is split into stages. Stage 1 gets the member started. Later stages can be
 |---|---|---|---|
 | 1. Core profile | Who they are, their market, tools, social, brand | ~10 min | Everything. Skills work after this stage |
 | 2. Compliance | Disclosure line, advertising and messaging rules | ~5 min | Every skill that writes something public (email, newsletter, website, landing, social, LinkedIn, blog) |
-| 3. Voice | How they write and what to avoid | ~5 min | Every writing skill (scripts, email, newsletter, blog, social, website) |
+| 3. Voice and edge | Who they serve best, what sets them apart, how they write and what to avoid | ~8 min | Every writing skill (scripts, email, newsletter, blog, social, website) |
 | 4. Objection Bank (real estate only) | Their answers to common seller objections | ~10 min | Listing appointment and follow-up skills |
 | 5. Neighborhoods (real estate only) | A fact file per area they serve. Repeat for each area | ~10 min per area | Listing content, local SEO, website, social, buyer emails |
 

@@ -55,6 +55,7 @@ The profile already holds the member's name, business, industry, market, niche, 
 Say: "Hi [name]! You already told me about [business_name] in /hi5-setup, so I'll only ask about your content. About a dozen questions, five to ten minutes. Let's start."
 
 **2. What you offer**
+If `offer` is already in the Master Profile, skip this question and say "I already have what you offer from setup." Otherwise ask:
 "What do you sell or offer — the thing you want your videos to lead people toward?"
 Store: offer
 
@@ -116,9 +117,9 @@ Say: "Based on your niche, here are some content category suggestions: [list the
 Store: content_categories
 
 **13. Voice card**
-First check the Master Profile's `voice_profile_page_id`. If a Voice Profile page exists and has values in it, skip this step and say: "I already have your writing voice saved, so I'll use that."
+First open the Voice Profile page (`voice_profile_page_id`), if one exists. Ask ONLY the questions below whose fields are missing or empty on it. If none are missing, skip this step and say: "I already have your writing voice saved, so I'll use that." Stage 3 of /hi5-setup already covers formality, sentences, and phrases, so for most members only the on-camera questions (energy level and CTA style) remain.
 
-Otherwise ask these five questions, one at a time:
+Ask the missing ones, one at a time:
 - "How would you describe your vocabulary style? Casual and conversational, professional and polished, or somewhere in between?" → vocabulary_style
 - "How would you describe your sentences — short and punchy, long and flowing, or a mix?" → sentence_rhythm
 - "What's your energy level on camera? Calm and measured, high energy, or somewhere in between?" → energy_level

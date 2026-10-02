@@ -141,10 +141,56 @@ Store: youtube_url
 
 → **Checkpoint B:** write the answers above to Tools and Presence.
 
-## GROUP C — Your Brand (optional)
+## GROUP C — Your Business
+Say first: "A few questions about your business. They're what I use to build your plan and write like someone who knows your market. Say 'skip' on any you'd rather answer later."
+
+**Q16 — Price Range**
+> "What's the typical price range of the homes you work with?"
+Store: price_range
+
+**Q17 — Market Right Now**
+> "In your own words, what is your market doing right now? Prices, inventory, how fast homes are selling. Rough impressions are fine."
+Store: market_conditions
+
+**Q18 — Focus**
+> "Do you mostly work with buyers, sellers, or both?"
+>
+> A) Mostly buyers
+> B) Mostly sellers
+> C) Both about equally
+
+Store: focus
+
+**Q19 — Niche**
+> "Do you focus on a specific niche or client type?"
+>
+> A) Luxury / high end
+> B) First time buyers
+> C) Investors
+> D) Relocation
+> E) New construction
+> F) General — I work with everyone
+> G) Other — (ask what)
+
+Store: niche
+
+**Q20 — Lead Sources**
+> "Rank your lead sources by how much business each one produces, biggest first. Pick from this list or add your own:
+>
+> Sphere of influence / referrals · Social media (organic) · YouTube · Paid ads · Open houses · Cold outreach / door knocking · Online leads (Zillow, Realtor.com, etc.) · Other"
+
+Store: lead_sources_ranked (an ordered list, biggest first)
+
+**Q21 — 12-Month Goal**
+> "What is your goal for the next 12 months? Deals, GCI, or a lifestyle goal. Say it in your own words. In /hi5-bizplan we'll turn it into exact numbers."
+Store: goal_12_month
+
+→ **Checkpoint C:** write the answers above to Business (and `niche` to Market).
+
+## GROUP D — Your Brand (optional)
 Say first: "Last group, and it's optional. Say 'skip' on any of these and we'll come back to it later."
 
-**Q16 — Branding**
+**Q22 — Branding**
 > "Where does your branding stand right now?"
 >
 > A) Fully branded — logo, colors, fonts, everything consistent
@@ -154,15 +200,15 @@ Say first: "Last group, and it's optional. Say 'skip' on any of these and we'll 
 
 Store: brand_status
 
-**Q17 — Brand Color**
+**Q23 — Brand Color**
 > "What is your primary brand color? If you know your hex code drop it here, otherwise just describe the color family and we will work with it."
 Store: brand_color
 
-**Q18 — Brand Font**
+**Q24 — Brand Font**
 > "Do you have a primary font you use in your marketing? If you are not sure just say so."
 Store: brand_font
 
-**Q19 — Branding Help**
+**Q25 — Branding Help**
 > "One last thing on branding — if you ever want professional help with your brand identity (logo, colors, fonts, full brand guide), our team at Hi5 Biz Solutions works specifically with real estate agents on this. Head over to the Hi5 Success community and drop a message in the services channel and we will get you the details on packages and pricing."
 >
 > "Would you like me to make a note of this in your profile so we follow up with you?"
@@ -172,7 +218,7 @@ Store: brand_font
 
 Store: branding_interest
 
-→ **Checkpoint C:** write the answers above to Brand. Stage 1 is complete.
+→ **Checkpoint D:** write the answers above to Brand. Stage 1 is complete.
 
 ---
 
@@ -218,3 +264,88 @@ Store: brokerage_ad_rules
 Store: sms_consent_status (yes, no, or unsure). If no or unsure, tell the member: "No problem. I'll keep text campaigns off the table until that's sorted, and I can show you how to collect consent."
 
 Then build the page, show the five-bullet summary from the template, and ask: "Do you want me to follow these guardrails on everything I draft for you?" Save per the general procedure.
+
+---
+
+# STAGE 3 — Voice and Edge (about 8 minutes)
+
+Template: `templates/voice-profile.md`. Creates the **Voice Profile** page and an **Edge** section on the Master Profile. Follow the general procedure in `SKILL.md`.
+
+Intro: "This is what makes my writing sound like you instead of a generic agent: who you serve best, what sets you apart, and how you actually talk. A few questions, then I'll write you a short voice profile you can approve."
+
+## Part 1 — Your Edge
+
+**E1 — Client situations**
+> "What are the 2 or 3 client situations you handle best? Describe the situation, not the person. For example 'sellers who need to sell before they can buy' or 'buyers relocating on a deadline'."
+Store: client_situations
+(Fair Housing: if the member describes people by a protected class, such as family status, age, or religion, gently steer them: "Let's describe the situation instead, like the timeline, the goal, or the challenge." Rewrite it with them.)
+
+**E2 — Your differentiator**
+> "What do you do that other agents in your market don't? Give me one proof point too: a stat, a result, or a step in your process."
+Store: differentiator and proof_point. If they give no proof, ask once: "Do you have a number, result, or story that backs that up?" If still none, store the differentiator and write `proof_point: [ADD PROOF]`.
+
+**E3 — Client words**
+> "What three words would your best clients use to describe working with you?"
+Store: client_words
+
+## Part 2 — Your Voice
+
+**V1 — Words to avoid**
+> "Are there words, phrases, or habits you never want in your writing? For example words you'd never say, or things that sound fake to you."
+Store: phrases_never_used
+
+**V2 — Formality**
+> "How formal is your writing?
+>
+> A) Casual and conversational
+> B) Professional and polished
+> C) Somewhere in between"
+
+Store: vocabulary_style
+
+**V3 — Sentences**
+> "How would you describe your sentences?
+>
+> A) Short and punchy
+> B) Long and flowing
+> C) A mix"
+
+Store: sentence_rhythm
+
+**V4 — Emoji**
+> "How do you feel about emoji in your writing?
+>
+> A) Never
+> B) Sometimes
+> C) Often"
+
+Store: emoji_use
+
+**V5 — Length**
+> "What length do you usually prefer for messages, captions, and emails?
+>
+> A) Short — get to the point
+> B) Medium
+> C) Long and detailed"
+
+Store: preferred_length
+
+**V6 — Phrases you use** *(skippable)*
+> "Any phrases you say all the time, in conversations, on calls, or in your content? Just a few that come to mind."
+Store: phrases_used
+
+**V7 — How you want to come across** *(skippable)*
+> "In a few words, how do you want to come across? For example calm expert, friendly neighbor, or straight shooter."
+Store: how_to_come_across
+
+## Part 3 — Writing samples (optional)
+> "If you'd like, paste 3 to 5 things you wrote yourself: texts to clients, emails, captions, or your bio. A mix of casual and professional is best. I'll use them to match your voice closely. Say 'skip' to finish without them."
+
+If they paste samples, produce all three, then check the voice summary against their originals:
+1. **Voice summary** — bullets, under 150 words: sentence length, vocabulary level, how they open and close messages, humor, punctuation habits, words they repeat, words they never use.
+2. **Three proof samples in their voice** — a 2-sentence text to a past client, a 4-sentence intro of their services, and a short social caption about the market.
+3. **Three gaps** — places their samples are weaker than they could be (for example no clear ask, too much filler) and how the profile should correct them without losing their personality.
+
+Before showing it, compare each proof sample to their originals. If a sample uses a word or rhythm they would never use, fix it. Cut clichés like "dream home", "nestled", and "don't hesitate to reach out". Never use anything on their avoid list. Show the result and ask: "Does this sound like you? Tell me what to change." Revise until they approve.
+
+Save: the Edge fields to the Master Profile's Edge section, and everything else to the Voice Profile page using the template. Then continue the general procedure (confirm, save, say where it is saved).
