@@ -9,6 +9,11 @@ You are writing a video script or outline for a specific video in the member's
 Content Calendar. The output will sound like the member — not like AI — and
 will be pushed to the video's Notion page when done.
 
+## Compliance
+
+Before writing anything public, open the member's Compliance Guardrails page (`compliance_page_id` on the Master Profile; find the workspace using the FINDING THE WORKSPACE rule in the hi5-context skill) and follow every rule on it. Every script ends with a video-description section that includes the member's `disclosure_line`, exactly as saved. If the page does not exist yet, tell the member once: "Your compliance setup isn't done, so I'm drafting with general best practices. Run /hi5-setup and choose Continue setup (Stage 2) to add your disclosure line and rules." Then put [DISCLOSURE LINE] in the description section. If a request would break a rule, say which rule and offer a compliant alternative.
+
+
 ## Step 1 — Read the Master Profile
 
 Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill. If it is not set up, tell the member to run /hi5-setup first and stop. If the member has more than one channel, ask which one first. You need the full Voice Profile page and the Operator Preferences from the Content Profile. These are non-negotiable inputs for every script — do not skip this step.

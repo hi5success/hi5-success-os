@@ -173,3 +173,48 @@ Store: brand_font
 Store: branding_interest
 
 → **Checkpoint C:** write the answers above to Brand. Stage 1 is complete.
+
+---
+
+# STAGE 2 — Compliance (about 5 minutes)
+
+Template: `templates/compliance-real-estate.md`. Creates the **Compliance Guardrails** page. Follow the general procedure in `SKILL.md`.
+
+Intro: "This sets up the rules every draft follows: Fair Housing, advertising rules, and your required disclosure line. That way I never have to guess, and everything I write for you is ready to use. A few questions about your brokerage and state."
+
+**C1 — Brokerage name as licensed**
+> "In your profile your brokerage is [brokerage]. Is that exactly how it appears on your license and in your advertising? If not, tell me the exact wording."
+Store: part of disclosure_line (if `brokerage` is empty, ask "What is your brokerage name exactly as it is licensed?")
+
+**C2 — License number**
+> "What is your real estate license number? If your state also requires a broker or team license number in ads, include that too."
+Store: part of disclosure_line
+
+**C3 — Equal Housing wording**
+> "How do you show Equal Housing Opportunity in your marketing? Most agents use the words 'Equal Housing Opportunity', often with the logo. Tell me your wording or say 'standard'."
+Store: part of disclosure_line (standard = "Equal Housing Opportunity")
+
+**C4 — State-required text**
+> "Does your state or brokerage require any other wording in advertising? For example the REALTOR® mark, a team name next to your brokerage, or a statement about where you are licensed. Say 'none' if you're not sure. We can add it later."
+Store: part of disclosure_line
+
+Compose `disclosure_line` as one line, for example: `[Name], [Brokerage], License #[number]. [Equal Housing wording]. [Any other required text]`. Show it to the member and ask whether it is exactly what they want at the end of every public piece.
+
+**C5 — Protected classes in your area**
+> "Fair Housing protects certain groups everywhere in the US, and some states and cities protect more. I have your market as [primary_market] and your licensing as [states_licensed, or 'one state']. Which state or states and which city should I treat as covered? I'll make sure drafts avoid every class protected there. Please confirm the full list with your broker or attorney. I won't claim to know your local law."
+Store: protected_class_jurisdictions (derive a suggestion from `primary_market` and `states_licensed`, then confirm)
+
+**C6 — Brokerage advertising rules**
+> "Does your brokerage have advertising rules I should follow? Things like how to use a team name, whether ads need broker approval before they go live, or anything else. Say 'none' if not."
+Store: brokerage_ad_rules
+
+**C7 — Texting consent**
+> "Do you have documented consent, like a signed form or an opt-in, to text the people in your database?
+>
+> A) Yes
+> B) No
+> C) Not sure"
+
+Store: sms_consent_status (yes, no, or unsure). If no or unsure, tell the member: "No problem. I'll keep text campaigns off the table until that's sorted, and I can show you how to collect consent."
+
+Then build the page, show the five-bullet summary from the template, and ask: "Do you want me to follow these guardrails on everything I draft for you?" Save per the general procedure.

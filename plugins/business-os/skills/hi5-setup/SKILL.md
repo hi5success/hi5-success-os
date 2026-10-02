@@ -33,6 +33,16 @@ Setup is split into stages. Stage 1 gets the member started. Later stages can be
 
 Each stage is a section in the member's industry file (`industries/real-estate.md` or `industries/generic.md`). If the industry file has no section for a stage, tell the member that stage is not available for their industry yet, and skip it.
 
+### How stages 2 to 5 run (general procedure)
+Every stage after Stage 1 follows the same steps:
+1. **Intro.** Say what the stage is, how long it takes, and which skills it improves (use the table above). Check the Setup Status section first so you do not repeat a finished stage. If it is finished, ask "Replace it or add to it?"
+2. **Questions.** Ask the stage's questions from the industry file, one at a time.
+3. **Build the page.** Use the template named in the industry file. Fill every `{{value}}` from the member's answers. Never invent a value; if the member skipped a question, write "not provided" and say so.
+4. **Confirm.** Show the member a short plain-language summary and ask whether it looks right. Make any changes they ask for.
+5. **Save.** Create the stage's page as a child of the Master Profile (or update it if it already exists). Save its ID in the Page IDs section, and set the stage's line in Setup Status to `complete <today's date>`.
+6. **Say where it is saved and how to change it.** For example: "Saved to your Compliance Guardrails page in your Hi5 workspace. To change it any time, run /hi5-setup and choose Update something or Redo a stage."
+7. **Offer the next step.** Offer the next unfinished stage, or let them stop. Never push.
+
 ---
 
 ## FINDING THE HI5 SUCCESS OS WORKSPACE
@@ -181,7 +191,7 @@ When /hi5-setup is run and a workspace already exists, read the Master Profile's
 Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished.
 
 - **1** → run that stage from the industry file.
-- **2** → ask which section (Identity, Market, Tools, Presence, Brand, or another section on the profile), show the current values, ask what to change, confirm, then update that section only.
+- **2** → ask which section (Identity, Market, Tools, Presence, Brand, or another section on the profile) or which saved page (such as Compliance Guardrails or Voice Profile), show the current values, ask what to change, confirm, then update that section only.
 - **3** → ask which stage, then run it. Show the current saved content first and ask "Replace it or add to it?"
 - **4** → run the neighborhoods stage for one new area, save it as a new child page, and add it to the Page IDs section.
 

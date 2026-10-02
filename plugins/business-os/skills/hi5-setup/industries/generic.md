@@ -159,3 +159,35 @@ Store: brand_font
 Store: branding_interest
 
 → **Checkpoint C:** write the answers above to Brand. Stage 1 is complete.
+
+---
+
+# STAGE 2 — Compliance (about 5 minutes)
+
+Template: `templates/compliance-generic.md`. Creates the **Compliance Guardrails** page. Follow the general procedure in `SKILL.md`.
+
+Intro: "This sets up the rules every draft follows, like honest claims, any wording your business has to include, and how I handle email and text outreach. That way what I write is ready to use. Four quick questions."
+
+**C1 — Required wording**
+> "Is there any wording you have to include in your marketing? For example a license number, a legal or results disclaimer, or a company tagline. Say 'none' if not."
+Store: disclosure_line
+
+**C2 — Industry rules**
+> "Is your industry regulated in how you can advertise? For example finance, insurance, health, legal, or real estate. If so, tell me the rules you have to follow. Say 'none' if not."
+Store: industry_rules
+
+**C3 — Email and text consent**
+> "Do you have permission from the people on your email list or phone list to message them? For example a signup form, an opt-in, or a signed agreement.
+>
+> A) Yes — documented
+> B) Partly
+> C) Not sure
+> D) I don't use email or text outreach"
+
+Store: messaging_consent_status. If B or C, tell the member: "No problem. I'll flag consent before any outreach campaign, and I can help you set up a simple opt-in."
+
+**C4 — Company policy**
+> "Does your company, employer, or franchise have marketing rules I should follow? Things like logo use, approval before publishing, or words to avoid. Say 'none' if not."
+Store: brand_policy
+
+Then build the page, show the five-bullet summary from the template, and ask: "Do you want me to follow these guardrails on everything I draft for you?" Save per the general procedure.

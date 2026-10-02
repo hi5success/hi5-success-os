@@ -23,7 +23,9 @@ There is ONE Master Profile per member. It is created by /hi5-setup (Business OS
 
 6. Google Trends requires no API key. Use it freely for trend scoring.
 
-7. Do not create Notion pages during normal operation. The only exception is /hi5-yt-setup, which may create the Keyword Tracker, the Voice Profile page, the Content Profile section, and "Channel – [name]" pages inside the member's existing workspace. All other commands write into pages and databases that already exist.
+7. Compliance first. Anything public (blog posts, captions, scripts and descriptions) follows the member's Compliance Guardrails page (`compliance_page_id`) and ends with their `disclosure_line`, exactly as saved. If the page does not exist yet, tell the member once to run /hi5-setup (Stage 2) and use a [DISCLOSURE LINE] placeholder.
+
+8. Do not create Notion pages during normal operation. The only exception is /hi5-yt-setup, which may create the Keyword Tracker, the Voice Profile page, the Content Profile section, and "Channel – [name]" pages inside the member's existing workspace. All other commands write into pages and databases that already exist.
 
 ## FINDING THE WORKSPACE
 
@@ -41,7 +43,7 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 The Master Profile is one Notion page. Each section is a heading 2, and each field is a bullet written `- field_name: value`. Skip any field that is missing and carry on.
 
 - **Setup Status** — `industry`, `industry_flow`
-- **Page IDs** — `content_planner_db_id`, `keyword_tracker_db_id`, `voice_profile_page_id`, `channel_pages`, and the IDs of other workspace pages
+- **Page IDs** — `content_planner_db_id`, `keyword_tracker_db_id`, `voice_profile_page_id`, `compliance_page_id`, `channel_pages`, and the IDs of other workspace pages
 - **Identity / Market / Presence** — `name`, `business_name`, `niche`, `primary_market`, `social_platforms`, `youtube_url`
 - **Content Profile** — written by /hi5-yt-setup: `offer`, `youtube_audience`, `affiliate_links`, `channel_goal`, `content_model`, `posting_frequency`, `weekly_rhythm`, `recording_schedule`, `edit_turnaround_days`, `competitor_channel_ids`, `content_categories`, `distribution`, `default_deliverable_type`, `primary_platform`, and the Operator Preferences `output_format`, `script_depth`, `number_of_options`, `explanation_level`
 - **Self Profile** — written by /hi5-self: `behavioral_style` and related fields, used for tone

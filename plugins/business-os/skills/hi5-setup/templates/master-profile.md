@@ -78,6 +78,9 @@ Written by /hi5-self. Not part of /hi5-setup.
 ### Content Profile
 Added by /hi5-yt-setup (Content OS). Not created by /hi5-setup; the skeleton does not include it. Fields: `channels` (list of channel names), `offer`, `youtube_audience`, `affiliate_links`, `channel_goal`, `content_model`, `posting_frequency`, `weekly_rhythm`, `recording_schedule`, `edit_turnaround_days`, `competitor_channel_ids`, `content_categories`, `distribution`, `default_deliverable_type`, `primary_platform`, and the operator preferences `output_format`, `script_depth`, `number_of_options`, `explanation_level`. With more than one channel, each extra channel is a child page "Channel – [name]" whose fields override these.
 
+### Compliance Guardrails (child page, not a section)
+A child page of the Master Profile created by Stage 2, ID in `compliance_page_id`. Its Inputs section holds `disclosure_line`, `last_confirmed`, and (real estate) `protected_class_jurisdictions`, `brokerage_ad_rules`, `sms_consent_status`, or (any industry) `industry_rules`, `messaging_consent_status`, `brand_policy`. Below the inputs are the guardrails every writing skill follows. Templates: `compliance-real-estate.md`, `compliance-generic.md`.
+
 ### Voice Profile (child page, not a section)
 A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `energy_level`, `cta_style`, `phrases_used`, `phrases_never_used`. Stage 3 of /hi5-setup defines and extends it; /hi5-yt-setup creates it only if the member has not done Stage 3 yet.
 
