@@ -96,9 +96,6 @@ Use the lookup rule in FINDING THE HI5 SUCCESS OS WORKSPACE.
 
 - **Workspace found** → this is a re-run. Go to RE-RUN MENU. Do not rebuild anything.
 - **Not found** → go to Phase 3.
-- **Not found, but a page called "Hi5 Marketing OS" exists** → that is an older Content OS workspace. Tell the member:
-  > "I found a workspace from an earlier version. I'll set up your new Hi5 Success OS workspace now. When you next run /hi5-yt-setup it will move your existing content over so nothing is lost."
-  Then continue to Phase 3. Do not touch or delete the older pages.
 
 ---
 
