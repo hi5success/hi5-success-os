@@ -39,11 +39,14 @@ Each stage is a section in the member's industry file (`industries/real-estate.m
 
 Every Hi5 skill uses this rule to find the member's data:
 
-1. Search Notion for "Hi5 Success OS". Keep only pages with exactly that title that contain a child page called "Master Profile".
-2. No match → the workspace is not set up. (In /hi5-setup, continue to Phase 3. In any other skill, tell the member to run /hi5-setup first.)
-3. More than one match → list them with their location and ask the member to pick one. Never guess.
-4. Open the Master Profile. Its "Page IDs" section holds the IDs of everything else (Content Planner, Marketing Hub, Business OS pages, and so on). Use those IDs directly. Do not search again.
-5. If a saved ID is missing or the page no longer exists, search for it by title under the root page and write the corrected ID back to the Page IDs section.
+The workspace root page is titled "Hi5 Success OS Workspace" and its first line is a marker: `hi5-os-root: v1`. Titles can collide with other pages the member owns (and members can rename pages), so the marker is what identifies the root, not the title.
+
+1. Run two Notion searches: one for "Hi5 Success OS Workspace" and one for "hi5-os-root". Combine the results.
+2. Open each candidate page. Keep only pages whose first line starts with `hi5-os-root:`. Ignore every other page, even one titled exactly "Hi5 Success OS".
+3. No marked page → the workspace is not set up. (In /hi5-setup, continue to Phase 3. In any other skill, tell the member to run /hi5-setup first.)
+4. More than one marked page → list them with their location and ask the member to pick one. Only ask when more than one marked page matches. Never guess.
+5. Open the marked page's child "Master Profile". Its "Page IDs" section holds `root_page_id` and the IDs of everything else (Content Planner, Marketing Hub, Business OS pages, and so on). Use those IDs directly. Do not search again in the same session.
+6. If a saved ID is missing or the page no longer exists, search for it by title under the root page and write the corrected ID back to the Page IDs section.
 
 ---
 
@@ -118,7 +121,7 @@ If unclear:
 Tell the member:
 > "Now I'm building your Hi5 workspace in Notion. This takes a minute."
 
-Follow `templates/workspace-build.md` exactly. It creates the "Hi5 Success OS" root page and everything under it, then writes the Master Profile skeleton using `templates/master-profile.md`.
+Follow `templates/workspace-build.md` exactly. It creates the "Hi5 Success OS Workspace" root page (with its `hi5-os-root: v1` marker line) and everything under it, then writes the Master Profile skeleton using `templates/master-profile.md`.
 
 Store `industry`, `industry_flow`, and `storage: notion` in the Master Profile's Setup Status section right away, along with every page ID you created in the Page IDs section.
 
@@ -149,7 +152,7 @@ Use the member's name and these facts. Say what was created, what works now, and
 
 > "You're all set, [name]. Here's what was just created:
 >
-> ✅ Hi5 Success OS workspace — built in your Notion
+> ✅ Hi5 Success OS Workspace — built in your Notion
 > ✅ Master Profile — saved with your business info
 > ✅ Content Planner — ready for your first ideas
 > ✅ Business OS pages — ready for your business plan

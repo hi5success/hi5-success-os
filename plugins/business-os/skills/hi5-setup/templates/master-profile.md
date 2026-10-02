@@ -1,6 +1,6 @@
 # Master Profile — Page Layout and Field Names
 
-The Master Profile is one Notion page called "Master Profile" inside the "Hi5 Success OS" root page. Every Hi5 skill reads it. This file is the contract: the section names and field names below are exactly what skills look for.
+The Master Profile is one Notion page called "Master Profile" inside the root page titled "Hi5 Success OS Workspace" (the root's first line is the marker `hi5-os-root: v1`; see FINDING THE HI5 SUCCESS OS WORKSPACE in `SKILL.md`). Every Hi5 skill reads it. This file is the contract: the section names and field names below are exactly what skills look for.
 
 ## Format
 - Each section is a heading 2.

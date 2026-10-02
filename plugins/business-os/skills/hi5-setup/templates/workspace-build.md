@@ -5,8 +5,15 @@ Build the member's Hi5 Success OS workspace in Notion. Create pages and database
 Create only what is listed here. Objection Bank, neighborhood pages, compliance, and voice pages are created later by their own stages.
 
 ## 1. Root page
-Create a page called **Hi5 Success OS** (icon 🚀) at the top level of the member's Notion workspace.
-Everything below is created inside it.
+Create a page called **Hi5 Success OS Workspace** (icon 🚀) at the top level of the member's Notion workspace. Everything below is created inside it.
+
+The very first line of the page body must be exactly:
+
+`hi5-os-root: v1`
+
+This marker is how every Hi5 skill recognizes the root page (the title alone is not reliable, since members may already own a page called "Hi5 Success OS"). Do not remove or change it, and tell the member not to delete that first line. Add a second line under it in plain language: "Hi5 Success OS saves your profile and work in this workspace. Please leave the line above as is."
+
+Save the root page's ID as `root_page_id` in the Master Profile (step 4).
 
 ## 2. Pages (create in this order, all inside the root page)
 
