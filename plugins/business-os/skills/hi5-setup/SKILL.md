@@ -1,19 +1,49 @@
 ---
 name: hi5-setup
-description: Master onboarding skill for Hi5 Success OS. Sets up the member's storage, captures their industry, and routes to the correct industry-specific setup flow. Run this first before any other Hi5 skill. Triggers when the user runs /hi5-setup, says "set me up", "get started with Hi5", or "setup my workspace".
+description: Master onboarding skill for Hi5 Success OS. Connects the member's Notion, captures their industry, builds their Hi5 Success OS workspace, and runs a staged, resumable interview that fills the Master Profile every other Hi5 skill reads. Run this first before any other Hi5 skill. Run it again any time to continue setup, update the profile, or add to it. Triggers when the user runs /hi5-setup, says "set me up", "get started with Hi5", or "setup my workspace".
 ---
 
 # Hi5 Success OS — Master Setup
 
 ## Purpose
-Onboard a new Hi5 Success OS member. Get their storage preference, detect their industry, and hand off to the correct industry file for the full setup flow.
+Onboard a Hi5 Success OS member. Connect Notion, detect their industry, build their workspace, and fill their Master Profile in stages so they can start using skills after about 10 minutes and deepen the profile whenever they like.
 
 ## Core Rules
 - Ask ONE question at a time — never combine questions
 - Be warm, encouraging, and conversational — not robotic
-- Never rush — this is the foundation for everything
 - Always explain WHY you are asking before sensitive questions
-- Do not proceed to the next step until the current one is confirmed
+- Do not proceed until the current answer is confirmed
+- Hold answers as you go and write them to the Master Profile at each checkpoint (see Phase 5). If the member stops, nothing already confirmed is lost
+- Never show the member raw Notion IDs or field names. Say "your Master Profile", not `PROFILE.primary_market`
+- Notion is the only storage for this release. Do not offer Google Drive or local storage as working options
+
+---
+
+## THE STAGES
+
+Setup is split into stages. Stage 1 gets the member started. Later stages can be done any time, in any order after Stage 1, and each one makes specific skills better.
+
+| Stage | What it captures | Time | Skills that get better |
+|---|---|---|---|
+| 1. Core profile | Who they are, their market, tools, social, brand | ~10 min | Everything. Skills work after this stage |
+| 2. Compliance | Disclosure line, advertising and messaging rules | ~5 min | Every skill that writes something public (email, newsletter, website, landing, social, LinkedIn, blog) |
+| 3. Voice | How they write and what to avoid | ~5 min | Every writing skill (scripts, email, newsletter, blog, social, website) |
+| 4. Objection Bank (real estate only) | Their answers to common seller objections | ~10 min | Listing appointment and follow-up skills |
+| 5. Neighborhoods (real estate only) | A fact file per area they serve. Repeat for each area | ~10 min per area | Listing content, local SEO, website, social, buyer emails |
+
+Each stage is a section in the member's industry file (`industries/real-estate.md` or `industries/generic.md`). If the industry file has no section for a stage, tell the member that stage is not available for their industry yet, and skip it.
+
+---
+
+## FINDING THE HI5 SUCCESS OS WORKSPACE
+
+Every Hi5 skill uses this rule to find the member's data:
+
+1. Search Notion for "Hi5 Success OS". Keep only pages with exactly that title that contain a child page called "Master Profile".
+2. No match → the workspace is not set up. (In /hi5-setup, continue to Phase 3. In any other skill, tell the member to run /hi5-setup first.)
+3. More than one match → list them with their location and ask the member to pick one. Never guess.
+4. Open the Master Profile. Its "Page IDs" section holds the IDs of everything else (Content Planner, Marketing Hub, Business OS pages, and so on). Use those IDs directly. Do not search again.
+5. If a saved ID is missing or the page no longer exists, search for it by title under the root page and write the corrected ID back to the Page IDs section.
 
 ---
 
@@ -21,80 +51,144 @@ Onboard a new Hi5 Success OS member. Get their storage preference, detect their 
 
 > "Welcome to Hi5 Success OS. I'm glad you're here.
 >
-> Before we dive in I want to make sure everything is set up so Claude can work smarter for you — across every session, every tool, and every platform you use.
+> Before we dive in I want to set things up so Claude can work smarter for you across every session — without you re-explaining your business each time.
 >
-> Setup takes about 10 minutes. Here's what we'll do:
-> 1. Choose where to store your business data
+> Setup is in stages. The first one takes about 10 minutes and gets you started. Here's what happens in it:
+> 1. Connect your Notion (that's where everything is saved)
 > 2. Tell me about your business
-> 3. Build your personalized Hi5 workspace in Notion
-> 4. Show you exactly how to use every skill available to you
+> 3. I build your Hi5 workspace in Notion
 >
-> Let's start with the most important decision first."
+> After that you can add compliance rules, your writing voice, and more whenever you want. Each one makes your results better. Ready?"
 
 ---
 
-## PHASE 1 — Storage Setup
+## PHASE 1 — Connect Notion
 
-Ask:
-> "Where would you like to store your Hi5 OS data?
->
-> I recommend **Notion** — it's free and it becomes your single source of truth for everything. Your Master Profile, content calendar, business plan, client notes, and tasks all live in one place. Every AI tool, every Claude surface, and every plugin reads from it without you ever having to re-explain who you are or what your business does. Think of it as your business brain that never forgets — one master file that connects every application and AI platform together automatically.
->
-> Your options:
-> 1. **Notion** ← recommended, free, connects everything
-> 2. **Google Drive** ← works well, less structured for AI workflows
-> 3. **Local only** ← stores in your Claude Project Instructions, great if you use Claude Code regularly, but won't sync across devices or other AI platforms
->
-> Which would you like to use?"
+Notion is where the member's Master Profile and everything the skills create is saved. It is free, and it becomes their single source of truth that every skill reads, so they never have to re-explain who they are.
 
-### If Notion selected:
-Check if Notion MCP is connected in Cowork.
+Check whether the Notion connector is connected.
 
 If NOT connected:
-> "Great choice. Before we continue you will need to connect Notion to Cowork. Here is how:
+> "Hi5 Success OS saves everything to your Notion — it's free, and it's how every skill knows your business without you repeating yourself. Let's connect it:
 > 1. Click the plug icon in the top right of your Cowork session
 > 2. Find Notion in the connectors list
 > 3. Click Connect and follow the authorization steps
-> 4. Come back and let me know when it is connected"
+> 4. Come back and let me know when it is connected
+>
+> No Notion account yet? Create a free one at notion.so first."
 
-Wait for confirmation before continuing.
+Wait for confirmation. Re-check the connection before continuing.
+
+If the member asks about Google Drive or keeping everything local:
+> "Notion is the only storage Hi5 Success OS supports right now. Google Drive and local storage are coming soon. Notion is free, so the quickest path is to connect it and keep going."
 
 If connected:
-> "Perfect — Notion is connected. I will build your workspace there as we go."
-
-Store: STORAGE = notion
-
-### If Google Drive selected:
-Check if Google Drive MCP is connected. Walk through connection same as Notion if needed.
-Store: STORAGE = google_drive
-
-### If Local selected:
-> "No problem — I will store your profile in your Claude Project Instructions so I always have context about your business.
->
-> Just know that when you are ready to level up, run /hi5-setup again and I will migrate everything to Notion automatically. It is genuinely a game changer for working with AI — one master file that every tool, every platform, and every Claude session can reference without you ever having to explain yourself again. But local works great for now."
-
-Store: STORAGE = local
+> "Perfect — Notion is connected."
 
 ---
 
-## PHASE 2 — Industry Detection
+## PHASE 2 — Check for an Existing Workspace
+
+Use the lookup rule in FINDING THE HI5 SUCCESS OS WORKSPACE.
+
+- **Workspace found** → this is a re-run. Go to RE-RUN MENU. Do not rebuild anything.
+- **Not found** → go to Phase 3.
+- **Not found, but a page called "Hi5 Marketing OS" exists** → that is an older Content OS workspace. Tell the member:
+  > "I found a workspace from an earlier version. I'll set up your new Hi5 Success OS workspace now. When you next run /hi5-yt-setup it will move your existing content over so nothing is lost."
+  Then continue to Phase 3. Do not touch or delete the older pages.
+
+---
+
+## PHASE 3 — Industry Detection
 
 Ask:
 > "What industry are you in?"
 
-Detect from their answer and route:
-- Real estate agent / realtor / broker / agent → load `industries/real-estate.md`
-- GHL / GoHighLevel / agency / marketing agency → load `industries/ghl-agency.md`
-- Coach / consultant / trainer → load `industries/generic.md`
-- Anything else → load `industries/generic.md`
+Store the member's own words as `industry`. Then choose the flow and store it as `industry_flow`:
+- Real estate agent / realtor / broker / team leader → `real-estate` → load `industries/real-estate.md`
+- Anything else → `generic` → load `industries/generic.md`
 
 If unclear:
-> "Just so I can tailor everything to your business — would you say you are in real estate, a marketing or GHL agency, coaching or consulting, or something else entirely?"
+> "Just so I can tailor everything to your business — are you in real estate, or something else? If something else, tell me what."
 
 ---
 
-## STORAGE REFERENCE
-Check STORAGE before saving any output:
-- notion → save to Notion using Notion MCP
-- google_drive → save as Google Doc using Drive MCP
-- local → output as markdown for user to copy into Project Instructions
+## PHASE 4 — Build the Workspace
+
+Tell the member:
+> "Now I'm building your Hi5 workspace in Notion. This takes a minute."
+
+Follow `templates/workspace-build.md` exactly. It creates the "Hi5 Success OS" root page and everything under it, then writes the Master Profile skeleton using `templates/master-profile.md`.
+
+Store `industry`, `industry_flow`, and `storage: notion` in the Master Profile's Setup Status section right away, along with every page ID you created in the Page IDs section.
+
+When it is done:
+> "Your workspace is ready. Now let's fill in your profile."
+
+---
+
+## PHASE 5 — Stage 1 Interview
+
+Load the industry file chosen in Phase 3 and run its **STAGE 1** section.
+
+### Checkpoints
+The industry file splits Stage 1 into question groups. After each group:
+1. Write the confirmed answers to the matching section of the Master Profile, using the field names in `templates/master-profile.md`
+2. Update the Setup Status line for Stage 1 (for example `in progress — group B done`)
+3. Say nothing technical about it. A short "Got it, saved" is enough
+
+If the member stops partway, their saved groups stay. On re-run, resume at the first unfinished group.
+
+When every group is done, mark Stage 1 complete with today's date.
+
+---
+
+## PHASE 6 — Wrap Up
+
+Use the member's name and these facts. Say what was created, what works now, and what gets better with each remaining stage (use the stages table, only the stages available for their industry).
+
+> "You're all set, [name]. Here's what was just created:
+>
+> ✅ Hi5 Success OS workspace — built in your Notion
+> ✅ Master Profile — saved with your business info
+> ✅ Content Planner — ready for your first ideas
+> ✅ Business OS pages — ready for your business plan
+> ✅ Marketing Hub — ready for your first campaign
+> ✅ Skill Guide — your reference for every Hi5 skill
+>
+> **You can start using skills right now.** Here's what gets even better as you finish the other stages:
+> [one line per available stage: what it is, time, which skills improve]
+>
+> **Recommended next step:** run /hi5-self so I can learn how you think and communicate. Everything I write for you will match your style.
+>
+> Want to keep going with the next stage now, or stop here and come back any time with /hi5-setup?"
+
+If they want to continue, run the next available stage from the industry file.
+
+---
+
+## RE-RUN MENU
+
+When /hi5-setup is run and a workspace already exists, read the Master Profile's Setup Status section and ask:
+
+> "Welcome back, [name]. Your Hi5 workspace is already set up. What would you like to do?
+>
+> 1. Continue setup — [name of the next unfinished stage]
+> 2. Update something in my profile
+> 3. Redo a stage
+> 4. Add a neighborhood *(real estate only)*"
+
+Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished.
+
+- **1** → run that stage from the industry file.
+- **2** → ask which section (Identity, Market, Tools, Presence, Brand, or another section on the profile), show the current values, ask what to change, confirm, then update that section only.
+- **3** → ask which stage, then run it. Show the current saved content first and ask "Replace it or add to it?"
+- **4** → run the neighborhoods stage for one new area, save it as a new child page, and add it to the Page IDs section.
+
+Never rebuild the workspace on a re-run. If a page is missing, recreate only that page and update its ID.
+
+---
+
+## SAVING RULES
+
+All output is saved to the member's Notion. Skills never write to Google Drive or local files for the member in this release.

@@ -1,24 +1,28 @@
 # Hi5 Setup — Generic Industry Flow
 
 ## Purpose
-Capture the full identity and tools profile for any industry not yet covered by a dedicated industry file. Same structure as real estate but with universal language.
+Capture the identity and tools profile for any industry that does not have its own flow. Same structure as the real estate flow, in universal language. Field names in `Store:` lines are the names in `templates/master-profile.md`.
 
 ## Rules
 - One question at a time
 - Multiple choice where provided
-- Store every answer before moving on
+- Hold confirmed answers and write them to the Master Profile at each checkpoint (end of each group)
+- Skipped questions are fine. Skills tolerate missing fields
+- Use the member's own words for their industry (the `industry` field) wherever a question says [their industry]
 
 ---
 
-## QUESTION FLOW
+# STAGE 1 — Core Profile (about 10 minutes)
+
+## GROUP A — You and Your Market
 
 **Q1 — Name**
 > "What is your full name?"
-Store: PROFILE.name
+Store: name
 
 **Q2 — Brand Name**
 > "What is your business or brand name? If you operate under your personal name just say that."
-Store: PROFILE.business_name
+Store: business_name
 
 **Q3 — Role**
 > "How do you operate your business?"
@@ -29,23 +33,23 @@ Store: PROFILE.business_name
 > D) I lead a team
 > E) I own the company/agency
 
-Store: PROFILE.role
+Store: role
 
 **Q4 — Niche**
 > "What is your specific niche or area of focus within [their industry]?"
-Store: PROFILE.niche
+Store: niche
 
-**Q5 — Market**
+**Q5 — Market Reach**
 > "Do you serve clients locally, regionally, nationally, or fully online?"
-Store: PROFILE.market_reach
+Store: market_reach
 
-**Q6 — Location**
-> "What city or area are you based in?"
-Store: PROFILE.location
+**Q6 — Main Market**
+> "What city or area is your main market? If you work fully online, tell me the region your audience is mostly in, or just say online."
+Store: primary_market
 
 **Q7 — Experience**
 > "How many years have you been in business?"
-Store: PROFILE.years_in_business
+Store: years_in_business
 
 **Q8 — Languages**
 > "Do you speak any languages other than English?"
@@ -53,7 +57,11 @@ Store: PROFILE.years_in_business
 > A) No — English only
 > B) Yes — (ask which)
 
-Store: PROFILE.languages
+Store: languages
+
+→ **Checkpoint A:** write the answers above to Identity and Market.
+
+## GROUP B — Your Tools and Online Presence
 
 **Q9 — Website**
 > "Do you have a website?"
@@ -61,7 +69,7 @@ Store: PROFILE.languages
 > A) Yes — drop the URL
 > B) No — not yet
 
-Store: PROFILE.website
+Store: website
 
 **Q10 — CRM**
 > "What CRM or tool do you use to manage your contacts and clients?"
@@ -73,7 +81,7 @@ Store: PROFILE.website
 > E) No CRM yet
 > F) Other — (ask which)
 
-Store: PROFILE.crm
+Store: crm
 
 **Q11 — CRM Usage**
 > "How are you currently using it?"
@@ -83,7 +91,7 @@ Store: PROFILE.crm
 > C) Automations and pipelines
 > D) Full potential
 
-Store: PROFILE.crm_usage
+Store: crm_usage
 
 **Q12 — Calendar Software**
 > "Do you use any scheduling software?"
@@ -94,7 +102,7 @@ Store: PROFILE.crm_usage
 > D) Other
 > E) No — I manage manually
 
-Store: PROFILE.calendar_software
+Store: calendar_software
 
 **Q13 — Social Platforms**
 > "What social platforms are you active on? Drop your links."
@@ -106,7 +114,7 @@ Store: PROFILE.calendar_software
 > E) LinkedIn
 > F) Email list
 
-Store: PROFILE.social_platforms (with URLs)
+Store: social_platforms (with URLs)
 
 **Q14 — YouTube**
 > "Do you have a YouTube channel?"
@@ -115,7 +123,12 @@ Store: PROFILE.social_platforms (with URLs)
 > B) Interested but not started
 > C) Not planning to
 
-Store: PROFILE.youtube_url
+Store: youtube_url
+
+→ **Checkpoint B:** write the answers above to Tools and Presence.
+
+## GROUP C — Your Brand (optional)
+Say first: "Last group, and it's optional. Say 'skip' on any of these and we'll come back to it later."
 
 **Q15 — Branding**
 > "Where does your branding stand?"
@@ -125,15 +138,15 @@ Store: PROFILE.youtube_url
 > C) Needs a refresh
 > D) Starting from scratch
 
-Store: PROFILE.brand_status
+Store: brand_status
 
 **Q16 — Brand Color**
 > "What is your primary brand color? Hex code if you know it, or just describe the color."
-Store: PROFILE.brand_color
+Store: brand_color
 
 **Q17 — Brand Font**
 > "Do you have a primary font? If not just say so."
-Store: PROFILE.brand_font
+Store: brand_font
 
 **Q18 — Branding Help**
 > "If you ever need help with brand identity — logo, colors, fonts, full brand guide — our team at Hi5 Biz Solutions handles this across multiple industries. Head to the Hi5 Success community and drop a message in the services channel for details on packages and pricing.
@@ -143,15 +156,6 @@ Store: PROFILE.brand_font
 > A) Yes please
 > B) No thanks
 
-Store: PROFILE.branding_interest
+Store: branding_interest
 
----
-
-## AFTER ALL QUESTIONS
-
-→ Trigger workspace build
-
-Wrap up same as real-estate.md but with generic language.
-
-Next step prompt:
-> "Run /hi5-self next so I can learn how you think and communicate. Everything we build together — your business plan, your content, your emails — will be tailored to your personality and goals."
+→ **Checkpoint C:** write the answers above to Brand. Stage 1 is complete.

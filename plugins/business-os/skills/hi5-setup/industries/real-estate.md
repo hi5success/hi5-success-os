@@ -1,28 +1,31 @@
 # Hi5 Setup — Real Estate Industry Flow
 
 ## Purpose
-Capture the full identity and tools profile for a real estate agent, team, or broker. This data populates the Master Profile and is read by every other Hi5 skill.
+Capture the identity and tools profile for a real estate agent, team, or broker. This data fills the Master Profile and is read by every other Hi5 skill. Field names in `Store:` lines are the names in `templates/master-profile.md`.
 
 ## Rules
 - One question at a time
 - Multiple choice where provided — they can always add more detail
-- Store every answer to Master Profile before moving to next question
+- Hold confirmed answers and write them to the Master Profile at each checkpoint (end of each group)
+- Skipped questions are fine. Skills tolerate missing fields
 
 ---
 
-## QUESTION FLOW
+# STAGE 1 — Core Profile (about 10 minutes)
+
+## GROUP A — You and Your Market
 
 **Q1 — Name**
 > "What is your full name?"
-Store: PROFILE.name
+Store: name
 
 **Q2 — Brand Name**
 > "What is your business or brand name? If you operate under your personal name just say that."
-Store: PROFILE.business_name
+Store: business_name
 
 **Q3 — Brokerage**
 > "What brokerage are you with?"
-Store: PROFILE.brokerage
+Store: brokerage
 
 **Q4 — Role**
 > "How do you operate your real estate business?"
@@ -33,9 +36,9 @@ Store: PROFILE.brokerage
 > D) Team Leader — I run my own team
 > E) Broker/Owner — I own the brokerage
 
-Store: PROFILE.re_role
+Store: role
 
-Branch follow-ups:
+Branch follow-ups (store the answers together as one line in `team_details`):
 - Spouse/Partner → "Do you both create content together or separately?" + "Is your brand joint or individual?"
 - On a team → "Does your team have a brand you operate under or do you build your personal brand alongside it?"
 - Team Leader → "How many agents are on your team?" + "Are you still personally producing or focused purely on leading?"
@@ -43,15 +46,15 @@ Branch follow-ups:
 
 **Q5 — Experience**
 > "How many years have you been a licensed real estate agent?"
-Store: PROFILE.years_licensed
+Store: years_in_business
 
 **Q6 — Market**
 > "What city or market do you primarily serve?"
-Store: PROFILE.primary_market
+Store: primary_market
 
 **Q7 — Surrounding Areas**
 > "Do you serve any surrounding areas, counties, or neighborhoods worth mentioning?"
-Store: PROFILE.surrounding_areas
+Store: surrounding_areas
 
 **Q8 — Multi-State**
 > "Are you licensed in multiple states or provinces?"
@@ -59,7 +62,7 @@ Store: PROFILE.surrounding_areas
 > A) No — just one state
 > B) Yes — (ask which states)
 
-Store: PROFILE.states_licensed
+Store: states_licensed
 
 **Q9 — Languages**
 > "Do you speak any languages other than English?"
@@ -67,7 +70,11 @@ Store: PROFILE.states_licensed
 > A) No — English only
 > B) Yes — (ask which languages)
 
-Store: PROFILE.languages
+Store: languages
+
+→ **Checkpoint A:** write the answers above to Identity and Market.
+
+## GROUP B — Your Tools and Online Presence
 
 **Q10 — Website**
 > "Do you have a website?"
@@ -75,7 +82,7 @@ Store: PROFILE.languages
 > A) Yes — drop the URL
 > B) No — not yet
 
-Store: PROFILE.website
+Store: website
 
 **Q11 — CRM**
 > "What CRM are you using to manage your contacts and leads?"
@@ -87,7 +94,7 @@ Store: PROFILE.website
 > E) Spreadsheet or manual tracking
 > F) No CRM yet
 
-Store: PROFILE.crm
+Store: crm
 
 **Q12 — CRM Usage**
 > "How are you currently using your CRM?"
@@ -97,7 +104,7 @@ Store: PROFILE.crm
 > C) Using automations and pipelines
 > D) Using it to its full potential
 
-Store: PROFILE.crm_usage
+Store: crm_usage
 
 **Q13 — Calendar Software**
 > "Do you use any calendar or scheduling software?"
@@ -108,7 +115,7 @@ Store: PROFILE.crm_usage
 > D) Other — (ask which)
 > E) No — I manage manually
 
-Store: PROFILE.calendar_software
+Store: calendar_software
 
 **Q14 — Social Platforms**
 > "What social media platforms are you active on? Share your profile links for any you use."
@@ -121,7 +128,7 @@ Store: PROFILE.calendar_software
 > E) LinkedIn
 > F) Email list
 
-Store: PROFILE.social_platforms (with URLs)
+Store: social_platforms (with URLs)
 
 **Q15 — YouTube**
 > "Do you have a YouTube channel?"
@@ -130,7 +137,12 @@ Store: PROFILE.social_platforms (with URLs)
 > B) No, but I am interested in starting one
 > C) No and not planning to
 
-Store: PROFILE.youtube_url
+Store: youtube_url
+
+→ **Checkpoint B:** write the answers above to Tools and Presence.
+
+## GROUP C — Your Brand (optional)
+Say first: "Last group, and it's optional. Say 'skip' on any of these and we'll come back to it later."
 
 **Q16 — Branding**
 > "Where does your branding stand right now?"
@@ -140,15 +152,15 @@ Store: PROFILE.youtube_url
 > C) Needs a refresh — I have something but it feels outdated
 > D) Starting from scratch — I need everything
 
-Store: PROFILE.brand_status
+Store: brand_status
 
 **Q17 — Brand Color**
 > "What is your primary brand color? If you know your hex code drop it here, otherwise just describe the color family and we will work with it."
-Store: PROFILE.brand_color
+Store: brand_color
 
 **Q18 — Brand Font**
 > "Do you have a primary font you use in your marketing? If you are not sure just say so."
-Store: PROFILE.brand_font
+Store: brand_font
 
 **Q19 — Branding Help**
 > "One last thing on branding — if you ever want professional help with your brand identity (logo, colors, fonts, full brand guide), our team at Hi5 Biz Solutions works specifically with real estate agents on this. Head over to the Hi5 Success community and drop a message in the services channel and we will get you the details on packages and pricing."
@@ -158,44 +170,6 @@ Store: PROFILE.brand_font
 > A) Yes please
 > B) No thanks — I have got it covered
 
-Store: PROFILE.branding_interest
+Store: branding_interest
 
----
-
-## AFTER ALL QUESTIONS
-
-> "Perfect — I have everything I need to build your workspace. Give me a moment."
-
-→ Trigger workspace build (back in SKILL.md Phase 3)
-
-Workspace sections to create:
-1. 🏠 Dashboard
-2. 👤 Master Profile — populated with all captured data
-3. 📋 Content Planner database
-4. 💼 Business OS page (sub-pages: Business Plan, Quarterly Goals, Business Reviews)
-5. 📧 Marketing Hub database
-6. 📖 Skill Guide
-
-Dashboard quick start order:
-1. Run /hi5-self — learn your personality profile so everything is tailored to you
-2. Run /hi5-bizplan — generate your personalized real estate business plan
-3. Run /hi5-goals — set your quarterly targets
-4. Run /hi5-yt-setup — build your content workspace (if Content OS installed)
-5. Run /hi5-email — build your first nurture sequence (if Marketing OS installed)
-
----
-
-## WRAP UP MESSAGE
-
-> "You are all set, [name]. Here is what was just created:
->
-> ✅ Master Profile — saved with your business info
-> ✅ Hi5 Workspace — built in [Notion/Google Drive/Project Instructions]
-> ✅ Content Planner — ready for your first video ideas
-> ✅ Business OS — ready for your business plan
-> ✅ Marketing Hub — ready for your first campaign
-> ✅ Skill Guide — your reference for every Hi5 skill
->
-> **Your next step:** Run /hi5-self so I can learn how you think, communicate, and make decisions. This is what makes everything we create together feel like it was made specifically for you — because it will be.
->
-> Ready?"
+→ **Checkpoint C:** write the answers above to Brand. Stage 1 is complete.
