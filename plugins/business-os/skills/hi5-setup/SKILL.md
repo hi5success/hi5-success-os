@@ -25,7 +25,7 @@ Setup is split into stages. Stage 1 gets the member started. Later stages can be
 
 | Stage | What it captures | Time | Skills that get better |
 |---|---|---|---|
-| 1. Core profile | Who they are, their market, tools, social, brand | ~10 min | Everything. Skills work after this stage |
+| 1. Core profile | Who they are, their market and business, tools, social, brand | ~10 min | Everything. Skills work after this stage |
 | 2. Compliance | Disclosure line, advertising and messaging rules | ~5 min | Every skill that writes something public (email, newsletter, website, landing, social, LinkedIn, blog) |
 | 3. Voice and edge | Who they serve best, what sets them apart, how they write and what to avoid | ~8 min | Every writing skill (scripts, email, newsletter, blog, social, website) |
 | 4. Objection Bank (real estate only) | Their answers to common seller objections | ~10 min | Listing appointment and follow-up skills |
@@ -191,7 +191,7 @@ When /hi5-setup is run and a workspace already exists, read the Master Profile's
 
 Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Option 5 is always shown.
 
-- **1** → run that stage from the industry file.
+- **1** → run that stage from the industry file. If Stage 1 is unfinished, resume at the first question group that is not saved yet (see Checkpoints in Phase 5) instead of starting over.
 - **2** → ask which section (Identity, Market, Tools, Presence, Brand, or another section on the profile) or which saved page (such as Compliance Guardrails or Voice Profile), show the current values, ask what to change, confirm, then update that section only.
 - **3** → ask which stage, then run it. Show the current saved content first and ask "Replace it or add to it?"
 - **4** → run the neighborhoods stage for one new area, save it as a new child page, and add it to the Page IDs section.
