@@ -21,6 +21,7 @@ The Master Profile is one Notion page called "Master Profile" inside the root pa
 - stage_3_voice: same values
 - stage_4_objection_bank: same values (real estate only; leave out for other industries)
 - stage_5_neighborhoods: same values (real estate only; leave out for other industries)
+- self_test: `passed <date>` or `needs work <date>: <gaps>` (written by the setup self-test)
 
 ### Page IDs
 Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead of searching. Never show these to the member.

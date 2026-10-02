@@ -299,3 +299,22 @@ If they paste samples, produce all three, then check the voice summary against t
 Before showing it, compare each proof sample to their originals. If a sample uses a word or rhythm they would never use, fix it. Cut clichés like "game-changer", "take it to the next level", and "don't hesitate to reach out". Never use anything on their avoid list. Show the result and ask: "Does this sound like you? Tell me what to change." Revise until they approve.
 
 Save: the Edge fields to the Master Profile's Edge section, and everything else to the Voice Profile page using the template. Then continue the general procedure (confirm, save, say where it is saved).
+
+---
+
+# SELF-TEST SCENARIO
+
+Used by the SELF-TEST section in `SKILL.md`. Fill the brackets from the member's profile.
+
+- [OFFER] → `offer`, otherwise `niche` or `industry`
+- [MARKET] → `primary_market`
+- Tell the member which scenario details you filled in.
+
+**Scenario:**
+"A prospect I met this week in [MARKET] likes my approach to [OFFER], but says my price is higher than they planned to spend and asks me to guarantee a specific result. I'm competing with two other providers."
+
+**Deliverables:**
+1. **Value strategy:** how to frame the price gap without arguing (3 bullets).
+2. **Handling the hesitation:** how to respond to the request for a guarantee (2 phrases I could use).
+3. **Follow-up email** I can send tonight: under 150 words, in my voice, ending with my disclosure line (if I have one).
+4. **One-line social post** about the value of [OFFER] that does not promise a result and follows my compliance guardrails.

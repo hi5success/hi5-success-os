@@ -444,3 +444,24 @@ Update Setup Status: `stage_5_neighborhoods: complete <date> (N areas)`.
 When saved, tell the member: "Your [area] fact file is saved as a page under your Master Profile. To add another area later, run /hi5-setup and choose Add a neighborhood. To refresh the numbers, choose Redo a stage."
 
 Ask: "Want to add another area now, or stop here?"
+
+---
+
+# SELF-TEST SCENARIO
+
+Used by the SELF-TEST section in `SKILL.md`. Fill the brackets from the member's profile.
+
+- [NEIGHBORHOOD] → the first area in `neighborhoods`, otherwise `primary_market`
+- [PRICE] → a realistic example price that fits `price_range`
+- [HIGHER PRICE] → roughly 8 to 10 percent above [PRICE]
+- If `price_range` is missing, ask once: "What's a typical home price in [primary_market]?"
+- Tell the member which example numbers you chose.
+
+**Scenario:**
+"I just left a listing appointment in [NEIGHBORHOOD]. The data supports about [PRICE], but the sellers want [HIGHER PRICE]. They've owned the home a long time and are attached to it. I'm competing with two other agents."
+
+**Deliverables:**
+1. **Pricing strategy:** how to frame the gap without arguing (3 bullets).
+2. **Emotional attachment:** how to handle the conversation (2 phrases I could use).
+3. **Follow-up email** I can send tonight: under 150 words, in my voice, ending with my disclosure line.
+4. **One-line Instagram caption** about pricing strategy that is Fair Housing compliant.

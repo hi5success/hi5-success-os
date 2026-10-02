@@ -41,7 +41,7 @@ Every stage after Stage 1 follows the same steps:
 4. **Confirm.** Show the member a short plain-language summary and ask whether it looks right. Make any changes they ask for.
 5. **Save.** Create the stage's page as a child of the Master Profile (or update it if it already exists). Save its ID in the Page IDs section, and set the stage's line in Setup Status to `complete <today's date>`.
 6. **Say where it is saved and how to change it.** For example: "Saved to your Compliance Guardrails page in your Hi5 workspace. To change it any time, run /hi5-setup and choose Update something or Redo a stage."
-7. **Offer the next step.** Offer the next unfinished stage, or let them stop. Never push.
+7. **Offer the next step.** Offer the next unfinished stage, or let them stop. Never push. After Stage 2 or Stage 3 (and after any big edit to the profile), also offer the self-test: "Want a two-minute test to see how well I use your profile?"
 
 ---
 
@@ -171,7 +171,7 @@ Use the member's name and these facts. Say what was created, what works now, and
 >
 > **Recommended next step:** run /hi5-self so I can learn how you think and communicate. Everything I write for you will match your style.
 >
-> Want to keep going with the next stage now, or stop here and come back any time with /hi5-setup?"
+> Want to keep going with the next stage now, or stop here and come back any time with /hi5-setup? You can also run a two-minute self-test any time to see how well I use your profile."
 
 If they want to continue, run the next available stage from the industry file.
 
@@ -186,18 +186,39 @@ When /hi5-setup is run and a workspace already exists, read the Master Profile's
 > 1. Continue setup — [name of the next unfinished stage]
 > 2. Update something in my profile
 > 3. Redo a stage
-> 4. Add a neighborhood *(real estate only)*"
+> 4. Add a neighborhood *(real estate only)*
+> 5. Run the setup self-test"
 
-Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished.
+Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Option 5 is always shown.
 
 - **1** → run that stage from the industry file.
 - **2** → ask which section (Identity, Market, Tools, Presence, Brand, or another section on the profile) or which saved page (such as Compliance Guardrails or Voice Profile), show the current values, ask what to change, confirm, then update that section only.
 - **3** → ask which stage, then run it. Show the current saved content first and ask "Replace it or add to it?"
 - **4** → run the neighborhoods stage for one new area, save it as a new child page, and add it to the Page IDs section.
+- **5** → run the SELF-TEST below.
 
 Never rebuild the workspace on a re-run. If a page is missing, recreate only that page and update its ID.
 
 ---
+
+## SELF-TEST
+
+The self-test checks that the Master Profile is actually loading and being used. It catches thin or missing profile details before the member relies on the skills. Run it when the member asks, when they choose it from the re-run menu, or when they say yes to the offer after a stage.
+
+1. **Load everything first.** Find the workspace, then open the Master Profile and every child page that exists: Compliance Guardrails, Voice Profile, Objection Bank, and any Neighborhood pages. Do not rely on memory of earlier answers.
+2. **Pick the scenario.** Use the SELF-TEST SCENARIO section of the member's industry file. Fill the brackets from the profile and tell the member which example details you chose.
+3. **Say it is a test.** "This is a setup test, so I'll show my work."
+4. **Do the deliverables.** Complete every numbered deliverable in the scenario, using only what is in the profile and its pages. Write in the member's voice, follow the Compliance Guardrails, and end anything public with the saved disclosure line.
+5. **Grade yourself honestly.** Answer all three questions below. Only list a detail if you really used it. Never claim details you did not use.
+   - Which specific profile details did you use? List each one by name (for example the market, the disclosure line, a phrase to avoid, a proof point).
+   - Which section of the profile was missing or too vague to use?
+   - Did anything you wrote break the member's compliance guardrails?
+6. **Decide the result.**
+   - If you cannot name at least 4 specific profile details you used, say: "The setup is not loading correctly." Tell the member exactly what you could not find, and suggest finishing the stage that covers it.
+   - **Passed** = at least 4 specific details used and no guardrail broken.
+   - **Needs work** = anything else.
+7. **Save the result.** Write `self_test` in the Master Profile's Setup Status section: `passed <today's date>`, or `needs work <today's date>: <the gaps in a few words>`.
+8. **Offer the fix.** For each gap, name the stage that covers it and offer to run it now. Never change the profile without the member's confirmation.
 
 ## SAVING RULES
 
