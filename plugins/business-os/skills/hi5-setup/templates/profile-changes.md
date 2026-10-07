@@ -44,3 +44,6 @@ These fields are collected inside the skill that uses them, not by setup, so `pr
 | lead_source_costs | Business Numbers | /hi5-bizreview, asked once if the member wants cost per closing by lead source |
 | A `Sources:` tally on a check-in log line | Quarterly Goals page | /hi5-goals, the optional weekly source question |
 | One section per review, newest first, on the Business Reviews page, plus a link line in that quarter's section on the Quarterly Goals page | Business Reviews page, Quarterly Goals page | /hi5-bizreview |
+| crm_connection, ghl_location_name, last_crm_map, crm_map_page_id | Tools, Page IDs | /hi5-re-crm, the first time it maps the member's CRM |
+| mls_name, cma_adjustments | Tools | /hi5-re-listing-appt, asked once when a CMA is built |
+| One Listing Appointment row per kit | Marketing Hub | /hi5-re-listing-appt |

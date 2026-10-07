@@ -103,7 +103,7 @@ fi
 
 # 6. Every skill that saves to the Marketing Hub carries the safety net, so a missing
 #    Marketing Hub never makes a save fail
-for skill_dir in plugins/marketing-os/skills/*/; do
+for skill_dir in plugins/marketing-os/skills/*/ plugins/real-estate-os/skills/*/; do
   skill_name=$(basename "$skill_dir")
   if grep -q 'marketing_hub_db_id' "${skill_dir}SKILL.md"; then
     grep -q 'Marketing Hub safety net' "${skill_dir}SKILL.md" || ERRORS+=("$skill_name: saves to the Marketing Hub but has no 'Marketing Hub safety net' section")
@@ -113,7 +113,7 @@ done
 # 7. Marketing Hub Type list: the setup layout and every safety net must list the same options
 WB="plugins/business-os/skills/hi5-setup/templates/workspace-build.md"
 wb_types=$(grep -E '^\| Type \| select \|' "$WB" | head -1 | sed 's/^| Type | select | //; s/ |[[:space:]]*$//')
-for skill_dir in plugins/marketing-os/skills/*/; do
+for skill_dir in plugins/marketing-os/skills/*/ plugins/real-estate-os/skills/*/; do
   skill_name=$(basename "$skill_dir")
   if grep -q 'Marketing Hub safety net' "${skill_dir}SKILL.md"; then
     grep -qF "Type (select: $wb_types)" "${skill_dir}SKILL.md" || ERRORS+=("$skill_name: the Marketing Hub safety net Type list does not match workspace-build.md ($wb_types)")
@@ -129,7 +129,7 @@ fi
 
 # 9. The funnel core stays industry neutral: real estate specifics live only in its industry file
 FUNNEL_CORE="plugins/marketing-os/skills/hi5-funnel/SKILL.md"
-if [ -f "$FUNNEL_CORE" ] && grep -qiE 'fair housing|\bMLS\b|realtor|listing appointment' "$FUNNEL_CORE"; then
+if [ -f "$FUNNEL_CORE" ] && grep -v 'Type (select:' "$FUNNEL_CORE" | grep -qiE 'fair housing|\bMLS\b|realtor|listing appointment'; then
   ERRORS+=("hi5-funnel/SKILL.md contains real estate specifics. Move them to industries/real-estate.md")
 fi
 
@@ -161,6 +161,28 @@ if [ -z "$cur" ]; then
 else
   grep -qF "profile_version: $cur" "$SETUP_DIR/templates/workspace-build.md" || ERRORS+=("workspace-build.md does not start new profiles at profile_version: $cur")
   grep -qF "The current version is $cur." "$SETUP_DIR/templates/master-profile.md" || ERRORS+=("master-profile.md does not say the current version is $cur")
+fi
+
+# 13. Real estate only skills (hi5-re-) live only in real-estate-os, every skill in real-estate-os is hi5-re-, and each one follows the shared guardrails file
+for skill_dir in plugins/*/skills/*/; do
+  skill_name=$(basename "$skill_dir")
+  plugin=$(basename "$(dirname "$(dirname "$skill_dir")")")
+  case "$skill_name" in
+    hi5-re-*) [ "$plugin" = "real-estate-os" ] || ERRORS+=("$skill_name: hi5-re- skills must live in plugins/real-estate-os");;
+    *) [ "$plugin" = "real-estate-os" ] && ERRORS+=("$skill_name: every skill in real-estate-os must start with hi5-re-");;
+  esac
+  if [ "$plugin" = "real-estate-os" ]; then
+    grep -q 'guardrails.md' "${skill_dir}SKILL.md" || ERRORS+=("$skill_name: SKILL.md does not point to references/guardrails.md")
+    grep -qiE 'industry_flow' "${skill_dir}SKILL.md" || ERRORS+=("$skill_name: SKILL.md does not check industry_flow for real estate members")
+  fi
+done
+[ -f plugins/real-estate-os/skills/hi5-re-crm/references/guardrails.md ] || ERRORS+=("real-estate-os is missing hi5-re-crm/references/guardrails.md")
+
+# 14. Browser-assisted search is allowed in exactly one place, the optional CMA step on the member's own MLS login
+if grep -rIl 'Claude for Chrome' plugins 2>/dev/null | grep -v 'hi5-re-listing-appt/references/cma.md' | grep -q .; then
+  for f in $(grep -rIl 'Claude for Chrome' plugins | grep -v 'hi5-re-listing-appt/references/cma.md'); do
+    ERRORS+=("$f: mentions Claude for Chrome. Browser-assisted search is allowed only in the optional CMA step")
+  done
 fi
 
 if [ ${#ERRORS[@]} -gt 0 ]; then

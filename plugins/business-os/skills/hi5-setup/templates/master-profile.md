@@ -44,6 +44,7 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - content_planner_db_id
 - marketing_hub_db_id
 - skill_guide_page_id
+- crm_map_page_id (added by /hi5-re-crm)
 - keyword_tracker_db_id (added by /hi5-yt-setup)
 - channel_pages (added by /hi5-yt-setup, only with multiple channels): `Name = page id` pairs, comma separated
 - compliance_page_id (added by Stage 2)
@@ -72,6 +73,11 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - crm
 - crm_usage
 - calendar_software
+- crm_connection: `ghl-connector`, `other-connector`, or `paste-mode` (written by /hi5-re-crm)
+- ghl_location_name: the GoHighLevel sub-account the member normally uses (written by /hi5-re-crm)
+- last_crm_map: the date the CRM Map was last updated (written by /hi5-re-crm)
+- mls_name: the member's MLS (asked once by /hi5-re-listing-appt)
+- cma_adjustments: the member's own adjustment values for a CMA, in their words (asked once by /hi5-re-listing-appt)
 
 ### Presence
 - social_platforms: each platform with its URL

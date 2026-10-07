@@ -17,7 +17,7 @@
       "name": "business-os",
       "source": "./plugins/business-os",
       "description": "Business planning, goal setting, and performance review tools for entrepreneurs and small business owners.",
-      "version": "1.6.0",
+      "version": "1.6.1",
       "author": { "name": "Hi5 Success" },
       "keywords": ["business", "planning", "goals", "strategy", "notion", "entrepreneur"]
     },
@@ -25,9 +25,17 @@
       "name": "marketing-os",
       "source": "./plugins/marketing-os",
       "description": "Email, newsletter, SEO, LinkedIn, website copy, landing pages, and case study tools for consistent marketing execution.",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "author": { "name": "Hi5 Success" },
       "keywords": ["marketing", "email", "seo", "linkedin", "website", "landing-page", "newsletter", "notion"]
+    },
+    {
+      "name": "real-estate-os",
+      "source": "./plugins/real-estate-os",
+      "description": "Real estate only skills for agents, teams, and brokers. Run your CRM by conversation and prepare for listing appointments, with Fair Housing, texting consent, and approval-first guardrails built in.",
+      "version": "1.0.0",
+      "author": { "name": "Hi5 Success" },
+      "keywords": ["real estate", "crm", "gohighlevel", "listing appointment", "cma", "fair housing", "notion"]
     }
   ]
 }

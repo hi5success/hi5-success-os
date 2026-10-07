@@ -21,6 +21,8 @@ It works for any industry. It is strongest for real estate agents, teams, and br
 > Marketplace link to add: `https://github.com/hi5success/hi5-success-os`
 >
 > Plugins to install: Business OS, Content OS, and Marketing OS. Business OS comes first, because it holds `/hi5-setup`.
+>
+> **Real estate members also install Real Estate OS.** It is a separate install and it works only for real estate. It adds `/hi5-re-crm` and `/hi5-re-listing-appt`.
 
 ---
 
@@ -89,6 +91,12 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-landing` | Writes landing page copy for a single offer |
 | `/hi5-funnel` | Builds a complete funnel for any offer in any industry: an Offer Brief, one core message, compliant ads, the landing page, the thank-you page, and follow-up emails, plus step by step build instructions for your platform. Can also audit a page, ad, or email. Drafts only |
 | `/hi5-casestudy` | Turns a client win into a case study |
+
+### Real Estate OS (real estate members only, a separate install)
+| Command | What it does |
+|---|---|
+| `/hi5-re-crm` | Runs your CRM by conversation, GoHighLevel first with a paste mode for any other CRM. Tests the connection, maps your CRM, logs leads, showings, and appointments, turns contracts and leases into CRM updates, books meetings, moves and cleans up deals, closes or loses deals, forecasts your pipeline, and drafts and sends one message at a time. Covers every client type. Shows a plan and waits for your OK before any change or send, checks texting consent, and keeps Fair Housing out of every record |
+| `/hi5-re-listing-appt` | Prepares you for a listing appointment and follows up after it. Builds the game plan, the pre-appointment intake, a CMA from comps you export from your own MLS (or an optional browser-assisted search on your own login), the pricing conversation, objection answers, and the follow-up sequence. Works for home sellers, landlords, investors, 55+ community sellers, luxury, and land, new construction, and commercial. Never quotes a standard commission. Drafts only |
 
 ---
 
