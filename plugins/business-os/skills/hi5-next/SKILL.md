@@ -50,6 +50,7 @@ If every step on the path is done, use the upkeep rules in Step 4.
 ## Step 4: Upkeep (when the path is done)
 
 Recommend the first one that applies:
+- `industry_flow` is `real-estate`, Real Estate OS is installed, the member's `crm` is GoHighLevel, and the Page IDs section has no `crm_map_page_id`: /hi5-re-crm, and say to choose Map my CRM. Offer it only after any weekly check-in nudge.
 - Business Numbers has a goal and `current_quarter` is set, and the last weekly check-in (`last_check_in`) is more than 7 days ago, or no check-in is logged and the quarter began more than 7 days ago: /hi5-goals, and say to choose a weekly check-in.
 - Business Numbers has `current_quarter` and `last_check_in`, and `last_review_date` is missing or more than 30 days ago, and the quarter has at least two check-ins or two weeks or fewer left: /hi5-bizreview. Offer it after any weekly check-in nudge, never before it.
 - The Content Planner has no Scheduled video with a Publish Date in the next 14 days: /hi5-yt-plan (skip if they have no channel).
