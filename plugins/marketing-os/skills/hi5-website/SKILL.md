@@ -24,7 +24,7 @@ Search Notion for "Hi5 Success OS Workspace" and for "hi5-os-root". Open each re
 ### Marketing Hub safety net
 This skill saves to the Marketing Hub, so make sure it exists before you start.
 1. If `marketing_hub_db_id` is missing, or that database cannot be opened, search the member's workspace under the root page for a database titled "Marketing Hub". If you find one, save its ID as `marketing_hub_db_id` in the Page IDs section and continue.
-2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
+2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Funnel, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
 3. If they say no, or the database cannot be created, do not lose the work. Give the member the full result in the chat, say "I couldn't save this to your Notion. Run /hi5-setup and it will offer to add your Marketing Hub, then ask me to save it," and stop trying to save. Never create a second Marketing Hub, and never create any other database.
 
 ## Compliance
@@ -43,6 +43,17 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 Read `industry_flow` from Setup Status (`real-estate` or `generic`) and load `industries/<industry_flow>.md`. It holds the questions, menus, and output details for that kind of business. If `industry_flow` is missing, use `generic`. Real estate members work with many kinds of clients, so adapt to every client type in `client_categories`, not only listings.
 
 ---
+
+## PAGE FRAMEWORKS (all industries)
+
+Read sections 1, 5, and 7 of `../hi5-funnel/references/frameworks.md` and apply them to every page:
+- **Home and service pages: decide first, prove below.** The first screen works alone: who it is for, a headline with the small result, a subhead, three bullets on what changes, one piece of proof, and one button.
+- **About page: tell a short belief-shift story.** What you used to believe, what changed your mind, the better approach, what happened, and why you do this.
+- **Add a "who this is for and not for" block** to service pages. The "not for" list builds trust.
+- **Questions section:** build it from the member's real objections (the Objection Bank for real estate members, or what they hear on calls).
+- **Proof:** concrete results with context, only from what the member supplies. Mark gaps `[PROOF NEEDED]`.
+- Run the quick clarity test on each headline and the checklist in `../hi5-funnel/references/quality-gates.md`.
+- For a landing page for one offer, or a whole funnel, suggest /hi5-landing or /hi5-funnel.
 
 ## SEO inputs (all industries)
 

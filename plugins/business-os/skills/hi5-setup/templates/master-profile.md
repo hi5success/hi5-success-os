@@ -120,6 +120,9 @@ Written by /hi5-bizplan, not by setup. Skills that need these numbers read them 
 - gbp_status: Google Business Profile status
 - social_frequency, paid_ads, marketing_goals, top_lead_source, desired_lead_source
 - last_plan_date
+- offers: one line per thing the member sells: name, who buys it, typical price (asked once by /hi5-funnel)
+- offer_categories: which rule categories the offer touches: health or medical results, income or earnings, housing or real estate, credit or loans, a job or career opportunity, social issues or politics, or none (asked once by /hi5-funnel)
+- agent_facing_offers: yes only if a real estate member has said they recruit agents or sell products to agents. Never assumed or asked
 - client_mix: the member's share of business by client type or offer, in their words
 - quarter_basis, seasonality_note, avg_days_to_close: asked once by /hi5-goals
 - current_quarter (for example 2026-Q4), goals_last_set, last_check_in: written by /hi5-goals

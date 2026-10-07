@@ -42,7 +42,7 @@ Anytime (never part of the path, offer only when it fits): /hi5-linkedin
 | `/hi5-email` | marketing-os | live | Nurture | The Marketing Hub has a row of Type Email Sequence | A nurture sequence follows up with leads so they do not go cold. |
 | `/hi5-newsletter` | marketing-os | live | Nurture | The Marketing Hub has a row of Type Newsletter | A newsletter keeps you top of mind with your list. |
 | `/hi5-landing` | marketing-os | live | Grow | The Marketing Hub has a row of Type Landing Page | A focused page for one offer turns traffic into leads. |
-| `/hi5-funnel` | marketing-os | coming | Grow | Not built yet | A full funnel from offer to follow up. |
+| `/hi5-funnel` | marketing-os | live | Grow | The Marketing Hub has a row of Type Funnel | It builds a whole funnel for one offer: the message, ads, landing page, thank-you page, and follow-up emails. |
 | `/hi5-casestudy` | marketing-os | live | Grow | The Marketing Hub has a row of Type Case Study | A real client story builds trust and referrals. |
 | `/hi5-linkedin` | marketing-os | live | Anytime | The Marketing Hub has a row of Type LinkedIn Posts | LinkedIn reaches referral partners and professionals. |
 

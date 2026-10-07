@@ -110,6 +110,29 @@ for skill_dir in plugins/marketing-os/skills/*/; do
   fi
 done
 
+# 7. Marketing Hub Type list: the setup layout and every safety net must list the same options
+WB="plugins/business-os/skills/hi5-setup/templates/workspace-build.md"
+wb_types=$(grep -E '^\| Type \| select \|' "$WB" | head -1 | sed 's/^| Type | select | //; s/ |[[:space:]]*$//')
+for skill_dir in plugins/marketing-os/skills/*/; do
+  skill_name=$(basename "$skill_dir")
+  if grep -q 'Marketing Hub safety net' "${skill_dir}SKILL.md"; then
+    grep -qF "Type (select: $wb_types)" "${skill_dir}SKILL.md" || ERRORS+=("$skill_name: the Marketing Hub safety net Type list does not match workspace-build.md ($wb_types)")
+  fi
+done
+
+# 8. No original source author or trademarked method names anywhere in the plugins
+if grep -rIniE 'hormozi|schwartz|storybrand|brunson|epiphany bridge|grand slam|value equation' plugins >/dev/null 2>&1; then
+  for f in $(grep -rIliE 'hormozi|schwartz|storybrand|brunson|epiphany bridge|grand slam|value equation' plugins); do
+    ERRORS+=("$f: names an original author or method. Restate the idea in our own words")
+  done
+fi
+
+# 9. The funnel core stays industry neutral: real estate specifics live only in its industry file
+FUNNEL_CORE="plugins/marketing-os/skills/hi5-funnel/SKILL.md"
+if [ -f "$FUNNEL_CORE" ] && grep -qiE 'fair housing|\bMLS\b|realtor|listing appointment' "$FUNNEL_CORE"; then
+  ERRORS+=("hi5-funnel/SKILL.md contains real estate specifics. Move them to industries/real-estate.md")
+fi
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

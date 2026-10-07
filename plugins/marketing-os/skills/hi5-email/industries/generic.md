@@ -18,7 +18,9 @@ Read from the Master Profile: `name`, `industry`, `niche`, `primary_market`, `of
 > D) Post-sale follow up or onboarding
 > E) Event or webinar follow up
 > F) Win-back: people who went quiet
-> G) Something else: I will describe it"
+> G) Something else: I will describe it
+> H) Free resource follow-up (five to seven emails after someone downloads or requests something)
+> I) After a purchase or booking (three to five emails)"
 
 ## SEQUENCE DETAILS
 

@@ -79,6 +79,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-linkedin` | Writes LinkedIn posts from your existing content |
 | `/hi5-website` | Writes website page copy |
 | `/hi5-landing` | Writes landing page copy for a single offer |
+| `/hi5-funnel` | Builds a complete funnel for any offer in any industry: an Offer Brief, one core message, compliant ads, the landing page, the thank-you page, and follow-up emails, plus step by step build instructions for your platform. Can also audit a page, ad, or email. Drafts only |
 | `/hi5-casestudy` | Turns a client win into a case study |
 
 ---

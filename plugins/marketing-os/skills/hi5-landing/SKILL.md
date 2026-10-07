@@ -24,7 +24,7 @@ Search Notion for "Hi5 Success OS Workspace" and for "hi5-os-root". Open each re
 ### Marketing Hub safety net
 This skill saves to the Marketing Hub, so make sure it exists before you start.
 1. If `marketing_hub_db_id` is missing, or that database cannot be opened, search the member's workspace under the root page for a database titled "Marketing Hub". If you find one, save its ID as `marketing_hub_db_id` in the Page IDs section and continue.
-2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
+2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Funnel, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
 3. If they say no, or the database cannot be created, do not lose the work. Give the member the full result in the chat, say "I couldn't save this to your Notion. Run /hi5-setup and it will offer to add your Marketing Hub, then ask me to save it," and stop trying to save. Never create a second Marketing Hub, and never create any other database.
 
 ## Compliance
@@ -55,6 +55,17 @@ Read `industry_flow` from Setup Status (`real-estate` or `generic`) and load `in
 > D) Organic social
 > E) Email campaign
 > F) Multiple sources"
+
+## HOW TO STRUCTURE THE PAGE (all industries)
+
+Read sections 6 and 7 of `../hi5-funnel/references/frameworks.md` and apply them:
+- **Match the page to how ready the visitor is.** Cold ad traffic gets a longer page that starts with the problem or the result they want. An email list or past customers get a short page that starts with the offer.
+- **Decide first, prove below.** The first screen must work alone for someone ready to act: who it is for, the headline with the small result, a subhead, three bullets on what changes, one piece of proof, and a button in the visitor's own words. Everything below serves the visitor who needs more.
+- **Sign-up pages for a free resource** are short, with no navigation, a short form, and a button that states the result. Ask for a phone number only if the member's texting consent is documented, and add the consent checkbox.
+- **Message match.** The headline must repeat the promise made in the ad or link that sent the visitor.
+- **Quick clarity test** on the headline, using section 5 of the frameworks.
+- Run the copy checklist and compliance gates in `../hi5-funnel/references/quality-gates.md` before presenting the copy.
+- If the member wants the whole path (ads, thank-you page, and emails), suggest /hi5-funnel.
 
 ## OUTPUT (all industries)
 
