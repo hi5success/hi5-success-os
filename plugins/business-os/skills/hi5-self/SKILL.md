@@ -3,27 +3,28 @@ name: hi5-self
 description: Personality and communication profile builder for Hi5 Success OS. Assesses the member's behavioral style, decision-making patterns, energy type, and communication preferences using 30 guided questions with multiple choice answers. Used to tailor all Hi5 skill outputs to the member's personality. Triggers when the user runs /hi5-self, says "personality assessment", "learn about me", or "profile assessment". Can also be triggered automatically at the end of /hi5-setup.
 ---
 
-# Hi5 Self — Personality Profile Skill
+# Hi5 Self: Personality Profile Skill
 
 ## Purpose
-Learn how the member thinks, communicates, makes decisions, and is motivated. Store this profile in their Master Profile so every Hi5 skill — business plan, scripts, emails, goals — is tailored to their personality and not a generic output.
+Learn how the member thinks, communicates, makes decisions, and is motivated. Store this profile in their Master Profile so every Hi5 skill, business plan, scripts, emails, goals, is tailored to their personality and not a generic output.
 
 ## Core Rules
 - One question at a time
-- Always provide multiple choice options — they can always add more detail after selecting
-- Never rush — this is one of the most valuable things we can capture
+- Always provide multiple choice options. They can always add more detail after selecting
+- Never rush: this is one of the most valuable things we can capture
 - After scoring, always explain what their profile means in plain language
 - Always recommend free external tools to go deeper
+- Combination answers: if the member says they are between two options (for example "B and C"), record both. Ask "Which one is more like you?" if they do not say. Score mainly on the primary answer: it counts as a full answer, and the secondary answer only breaks ties between letters. Save both answers in the notes so nothing is lost. Never score a combination as half and half
 
 ---
 
 ## OPENING
 
-> "This is one of the most important things we will do together — and it is what makes Hi5 Success OS different from every other tool out there.
+> "This is one of the most important things we will do together, and it is what makes Hi5 Success OS different from every other tool out there.
 >
-> Most AI tools give everyone the same output. Ours adapts to how YOU think, communicate, and make decisions. Every business plan, every script, every email we create together will be written for your personality — not a generic agent or business owner.
+> Most AI tools give everyone the same output. Ours adapts to how YOU think, communicate, and make decisions. Every business plan, every script, every email we create together will be written for your personality, not a generic agent or business owner.
 >
-> To do that I need to learn a few things about you. I will ask you 30 questions with multiple choice answers. Just pick what feels most like you — there are no wrong answers. You can always add more detail after selecting an option.
+> To do that I need to learn a few things about you. I will ask you 30 questions with multiple choice answers. Just pick what feels most like you. There are no wrong answers. You can always add more detail after selecting an option.
 >
 > This takes about 10 minutes. Ready to go?"
 
@@ -31,44 +32,57 @@ Learn how the member thinks, communicates, makes decisions, and is motivated. St
 
 ## PATH SELECTION
 
-> "Do you already have any personality assessment results you can share?"
+> "Do you already have any personality assessment results you can share? Any of these work, and you can share more than one: DISC, Human Design, Enneagram, 16 Personalities (Myers-Briggs), CliftonStrengths, Kolbe, or anything else.
 >
-> A) Yes — I have my DISC profile results (paste them in)
-> B) Yes — I have my Human Design chart (paste it or tell me your type)
-> C) Yes — I have both
-> D) I want to take a proper assessment first — point me to free tools
-> E) No — let's go through your questions now
+> A) Yes, I have results (tell me which ones and paste them in)
+> B) I want to take a proper assessment first: point me to free tools
+> C) No, let's go through your questions now"
 
-### If D selected — Free Tools:
+### If B selected: Free Tools
 > "Here are the best free options:
 >
 > **Behavioral Style (DISC-style):**
-> 123test.com/disc-personality-test — free, takes 10 minutes
+> 123test.com/disc-personality-test: free, takes 10 minutes
 >
 > **Human Design:**
-> mybodygraph.com — free, needs your birth date, time, and location
+> mybodygraph.com: free, needs your birth date, time, and location
 >
 > **Myers-Briggs Style:**
-> 16personalities.com — free, takes 12 minutes
+> 16personalities.com: free, takes 12 minutes
 >
 > Take whichever resonates, then come back and paste your results. I will interpret everything and store it in your profile.
 >
 > Or if you want to skip the external tools and just answer my questions now, say the word and we will get started."
 
-### If they paste results:
-Interpret the results, summarize in plain language, store in Master Profile, then ask the communication and content style questions from Section 3 below since those are not covered by standard assessments.
+### If A selected: Results, then fill the gaps
+1. **Read what they paste.** Name each kind of result you recognize: DISC, Human Design, Enneagram, 16 Personalities or Myers-Briggs, CliftonStrengths, Kolbe, or anything else. For a result you do not recognize, ask what it measures in their own words and treat it as extra information, not as a replacement for any question.
+2. **Summarize in plain language** what the results say about how they work, communicate, and are motivated.
+3. **Fill the gaps.** Never leave the profile with missing pieces. Ask, one at a time and with multiple choice, whichever of the 30 questions their results do not clearly answer. Skip a question only when the results clearly answer it. When in doubt, ask it. Use this table as a guide to what each kind of result usually covers:
 
-### If E selected — proceed to full 30 question flow below.
+| Result | Usually covers |
+|---|---|
+| DISC | How they work and communicate: Q1 to Q12 |
+| Human Design | Energy and decision patterns: Section 4, Q24 to Q30 |
+| Enneagram | Motivation and stress: Q17 to Q21, Q2, Q8 |
+| 16 Personalities or Myers-Briggs | Decision style and energy: Q1, Q5, Q6, Q28 |
+| CliftonStrengths | Strengths and work style: Q7, Q20 |
+| Kolbe | How they take action: Q1, Q6 |
+| Anything else | Decide from what it measures. When unsure, ask |
+
+**Always ask these, whatever results they have.** No standard assessment covers them: Q13 to Q16 (content style and signature phrases), Q22 (success vision), and Q23 (biggest blocker).
+4. **Score.** Use their results for behavioral style where they give it (a DISC result gives D, I, S, or C directly). For other results, estimate the closest D, I, S, or C and say it is an estimate. Combine that with the gap-fill answers using the scoring rules below. Record which results they supplied in `assessment_sources`.
+
+### If C selected: proceed to the full 30 question flow below.
 
 ---
 
-## SECTION 1 — How You Work (8 questions)
+## SECTION 1: How You Work (8 questions)
 
 **Q1**
 > "When you have a big decision to make, what is most like you?"
 >
-> A) I decide fast and move — I can adjust later
-> B) I talk it through with someone — I think out loud
+> A) I decide fast and move: I can adjust later
+> B) I talk it through with someone: I think out loud
 > C) I want everyone on board before I commit
 > D) I research thoroughly before I decide anything
 >
@@ -78,7 +92,7 @@ Interpret the results, summarize in plain language, store in Master Profile, the
 > "When something goes wrong in your business, your first reaction is:"
 >
 > A) Fix it immediately and move on
-> B) Tell someone — I need to process it out loud
+> B) Tell someone: I need to process it out loud
 > C) Make sure the people around me are okay first
 > D) Figure out exactly what went wrong before acting
 
@@ -93,7 +107,7 @@ Interpret the results, summarize in plain language, store in Master Profile, the
 **Q4**
 > "How do you prefer to receive feedback?"
 >
-> A) Direct and blunt — just tell me
+> A) Direct and blunt: just tell me
 > B) Conversational and encouraging
 > C) Gentle and thoughtful
 > D) Detailed with examples and data
@@ -101,7 +115,7 @@ Interpret the results, summarize in plain language, store in Master Profile, the
 **Q5**
 > "Your work energy looks like:"
 >
-> A) Intense bursts — I go hard then recover
+> A) Intense bursts: I go hard then recover
 > B) High energy around people, lower when alone
 > C) Steady and consistent throughout the day
 > D) Deep focus for long stretches on one thing
@@ -132,12 +146,12 @@ Interpret the results, summarize in plain language, store in Master Profile, the
 
 ---
 
-## SECTION 2 — How You Communicate (8 questions)
+## SECTION 2: How You Communicate (8 questions)
 
 **Q9**
 > "When you explain something to a client you lead with:"
 >
-> A) The bottom line — here is what you need to know
+> A) The bottom line: here is what you need to know
 > B) A story or example that makes it real
 > C) Reassurance that I have got them covered
 > D) Facts, data, and evidence
@@ -185,27 +199,29 @@ Interpret the results, summarize in plain language, store in Master Profile, the
 **Q15**
 > "How long does it take you to write a caption or email?"
 >
-> A) Fast — I write what I think and move on
+> A) Fast: I write what I think and move on
 > B) It flows when I am in the mood but I get distracted
 > C) I overthink it and rewrite it multiple times
-> D) A long time — I want it to be accurate and thorough
+> D) A long time: I want it to be accurate and thorough
 
 **Q16**
-> "What words or phrases do you find yourself saying constantly — in conversations, on calls, or in your content? Just type a few that come to mind."
+First check the Voice Profile page. If it already has `phrases_used`, skip this question, copy those phrases to `signature_phrases`, and say "I already have your phrases from your voice setup."
+Otherwise ask:
+> "What words or phrases do you find yourself saying constantly, in conversations, on calls, or in your content? Just type a few that come to mind."
 *(Open ended)*
-Store: PROFILE.signature_phrases
+Store: signature_phrases. If the Voice Profile page exists, also write the same phrases to `phrases_used` on it, so the member is asked only once.
 
 ---
 
-## SECTION 3 — How You Are Motivated (7 questions)
+## SECTION 3: How You Are Motivated (7 questions)
 
 **Q17**
 > "What drives you most in your business right now?"
 >
-> A) Winning — hitting big goals and being the best
-> B) Impact — inspiring others and being known
-> C) Stability — building something secure and lasting
-> D) Mastery — becoming the most knowledgeable in my field
+> A) Winning: hitting big goals and being the best
+> B) Impact: inspiring others and being known
+> C) Stability: building something secure and lasting
+> D) Mastery: becoming the most knowledgeable in my field
 
 **Q18**
 > "You feel most successful when:"
@@ -226,7 +242,7 @@ Store: PROFILE.signature_phrases
 **Q20**
 > "Your ideal workday looks like:"
 >
-> A) Back to back action — calls, decisions, results
+> A) Back to back action: calls, decisions, results
 > B) A mix of people time, creative work, and flexibility
 > C) A steady predictable schedule with time for relationships
 > D) Deep uninterrupted focus time to think and create
@@ -251,23 +267,23 @@ Store: PROFILE.biggest_blocker
 
 ---
 
-## SECTION 4 — Human Design Indicators (7 questions)
+## SECTION 4: Human Design Indicators (7 questions)
 
 **Q24**
 > "When opportunities come to you, what feels most natural?"
 >
-> A) I initiate — I create my own opportunities and go get them
-> B) I respond — my best moves happen when I react to what shows up
+> A) I initiate: I create my own opportunities and go get them
+> B) I respond: my best moves happen when I react to what shows up
 > C) I wait to be invited before I share my expertise or take action
 > D) I sample different things over time before I fully commit
 
 **Q25**
 > "Your energy throughout the day feels like:"
 >
-> A) Consistent and reliable — I can go all day
-> B) It comes in waves — sometimes I am on fire, sometimes I need to stop
-> C) It depends on who I am around — I absorb the energy of others
-> D) Quiet and focused — I do not have high energy but I have deep clarity
+> A) Consistent and reliable: I can go all day
+> B) It comes in waves: sometimes I am on fire, sometimes I need to stop
+> C) It depends on who I am around: I absorb the energy of others
+> D) Quiet and focused: I do not have high energy but I have deep clarity
 
 **Q26**
 > "When you make your best decisions they usually come from:"
@@ -280,17 +296,17 @@ Store: PROFILE.biggest_blocker
 **Q27**
 > "In your business you naturally:"
 >
-> A) Start things and hand them off — initiating is my gift
+> A) Start things and hand them off: initiating is my gift
 > B) Do my best work when responding to what is already in motion
-> C) Guide and advise others — I see what others miss
+> C) Guide and advise others: I see what others miss
 > D) Need to sample and explore before I find my lane
 
 **Q28**
 > "How do you feel after a full day of back to back people interaction?"
 >
-> A) Energized — that is when I am at my best
+> A) Energized: that is when I am at my best
 > B) Satisfied but ready to decompress
-> C) Drained — I need alone time to reset
+> C) Drained: I need alone time to reset
 > D) Depends entirely on the people and the purpose
 
 **Q29**
@@ -304,7 +320,7 @@ Store: PROFILE.biggest_blocker
 **Q30**
 > "Do you have a consistent sense of who you are regardless of who you are around, or does your identity shift based on your environment?"
 >
-> A) Consistent — I am the same everywhere
+> A) Consistent: I am the same everywhere
 > B) I adapt but my core stays the same
 > C) I genuinely take on the energy and identity of who I am around
 > D) It depends on the context
@@ -317,17 +333,19 @@ After all 30 questions score as follows:
 
 ### Behavioral Style Scoring:
 Count answers by letter across Sections 1-3:
-- Mostly A → High D (Driver) — direct, decisive, results-focused
-- Mostly B → High I (Influencer) — energetic, relational, big picture
-- Mostly C → High S (Steady) — loyal, supportive, consistent
-- Mostly D → High C (Conscientious) — analytical, detail-oriented, accurate
+- Mostly A → High D (Driver): direct, decisive, results-focused
+- Mostly B → High I (Influencer): energetic, relational, big picture
+- Mostly C → High S (Steady): loyal, supportive, consistent
+- Mostly D → High C (Conscientious): analytical, detail-oriented, accurate
 - Mixed → note the combination (e.g. D/I blend, S/C blend)
 
+For answers where the member gave a combination (for example "B and C"), count the primary answer as a full answer and use the secondary only to break a tie. See Core Rules.
+
 ### Human Design Approximation (Section 4):
-- Mostly A → Manifestor tendencies — initiates, independent, bursts of energy
-- Mostly B → Generator/MG tendencies — responsive, sustainable energy, needs to respond
-- Mostly C → Projector tendencies — guide and advisor, invitation-based, selective energy
-- Mostly D → Reflector tendencies — samples environments, lunar cycle decisions, rare
+- Mostly A → Manifestor tendencies: initiates, independent, bursts of energy
+- Mostly B → Generator/MG tendencies: responsive, sustainable energy, needs to respond
+- Mostly C → Projector tendencies: guide and advisor, invitation-based, selective energy
+- Mostly D → Reflector tendencies: samples environments, lunar cycle decisions, rare
 
 Note: Always clarify this is an approximation and recommend mybodygraph.com for official type.
 
@@ -350,10 +368,10 @@ Deliver a plain language summary:
 >
 > **Your Energy Type (approximate): [Type]**
 > [What this means for how they work and make decisions]
-> Note: For your official Human Design type visit mybodygraph.com — you will need your birth date, time, and location.
+> Note: For your official Human Design type visit mybodygraph.com. You will need your birth date, time, and location.
 >
 > **How this changes everything I create for you:**
-> Every business plan, script, email, and piece of content we build together will be written for [their style] — not a generic template. A [their type] needs [specific things]. You will see the difference immediately.
+> Every business plan, script, email, and piece of content we build together will be written for [their style], not a generic template. A [their type] needs [specific things]. You will see the difference immediately.
 >
 > Want to go deeper on any of this before we move on?"
 
@@ -361,7 +379,7 @@ Deliver a plain language summary:
 
 ## STORAGE
 
-Save full profile to Master Profile under section: "Self Profile"
+Save full profile to Master Profile under section: "Self Profile". Insert it inside that section. Never append it at the end of the page, because the end of the page holds the Linked pages heading and child pages
 
 Fields stored:
 - behavioral_style (D/I/S/C dominant)
@@ -376,6 +394,8 @@ Fields stored:
 - biggest_blocker
 - signature_phrases
 - receives_info_best (derived from scoring)
+- assessment_sources (which results the member supplied, such as DISC or Enneagram, or "30 questions")
+- answer_notes (any combination answers, with the primary marked)
 
 ---
 

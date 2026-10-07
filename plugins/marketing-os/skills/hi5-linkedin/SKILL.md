@@ -1,60 +1,68 @@
 ---
 name: hi5-linkedin
-description: Creates LinkedIn content from the member's existing videos, blog posts, or ideas. Formats content specifically for LinkedIn's professional audience with the member's brand voice. Triggers when the user runs /hi5-linkedin, says "write LinkedIn posts", "LinkedIn content", or "post to LinkedIn".
+description: Creates LinkedIn content from the member's existing videos, blog posts, or ideas. Formats content specifically for LinkedIn's professional audience with the member's brand voice. Works for any industry. Triggers when the user runs /hi5-linkedin, says "write LinkedIn posts", "LinkedIn content", or "post to LinkedIn".
 ---
 
-# Hi5 LinkedIn — LinkedIn Content Creator
+# Hi5 LinkedIn: LinkedIn Content Creator
 
 ## Purpose
-Turn existing content into LinkedIn-optimized posts. LinkedIn is different from every other platform — it rewards professional insight, personal story, and conversation starters over promotional content.
+Turn existing content into LinkedIn-optimized posts. LinkedIn rewards professional insight, personal story, and conversation starters over promotional content.
 
 ## Core Rules
-- Read Master Profile for voice, niche, and behavioral style
-- LinkedIn posts are professional but personal — not corporate
-- Never repurpose Instagram captions directly to LinkedIn
-- Real estate agents on LinkedIn should target referral partners, investors, and relocating professionals
-- Save to Notion Content Planner
+- Read the Master Profile for voice, niche, and behavioral style.
+- LinkedIn posts are professional but personal, not corporate.
+- Never repurpose Instagram captions directly to LinkedIn.
+- Save to the Marketing Hub in Notion.
+- **Languages.** If the member speaks another language (`languages` on the Master Profile), ask once whether they want a version in that language too, and offer it as an opportunity to reach more people. Write the second version natively, not as a word for word translation.
 
 ---
 
-## OPENING
+## Finding the Member's Workspace
 
-> "LinkedIn is one of the most underused platforms for real estate agents — especially for reaching referral partners, investors, and people relocating for work. Let's create content that builds your professional brand there.
->
-> What are we working with?"
->
-> A) A YouTube video or script
-> B) A blog post
-> C) A client win or success story
-> D) A market insight or opinion
-> E) A personal story from my business journey
-> F) Something else
+Search Notion for "Hi5 Success OS Workspace" and for "hi5-os-root". Open each result and keep only pages whose first line starts with `hi5-os-root:` (ignore any other page, even one titled exactly "Hi5 Success OS"). No marked page: tell the member to run /hi5-setup first, then stop. More than one: ask which one to use; never guess. Open its child page "Master Profile". Its Page IDs section lists the IDs of everything else (`marketing_hub_db_id`, `content_planner_db_id`, `compliance_page_id`, `voice_profile_page_id`, `neighborhoods`). Use those IDs directly. If a field this skill needs is missing from the profile, ask for it once, save it as a `- field_name: value` bullet inside the matching section of the Master Profile (never at the end of the page), and continue.
+
+## Compliance
+
+Before writing anything public, open the member's Compliance Guardrails page (`compliance_page_id` on the Master Profile) and follow every rule on it.
+
+- **Disclosure line.** End every public piece with the member's saved disclosure line, exactly as saved. Use `disclosure_line_short` for captions, ads, social posts, and video descriptions. Use `disclosure_line_full` for emails, newsletters, web pages, blog posts, and landing pages. If the page only has `disclosure_line`, treat it as the full line. If `disclosure_line_short` is missing, ask the member once whether they have a shorter version for captions and ads, save their answer (or the full line if they have none) on the Compliance Guardrails page, and continue.
+- **Required notices.** Include each notice listed in `required_notices` in the places the member said they use it, with its link. Never say whether a notice is legally required.
+- **Proof points.** Never use a proof point, number, or dollar amount marked internal, or when `proof_point_public` is no, in anything public. It is fine in private scripts.
+- **Writing style.** Never use em dashes unless the Voice Profile says `avoid_em_dashes: no`.
+- **No page yet.** If the Compliance Guardrails page does not exist, tell the member once: "Your compliance setup isn't done, so I'm drafting with general best practices. Run /hi5-setup and choose Continue setup (Stage 2) to add your disclosure line and rules." Then put [DISCLOSURE LINE] in the right place.
+- If a request would break a rule, say which rule and offer a compliant alternative.
+
+## Loading the Industry Flow
+
+Read `industry_flow` from Setup Status (`real-estate` or `generic`) and load `industries/<industry_flow>.md`. It holds the questions, menus, and output details for that kind of business. If `industry_flow` is missing, use `generic`. Real estate members work with many kinds of clients, so adapt to every client type in `client_categories`, not only listings.
 
 ---
 
-## OUTPUT
+## OUTPUT (all industries)
 
 Generate 3 LinkedIn post variations for each piece of content:
 
-### Version 1 — Insight Post
-Professional insight or market observation. Leads with a bold statement or surprising fact. Ends with a question to drive comments.
+### Version 1: Insight Post
+A professional insight or observation. Leads with a bold statement or surprising fact. Ends with a question to drive comments.
 
-### Version 2 — Story Post
-Personal story from their experience. Vulnerable, real, and human. Ends with a lesson or takeaway.
+### Version 2: Story Post
+A personal story from their experience. Vulnerable, real, and human. Ends with a lesson or takeaway.
 
-### Version 3 — Value Post
-Practical tips or steps their LinkedIn audience can use. List format or short paragraphs. Ends with a CTA to connect or DM.
+### Version 3: Value Post
+Practical tips or steps their LinkedIn audience can use. List format or short paragraphs. Ends with a CTA to connect or send a message.
 
 Each post:
-- 150-300 words
-- No hashtag stuffing — 3-5 relevant tags maximum
+- 150 to 300 words
+- No hashtag stuffing: 3 to 5 relevant tags maximum
 - First line designed to stop the scroll
 - Formatted for LinkedIn readability (short paragraphs, line breaks)
 
----
-
 ## STORAGE
 
-Save to Notion Content Planner linked to original content piece.
+Save to the Marketing Hub (`marketing_hub_db_id`) as one row: Title names the source content, Type is LinkedIn Posts, Status is Draft, Source Skill is /hi5-linkedin, Date is today, and the three posts are in the page body. If the posts came from a Content Planner item, also fill its Related To field with that item's title.
 
-> "Your LinkedIn posts are saved to your Content Planner. These work best posted Tuesday through Thursday between 8am and 10am in your timezone."
+> "Your LinkedIn posts are saved to your Marketing Hub. These tend to work best posted Tuesday through Thursday between 8am and 10am in your timezone."
+
+## NEXT STEP
+
+> "Next: want captions for your other platforms too? Run /hi5-social and I will format this content for each one."

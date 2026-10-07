@@ -2,14 +2,14 @@
   "name": "hi5-success-os",
   "owner": { "name": "hi5success", "email": "hello@hi5success.com" },
   "metadata": {
-    "description": "Hi5 Success OS — A suite of Claude plugins for YouTube growth, business planning, content repurposing, and marketing execution."
+    "description": "Hi5 Success OS: A suite of Claude plugins for YouTube growth, business planning, content repurposing, and marketing execution."
   },
   "plugins": [
     {
       "name": "content-os",
       "source": "./plugins/content-os",
-      "description": "YouTube-first content creation and repurposing system. Research competitors, plan content, write scripts, repurpose into blog posts, and generate platform-specific social captions — all from one content engine.",
-      "version": "1.0.0",
+      "description": "YouTube-first content creation and repurposing system. Research competitors, plan content, write scripts, repurpose into blog posts, and generate platform-specific social captions, all from one content engine.",
+      "version": "1.2.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["youtube", "content", "blog", "social media", "repurpose", "marketing", "notion", "real estate", "captions", "scripts"]
     },
@@ -17,7 +17,7 @@
       "name": "business-os",
       "source": "./plugins/business-os",
       "description": "Business planning, goal setting, and performance review tools for entrepreneurs and small business owners.",
-      "version": "1.0.0",
+      "version": "1.2.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["business", "planning", "goals", "strategy", "notion", "entrepreneur"]
     },
@@ -25,7 +25,7 @@
       "name": "marketing-os",
       "source": "./plugins/marketing-os",
       "description": "Email, newsletter, SEO, LinkedIn, website copy, landing pages, and case study tools for consistent marketing execution.",
-      "version": "1.0.0",
+      "version": "1.2.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["marketing", "email", "seo", "linkedin", "website", "landing-page", "newsletter", "notion"]
     }

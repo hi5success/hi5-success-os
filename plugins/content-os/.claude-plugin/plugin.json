@@ -1,6 +1,6 @@
 {
   "name": "content-os",
-  "description": "YouTube-first content creation and repurposing system. Research competitors, plan content, write scripts, repurpose into blog posts, and generate social captions — all from one content engine.",
-  "version": "1.0.0",
+  "description": "YouTube-first content creation and repurposing system. Research competitors, plan content, write scripts, repurpose into blog posts, and generate platform-specific social captions, all from one content engine.",
+  "version": "1.2.0",
   "author": { "name": "Hi5 Success" }
 }

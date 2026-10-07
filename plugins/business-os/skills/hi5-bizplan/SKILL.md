@@ -1,243 +1,112 @@
 ---
 name: hi5-bizplan
-description: Generates a personalized business plan tailored to the member's industry, goals, personality profile, and market. Reads from the Master Profile created in /hi5-setup and personality data from /hi5-self. Saves the completed plan to Notion and offers a downloadable version. Triggers when the user runs /hi5-bizplan, says "business plan", "build my plan", or "create my business plan".
+description: Generates a personalized business plan tailored to the member's industry, goals, personality profile, and market. Reads the Master Profile from /hi5-setup and personality data from /hi5-self. Works for any brokerage or business model and uses only the commission or pricing rules the member gives. Saves the plan and the numbers to Notion and offers a markdown, Google Doc, or PDF copy. Triggers when the user runs /hi5-bizplan, says "business plan", "build my plan", or "create my business plan".
 ---
 
-# Hi5 Bizplan — Business Plan Generator
+# Hi5 Bizplan: Business Plan Generator
 
 ## Purpose
-Generate a comprehensive, personalized business plan based on the member's Master Profile. Ask for the business numbers and goals not captured in setup. Tailor everything to their behavioral style, industry, and market.
+Generate a personalized business plan from the member's Master Profile. Ask only for the numbers and goals that setup did not capture. Show every calculation step by step, using the member's own numbers, so they can check it. Tailor tone and structure to their behavioral style, industry, and biggest blocker.
 
 ## Core Rules
-- Read Master Profile first — never ask for info already captured in setup
-- One question at a time
-- Reference their name and specific details throughout
-- Tailor tone and delivery to their behavioral style from /hi5-self
-- High D → lead with numbers and action steps
-- High I → lead with vision and excitement
-- High S → lead with stability and steady growth
-- High C → lead with data and detailed breakdown
+- Read the Master Profile first. Never ask for something it already has.
+- One question at a time.
+- Reference their name and specific details throughout.
+- **Never hardcode any brokerage's or business's rules.** Cap amounts, splits, fees, production awards, revenue share, and price lists differ everywhere. Use only what the member tells you. If a rule is unclear, ask. Do not assume.
+- Tailor tone to their behavioral style (from /hi5-self): High D leads with numbers and action steps. High I leads with vision and energy. High S leads with stability and steady growth. High C leads with data and detail.
+- Tailor the structure to their biggest blocker. For example, if the blocker is taking on too much, limit the plan to three priorities.
+- Write in the member's voice style and follow their Voice Profile. Never use em dashes unless the Voice Profile says `avoid_em_dashes: no`.
+
+---
+
+## Finding the Member's Workspace
+
+Search Notion for "Hi5 Success OS Workspace" and for "hi5-os-root". Open each result and keep only pages whose first line starts with `hi5-os-root:` (ignore any other page, even one titled exactly "Hi5 Success OS"). No marked page: tell the member to run /hi5-setup first, then stop. More than one: ask which one to use; never guess. Open its child page "Master Profile". Its Page IDs section lists the IDs of everything else (`business_plan_page_id`, `business_os_page_id`, and so on). Use those IDs directly. If a field this skill needs is missing from the profile, ask for it once, save it as a `- field_name: value` bullet inside the matching section of the Master Profile (never at the end of the page), and continue.
+
+---
+
+## Loading the Industry Flow
+
+Read `industry_flow` from Setup Status (`real-estate` or `generic`). Load `industries/<industry_flow>.md`. It holds the question flow and the plan sections for that kind of business. If `industry_flow` is missing, use `generic`.
 
 ---
 
 ## OPENING
 
-Read from Master Profile:
-- PROFILE.name
-- PROFILE.industry
-- PROFILE.re_role (if real estate)
-- PROFILE.primary_market
-- PROFILE.behavioral_style
-- PROFILE.success_vision
-- PROFILE.biggest_blocker
+Read from the Master Profile:
+- `name`, `industry`, `industry_flow`, `role`, `primary_market`, `niche`, `client_categories`
+- `price_range`, `market_conditions`, `focus`, `lead_sources_ranked`, `goal_12_month` (from /hi5-setup)
+- `behavioral_style`, `success_vision`, `biggest_blocker` (from /hi5-self)
+- The Business Numbers section, if it exists from an earlier run
 
-Open with:
-> "Alright [name] — let's build your business plan. I already know your market is [market], you are a [role], and your vision is [success_vision]. Now I need your numbers and goals so we can build something real.
->
-> A few questions and then I will put it all together for you."
+Setup owns niche, client types, focus, ranked lead sources, and the 12-month goal. Never ask for them again. This skill asks only for numbers.
+
+If a Business Numbers section already exists, say: "Last time you gave me numbers on [date]. Do you want to update them all, or only what's changed?" Then show the saved values for each group of questions and ask "Still right?" Ask the question again only for a value that changed. This is the only shortcut. A saved value is something the member confirms or edits, never an assumption.
+
+Open with the opening line in the industry file.
 
 ---
 
-## BUSINESS NUMBERS
+## HOW TO HANDLE THE NUMBERS
 
-**Q1 — Last Year Performance**
-> "Let's start with last year. How many transactions did you close?"
-Store: BIZPLAN.deals_closed
+### Never assume a brokerage or business model
+Ask for the member's own model in plain terms: how they are paid, any split, any cap, any fees, and any production award or milestone they want to reach and what it takes. Repeat it back as a worked example with their numbers, and ask "Is that right?" before using it. If anything is unclear, ask a follow-up. Never fill a gap with a rule you think a company uses.
 
-**Q2 — Volume**
-> "What was your total sales volume?"
-Store: BIZPLAN.total_volume
+### Year to date and the plan period
+Ask how they are doing so far this year, not only last year. Ask what period the goal covers: the next 12 months, the rest of this calendar year, or something else such as a cap year or award year. If the period is the rest of a year, subtract what they have already done so far.
 
-**Q3 — GCI**
-> "What was your GCI — your gross commission income?"
-Store: BIZPLAN.gci_earned
+### Skip questions that answer themselves
+- If the number of agreements or sales signed equals the number closed, skip "how many of those closed" and use the number they gave. Say why.
+- If they closed only one deal in the period, skip the average price question and use that deal's price. Say why.
+- If they say "none yet" for a funnel step, skip the steps after it and say why.
 
-**Q4 — Conversion Funnel**
-> "Now let's walk through your conversion funnel — this tells us exactly where to focus your energy. Ballpark numbers are fine.
->
-> How many leads did you receive last year?"
-Store: BIZPLAN.leads_received
+### Show the math, step by step
+In the plan, show the chain from goal to daily activity with the member's numbers, one step per line, so they can check each line. For example: goal, then net-to-gross using their own split and fees, then deals or clients needed, then appointments or proposals needed, then conversations or leads needed, then per month and per week. Label every assumption and say where it came from ("from your numbers", "your estimate", or "I asked you").
 
-> "Of those leads, how many signed a buyer or listing agreement?"
-Store: BIZPLAN.agreements_signed
-
-> "And how many of those actually closed?"
-Store: BIZPLAN.closed_transactions
-
-Claude calculates internally:
-- Lead to agreement rate = agreements / leads x 100
-- Agreement to close rate = closed / agreements x 100
-- Diagnose: lead problem / conversion problem / market problem
-
-**Q5 — Average Sale Price**
-> "What is the average sale price in your market?"
-Store: BIZPLAN.avg_sale_price
-
-**Q6 — Buyer Seller Split**
-> "What is your typical buyer to seller split? For example 60% buyers, 40% sellers."
-Store: BIZPLAN.buyer_seller_split
+### Diagnose honestly
+Compute the funnel rates and diagnose: lead problem, conversion problem, or market problem. A very low conversion rate (for example 200 leads and 1 agreement) is a conversion problem. Say so plainly, recommend fixing conversion before buying more leads, and hold paid ads until later in the roadmap.
 
 ---
 
-## LEAD SOURCES
+## STORING THE NUMBERS
 
-**Q7 — Top Source**
-> "What is your number one source of leads right now?"
->
-> A) Sphere of influence / referrals
-> B) Social media (organic)
-> C) YouTube
-> D) Paid ads
-> E) Open houses
-> F) Cold outreach / door knocking
-> G) Online leads (Zillow, Realtor.com, etc.)
-> H) Other
-
-Store: BIZPLAN.top_lead_source
-
-**Q8 — Weakest Source**
-> "What lead source do you most want to add or improve this year?"
-Store: BIZPLAN.desired_lead_source
-
----
-
-## DIGITAL PRESENCE
-
-**Q9 — Google Business Profile**
-> "Where are you at with your Google Business Profile?"
->
-> A) Fully optimized and actively getting reviews
-> B) Set up but not actively managing it
-> C) Barely started
-> D) Do not have one yet
-
-Store: BIZPLAN.gbp_status
-
-**Q10 — Social Posting Frequency**
-> "How often are you posting to social media overall right now?"
->
-> A) Rarely or never
-> B) A few times a month
-> C) 1-3 times per week
-> D) Daily
-
-Store: BIZPLAN.social_frequency
-
-**Q11 — Paid Ads**
-> "Are you running any paid ads?"
->
-> A) No
-> B) Facebook/Instagram ads
-> C) Google ads
-> D) Multiple channels
-
-Store: BIZPLAN.paid_ads
-
-**Q12 — Marketing Goals**
-> "What marketing would you most like to add or improve this year? Select all that apply:"
->
-> A) Grow YouTube
-> B) Be more consistent on social
-> C) Buyer or seller workshops/webinars
-> D) Build an email list
-> E) Improve Google Business Profile
-> F) Start paid ads
-> G) Door knocking campaigns
-> H) Build referral network
-
-Store: BIZPLAN.marketing_goals
-
----
-
-## GOALS
-
-**Q13 — GCI Goal**
-> "What is your GCI goal for the next 12 months?"
-Store: BIZPLAN.gci_goal
-
-Claude calculates internally:
-- Transactions needed = gci_goal / avg_commission_per_deal
-- Use avg_sale_price x 0.025 as default commission if not specified
-
-**Q14 — Transaction Goal**
-> "How many transactions are you targeting this year?"
-Store: BIZPLAN.transaction_goal
-
-**Q15 — Niche**
-> "Do you focus on a specific niche or client type?"
->
-> A) Luxury / high end
-> B) First time buyers
-> C) Investors
-> D) Relocation
-> E) New construction
-> F) General — I work with everyone
-> G) Other
-
-Store: BIZPLAN.niche
+After the questions, and before generating the plan, save the answers to the Master Profile's Business Numbers section. Create the section if it is missing, inserted before the Linked pages heading. Write one bullet per field using the names in the Business Numbers section of `../hi5-setup/templates/master-profile.md`: `- field_name: value`. Update an existing bullet instead of adding a second one. Include `gbp_status`, `social_frequency`, `paid_ads`, `marketing_goals`, `top_lead_source`, `desired_lead_source`, and `last_plan_date` (today). Other skills, such as /hi5-seo and /hi5-goals, read these from the profile. Say nothing technical about it.
 
 ---
 
 ## GENERATE THE PLAN
 
-After all questions:
+Say: "Perfect. I have everything I need. Give me a moment to put this together."
 
-> "Perfect — I have everything I need. Give me a moment to put this together."
-
-Generate a comprehensive business plan with these sections:
-
-### 1. Agent Snapshot
-Summary of who they are, their market, role, experience, and brand. Written in second person, specific to their data.
-
-### 2. Where You Stand
-Honest assessment of last year's numbers. Conversion funnel analysis with diagnosis — lead problem, conversion problem, or market problem. No fluff, just clarity.
-
-### 3. Your 12 Month Target
-GCI goal, transaction goal, transactions needed per month, average commission needed per deal. Make the math visible and simple.
-
-### 4. Your Lead Engine
-Based on top source and desired source — specific recommendations for how to generate leads consistently. Tailored to their platforms, budget, and style.
-
-### 5. Your Marketing Plan
-Based on marketing goals selected — specific content strategy, platforms to prioritize, posting cadence, and quick wins. Tied to their YouTube status and social platforms.
-
-### 6. Your Conversion System
-Based on CRM and conversion funnel data — specific recommendations for improving lead to agreement and agreement to close rates.
-
-### 7. Your 90 Day Roadmap
-Month 1 / Month 2 / Month 3 — specific actions, not generic advice. What to do first, what to build next, what to optimize last.
-
-### 8. Your Biggest Opportunity
-One clear insight about where their biggest untapped opportunity is based on all their data.
-
-### 9. What Success Looks Like
-Reference their success vision from /hi5-self. Connect the numbers to what they actually want.
-
-Tailor tone throughout to behavioral style:
-- High D: direct, punchy, action-oriented, no fluff
-- High I: vision-forward, energetic, story-driven
-- High S: steady, reassuring, relationship-focused
-- High C: data-heavy, detailed, logical progression
+Generate the plan using the sections in the industry file. Follow all of the rules above. Then save it.
 
 ---
 
 ## OUTPUT AND STORAGE
 
-After generating:
+Save the plan to the member's Notion page Business OS, then Business Plan (`business_plan_page_id`). Update that page. Do not create a second one.
 
-> "Your business plan is ready, [name]. Here is what I am doing with it:
+> "Your business plan is ready, [name]. Here is what I did with it:
 >
-> ✅ Saving to your Notion workspace under Business OS → Business Plan
-> ✅ This becomes a living document — run /hi5-bizplan anytime to update it as your numbers change
+> ✅ Saved to your Notion workspace under Business OS, then Business Plan
+> ✅ Saved your numbers to your Master Profile, so other skills can use them
+> ✅ This is a living document: run /hi5-bizplan anytime to update it as your numbers change
 >
-> Would you also like a downloadable version you can save, print, or share?"
+> Would you like a copy you can save, print, or share? I can give you:
+> A) The plan here as text to copy
+> B) A Google Doc (if your Google Drive is connected)
+> C) A PDF"
 
-If yes → format as a clean markdown document and output in full for them to copy, or save as a Google Doc if Drive is connected.
+- **A:** output the full plan as clean markdown.
+- **B:** create a Google Doc with the Drive connector.
+- **C:** create a PDF, using a PDF tool if one is available in this session. Tell the member that if their brand fonts are not available in the build environment, a similar fallback font will be used.
 
 ---
 
 ## NEXT STEP
 
-> "Now that your business plan is set, let's lock in your quarterly goals. Run /hi5-goals and I will break your annual target into 90 day sprints so you always know exactly what you should be working on.
->
-> Ready?"
+Follow the Recommended path in /hi5-setup. Recommend ONE next step:
+- If their industry is real estate and Stage 4 (objection bank) or Stage 5 (neighborhoods) in Setup Status is not complete, recommend /hi5-setup, then Continue setup.
+- Otherwise, if Content OS is installed, recommend /hi5-yt-setup. If not, recommend /hi5-email.
+
+Never recommend /hi5-goals or /hi5-bizreview yet. Say once: "Quarterly goal sprints (/hi5-goals) and business reviews (/hi5-bizreview) are coming soon, and your plan already has your 90 day roadmap."

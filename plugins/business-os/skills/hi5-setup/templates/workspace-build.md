@@ -1,0 +1,111 @@
+# Workspace Build: Phase 4
+
+Build the member's Hi5 Success OS workspace in Notion. Create pages and databases in the order below, capture every page and database ID, and save them in the Master Profile's Page IDs section (see `master-profile.md`).
+
+Create only what is listed here. Objection Bank, neighborhood pages, compliance, and voice pages are created later by their own stages.
+
+## 1. Root page
+Create a page called **Hi5 Success OS Workspace** (icon 🚀) at the top level of the member's Notion workspace. Everything below is created inside it.
+
+The very first line of the page body must be exactly:
+
+`hi5-os-root: v1`
+
+This marker is how every Hi5 skill recognizes the root page (the title alone is not reliable, since members may already own a page called "Hi5 Success OS"). Do not remove or change it, and tell the member not to delete that first line. Add a second line under it in plain language: "Hi5 Success OS saves your profile and work in this workspace. Please leave the line above as is."
+
+Save the root page's ID as `root_page_id` in the Master Profile (step 4).
+
+## 2. Pages (create in this order, all inside the root page)
+
+| Title | Icon | Content |
+|---|---|---|
+| Dashboard | 🏠 | See "Dashboard content" below |
+| Master Profile | 👤 | See step 4 |
+| Business OS | 💼 | One line: "Your business plan, quarterly goals, and business reviews." |
+| Skill Guide | 📖 | See "Skill Guide content" below |
+
+Inside **Business OS** create three empty pages:
+- Business Plan
+- Quarterly Goals
+- Business Reviews
+
+Each gets one line: "Created by /hi5-bizplan." / "Created by /hi5-goals." / "Created by /hi5-bizreview." respectively.
+
+## 3. Databases (inside the root page)
+
+### 📋 Content Planner
+Every video, blog, and piece of content is one row. Properties:
+
+| Property | Type | Options |
+|---|---|---|
+| Title | title | |
+| Status | select | Idea, Scheduled, Scripted, Draft, Published |
+| Publish Date | date | |
+| Record Date | date | |
+| Edit Due Date | date | |
+| Content Category | select | (created as used) |
+| Content Type | select | (created as used) |
+| Deliverable Type | select | Long Form, Short Form, Blog, Podcast, Social Post |
+| Production Style | select | (created as used) |
+| Goal | select | Affiliate, Community, Awareness, Mixed |
+| Primary Platform | select | (created as used) |
+| Distribution | multi-select | (created as used) |
+| Target Keyword | text | |
+| Hook / Angle | text | |
+| Source | select | YouTube Research, Competitor Pull, Manual |
+| Trend Score | select | Low, Medium, High |
+| Assigned To | person | |
+| Related To | text | Title of the piece this was made from (for blog, captions, and repurposed content) |
+| Asset Folder URL | url | |
+| Export / Deliverables URL | url | |
+| YouTube URL | url | |
+| Thumbnail URL | url | |
+| Views Total | number | |
+| Views Last 7 Days | number | |
+| Click-Through Rate % | number | |
+| Watch Time Avg % | number | |
+| Top Traffic Source | text | |
+| Performance Tier | select | (created as used) |
+| Repurpose Status | select | Not Started, Clips Created, Captions Written, Posted |
+| Last Analytics Pull | date | |
+
+Status is a **select** (not Notion's built-in status type) so the exact values above can be set.
+
+### 📧 Marketing Hub
+Every email sequence, newsletter issue, website page, landing page, SEO plan, and case study is one row, with the full text in the row's page body. Properties:
+
+| Property | Type | Options |
+|---|---|---|
+| Title | title | |
+| Type | select | Email Sequence, Newsletter, SEO Strategy, Website Copy, Landing Page, Case Study, LinkedIn Posts, Other |
+| Status | select | Draft, Approved, Published |
+| Source Skill | text | The command that made it, for example /hi5-email |
+| Date | date | |
+
+## 4. Master Profile page
+Write the skeleton from `master-profile.md` into the Master Profile page: the heading 2 sections in order (Setup Status, Page IDs, Identity, Market, Tools, Presence, Brand, Business, Edge, Self Profile, and last of all Linked pages, which holds only the heading) with empty field bullets, then fill in Setup Status (including `profile_version: 2`) and Page IDs from what you just created. The Linked pages heading must stay the last block on the page.
+
+## Dashboard content
+Write this on the Dashboard page:
+
+> **Welcome to Hi5 Success OS**
+> Everything here is yours. Your skills read your Master Profile so you never re-explain your business.
+>
+> **Quick start**
+> 1. Finish your setup: run /hi5-setup and choose "Continue setup". Compliance rules and your writing voice make everything I write ready to publish. Real estate agents also add an objection bank and neighborhood profiles.
+> 2. Run /hi5-self to build your personality profile so everything is written for you
+> 3. Run /hi5-bizplan to generate your business plan
+> 4. Run /hi5-yt-setup to build your content workspace (if Content OS is installed)
+> 5. Run /hi5-email to build your first nurture sequence (if Marketing OS is installed)
+>
+> Coming soon: /hi5-goals (quarterly goals) and /hi5-bizreview (business reviews).
+>
+> **Your workspace:** Master Profile · Business OS · Content Planner · Marketing Hub · Skill Guide
+
+## Skill Guide content
+A short table the member can reference. One section per plugin, one line per skill: command and what it does. Mark each plugin "if installed". Use the skill descriptions from the plugins:
+- **Business OS:** /hi5-setup, /hi5-self, /hi5-bizplan, /hi5-goals (coming soon), /hi5-bizreview (coming soon)
+- **Content OS:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose, /hi5-blog, /hi5-social
+- **Marketing OS:** /hi5-email, /hi5-newsletter, /hi5-seo, /hi5-linkedin, /hi5-website, /hi5-landing, /hi5-casestudy
+
+Finish with: "Run /hi5-setup any time to update your profile or continue setup."

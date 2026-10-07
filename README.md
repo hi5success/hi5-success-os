@@ -1,59 +1,90 @@
 # Hi5 Success OS
 
-Hi5 Success OS is a plugin for Claude that turns your AI assistant into a full YouTube content engine — without any extra tools or subscriptions. Connect it once, and Claude can research trending videos in your niche, generate content ideas tailored to your goals, build your content calendar in Notion, write scripts in your voice, and track your analytics — all from a single conversation. Everything saves directly to your own Notion workspace, so you always own your data.
+Hi5 Success OS is a set of Claude plugins that gives you a business operating system: setup, personality profiling, business planning, content creation, and marketing. It saves everything to your own Notion workspace, so every skill already knows your business and you never re-explain it.
+
+It works for any industry. It is strongest for real estate agents, teams, and brokers, and real estate members get extra setup steps for their client types and market.
 
 ---
 
-## What You Need Before Starting
+## What you need
 
-- **Claude paid plan** — Claude Pro or higher at claude.ai
-- **Notion account** — free at [notion.so](https://www.notion.so)
-- **YouTube Data API key** — free from [Google Cloud Console](https://console.cloud.google.com) (no credit card required for the free tier)
-
-No Node.js. No local setup. No terminal.
+- **Claude** (the Cowork plugin marketplace)
+- **Notion** (free at [notion.so](https://www.notion.so)). Notion is required for now, because that is where your profile and your work are saved. If you don't have it, `/hi5-setup` walks you through creating a free account and connecting it, which takes about 2 minutes.
+- **A YouTube Data API key** (free), only if you use the YouTube research skills. `/hi5-yt-setup` walks you through getting one.
 
 ---
 
-## How to Install (3 Steps)
+## How to install
 
-**Step 1 — Add the plugin in Claude Cowork**
-
-In Claude, open your Project settings and go to **Plugins**. Click **Add from GitHub** and paste in this repository URL. Claude will detect the plugin automatically.
-
-**Step 2 — Add your keys to Project Instructions**
-
-In your Project settings, go to **Project Instructions** and add these four lines — filling in your own IDs and key:
-
-```
-MASTER_PROFILE_ID: [your Notion Master Profile page ID]
-CONTENT_PLANNER_ID: [your Notion Content Planner database ID]
-KEYWORD_TRACKER_ID: [your Notion Keyword Tracker database ID]
-YOUTUBE_API_KEY: [your YouTube Data API v3 key]
-```
-
-You can find each Notion ID by opening the page, clicking **Share**, then **Copy Link** — the long string of characters after the last slash is the ID.
-
-**Step 3 — Run the setup interview**
-
-In Claude, type:
-
-> /hi5-yt-setup
-
-Claude will walk you through a short setup process — about 5–10 minutes — and save your personal profile to Notion. You only need to do this once.
+> **[PLACEHOLDER: Cowork install steps. To be filled in with the exact clicks.]**
+>
+> Marketplace link to add: `https://github.com/hi5success/hi5-success-os`
+>
+> Plugins to install: Business OS, Content OS, and Marketing OS. Business OS comes first, because it holds `/hi5-setup`.
 
 ---
 
-## Commands
+## Your first 10 minutes
 
-| Command | What It Does |
+1. In Claude, type `/hi5-setup`.
+2. Claude gets Notion ready, asks about your industry, builds your Hi5 workspace in Notion, and asks about 20 questions about you and your business, one at a time.
+3. When it finishes, you can start using any skill right away.
+
+Setup is in stages, and you can stop and pick up later by running `/hi5-setup` again. Each stage after the first makes specific skills better:
+
+| Stage | What it adds | Time |
+|---|---|---|
+| 1. Core profile | Who you are, your market and business, tools, social links | about 10 min |
+| 2. Compliance | Your disclosure line and advertising and messaging rules, so everything is ready to publish | about 5 min |
+| 3. Voice and edge | Who you serve best, what sets you apart, and how you write | about 8 min |
+| 4. Objection bank (real estate) | Your answers to common pushback from each client type | about 10 min per client type |
+| 5. Neighborhoods (real estate) | A fact file for each area you serve | about 10 min per area |
+
+Then run `/hi5-self` (a 30 question personality profile, so everything is written for you) and `/hi5-bizplan` (your business plan).
+
+---
+
+## The skills
+
+### Business OS
+| Command | What it does |
 |---|---|
-| **/hi5-yt-setup** | First-time setup — builds your Master Profile in Notion |
-| **/hi5-yt-research** | Researches YouTube keywords or competitor channels and generates video ideas |
-| **/hi5-yt-plan** | Runs your monthly planning session and builds your Content Calendar |
-| **/hi5-yt-script** | Writes a video script or outline in your voice for a scheduled video |
+| `/hi5-setup` | Gets Notion ready, builds your workspace, and fills your Master Profile in stages. Run it again any time to continue, update, or add a neighborhood |
+| `/hi5-self` | A 30 question assessment of how you work, communicate, and decide. Accepts results you already have from DISC, Human Design, Enneagram, 16 Personalities, CliftonStrengths, Kolbe, and others |
+| `/hi5-bizplan` | Builds your business plan with the math shown step by step, using your own split, fees, and goals. Works for any brokerage or business |
+| `/hi5-goals` | Coming soon: quarterly goals and 90 day sprints |
+| `/hi5-bizreview` | Coming soon: business performance reviews |
+
+### Content OS
+| Command | What it does |
+|---|---|
+| `/hi5-yt-setup` | Adds your content and voice details to your Master Profile and helps you get a YouTube API key |
+| `/hi5-yt-research` | Finds video ideas from keywords and competitors, scores them, and adds them to your Content Planner |
+| `/hi5-yt-plan` | Builds your monthly content calendar in Notion |
+| `/hi5-yt-script` | Writes a script or outline in your voice |
+| `/hi5-repurpose` | Turns a video or script into short form scripts, pull quotes, and snippets |
+| `/hi5-blog` | Writes an SEO blog post from a video, script, or topic |
+| `/hi5-social` | Writes platform specific captions |
+
+### Marketing OS
+| Command | What it does |
+|---|---|
+| `/hi5-email` | Builds email nurture sequences |
+| `/hi5-newsletter` | Writes a weekly or monthly newsletter issue |
+| `/hi5-seo` | Builds a local SEO and Google Business Profile plan |
+| `/hi5-linkedin` | Writes LinkedIn posts from your existing content |
+| `/hi5-website` | Writes website page copy |
+| `/hi5-landing` | Writes landing page copy for a single offer |
+| `/hi5-casestudy` | Turns a client win into a case study |
 
 ---
 
-## Questions or Support
+## How it stays current
 
-Visit us at [hi5success.com](https://hi5success.com) or reach out directly through the site.
+Your Master Profile records the version of the Hi5 layout it was built with. When the plugin adds something new, `/hi5-setup` offers to fill in only what is new. It never overwrites or removes what you already saved.
+
+---
+
+## Questions or support
+
+Visit [hi5success.com](https://hi5success.com) or ask in the Hi5 Success community.

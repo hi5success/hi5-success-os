@@ -1,40 +1,40 @@
 ---
 name: hi5-yt-plan
-description: Run your monthly planning session — review your Idea Bank, select and approve videos, assign publish dates, and build your Notion Content Calendar.
+description: Run your monthly planning session, review your Ideas, select and approve videos, assign publish dates, and build your Notion Content Calendar.
 ---
 
-# /hi5-yt-plan — Monthly Planning Session
+# /hi5-yt-plan: Monthly Planning Session
 
 You are running a monthly planning session. By the end, the member will have
 an approved set of videos scheduled in their Notion Content Calendar with
 Publish Dates and Edit Due Dates set.
 
-## Step 1 — Read the Master Profile
+## Step 1: Read the Master Profile
 
-Retrieve the Master Profile from Notion using `MASTER_PROFILE_ID`. You need:
-- Posting frequency and weekly content rhythm
-- Recording schedule (batch or weekly) and editing turnaround days
-- Content categories
-- Operator preferences
+Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill. If it is not set up, tell the member to run /hi5-setup first and stop. If the member has more than one channel, ask which one first. You need:
+- `posting_frequency` and `weekly_rhythm`
+- `recording_schedule` and `edit_turnaround_days`
+- `content_categories`
+- Operator preferences (`output_format`, `number_of_options`)
 
-## Step 2 — Pull the Idea Bank
+## Step 2: Pull the Ideas
 
-Query `CONTENT_PLANNER_ID` for all rows where Status = "Idea". For each idea,
+Query the Content Planner (`content_planner_db_id`) for all rows where Status = "Idea". For each idea,
 retrieve: Title, Hook / Angle, Target Keyword, Content Category, Goal, Trend
 Score, Source.
 
-If the Idea Bank is empty, say: "Your Idea Bank is empty — run /hi5-yt-research first
+If there are no Ideas, say: "You have no ideas in your Content Planner yet, run /hi5-yt-research first
 to generate ideas before planning."
 
-## Step 3 — Present the Idea Bank
+## Step 3: Present the Ideas
 
 Display the ideas grouped by Content Category, sorted by Trend Score descending
 within each group. For each idea show: Title, Hook / Angle, Trend Score, Goal.
 
-Say: "Here's what's in your Idea Bank. Tell me which ones you want to schedule
-this month — you can name them, number them, or say 'all of them.'"
+Say: "Here are your ideas. Tell me which ones you want to schedule
+this month: you can name them, number them, or say 'all of them.'"
 
-## Step 4 — Determine the Publishing Window
+## Step 4: Determine the Publishing Window
 
 Ask: "What date range are we planning for? For example: June 1 through June 30."
 
@@ -47,7 +47,7 @@ Show the available dates and how many slots that gives them. Say: "You have
 [X] publish slots in that window based on your [frequency] schedule. You've
 selected [Y] videos. Does that work, or do you want to adjust?"
 
-## Step 5 — Assign Publish Dates
+## Step 5: Assign Publish Dates
 
 If they have more ideas than slots, ask which to prioritize or defer.
 If they have fewer ideas than slots, note the open slots and ask if they want
@@ -62,10 +62,10 @@ Once the lineup is set, present a draft schedule:
 Ask: "Does this schedule look right? Say yes to lock it in, or tell me what
 to move."
 
-## Step 6 — Calculate Edit Due Dates
+## Step 6: Calculate Edit Due Dates
 
 For each scheduled video, calculate Edit Due Date as 7 days before the Publish
-Date. Do not use a Notion formula — calculate the date yourself and write it
+Date. Do not use a Notion formula, calculate the date yourself and write it
 explicitly.
 
 If the member provided an editing turnaround in their Master Profile, use that
@@ -73,10 +73,10 @@ number of days instead of the default 7.
 
 Example: Publish Date = June 16 → Edit Due Date = June 9.
 
-## Step 7 — Write to Notion Content Calendar
+## Step 7: Write to Notion Content Calendar
 
 Once the member confirms the schedule, update each approved idea row in
-`CONTENT_PLANNER_ID`:
+the Content Planner (`content_planner_db_id`):
 - Status → "Scheduled"
 - Publish Date → assigned date
 - Edit Due Date → calculated date (7 days before Publish Date, or their

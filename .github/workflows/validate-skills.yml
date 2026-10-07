@@ -2,7 +2,7 @@ name: Validate Skills
 
 on:
   push:
-    branches: [main]
+    branches: [main, phase-a]
   pull_request:
     branches: [main]
 
@@ -12,55 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate SKILL.md frontmatter
+      - name: Validate skills, manifests, and style
         shell: bash
-        run: |
-          ERRORS=()
-
-          for skill_dir in plugins/*/skills/*/; do
-            skill_name=$(basename "$skill_dir")
-            skill_file="$skill_dir/SKILL.md"
-
-            if [ ! -f "$skill_file" ]; then
-              ERRORS+=("$skill_name: missing SKILL.md")
-              continue
-            fi
-
-            # Extract content between first pair of --- delimiters (frontmatter)
-            frontmatter=$(awk '/^---/{if(found){exit}else{found=1;next}} found{print}' "$skill_file")
-
-            # Check for name field (non-empty)
-            name_val=$(echo "$frontmatter" | grep -E '^name:' | sed 's/^name:\s*//' | tr -d '[:space:]')
-            if [ -z "$name_val" ]; then
-              ERRORS+=("$skill_name/SKILL.md: missing or empty 'name' in frontmatter")
-            fi
-
-            # Check for description field (non-empty value — handles multiline with >)
-            desc_line=$(echo "$frontmatter" | grep -E '^description:')
-            if [ -z "$desc_line" ]; then
-              ERRORS+=("$skill_name/SKILL.md: missing 'description' in frontmatter")
-            else
-              # For inline description, verify it has content after the colon
-              desc_val=$(echo "$desc_line" | sed 's/^description:\s*//' | tr -d '[:space:]')
-              if [ -z "$desc_val" ]; then
-                # Might be a block scalar (>) — check the next line has content
-                desc_body=$(echo "$frontmatter" | awk '/^description:/{found=1;next} found && /^  /{print;exit} found && !/^  /{exit}')
-                if [ -z "$(echo "$desc_body" | tr -d '[:space:]')" ]; then
-                  ERRORS+=("$skill_name/SKILL.md: 'description' is empty in frontmatter")
-                fi
-              fi
-            fi
-          done
-
-          if [ ${#ERRORS[@]} -gt 0 ]; then
-            echo ""
-            echo "SKILL.md validation failed. Fix the following:"
-            echo ""
-            for err in "${ERRORS[@]}"; do
-              echo "  - $err"
-            done
-            echo ""
-            exit 1
-          fi
-
-          echo "All skills validated successfully."
+        run: bash .github/scripts/validate.sh
