@@ -16,7 +16,7 @@ Only suggest the Projects that match what the member will actually use. Skip the
 | Hi5: Social Media | Write captions and posts for every platform | /hi5-social, /hi5-linkedin |
 | Hi5: Website and SEO | Get found on Google and convert visitors | /hi5-seo, /hi5-website, /hi5-blog, and /hi5-site-audit when it ships |
 | Hi5: Email and Nurture | Follow up with leads and stay top of mind | /hi5-email, /hi5-newsletter |
-| Hi5: Business Plan | Plan, set goals, and review your numbers | /hi5-bizplan, and /hi5-goals and /hi5-bizreview when they ship |
+| Hi5: Business Plan | Plan, set goals, and review your numbers | /hi5-bizplan, /hi5-goals, and /hi5-bizreview |
 
 ## How to create a Project
 Give the member these numbered steps for the first Project they want, one at a time, and wait for them to finish each step. Offer screenshot help every time, and never assume menu names, because they change.
