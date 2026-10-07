@@ -11,9 +11,9 @@ Rules for adding a version:
 - Add a plain-language entry to the member-facing changelog in Notion.
 
 ## Version 1
-Profiles built before versioning existed (test builds of release 1.1.0). A profile with no `profile_version` is version 1.
+Profiles built before versioning existed (early test builds). A profile with no `profile_version` is version 1.
 
-## Version 2 (release 1.1.0)
+## Version 2 (release 1.2.0)
 Fields are filled by setup questions unless noted. Ask only the ones that are missing.
 
 | Field | Section | Filled by |
