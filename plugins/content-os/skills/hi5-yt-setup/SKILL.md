@@ -9,7 +9,7 @@ Do NOT use a form or structured input UI. Ask each question as a plain conversat
 
 You are running the Content OS setup. It adds the member's content and voice details to the ONE Master Profile that /hi5-setup built. It takes about 10 minutes. At the end they are ready to run /hi5-yt-research.
 
-Never create a second Master Profile or a second Content Planner. Never show the member raw field names or Notion IDs.
+Never create a second Master Profile or a second Content Planner. Never show the member raw field names or Notion IDs. Whenever you send the member to a screen outside Claude (Google Cloud, Project Instructions), give numbered steps, offer screenshot help, never assume menu names, and wait for them to finish each step.
 
 ## Step 0: Find the Workspace
 
@@ -68,8 +68,14 @@ Store: youtube_audience
 Store: affiliate_links
 
 **5. Overall channel goal**
+If `industry_flow` is `real-estate`, ask:
+"What's the main goal of your YouTube channel? Is it focused on real estate clients, like buyers, sellers, renters, and investors, or on attracting agents to your brokerage or team? Or is it something else, like building your brand or growing a community?"
+Otherwise ask:
 "What's the main goal of your YouTube channel? For example: attract clients, grow affiliate revenue, drive community signups, build brand awareness."
+Never name a brokerage unless the member did, and never assume the goal from their brokerage. Say "attracting agents" or "agent attraction", never "recruiting".
 Store: channel_goal
+
+If they want BOTH clients and agent attraction, recommend two channels: "I'd suggest two separate channels, one for clients and one for attracting agents. Mixing the two audiences in one channel tends to hurt how YouTube recommends your videos, and each viewer only wants one of them. Do you want to split them, or keep one channel for now?" Explain briefly, then let them choose. If they split, treat it as two channels (see 7a), and set up a separate "Channel – [name]" page for each. If they keep one, store `channel_goal` as both and move on.
 
 **6. Content model type**
 "How would you describe your content model?
@@ -107,7 +113,7 @@ Store: competitor_channel_ids
 
 **12. Content categories**
 Based on their `industry` and `niche`, suggest a starting set:
-- Real estate → Buyer Tips, Seller Tips, Market Update, Community Highlight, Agent Attraction
+- Real estate → Market Update, Community Highlight, plus one tips category for each client type in `client_categories` (for example Buyer Tips, Seller Tips, Investor Tips, Renter Tips, Landlord Tips). Add Agent Attraction only if the channel goal includes attracting agents
 - GoHighLevel / agency / marketing → Tutorial, Tool Review, Case Study, Product Update, Client Results
 - Coaching / consulting → Teaching, Client Story, Framework, Q&A, Behind the Scenes
 - Lifestyle / cooking / creator → Tutorial, Behind the Scenes, Trending Topic, Day in My Life, Q&A
@@ -151,12 +157,34 @@ Once confirmed, write to the member's Master Profile using the Notion connector.
 3. **Extra channels.** For each additional channel, create a child page under the Master Profile called "Channel – [name]" (with an en dash) holding that channel's own fields. Save each as `Name = page id` in `channel_pages` in Page IDs.
 4. Do not create any other page. Do not touch other sections.
 
-Then confirm: "Your content profile is saved. You're ready to run /hi5-yt-research whenever you want to start finding content ideas."
+Then confirm: "Your content profile is saved."
 
-Then remind them of the one thing they still need: "One last thing, open your Claude Project settings, go to Project Instructions, and add this one line:
+## YouTube API key
+
+/hi5-yt-research needs a free YouTube Data API key. Ask:
+> "Do you already have a YouTube API key, or would you like me to walk you through getting one? It's free and takes about 5 minutes."
+
+**If they already have a key:** help them add it, as in "Add the key to Project Instructions" below.
+
+**If they want help:** say up front: "Send me a screenshot of each page as you go, and I'll tell you exactly what to click and what to type." Give them this link to start: https://console.cloud.google.com. Then go one step at a time. Wait for their screenshot after each step, read it, and tell them the exact next click. Never assume menu names, because Google changes them. Rely on their screenshots. Keep the wording simple.
+1. Sign in with a Google account. The one you use for YouTube is fine.
+2. Create a new project. Any name works, for example "Hi5 Content".
+3. Enable the "YouTube Data API v3". Search for it in the search bar at the top and choose Enable.
+4. Create an API key: open Credentials, choose Create credentials, then API key. Copy the key.
+5. Optional but recommended: restrict the key so it can only use the YouTube Data API v3.
+
+**Add the key to Project Instructions:** tell them to open their Claude Project settings, open Project Instructions, and add this one line (offer screenshot help):
 
 ```
 YOUTUBE_API_KEY: [your YouTube Data API v3 key]
 ```
 
-You can get a free key from the Google Cloud Console by enabling the YouTube Data API v3. Everything else is saved in your Notion workspace, so you don't need to paste anything else."
+Never ask them to paste the key into the chat. Everything else is saved in their Notion workspace, so nothing else needs pasting.
+
+**Test it:** read the key from Project Instructions and run one small test search for a keyword in their niche (one result is enough). If it works, say so. If it fails, explain the likely cause in plain words: the key has a typo, the YouTube Data API v3 is not enabled for the project, the key is restricted to a different API, or Project Instructions only apply to new chats in the project (start a new chat in the project and try again). Help them fix it with screenshots.
+
+**If they'd rather not do it now:** "No problem. You can set it up any time. /hi5-yt-research needs it, and I'll walk you through it then."
+
+## What's next
+
+End with: "Next: run /hi5-yt-research to find video ideas, then /hi5-yt-plan to build your content calendar in Notion. Your content plan comes from /hi5-yt-plan, not from this setup."
