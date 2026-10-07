@@ -209,6 +209,7 @@ Store: brand_color
 Store: brand_font
 
 **Q26: Branding Help**
+First ask: "Do you already have a designer or agency who handles your brand, or do you run your own marketing agency?" If yes, skip the offer below, store `branding_interest: no`, and move on. Never make this offer more than once: if `branding_help_asked` is already yes, skip it. Update ID: S1-BRANDING-ASKED
 > "One last thing on branding, if you ever want professional help with your brand identity (logo, colors, fonts, full brand guide), our team at Hi5 Biz Solutions works specifically with real estate agents on this. Head over to the Hi5 Success community and drop a message in the services channel and we will get you the details on packages and pricing."
 >
 > "Would you like me to make a note of this in your profile so we follow up with you?"
@@ -216,7 +217,7 @@ Store: brand_font
 > A) Yes please
 > B) No thanks: I have got it covered
 
-Store: branding_interest
+Store: branding_interest, and branding_help_asked: yes (set it whether they said yes or no)
 
 → **Checkpoint D:** write the answers above to Brand. Stage 1 is complete.
 
@@ -230,31 +231,40 @@ Intro: "This sets up the rules every draft follows: Fair Housing, advertising ru
 
 **C1: Brokerage name as licensed**
 > "In your profile your brokerage is [brokerage]. Is that exactly how it appears on your license and in your advertising? If not, tell me the exact wording."
-Store: part of disclosure_line (if `brokerage` is empty, ask "What is your brokerage name exactly as it is licensed?")
+Store: part of the full disclosure line (if `brokerage` is empty, ask "What is your brokerage name exactly as it is licensed?")
 
 **C2: License number**
 > "What is your real estate license number? If your state also requires a broker or team license number in ads, include that too."
-Store: part of disclosure_line
+Store: part of the full disclosure line
 
 **C3: Equal Housing wording**
 > "How do you show Equal Housing Opportunity in your marketing? Most agents use the words 'Equal Housing Opportunity', often with the logo. Tell me your wording or say 'standard'."
-Store: part of disclosure_line (standard = "Equal Housing Opportunity")
+Store: part of the full disclosure line (standard = "Equal Housing Opportunity")
 
 **C4: State-required text**
 > "Does your state or brokerage require any other wording in advertising? For example the REALTOR® mark, a team name next to your brokerage, or a statement about where you are licensed. Say 'none' if you're not sure. We can add it later."
-Store: part of disclosure_line
+Store: part of the full disclosure line
 
-Compose `disclosure_line` as one line, for example: `[Name], [Brokerage], License #[number]. [Equal Housing wording]. [Any other required text]`. Show it to the member and ask whether it is exactly what they want at the end of every public piece.
+Compose the full disclosure line as one line, for example: `[Name], [Brokerage], License #[number]. [Equal Housing wording]. [Any other required text]`. Show it to the member and ask whether it is exactly what they want at the end of emails and web pages.
+Store: disclosure_line_full. Also store the same text as disclosure_line, the older field name, which stays for older skills.
 
-**C5: Protected classes in your area**
+**C5: Short version**
+> "Do you use a shorter version for captions, ads, and video descriptions, where there isn't room for the full line? For example some agents shorten it to their name, brokerage, and Equal Housing Opportunity. Please check with your broker that a short version is allowed where you plan to use it. If you don't have one, I'll use the full line everywhere."
+Store: disclosure_line_short (the full line if they have no short one). Update ID: S2-SHORT-LINE
+
+**C6: State-required notices**
+> "Some states require certain notices or links in certain communications. In Texas, for example, agents commonly include links to the Information About Brokerage Services form (IABS) and the Consumer Protection Notice. I have your licensing as [states_licensed, or 'one state']. Which notices apply to you? For each one, tell me the link and where you use it, such as emails, your website, or social profiles. Please confirm with your broker where each one is required, because I won't guess. Say 'none' if you're not sure and we can add them later."
+Store: required_notices (a list. Write each as: notice name | link | where the member uses it). Update ID: S2-NOTICES. Never assert where the law requires a notice. Use only what the member tells you.
+
+**C7: Protected classes in your area**
 > "Fair Housing protects certain groups everywhere in the US, and some states and cities protect more. I have your market as [primary_market] and your licensing as [states_licensed, or 'one state']. Which state or states and which city should I treat as covered? I'll make sure drafts avoid every class protected there. Please confirm the full list with your broker or attorney. I won't claim to know your local law."
 Store: protected_class_jurisdictions (derive a suggestion from `primary_market` and `states_licensed`, then confirm)
 
-**C6: Brokerage advertising rules**
+**C8: Brokerage advertising rules**
 > "Does your brokerage have advertising rules I should follow? Things like how to use a team name, whether ads need broker approval before they go live, or anything else. Say 'none' if not."
 Store: brokerage_ad_rules
 
-**C7: Texting consent**
+**C9: Texting consent**
 > "Do you have documented consent, like a signed form or an opt-in, to text the people in your database?
 >
 > A) Yes
@@ -283,6 +293,8 @@ Store: client_situations
 **E2: Your differentiator**
 > "What do you do that other agents in your market don't? Give me one proof point too: a stat, a result, or a step in your process."
 Store: differentiator and proof_point. If they give no proof, ask once: "Do you have a number, result, or story that backs that up?" If still none, store the differentiator and write `proof_point: [ADD PROOF]`.
+If they gave a proof point, ask: "Is it OK to use that publicly in your marketing, or is it just for your own conversations? For example some agents don't want typical prices or dollar amounts in public posts."
+Store: proof_point_public (yes or no). Update ID: S3-PUBLIC
 
 **E3: Client words**
 > "What three words would your best clients use to describe working with you?"

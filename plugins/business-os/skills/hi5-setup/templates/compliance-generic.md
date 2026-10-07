@@ -12,7 +12,10 @@ Every Hi5 skill that writes something public reads this page and follows it.
 > These guardrails are a drafting aid, not legal advice. Confirm the rules for your industry with the right professional.
 
 ### Inputs
-- disclosure_line: {{disclosure_line}} (the member may say "none")
+- disclosure_line: {{full disclosure line}} (the older field name. It always matches the full line. The member may say "none")
+- disclosure_line_full: {{full disclosure line}}
+- disclosure_line_short: {{short disclosure line, or the full line if none}}
+- required_notices: {{required notices, one per line as: name | link | where used, or none}}
 - industry_rules: {{industry_rules}}
 - messaging_consent_status: {{messaging_consent_status}}
 - brand_policy: {{brand_policy}}
@@ -29,7 +32,9 @@ COMPLIANCE GUARDRAILS: apply to everything you draft for me
 - Do not make claims about competitors that I cannot support.
 
 **Required wording**
-- If a disclosure line is saved, end every public marketing piece with it exactly as saved: {{disclosure_line}}
+- If a disclosure line is saved, end every public marketing piece with it exactly as saved. Use the short line for captions, ads, and short posts: {{disclosure_line_short}}. Use the full line for emails, newsletters, web pages, blog posts, and landing pages: {{disclosure_line_full}}
+- Include each required notice in the places I said I use it: {{required_notices}}. Never claim a notice is or is not required. Follow the list I gave.
+- Proof points: never use a proof point, number, or dollar amount that is marked internal (or that I said is not OK for public use) in anything public. It is fine in private scripts and conversations.
 - Follow the rules for my industry: {{industry_rules}}
 - Follow my company or employer marketing policy: {{brand_policy}}
 
@@ -50,7 +55,7 @@ If a request would break one of these rules, tell me which one and offer a compl
 
 ## Five-bullet summary (show the member to confirm)
 1. No promised results, and no invented testimonials, numbers, or credentials.
-2. Every public piece ends with your disclosure line (if you have one): {{disclosure_line}}
+2. Every public piece ends with your disclosure line if you have one (short for captions and ads, full for emails and web pages), plus any required notices you listed.
 3. I follow your industry's advertising rules and your company's marketing policy.
 4. Drafts only, and consent is checked before email or text outreach; restricted ad categories get a policy check.
 5. Tax, legal, medical, and financial topics are prep for the right professional, never advice.

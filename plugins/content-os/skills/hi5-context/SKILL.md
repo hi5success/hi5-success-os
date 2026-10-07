@@ -23,7 +23,7 @@ There is ONE Master Profile per member. It is created by /hi5-setup (Business OS
 
 6. Google Trends requires no API key. Use it freely for trend scoring.
 
-7. Compliance first. Anything public (blog posts, captions, scripts and descriptions) follows the member's Compliance Guardrails page (`compliance_page_id`) and ends with their `disclosure_line`, exactly as saved. If the page does not exist yet, tell the member once to run /hi5-setup (Stage 2) and use a [DISCLOSURE LINE] placeholder.
+7. Compliance first. Anything public (blog posts, captions, scripts and descriptions) follows the member's Compliance Guardrails page (`compliance_page_id`). End public pieces with the disclosure line: `disclosure_line_short` for captions, ads, social posts, and video descriptions, and `disclosure_line_full` (or `disclosure_line`) for emails, web pages, and blog posts. Include the notices in `required_notices` where the member uses them. Never use a proof point marked internal in a public piece. If the page does not exist yet, tell the member once to run /hi5-setup (Stage 2) and use a [DISCLOSURE LINE] placeholder.
 
 8. Do not create Notion pages during normal operation. The only exception is /hi5-yt-setup, which may create the Keyword Tracker, the Voice Profile page, the Content Profile section, and "Channel – [name]" pages inside the member's existing workspace. All other commands write into pages and databases that already exist.
 

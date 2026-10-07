@@ -8,11 +8,16 @@ Every Hi5 skill that writes something public reads this page and follows it.
 
 ## Page layout
 
+These guardrails are written for residential real estate. For commercial sales, commercial leases, and land, still avoid describing or targeting people by protected class, and confirm any other rules with your broker or attorney.
+
 **First line of the page:**
 > These guardrails are a drafting aid, not legal advice. Confirm local rules with your broker or attorney.
 
 ### Inputs
-- disclosure_line: {{disclosure_line}}
+- disclosure_line: {{full disclosure line}} (the older field name. It always matches the full line)
+- disclosure_line_full: {{full disclosure line}} (emails, web pages, blog posts, newsletters, landing pages)
+- disclosure_line_short: {{short disclosure line, or the full line if none}} (captions, ads, social posts, video descriptions)
+- required_notices: {{required notices, one per line as: name | link | where used, or none}}
 - protected_class_jurisdictions: {{protected_class_jurisdictions}}
 - brokerage_ad_rules: {{brokerage_ad_rules}}
 - sms_consent_status: {{sms_consent_status}} (yes, no, or unsure)
@@ -30,7 +35,9 @@ COMPLIANCE GUARDRAILS: apply to everything you draft for me
 
 **Advertising**
 - Any Meta (Facebook/Instagram) housing ad runs under the Housing Special Ad Category: no age, gender, or zip-code targeting, and a minimum radius of about 15 miles. Never suggest otherwise.
-- Every public marketing piece ends with my required disclosure, exactly as saved: {{disclosure_line}}
+- Every public marketing piece ends with my required disclosure, exactly as saved. Use the short line for captions, ads, social posts, and video descriptions: {{disclosure_line_short}}. Use the full line for emails, newsletters, web pages, blog posts, and landing pages: {{disclosure_line_full}}
+- Include each required notice in the places I said I use it: {{required_notices}}. Never claim a notice is or is not legally required. Follow the list I gave.
+- Proof points: never use a proof point, number, or dollar amount that is marked internal (or that I said is not OK for public use) in anything public. It is fine in private scripts and conversations.
 - Do not state school ratings, crime data, or flood zones as fact. Tell buyers to verify with the official source.
 - Do not promise outcomes ("guaranteed sale", "will appraise") or quote rates.
 
@@ -50,6 +57,6 @@ If a request would break one of these rules, tell me which one and offer a compl
 ## Five-bullet summary (show the member to confirm)
 1. Describe homes by features, never by who lives there or who they suit; no steering words.
 2. Housing ads follow the Housing Special Ad Category: no age, gender, or zip targeting, radius about 15 miles or more.
-3. Every public piece ends with your disclosure line: {{disclosure_line}}
-4. No school ratings, crime data, or flood zones as fact; no outcome promises; no quoting rates.
+3. Every public piece ends with your disclosure line (short for captions and ads, full for emails and web pages), plus any required notices you listed.
+4. No school ratings, crime data, or flood zones as fact; no outcome promises; no quoting rates; proof points marked internal stay out of public pieces.
 5. Drafts only; consent and do-not-contact checked before outreach; tax, legal, and lending are prep for your CPA, attorney, or lender.
