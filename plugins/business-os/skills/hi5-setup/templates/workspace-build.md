@@ -92,13 +92,13 @@ Write this on the Dashboard page:
 > Everything here is yours. Your skills read your Master Profile so you never re-explain your business.
 >
 > **Quick start**
-> 1. Run /hi5-self to build your personality profile so everything is written for you
-> 2. Run /hi5-bizplan to generate your business plan
-> 3. Run /hi5-goals to set your quarterly targets
+> 1. Finish your setup: run /hi5-setup and choose "Continue setup". Compliance rules and your writing voice make everything I write ready to publish. Real estate agents also add an objection bank and neighborhood profiles.
+> 2. Run /hi5-self to build your personality profile so everything is written for you
+> 3. Run /hi5-bizplan to generate your business plan
 > 4. Run /hi5-yt-setup to build your content workspace (if Content OS is installed)
 > 5. Run /hi5-email to build your first nurture sequence (if Marketing OS is installed)
 >
-> **Finish your setup (any time)** — run /hi5-setup and choose "Continue setup". Each stage makes specific skills better.
+> Coming soon: /hi5-goals (quarterly goals) and /hi5-bizreview (business reviews).
 >
 > **Your workspace:** Master Profile · Business OS · Content Planner · Marketing Hub · Skill Guide
 

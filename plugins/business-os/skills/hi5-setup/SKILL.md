@@ -16,6 +16,7 @@ Onboard a Hi5 Success OS member. Connect Notion, detect their industry, build th
 - Hold answers as you go and write them to the Master Profile at each checkpoint (see Phase 5). If the member stops, nothing already confirmed is lost
 - Never show the member raw Notion IDs or field names. Say "your Master Profile", not `PROFILE.primary_market`
 - Notion is the only storage for this release. Do not offer Google Drive or local storage as working options
+- Whenever you send the member outside Claude (Notion, a connector, Google), give numbered steps, offer screenshot help, never assume menu names, and wait for them to finish each step
 
 ---
 
@@ -33,6 +34,9 @@ Setup is split into stages. Stage 1 gets the member started. Later stages can be
 
 Each stage is a section in the member's industry file (`industries/real-estate.md` or `industries/generic.md`). If the industry file has no section for a stage, tell the member that stage is not available for their industry yet, and skip it.
 
+### Recommended path
+Always recommend ONE next step, never a menu of competing options. The order is: Stage 2 (compliance), Stage 3 (voice and edge), /hi5-self, /hi5-bizplan, then for real estate Stage 4 (objection bank) and Stage 5 (neighborhoods), then the content skills. Skip any step the member has already finished (check Setup Status). Skills that are not built yet (/hi5-goals, /hi5-bizreview) are never recommended.
+
 ### How stages 2 to 5 run (general procedure)
 Every stage after Stage 1 follows the same steps:
 1. **Intro.** Say what the stage is, how long it takes, and which skills it improves (use the table above). Check the Setup Status section first so you do not repeat a finished stage. If it is finished, ask "Replace it or add to it?"
@@ -41,7 +45,7 @@ Every stage after Stage 1 follows the same steps:
 4. **Confirm.** Show the member a short plain-language summary and ask whether it looks right. Make any changes they ask for.
 5. **Save.** Create the stage's page as a child of the Master Profile (or update it if it already exists). Save its ID in the Page IDs section, and set the stage's line in Setup Status to `complete <today's date>`.
 6. **Say where it is saved and how to change it.** For example: "Saved to your Compliance Guardrails page in your Hi5 workspace. To change it any time, run /hi5-setup and choose Update something or Redo a stage."
-7. **Offer the next step.** Offer the next unfinished stage, or let them stop. Never push. After Stage 2 or Stage 3 (and after any big edit to the profile), also offer the self-test: "Want a two-minute test to see how well I use your profile?"
+7. **Offer the next step.** Offer the next step on the RECOMMENDED PATH below, as one clear recommendation, or let them stop. Never push. After Stage 2 or Stage 3 (and after any big edit to the profile), also offer the self-test: "Want a two-minute test to see how well I use your profile?"
 
 ---
 
@@ -64,10 +68,10 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 
 > "Welcome to Hi5 Success OS. I'm glad you're here.
 >
-> Before we dive in I want to set things up so Claude can work smarter for you across every session — without you re-explaining your business each time.
+> Here's how this works. Hi5 saves your business profile and everything we create together in Notion, a free tool. That's how every Hi5 skill knows your business without you explaining it again. Notion is required for now. If you don't have it yet, I'll walk you through setting it up, which takes about 2 minutes. Other storage options are coming later.
 >
-> Setup is in stages. The first one takes about 10 minutes and gets you started. Here's what happens in it:
-> 1. Connect your Notion (that's where everything is saved)
+> Setup is in stages. The first one takes about 10 minutes:
+> 1. Get Notion ready
 > 2. Tell me about your business
 > 3. I build your Hi5 workspace in Notion
 >
@@ -75,28 +79,68 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 
 ---
 
-## PHASE 1 — Connect Notion
+## PHASE 1 — Get Notion Ready
 
-Notion is where the member's Master Profile and everything the skills create is saved. It is free, and it becomes their single source of truth that every skill reads, so they never have to re-explain who they are.
+Nothing is built until Notion works. Keep the wording simple, because many members are not technical. Never assume the member's screen matches your steps, because menu names change.
 
-Check whether the Notion connector is connected.
+**Screenshot help (use this every time you send the member to a screen outside Claude):** give numbered steps, then say: "If your screen looks different from my steps, send me a screenshot of it and I'll tell you exactly what to click." When they send one, read it and tell them the exact next click. Wait for them to finish each step before giving the next.
 
-If NOT connected:
-> "Hi5 Success OS saves everything to your Notion — it's free, and it's how every skill knows your business without you repeating yourself. Let's connect it:
-> 1. Click the plug icon in the top right of your Cowork session
-> 2. Find Notion in the connectors list
-> 3. Click Connect and follow the authorization steps
-> 4. Come back and let me know when it is connected
+Ask:
+> "Do you already have Notion connected to Claude?
 >
-> No Notion account yet? Create a free one at notion.so first."
+> A) Yes, it's connected
+> B) I have Notion, but it's not connected to Claude
+> C) I don't have Notion yet
+> D) I'd rather not use Notion"
 
-Wait for confirmation. Re-check the connection before continuing.
+### A) Yes, connected
+Run the connection check below. If it passes, say "Perfect, Notion is connected." and go to Phase 2.
 
-If the member asks about Google Drive or keeping everything local:
-> "Notion is the only storage Hi5 Success OS supports right now. Google Drive and local storage are coming soon. Notion is free, so the quickest path is to connect it and keep going."
+### B) Has Notion, not connected
+Give these steps:
+> "Let's connect it. It takes about a minute:
+> 1. In Claude, open Settings and look for Connectors.
+> 2. Find Notion in the list and choose Connect.
+> 3. Notion will ask which pages Claude can access. Choose the whole workspace, or at least a page where it's fine for me to create the Hi5 workspace.
+> 4. Make sure Notion is switched on for this chat or project.
+> 5. Come back and tell me when you're done."
 
-If connected:
-> "Perfect — Notion is connected."
+Then run the connection check.
+
+### C) No Notion yet
+Give these steps:
+> "Notion is free, and it takes about 2 minutes to set up:
+> 1. Go to notion.so and choose Sign up.
+> 2. Create an account with Google or your email. If it asks how you'll use Notion, choose personal use.
+> 3. You'll land in an empty workspace. That's all you need.
+>
+> Then we'll connect it to Claude:
+> 4. In Claude, open Settings and look for Connectors.
+> 5. Find Notion and choose Connect.
+> 6. Notion will ask which pages Claude can access. Choose the whole workspace.
+> 7. Make sure Notion is switched on for this chat or project.
+> 8. Tell me when you're done."
+
+Then run the connection check.
+
+### D) Doesn't want Notion
+Say kindly, and stop setup:
+> "That's completely fine. Hi5 Success OS needs Notion for now, because that's where it saves your profile and your work so every skill can use it. The Hi5 Prompt Vault works without Notion. You'll find it in the Hi5 Success community. If you change your mind, run /hi5-setup again and we'll get Notion ready together."
+
+Do not continue setup. Do not build anything.
+
+### Connection check (read-only)
+Run one harmless Notion search (for example for "Hi5"). Do not create or change anything. If the search returns results or an empty list with no error, Notion works. If the Notion tools are missing, or the search returns a permission or authorization error, the check failed.
+
+If the check fails after the member says they connected, show the most likely causes and how to fix each, then stop:
+> "I can't reach your Notion yet. The usual causes are:
+> 1. The Notion connector isn't switched on for this chat. Open the connector list and turn Notion on here.
+> 2. Claude wasn't given access. Disconnect and reconnect Notion, and when it asks which pages Claude can access, choose the whole workspace.
+> 3. You connected a different Notion account than the one you meant to use.
+>
+> Fix whichever fits, then run /hi5-setup again. If your screen looks different from my steps, send me a screenshot and I'll help."
+
+Do not build anything until the check passes. If page creation fails later, in Phase 4, give the same causes (especially cause 2) and stop.
 
 ---
 
@@ -166,12 +210,12 @@ Use the member's name and these facts. Say what was created, what works now, and
 > ✅ Marketing Hub — ready for your first campaign
 > ✅ Skill Guide — your reference for every Hi5 skill
 >
-> **You can start using skills right now.** Here's what gets even better as you finish the other stages:
+> **You can start using skills right now.** Here's what the other stages add:
 > [one line per available stage: what it is, time, which skills improve]
 >
-> **Recommended next step:** run /hi5-self so I can learn how you think and communicate. Everything I write for you will match your style.
+> **Recommended next step: Stage 2, compliance (about 5 minutes).** It makes everything I write for you ready to publish. After that I'll point you to the next step.
 >
-> Want to keep going with the next stage now, or stop here and come back any time with /hi5-setup? You can also run a two-minute self-test any time to see how well I use your profile."
+> Want to start Stage 2 now, or stop here and come back any time with /hi5-setup?"
 
 If they want to continue, run the next available stage from the industry file.
 
