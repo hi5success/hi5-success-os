@@ -1,9 +1,9 @@
 # Review: Page Layout
 
-This is the layout for a review on the member's **existing** Quarterly Goals page (`quarterly_goals_page_id`). Never create a new page or a new database. Add it as a heading 3 named `Review` inside the section for the quarter reviewed, after the Check-in log and before Last updated. A re-run replaces only this Review subsection. Never change the Targets, The math, Priorities, Weekly plan, or Check-in log.
+Reviews live on the member's **existing** Business Reviews page (`business_reviews_page_id`). Never create a new database. Each review is one section on that page, newest first. The page keeps its first line ("Created by /hi5-bizreview.") at the top, then the reviews below it, newest first.
 
-## Layout
-Use these parts in this order under the `Review` heading. Skip a part only when the data cannot support it, and write one line saying why.
+## One section per review
+Use a heading 2 named with the period and the review date, for example `2026 Q4 so far (reviewed Nov 17, 2026)`. A re-run of the same period replaces that section instead of adding a second one. Under it, write these parts in this order. Skip a part only when the data cannot support it, and write one line saying why.
 
 ### Timeframe
 The timeframe reviewed (this quarter so far, last quarter, or the year to date), the dates, the date of the review, and how many check-ins it used.
@@ -31,6 +31,9 @@ Up to three, each with what to change, why, and what to watch next week.
 
 ### Gaps
 What the review could not cover and what would unlock it.
+
+## The link line on the Quarterly Goals page
+In the reviewed quarter's section, under its Review part, keep exactly one line: `Latest review: <link to the review section> (reviewed <date>)`. Replace the line on each new review. Touch nothing else on that page.
 
 ## Rules
 - No em dashes. Use a comma, a colon, or a new sentence.

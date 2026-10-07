@@ -55,7 +55,7 @@ to run /hi5-yt-research to fill them before scheduling.
 
 Once the lineup is set, present a draft schedule:
 
-| Video Title | Publish Date | Content Category |
+| Title | Publish Date | Content Category |
 |---|---|---|
 | [title] | [date] | [category] |
 

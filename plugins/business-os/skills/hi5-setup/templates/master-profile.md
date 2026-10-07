@@ -20,7 +20,7 @@ The Master Profile is one Notion page called "Master Profile" inside the root pa
 
 ### Setup Status
 - storage: notion
-- profile_version: the layout version this profile was built with. The current version is 2. A profile with no value was built before versioning, so treat it as version 1
+- profile_version: the layout version this profile was built with. The current version is 3. A profile with no value was built before versioning, so treat it as version 1
 - industry: the member's own words (for example "real estate agent", "business coach")
 - industry_flow: `real-estate` or `generic`. Skills use this to load the right `industries/` file
 - stage_1_core_profile: `not started`, `in progress: <what is done>`, or `complete <date>`
@@ -28,6 +28,8 @@ The Master Profile is one Notion page called "Master Profile" inside the root pa
 - stage_3_voice: same values
 - stage_4_objection_bank: same values (real estate only; leave out for other industries)
 - stage_5_neighborhoods: same values (real estate only; leave out for other industries)
+- workspace_source: `template` (copied the official Hi5 template) or `built` (created by setup). Set automatically, never asked
+- template_version: the version of the template layout (`2` for the current template, `none` for a built workspace). Set automatically, never asked
 - self_test: `passed <date>` or `needs work <date>: <gaps>` (written by the setup self-test)
 - projects_offered: the date /hi5-next offered the Claude Projects tip. It is set once, and it is the only thing /hi5-next ever writes. Not a setup question
 

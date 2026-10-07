@@ -139,6 +139,30 @@ if [ -f "$REVIEW_CORE" ] && grep -qiE 'fair housing|\bMLS\b|realtor|listing appo
   ERRORS+=("hi5-bizreview/SKILL.md contains real estate specifics. Move them to industries/real-estate.md")
 fi
 
+# 11. Template items: every item in the setup template spec must be matched by title in template copy mode, and setup must run the check
+SETUP_DIR="plugins/business-os/skills/hi5-setup"
+items_line=$(grep -m1 '^Template items:' "$SETUP_DIR/templates/workspace-build.md" | sed 's/^Template items: *//')
+match_line=$(grep -m1 "^1. Open the member's copy" "$SETUP_DIR/templates/workspace-build.md")
+if [ -z "$items_line" ]; then
+  ERRORS+=("hi5-setup/templates/workspace-build.md has no Template items line")
+else
+  IFS=',' read -ra ITEMS <<< "$items_line"
+  for item in "${ITEMS[@]}"; do
+    item=$(echo "$item" | sed 's/^ *//; s/ *$//')
+    [ -n "$item" ] && { echo "$match_line" | grep -qF "$item" || ERRORS+=("hi5-setup template item '$item' is not matched by title in template copy mode step 1"); }
+  done
+  grep -qF 'Template items' "$SETUP_DIR/SKILL.md" || ERRORS+=("hi5-setup/SKILL.md WORKSPACE CHECK does not use the Template items list")
+fi
+
+# 12. profile_version: the number in profile-changes.md must match the setup build and the master profile layout
+cur=$(sed -n 's/^Current profile_version: \([0-9][0-9]*\).*/\1/p' "$SETUP_DIR/templates/profile-changes.md" | head -1)
+if [ -z "$cur" ]; then
+  ERRORS+=("hi5-setup/templates/profile-changes.md has no Current profile_version line")
+else
+  grep -qF "profile_version: $cur" "$SETUP_DIR/templates/workspace-build.md" || ERRORS+=("workspace-build.md does not start new profiles at profile_version: $cur")
+  grep -qF "The current version is $cur." "$SETUP_DIR/templates/master-profile.md" || ERRORS+=("master-profile.md does not say the current version is $cur")
+fi
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"
