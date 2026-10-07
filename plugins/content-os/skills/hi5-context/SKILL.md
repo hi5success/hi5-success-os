@@ -37,6 +37,7 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 4. More than one marked page → list them with their location and ask the member to pick one. Only ask when more than one marked page matches. Never guess.
 5. Open the marked page's child "Master Profile". Its "Page IDs" section holds the IDs of everything else. Use those IDs directly. Do not search again in the same session.
 6. If a saved ID is missing or the page no longer exists, search for it by title under the root page and write the corrected ID back to the Page IDs section. If the page truly does not exist, tell the member to run /hi5-setup and choose "Continue setup", and stop.
+7. If a field this skill needs is missing from the profile, ask for it once, save it as a `- field_name: value` bullet inside the matching section of the Master Profile (never at the end of the page), and continue.
 
 ## What You Read From the Master Profile
 

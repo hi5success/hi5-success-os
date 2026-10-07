@@ -146,7 +146,7 @@ Ask: "Does everything look right? Say yes to save, or tell me what to change."
 
 Once confirmed, write to the member's Master Profile using the Notion connector. Use the exact field names above.
 
-1. **Content Profile section.** Add a heading 2 called "Content Profile" at the end of the Master Profile page (or update it if it exists). Under it write one bullet per field in the form `- field_name: value`, using the field names in the questions above. Put `channels:` first, listing the channel names (just the one name if they have one channel).
+1. **Content Profile section.** Add a heading 2 called "Content Profile" on the Master Profile page, inserted before the Linked pages heading (or update it if it exists). Never append it after the child pages Under it write one bullet per field in the form `- field_name: value`, using the field names in the questions above. Put `channels:` first, listing the channel names (just the one name if they have one channel).
 2. **Voice Profile page.** If `voice_profile_page_id` is not set, create a child page called "Voice Profile" under the Master Profile. Write one bullet per voice field (`- vocabulary_style: value`, and so on). Save the new page's ID as `voice_profile_page_id` in Page IDs. If it already exists, change nothing in it.
 3. **Extra channels.** For each additional channel, create a child page under the Master Profile called "Channel – [name]" (with an en dash) holding that channel's own fields. Save each as `Name = page id` in `channel_pages` in Page IDs.
 4. Do not create any other page. Do not touch other sections.

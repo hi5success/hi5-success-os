@@ -361,7 +361,7 @@ Deliver a plain language summary:
 
 ## STORAGE
 
-Save full profile to Master Profile under section: "Self Profile"
+Save full profile to Master Profile under section: "Self Profile". Insert it inside that section. Never append it at the end of the page, because the end of the page holds the Linked pages heading and child pages
 
 Fields stored:
 - behavioral_style (D/I/S/C dominant)

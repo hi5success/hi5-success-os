@@ -61,6 +61,7 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 4. More than one marked page → list them with their location and ask the member to pick one. Only ask when more than one marked page matches. Never guess.
 5. Open the marked page's child "Master Profile". Its "Page IDs" section holds `root_page_id` and the IDs of everything else (Content Planner, Marketing Hub, Business OS pages, and so on). Use those IDs directly. Do not search again in the same session.
 6. If a saved ID is missing or the page no longer exists, search for it by title under the root page and write the corrected ID back to the Page IDs section.
+7. If a field the skill needs is missing from the profile, ask for it once, save it inside the matching section (never at the end of the page), and continue.
 
 ---
 
@@ -148,7 +149,10 @@ Do not build anything until the check passes. If page creation fails later, in P
 
 Use the lookup rule in FINDING THE HI5 SUCCESS OS WORKSPACE.
 
-- **Workspace found** → this is a re-run. Go to RE-RUN MENU. Do not rebuild anything.
+- **Workspace found** → this is a re-run. Do not rebuild anything.
+  1. Read `profile_version` from Setup Status. The current version is in `templates/profile-changes.md`. A missing value means version 1.
+  2. If it is lower than current, run PROFILE UPDATE below before the menu.
+  3. Then go to RE-RUN MENU.
 - **Not found** → go to Phase 3.
 
 ---
@@ -220,6 +224,16 @@ Use the member's name and these facts. Say what was created, what works now, and
 If they want to continue, run the next available stage from the industry file.
 
 ---
+
+## PROFILE UPDATE
+
+When a member's `profile_version` is lower than the current version:
+1. Read `templates/profile-changes.md`. For every version after theirs, list the new fields and check which ones the profile does not have yet. Skip fields they already have.
+2. If nothing is missing, set `profile_version` to the current version and continue. Say nothing.
+3. If something is missing, say: "Since you set up, I've added a few things that make your results better. It will take about [N] minutes. Want to fill them in now?" If they say not now, leave `profile_version` as it is and go on to the menu. Offer again next time.
+4. If they say yes, ask only the questions listed for the missing fields, one at a time, saving each answer inside its section. Never re-ask something already answered and never rewrite existing values.
+5. Add the Linked pages heading at the end of the Master Profile if it is missing. Existing child pages stay where they are.
+6. Set `profile_version` to the current version.
 
 ## RE-RUN MENU
 

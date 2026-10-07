@@ -2,6 +2,12 @@
 
 The Master Profile is one Notion page called "Master Profile" inside the root page titled "Hi5 Success OS Workspace" (the root's first line is the marker `hi5-os-root: v1`; see FINDING THE HI5 SUCCESS OS WORKSPACE in `SKILL.md`). Every Hi5 skill reads it. This file is the contract: the section names and field names below are exactly what skills look for.
 
+## Rules that never change
+- **Fields are append-only.** Never rename or delete an existing field or section. Only add new ones. Members already have profiles saved, and every skill relies on the names below.
+- **Never append to the end of the page.** The last section is always the **Linked pages** heading, and child pages (Compliance Guardrails, Voice Profile, Objection Bank, Neighborhoods) appear below it. Insert every new section or bullet inside its own section, before the Linked pages heading.
+- **Ask once for a missing field.** If a skill needs a field the profile does not have, ask the member for it once, save it in the right section, and continue. Do not ask again.
+- **`profile_version`** in Setup Status says which release of this layout the profile has. /hi5-setup compares it with the current version (see `profile-changes.md`) and offers to fill in anything new.
+
 ## Format
 - Each section is a heading 2.
 - Under it, one bullet per field in the form `- field_name: value`.
@@ -14,6 +20,7 @@ The Master Profile is one Notion page called "Master Profile" inside the root pa
 
 ### Setup Status
 - storage: notion
+- profile_version: the layout version this profile was built with. The current version is 2. A profile with no value was built before versioning, so treat it as version 1
 - industry: the member's own words (for example "real estate agent", "business coach")
 - industry_flow: `real-estate` or `generic`. Skills use this to load the right `industries/` file
 - stage_1_core_profile: `not started`, `in progress — <what is done>`, or `complete <date>`
@@ -77,9 +84,22 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - price_range (real estate): typical price range of the homes they work with
 - market_conditions: what their market is doing right now, in their words
 - focus (real estate): buyers, sellers, or both
+- client_categories: the client types they work with, as a list. Choices: buyers, sellers, renters or tenants, landlords, investors, 55+ communities, luxury, first-time buyers, new construction, relocation, commercial sales, commercial leases, land, plus anything else they add
 - offer (any industry): what they sell or offer, with the typical price
 - lead_sources_ranked: lead or customer sources, biggest first
 - goal_12_month: their 12-month goal in their own words. /hi5-bizplan turns it into numbers
+
+### Business Numbers
+Written by /hi5-bizplan, not by setup. Skills that need these numbers read them here instead of the plan text.
+- deals_closed_last_year, deals_closed_ytd, total_volume_last_year, gci_last_year
+- leads_received, agreements_signed, closed_transactions
+- avg_sale_price, buyer_seller_split
+- brokerage_split, cap_amount, cap_year_reset, brokerage_fees, milestone_goal: the member's own commission model in their words
+- team_deals_count_to_leader: yes or no (teams)
+- gci_goal, transaction_goal
+- gbp_status: Google Business Profile status
+- social_frequency, paid_ads, marketing_goals, top_lead_source, desired_lead_source
+- last_plan_date
 
 ### Edge
 Written by Stage 3.
@@ -100,9 +120,12 @@ A child page of the Master Profile created by Stage 2, ID in `compliance_page_id
 ### Voice Profile (child page, not a section)
 A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `emoji_use`, `preferred_length`, `phrases_used`, `phrases_never_used`, `how_to_come_across`, `energy_level`, `cta_style`, followed by a voice summary, proof samples, and gaps. Stage 3 of /hi5-setup creates it (template `voice-profile.md`). /hi5-yt-setup adds `energy_level` and `cta_style` if missing, and creates the page only if the member has not done Stage 3.
 
-Later stages and commits add more sections to this layout (compliance links, voice, business context). Add them here when they are defined.
+### Linked pages
+Always the last section. It holds only the heading. Child pages created by the stages appear below it.
 
-## Renamed fields (older skills may still use the old names)
+Later releases add more sections to this layout. Add them here when they are defined, and add them to `profile-changes.md`.
+
+## Renamed fields (before the first release only. Fields are never renamed after release)
 | Old name | Use now |
 |---|---|
 | `PROFILE.re_role` | `role` |
