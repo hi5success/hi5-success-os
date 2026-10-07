@@ -15,7 +15,7 @@ Generate a personalized business plan from the member's Master Profile. Ask only
 - **Never hardcode any brokerage's or business's rules.** Cap amounts, splits, fees, production awards, revenue share, and price lists differ everywhere. Use only what the member tells you. If a rule is unclear, ask. Do not assume.
 - Tailor tone to their behavioral style (from /hi5-self): High D leads with numbers and action steps. High I leads with vision and energy. High S leads with stability and steady growth. High C leads with data and detail.
 - Tailor the structure to their biggest blocker. For example, if the blocker is taking on too much, limit the plan to three priorities.
-- Write in the member's voice style and follow their Voice Profile. Never use em dashes unless the Voice Profile says `avoid_em_dashes: no`.
+- Write in the member's voice style and follow their Voice Profile. Never use em dashes unless the Voice Profile says `avoid_em_dashes: no`. Before you send anything, scan your message for em dashes and replace each one with a comma, a colon, or a new sentence. This includes tables, bullet lists, and summaries.
 
 ---
 
