@@ -94,14 +94,14 @@ Write this on the Dashboard page:
 > **Not sure what to do next?** Run /hi5-next. It reads your progress and tells you your best next step.
 >
 > **The path**
-> 1. **Foundation:** finish your setup (run /hi5-setup and choose "Continue setup"), then /hi5-self and /hi5-bizplan
+> 1. **Foundation:** finish your setup (run /hi5-setup and choose "Continue setup"), then /hi5-self, /hi5-bizplan, and /hi5-goals
 > 2. **Content strategy:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan (if you plan to make videos)
 > 3. **Create:** /hi5-yt-script, /hi5-repurpose, /hi5-social, /hi5-blog
 > 4. **Get found:** /hi5-seo, /hi5-website
 > 5. **Nurture:** /hi5-email, /hi5-newsletter
 > 6. **Grow:** /hi5-landing, /hi5-casestudy
 >
-> Coming soon: /hi5-goals, /hi5-bizreview, /hi5-site-audit, and /hi5-funnel.
+> Coming soon: /hi5-bizreview, /hi5-site-audit, and /hi5-funnel.
 >
 > **Tip:** keep a few separate Claude Projects, one per topic. Run /hi5-next and I'll show you how.
 >
@@ -109,7 +109,7 @@ Write this on the Dashboard page:
 
 ## Skill Guide content
 A short table the member can reference. One section per plugin, one line per skill: command and what it does. Mark each plugin "if installed". Use the skill descriptions from the plugins:
-- **Business OS:** /hi5-setup, /hi5-next, /hi5-self, /hi5-bizplan, /hi5-goals (coming soon), /hi5-bizreview (coming soon)
+- **Business OS:** /hi5-setup, /hi5-next, /hi5-self, /hi5-bizplan, /hi5-goals, /hi5-bizreview (coming soon)
 - **Content OS:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose, /hi5-blog, /hi5-social
 - **Marketing OS:** /hi5-email, /hi5-newsletter, /hi5-seo, /hi5-linkedin, /hi5-website, /hi5-landing, /hi5-casestudy
 

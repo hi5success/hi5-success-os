@@ -15,7 +15,7 @@ Generate a personalized business plan from the member's Master Profile. Ask only
 - **Never hardcode any brokerage's or business's rules.** Cap amounts, splits, fees, production awards, revenue share, and price lists differ everywhere. Use only what the member tells you. If a rule is unclear, ask. Do not assume.
 - Tailor tone to their behavioral style (from /hi5-self): High D leads with numbers and action steps. High I leads with vision and energy. High S leads with stability and steady growth. High C leads with data and detail.
 - Tailor the structure to their biggest blocker. For example, if the blocker is taking on too much, limit the plan to three priorities.
-- Write in the member's voice style and follow their Voice Profile. Never use em dashes unless the Voice Profile says `avoid_em_dashes: no`.
+- Write in the member's voice style and follow their Voice Profile. Never use em dashes unless the Voice Profile says `avoid_em_dashes: no`. Before you send anything, scan your message for em dashes and replace each one with a comma, a colon, or a new sentence. This includes tables, bullet lists, and summaries.
 
 ---
 
@@ -105,10 +105,8 @@ Save the plan to the member's Notion page Business OS, then Business Plan (`busi
 
 ## NEXT STEP
 
-Follow the Recommended path in /hi5-setup. Recommend ONE next step:
-- If their industry is real estate and Stage 4 (objection bank) or Stage 5 (neighborhoods) in Setup Status is not complete, recommend /hi5-setup, then Continue setup.
-- Otherwise, if Content OS is installed, recommend /hi5-yt-setup. If not, recommend /hi5-email.
+Recommend ONE next step: /hi5-goals. Say: "Next: run /hi5-goals. It breaks this plan into this quarter's targets and a 13 week plan, using your own numbers, and a weekly check-in keeps you on track."
 
-Never recommend /hi5-goals or /hi5-bizreview yet. Say once: "Quarterly goal sprints (/hi5-goals) and business reviews (/hi5-bizreview) are coming soon, and your plan already has your 90 day roadmap."
+Never recommend /hi5-bizreview yet. Say once: "Business reviews (/hi5-bizreview) are coming soon."
 
 End your message with: "You can run /hi5-next any time and I'll tell you your best next step."
