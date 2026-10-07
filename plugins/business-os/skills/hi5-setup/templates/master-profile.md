@@ -90,13 +90,19 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - goal_12_month: their 12-month goal in their own words. /hi5-bizplan turns it into numbers
 
 ### Business Numbers
-Written by /hi5-bizplan, not by setup. Skills that need these numbers read them here instead of the plan text.
-- deals_closed_last_year, deals_closed_ytd, total_volume_last_year, gci_last_year
+Written by /hi5-bizplan, not by setup. Skills that need these numbers read them here instead of the plan text. Fields are added over time and never renamed. Real estate and any-industry plans use the same section.
+- deals_closed_last_year, deals_closed_ytd: deals, clients, or projects
+- total_volume_last_year, gci_last_year, gci_ytd (real estate)
+- revenue_last_year, revenue_ytd, avg_deal_value (any industry)
 - leads_received, agreements_signed, closed_transactions
-- avg_sale_price, buyer_seller_split
-- brokerage_split, cap_amount, cap_year_reset, brokerage_fees, milestone_goal: the member's own commission model in their words
+- avg_sale_price, buyer_seller_split (real estate)
+- brokerage_split, cap_amount, cap_year_reset, brokerage_fees: the member's own commission model in their words (real estate). Never filled from a preset
+- take_home_note, capacity_note (any industry)
 - team_deals_count_to_leader: yes or no (teams)
-- gci_goal, transaction_goal
+- plan_period: the period the goal covers
+- goal_type: gci, take-home, deals, revenue, or clients
+- gci_goal, take_home_goal, transaction_goal, revenue_goal, client_goal
+- milestone_goal: any award, level, or milestone, with what it takes, in the member's words
 - gbp_status: Google Business Profile status
 - social_frequency, paid_ads, marketing_goals, top_lead_source, desired_lead_source
 - last_plan_date
