@@ -37,7 +37,7 @@ Anytime (never part of the path, offer only when it fits): /hi5-linkedin
 | `/hi5-social` | content-os | live | Create | A Content Planner row has Deliverable Type Social Post, or Repurpose Status Captions Written or Posted | It writes platform specific captions so you stay visible. |
 | `/hi5-blog` | content-os | live | Create | A Content Planner row has Deliverable Type Blog | A blog post gives your content a home on your website and helps people find you on Google. |
 | `/hi5-seo` | marketing-os | live | Get found | The Marketing Hub has a row of Type SEO Strategy | It shows how to get found on Google in your market. |
-| `/hi5-site-audit` | marketing-os | coming | Get found | Not built yet | A page by page check of your website. |
+| `/hi5-site-audit` | marketing-os | live | Get found | The Marketing Hub has a row of Type SEO Audit | It checks your website page by page and gives you a short, prioritized fix list. |
 | `/hi5-website` | marketing-os | live | Get found | The Marketing Hub has a row of Type Website Copy | Clear website copy turns visitors into leads. |
 | `/hi5-email` | marketing-os | live | Nurture | The Marketing Hub has a row of Type Email Sequence | A nurture sequence follows up with leads so they do not go cold. |
 | `/hi5-newsletter` | marketing-os | live | Nurture | The Marketing Hub has a row of Type Newsletter | A newsletter keeps you top of mind with your list. |
