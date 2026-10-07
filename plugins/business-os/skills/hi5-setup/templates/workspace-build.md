@@ -91,21 +91,26 @@ Write this on the Dashboard page:
 > **Welcome to Hi5 Success OS**
 > Everything here is yours. Your skills read your Master Profile so you never re-explain your business.
 >
-> **Quick start**
-> 1. Finish your setup: run /hi5-setup and choose "Continue setup". Compliance rules and your writing voice make everything I write ready to publish. Real estate agents also add an objection bank and neighborhood profiles.
-> 2. Run /hi5-self to build your personality profile so everything is written for you
-> 3. Run /hi5-bizplan to generate your business plan
-> 4. Run /hi5-yt-setup to build your content workspace (if Content OS is installed)
-> 5. Run /hi5-email to build your first nurture sequence (if Marketing OS is installed)
+> **Not sure what to do next?** Run /hi5-next. It reads your progress and tells you your best next step.
 >
-> Coming soon: /hi5-goals (quarterly goals) and /hi5-bizreview (business reviews).
+> **The path**
+> 1. **Foundation:** finish your setup (run /hi5-setup and choose "Continue setup"), then /hi5-self and /hi5-bizplan
+> 2. **Content strategy:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan (if you plan to make videos)
+> 3. **Create:** /hi5-yt-script, /hi5-repurpose, /hi5-social, /hi5-blog
+> 4. **Get found:** /hi5-seo, /hi5-website
+> 5. **Nurture:** /hi5-email, /hi5-newsletter
+> 6. **Grow:** /hi5-landing, /hi5-casestudy
+>
+> Coming soon: /hi5-goals, /hi5-bizreview, /hi5-site-audit, and /hi5-funnel.
+>
+> **Tip:** keep a few separate Claude Projects, one per topic. Run /hi5-next and I'll show you how.
 >
 > **Your workspace:** Master Profile · Business OS · Content Planner · Marketing Hub · Skill Guide
 
 ## Skill Guide content
 A short table the member can reference. One section per plugin, one line per skill: command and what it does. Mark each plugin "if installed". Use the skill descriptions from the plugins:
-- **Business OS:** /hi5-setup, /hi5-self, /hi5-bizplan, /hi5-goals (coming soon), /hi5-bizreview (coming soon)
+- **Business OS:** /hi5-setup, /hi5-next, /hi5-self, /hi5-bizplan, /hi5-goals (coming soon), /hi5-bizreview (coming soon)
 - **Content OS:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose, /hi5-blog, /hi5-social
 - **Marketing OS:** /hi5-email, /hi5-newsletter, /hi5-seo, /hi5-linkedin, /hi5-website, /hi5-landing, /hi5-casestudy
 
-Finish with: "Run /hi5-setup any time to update your profile or continue setup."
+Finish with: "Run /hi5-next any time for your best next step, and /hi5-setup to update your profile or continue setup."

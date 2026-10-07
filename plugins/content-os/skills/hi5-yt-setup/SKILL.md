@@ -187,4 +187,4 @@ Never ask them to paste the key into the chat. Everything else is saved in their
 
 ## What's next
 
-End with: "Next: run /hi5-yt-research to find video ideas, then /hi5-yt-plan to build your content calendar in Notion. Your content plan comes from /hi5-yt-plan, not from this setup."
+End with: "Next: run /hi5-yt-research to find video ideas, then /hi5-yt-plan to build your content calendar in Notion. Your content plan comes from /hi5-yt-plan, not from this setup. You can run /hi5-next any time and I'll tell you your best next step."

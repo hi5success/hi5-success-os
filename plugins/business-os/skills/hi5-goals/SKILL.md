@@ -13,4 +13,4 @@ STUB: Full build coming next session. Core routing and frontmatter complete so p
 
 ## Placeholder Behavior
 If triggered before full build:
-> "The /hi5-goals skill is coming very soon. For now your business plan in Notion has your full 90 day roadmap. Check Business OS → Business Plan → Your 90 Day Roadmap for your current priorities."
+> "The /hi5-goals skill is coming very soon. For now your business plan in Notion has your full 90 day roadmap. Check Business OS → Business Plan → Your 90 Day Roadmap for your current priorities. You can run /hi5-next any time and I'll tell you your best next step."

@@ -56,6 +56,51 @@ if grep -rIl $'\xe2\x80\x94' plugins marketplace.json .claude-plugin README.md >
   done
 fi
 
+# 4. Every skill points members to /hi5-next (hi5-context is a reference file, not a command)
+for skill_dir in plugins/*/skills/*/; do
+  skill_name=$(basename "$skill_dir")
+  [ "$skill_name" = "hi5-context" ] && continue
+  grep -q '/hi5-next' "${skill_dir}SKILL.md" 2>/dev/null || ERRORS+=("$skill_name: SKILL.md never mentions /hi5-next. Every skill ends with a Next line")
+done
+
+# 5. path.md is the single source of truth for what /hi5-next recommends.
+#    Every skill folder needs a row, and the status must match reality:
+#    live = shipped (not a stub), coming = not built or still a stub.
+PATH_MD="plugins/business-os/skills/hi5-next/references/path.md"
+if [ ! -f "$PATH_MD" ]; then
+  ERRORS+=("$PATH_MD is missing")
+else
+  rows=$(grep -E '^\| `/hi5-' "$PATH_MD")
+  # every skill folder has a row
+  for skill_dir in plugins/*/skills/*/; do
+    skill_name=$(basename "$skill_dir")
+    [ "$skill_name" = "hi5-context" ] && continue
+    echo "$rows" | awk -F'|' '{gsub(/[ `\/]/,"",$2); print $2}' | grep -qx "$skill_name" || ERRORS+=("path.md has no row for $skill_name. Add it, with a status of live or coming")
+  done
+  # every row has a valid status that matches the folder
+  while IFS= read -r row; do
+    [ -z "$row" ] && continue
+    name=$(echo "$row" | awk -F'|' '{gsub(/[ `\/]/,"",$2); print $2}')
+    status=$(echo "$row" | awk -F'|' '{gsub(/[ ]/,"",$4); print $4}')
+    dir=$(ls -d plugins/*/skills/"$name"/ 2>/dev/null | head -1)
+    case "$status" in
+      live)
+        if [ -z "$dir" ]; then ERRORS+=("path.md lists $name as live but no skill folder exists")
+        elif grep -q 'STUB' "${dir}SKILL.md"; then ERRORS+=("path.md lists $name as live but its SKILL.md is still a stub")
+        fi;;
+      coming)
+        if [ -n "$dir" ] && ! grep -q 'STUB' "${dir}SKILL.md"; then ERRORS+=("path.md lists $name as coming but it has shipped. Change it to live")
+        fi;;
+      *) ERRORS+=("path.md row for $name has status '$status'. Use live or coming");;
+    esac
+    # live skills must be in the README and the Skill Guide in workspace-build.md
+    if [ "$status" = "live" ]; then
+      grep -q "/$name" README.md || ERRORS+=("README.md does not list /$name")
+      grep -q "/$name" plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md (Dashboard and Skill Guide) does not list /$name")
+    fi
+  done <<< "$rows"
+fi
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

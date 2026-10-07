@@ -16,6 +16,7 @@ Onboard a Hi5 Success OS member. Connect Notion, detect their industry, build th
 - Hold answers as you go and write them to the Master Profile at each checkpoint (see Phase 5). If the member stops, nothing already confirmed is lost
 - Never show the member raw Notion IDs or field names. Say "your Master Profile", not `PROFILE.primary_market`
 - Notion is the only storage for this release. Do not offer Google Drive or local storage as working options
+- Never use em dashes in anything you say or write. Use a comma, a colon, or a new sentence instead
 - Whenever you send the member outside Claude (Notion, a connector, Google), give numbered steps, offer screenshot help, never assume menu names, and wait for them to finish each step
 
 ---
@@ -35,6 +36,7 @@ Setup is split into stages. Stage 1 gets the member started. Later stages can be
 Each stage is a section in the member's industry file (`industries/real-estate.md` or `industries/generic.md`). If the industry file has no section for a stage, tell the member that stage is not available for their industry yet, and skip it.
 
 ### Recommended path
+The full path for every skill, with the Notion signal that means each step is done, lives in `../hi5-next/references/path.md`. Keep this section consistent with it.
 Always recommend ONE next step, never a menu of competing options. The order is: Stage 2 (compliance), Stage 3 (voice and edge), /hi5-self, /hi5-bizplan, then for real estate Stage 4 (objection bank) and Stage 5 (neighborhoods), then the content skills. Skip any step the member has already finished (check Setup Status). Skills that are not built yet (/hi5-goals, /hi5-bizreview) are never recommended.
 
 ### How stages 2 to 5 run (general procedure)
@@ -219,6 +221,8 @@ Use the member's name and these facts. Say what was created, what works now, and
 >
 > **Recommended next step: Stage 2, compliance (about 5 minutes).** It makes everything I write for you ready to publish. After that I'll point you to the next step.
 >
+> Not sure what to do at any point? Run /hi5-next and I'll tell you your best next step. Once your first stages are done, I can also show you how to keep a few separate Claude Projects, one per topic, to keep your work organized.
+>
 > Want to start Stage 2 now, or stop here and come back any time with /hi5-setup?"
 
 If they want to continue, run the next available stage from the industry file.
@@ -245,15 +249,17 @@ When /hi5-setup is run and a workspace already exists, read the Master Profile's
 > 2. Update something in my profile
 > 3. Redo a stage
 > 4. Add a neighborhood *(real estate only)*
-> 5. Run the setup self-test"
+> 5. Run the setup self-test
+> 6. Show me what I can do"
 
-Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Option 5 is always shown.
+Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Options 5 and 6 are always shown.
 
 - **1** → run that stage from the industry file. If Stage 1 is unfinished, resume at the first question group that is not saved yet (see Checkpoints in Phase 5) instead of starting over.
 - **2** → ask which section (Identity, Market, Tools, Presence, Brand, or another section on the profile) or which saved page (such as Compliance Guardrails or Voice Profile), show the current values, ask what to change, confirm, then update that section only.
 - **3** → ask which stage, then run it. Show the current saved content first and ask "Replace it or add to it?"
 - **4** → run the neighborhoods stage for one new area, save it as a new child page, and add it to the Page IDs section.
 - **5** → run the SELF-TEST below.
+- **6** → show what they can do, grouped by goal. Read the "Goal menu" in `../hi5-next/references/path.md` and show only the skills whose Status is `live`, with one short line each, for these goals: YouTube content, social media, blog and SEO, email and newsletter, website and landing pages, and business plan and goals. Ask which goal they want to work on, then recommend the first step for it (the same logic as /hi5-next, which is read-only). Mention that /hi5-next can do this any time.
 
 Never rebuild the workspace on a re-run. If a page is missing, recreate only that page and update its ID.
 

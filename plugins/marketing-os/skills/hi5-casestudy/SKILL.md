@@ -99,4 +99,4 @@ Save all versions to the Marketing Hub (`marketing_hub_db_id`) as one row: Title
 
 ## NEXT STEP
 
-> "Next: want to turn the social version into captions for each platform? Run /hi5-social and I will format it."
+> "Next: want to turn the social version into captions for each platform? Run /hi5-social and I will format it. You can run /hi5-next any time and I'll tell you your best next step."

@@ -57,4 +57,4 @@ Save the complete sequence to the Marketing Hub (`marketing_hub_db_id`) as one r
 
 ## NEXT STEP
 
-> "Next: pair this with a newsletter so your database hears from you consistently. Run /hi5-newsletter and I will build it out."
+> "Next: pair this with a newsletter so your database hears from you consistently. Run /hi5-newsletter and I will build it out. You can run /hi5-next any time and I'll tell you your best next step."

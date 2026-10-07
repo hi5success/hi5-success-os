@@ -89,4 +89,4 @@ Write each row one at a time and confirm as you go. After all rows are updated:
 Display the final schedule as a clean table with Title, Publish Date, Edit Due
 Date, and Content Category.
 
-"Run /hi5-yt-script any time you're ready to write a script for one of these videos."
+"Next: run /hi5-yt-script any time you're ready to write a script for one of these videos. You can run /hi5-next any time and I'll tell you your best next step."

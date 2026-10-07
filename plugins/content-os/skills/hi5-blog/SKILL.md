@@ -75,4 +75,4 @@ Generate a complete blog post:
 
 Save to Notion Content Planner with status: Draft
 
-> "Your blog post is saved to your Content Planner. Want me to also pull 3 social captions from this post? Run /hi5-social to do that."
+> "Your blog post is saved to your Content Planner. Want me to also pull 3 social captions from this post? Run /hi5-social to do that. You can run /hi5-next any time and I'll tell you your best next step."

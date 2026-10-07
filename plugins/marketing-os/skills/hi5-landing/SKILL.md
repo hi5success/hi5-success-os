@@ -74,4 +74,4 @@ Save to the Marketing Hub (`marketing_hub_db_id`) as one row: Title names the of
 
 ## NEXT STEP
 
-> "Next: run /hi5-email to build the follow-up sequence for the leads this page captures. Ad copy writing is coming soon."
+> "Next: run /hi5-email to build the follow-up sequence for the leads this page captures. Ad copy writing is coming soon. You can run /hi5-next any time and I'll tell you your best next step."
