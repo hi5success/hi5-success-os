@@ -161,36 +161,36 @@ Store: market_conditions
 
 Store: focus
 
-**Q19: Niche**
-> "Do you focus on a specific niche or client type?"
+**Q19: Client types**
+> "Which kinds of clients do you work with? Pick all that apply:
 >
-> A) Luxury / high end
-> B) First time buyers
-> C) Investors
-> D) Relocation
-> E) New construction
-> F) General: I work with everyone
-> G) Other: (ask what)
+> Buyers · Sellers · Renters or tenants · Landlords · Investors · 55+ communities · Luxury · First-time buyers · New construction · Relocation · Commercial sales · Commercial leases · Land · Other (tell me)"
 
-Store: niche
+Store: client_categories (a list). Update ID: S1-CATEGORIES. Every skill reads this list to adapt to the member's clients, so make sure it is complete.
 
-**Q20: Lead Sources**
+**Q20: Main specialty**
+> "Of those, is there one you'd call your specialty? Or do you work with everyone about equally?"
+
+Offer the client types they picked plus "General: I work with everyone". Skip this question if they picked only one client type.
+Store: niche (the specialty in their words, or "general")
+
+**Q21: Lead Sources**
 > "Rank your lead sources by how much business each one produces, biggest first. Pick from this list or add your own:
 >
 > Sphere of influence / referrals · Social media (organic) · YouTube · Paid ads · Open houses · Cold outreach / door knocking · Online leads (Zillow, Realtor.com, etc.) · Other"
 
 Store: lead_sources_ranked (an ordered list, biggest first)
 
-**Q21: 12-Month Goal**
+**Q22: 12-Month Goal**
 > "What is your goal for the next 12 months? Deals, GCI, or a lifestyle goal. Say it in your own words. In /hi5-bizplan we'll turn it into exact numbers."
 Store: goal_12_month
 
-→ **Checkpoint C:** write the answers above to Business (and `niche` to Market).
+→ **Checkpoint C:** write the answers above to Business (`client_categories`) and Market (`niche`).
 
 ## GROUP D: Your Brand (optional)
 Say first: "Last group, and it's optional. Say 'skip' on any of these and we'll come back to it later."
 
-**Q22: Branding**
+**Q23: Branding**
 > "Where does your branding stand right now?"
 >
 > A) Fully branded: logo, colors, fonts, everything consistent
@@ -200,15 +200,15 @@ Say first: "Last group, and it's optional. Say 'skip' on any of these and we'll 
 
 Store: brand_status
 
-**Q23: Brand Color**
+**Q24: Brand Color**
 > "What is your primary brand color? If you know your hex code drop it here, otherwise just describe the color family and we will work with it."
 Store: brand_color
 
-**Q24: Brand Font**
+**Q25: Brand Font**
 > "Do you have a primary font you use in your marketing? If you are not sure just say so."
 Store: brand_font
 
-**Q25: Branding Help**
+**Q26: Branding Help**
 > "One last thing on branding, if you ever want professional help with your brand identity (logo, colors, fonts, full brand guide), our team at Hi5 Biz Solutions works specifically with real estate agents on this. Head over to the Hi5 Success community and drop a message in the services channel and we will get you the details on packages and pricing."
 >
 > "Would you like me to make a note of this in your profile so we follow up with you?"
@@ -360,33 +360,34 @@ Save: the Edge fields to the Master Profile's Edge section, and everything else 
 
 ---
 
-# STAGE 4: Objection Bank (about 10 minutes)
+# STAGE 4: Objection Bank (about 10 minutes per client type)
 
-Template: `templates/objection-bank.md`. Creates the **Objection Bank** page. Follow the general procedure in `SKILL.md`.
+Templates: `templates/objection-bank.md` (page layout and rules) and `templates/objections/<client type>.md` (Hi5 starter objections for each client type). Creates the **Objection Bank** page, grouped by client type. Follow the general procedure in `SKILL.md`, with the loop below.
 
-Before starting, open the Voice Profile page and the Edge section if they exist. You will write in the member's voice and use their proof point. If Stage 3 is not done, say: "This works best after Stage 3 (voice and edge), because I'll write the answers in your voice. Want to do that first, or go ahead now with a general voice?" Follow their choice.
+Before starting, open the Voice Profile page and the Edge section if they exist. You will write in the member's voice and use their proof points. If Stage 3 is not done, say: "This works best after Stage 3 (voice and edge), because I'll write the answers in your voice. Want to do that first, or go ahead now with a general voice?" Follow their choice.
 
-Intro: "Sellers push back in predictable ways. I've already written answers to the five most common objections, and I'll rewrite them in your voice with your real proof points. You'll end up with a bank you can reuse on calls, in texts, and in follow-up. Two quick questions first."
+Intro: "Clients push back in predictable ways, and the right answer depends on who you're talking to. I've written starter answers for the most common objections from each type of client. I'll rewrite them in your voice with your real proof points, one client type at a time. You'll end up with a bank you can reuse on calls, in texts, and in follow-up."
 
-Show the five objections so they know what is covered:
-1. "We'll wait for the market to get better."
-2. "We're going to try selling it ourselves."
-3. "Another agent will do it for less."
-4. "We want to list higher than your number."
-5. "We're just looking / not ready yet."
+## Step 1: Confirm the client types
+Read `client_categories` from the Business section. Say: "You told me you work with [list]. Is that still right? Add or remove any."
+If `client_categories` is missing (an older profile), ask the Q19 question from Stage 1 once and save the answer. Then ask which type they want to start with, and recommend the one that is most of their business.
 
-**O1: Extra objections**
-> "Which other objections do you hear a lot? Add as many as you like, or say 'none'."
-Store: extra_objections
-
-**O2: Proof points**
+## Step 2: Proof points (ask once, for all client types)
 > "What proof points can I use in your answers? Results, stats, steps in your process, or client testimonials. Paste whatever you have. I won't make anything up. Where I don't have proof for an answer, I'll mark it [ADD PROOF] so you can fill it in later."
-Pre-fill from `proof_point` on the Edge section if one exists, and ask "Anything else to add?"
-Store: proof_points
 
-Then build the page from the template: rewrite all five drafts and any extra objections in the member's voice, put one specific proof point in each response (or `[ADD PROOF]`), and run the template's final check. Show the member the finished bank (the full text of each response) and ask for changes. Save per the general procedure.
+Pre-fill from `proof_point` on the Edge section if there is one, and ask "Anything else to add?" Then, for each proof point, ask: "Is it OK to use that publicly in your marketing, or is it just for your own conversations?" Store each as `text (public)` or `text (internal)`. Update ID: S4-PROOF-FLAGS.
+Store: proof_points. Responses in the Objection Bank are for conversations, so internal proof points can be used there, but mark them (internal).
 
-When saved, tell the member: "Your Objection Bank is saved as a page under your Master Profile. You don't need to save it anywhere else, because the Hi5 skills read it from Notion. To add an objection or fill in an [ADD PROOF] spot later, run /hi5-setup and choose Redo a stage."
+## Step 3: Build one client type at a time
+For each client type the member chose:
+1. **Starters.** Read `templates/objections/<slug>.md` for that type (the slug is the lowercase type with hyphens, for example `first-time-buyers`, `55-plus-communities`, `commercial-leases`). Follow any note at the top of the file. List the starter objections by name so the member sees what is covered. If the type has no file (they typed "other"), skip to question 2 and build every objection from what they tell you.
+2. **Their pushback.** Ask: "What pushback do you hear most from [client type]? Add as many as you like, or say 'none'."
+3. **Build.** Following the template, write this type's section: every starter and every extra objection with all five parts, in the member's voice, with one specific proof point each (or [ADD PROOF]). Run the template's final check.
+4. **Show and revise.** Show the full text of each response and ask for changes.
+5. **Save.** Create the Objection Bank page the first time (see the template). Add or update a heading for this client type. Save `objection_bank_page_id` in Page IDs. Update Setup Status: `stage_4_objection_bank: in progress: [types done]`, or `complete <date>` when every chosen type is done.
+6. **Next.** Ask: "Want to do [next client type] now, or stop here?" Never push. A member can finish the rest later from the re-run menu.
+
+When the last type is saved, or the member stops, tell them: "Your Objection Bank is saved as a page under your Master Profile, grouped by client type. You don't need to save it anywhere else, because the Hi5 skills read it from Notion. To add a client type, add an objection, or fill in an [ADD PROOF] spot later, run /hi5-setup and choose Redo a stage."
 
 ---
 
@@ -434,16 +435,16 @@ Ask the questions one at a time. Skip anything about who lives there. If the mem
 **N9: Seasonal quirks**
 > "Are there seasonal quirks you've personally seen, like traffic patterns, drainage after heavy rain, or busy times of year? I'll tell readers to verify anything like that with the official source."
 
-## Group 4: Buyer and seller considerations
+## Group 4: Considerations for your clients
 
 **N10: What sells fast**
-> "What types of homes sell fastest in [area], and what do those homes usually have in common?"
+> "What types of homes or properties move fastest in [area], and what do they usually have in common?"
 
 **N11: Inspection and maintenance**
 > "What inspection issues or maintenance items come up often with homes there?"
 
 **N12: Questions and prep**
-> "What should buyers ask about before buying in [area], and what should sellers know before listing?"
+> "What should your clients know or ask before they buy, sell, rent, lease, or invest in [area]? Answer for the types of clients you work with."
 
 Then build the page from the template, mark every stat [VERIFY + DATE], and run the template's rules, including removing any line that describes residents, school quality, or safety as fact. Show the member the Snapshot and Content Angles and ask whether it looks right. Save per the general procedure, and add the area to the `neighborhoods` list.
 
@@ -457,19 +458,52 @@ Ask: "Want to add another area now, or stop here?"
 
 # SELF-TEST SCENARIO
 
-Used by the SELF-TEST section in `SKILL.md`. Fill the brackets from the member's profile.
+Used by the SELF-TEST section in `SKILL.md`. Pick the scenario that matches the member's main client type, so the test checks what they actually do. Use `niche` if it names a client type, otherwise the first item in `client_categories`, otherwise `focus`. If you cannot tell, use the buyer scenario and say you did.
 
-- [NEIGHBORHOOD] → the first area in `neighborhoods`, otherwise `primary_market`
-- [PRICE] → a realistic example price that fits `price_range`
+| Main client type | Scenario |
+|---|---|
+| Sellers, luxury | Seller pricing gap |
+| Buyers, first-time buyers, new construction, relocation, 55+ communities | Buyer waiting on rates |
+| Investors | Investor numbers |
+| Landlords | Landlord rent expectations |
+| Renters or tenants | Tenant budget |
+| Commercial sales, commercial leases, land | Commercial space |
+
+Fill the brackets from the profile:
+- [AREA] → the first area in `neighborhoods`, otherwise `primary_market`
+- [PRICE] → a realistic example price that fits `price_range`. If `price_range` is missing, ask once: "What's a typical price in [primary_market]?"
 - [HIGHER PRICE] → roughly 8 to 10 percent above [PRICE]
-- If `price_range` is missing, ask once: "What's a typical home price in [primary_market]?"
-- Tell the member which example numbers you chose.
+- [RENT] and [LOWER RENT] → realistic monthly rents for the market, about 15 percent apart
+- Tell the member which scenario and which example numbers you chose.
 
-**Scenario:**
-"I just left a listing appointment in [NEIGHBORHOOD]. The data supports about [PRICE], but the sellers want [HIGHER PRICE]. They've owned the home a long time and are attached to it. I'm competing with two other agents."
+For every scenario, deliverables 3 and 4 are the same: a follow-up email I can send tonight (under 150 words, in my voice, ending with my disclosure line, and including any required notices), and one Fair Housing compliant one-line social caption on the topic. Deliverables 1 and 2 are below.
 
-**Deliverables:**
+## Seller pricing gap
+"I just left a listing appointment in [AREA]. The data supports about [PRICE], but the sellers want [HIGHER PRICE]. They've owned the home a long time and are attached to it. I'm competing with two other agents."
 1. **Pricing strategy:** how to frame the gap without arguing (3 bullets).
 2. **Emotional attachment:** how to handle the conversation (2 phrases I could use).
-3. **Follow-up email** I can send tonight: under 150 words, in my voice, ending with my disclosure line.
-4. **One-line Instagram caption** about pricing strategy that is Fair Housing compliant.
+
+## Buyer waiting on rates
+"I just met with buyers who love a home in [AREA] listed around [PRICE]. They say they want to wait for rates to drop before making an offer, and they're unsure about signing a buyer agreement. I'm competing with two other agents."
+1. **Framing the wait:** how to talk about timing without predicting rates (3 bullets).
+2. **The buyer agreement:** how to handle the hesitation (2 phrases I could use).
+
+## Investor numbers
+"An investor I met is looking at a property in [AREA] listed around [PRICE]. They say the numbers don't work at that price, and that they can find deals on their own. I'm competing with two other agents."
+1. **Working the numbers:** how to walk through the deal without promising returns (3 bullets).
+2. **"I can find deals myself":** how to respond (2 phrases I could use).
+
+## Landlord rent expectations
+"A landlord I met owns a property in [AREA] and wants to charge about [RENT], but comparable places rent for about [LOWER RENT]. They also say they'd rather manage it themselves. I'm competing with two other agents."
+1. **Pricing the rent:** how to frame the gap using the market, without guaranteeing anything (3 bullets).
+2. **"I'll manage it myself":** how to respond (2 phrases I could use).
+
+## Tenant budget
+"A prospective tenant in [AREA] has a tight budget and worries about the deposit, the fees, and their credit. They say they might just search on their own. I'm competing with two other agents."
+1. **Budget and costs:** how to lay out the full move-in cost and set honest expectations (3 bullets).
+2. **"I'll look on my own":** how to respond (2 phrases I could use).
+
+## Commercial space
+"A business owner I met in [AREA] is looking at a space with a quoted price or rent of around [PRICE or RENT]. They say the cost is too high, they'd rather deal directly with the owner or the other broker, and they're unsure how long a commitment to make."
+1. **Total cost and terms:** how to compare options on the same basis and negotiate, without guessing at legal terms (3 bullets).
+2. **"I'll deal directly":** how to respond (2 phrases I could use).

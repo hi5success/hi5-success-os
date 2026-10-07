@@ -29,7 +29,7 @@ Setup is split into stages. Stage 1 gets the member started. Later stages can be
 | 1. Core profile | Who they are, their market and business, tools, social, brand | ~10 min | Everything. Skills work after this stage |
 | 2. Compliance | Disclosure line, advertising and messaging rules | ~5 min | Every skill that writes something public (email, newsletter, website, landing, social, LinkedIn, blog) |
 | 3. Voice and edge | Who they serve best, what sets them apart, how they write and what to avoid | ~8 min | Every writing skill (scripts, email, newsletter, blog, social, website) |
-| 4. Objection Bank (real estate only) | Their answers to common seller objections | ~10 min | Listing appointment and follow-up skills |
+| 4. Objection Bank (real estate only) | Their answers to common pushback from each client type they work with | ~10 min per client type | Client consultation and follow-up skills |
 | 5. Neighborhoods (real estate only) | A fact file per area they serve. Repeat for each area | ~10 min per area | Listing content, local SEO, website, social, buyer emails |
 
 Each stage is a section in the member's industry file (`industries/real-estate.md` or `industries/generic.md`). If the industry file has no section for a stage, tell the member that stage is not available for their industry yet, and skip it.
@@ -264,7 +264,7 @@ Never rebuild the workspace on a re-run. If a page is missing, recreate only tha
 The self-test checks that the Master Profile is actually loading and being used. It catches thin or missing profile details before the member relies on the skills. Run it when the member asks, when they choose it from the re-run menu, or when they say yes to the offer after a stage.
 
 1. **Load everything first.** Find the workspace, then open the Master Profile and every child page that exists: Compliance Guardrails, Voice Profile, Objection Bank, and any Neighborhood pages. Do not rely on memory of earlier answers.
-2. **Pick the scenario.** Use the SELF-TEST SCENARIO section of the member's industry file. Fill the brackets from the profile and tell the member which example details you chose.
+2. **Pick the scenario.** Use the SELF-TEST SCENARIO section of the member's industry file. If it offers several scenarios, pick the one that matches the member's main client type. Fill the brackets from the profile and tell the member which scenario and example details you chose.
 3. **Say it is a test.** "This is a setup test, so I'll show my work."
 4. **Do the deliverables.** Complete every numbered deliverable in the scenario, using only what is in the profile and its pages. Write in the member's voice, follow the Compliance Guardrails, and end anything public with the saved disclosure line.
 5. **Grade yourself honestly.** Answer all three questions below. Only list a detail if you really used it. Never claim details you did not use.

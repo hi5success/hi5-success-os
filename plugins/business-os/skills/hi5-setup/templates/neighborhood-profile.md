@@ -21,8 +21,8 @@ This page is a reference that listing, social, SEO, website, and email skills pu
 3. **Getting Around**: main routes, access, typical drive times.
 4. **Things to Do**: parks, trails, dining, shopping, events.
 5. **Insider Notes**: best streets or sections for specific features, what surprises newcomers, seasonal quirks the agent has seen. Say readers should verify anything about drainage, flooding, or other risks with the official source.
-6. **What Buyers Should Ask**: questions to ask before buying here.
-7. **What Sellers Should Know**: what sells fast, what inspections often flag, how to prepare.
+6. **What Buyers, Renters, and Investors Should Ask**: questions to ask before buying, renting, or investing here.
+7. **What Sellers and Landlords Should Know**: what moves fast, what inspections often flag, how to prepare. Add short notes for any other client type the member works with (commercial, land, 55+ communities), using only what they told you.
 8. **Content Angles**: 10 post or video ideas for this area.
 
 ## Rules for building the page
