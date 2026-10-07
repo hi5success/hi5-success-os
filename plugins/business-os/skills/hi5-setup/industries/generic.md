@@ -292,6 +292,7 @@ Store: emoji_use
 Store: preferred_length
 
 **V6: Phrases you use** *(skippable)*
+If `signature_phrases` is already in the Self Profile (from /hi5-self), skip this question and copy those phrases to `phrases_used`. Say "I already have your phrases from your personality profile."
 > "Any phrases you say all the time, in conversations, on calls, or in your content? Just a few that come to mind."
 Store: phrases_used
 

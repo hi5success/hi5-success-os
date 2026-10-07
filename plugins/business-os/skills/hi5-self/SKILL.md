@@ -14,6 +14,7 @@ Learn how the member thinks, communicates, makes decisions, and is motivated. St
 - Never rush: this is one of the most valuable things we can capture
 - After scoring, always explain what their profile means in plain language
 - Always recommend free external tools to go deeper
+- Combination answers: if the member says they are between two options (for example "B and C"), record both. Ask "Which one is more like you?" if they do not say. Score mainly on the primary answer: it counts as a full answer, and the secondary answer only breaks ties between letters. Save both answers in the notes so nothing is lost. Never score a combination as half and half
 
 ---
 
@@ -31,15 +32,13 @@ Learn how the member thinks, communicates, makes decisions, and is motivated. St
 
 ## PATH SELECTION
 
-> "Do you already have any personality assessment results you can share?"
+> "Do you already have any personality assessment results you can share? Any of these work, and you can share more than one: DISC, Human Design, Enneagram, 16 Personalities (Myers-Briggs), CliftonStrengths, Kolbe, or anything else.
 >
-> A) Yes: I have my DISC profile results (paste them in)
-> B) Yes: I have my Human Design chart (paste it or tell me your type)
-> C) Yes: I have both
-> D) I want to take a proper assessment first: point me to free tools
-> E) No: let's go through your questions now
+> A) Yes, I have results (tell me which ones and paste them in)
+> B) I want to take a proper assessment first: point me to free tools
+> C) No, let's go through your questions now"
 
-### If D selected: Free Tools:
+### If B selected: Free Tools
 > "Here are the best free options:
 >
 > **Behavioral Style (DISC-style):**
@@ -55,10 +54,25 @@ Learn how the member thinks, communicates, makes decisions, and is motivated. St
 >
 > Or if you want to skip the external tools and just answer my questions now, say the word and we will get started."
 
-### If they paste results:
-Interpret the results, summarize in plain language, store in Master Profile, then ask the communication and content style questions from Section 3 below since those are not covered by standard assessments.
+### If A selected: Results, then fill the gaps
+1. **Read what they paste.** Name each kind of result you recognize: DISC, Human Design, Enneagram, 16 Personalities or Myers-Briggs, CliftonStrengths, Kolbe, or anything else. For a result you do not recognize, ask what it measures in their own words and treat it as extra information, not as a replacement for any question.
+2. **Summarize in plain language** what the results say about how they work, communicate, and are motivated.
+3. **Fill the gaps.** Never leave the profile with missing pieces. Ask, one at a time and with multiple choice, whichever of the 30 questions their results do not clearly answer. Skip a question only when the results clearly answer it. When in doubt, ask it. Use this table as a guide to what each kind of result usually covers:
 
-### If E selected: proceed to full 30 question flow below.
+| Result | Usually covers |
+|---|---|
+| DISC | How they work and communicate: Q1 to Q12 |
+| Human Design | Energy and decision patterns: Section 4, Q24 to Q30 |
+| Enneagram | Motivation and stress: Q17 to Q21, Q2, Q8 |
+| 16 Personalities or Myers-Briggs | Decision style and energy: Q1, Q5, Q6, Q28 |
+| CliftonStrengths | Strengths and work style: Q7, Q20 |
+| Kolbe | How they take action: Q1, Q6 |
+| Anything else | Decide from what it measures. When unsure, ask |
+
+**Always ask these, whatever results they have.** No standard assessment covers them: Q13 to Q16 (content style and signature phrases), Q22 (success vision), and Q23 (biggest blocker).
+4. **Score.** Use their results for behavioral style where they give it (a DISC result gives D, I, S, or C directly). For other results, estimate the closest D, I, S, or C and say it is an estimate. Combine that with the gap-fill answers using the scoring rules below. Record which results they supplied in `assessment_sources`.
+
+### If C selected: proceed to the full 30 question flow below.
 
 ---
 
@@ -191,9 +205,11 @@ Interpret the results, summarize in plain language, store in Master Profile, the
 > D) A long time: I want it to be accurate and thorough
 
 **Q16**
+First check the Voice Profile page. If it already has `phrases_used`, skip this question, copy those phrases to `signature_phrases`, and say "I already have your phrases from your voice setup."
+Otherwise ask:
 > "What words or phrases do you find yourself saying constantly, in conversations, on calls, or in your content? Just type a few that come to mind."
 *(Open ended)*
-Store: PROFILE.signature_phrases
+Store: signature_phrases. If the Voice Profile page exists, also write the same phrases to `phrases_used` on it, so the member is asked only once.
 
 ---
 
@@ -323,6 +339,8 @@ Count answers by letter across Sections 1-3:
 - Mostly D → High C (Conscientious): analytical, detail-oriented, accurate
 - Mixed → note the combination (e.g. D/I blend, S/C blend)
 
+For answers where the member gave a combination (for example "B and C"), count the primary answer as a full answer and use the secondary only to break a tie. See Core Rules.
+
 ### Human Design Approximation (Section 4):
 - Mostly A → Manifestor tendencies: initiates, independent, bursts of energy
 - Mostly B → Generator/MG tendencies: responsive, sustainable energy, needs to respond
@@ -376,6 +394,8 @@ Fields stored:
 - biggest_blocker
 - signature_phrases
 - receives_info_best (derived from scoring)
+- assessment_sources (which results the member supplied, such as DISC or Enneagram, or "30 questions")
+- answer_notes (any combination answers, with the primary marked)
 
 ---
 
