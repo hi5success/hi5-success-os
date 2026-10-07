@@ -3,10 +3,10 @@ name: hi5-social
 description: Generates platform-specific social media captions for Instagram, Facebook, TikTok, LinkedIn, and email from any content piece. Tailors tone, length, and format to each platform and the member's brand voice. Triggers when the user runs /hi5-social, says "write captions", "social media posts", "write my captions", or "post this to social".
 ---
 
-# Hi5 Social — Social Caption Generator
+# Hi5 Social: Social Caption Generator
 
 ## Purpose
-Turn any content into platform-ready captions. Each platform gets its own version — not the same caption copy-pasted everywhere.
+Turn any content into platform-ready captions. Each platform gets its own version, not the same caption copy-pasted everywhere.
 
 ## Core Rules
 - Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill (the Content Planner is `content_planner_db_id`). If it is not set up, tell the member to run /hi5-setup first
@@ -53,7 +53,7 @@ Ask if they want all platforms or specific ones.
 - CTA: comment, save, DM, or link in bio
 
 ### Facebook
-- Longer form — 200-400 words
+- Longer form: 200-400 words
 - Community-focused tone
 - Story or value-first
 - CTA: comment or share

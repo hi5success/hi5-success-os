@@ -1,4 +1,4 @@
-# Plugin Backlog — moved to Notion
+# Plugin Backlog: moved to Notion
 
 The backlog, decisions, and dev log for Hi5 Success OS now live in Notion. Read these with the Notion MCP before building:
 

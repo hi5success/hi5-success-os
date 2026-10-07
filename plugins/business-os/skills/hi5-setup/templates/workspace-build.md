@@ -1,4 +1,4 @@
-# Workspace Build — Phase 4
+# Workspace Build: Phase 4
 
 Build the member's Hi5 Success OS workspace in Notion. Create pages and databases in the order below, capture every page and database ID, and save them in the Master Profile's Page IDs section (see `master-profile.md`).
 

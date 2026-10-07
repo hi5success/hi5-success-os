@@ -3,7 +3,7 @@ name: hi5-yt-setup
 description: Content setup for Hi5 Success OS. Finds your Hi5 workspace, asks only the content and voice questions that /hi5-setup did not, and saves them to your Master Profile. Run this once before using the other content commands.
 ---
 
-# /hi5-yt-setup — Content Setup
+# /hi5-yt-setup: Content Setup
 
 Do NOT use a form or structured input UI. Ask each question as a plain conversational message and wait for the member's response before asking the next one.
 
@@ -11,7 +11,7 @@ You are running the Content OS setup. It adds the member's content and voice det
 
 Never create a second Master Profile or a second Content Planner. Never show the member raw field names or Notion IDs.
 
-## Step 0 — Find the Workspace
+## Step 0: Find the Workspace
 
 The workspace root page is titled "Hi5 Success OS Workspace" and its first line is a marker: `hi5-os-root: v1`. Titles can collide with other pages the member owns, so the marker is what identifies the root.
 
@@ -29,7 +29,7 @@ Ask: "Would you like to update your content profile or start working on content?
 
 **If it is empty or missing:** continue to Step 1.
 
-## Step 1 — Keyword Tracker
+## Step 1: Keyword Tracker
 
 If `keyword_tracker_db_id` is not in the Page IDs section, create a database called "Keyword Tracker" inside the root page with these properties:
 - Keyword (title)
@@ -56,7 +56,7 @@ Say: "Hi [name]! You already told me about [business_name] in /hi5-setup, so I'l
 
 **2. What you offer**
 If `offer` is already in the Master Profile, skip this question and say "I already have what you offer from setup." Otherwise ask:
-"What do you sell or offer — the thing you want your videos to lead people toward?"
+"What do you sell or offer, the thing you want your videos to lead people toward?"
 Store: offer
 
 **3. Who they reach**
@@ -73,9 +73,9 @@ Store: channel_goal
 
 **6. Content model type**
 "How would you describe your content model?
-- **Lead Magnet** — your videos attract people who then convert to clients or buyers (common for real estate, coaches, service businesses)
-- **Recurring Audience** — you build a loyal subscriber base who comes back for regular content (common for creators, educators, reviewers)
-- **Hybrid** — a mix of both
+- **Lead Magnet**: your videos attract people who then convert to clients or buyers (common for real estate, coaches, service businesses)
+- **Recurring Audience**: you build a loyal subscriber base who comes back for regular content (common for creators, educators, reviewers)
+- **Hybrid**: a mix of both
 
 Which fits you best, or is it somewhere in between?"
 Store: content_model
@@ -90,7 +90,7 @@ Store: posting_frequency
 If they say yes, finish this interview for the first channel. Then, for each additional channel, ask only questions 5, 6, 7, 10, 11, 12, and 13 again (goal, model, frequency, weekly rhythm, competitors, categories) plus the channel's name and URL. Save each additional channel as its own page (see Writing to Notion). If they say no, skip this.
 
 **8. Recording schedule**
-"How do you typically record — do you batch record several videos in one session, or do you record one video at a time as you go?"
+"How do you typically record, do you batch record several videos in one session, or do you record one video at a time as you go?"
 Store: recording_schedule
 
 **9. Editing turnaround** *(skippable)*
@@ -121,20 +121,20 @@ First open the Voice Profile page (`voice_profile_page_id`), if one exists. Ask 
 
 Ask the missing ones, one at a time:
 - "How would you describe your vocabulary style? Casual and conversational, professional and polished, or somewhere in between?" → vocabulary_style
-- "How would you describe your sentences — short and punchy, long and flowing, or a mix?" → sentence_rhythm
+- "How would you describe your sentences, short and punchy, long and flowing, or a mix?" → sentence_rhythm
 - "What's your energy level on camera? Calm and measured, high energy, or somewhere in between?" → energy_level
-- "How do you like to close your videos — what's your CTA style? Direct and assertive, soft and inviting, or conversational like you're talking to a friend?" → cta_style
-- "Are there any phrases you say constantly — things that are just very you? And any phrases or words you'd never say?" *(skippable)* → phrases_used, phrases_never_used
+- "How do you like to close your videos, what's your CTA style? Direct and assertive, soft and inviting, or conversational like you're talking to a friend?" → cta_style
+- "Are there any phrases you say constantly, things that are just very you? And any phrases or words you'd never say?" *(skippable)* → phrases_used, phrases_never_used
 
 **14. Operator preferences**
-"Last section — this tells me how you like to work."
+"Last section: this tells me how you like to work."
 - "When I give you output, do you prefer **bullets** or **prose**?" → output_format
 - "For scripts: do you want a full word-for-word script, or an outline with key points?" → script_depth
 - "When I give recommendations: one strong recommendation, or a few options to choose from?" → number_of_options
 - "How much explanation do you want with my recommendations: just the answer, a short reason, or full reasoning?" → explanation_level
 - "What platforms do you typically distribute your content to? Select all that apply: YouTube, Instagram, TikTok, Facebook, LinkedIn, X, Threads, Google Business Profile, Podcast. This becomes your default Distribution setting." → distribution
 - "What type of content do you primarily create? Long Form video, Short Form, Blog, Podcast, or a mix?" → default_deliverable_type
-- "What is your primary platform — the main place you build your audience?" → primary_platform
+- "What is your primary platform, the main place you build your audience?" → primary_platform
 
 ## After Collecting All Answers
 
@@ -153,7 +153,7 @@ Once confirmed, write to the member's Master Profile using the Notion connector.
 
 Then confirm: "Your content profile is saved. You're ready to run /hi5-yt-research whenever you want to start finding content ideas."
 
-Then remind them of the one thing they still need: "One last thing — open your Claude Project settings, go to Project Instructions, and add this one line:
+Then remind them of the one thing they still need: "One last thing, open your Claude Project settings, go to Project Instructions, and add this one line:
 
 ```
 YOUTUBE_API_KEY: [your YouTube Data API v3 key]

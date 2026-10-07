@@ -3,14 +3,14 @@ name: hi5-landing
 description: Writes landing page copy and structure for lead magnets, opt-ins, and campaign pages. Designed to convert traffic into leads with a single focused CTA. Triggers when the user runs /hi5-landing, says "write a landing page", "lead magnet page", "opt-in page", or "build a landing page".
 ---
 
-# Hi5 Landing — Landing Page Copy Writer
+# Hi5 Landing: Landing Page Copy Writer
 
 ## Purpose
 Write high-converting landing pages for lead magnets, buyer and seller guides, home valuation offers, workshop registrations, and any campaign that needs a dedicated page.
 
 ## Core Rules
 - Read Master Profile for market, niche, and voice
-- Landing pages have ONE goal and ONE CTA — never multiple
+- Landing pages have ONE goal and ONE CTA, never multiple
 - Every element serves the conversion
 - Real estate landing pages should be specific to the offer and the local market
 - Save to Notion Marketing Hub
@@ -27,7 +27,7 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 
 ## OPENING
 
-> "A great landing page does one thing — converts visitors into leads. Let's build yours. What is the offer or lead magnet this page is for?"
+> "A great landing page does one thing, converts visitors into leads. Let's build yours. What is the offer or lead magnet this page is for?"
 >
 > A) Free home valuation
 > B) Buyer guide or home buying checklist
@@ -35,13 +35,13 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 > D) Market report for my area
 > E) Workshop or webinar registration
 > F) Free consultation or strategy call
-> G) Something else — I will describe it
+> G) Something else: I will describe it
 
 ---
 
 ## QUESTIONS
 
-**Q1 — Traffic Source**
+**Q1: Traffic Source**
 > "Where will traffic be coming from?"
 >
 > A) Facebook or Instagram ads
@@ -51,14 +51,14 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 > E) Email campaign
 > F) Multiple sources
 
-**Q2 — Audience**
+**Q2: Audience**
 > "Who is this page for specifically?"
 >
 > A) Buyers in my market
 > B) Sellers or homeowners
 > C) Investors
 > D) First time buyers
-> E) General — anyone in my market
+> E) General: anyone in my market
 
 ---
 
@@ -67,7 +67,7 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 Generate complete landing page copy:
 
 ### Structure:
-- Headline (3 options — benefit-driven, curiosity-driven, direct)
+- Headline (3 options, benefit-driven, curiosity-driven, direct)
 - Subheadline
 - Hero section body (2-3 sentences max)
 - What you get section (3-5 bullet points)

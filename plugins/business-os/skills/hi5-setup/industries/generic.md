@@ -1,4 +1,4 @@
-# Hi5 Setup — Generic Industry Flow
+# Hi5 Setup: Generic Industry Flow
 
 ## Purpose
 Capture the identity and tools profile for any industry that does not have its own flow. Same structure as the real estate flow, in universal language. Field names in `Store:` lines are the names in `templates/master-profile.md`.
@@ -12,66 +12,66 @@ Capture the identity and tools profile for any industry that does not have its o
 
 ---
 
-# STAGE 1 — Core Profile (about 10 minutes)
+# STAGE 1: Core Profile (about 10 minutes)
 
-## GROUP A — You and Your Market
+## GROUP A: You and Your Market
 
-**Q1 — Name**
+**Q1: Name**
 > "What is your full name?"
 Store: name
 
-**Q2 — Brand Name**
+**Q2: Brand Name**
 > "What is your business or brand name? If you operate under your personal name just say that."
 Store: business_name
 
-**Q3 — Role**
+**Q3: Role**
 > "How do you operate your business?"
 >
-> A) Solo — I run everything myself
-> B) Partner/Spouse team — we run it together
+> A) Solo: I run everything myself
+> B) Partner/Spouse team: we run it together
 > C) Part of a larger organization
 > D) I lead a team
 > E) I own the company/agency
 
 Store: role
 
-**Q4 — Niche**
+**Q4: Niche**
 > "What is your specific niche or area of focus within [their industry]?"
 Store: niche
 
-**Q5 — Market Reach**
+**Q5: Market Reach**
 > "Do you serve clients locally, regionally, nationally, or fully online?"
 Store: market_reach
 
-**Q6 — Main Market**
+**Q6: Main Market**
 > "What city or area is your main market? If you work fully online, tell me the region your audience is mostly in, or just say online."
 Store: primary_market
 
-**Q7 — Experience**
+**Q7: Experience**
 > "How many years have you been in business?"
 Store: years_in_business
 
-**Q8 — Languages**
+**Q8: Languages**
 > "Do you speak any languages other than English?"
 >
-> A) No — English only
-> B) Yes — (ask which)
+> A) No: English only
+> B) Yes: (ask which)
 
 Store: languages
 
 → **Checkpoint A:** write the answers above to Identity and Market.
 
-## GROUP B — Your Tools and Online Presence
+## GROUP B: Your Tools and Online Presence
 
-**Q9 — Website**
+**Q9: Website**
 > "Do you have a website?"
 >
-> A) Yes — drop the URL
-> B) No — not yet
+> A) Yes: drop the URL
+> B) No: not yet
 
 Store: website
 
-**Q10 — CRM**
+**Q10: CRM**
 > "What CRM or tool do you use to manage your contacts and clients?"
 >
 > A) GoHighLevel
@@ -79,11 +79,11 @@ Store: website
 > C) Salesforce
 > D) Spreadsheet or manual
 > E) No CRM yet
-> F) Other — (ask which)
+> F) Other: (ask which)
 
 Store: crm
 
-**Q11 — CRM Usage**
+**Q11: CRM Usage**
 > "How are you currently using it?"
 >
 > A) Barely using it
@@ -93,18 +93,18 @@ Store: crm
 
 Store: crm_usage
 
-**Q12 — Calendar Software**
+**Q12: Calendar Software**
 > "Do you use any scheduling software?"
 >
 > A) Calendly
 > B) GHL Calendar
 > C) Google Calendar
 > D) Other
-> E) No — I manage manually
+> E) No: I manage manually
 
 Store: calendar_software
 
-**Q13 — Social Platforms**
+**Q13: Social Platforms**
 > "What social platforms are you active on? Drop your links."
 >
 > A) YouTube
@@ -116,10 +116,10 @@ Store: calendar_software
 
 Store: social_platforms (with URLs)
 
-**Q14 — YouTube**
+**Q14: YouTube**
 > "Do you have a YouTube channel?"
 >
-> A) Yes — drop the URL
+> A) Yes: drop the URL
 > B) Interested but not started
 > C) Not planning to
 
@@ -127,53 +127,53 @@ Store: youtube_url
 
 → **Checkpoint B:** write the answers above to Tools and Presence.
 
-## GROUP C — Your Business
+## GROUP C: Your Business
 Say first: "A few questions about your business. They're what I use to build your plan and write like someone who knows your market. Say 'skip' on any you'd rather answer later."
 
-**Q15 — Offer**
+**Q15: Offer**
 > "What do you sell or offer, and what's the typical price or price range?"
 Store: offer
 
-**Q16 — Market Right Now**
+**Q16: Market Right Now**
 > "What's changing in your market or industry right now that affects your business? Rough impressions are fine."
 Store: market_conditions
 
-**Q17 — Lead Sources**
+**Q17: Lead Sources**
 > "Rank where your clients or customers come from by how much business each one produces, biggest first. Pick from this list or add your own:
 >
 > Referrals · Social media (organic) · YouTube · Paid ads · Email list · Events and networking · Cold outreach · Partnerships · Other"
 
 Store: lead_sources_ranked (an ordered list, biggest first)
 
-**Q18 — 12-Month Goal**
+**Q18: 12-Month Goal**
 > "What is your goal for the next 12 months? Revenue, clients, or a lifestyle goal. Say it in your own words. In /hi5-bizplan we'll turn it into exact numbers."
 Store: goal_12_month
 
 → **Checkpoint C:** write the answers above to Business.
 
-## GROUP D — Your Brand (optional)
+## GROUP D: Your Brand (optional)
 Say first: "Last group, and it's optional. Say 'skip' on any of these and we'll come back to it later."
 
-**Q19 — Branding**
+**Q19: Branding**
 > "Where does your branding stand?"
 >
 > A) Fully branded and consistent
-> B) Logo only — inconsistent
+> B) Logo only: inconsistent
 > C) Needs a refresh
 > D) Starting from scratch
 
 Store: brand_status
 
-**Q20 — Brand Color**
+**Q20: Brand Color**
 > "What is your primary brand color? Hex code if you know it, or just describe the color."
 Store: brand_color
 
-**Q21 — Brand Font**
+**Q21: Brand Font**
 > "Do you have a primary font? If not just say so."
 Store: brand_font
 
-**Q22 — Branding Help**
-> "If you ever need help with brand identity — logo, colors, fonts, full brand guide — our team at Hi5 Biz Solutions handles this across multiple industries. Head to the Hi5 Success community and drop a message in the services channel for details on packages and pricing.
+**Q22: Branding Help**
+> "If you ever need help with brand identity, logo, colors, fonts, full brand guide, our team at Hi5 Biz Solutions handles this across multiple industries. Head to the Hi5 Success community and drop a message in the services channel for details on packages and pricing.
 >
 > Want me to note this in your profile?"
 >
@@ -186,31 +186,31 @@ Store: branding_interest
 
 ---
 
-# STAGE 2 — Compliance (about 5 minutes)
+# STAGE 2: Compliance (about 5 minutes)
 
 Template: `templates/compliance-generic.md`. Creates the **Compliance Guardrails** page. Follow the general procedure in `SKILL.md`.
 
 Intro: "This sets up the rules every draft follows, like honest claims, any wording your business has to include, and how I handle email and text outreach. That way what I write is ready to use. Four quick questions."
 
-**C1 — Required wording**
+**C1: Required wording**
 > "Is there any wording you have to include in your marketing? For example a license number, a legal or results disclaimer, or a company tagline. Say 'none' if not."
 Store: disclosure_line
 
-**C2 — Industry rules**
+**C2: Industry rules**
 > "Is your industry regulated in how you can advertise? For example finance, insurance, health, legal, or real estate. If so, tell me the rules you have to follow. Say 'none' if not."
 Store: industry_rules
 
-**C3 — Email and text consent**
+**C3: Email and text consent**
 > "Do you have permission from the people on your email list or phone list to message them? For example a signup form, an opt-in, or a signed agreement.
 >
-> A) Yes — documented
+> A) Yes: documented
 > B) Partly
 > C) Not sure
 > D) I don't use email or text outreach"
 
 Store: messaging_consent_status. If B or C, tell the member: "No problem. I'll flag consent before any outreach campaign, and I can help you set up a simple opt-in."
 
-**C4 — Company policy**
+**C4: Company policy**
 > "Does your company, employer, or franchise have marketing rules I should follow? Things like logo use, approval before publishing, or words to avoid. Say 'none' if not."
 Store: brand_policy
 
@@ -218,33 +218,33 @@ Then build the page, show the five-bullet summary from the template, and ask: "D
 
 ---
 
-# STAGE 3 — Voice and Edge (about 8 minutes)
+# STAGE 3: Voice and Edge (about 8 minutes)
 
 Template: `templates/voice-profile.md`. Creates the **Voice Profile** page and an **Edge** section on the Master Profile. Follow the general procedure in `SKILL.md`.
 
 Intro: "This is what makes my writing sound like you instead of a generic business: who you serve best, what sets you apart, and how you actually talk. A few questions, then I'll write you a short voice profile you can approve."
 
-## Part 1 — Your Edge
+## Part 1: Your Edge
 
-**E1 — Client situations**
+**E1: Client situations**
 > "What are the 2 or 3 client situations you handle best? Describe the situation, not the person. For example 'founders who need a plan before a launch' or 'owners whose team has outgrown their systems'."
 Store: client_situations
 
-**E2 — Your differentiator**
+**E2: Your differentiator**
 > "What do you do that others in your field don't? Give me one proof point too: a stat, a result, or a step in your process."
 Store: differentiator and proof_point. If they give no proof, ask once: "Do you have a number, result, or story that backs that up?" If still none, store the differentiator and write `proof_point: [ADD PROOF]`.
 
-**E3 — Client words**
+**E3: Client words**
 > "What three words would your best clients use to describe working with you?"
 Store: client_words
 
-## Part 2 — Your Voice
+## Part 2: Your Voice
 
-**V1 — Words to avoid**
+**V1: Words to avoid**
 > "Are there words, phrases, or habits you never want in your writing? For example words you'd never say, or things that sound fake to you."
 Store: phrases_never_used
 
-**V2 — Formality**
+**V2: Formality**
 > "How formal is your writing?
 >
 > A) Casual and conversational
@@ -253,7 +253,7 @@ Store: phrases_never_used
 
 Store: vocabulary_style
 
-**V3 — Sentences**
+**V3: Sentences**
 > "How would you describe your sentences?
 >
 > A) Short and punchy
@@ -262,7 +262,7 @@ Store: vocabulary_style
 
 Store: sentence_rhythm
 
-**V4 — Emoji**
+**V4: Emoji**
 > "How do you feel about emoji in your writing?
 >
 > A) Never
@@ -271,30 +271,38 @@ Store: sentence_rhythm
 
 Store: emoji_use
 
-**V5 — Length**
+**V5: Length**
 > "What length do you usually prefer for messages, captions, and emails?
 >
-> A) Short — get to the point
+> A) Short: get to the point
 > B) Medium
 > C) Long and detailed"
 
 Store: preferred_length
 
-**V6 — Phrases you use** *(skippable)*
+**V6: Phrases you use** *(skippable)*
 > "Any phrases you say all the time, in conversations, on calls, or in your content? Just a few that come to mind."
 Store: phrases_used
 
-**V7 — How you want to come across** *(skippable)*
+**V7: How you want to come across** *(skippable)*
 > "In a few words, how do you want to come across? For example calm expert, friendly peer, or straight shooter."
 Store: how_to_come_across
 
-## Part 3 — Writing samples (optional)
+**V8: Em dashes**
+> "One more style question. Do you want me to avoid em dashes (the long dash some writers use to join two thoughts) in everything I write for you? Many readers find they make writing sound like it was written by AI.
+>
+> A) Yes, avoid them (recommended)
+> B) No, they're fine"
+
+Store: avoid_em_dashes (yes for A or if skipped, no for B). Update ID: S3-EMDASH
+
+## Part 3: Writing samples (optional)
 > "If you'd like, paste 3 to 5 things you wrote yourself: messages to clients, emails, captions, or your bio. A mix of casual and professional is best. I'll use them to match your voice closely. Say 'skip' to finish without them."
 
 If they paste samples, produce all three, then check the voice summary against their originals:
-1. **Voice summary** — bullets, under 150 words: sentence length, vocabulary level, how they open and close messages, humor, punctuation habits, words they repeat, words they never use.
-2. **Three proof samples in their voice** — a 2-sentence message to a past client, a 4-sentence intro of what they do, and a short social post about their industry.
-3. **Three gaps** — places their samples are weaker than they could be (for example no clear ask, too much filler) and how the profile should correct them without losing their personality.
+1. **Voice summary**: bullets, under 150 words: sentence length, vocabulary level, how they open and close messages, humor, punctuation habits, words they repeat, words they never use.
+2. **Three proof samples in their voice**: a 2-sentence message to a past client, a 4-sentence intro of what they do, and a short social post about their industry.
+3. **Three gaps**: places their samples are weaker than they could be (for example no clear ask, too much filler) and how the profile should correct them without losing their personality.
 
 Before showing it, compare each proof sample to their originals. If a sample uses a word or rhythm they would never use, fix it. Cut clichés like "game-changer", "take it to the next level", and "don't hesitate to reach out". Never use anything on their avoid list. Show the result and ask: "Does this sound like you? Tell me what to change." Revise until they approve.
 

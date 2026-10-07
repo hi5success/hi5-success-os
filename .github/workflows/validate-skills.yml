@@ -35,7 +35,7 @@ jobs:
               ERRORS+=("$skill_name/SKILL.md: missing or empty 'name' in frontmatter")
             fi
 
-            # Check for description field (non-empty value — handles multiline with >)
+            # Check for description field (non-empty value: handles multiline with >)
             desc_line=$(echo "$frontmatter" | grep -E '^description:')
             if [ -z "$desc_line" ]; then
               ERRORS+=("$skill_name/SKILL.md: missing 'description' in frontmatter")
@@ -43,7 +43,7 @@ jobs:
               # For inline description, verify it has content after the colon
               desc_val=$(echo "$desc_line" | sed 's/^description:\s*//' | tr -d '[:space:]')
               if [ -z "$desc_val" ]; then
-                # Might be a block scalar (>) — check the next line has content
+                # Might be a block scalar (>): check the next line has content
                 desc_body=$(echo "$frontmatter" | awk '/^description:/{found=1;next} found && /^  /{print;exit} found && !/^  /{exit}')
                 if [ -z "$(echo "$desc_body" | tr -d '[:space:]')" ]; then
                   ERRORS+=("$skill_name/SKILL.md: 'description' is empty in frontmatter")

@@ -3,14 +3,14 @@ name: hi5-setup
 description: Master onboarding skill for Hi5 Success OS. Connects the member's Notion, captures their industry, builds their Hi5 Success OS workspace, and runs a staged, resumable interview that fills the Master Profile every other Hi5 skill reads. Run this first before any other Hi5 skill. Run it again any time to continue setup, update the profile, or add to it. Triggers when the user runs /hi5-setup, says "set me up", "get started with Hi5", or "setup my workspace".
 ---
 
-# Hi5 Success OS — Master Setup
+# Hi5 Success OS: Master Setup
 
 ## Purpose
 Onboard a Hi5 Success OS member. Connect Notion, detect their industry, build their workspace, and fill their Master Profile in stages so they can start using skills after about 10 minutes and deepen the profile whenever they like.
 
 ## Core Rules
-- Ask ONE question at a time — never combine questions
-- Be warm, encouraging, and conversational — not robotic
+- Ask ONE question at a time, never combine questions
+- Be warm, encouraging, and conversational, not robotic
 - Always explain WHY you are asking before sensitive questions
 - Do not proceed until the current answer is confirmed
 - Hold answers as you go and write them to the Master Profile at each checkpoint (see Phase 5). If the member stops, nothing already confirmed is lost
@@ -65,7 +65,7 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 
 ---
 
-## PHASE 0 — Welcome
+## PHASE 0: Welcome
 
 > "Welcome to Hi5 Success OS. I'm glad you're here.
 >
@@ -80,7 +80,7 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 
 ---
 
-## PHASE 1 — Get Notion Ready
+## PHASE 1: Get Notion Ready
 
 Nothing is built until Notion works. Keep the wording simple, because many members are not technical. Never assume the member's screen matches your steps, because menu names change.
 
@@ -145,7 +145,7 @@ Do not build anything until the check passes. If page creation fails later, in P
 
 ---
 
-## PHASE 2 — Check for an Existing Workspace
+## PHASE 2: Check for an Existing Workspace
 
 Use the lookup rule in FINDING THE HI5 SUCCESS OS WORKSPACE.
 
@@ -157,7 +157,7 @@ Use the lookup rule in FINDING THE HI5 SUCCESS OS WORKSPACE.
 
 ---
 
-## PHASE 3 — Industry Detection
+## PHASE 3: Industry Detection
 
 Ask:
 > "What industry are you in?"
@@ -167,11 +167,11 @@ Store the member's own words as `industry`. Then choose the flow and store it as
 - Anything else → `generic` → load `industries/generic.md`
 
 If unclear:
-> "Just so I can tailor everything to your business — are you in real estate, or something else? If something else, tell me what."
+> "Just so I can tailor everything to your business, are you in real estate, or something else? If something else, tell me what."
 
 ---
 
-## PHASE 4 — Build the Workspace
+## PHASE 4: Build the Workspace
 
 Tell the member:
 > "Now I'm building your Hi5 workspace in Notion. This takes a minute."
@@ -185,14 +185,14 @@ When it is done:
 
 ---
 
-## PHASE 5 — Stage 1 Interview
+## PHASE 5: Stage 1 Interview
 
 Load the industry file chosen in Phase 3 and run its **STAGE 1** section.
 
 ### Checkpoints
 The industry file splits Stage 1 into question groups. After each group:
 1. Write the confirmed answers to the matching section of the Master Profile, using the field names in `templates/master-profile.md`
-2. Update the Setup Status line for Stage 1 (for example `in progress — group B done`)
+2. Update the Setup Status line for Stage 1 (for example `in progress, group B done`)
 3. Say nothing technical about it. A short "Got it, saved" is enough
 
 If the member stops partway, their saved groups stay. On re-run, resume at the first unfinished group.
@@ -201,18 +201,18 @@ When every group is done, mark Stage 1 complete with today's date.
 
 ---
 
-## PHASE 6 — Wrap Up
+## PHASE 6: Wrap Up
 
 Use the member's name and these facts. Say what was created, what works now, and what gets better with each remaining stage (use the stages table, only the stages available for their industry).
 
 > "You're all set, [name]. Here's what was just created:
 >
-> ✅ Hi5 Success OS Workspace — built in your Notion
-> ✅ Master Profile — saved with your business info
-> ✅ Content Planner — ready for your first ideas
-> ✅ Business OS pages — ready for your business plan
-> ✅ Marketing Hub — ready for your first campaign
-> ✅ Skill Guide — your reference for every Hi5 skill
+> ✅ Hi5 Success OS Workspace: built in your Notion
+> ✅ Master Profile: saved with your business info
+> ✅ Content Planner: ready for your first ideas
+> ✅ Business OS pages: ready for your business plan
+> ✅ Marketing Hub: ready for your first campaign
+> ✅ Skill Guide: your reference for every Hi5 skill
 >
 > **You can start using skills right now.** Here's what the other stages add:
 > [one line per available stage: what it is, time, which skills improve]
@@ -241,7 +241,7 @@ When /hi5-setup is run and a workspace already exists, read the Master Profile's
 
 > "Welcome back, [name]. Your Hi5 workspace is already set up. What would you like to do?
 >
-> 1. Continue setup — [name of the next unfinished stage]
+> 1. Continue setup: [name of the next unfinished stage]
 > 2. Update something in my profile
 > 3. Redo a stage
 > 4. Add a neighborhood *(real estate only)*

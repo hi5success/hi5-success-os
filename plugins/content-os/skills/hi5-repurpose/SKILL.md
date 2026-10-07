@@ -3,7 +3,7 @@ name: hi5-repurpose
 description: Repurposes a YouTube video or script into multiple content formats. Turns one piece of content into short form video scripts (Reels/TikTok/Shorts), pull quotes, and content snippets ready for distribution. Triggers when the user runs /hi5-repurpose, says "repurpose this video", "turn this into reels", or "repurpose my content".
 ---
 
-# Hi5 Repurpose — Content Repurposing Skill
+# Hi5 Repurpose: Content Repurposing Skill
 
 ## Purpose
 Take one YouTube video or script and extract maximum value from it by turning it into multiple content formats. This is the engine behind the Hi5 one content piece repurposed everywhere strategy.
@@ -34,7 +34,7 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 Ask:
 > "What would you like to repurpose?"
 >
-> A) I have a full script — I will paste it
+> A) I have a full script: I will paste it
 > B) I have a transcript from the video
 > C) I will describe the video topic and main points
 
@@ -46,9 +46,9 @@ After receiving input, generate all of the following:
 
 ### 1. Short Form Video Scripts (3 versions)
 Each 30-60 seconds, hook + value + CTA format
-- Version 1 — Educational angle
-- Version 2 — Story/personal angle  
-- Version 3 — Bold opinion/hot take angle
+- Version 1: Educational angle
+- Version 2: Story/personal angle  
+- Version 3: Bold opinion/hot take angle
 
 ### 2. Pull Quotes (5-7)
 Standalone powerful sentences from the content that work as text posts or overlays

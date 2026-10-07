@@ -3,7 +3,7 @@ name: hi5-blog
 description: Writes a full SEO-optimized blog post from a YouTube video, script, or topic. Expands video content into a long-form article that drives organic search traffic. Triggers when the user runs /hi5-blog, says "write a blog post", "turn this into a blog", or "blog from my video".
 ---
 
-# Hi5 Blog — Blog Post Writer
+# Hi5 Blog: Blog Post Writer
 
 ## Purpose
 Turn YouTube content into SEO-optimized blog posts that drive organic traffic. One video becomes one article that works for search, your website, and email content.
@@ -34,13 +34,13 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 Ask:
 > "What are we turning into a blog post?"
 >
-> A) A YouTube script — I will paste it
+> A) A YouTube script: I will paste it
 > B) A video transcript
 > C) A topic I want to write about fresh
 
-If fresh topic — ask:
+If fresh topic, ask:
 > "What is the main point or question this post should answer?"
-> "Who is the primary reader — buyer, seller, investor, or general homeowner?"
+> "Who is the primary reader: a buyer, seller, investor, or general homeowner?"
 
 ---
 

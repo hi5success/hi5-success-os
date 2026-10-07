@@ -1,4 +1,4 @@
-# Compliance Guardrails — Page Template (Any Industry)
+# Compliance Guardrails: Page Template (Any Industry)
 
 Create a child page of the Master Profile called **Compliance Guardrails** (icon ⚖️). Fill the `{{...}}` values from the member's answers, then write the page exactly in the layout below. Save the page ID as `compliance_page_id` in the Master Profile's Page IDs section.
 
@@ -21,7 +21,7 @@ Every Hi5 skill that writes something public reads this page and follows it.
 ### Guardrails
 Write this block as the rest of the page:
 
-COMPLIANCE GUARDRAILS — apply to everything you draft for me
+COMPLIANCE GUARDRAILS: apply to everything you draft for me
 
 **Honest marketing**
 - Do not promise outcomes, guaranteed results, or specific income, savings, or timelines. Describe the offer and the process, not a guaranteed result.

@@ -1,4 +1,4 @@
-# Master Profile — Page Layout and Field Names
+# Master Profile: Page Layout and Field Names
 
 The Master Profile is one Notion page called "Master Profile" inside the root page titled "Hi5 Success OS Workspace" (the root's first line is the marker `hi5-os-root: v1`; see FINDING THE HI5 SUCCESS OS WORKSPACE in `SKILL.md`). Every Hi5 skill reads it. This file is the contract: the section names and field names below are exactly what skills look for.
 
@@ -23,7 +23,7 @@ The Master Profile is one Notion page called "Master Profile" inside the root pa
 - profile_version: the layout version this profile was built with. The current version is 2. A profile with no value was built before versioning, so treat it as version 1
 - industry: the member's own words (for example "real estate agent", "business coach")
 - industry_flow: `real-estate` or `generic`. Skills use this to load the right `industries/` file
-- stage_1_core_profile: `not started`, `in progress — <what is done>`, or `complete <date>`
+- stage_1_core_profile: `not started`, `in progress: <what is done>`, or `complete <date>`
 - stage_2_compliance: same values
 - stage_3_voice: same values
 - stage_4_objection_bank: same values (real estate only; leave out for other industries)

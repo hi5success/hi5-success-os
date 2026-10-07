@@ -1,4 +1,4 @@
-# Compliance Guardrails — Page Template (Real Estate)
+# Compliance Guardrails: Page Template (Real Estate)
 
 Create a child page of the Master Profile called **Compliance Guardrails** (icon ⚖️). Fill the `{{...}}` values from the member's answers, then write the page exactly in the layout below. Save the page ID as `compliance_page_id` in the Master Profile's Page IDs section.
 
@@ -21,7 +21,7 @@ Every Hi5 skill that writes something public reads this page and follows it.
 ### Guardrails
 Write this block as the rest of the page:
 
-COMPLIANCE GUARDRAILS — apply to everything you draft for me
+COMPLIANCE GUARDRAILS: apply to everything you draft for me
 
 **Fair Housing**
 - Describe the property, its features, and the lifestyle it supports. Never describe, target, include, or exclude people by race, color, religion, sex, disability, familial status, national origin, or any class protected in {{protected_class_jurisdictions}}. Federal protected classes always apply. States and cities may add more, so follow the member's list and flag anything uncertain for their broker.

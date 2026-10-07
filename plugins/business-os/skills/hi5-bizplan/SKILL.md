@@ -3,13 +3,13 @@ name: hi5-bizplan
 description: Generates a personalized business plan tailored to the member's industry, goals, personality profile, and market. Reads from the Master Profile created in /hi5-setup and personality data from /hi5-self. Saves the completed plan to Notion and offers a downloadable version. Triggers when the user runs /hi5-bizplan, says "business plan", "build my plan", or "create my business plan".
 ---
 
-# Hi5 Bizplan — Business Plan Generator
+# Hi5 Bizplan: Business Plan Generator
 
 ## Purpose
 Generate a comprehensive, personalized business plan based on the member's Master Profile. Ask for the business numbers and goals not captured in setup. Tailor everything to their behavioral style, industry, and market.
 
 ## Core Rules
-- Read Master Profile first — never ask for info already captured in setup
+- Read Master Profile first, never ask for info already captured in setup
 - One question at a time
 - Reference their name and specific details throughout
 - Tailor tone and delivery to their behavioral style from /hi5-self
@@ -30,7 +30,7 @@ Read from Master Profile:
 Setup owns niche, focus, ranked lead sources, and the 12-month goal. Never ask for them again. Only ask below for the numbers. If a field is missing from the profile, ask the original question.
 
 Open with:
-> "Alright [name] — let's build your business plan. I already know your market is [market], you are a [role], your goal is [goal_12_month], and your vision is [success_vision]. Now I need your numbers and goals so we can build something real.
+> "Alright [name]. Let's build your business plan. I already know your market is [market], you are a [role], your goal is [goal_12_month], and your vision is [success_vision]. Now I need your numbers and goals so we can build something real.
 >
 > A few questions and then I will put it all together for you."
 
@@ -38,20 +38,20 @@ Open with:
 
 ## BUSINESS NUMBERS
 
-**Q1 — Last Year Performance**
+**Q1: Last Year Performance**
 > "Let's start with last year. How many transactions did you close?"
 Store: BIZPLAN.deals_closed
 
-**Q2 — Volume**
+**Q2: Volume**
 > "What was your total sales volume?"
 Store: BIZPLAN.total_volume
 
-**Q3 — GCI**
-> "What was your GCI — your gross commission income?"
+**Q3: GCI**
+> "What was your GCI, your gross commission income?"
 Store: BIZPLAN.gci_earned
 
-**Q4 — Conversion Funnel**
-> "Now let's walk through your conversion funnel — this tells us exactly where to focus your energy. Ballpark numbers are fine.
+**Q4: Conversion Funnel**
+> "Now let's walk through your conversion funnel. This tells us exactly where to focus your energy. Ballpark numbers are fine.
 >
 > How many leads did you receive last year?"
 Store: BIZPLAN.leads_received
@@ -67,11 +67,11 @@ Claude calculates internally:
 - Agreement to close rate = closed / agreements x 100
 - Diagnose: lead problem / conversion problem / market problem
 
-**Q5 — Average Sale Price**
+**Q5: Average Sale Price**
 > "You told me you typically work in [price_range]. What is the average sale price?"
 Store: BIZPLAN.avg_sale_price
 
-**Q6 — Buyer Seller Split**
+**Q6: Buyer Seller Split**
 > "What is your typical buyer to seller split? For example 60% buyers, 40% sellers."
 Store: BIZPLAN.buyer_seller_split
 
@@ -79,7 +79,7 @@ Store: BIZPLAN.buyer_seller_split
 
 ## LEAD SOURCES
 
-**Q7 — Top Source**
+**Q7: Top Source**
 > If lead_sources_ranked exists, say: "Your biggest lead source is [first item in lead_sources_ranked]. Is that still true?" and store it. Only if the field is missing, ask the question below.
 > "What is your number one source of leads right now?"
 >
@@ -94,7 +94,7 @@ Store: BIZPLAN.buyer_seller_split
 
 Store: BIZPLAN.top_lead_source
 
-**Q8 — Weakest Source**
+**Q8: Weakest Source**
 > "What lead source do you most want to add or improve this year?"
 Store: BIZPLAN.desired_lead_source
 
@@ -102,7 +102,7 @@ Store: BIZPLAN.desired_lead_source
 
 ## DIGITAL PRESENCE
 
-**Q9 — Google Business Profile**
+**Q9: Google Business Profile**
 > "Where are you at with your Google Business Profile?"
 >
 > A) Fully optimized and actively getting reviews
@@ -112,7 +112,7 @@ Store: BIZPLAN.desired_lead_source
 
 Store: BIZPLAN.gbp_status
 
-**Q10 — Social Posting Frequency**
+**Q10: Social Posting Frequency**
 > "How often are you posting to social media overall right now?"
 >
 > A) Rarely or never
@@ -122,7 +122,7 @@ Store: BIZPLAN.gbp_status
 
 Store: BIZPLAN.social_frequency
 
-**Q11 — Paid Ads**
+**Q11: Paid Ads**
 > "Are you running any paid ads?"
 >
 > A) No
@@ -132,7 +132,7 @@ Store: BIZPLAN.social_frequency
 
 Store: BIZPLAN.paid_ads
 
-**Q12 — Marketing Goals**
+**Q12: Marketing Goals**
 > "What marketing would you most like to add or improve this year? Select all that apply:"
 >
 > A) Grow YouTube
@@ -150,7 +150,7 @@ Store: BIZPLAN.marketing_goals
 
 ## GOALS
 
-**Q13 — GCI Goal**
+**Q13: GCI Goal**
 > If goal_12_month exists, say: "Your 12-month goal is [goal_12_month]. Let's turn it into numbers." Then ask:
 > "What is your GCI goal for the next 12 months?"
 Store: BIZPLAN.gci_goal
@@ -159,11 +159,11 @@ Claude calculates internally:
 - Transactions needed = gci_goal / avg_commission_per_deal
 - Use avg_sale_price x 0.025 as default commission if not specified
 
-**Q14 — Transaction Goal**
+**Q14: Transaction Goal**
 > "How many transactions are you targeting this year?"
 Store: BIZPLAN.transaction_goal
 
-**Q15 — Niche**
+**Q15: Niche**
 > Skip this question if niche is in the Master Profile. Otherwise ask:
 > "Do you focus on a specific niche or client type?"
 >
@@ -172,7 +172,7 @@ Store: BIZPLAN.transaction_goal
 > C) Investors
 > D) Relocation
 > E) New construction
-> F) General — I work with everyone
+> F) General: I work with everyone
 > G) Other
 
 Store: BIZPLAN.niche
@@ -183,7 +183,7 @@ Store: BIZPLAN.niche
 
 After all questions:
 
-> "Perfect — I have everything I need. Give me a moment to put this together."
+> "Perfect. I have everything I need. Give me a moment to put this together."
 
 Generate a comprehensive business plan with these sections:
 
@@ -191,22 +191,22 @@ Generate a comprehensive business plan with these sections:
 Summary of who they are, their market, role, experience, and brand. Written in second person, specific to their data.
 
 ### 2. Where You Stand
-Honest assessment of last year's numbers. Conversion funnel analysis with diagnosis — lead problem, conversion problem, or market problem. No fluff, just clarity.
+Honest assessment of last year's numbers. Conversion funnel analysis with diagnosis, lead problem, conversion problem, or market problem. No fluff, just clarity.
 
 ### 3. Your 12 Month Target
 GCI goal, transaction goal, transactions needed per month, average commission needed per deal. Make the math visible and simple.
 
 ### 4. Your Lead Engine
-Based on top source and desired source — specific recommendations for how to generate leads consistently. Tailored to their platforms, budget, and style.
+Based on top source and desired source, specific recommendations for how to generate leads consistently. Tailored to their platforms, budget, and style.
 
 ### 5. Your Marketing Plan
-Based on marketing goals selected — specific content strategy, platforms to prioritize, posting cadence, and quick wins. Tied to their YouTube status and social platforms.
+Based on marketing goals selected, specific content strategy, platforms to prioritize, posting cadence, and quick wins. Tied to their YouTube status and social platforms.
 
 ### 6. Your Conversion System
-Based on CRM and conversion funnel data — specific recommendations for improving lead to agreement and agreement to close rates.
+Based on CRM and conversion funnel data, specific recommendations for improving lead to agreement and agreement to close rates.
 
 ### 7. Your 90 Day Roadmap
-Month 1 / Month 2 / Month 3 — specific actions, not generic advice. What to do first, what to build next, what to optimize last.
+Month 1 / Month 2 / Month 3, specific actions, not generic advice. What to do first, what to build next, what to optimize last.
 
 ### 8. Your Biggest Opportunity
 One clear insight about where their biggest untapped opportunity is based on all their data.
@@ -229,7 +229,7 @@ After generating:
 > "Your business plan is ready, [name]. Here is what I am doing with it:
 >
 > ✅ Saving to your Notion workspace under Business OS → Business Plan
-> ✅ This becomes a living document — run /hi5-bizplan anytime to update it as your numbers change
+> ✅ This becomes a living document: run /hi5-bizplan anytime to update it as your numbers change
 >
 > Would you also like a downloadable version you can save, print, or share?"
 
