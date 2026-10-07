@@ -52,9 +52,37 @@ Calculate the rates and diagnose: lead problem, conversion problem, or market pr
 
 Never assume how a business is paid or what its costs are. Ask in plain terms and repeat it back.
 
+Collect the member's fees and costs ONCE and save every answer. They can answer "none" or "not sure" to any line, and you save that answer. **Never fill in a platform's, processor's, or partner's fees from memory. Use only what they give you.** If Business Numbers already has these fields, show what is saved and ask "Still right?" instead of asking again.
+
+**C1: Fees on each sale or payment**
+> "What fees come out of each sale or payment before you get paid? For example a marketplace or platform fee, an app store fee, or a booking fee. List each one as a percent or an amount."
+Store: per_sale_fees (one line per fee: name, percent or amount)
+
+**C2: Payment processing**
+> "What do you pay to process payments, as a percent or an amount per payment?"
+Store: processing_fees
+
+**C3: Partners, affiliates, and referrals**
+> "Do you pay partners, affiliates, or referral sources? What percentage or amount, and about what share of your sales?"
+Store: partner_fees
+
+**C4: Recurring costs**
+> "What recurring costs do you want counted: software, tools, insurance, memberships, or a team? Give each one with its amount and how often."
+Store: recurring_costs (one line per cost: name, amount, monthly or annual)
+
+**C5: Other costs**
+> "Anything else you want counted before you see your take-home, like taxes you set aside or costs outside the business?"
+Store: outside_costs
+
 **Q5: Costs and take-home**
-> "How much of your revenue do you typically keep after your main costs, like team, tools, ads, fees, and taxes set aside? A rough percent is fine, or tell me the main costs."
+> "Putting it together, how much of your revenue do you typically keep after your main costs? A rough percent is fine."
 Store: take_home_note
+
+### Walk through one sale and confirm
+Take one typical sale at their average value. Show it as a short table: the revenue, then each fee and cost, what each one is taken from, and the amount, down to take-home. Then ask: "Is that the right order and the right amounts?" Fix it until they confirm. Save the confirmed order in plain words as fee_order_note.
+- A line they answered "none" is zero.
+- A line they answered "not sure" is NOT counted. Say so in the table and in the plan.
+- Compare the total to the percent they gave in Q5 and mention any big difference.
 
 **Q6: Capacity**
 > "How many clients or projects can you realistically take on at once, or in a month, before it becomes too much?"

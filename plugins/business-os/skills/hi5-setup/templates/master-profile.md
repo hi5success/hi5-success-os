@@ -99,7 +99,13 @@ Written by /hi5-bizplan, not by setup. Skills that need these numbers read them 
 - revenue_last_year, revenue_ytd, avg_deal_value (any industry)
 - leads_received, agreements_signed, closed_transactions
 - avg_sale_price, buyer_seller_split (real estate)
-- brokerage_split, cap_amount, cap_year_reset, brokerage_fees: the member's own commission model in their words (real estate). Never filled from a preset
+- brokerage_split, cap_amount, cap_year_reset, cap_progress: the member's own split, cap, cap year start date, and how much of the cap is used so far (real estate). Never filled from a preset
+- per_deal_fees: one line per fee: name, amount, continues after cap, counts toward cap (real estate)
+- post_cap_terms, royalty_percent, royalty_annual_cap, royalty_ytd: after cap terms, and any franchise or royalty fee with its own annual cap and the amount paid so far (real estate)
+- recurring_fees, team_split, referral_fees, outside_costs: recurring brokerage fees, team split, referral fees, and costs the member wants counted. Lines may be "none" or "not sure"
+- fee_order_note: the order of deductions the member confirmed in plain words
+- brokerage_fees: a one line summary of the structure, kept for older skills
+- per_sale_fees, processing_fees, partner_fees, recurring_costs (any industry): fees and costs on each sale, payment processing, partner or referral fees, and recurring costs
 - take_home_note, capacity_note (any industry)
 - team_deals_count_to_leader: yes or no (teams)
 - plan_period: the period the goal covers

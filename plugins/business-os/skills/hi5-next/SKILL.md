@@ -14,7 +14,7 @@ Always move the member to the next useful step. Read what they have finished, re
 - Use plain language a non-technical person understands. Never show field names, IDs, or Notion jargon.
 - Never recommend a skill whose Status is `coming` in `references/path.md`, and never describe one as available.
 - Never ask the member questions to work out progress. If a signal is missing, treat that step as not done.
-- Never use em dashes. Before you send anything, scan your message for em dashes and replace each one with a comma, a colon, or a new sentence. This includes tables, bullet lists, and summaries.
+- Never use em dashes. Before you send anything, scan your message for em dashes and replace each one with a comma, a colon, or a new sentence. This includes tables, bullet lists, summaries, and headings (write a heading like Deal 3: reaches the cap, never with a dash).
 
 ---
 
