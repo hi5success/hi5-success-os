@@ -72,4 +72,4 @@ Format each output clearly labeled and ready to copy.
 
 Save all outputs to Notion Content Planner linked to the original video entry.
 
-> "All repurposed content has been saved to your Content Planner in Notion. Ready to turn these into platform-specific captions? Run /hi5-social and I will format everything for Instagram, Facebook, TikTok, and LinkedIn."
+> "All repurposed content has been saved to your Content Planner in Notion. Ready to turn these into platform-specific captions? Run /hi5-social and I will format everything for Instagram, Facebook, TikTok, and LinkedIn. You can run /hi5-next any time and I'll tell you your best next step."

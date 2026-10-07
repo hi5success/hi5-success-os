@@ -110,3 +110,5 @@ Follow the Recommended path in /hi5-setup. Recommend ONE next step:
 - Otherwise, if Content OS is installed, recommend /hi5-yt-setup. If not, recommend /hi5-email.
 
 Never recommend /hi5-goals or /hi5-bizreview yet. Say once: "Quarterly goal sprints (/hi5-goals) and business reviews (/hi5-bizreview) are coming soon, and your plan already has your 90 day roadmap."
+
+End your message with: "You can run /hi5-next any time and I'll tell you your best next step."

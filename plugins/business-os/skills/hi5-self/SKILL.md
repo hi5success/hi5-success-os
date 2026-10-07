@@ -403,4 +403,4 @@ Fields stored:
 
 > "Now that I know how you think and communicate, let's build your business plan. Run /hi5-bizplan and I will create a personalized roadmap tailored specifically to you, your market, and your goals.
 >
-> Ready?"
+> You can run /hi5-next any time and I'll tell you your best next step. Ready?"

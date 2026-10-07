@@ -133,4 +133,4 @@ approved idea with Status set to "Idea" and all fields populated. Title is the v
 hook in Hook / Angle. Set Deliverable Type from `default_deliverable_type` (Long Form if not set).
 
 Confirm: "Done: [X] ideas are now in your Content Planner in Notion. Run /hi5-yt-plan when
-you're ready to schedule them."
+you're ready to schedule them. That is the step that builds your content calendar. You can run /hi5-next any time and I'll tell you your best next step."

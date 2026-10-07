@@ -125,4 +125,4 @@ the Content Planner (`content_planner_db_id`):
 - Add the script content to the page body of that row's Notion page
 
 Confirm: "Script saved to Notion. Your video page is updated and Status is set
-to Scripted."
+to Scripted. Next: run /hi5-repurpose to turn this script into short form videos, quotes, and snippets. You can run /hi5-next any time and I'll tell you your best next step."

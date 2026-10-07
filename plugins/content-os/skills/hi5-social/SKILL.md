@@ -90,3 +90,7 @@ Ask if they want all platforms or specific ones.
 Save all captions to Notion Content Planner linked to the content piece.
 
 > "All captions are saved to your Content Planner. Everything is ready to copy and post. Want to schedule these out? Add your posting dates directly in Notion and your Content Planner will track everything."
+
+## Next
+
+> "Next: turn this into a blog post with /hi5-blog, or help people find you on Google with /hi5-seo. You can run /hi5-next any time and I'll tell you your best next step."

@@ -65,4 +65,4 @@ Save to the Marketing Hub (`marketing_hub_db_id`) as one row: Title names the so
 
 ## NEXT STEP
 
-> "Next: want captions for your other platforms too? Run /hi5-social and I will format this content for each one."
+> "Next: want captions for your other platforms too? Run /hi5-social and I will format this content for each one. You can run /hi5-next any time and I'll tell you your best next step."

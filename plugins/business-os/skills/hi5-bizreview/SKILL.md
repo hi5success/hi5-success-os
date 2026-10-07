@@ -13,4 +13,4 @@ STUB: Full build coming next session.
 
 ## Placeholder Behavior
 If triggered before full build:
-> "The /hi5-bizreview skill is coming very soon. In the meantime head to your Notion Business OS page and review your numbers against the 90 day roadmap in your business plan."
+> "The /hi5-bizreview skill is coming very soon. In the meantime head to your Notion Business OS page and review your numbers against the 90 day roadmap in your business plan. You can run /hi5-next any time and I'll tell you your best next step."

@@ -63,4 +63,4 @@ Save to the Marketing Hub (`marketing_hub_db_id`) as one row: Title is the newsl
 
 ## NEXT STEP
 
-> "Next: want to turn this issue into social captions? Run /hi5-social and I will pull 3 or 4 posts from it."
+> "Next: want to turn this issue into social captions? Run /hi5-social and I will pull 3 or 4 posts from it. You can run /hi5-next any time and I'll tell you your best next step."

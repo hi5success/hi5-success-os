@@ -65,4 +65,4 @@ Save to the Marketing Hub (`marketing_hub_db_id`) as one row: Title is "Local SE
 
 ## NEXT STEP
 
-> "Next: to start generating blog content for SEO, run /hi5-blog and I will write optimized posts for your target keywords."
+> "Next: put your keywords to work on your website. Run /hi5-website and I will write your pages around them. To start on blog content instead, run /hi5-blog. You can run /hi5-next any time and I'll tell you your best next step."

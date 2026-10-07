@@ -46,4 +46,4 @@ Save each page to the Marketing Hub (`marketing_hub_db_id`) as its own row: Titl
 
 ## NEXT STEP
 
-> "Next: run /hi5-landing to build landing pages for your lead magnets or offers."
+> "Next: run /hi5-email to build the follow-up sequence for the people your website brings in. For a landing page for one offer, run /hi5-landing. You can run /hi5-next any time and I'll tell you your best next step."
