@@ -1,12 +1,12 @@
 ---
 name: hi5-setup
-description: Master onboarding skill for Hi5 Success OS. Connects the member's Notion, captures their industry, builds their Hi5 Success OS workspace, and runs a staged, resumable interview that fills the Master Profile every other Hi5 skill reads. Run this first before any other Hi5 skill. Run it again any time to continue setup, update the profile, or add to it. Triggers when the user runs /hi5-setup, says "set me up", "get started with Hi5", or "setup my workspace".
+description: Master onboarding skill for Hi5 Success OS. Connects the member's Notion, captures their industry, sets up their Hi5 Success OS workspace from the official Hi5 template (or builds a basic one), and runs a staged, resumable interview that fills the Master Profile every other Hi5 skill reads. Run this first before any other Hi5 skill. Run it again any time to continue setup, update the profile, or add to it. Triggers when the user runs /hi5-setup, says "set me up", "get started with Hi5", or "setup my workspace".
 ---
 
 # Hi5 Success OS: Master Setup
 
 ## Purpose
-Onboard a Hi5 Success OS member. Connect Notion, detect their industry, build their workspace, and fill their Master Profile in stages so they can start using skills after about 10 minutes and deepen the profile whenever they like.
+Onboard a Hi5 Success OS member. Connect Notion, detect their industry, set up their workspace from the Hi5 template (or build a basic one), and fill their Master Profile in stages so they can start using skills after about 10 minutes and deepen the profile whenever they like.
 
 ## Core Rules
 - Ask ONE question at a time, never combine questions
@@ -59,7 +59,7 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 
 1. Run two Notion searches: one for "Hi5 Success OS Workspace" and one for "hi5-os-root". Combine the results.
 2. Open each candidate page. Keep only pages whose first line starts with `hi5-os-root:`. Ignore every other page, even one titled exactly "Hi5 Success OS".
-3. No marked page → the workspace is not set up. (In /hi5-setup, continue to Phase 3. In any other skill, tell the member to run /hi5-setup first.)
+3. No marked page → the workspace is not set up. (In /hi5-setup, go to Phase 2B. In any other skill, tell the member to run /hi5-setup first.)
 4. More than one marked page → list them with their location and ask the member to pick one. Only ask when more than one marked page matches. Never guess.
 5. Open the marked page's child "Master Profile". Its "Page IDs" section holds `root_page_id` and the IDs of everything else (Content Planner, Marketing Hub, Business OS pages, and so on). Use those IDs directly. Do not search again in the same session.
 6. If a saved ID is missing or the page no longer exists, search for it by title under the root page and write the corrected ID back to the Page IDs section.
@@ -76,7 +76,7 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 > Setup is in stages. The first one takes about 10 minutes:
 > 1. Get Notion ready
 > 2. Tell me about your business
-> 3. I build your Hi5 workspace in Notion
+> 3. You copy the Hi5 workspace template into your Notion, and I fill it in
 >
 > After that you can add compliance rules, your writing voice, and more whenever you want. Each one makes your results better. Ready?"
 
@@ -151,12 +151,44 @@ Do not build anything until the check passes. If page creation fails later, in P
 
 Use the lookup rule in FINDING THE HI5 SUCCESS OS WORKSPACE.
 
-- **Workspace found** → this is a re-run. Do not rebuild anything.
+- **Workspace found, and its Master Profile has no `root_page_id`** → this is a fresh copy of the Hi5 template that has not been connected yet. Go to Phase 3, then Phase 4 in template copy mode. If the page title still has a long dash in it (an older copy of the template), offer once to rename it to "Hi5 Success OS Workspace" and change only the title. Never rename it otherwise.
+- **Workspace found, with a `root_page_id`** → this is a re-run. Do not rebuild anything.
   1. Read `profile_version` from Setup Status. The current version is in `templates/profile-changes.md`. A missing value means version 1.
   2. If it is lower than current, run PROFILE UPDATE below before the menu.
   3. Run the WORKSPACE CHECK below.
   4. Then go to RE-RUN MENU.
-- **Not found** → go to Phase 3.
+- **Not found** → go to Phase 2B.
+
+---
+
+## PHASE 2B: Get the Hi5 Template
+
+Used only when no workspace was found. The official Hi5 workspace template has the Dashboard, the databases and their views, and the reference pages already designed. Copying it is the recommended start.
+
+Ask:
+> "Hi5 comes with a ready made workspace. You copy it into your Notion once, and I fill it in for you. It takes about 2 minutes.
+>
+> A) Copy the Hi5 template (recommended)
+> B) Build a basic workspace for me instead
+> C) I already copied it"
+
+### A) Copy the template
+Give these steps, then use the screenshot help:
+> "1. Open this link: [HI5 TEMPLATE LINK: to be added before release]
+> 2. Choose Duplicate, usually at the top right. If Notion asks which workspace, choose the one you connected to Claude.
+> 3. Wait a few seconds. A page called Hi5 Success OS Workspace appears in your sidebar.
+> 4. Make sure Claude can see it. If you chose specific pages when you connected Notion, add this one.
+> 5. Tell me when you're done."
+
+When they say they are done, run the lookup rule in FINDING THE HI5 SUCCESS OS WORKSPACE.
+- **Found** → say "Found it." and go to Phase 3, then Phase 4 in template copy mode.
+- **Not found** → show the likely causes, then search again after they fix one: "1. Notion is still copying it. Wait 30 seconds and tell me. 2. Claude can't see the page. Reconnect Notion or add the page to the pages Claude can access. 3. The copy went into a different Notion account than the one you connected." After two tries, offer option B.
+
+### B) Build a basic workspace
+Go to Phase 3, then Phase 4 in full build mode.
+
+### C) Already copied
+Run the lookup rule. Found: go to Phase 3, then Phase 4 in template copy mode. Not found: show the same causes as option A.
 
 ---
 
@@ -174,14 +206,21 @@ If unclear:
 
 ---
 
-## PHASE 4: Build the Workspace
+## PHASE 4: Complete the Workspace
 
-Tell the member:
+There are two modes. Use **template copy mode** when the member copied the Hi5 template (Phase 2 or 2B found a marked page with no `root_page_id`). Use **full build mode** when they chose option B in Phase 2B.
+
+**Template copy mode.** Tell the member:
+> "I'm connecting your Hi5 workspace and filling in anything that's missing. This takes a minute."
+
+Follow the Template copy mode section of `templates/workspace-build.md`. It reads the pages and databases already in the member's copy, saves their IDs, and creates only what is missing. It never creates a second Content Planner, Keyword Tracker, Marketing Hub, or Master Profile, and it never removes or renames anything the member has.
+
+**Full build mode.** Tell the member:
 > "Now I'm building your Hi5 workspace in Notion. This takes a minute."
 
-Follow `templates/workspace-build.md` exactly. It creates the "Hi5 Success OS Workspace" root page (with its `hi5-os-root: v1` marker line) and everything under it, then writes the Master Profile skeleton using `templates/master-profile.md`.
+Follow the full build steps in `templates/workspace-build.md`. It creates the "Hi5 Success OS Workspace" root page (with its `hi5-os-root: v1` marker line) and everything under it, then writes the Master Profile skeleton using `templates/master-profile.md`.
 
-Store `industry`, `industry_flow`, and `storage: notion` in the Master Profile's Setup Status section right away, along with every page ID you created in the Page IDs section.
+In both modes, store `industry`, `industry_flow`, and `storage: notion` in the Master Profile's Setup Status section right away, along with every page ID in the Page IDs section.
 
 When it is done:
 > "Your workspace is ready. Now let's fill in your profile."
@@ -210,7 +249,7 @@ Use the member's name and these facts. Say what was created, what works now, and
 
 > "You're all set, [name]. Here's what was just created:
 >
-> ✅ Hi5 Success OS Workspace: built in your Notion
+> ✅ Hi5 Success OS Workspace: set up in your Notion
 > ✅ Master Profile: saved with your business info
 > ✅ Content Planner: ready for your first ideas
 > ✅ Business OS pages: ready for your business plan
@@ -247,11 +286,16 @@ On a re-run, quietly check the member's databases against `templates/workspace-b
 - If they say no, or the update fails, skip it and do not ask again in this session. Skills fall back to the closest existing option.
 This is how members who set up earlier receive new labels such as the Marketing Hub's SEO Audit option.
 
+**3. Template items.** Read the line that starts "Template items:" in `templates/workspace-build.md`. Confirm each page and database on it exists under the root page, using the saved ID first and the exact title second, and fix any wrong ID in Page IDs.
+- If a page is missing, recreate only that page with the title and line given in `templates/workspace-build.md`, save its ID, and tell the member in one line.
+- A missing Content Planner or Marketing Hub follows item 1.
+- Never create a duplicate, never remove or rename anything, and never touch rows.
+
 ## PROFILE UPDATE
 
 When a member's `profile_version` is lower than the current version:
 1. Read `templates/profile-changes.md`. For every version after theirs, list the new fields and check which ones the profile does not have yet. Skip fields they already have.
-2. If nothing is missing, set `profile_version` to the current version and continue. Say nothing.
+2. Some fields in `templates/profile-changes.md` are marked automatic. Set those yourself without asking: `workspace_source` is `built` for a workspace made by an earlier setup, and `template_version` is `none`. If nothing else is missing, set `profile_version` to the current version and continue. Say nothing.
 3. If something is missing, say: "Since you set up, I've added a few things that make your results better. It will take about [N] minutes. Want to fill them in now?" If they say not now, leave `profile_version` as it is and go on to the menu. Offer again next time.
 4. If they say yes, ask only the questions listed for the missing fields, one at a time, saving each answer inside its section. Never re-ask something already answered and never rewrite existing values.
 5. Add the Linked pages heading at the end of the Master Profile if it is missing. Existing child pages stay where they are.

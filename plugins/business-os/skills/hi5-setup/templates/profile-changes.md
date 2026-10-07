@@ -2,7 +2,7 @@
 
 The Master Profile has a `profile_version` in Setup Status. /hi5-setup compares it with the current version below. When a profile is behind, setup offers to fill in only the new fields (see PROFILE UPDATE in `SKILL.md`).
 
-Current profile_version: 2
+Current profile_version: 3
 
 Rules for adding a version:
 - Only add new fields and sections. Never rename or delete existing ones.
@@ -26,6 +26,13 @@ Fields are filled by setup questions unless noted. Ask only the ones that are mi
 | branding_help_asked | Brand | Stage 1, group D. Set once the offer has been made or skipped. Update ID: S1-BRANDING-ASKED |
 | Business Numbers section | Business Numbers | /hi5-bizplan fills it the next time the member runs it. Setup does not ask for it |
 | Linked pages heading | Linked pages | Added automatically |
+## Version 3 (release 1.6.0)
+Both fields are automatic. Setup fills them in without asking.
+
+| Field | Section | Filled by |
+|---|---|---|
+| workspace_source | Setup Status | Automatic. `template` when the member copied the Hi5 template, `built` otherwise |
+| template_version | Setup Status | Automatic. `2` for the current template, `none` for a built workspace |
 
 ## Added without a version change
 These fields are collected inside the skill that uses them, not by setup, so `profile_version` stays at 2. Each is asked once, saved to Business Numbers, and never renamed or deleted.

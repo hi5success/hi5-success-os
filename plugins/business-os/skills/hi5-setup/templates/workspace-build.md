@@ -4,6 +4,25 @@ Build the member's Hi5 Success OS workspace in Notion. Create pages and database
 
 Create only what is listed here. Objection Bank, neighborhood pages, compliance, and voice pages are created later by their own stages.
 
+## Template copy mode
+
+Used when the member copied the official Hi5 Success OS Workspace template into their Notion. Their copy's first line is already the marker `hi5-os-root: v1`. Do not create a new root page.
+
+Template items: Master Profile, Business OS, Business Plan, Quarterly Goals, Business Reviews, Skill Guide, Content Planner, Marketing Hub
+
+1. Open the member's copy (the marked page). Read its child pages and databases and match them by title: Master Profile, Business OS, Skill Guide, Reference Hub, Content Planner, Keyword Tracker, Marketing Hub, Tasks, Client Meeting Notes, Internal Meeting Notes. Open Business OS and match Business Plan, Quarterly Goals, and Business Reviews.
+2. Save the IDs in the Master Profile's Page IDs section: `root_page_id` (the copy's own page), `dashboard_page_id` (the same page, because the template's first page is the Dashboard), `business_os_page_id`, `business_plan_page_id`, `quarterly_goals_page_id`, `business_reviews_page_id`, `content_planner_db_id`, `marketing_hub_db_id`, `skill_guide_page_id`, and `keyword_tracker_db_id` if the copy has a Keyword Tracker.
+3. Create only what is missing from the Template items list, using the titles and lines in step 2 and the database layouts in step 3 below. If the member deleted or renamed one, search under the root by title before creating anything. Never create a second copy of anything. Never remove, rename, or move anything the member has. Tasks, Client Meeting Notes, Internal Meeting Notes, and the Reference Hub are not required, so never recreate them.
+4. Check the Master Profile page. If it has the Setup Status, Page IDs, and Linked pages headings, keep it and fill in values. If it has no Setup Status heading and its body is only the template's bracketed placeholders, replace the body with the skeleton from `master-profile.md`. If it has other content, ask the member before changing it.
+5. Set `workspace_source: template` and `template_version: 2` in Setup Status. Set `profile_version` to the current version if it is empty.
+6. Say nothing technical. Tell the member that their workspace is connected and what you added, if anything.
+
+---
+
+## Full build mode
+
+Everything from here to the end of step 4 is the full build, used only when the member chose not to copy the template. It creates the same layout as the template.
+
 ## 1. Root page
 Create a page called **Hi5 Success OS Workspace** (icon 🚀) at the top level of the member's Notion workspace. Everything below is created inside it.
 
@@ -83,7 +102,7 @@ Every email sequence, newsletter issue, website page, landing page, SEO plan or 
 | Date | date | |
 
 ## 4. Master Profile page
-Write the skeleton from `master-profile.md` into the Master Profile page: the heading 2 sections in order (Setup Status, Page IDs, Identity, Market, Tools, Presence, Brand, Business, Edge, Self Profile, and last of all Linked pages, which holds only the heading) with empty field bullets, then fill in Setup Status (including `profile_version: 2`) and Page IDs from what you just created. The Linked pages heading must stay the last block on the page.
+Write the skeleton from `master-profile.md` into the Master Profile page: the heading 2 sections in order (Setup Status, Page IDs, Identity, Market, Tools, Presence, Brand, Business, Edge, Self Profile, and last of all Linked pages, which holds only the heading) with empty field bullets, then fill in Setup Status (including `profile_version: 3`, `workspace_source: built`, and `template_version: none`) and Page IDs from what you just created. The Linked pages heading must stay the last block on the page.
 
 ## Dashboard content
 Write this on the Dashboard page:
