@@ -101,6 +101,15 @@ else
   done <<< "$rows"
 fi
 
+# 6. Every skill that saves to the Marketing Hub carries the safety net, so a missing
+#    Marketing Hub never makes a save fail
+for skill_dir in plugins/marketing-os/skills/*/; do
+  skill_name=$(basename "$skill_dir")
+  if grep -q 'marketing_hub_db_id' "${skill_dir}SKILL.md"; then
+    grep -q 'Marketing Hub safety net' "${skill_dir}SKILL.md" || ERRORS+=("$skill_name: saves to the Marketing Hub but has no 'Marketing Hub safety net' section")
+  fi
+done
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

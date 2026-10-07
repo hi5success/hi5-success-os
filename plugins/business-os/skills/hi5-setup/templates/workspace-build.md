@@ -72,7 +72,7 @@ Every video, blog, and piece of content is one row. Properties:
 Status is a **select** (not Notion's built-in status type) so the exact values above can be set.
 
 ### 📧 Marketing Hub
-Every email sequence, newsletter issue, website page, landing page, SEO plan, and case study is one row, with the full text in the row's page body. Properties:
+Every email sequence, newsletter issue, website page, landing page, SEO plan or audit, and case study is one row, with the full text in the row's page body. The official Hi5 Success OS Workspace Template already includes this database with these properties. Properties:
 
 | Property | Type | Options |
 |---|---|---|

@@ -232,10 +232,18 @@ If they want to continue, run the next available stage from the industry file.
 
 ## WORKSPACE CHECK
 
-On a re-run, quietly check that the databases in the member's workspace have every select option defined in `templates/workspace-build.md` for the Content Planner (Status, Deliverable Type, and the others with listed options) and the Marketing Hub (Type and Status). Compare with the live database.
+On a re-run, quietly check the member's databases against `templates/workspace-build.md`. This is how members who set up earlier receive anything that was added later, and how a missing database never makes a skill's save fail.
+
+**1. Missing databases.** For each database defined in `templates/workspace-build.md` that Hi5 skills save to (the Content Planner and the Marketing Hub), confirm that the saved ID (`content_planner_db_id`, `marketing_hub_db_id`) opens a database.
+- If it does not, search under the root page for a database with that exact title. If you find one, fix the saved ID in Page IDs.
+- If none exists, say: "Your [name] isn't in your workspace yet. I can add it with the standard Hi5 layout. OK?" If they agree, create ONE database with that name inside the root page, using the properties and options in `templates/workspace-build.md`, and save its ID in Page IDs. If they say no, skip it and do not ask again in this session.
+- Never create a duplicate, never create any other database, and never touch existing rows.
+- Members who duplicated the official Hi5 template already have a Marketing Hub, so they will not see this.
+
+**2. Missing select options.** For the Content Planner (Status, Deliverable Type, and the others with listed options) and the Marketing Hub (Type and Status), compare the live options with `templates/workspace-build.md`.
 - If every option is there, say nothing.
 - If any are missing, say: "I'd like to add [the missing labels] to your [database name] so new results are easy to find. OK?" Ask once per run.
-- If they say yes, read the database's current options, keep every one of them (including any the member added themselves), add the missing ones, and update the existing property. Never remove or rename an option, never create a new database, and never touch the rows.
+- If they say yes, read the database's current options, keep every one of them (including any the member added themselves), add the missing ones, and update the existing property. Never remove or rename an option.
 - If they say no, or the update fails, skip it and do not ask again in this session. Skills fall back to the closest existing option.
 This is how members who set up earlier receive new labels such as the Marketing Hub's SEO Audit option.
 
