@@ -12,8 +12,8 @@ Give the member a clear, honest look at how the business is performing against t
 - Read the Master Profile first. Never ask for something it already has.
 - One question at a time. Offer short lists so answers are quick, and let the member skip any question.
 - **Never hardcode any business's rules.** Splits, caps, fees, awards, and costs differ everywhere. Use only what the member told /hi5-bizplan. If a rule is unclear, ask. Do not assume.
-- **Write only to the existing Quarterly Goals page** (`quarterly_goals_page_id`). Never create a new page and never create a new database. This skill never changes goals, targets, or the weekly plan. To change them, point the member to /hi5-goals.
-- **Plan versus actual uses the member's own plan.** Compare actuals with the plan to date in the Quarterly Goals page. For lead sources there are no per-source targets, so compare with the member's own ranked sources, their own past mix, and their own overall rates, and label every such comparison "an assumption from your numbers".
+- **Write reviews only to the existing Business Reviews page** (`business_reviews_page_id`), one section per review, newest first. The only other thing this skill touches is one link line in the matching quarter's section on the Quarterly Goals page. Never create a new database. If the Business Reviews page is missing, search for it under the Business OS page by title. If it truly does not exist, offer once to create one page called Business Reviews under Business OS, and write nothing until the member says yes. This skill never changes goals, targets, or the weekly plan. To change them, point the member to /hi5-goals.
+- **Plan versus actual uses the member's own plan.** Compare actuals with the plan to date on the Quarterly Goals page. For lead sources there are no per-source targets, so compare with the member's own ranked sources, their own past mix, and their own overall rates, and label every such comparison "an assumption from your numbers".
 - Label every assumption and say where it came from ("from your numbers", "from your check-ins", "your estimate", or "I asked you").
 - Never invent a benchmark, an industry average, or a result. If a number is missing, say so and show what the review can and cannot say without it.
 - Nothing in a review states a result or earnings as a promise. Describe only the member's own numbers and activities.
@@ -41,6 +41,7 @@ Read from the Master Profile:
 - **Business Numbers:** the goal, plan period, year to date, the funnel numbers and rates, the member's own cost or commission model and `fee_order_note`, `avg_days_to_close`, `current_quarter`, `last_check_in`, and any earlier review fields (`last_review_date`, `review_quarter`, `lead_source_costs`)
 - `client_categories`, `client_mix`, `lead_sources_ranked`, `top_lead_source`, `behavioral_style`, `biggest_blocker`
 - The Quarterly Goals page (`quarterly_goals_page_id`): the quarter sections, each with its targets, the math, the weekly plan, and the check-in log
+- The Business Reviews page (`business_reviews_page_id`): the earlier reviews, so a re-run of the same period replaces its own section
 
 ## Step 2: Choose the timeframe
 
@@ -97,7 +98,8 @@ Give three adjustments at most (one or two if their blocker is taking on too muc
 
 ## Step 10: Save
 
-1. Write the review to the existing Quarterly Goals page, using `templates/review-page.md`. It goes as a "Review" subsection inside the section for the quarter reviewed. If the member reviewed the year to date, put it in the current quarter's section and name the timeframe. A re-run replaces only that Review subsection. Never touch the targets, the weekly plan, the check-in log, or another quarter.
+1. Write the review to the existing Business Reviews page, using `templates/review-page.md`. It is one section for the period reviewed, placed at the top of the page so the newest review comes first. A re-run of the same period replaces only that period's section. Never touch another review.
+   Then add or update one link line in the reviewed quarter's section on the Quarterly Goals page, under its Review part, pointing to the new review (see the template). For a year to date review, link it from the current quarter's section. Never touch the targets, the weekly plan, the check-in log, or another quarter.
 2. Save to Business Numbers (inside the section, before the Linked pages heading), updating existing bullets instead of adding second ones: `last_review_date` (today), `review_quarter` (for example 2026-Q4), and `lead_source_costs` if you asked for it.
 3. Tell the member what you saved and where, in plain words.
 

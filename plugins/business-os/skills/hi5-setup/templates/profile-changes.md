@@ -36,4 +36,4 @@ These fields are collected inside the skill that uses them, not by setup, so `pr
 | last_review_date, review_quarter | Business Numbers | /hi5-bizreview, each time a review is saved |
 | lead_source_costs | Business Numbers | /hi5-bizreview, asked once if the member wants cost per closing by lead source |
 | A `Sources:` tally on a check-in log line | Quarterly Goals page | /hi5-goals, the optional weekly source question |
-| A Review subsection under a quarter | Quarterly Goals page | /hi5-bizreview |
+| One section per review, newest first, on the Business Reviews page, plus a link line in that quarter's section on the Quarterly Goals page | Business Reviews page, Quarterly Goals page | /hi5-bizreview |

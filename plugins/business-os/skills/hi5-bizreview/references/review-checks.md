@@ -3,7 +3,7 @@
 Used by `SKILL.md`. These rules keep every review honest and the same from one run to the next.
 
 ## 1. What data a review can use
-- **Plan to date:** the weekly plan table on the Quarterly Goals page, added up to today.
+- **Plan to date:** the weekly plan table on the Quarterly Goals page, added up to today. Earlier reviews are on the Business Reviews page.
 - **Actuals:** the check-in log lines, plus anything the member gives during the review. Older check-in lines may have totals only. Never rewrite a past line.
 - **By client type or offer:** only from check-in lines that name the type or offer. Everything else is a gap.
 - **By lead source:** only from check-in lines with a source tally (written as `Sources: Name count, Name count`), or from rough counts the member gives during the review, labeled "your estimate".

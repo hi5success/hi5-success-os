@@ -56,7 +56,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-self` | A 30 question assessment of how you work, communicate, and decide. Accepts results you already have from DISC, Human Design, Enneagram, 16 Personalities, CliftonStrengths, Kolbe, and others |
 | `/hi5-bizplan` | Builds your business plan with the math shown step by step, using your own split, fees, and goals. Works for any brokerage or business |
 | `/hi5-goals` | Breaks your plan into this quarter's targets and a 13 week plan, shows the math from your own numbers, and runs a weekly check-in. Never assumes anyone's commission rules |
-| `/hi5-bizreview` | Reviews how you are doing against your plan for this quarter, last quarter, or the year to date. Compares actual with plan by client type or offer and by lead source, shows take-home using your own fees, finds the bottleneck, and gives up to three adjustments. Saves to your Quarterly Goals page. Works for any business |
+| `/hi5-bizreview` | Reviews how you are doing against your plan for this quarter, last quarter, or the year to date. Compares actual with plan by client type or offer and by lead source, shows take-home using your own fees, finds the bottleneck, and gives up to three adjustments. Saves each review to your Business Reviews page. Works for any business |
 
 ### Content OS
 | Command | What it does |

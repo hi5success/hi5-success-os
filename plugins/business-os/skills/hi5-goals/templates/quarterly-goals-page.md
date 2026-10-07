@@ -23,7 +23,7 @@ A table with 13 rows: week number, dates, the activity targets, and two or three
 One line per weekly check-in, added over time: the week, the date, actuals against plan, the status (ahead, on track, or behind), and any adjustment. If the member told you where new agreements and closings came from, end the line with `Sources: Name count, Name count`. Leave a single line "No check-ins yet" until the first one.
 
 ### Review
-Added by /hi5-bizreview, never by this skill. When you revise a quarter, keep any Review subsection exactly as it is.
+One line, added by /hi5-bizreview, never by this skill: a link to the latest review on the Business Reviews page. When you revise a quarter, keep that line exactly as it is.
 
 ### Last updated
 Today's date and what changed (set, revised, or check-in).
@@ -31,4 +31,4 @@ Today's date and what changed (set, revised, or check-in).
 ## Rules
 - No em dashes. Use a comma, a colon, or a new sentence.
 - Keep the wording plain. The member should be able to check every line.
-- Do not remove a past quarter. Never overwrite a check-in log or a Review subsection.
+- Do not remove a past quarter. Never overwrite a check-in log or the Review link line.
