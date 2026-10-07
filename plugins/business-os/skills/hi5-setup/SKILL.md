@@ -154,7 +154,8 @@ Use the lookup rule in FINDING THE HI5 SUCCESS OS WORKSPACE.
 - **Workspace found** → this is a re-run. Do not rebuild anything.
   1. Read `profile_version` from Setup Status. The current version is in `templates/profile-changes.md`. A missing value means version 1.
   2. If it is lower than current, run PROFILE UPDATE below before the menu.
-  3. Then go to RE-RUN MENU.
+  3. Run the WORKSPACE CHECK below.
+  4. Then go to RE-RUN MENU.
 - **Not found** → go to Phase 3.
 
 ---
@@ -228,6 +229,15 @@ Use the member's name and these facts. Say what was created, what works now, and
 If they want to continue, run the next available stage from the industry file.
 
 ---
+
+## WORKSPACE CHECK
+
+On a re-run, quietly check that the databases in the member's workspace have every select option defined in `templates/workspace-build.md` for the Content Planner (Status, Deliverable Type, and the others with listed options) and the Marketing Hub (Type and Status). Compare with the live database.
+- If every option is there, say nothing.
+- If any are missing, say: "I'd like to add [the missing labels] to your [database name] so new results are easy to find. OK?" Ask once per run.
+- If they say yes, read the database's current options, keep every one of them (including any the member added themselves), add the missing ones, and update the existing property. Never remove or rename an option, never create a new database, and never touch the rows.
+- If they say no, or the update fails, skip it and do not ask again in this session. Skills fall back to the closest existing option.
+This is how members who set up earlier receive new labels such as the Marketing Hub's SEO Audit option.
 
 ## PROFILE UPDATE
 

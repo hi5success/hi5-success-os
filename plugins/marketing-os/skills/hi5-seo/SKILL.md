@@ -1,21 +1,24 @@
 ---
 name: hi5-seo
-description: Builds a local SEO strategy and Google Business Profile optimization plan for the member's market. Identifies keyword opportunities, GBP improvements, and content gaps. Works for any industry. Triggers when the user runs /hi5-seo, says "improve my SEO", "Google Business Profile", "local SEO", or "rank higher in my market".
+description: Your local SEO hub. Opens by asking what you want to improve, then runs the right check, such as a Google Business Profile audit, a website audit through /hi5-site-audit, a directory and listing consistency check, reviews, a keyword and content plan, or an AI search visibility check. Reads your website platform, Google Business Profile status, and languages from your profile and never re-asks them. Works for any industry. Triggers when the user runs /hi5-seo, says "improve my SEO", "Google Business Profile", "local SEO", "check my listings", "get more reviews", or "rank higher in my market".
 ---
 
-# Hi5 SEO: Local SEO Strategy
+# Hi5 SEO: Your Local SEO Hub
 
 ## Purpose
-Help the member get found online in their market through Google Business Profile optimization, local keyword strategy, and content recommendations.
+Help the member get found online in their market. Ask what they want to improve, run that check, and give a short plan they can act on. Local SEO is much more than the Google Business Profile, so this hub covers the profile, the website, listings, reviews, keywords and content, and AI search visibility.
 
 ## Core Rules
-- Read the Master Profile for market, niche, website, languages, and Google Business Profile status.
+- Read the Master Profile first. **Never re-ask** what it has: the Google Business Profile status (`gbp_status` in Business Numbers), the website address and platform (`website`, `website_platform`), and the languages the member serves (`languages`). If a detail the skill needs is missing, ask once, save it, and continue.
 - One question at a time.
-- Focus on local SEO, not generic national strategies, unless the member serves a fully online audience.
-- Read Google Business Profile status from `gbp_status` in the Business Numbers section. Never read it from the plan text. If it is missing, ask once and save it there.
-- Never suggest blog topics or keywords that conflict with the Compliance Guardrails. For example, no claims about school quality, safety, or who lives in an area. Reframe them as neutral, verifiable information with a pointer to the official source.
-- **Languages.** If the member speaks another language (`languages` on the Master Profile), ask once whether they want a version in that language too, and offer it as an opportunity to reach more people. Write the second version natively, not as a word for word translation. For SEO this is a major opportunity: suggest keywords, Google Business Profile posts, and blog topics in each language the member speaks.
-- Save the strategy to the Marketing Hub in Notion.
+- **Free tools only.** Use built-in web reading and web search and free Google tools. Never recommend a paid platform.
+- **Public pages only.** Read single public pages one at a time. Never scrape, never try to get around a site that blocks you, and never ask for a password. If a page cannot be read, say so and give the member a short manual check with screenshot help.
+- Never claim you checked something you could not read. Be honest about what a check can and cannot tell them.
+- **Fair Housing and compliance.** School district and neighborhood topics are allowed as content. Describe the place, the homes, and the amenities, and point to official sources for schools. Never rate or describe the quality of schools, and never describe who lives in an area or who a place suits. Follow the member's Compliance Guardrails page.
+- **Languages.** If the member serves other languages, offer keywords, Google Business Profile posts, and content in those languages, written natively, as a real opportunity.
+- Save results to the existing Marketing Hub in Notion. Never create a new database.
+- When you send the member outside Claude (Google, a directory, their site), give numbered steps, offer screenshot help ("send me a screenshot and I'll tell you exactly what to click"), never assume menu names, and wait for them to finish each step.
+- Follow the member's Voice Profile. Never use em dashes in anything you say or write. Before you send anything, scan your message for em dashes and replace each one with a comma, a colon, or a new sentence. This includes tables, bullet lists, summaries, and headings.
 
 ---
 
@@ -40,29 +43,42 @@ Read `industry_flow` from Setup Status (`real-estate` or `generic`) and load `in
 
 ---
 
-## OUTPUT (all industries)
+## Step 1: Read what you already know
 
-Generate a complete local SEO strategy:
+From the Master Profile: `gbp_status` (Business Numbers), `gbp_url`, `google_reviews`, `website`, `website_platform`, `languages`, `languages_published`, `primary_market`, `surrounding_areas`, `niche`, `client_categories`, `business_name`, `nap_name`, `nap_address`, `nap_phone`, `crm`, `last_site_audit`, `last_citation_check`. From the Marketing Hub: the newest rows of Type SEO Strategy and SEO Audit.
 
-### 1. Google Business Profile Audit
-Based on `gbp_status`: specific action items. A profile completeness checklist, category recommendations, photo strategy, review generation system, post frequency, and Q&A strategy.
+Say what you already know in one line, for example: "I already know your Google Business Profile is [status], your site is on [platform], and you serve [languages]. Let's build on that."
 
-### 2. Local Keyword Targets
-15 to 20 specific keyword phrases, built from the member's services or client types and their market and nearby areas. Include a set in each other language the member speaks.
+## Step 2: Ask what to improve
 
-### 3. Content Gap Analysis
-3 to 5 blog post topics for local SEO, with a mix of guides, local resources, and answers to the questions their clients ask. Follow the Compliance Guardrails.
+> "What do you want to improve?
+>
+> A) My Google Business Profile
+> B) My website (a page by page audit)
+> C) My listings on other sites: name, address, and phone consistency
+> D) My reviews
+> E) My keywords and content plan
+> F) Whether AI search (ChatGPT, Perplexity, Google's AI answers) mentions me
+> G) Not sure: you pick"
 
-### 4. Quick Wins (do this week)
-3 to 5 immediate actions that move the needle fastest based on their current status.
+If they choose G, recommend ONE and say why: if `gbp_status` says they have barely started or have no profile yet, start with A. Otherwise if there is no SEO Audit row, B. Otherwise if `last_citation_check` is empty, C. Otherwise D, then E, then F.
 
-### 5. 90 Day SEO Roadmap
-Month by month actions to build local authority.
+## Step 3: Run the module
 
-## STORAGE
+Read the module file for their choice and follow it:
+- A: `modules/gbp.md`
+- B: tell them you'll hand this to /hi5-site-audit and ask if they want to start it now. Do not run the audit yourself.
+- C: `modules/directories.md`
+- D: `modules/reviews.md`
+- E: `modules/keywords.md`
+- F: `modules/ai-visibility.md`
 
-Save to the Marketing Hub (`marketing_hub_db_id`) as one row: Title is "Local SEO Strategy" and the date, Type is SEO Strategy, Status is Draft, Source Skill is /hi5-seo, Date is today, and the full strategy is in the page body. Save `google_reviews` (the review count) in the Presence section of the Master Profile.
+The industry file supplies the directory list, the category and keyword ideas, and the content topics for their kind of business.
 
-## NEXT STEP
+## Saving (every module)
 
-> "Next: put your keywords to work on your website. Run /hi5-website and I will write your pages around them. To start on blog content instead, run /hi5-blog. You can run /hi5-next any time and I'll tell you your best next step."
+Save to the Marketing Hub (`marketing_hub_db_id`) as one row per run: Title names the check and the date (for example "Google Business Profile Audit, Oct 6"), Type is SEO Strategy, Status is Draft, Source Skill is /hi5-seo, Date is today, and the full results are in the page body. Update the matching profile fields named in the module (for example `gbp_url`, `nap_name`, `nap_address`, `nap_phone`, `google_reviews`, `languages_published`, `last_citation_check`), inserted inside the Presence section before the Linked pages heading. Never create a new database.
+
+## Next
+
+After each module, offer ONE next step: if there is no SEO Audit row, "Next: run /hi5-site-audit to check your website page by page." Otherwise, "Next: run /hi5-website to rewrite weak pages around your keywords, or /hi5-blog to write posts for them." Then say: "You can run /hi5-seo again any time to work on another area, and /hi5-next any time and I'll tell you your best next step."

@@ -75,6 +75,11 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - social_platforms: each platform with its URL
 - youtube_url
 - google_reviews: Google review count (written by /hi5-seo)
+- website_platform: GoHighLevel, Astro, WordPress, Squarespace, Wix, a real estate website provider, or other. Detected and confirmed by /hi5-site-audit, saved once
+- languages_published: the languages the member publishes website content in (written by /hi5-site-audit or /hi5-seo)
+- nap_name, nap_address, nap_phone: the business name, address (or "service area business, address hidden"), and phone to use exactly everywhere. Asked once by /hi5-seo
+- gbp_url: the member's Google Business Profile address (asked once by /hi5-seo)
+- last_site_audit, last_citation_check: dates written by /hi5-site-audit and /hi5-seo
 - newsletter_name, newsletter_frequency, newsletter_audience (written by /hi5-newsletter)
 
 ### Brand

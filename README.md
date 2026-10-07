@@ -75,6 +75,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-email` | Builds email nurture sequences |
 | `/hi5-newsletter` | Writes a weekly or monthly newsletter issue |
 | `/hi5-seo` | Builds a local SEO and Google Business Profile plan |
+| `/hi5-site-audit` | Audits your live website page by page: titles, descriptions, headings, schema, speed, links, languages, and Fair Housing language. Gives a prioritized fix list with steps for your platform, and compares with your last audit |
 | `/hi5-linkedin` | Writes LinkedIn posts from your existing content |
 | `/hi5-website` | Writes website page copy |
 | `/hi5-landing` | Writes landing page copy for a single offer |
