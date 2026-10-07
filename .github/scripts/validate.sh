@@ -133,6 +133,12 @@ if [ -f "$FUNNEL_CORE" ] && grep -qiE 'fair housing|\bMLS\b|realtor|listing appo
   ERRORS+=("hi5-funnel/SKILL.md contains real estate specifics. Move them to industries/real-estate.md")
 fi
 
+# 10. The bizreview core stays industry neutral: real estate specifics live only in its industry file
+REVIEW_CORE="plugins/business-os/skills/hi5-bizreview/SKILL.md"
+if [ -f "$REVIEW_CORE" ] && grep -qiE 'fair housing|\bMLS\b|realtor|listing appointment|\bGCI\b|brokerage' "$REVIEW_CORE"; then
+  ERRORS+=("hi5-bizreview/SKILL.md contains real estate specifics. Move them to industries/real-estate.md")
+fi
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

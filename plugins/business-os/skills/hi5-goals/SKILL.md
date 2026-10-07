@@ -88,10 +88,11 @@ Build 13 weeks. Each week has: the dates, the activity targets from the math, an
 Use this when the member chooses A, or says "weekly check in".
 1. Read the current quarter's section: the plan to date and the check-in log.
 2. Ask, one at a time, for this week's actuals using the activity names in the industry file, and anything that closed. Offer a short list so they can answer fast.
-3. Compare cumulative actuals with the plan to date. Say plainly: ahead, on track, or behind, with the numbers.
-4. If behind, find the bottleneck from their own rates: not enough activity, or activity that is not converting. Adjust only the next two weeks, unless the member asks to revise the whole quarter. Keep the blocker rule.
-5. Add a line to the Check-in log: the week, the date, actuals against plan, the status, and any adjustment. Update `last_check_in` to today.
-6. End with one clear action for the next week. Mention once that deeper reviews of how the business is doing are coming soon in /hi5-bizreview.
+3. **Quick source question (optional).** Ask once: "Where did this week's new agreements and closings come from?" Offer the member's own `lead_sources_ranked` as short options, plus "other", and let them skip. If they answer, keep it as a tally for the log line. If they skip, log nothing for sources and do not ask again that week. Never invent a source.
+4. Compare cumulative actuals with the plan to date. Say plainly: ahead, on track, or behind, with the numbers.
+5. If behind, find the bottleneck from their own rates: not enough activity, or activity that is not converting. Adjust only the next two weeks, unless the member asks to revise the whole quarter. Keep the blocker rule.
+6. Add a line to the Check-in log: the week, the date, actuals against plan, the status, and any adjustment. If the member gave a source tally, end the line with `Sources: Name count, Name count`. Update `last_check_in` to today.
+7. End with one clear action for the next week. Mention once that /hi5-bizreview compares results with the plan by client type and lead source, and shows take-home, any time they want a deeper look.
 
 ## SET UP NEXT QUARTER
 
@@ -106,4 +107,4 @@ When the member chooses C, or a new quarter has started:
 
 Recommend ONE next step, following the Recommended path in /hi5-setup. If real estate Stage 4 or Stage 5 is not complete, recommend /hi5-setup and Continue setup. Otherwise, if Content OS is installed, recommend /hi5-yt-setup. If not, recommend /hi5-email. Always add: "Do your first weekly check-in in 7 days. Run /hi5-goals and choose a weekly check-in, and I'll nudge you through /hi5-next."
 
-Never recommend /hi5-bizreview yet. End your message with: "You can run /hi5-next any time and I'll tell you your best next step."
+End your message with: "You can run /hi5-next any time and I'll tell you your best next step."

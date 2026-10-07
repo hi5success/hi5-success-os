@@ -112,6 +112,6 @@ Save the plan to the member's Notion page Business OS, then Business Plan (`busi
 
 Recommend ONE next step: /hi5-goals. Say: "Next: run /hi5-goals. It breaks this plan into this quarter's targets and a 13 week plan, using your own numbers, and a weekly check-in keeps you on track."
 
-Never recommend /hi5-bizreview yet. Say once: "Business reviews (/hi5-bizreview) are coming soon."
+Say once: "When you have a few weekly check-ins, run /hi5-bizreview to compare your results with this plan."
 
 End your message with: "You can run /hi5-next any time and I'll tell you your best next step."

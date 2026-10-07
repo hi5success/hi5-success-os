@@ -26,3 +26,14 @@ Fields are filled by setup questions unless noted. Ask only the ones that are mi
 | branding_help_asked | Brand | Stage 1, group D. Set once the offer has been made or skipped. Update ID: S1-BRANDING-ASKED |
 | Business Numbers section | Business Numbers | /hi5-bizplan fills it the next time the member runs it. Setup does not ask for it |
 | Linked pages heading | Linked pages | Added automatically |
+
+## Added without a version change
+These fields are collected inside the skill that uses them, not by setup, so `profile_version` stays at 2. Each is asked once, saved to Business Numbers, and never renamed or deleted.
+
+| Field | Section | Filled by |
+|---|---|---|
+| quarter_basis, seasonality_note, avg_days_to_close, client_mix, current_quarter, goals_last_set, last_check_in, and the quarter headline numbers | Business Numbers | /hi5-goals, the first time it needs them |
+| last_review_date, review_quarter | Business Numbers | /hi5-bizreview, each time a review is saved |
+| lead_source_costs | Business Numbers | /hi5-bizreview, asked once if the member wants cost per closing by lead source |
+| A `Sources:` tally on a check-in log line | Quarterly Goals page | /hi5-goals, the optional weekly source question |
+| A Review subsection under a quarter | Quarterly Goals page | /hi5-bizreview |

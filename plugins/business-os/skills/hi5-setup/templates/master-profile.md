@@ -126,6 +126,7 @@ Written by /hi5-bizplan, not by setup. Skills that need these numbers read them 
 - client_mix: the member's share of business by client type or offer, in their words
 - quarter_basis, seasonality_note, avg_days_to_close: asked once by /hi5-goals
 - current_quarter (for example 2026-Q4), goals_last_set, last_check_in: written by /hi5-goals
+- last_review_date, review_quarter, lead_source_costs: written by /hi5-bizreview (the date of the last review, the quarter reviewed, and monthly spend per lead source, one line per source)
 - quarter_deals_goal, quarter_gci_goal, quarter_take_home_goal (real estate)
 - quarter_clients_goal, quarter_revenue_goal, quarter_take_home_goal (any industry)
 
