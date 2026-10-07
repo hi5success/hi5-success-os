@@ -24,7 +24,14 @@ If yes, ask for rough shares and save them as `client_mix` in their words.
 1. **Annual target.** State it as the member gave it (revenue, take-home, or number of clients) and the period it covers.
 2. **Remaining.** Subtract year to date (`revenue_ytd` or `deals_closed_ytd`).
 3. **This quarter's share.** Even split of what remains across the quarters left in the plan period, unless `seasonality_note` says otherwise. Label an even split as an assumption.
-4. **Revenue and take-home.** If `take_home_note` is saved, show BOTH numbers for the quarter, using only what they told you: the revenue the quarter needs, and what they keep from it. If the target was take-home, convert it to the revenue needed. If their costs are not saved, show revenue only and say: "Take-home needs your costs. Run /hi5-bizplan to add them and I'll show both."
+4. **Revenue and take-home, per sale and for the quarter.**
+   - Use only what the member saved in Business Numbers: `per_sale_fees`, `processing_fees`, `partner_fees`, `recurring_costs`, `outside_costs`, the order they confirmed in `fee_order_note`, and `take_home_note`. Never use a fee the member did not give you, and never fill one in from what you know about a platform or processor.
+   - **Ask once for anything missing.** If any of these fields is not in Business Numbers at all, ask for it once using the matching question (C1 to C5) in the /hi5-bizplan generic flow, save it, and continue. An answer of "none" or "not sure" counts as answered. A line saved as "not sure" is not counted, and you say so.
+   - **One sale.** Show one sale at the average value as a short table in the confirmed order: the revenue, each fee and cost with what it is taken from and the amount, and the take-home.
+   - **For the quarter.** Multiply by the clients or sales the quarter needs, then subtract recurring costs prorated to the quarter and the other costs they wanted counted. Show the quarter's take-home next to the revenue that produced it.
+   - If the target was take-home, work backwards to the revenue needed with the same model and show the steps. If the target was revenue, show the take-home it produces.
+   - If only `take_home_note` is saved, use that percent and label it an estimate from what they told you.
+   - If no costs are saved at all, show revenue only and say: "Take-home needs your fees and costs. Run /hi5-bizplan to add them and I'll show both."
 5. **Clients needed.** Quarter revenue divided by `avg_deal_value`. Say where the average came from. If they split by offer, divide by each offer's value.
 6. **Work backwards.** Proposals or calls needed = clients needed divided by their proposal to client rate. Leads needed = proposals needed divided by their lead to proposal rate. Use their rates from Business Numbers.
 7. **Check capacity.** Compare the clients needed with `capacity_note`. If the target does not fit, say so plainly and offer options: raise prices, add help, change the target, or spread it across more quarters.

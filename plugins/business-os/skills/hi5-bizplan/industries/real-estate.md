@@ -65,32 +65,65 @@ Store: buyer_seller_split (the mix in their words)
 
 ## HOW YOU GET PAID
 
-Never assume any brokerage's rules. Ask in plain terms, then repeat their model back with an example and confirm it.
+Collect the member's full compensation structure ONCE and save every answer. They can answer "none" or "not sure" to any line, and you save that answer. **Never fill in a brokerage's fees from memory, even if the member names the brokerage. Use only what they give you.** If Business Numbers already has these fields, show what is saved and ask "Still right?" instead of asking again. Ask one question at a time.
 
-**Q8: Your split and fees**
-> "How does your brokerage pay you? Tell me in your own words: your split, any cap, any fees per deal, and any monthly or annual fees."
-Store: brokerage_split, cap_amount, brokerage_fees
+**C1: Split and cap**
+> "Tell me your split and your cap, if you have one. For example: 'I keep 80 percent until I have paid $20,000 to the company.'"
+Store: brokerage_split, cap_amount
 
-**Q9: Cap year** *(only if they have a cap)*
-> "When does your cap year reset?"
-Store: cap_year_reset
-Also ask: "How much of your cap have you hit so far this year?" and keep the answer for the math.
+**C2: Cap year** *(only if they have a cap)*
+> "When does your cap year start? And how much of your cap have you used so far this year?"
+Store: cap_year_reset (the cap year start date), cap_progress (how much of the cap is used so far)
 
-**Q10: Your commission per deal**
+**C3: Fees per deal**
+> "Does your brokerage charge any fees on each deal, like a transaction fee, an admin fee, a compliance fee, or a risk or E&O fee? List each one with its amount. For each one, tell me whether it continues after you reach your cap, and whether it counts toward your cap. You can say 'none' or 'not sure'."
+Store: per_deal_fees (one line per fee: name, amount, continues after cap yes or no or not sure, counts toward cap yes or no or not sure)
+
+**C4: After the cap**
+> "After you reach your cap, do you pay a different split or any other fee? Say 'none' if you keep everything apart from the per deal fees above."
+Store: post_cap_terms
+
+**C5: Franchise or royalty fee**
+> "Does your brokerage charge a franchise or royalty fee? If so, what percentage, what is it a percentage of, does it have its own annual cap, how much have you paid so far this year, and does it count toward your brokerage cap?"
+Store: royalty_percent, royalty_annual_cap, royalty_ytd (and keep their answer about whether it counts toward the cap in the same line)
+
+**C6: Recurring fees**
+> "Do you pay any monthly or annual fees to the brokerage, like a brokerage fee, a technology fee, or E&O insurance? Tell me each one with its amount and how often."
+Store: recurring_fees (one line per fee: name, amount, monthly or annual)
+
+**C7: Team split** *(only if they are on a team)*
+> "Do you pay a team split? What is it, and is it taken off the top, or from your share after the brokerage split?"
+Store: team_split
+
+**C8: Referral fees**
+> "Do you regularly pay referral fees? What percentage, and about what share of your deals?"
+Store: referral_fees
+
+**C9: Costs outside the brokerage**
+> "Are there costs you pay outside the brokerage that you want counted in your take-home, like MLS or association dues or lockboxes? Give me each amount and how often."
+Store: outside_costs (one line per cost: name, amount, how often)
+
+**C10: Your commission per deal**
 > "What is your typical commission per deal, as a percent or a dollar amount? If it varies, give me an average."
 If they do not know, calculate it from their own numbers: last year's GCI divided by last year's deals, and say you did that.
 
-**Q11: Team deals** *(only if role is a team leader, a spouse or partner team, or a broker or owner with a team)*
+**C11: Team deals** *(only if role is a team leader, a spouse or partner team, or a broker or owner with a team)*
 > "Do your team members' deals count toward your own goal and production?"
 Store: team_deals_count_to_leader (yes or no)
 
-Repeat the model back with a worked example using their numbers (for example "on a deal that brings in $X GCI, you keep $Y until you reach your cap of $Z, then $W") and ask "Is that right?" Fix it until they confirm. If any rule is unclear, ask a follow-up.
+Also save a one line summary of the structure in `brokerage_fees`, the older field name, which stays for older skills.
+
+### Walk through one deal and confirm
+Take one typical deal at their average GCI. Show it as a short table in the order you think applies: the GCI, then each item (referral fee, team split, brokerage split or company dollars, royalty, per deal fees), what each one is taken from, and the amount, once before the cap and once after the cap. Then ask: "Is that the right order and the right amounts?" Fix it until they confirm. Save the confirmed order in plain words as `fee_order_note`.
+- A line they answered "none" is zero.
+- A line they answered "not sure" is NOT counted. Say so in the table ("not counted, you weren't sure") and in the plan.
+- Never guess at how a fee relates to the cap or to another fee. Ask.
 
 ---
 
 ## LEAD SOURCES
 
-**Q12: Top source**
+**Q8: Top source**
 If `lead_sources_ranked` exists, say: "Your biggest lead source is [first item in lead_sources_ranked]. Is that still true?" and store it. Only if the field is missing, ask:
 > "What is your number one source of leads right now?
 >
@@ -105,7 +138,7 @@ If `lead_sources_ranked` exists, say: "Your biggest lead source is [first item i
 
 Store: top_lead_source
 
-**Q13: Source to add or improve**
+**Q9: Source to add or improve**
 > "What lead source do you most want to add or improve this year?"
 Store: desired_lead_source
 
@@ -113,7 +146,7 @@ Store: desired_lead_source
 
 ## DIGITAL PRESENCE
 
-**Q14: Google Business Profile**
+**Q10: Google Business Profile**
 > "Where are you at with your Google Business Profile?
 >
 > A) Fully optimized and actively getting reviews
@@ -123,7 +156,7 @@ Store: desired_lead_source
 
 Store: gbp_status
 
-**Q15: Social posting frequency**
+**Q11: Social posting frequency**
 > "How often are you posting to social media overall right now?
 >
 > A) Rarely or never
@@ -133,7 +166,7 @@ Store: gbp_status
 
 Store: social_frequency
 
-**Q16: Paid ads**
+**Q12: Paid ads**
 > "Are you running any paid ads?
 >
 > A) No
@@ -143,7 +176,7 @@ Store: social_frequency
 
 Store: paid_ads
 
-**Q17: Marketing goals**
+**Q13: Marketing goals**
 > "What marketing would you most like to add or improve this year? Select all that apply:
 >
 > A) Grow YouTube
@@ -161,11 +194,11 @@ Store: marketing_goals
 
 ## GOALS
 
-**Q18: Plan period**
+**Q14: Plan period**
 > "What period is your goal for: the next 12 months, the rest of this calendar year, or something else, like your cap year or an award year?"
 Store: plan_period
 
-**Q19: Your goal as a number**
+**Q15: Your goal as a number**
 If `goal_12_month` exists, say: "Your goal is [goal_12_month]. Let's turn it into numbers." Then ask:
 > "Is your target a GCI number, a take-home number, or a number of deals?"
 Store: goal_type
@@ -173,7 +206,7 @@ Store: goal_type
 > "What is that number?"
 Store: gci_goal (or take_home_goal, or transaction_goal, depending on the answer)
 
-**Q20: Milestone or award** *(skippable)*
+**Q16: Milestone or award** *(skippable)*
 > "Is there a production award, level, or milestone you want to hit, at your brokerage or anywhere else? Tell me what it's called and exactly what it takes to reach it, in your own words."
 Store: milestone_goal (the name and what it takes, as the member said it). Use only what they tell you. If the requirement is unclear, ask.
 
@@ -193,7 +226,7 @@ Who they are, their market, role, experience, client types, and brand. Second pe
 Honest assessment of last year and this year so far. Conversion funnel analysis with the diagnosis: lead problem, conversion problem, or market problem. No fluff, just clarity.
 
 ### 3. Your Target and the Math
-Show the chain step by step with their numbers: their goal, converted using their own split, cap, and fees if the goal is take-home, then deals needed, then appointments or agreements needed, then conversations or leads needed, then per month and per week. If they gave a milestone or award, show the step by step math for it using only the requirements they gave, and label them "as you told me". If the plan period is the rest of a year, subtract what they have done year to date. Label every assumption and its source.
+Show the chain step by step with their numbers: their goal, converted using their full compensation structure (split, cap, per deal fees, royalty, recurring fees, and anything else they gave) if the goal is take-home, with take-home per deal shown before and after the cap, then deals needed, then appointments or agreements needed, then conversations or leads needed, then per month and per week. If they gave a milestone or award, show the step by step math for it using only the requirements they gave, and label them "as you told me". If the plan period is the rest of a year, subtract what they have done year to date. Label every assumption and its source.
 
 ### 4. Your Lead Engine
 Based on top source and desired source: specific recommendations for generating leads consistently. Tailored to their platforms, budget, style, and client types.

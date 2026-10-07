@@ -15,7 +15,7 @@ Generate a personalized business plan from the member's Master Profile. Ask only
 - **Never hardcode any brokerage's or business's rules.** Cap amounts, splits, fees, production awards, revenue share, and price lists differ everywhere. Use only what the member tells you. If a rule is unclear, ask. Do not assume.
 - Tailor tone to their behavioral style (from /hi5-self): High D leads with numbers and action steps. High I leads with vision and energy. High S leads with stability and steady growth. High C leads with data and detail.
 - Tailor the structure to their biggest blocker. For example, if the blocker is taking on too much, limit the plan to three priorities.
-- Write in the member's voice style and follow their Voice Profile. Never use em dashes unless the Voice Profile says `avoid_em_dashes: no`. Before you send anything, scan your message for em dashes and replace each one with a comma, a colon, or a new sentence. This includes tables, bullet lists, and summaries.
+- Write in the member's voice style and follow their Voice Profile. Never use em dashes unless the Voice Profile says `avoid_em_dashes: no`. Before you send anything, scan your message for em dashes and replace each one with a comma, a colon, or a new sentence. This includes tables, bullet lists, summaries, and headings (write a heading like Deal 3: reaches the cap, never with a dash).
 
 ---
 
@@ -50,7 +50,12 @@ Open with the opening line in the industry file.
 ## HOW TO HANDLE THE NUMBERS
 
 ### Never assume a brokerage or business model
-Ask for the member's own model in plain terms: how they are paid, any split, any cap, any fees, and any production award or milestone they want to reach and what it takes. Repeat it back as a worked example with their numbers, and ask "Is that right?" before using it. If anything is unclear, ask a follow-up. Never fill a gap with a rule you think a company uses.
+Collect the member's full compensation or cost structure ONCE, using the questions in the industry file, and save every answer to Business Numbers. This covers the split and cap, the cap year start, fees on each deal or sale (and whether each continues after the cap), any post cap split or fees, any franchise or royalty fee and its own cap, recurring fees, team split, referral fees, and costs outside the business that the member wants counted. The member can answer "none" or "not sure" to any line, and you save that answer.
+- **Use only what they give you.** Never fill in a brokerage's, platform's, or partner's fees from memory, even when the member names the company.
+- A line saved as "none" is zero. A line saved as "not sure" is not counted, and you say so in the math.
+- Walk through one typical deal in a table, in the order you think applies, and ask "Is that the right order and the right amounts?" Fix it until they confirm, then save the confirmed order as `fee_order_note`.
+- If anything is unclear, such as whether a fee counts toward the cap, ask a follow-up. Never fill a gap with a rule you think a company uses.
+- If these fields are already saved, show them and ask "Still right?" instead of asking again.
 
 ### Year to date and the plan period
 Ask how they are doing so far this year, not only last year. Ask what period the goal covers: the next 12 months, the rest of this calendar year, or something else such as a cap year or award year. If the period is the rest of a year, subtract what they have already done so far.

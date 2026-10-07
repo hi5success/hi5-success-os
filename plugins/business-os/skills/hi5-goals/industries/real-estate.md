@@ -7,7 +7,7 @@ Used by `SKILL.md`. Follow the core rules there: use only the commission model t
 - Year to date: `deals_closed_ytd`, `gci_ytd`
 - Last year and the funnel: `deals_closed_last_year`, `gci_last_year`, `leads_received`, `agreements_signed`, `closed_transactions`, `avg_sale_price`
 - The member's mix: `buyer_seller_split` (their words) and `client_mix` if saved earlier. Also `client_categories` from the Business section
-- Their commission model in their own words: `brokerage_split`, `cap_amount`, `cap_year_reset`, `brokerage_fees`, and `team_deals_count_to_leader` for teams
+- Their full compensation structure in their own words (see step 4 for every field), and `team_deals_count_to_leader` for teams
 - `milestone_goal`
 
 ## Questions (ask only what is missing, once each)
@@ -26,9 +26,15 @@ Save `avg_days_to_close`. If it differs a lot by client type, ask for each type 
 1. **Annual target.** State it as the member gave it (GCI, take-home, or number of deals) and the period it covers.
 2. **Remaining.** Subtract year to date (`gci_ytd` or `deals_closed_ytd`).
 3. **This quarter's share.** Even split of what remains across the quarters left in the plan period, unless `seasonality_note` says otherwise. Label an even split as an assumption.
-4. **GCI and take-home.**
-   - If the member's own split, cap, and fees are saved, show BOTH numbers for the quarter, step by step using only their model: the GCI the quarter needs, and what they take home from it. If the target was take-home, convert it to the GCI needed. If the target was GCI, show the take-home it produces. If a cap resets or is reached inside the quarter, show the before and after at that point exactly as they described it. If any rule is unclear, ask.
-   - If their commission model is not saved, show GCI only and say: "Take-home needs your split and fees. Run /hi5-bizplan to add them and I'll show both."
+4. **GCI and take-home, per deal and for the quarter.**
+   - Use only the member's saved compensation structure in Business Numbers: `brokerage_split`, `cap_amount`, `cap_progress`, `cap_year_reset`, `per_deal_fees`, `post_cap_terms`, `royalty_percent`, `royalty_annual_cap`, `royalty_ytd`, `recurring_fees`, `team_split`, `referral_fees`, `outside_costs`, and the order they confirmed in `fee_order_note`. Never use a fee the member did not give you, and never fill one in from what you know about a brokerage.
+   - **Ask once for anything missing.** If any of these fields is not in Business Numbers at all, ask for it once using the matching question (C1 to C11) in the /hi5-bizplan real estate flow, save it, and continue. An answer of "none" or "not sure" counts as answered. A line saved as "not sure" is not counted, and you say so in the math.
+   - **One deal before the cap.** Show one deal at the average GCI as a short table in the confirmed order: the GCI, each deduction with what it is taken from and the amount, and the take-home. Apply any annual royalty cap using what has been paid so far.
+   - **One deal after the cap.** Show the same deal after the cap is reached: the post cap split or fee, the per deal fees that continue, and the take-home.
+   - **For the quarter.** Walk the deals in order. Work out how much cap remains from `cap_progress`, say which deal reaches the cap and which deal reaches the royalty cap, and show each deal's take-home before and after. Then subtract recurring fees prorated to the quarter and the outside costs the member wanted counted. Show the quarter's total take-home next to the GCI that produced it.
+   - If the target was take-home, work backwards to the GCI needed with the same model and show the steps. If the target was GCI, show the take-home it produces.
+   - If a cap or a royalty cap resets inside the quarter, show before and after the reset date exactly as they described it. If any rule is unclear, ask.
+   - If no compensation structure is saved at all, show GCI only and say: "Take-home needs your split and fees. Run /hi5-bizplan to add them and I'll show both."
 5. **Deals needed.** Quarter GCI divided by average GCI per deal. Average GCI per deal comes from their numbers (last year's GCI divided by last year's deals, or the commission per deal they gave). Say which one you used.
 6. **Split by client type.** Divide the deals by `client_mix`. For example: "12 deals: 6 buyer, 4 seller, 2 investor." Say how you rounded. If a type's average GCI differs a lot, ask once and use their numbers.
 7. **Work backwards for each type.** Agreements needed = deals needed divided by their agreement to close rate. Conversations or leads needed = agreements needed divided by their lead to agreement rate. Use their overall rates from Business Numbers and label them as overall rates unless they gave rates for a type.
