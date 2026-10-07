@@ -12,7 +12,7 @@ Walk into a listing appointment ready, and keep following up until the seller de
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.
 - **Read `../hi5-re-crm/references/guardrails.md` first, every time.** It covers drafts and sends, texting consent, Fair Housing, the MLS rule, compensation and contract limits, and sensitive data. Follow all of it. If that file cannot be found, tell the member the Real Estate OS plugin may be incomplete and stop.
 - **Drafts only.** Nothing is sent, posted, or changed in the CRM without the member's OK. To send a message, use /hi5-re-crm job 11. To log the appointment, use /hi5-re-crm job 4.
-- **Never invent comps, numbers, or proof.** Use only what the member gives you, and mark gaps `[ADD PROOF]` or `not verified`.
+- **Never invent comps, numbers, proof, or names.** Use only what the member gives you, and mark gaps `[ADD PROOF]`, `not verified`, or a placeholder such as [PAST CLIENT NAME].
 - **Compensation is set by agreement between the agent and the client, and it is negotiable.** Never quote a standard rate or call a fee fixed. Use the member's own saved fee details and their brokerage's current forms.
 - **A price recommendation is an opinion of value to prepare the agent, not an appraisal.** Never promise a price, a timeline, or an appraisal result, and never speak badly of another agent or company.
 - **Fair Housing.** Describe the home and the place by features, never by who lives there or who will buy. Say "buyers in this price range are choosing X", never who those buyers are. Never state schools, safety, or flood as fact.

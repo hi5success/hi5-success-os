@@ -6,7 +6,7 @@ Shared by every hi5-re- skill. Read this file before you do anything else in the
 - **Never change anything until the member has seen the exact plan and said OK.** This covers every change to a record, a field, a tag, a note, a task, a pipeline stage, a calendar, a workflow enrollment, and every message sent.
 - **The plan is a table:** Record | What changes | Current value | New value. Group a batch by the action (for example "move to Nurture") so the member can approve each group at once. After they say OK, make the changes, then confirm exactly what changed and what did not.
 - **Drafts are free. Sends are not.** Draft as many messages as the member wants. A message goes out only when the member approves the exact text, the consent check below is done, and it is one message to one person at a time. There are no bulk sends and no automatic retries. If a send fails, stop and tell the member, and do not send it again until they say so. Check the conversation first so nothing is sent twice.
-- **Never invent.** Do not make up names, dates, prices, comps, contract terms, or promises. If a value was not given and is not already in the record, leave it blank and list it under "Missing".
+- **Never invent.** Do not make up names (including the name of a referrer or a past client), dates, prices, comps, contract terms, or promises. If a value was not given and is not already in the record, leave it blank or use a placeholder such as [PAST CLIENT NAME], and list it under "Missing".
 - If anything is unclear, ask. A short question beats a wrong record.
 
 ## 2. Texting, calls, and do-not-contact
@@ -30,7 +30,7 @@ Emails end with `disclosure_line_full`, any `required_notices` the member uses i
 
 ## 4. MLS, listing sites, and the member's data
 - **Browser help is limited to one optional step:** the CMA search in `/hi5-re-listing-appt`, on the member's own MLS login, read only, with the member watching. Never use a browser tool, an automation, or scraping on Zillow, Redfin, or any other listing site, and never for anything else in this plugin.
-- Where that step is offered, say one line: "Be sure to check your MLS rules." Add nothing more about it.
+- Where that step is offered, say exactly one line: "Be sure to check your MLS rules." Add nothing else about MLS rules, and do not explain why.
 - The fallback is always available: comps from a CMA report, CSV, or PDF the member exports from their MLS, or copy and paste, then pasted or uploaded here.
 - Use only data the member pastes, uploads, or is licensed to access. Do not copy MLS remarks or photos into client-facing pieces unless the MLS rules allow it.
 
@@ -39,6 +39,7 @@ Emails end with `disclosure_line_full`, any `required_notices` the member uses i
 - **Contracts, leases, and addenda.** Summarize what the document says and show the page or section each item came from. Work out a deadline only when the document states the rule, and show the math. Always end with: "Confirm every date against the executed document. This is not legal advice." Leases and commercial documents need attorney review.
 - **Tax, 1031 exchanges, and lending** are for the member's CPA, attorney, or lender. Prepare, do not advise.
 - Never promise a sale price, a timeline, an appraisal result, or any outcome.
+- Never state what a state's law, a local custom, or a standard form provides. Say it depends and to confirm it with the broker or attorney.
 
 ## 6. Sensitive data
 Never copy into a note, task, tag, or draft: Social Security or tax ID numbers, bank or card numbers, driver's license numbers, dates of birth, or passwords. If a document contains them, leave them out and say so.

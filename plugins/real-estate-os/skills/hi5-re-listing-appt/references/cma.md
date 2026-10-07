@@ -2,7 +2,7 @@
 
 Used by job 3 in `jobs.md`. The member's agent judgment sets the final price. This work is an opinion of value prepared for the agent, not an appraisal.
 
-Say once at the start: "Be sure to check your MLS rules."
+Say exactly one line at the start: "Be sure to check your MLS rules." Add nothing else about MLS rules, and do not explain why.
 
 ## Step 1: Get the comps
 Offer two ways, and let the member choose. They can switch at any time.
