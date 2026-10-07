@@ -77,7 +77,7 @@ Every email sequence, newsletter issue, website page, landing page, SEO plan or 
 | Property | Type | Options |
 |---|---|---|
 | Title | title | |
-| Type | select | Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Other |
+| Type | select | Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Funnel, Other |
 | Status | select | Draft, Approved, Published |
 | Source Skill | text | The command that made it, for example /hi5-email |
 | Date | date | |
@@ -99,9 +99,9 @@ Write this on the Dashboard page:
 > 3. **Create:** /hi5-yt-script, /hi5-repurpose, /hi5-social, /hi5-blog
 > 4. **Get found:** /hi5-seo, /hi5-site-audit, /hi5-website
 > 5. **Nurture:** /hi5-email, /hi5-newsletter
-> 6. **Grow:** /hi5-landing, /hi5-casestudy
+> 6. **Grow:** /hi5-landing, /hi5-funnel, /hi5-casestudy
 >
-> Coming soon: /hi5-bizreview and /hi5-funnel.
+> Coming soon: /hi5-bizreview.
 >
 > **Tip:** keep a few separate Claude Projects, one per topic. Run /hi5-next and I'll show you how.
 >
@@ -111,6 +111,6 @@ Write this on the Dashboard page:
 A short table the member can reference. One section per plugin, one line per skill: command and what it does. Mark each plugin "if installed". Use the skill descriptions from the plugins:
 - **Business OS:** /hi5-setup, /hi5-next, /hi5-self, /hi5-bizplan, /hi5-goals, /hi5-bizreview (coming soon)
 - **Content OS:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose, /hi5-blog, /hi5-social
-- **Marketing OS:** /hi5-email, /hi5-newsletter, /hi5-seo, /hi5-site-audit, /hi5-linkedin, /hi5-website, /hi5-landing, /hi5-casestudy
+- **Marketing OS:** /hi5-email, /hi5-newsletter, /hi5-seo, /hi5-site-audit, /hi5-linkedin, /hi5-website, /hi5-landing, /hi5-funnel, /hi5-casestudy
 
 Finish with: "Run /hi5-next any time for your best next step, and /hi5-setup to update your profile or continue setup."
