@@ -29,7 +29,7 @@ No marked page: the member has not set up yet. Say: "I don't see your Hi5 worksp
 ## Step 1: Read progress
 
 Read only what you need, from these places:
-- **Master Profile:** the Setup Status section (stage lines, `industry_flow`, `self_test`, `projects_offered`), the Self Profile section, the Business Numbers section (`last_plan_date`), the Content Profile section, and the Presence section (`youtube_url`, `newsletter_frequency`).
+- **Master Profile:** the Setup Status section (stage lines, `industry_flow`, `self_test`, `projects_offered`), the Self Profile section, the Business Numbers section (`last_plan_date`, `current_quarter`, `last_check_in`), the Content Profile section, and the Presence section (`youtube_url`, `newsletter_frequency`). Do not read the Quarterly Goals page itself. The Business Numbers fields are enough.
 - **Content Planner** (`content_planner_db_id`): query the rows with their Status, Deliverable Type, Repurpose Status, and Publish Date.
 - **Marketing Hub** (`marketing_hub_db_id`): query the rows with their Type and Date.
 
@@ -50,6 +50,7 @@ If every step on the path is done, use the upkeep rules in Step 4.
 ## Step 4: Upkeep (when the path is done)
 
 Recommend the first one that applies:
+- Business Numbers has a goal and `current_quarter` is set, and the last weekly check-in (`last_check_in`) is more than 7 days ago, or no check-in is logged and the quarter began more than 7 days ago: /hi5-goals, and say to choose a weekly check-in.
 - The Content Planner has no Scheduled video with a Publish Date in the next 14 days: /hi5-yt-plan (skip if they have no channel).
 - A Scheduled video publishes in the next 7 days and none is Scripted: /hi5-yt-script (skip if they have no channel).
 - The newest Newsletter row in the Marketing Hub is older than their `newsletter_frequency` allows (weekly 8 days, bi-weekly 16 days, monthly 35 days): /hi5-newsletter.
@@ -76,6 +77,8 @@ Use this format. Keep it short.
 Choose the two alternatives from the next two steps on the path that pass the Step 3 checks. Never list /hi5-next itself as an alternative. If fewer than two real alternatives exist, list fewer. You may swap one for a skill that clearly fits the member's goals (for example `marketing_goals` or the channel goal in their Content Profile).
 
 For a setup stage, name it as "run /hi5-setup and choose Continue setup", and say which stage.
+
+**The weekly check-in nudge.** Whatever your main recommendation is, if Business Numbers has `current_quarter` and `last_check_in` is more than 7 days ago (or there is no check-in and the quarter began more than 7 days ago), add one gentle line after the alternatives: "Also, your weekly check-in is due. Run /hi5-goals and choose a weekly check-in." Do not make it your main recommendation unless the path is done.
 
 **The Claude Projects tip.** If Stage 1, Stage 2, Stage 3, /hi5-self, and /hi5-bizplan are all done and `projects_offered` is not in Setup Status, add after your recommendation: "One more tip: keeping a few separate Claude Projects, one per topic, keeps your work organized. Want me to show you how?" Whatever they answer, write `projects_offered: <today's date>` in Setup Status. If they say yes, follow `references/projects.md`. This is the only write you ever make.
 

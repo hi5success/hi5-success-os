@@ -109,6 +109,11 @@ Written by /hi5-bizplan, not by setup. Skills that need these numbers read them 
 - gbp_status: Google Business Profile status
 - social_frequency, paid_ads, marketing_goals, top_lead_source, desired_lead_source
 - last_plan_date
+- client_mix: the member's share of business by client type or offer, in their words
+- quarter_basis, seasonality_note, avg_days_to_close: asked once by /hi5-goals
+- current_quarter (for example 2026-Q4), goals_last_set, last_check_in: written by /hi5-goals
+- quarter_deals_goal, quarter_gci_goal, quarter_take_home_goal (real estate)
+- quarter_clients_goal, quarter_revenue_goal, quarter_take_home_goal (any industry)
 
 ### Edge
 Written by Stage 3.

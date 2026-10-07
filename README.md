@@ -55,7 +55,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-setup` | Gets Notion ready, builds your workspace, and fills your Master Profile in stages. Run it again any time to continue, update, or add a neighborhood |
 | `/hi5-self` | A 30 question assessment of how you work, communicate, and decide. Accepts results you already have from DISC, Human Design, Enneagram, 16 Personalities, CliftonStrengths, Kolbe, and others |
 | `/hi5-bizplan` | Builds your business plan with the math shown step by step, using your own split, fees, and goals. Works for any brokerage or business |
-| `/hi5-goals` | Coming soon: quarterly goals and 90 day sprints |
+| `/hi5-goals` | Breaks your plan into this quarter's targets and a 13 week plan, shows the math from your own numbers, and runs a weekly check-in. Never assumes anyone's commission rules |
 | `/hi5-bizreview` | Coming soon: business performance reviews |
 
 ### Content OS

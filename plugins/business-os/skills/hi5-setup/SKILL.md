@@ -37,7 +37,7 @@ Each stage is a section in the member's industry file (`industries/real-estate.m
 
 ### Recommended path
 The full path for every skill, with the Notion signal that means each step is done, lives in `../hi5-next/references/path.md`. Keep this section consistent with it.
-Always recommend ONE next step, never a menu of competing options. The order is: Stage 2 (compliance), Stage 3 (voice and edge), /hi5-self, /hi5-bizplan, then for real estate Stage 4 (objection bank) and Stage 5 (neighborhoods), then the content skills. Skip any step the member has already finished (check Setup Status). Skills that are not built yet (/hi5-goals, /hi5-bizreview) are never recommended.
+Always recommend ONE next step, never a menu of competing options. The order is: Stage 2 (compliance), Stage 3 (voice and edge), /hi5-self, /hi5-bizplan, /hi5-goals, then for real estate Stage 4 (objection bank) and Stage 5 (neighborhoods), then the content skills. Skip any step the member has already finished (check Setup Status). Skills that are not built yet (/hi5-bizreview) are never recommended.
 
 ### How stages 2 to 5 run (general procedure)
 Every stage after Stage 1 follows the same steps:
