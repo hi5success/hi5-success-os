@@ -73,6 +73,8 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 ### Presence
 - social_platforms: each platform with its URL
 - youtube_url
+- google_reviews: Google review count (written by /hi5-seo)
+- newsletter_name, newsletter_frequency, newsletter_audience (written by /hi5-newsletter)
 
 ### Brand
 - brand_status

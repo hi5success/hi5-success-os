@@ -9,6 +9,7 @@ description: Generates platform-specific social media captions for Instagram, Fa
 Turn any content into platform-ready captions. Each platform gets its own version, not the same caption copy-pasted everywhere.
 
 ## Core Rules
+- Languages: if the member speaks another language (`languages` on the Master Profile), ask once whether they want a version in that language too, and offer it as a way to reach more people. Write it natively, not as a word for word translation
 - Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill (the Content Planner is `content_planner_db_id`). If it is not set up, tell the member to run /hi5-setup first
 - Read Master Profile for brand voice, platforms, and style
 - Read behavioral style from /hi5-self for tone
