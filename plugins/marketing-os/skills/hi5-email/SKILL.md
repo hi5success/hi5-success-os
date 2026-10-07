@@ -44,6 +44,10 @@ Read `industry_flow` from Setup Status (`real-estate` or `generic`) and load `in
 
 ---
 
+## SEQUENCE FRAMEWORKS (all industries)
+
+For a free resource follow-up, an after-purchase sequence, or an offer or event sequence, read section 9 of `../hi5-funnel/references/frameworks.md` and follow its order. Each email has three subject lines, preview text, the body, the button, and the send timing. Every email ends with the member's full disclosure line, any required notices, and an unsubscribe line. If the member wants the ads and pages too, suggest /hi5-funnel.
+
 ## OUTPUT (all industries)
 
 Generate the complete sequence. Each email includes:

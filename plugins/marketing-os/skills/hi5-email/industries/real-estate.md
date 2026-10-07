@@ -21,7 +21,10 @@ Read from the Master Profile: `name`, `niche`, `primary_market`, `client_categor
 > G) Something else: I will describe it
 > H) Renter or landlord nurture
 > I) Investor nurture
-> J) Commercial client nurture"
+> J) Commercial client nurture
+> K) Free resource follow-up (five to seven emails after someone downloads or requests something)
+> L) After a consultation or booking
+> M) Event or workshop follow-up"
 
 Only offer the choices that fit the client types in `client_categories`, plus A, D, E, and G.
 

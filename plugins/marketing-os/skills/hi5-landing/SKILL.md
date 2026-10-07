@@ -56,6 +56,17 @@ Read `industry_flow` from Setup Status (`real-estate` or `generic`) and load `in
 > E) Email campaign
 > F) Multiple sources"
 
+## HOW TO STRUCTURE THE PAGE (all industries)
+
+Read sections 6 and 7 of `../hi5-funnel/references/frameworks.md` and apply them:
+- **Match the page to how ready the visitor is.** Cold ad traffic gets a longer page that starts with the problem or the result they want. An email list or past customers get a short page that starts with the offer.
+- **Decide first, prove below.** The first screen must work alone for someone ready to act: who it is for, the headline with the small result, a subhead, three bullets on what changes, one piece of proof, and a button in the visitor's own words. Everything below serves the visitor who needs more.
+- **Sign-up pages for a free resource** are short, with no navigation, a short form, and a button that states the result. Ask for a phone number only if the member's texting consent is documented, and add the consent checkbox.
+- **Message match.** The headline must repeat the promise made in the ad or link that sent the visitor.
+- **Quick clarity test** on the headline, using section 5 of the frameworks.
+- Run the copy checklist and compliance gates in `../hi5-funnel/references/quality-gates.md` before presenting the copy.
+- If the member wants the whole path (ads, thank-you page, and emails), suggest /hi5-funnel.
+
 ## OUTPUT (all industries)
 
 Generate complete landing page copy:

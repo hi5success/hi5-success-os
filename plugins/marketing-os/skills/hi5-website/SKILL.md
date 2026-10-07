@@ -44,6 +44,17 @@ Read `industry_flow` from Setup Status (`real-estate` or `generic`) and load `in
 
 ---
 
+## PAGE FRAMEWORKS (all industries)
+
+Read sections 1, 5, and 7 of `../hi5-funnel/references/frameworks.md` and apply them to every page:
+- **Home and service pages: decide first, prove below.** The first screen works alone: who it is for, a headline with the small result, a subhead, three bullets on what changes, one piece of proof, and one button.
+- **About page: tell a short belief-shift story.** What you used to believe, what changed your mind, the better approach, what happened, and why you do this.
+- **Add a "who this is for and not for" block** to service pages. The "not for" list builds trust.
+- **Questions section:** build it from the member's real objections (the Objection Bank for real estate members, or what they hear on calls).
+- **Proof:** concrete results with context, only from what the member supplies. Mark gaps `[PROOF NEEDED]`.
+- Run the quick clarity test on each headline and the checklist in `../hi5-funnel/references/quality-gates.md`.
+- For a landing page for one offer, or a whole funnel, suggest /hi5-landing or /hi5-funnel.
+
 ## SEO inputs (all industries)
 
 Before writing a page, read the newest SEO Audit row and the newest SEO Strategy row in the Marketing Hub (`marketing_hub_db_id`), if they exist. Use the audit's fix list for that page (title, meta description, H1, local keywords, schema, internal links, language setup, and any compliance wording to fix) and the strategy's target keywords. If neither exists, suggest /hi5-site-audit and /hi5-seo, and write the page without them.
