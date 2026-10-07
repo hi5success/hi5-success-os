@@ -9,7 +9,7 @@
       "name": "content-os",
       "source": "./plugins/content-os",
       "description": "YouTube-first content creation and repurposing system. Research competitors, plan content, write scripts, repurpose into blog posts, and generate platform-specific social captions, all from one content engine.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["youtube", "content", "blog", "social media", "repurpose", "marketing", "notion", "real estate", "captions", "scripts"]
     },
@@ -17,7 +17,7 @@
       "name": "business-os",
       "source": "./plugins/business-os",
       "description": "Business planning, goal setting, and performance review tools for entrepreneurs and small business owners.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["business", "planning", "goals", "strategy", "notion", "entrepreneur"]
     },
@@ -25,7 +25,7 @@
       "name": "marketing-os",
       "source": "./plugins/marketing-os",
       "description": "Email, newsletter, SEO, LinkedIn, website copy, landing pages, and case study tools for consistent marketing execution.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["marketing", "email", "seo", "linkedin", "website", "landing-page", "newsletter", "notion"]
     }

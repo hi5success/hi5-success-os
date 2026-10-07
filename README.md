@@ -42,6 +42,8 @@ Setup is in stages, and you can stop and pick up later by running `/hi5-setup` a
 
 Then run `/hi5-self` (a 30 question personality profile, so everything is written for you) and `/hi5-bizplan` (your business plan).
 
+**Not sure what to do next at any point? Run `/hi5-next`.** It reads your progress and tells you your best next step, with two alternatives. It never changes anything in your Notion.
+
 ---
 
 ## The skills
@@ -49,6 +51,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 ### Business OS
 | Command | What it does |
 |---|---|
+| `/hi5-next` | Tells you your best next step, based on what you have finished. Run it any time you are unsure. It only reads your Notion and never changes it |
 | `/hi5-setup` | Gets Notion ready, builds your workspace, and fills your Master Profile in stages. Run it again any time to continue, update, or add a neighborhood |
 | `/hi5-self` | A 30 question assessment of how you work, communicate, and decide. Accepts results you already have from DISC, Human Design, Enneagram, 16 Personalities, CliftonStrengths, Kolbe, and others |
 | `/hi5-bizplan` | Builds your business plan with the math shown step by step, using your own split, fees, and goals. Works for any brokerage or business |
