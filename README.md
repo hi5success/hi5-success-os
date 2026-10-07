@@ -24,10 +24,18 @@ It works for any industry. It is strongest for real estate agents, teams, and br
 
 ---
 
+## Your Hi5 workspace template
+
+Hi5 Success OS saves everything to a Notion workspace you copy once. `/hi5-setup` walks you through it, or you can copy it yourself first: open the link, choose Duplicate, and then run `/hi5-setup`.
+
+Template link: https://zest-slipper-053.notion.site/Hi5-Success-OS-Workspace-369e3ca532e58179a559c5b482271a85
+
+---
+
 ## Your first 10 minutes
 
 1. In Claude, type `/hi5-setup`.
-2. Claude gets Notion ready, asks about your industry, builds your Hi5 workspace in Notion, and asks about 20 questions about you and your business, one at a time.
+2. Claude gets Notion ready and helps you copy the Hi5 workspace template into your Notion (the link is above). It asks about your industry and then asks about 20 questions about you and your business, one at a time.
 3. When it finishes, you can start using any skill right away.
 
 Setup is in stages, and you can stop and pick up later by running `/hi5-setup` again. Each stage after the first makes specific skills better:

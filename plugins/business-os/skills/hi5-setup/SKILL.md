@@ -174,7 +174,7 @@ Ask:
 
 ### A) Copy the template
 Give these steps, then use the screenshot help:
-> "1. Open this link: [HI5 TEMPLATE LINK: to be added before release]
+> "1. Open this link: https://zest-slipper-053.notion.site/Hi5-Success-OS-Workspace-369e3ca532e58179a559c5b482271a85
 > 2. Choose Duplicate, usually at the top right. If Notion asks which workspace, choose the one you connected to Claude.
 > 3. Wait a few seconds. A page called Hi5 Success OS Workspace appears in your sidebar.
 > 4. Make sure Claude can see it. If you chose specific pages when you connected Notion, add this one.
