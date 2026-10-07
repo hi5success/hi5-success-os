@@ -1,55 +1,26 @@
 # Hi5 SEO: Real Estate Flow
 
-Used by `SKILL.md`.
+Used by `SKILL.md` and its modules. Real estate members work with many kinds of clients, so use the client types in `client_categories`, not only listings.
 
-## OPENING
+## Directories to check (module C)
+Google Business Profile first, as the source of truth. Then Zillow agent profile, Realtor.com agent profile, Homes.com agent profile, Yelp, Bing Places, Apple Business Connect, the member's Facebook business page, and the brokerage's agent profile page. The agent profile name and the brokerage name must match how the member is licensed. Commercial, land, and investor agents may also check industry directories their clients use.
 
-Read from the Master Profile: `primary_market`, `surrounding_areas`, `niche`, `client_categories`, `website`, `languages`, and `gbp_status` from Business Numbers.
+## Google Business Profile categories (module A)
+Suggest the most specific category that fits, for example a real estate agent as the primary category, with secondary categories such as real estate consultant, property management company, or commercial real estate agency when the member serves those clients. Check the available categories in the profile, because the names change.
 
-> "Let's get you found on Google in [primary_market]. Local SEO is one of the highest return marketing activities for real estate agents, especially when most competitors ignore it. I already know your market and your Google Business Profile status. A few more questions and I will build your full local SEO strategy."
+## Keyword patterns (module E)
+- [City] real estate agent, [City] realtor, homes for sale in [neighborhood]
+- [City] buyer agent and [City] listing agent
+- [City] apartments for rent or [City] property management (renters and landlords)
+- [City] investment properties (investors)
+- [City] commercial real estate and office space for lease [City] (commercial)
+- Land for sale in [area] (land)
+- [Niche] homes in [City], and new construction homes in [area]
+Real estate SEO is hyper local and neighborhood specific. Build the set for each language the member serves.
 
-## QUESTIONS
-
-**Q1: Current rankings**
-> "Do you know if you currently show up in Google search for any real estate terms in your market?
->
-> A) Yes: I show up for some searches
-> B) I have no idea
-> C) No: I am not ranking for anything"
-
-**Q2: Website platform**
-> "What platform is your website on?
->
-> A) GoHighLevel (for example Hi5 Connect or the Real Estate GHL Snapshot)
-> B) Astro
-> C) WordPress
-> D) Squarespace or Wix
-> E) kvCORE, Sierra Interactive, or IDX Broker
-> F) I do not have a website yet
-> G) Other"
-
-**Q3: Reviews**
-> "How many Google reviews do you currently have?"
-Store: google_reviews
-
-**Q4: Content**
-> "Are you currently publishing any blog posts or local content on your website?
->
-> A) Yes regularly
-> B) Occasionally
-> C) No: nothing yet"
-
-## REAL ESTATE KEYWORD IDEAS
-Build keyword phrases from the member's client types, such as:
-- [City] real estate agent
-- Homes for sale in [neighborhood]
-- [City] buyer agent
-- [Niche] homes in [city]
-- [City] apartments for rent or [City] property management (for renters and landlords)
-- [City] investment properties (for investors)
-- [City] commercial real estate or [City] office space for lease (for commercial clients)
-- Land for sale in [area] (for land)
-Real estate SEO is hyper local and neighborhood specific.
-
-## CONTENT TOPICS THAT FOLLOW THE GUARDRAILS
-Neighborhood guides about amenities, commute routes, parks, and the homes. Market reports. Guides for each client type. For schools, write about how to look up school district boundaries and where to find official ratings on the district's site. Never state school quality, crime, or flood zones as fact.
+## Content topics that follow the guardrails (module E)
+- Neighborhood guides about parks, trails, dining, commute routes, and the homes
+- Market reports for the member's area (mark every number [VERIFY + DATE])
+- Guides for each client type: buyers, sellers, renters, landlords, investors, commercial, and land
+- School districts: how to find the district for an address, how to look up the district's official boundary tool, and how enrollment works, with links to the district. Never rate schools or describe the quality of a school
+- Relocation guides about the area, the commute, and the costs of moving there, using official sources
