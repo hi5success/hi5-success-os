@@ -29,7 +29,7 @@ No marked page: the member has not set up yet. Say: "I don't see your Hi5 worksp
 ## Step 1: Read progress
 
 Read only what you need, from these places:
-- **Master Profile:** the Setup Status section (stage lines, `industry_flow`, `self_test`, `projects_offered`), the Self Profile section, the Business Numbers section (`last_plan_date`, `current_quarter`, `last_check_in`), the Content Profile section, and the Presence section (`youtube_url`, `newsletter_frequency`). Do not read the Quarterly Goals page itself. The Business Numbers fields are enough.
+- **Master Profile:** the Setup Status section (stage lines, `industry_flow`, `self_test`, `projects_offered`), the Self Profile section, the Business Numbers section (`last_plan_date`, `current_quarter`, `last_check_in`), the Content Profile section, and the Presence section (`youtube_url`, `newsletter_frequency`, `last_site_audit`). Do not read the Quarterly Goals page itself. The Business Numbers fields are enough.
 - **Content Planner** (`content_planner_db_id`): query the rows with their Status, Deliverable Type, Repurpose Status, and Publish Date.
 - **Marketing Hub** (`marketing_hub_db_id`): query the rows with their Type and Date.
 
@@ -55,6 +55,7 @@ Recommend the first one that applies:
 - A Scheduled video publishes in the next 7 days and none is Scripted: /hi5-yt-script (skip if they have no channel).
 - The newest Newsletter row in the Marketing Hub is older than their `newsletter_frequency` allows (weekly 8 days, bi-weekly 16 days, monthly 35 days): /hi5-newsletter.
 - The newest SEO Strategy row is older than 90 days: /hi5-seo.
+- The newest SEO Audit row (or `last_site_audit`) is older than 90 days: /hi5-site-audit, and say to run it again after any website change.
 - `last_plan_date` is older than 90 days: /hi5-bizplan to update the plan.
 
 If none apply, say they are on track and offer three things they could do, picked from their goals.

@@ -38,6 +38,12 @@ Read `industry_flow` from Setup Status (`real-estate` or `generic`) and load `in
 
 ---
 
+## SEO inputs (all industries)
+
+Before writing a page, read the newest SEO Audit row and the newest SEO Strategy row in the Marketing Hub (`marketing_hub_db_id`), if they exist. Use the audit's fix list for that page (title, meta description, H1, local keywords, schema, internal links, language setup, and any compliance wording to fix) and the strategy's target keywords. If neither exists, suggest /hi5-site-audit and /hi5-seo, and write the page without them.
+
+For every page, also write: the page title (about 50 to 60 characters, leading with what the page is about and the place when it is local), the meta description (about 120 to 160 characters), one H1, and suggested internal links to the member's other key pages. If the member serves other languages and the audit shows missing language pages, offer to write the page natively in each language.
+
 ## STORAGE
 
 Save each page to the Marketing Hub (`marketing_hub_db_id`) as its own row: Title is the page name, Type is Website Copy, Status is Draft, Source Skill is /hi5-website, Date is today, and the copy is in the page body. Write the full website disclosure line (`disclosure_line_full`) and any required notices in the footer copy.
