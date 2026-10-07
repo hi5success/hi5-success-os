@@ -182,7 +182,7 @@ Give these steps, then use the screenshot help:
 
 When they say they are done, run the lookup rule in FINDING THE HI5 SUCCESS OS WORKSPACE.
 - **Found** → say "Found it." and go to Phase 3, then Phase 4 in template copy mode.
-- **Not found** → show the likely causes, then search again after they fix one: "1. Notion is still copying it. Wait 30 seconds and tell me. 2. Claude can't see the page. Reconnect Notion or add the page to the pages Claude can access. 3. The copy went into a different Notion account than the one you connected." After two tries, offer option B.
+- **Not found** → show the likely causes, then search again after they fix one: "1. Notion is still copying it. Wait 30 seconds and tell me. 2. Claude can't see the page. Reconnect Notion or add the page to the pages Claude can access. 3. The copy went into a different Notion account than the one you connected." Count each search that follows the member saying they are done as one try. If the second try also finds nothing, offer option B.
 
 ### B) Build a basic workspace
 Go to Phase 3, then Phase 4 in full build mode.
