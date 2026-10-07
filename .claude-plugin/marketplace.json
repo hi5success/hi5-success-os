@@ -17,7 +17,7 @@
       "name": "business-os",
       "source": "./plugins/business-os",
       "description": "Business planning, goal setting, and performance review tools for entrepreneurs and small business owners.",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "author": { "name": "Hi5 Success" },
       "keywords": ["business", "planning", "goals", "strategy", "notion", "entrepreneur"]
     },
