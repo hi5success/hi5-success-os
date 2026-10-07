@@ -10,7 +10,7 @@ The single source of truth for what /hi5-next recommends. Every release that add
 - **Why it matters:** one sentence, in plain words, for the recommendation.
 
 ## The path, in order
-1. **Foundation:** Setup Stage 1, Stage 2, Stage 3, /hi5-self, /hi5-bizplan, /hi5-goals, then for real estate Setup Stage 4 and Stage 5
+1. **Foundation:** Setup Stage 1, Stage 2, Stage 3, /hi5-self, /hi5-bizplan, /hi5-goals, /hi5-bizreview, then for real estate Setup Stage 4 and Stage 5
 2. **Content strategy:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan
 3. **Create:** /hi5-yt-script, /hi5-repurpose, /hi5-social, /hi5-blog
 4. **Get found:** /hi5-seo, /hi5-site-audit, /hi5-website
@@ -27,7 +27,7 @@ Anytime (never part of the path, offer only when it fits): /hi5-linkedin
 | `/hi5-self` | business-os | live | Foundation | The Self Profile section has a `behavioral_style` | It lets everything I write match how you think and communicate. |
 | `/hi5-bizplan` | business-os | live | Foundation | Business Numbers has `last_plan_date` | It turns your goals into numbers and a 90 day roadmap, and other skills read those numbers. |
 | `/hi5-goals` | business-os | live | Foundation | Business Numbers `current_quarter` is the quarter we are in, and the Quarterly Goals page has a section for it | It breaks your plan into this quarter's targets and a 13 week plan, and a weekly check-in keeps you on track. |
-| `/hi5-bizreview` | business-os | coming | Foundation | Not built yet | Business performance reviews. |
+| `/hi5-bizreview` | business-os | live | Foundation | Business Numbers has `last_review_date` | It compares your results with your plan by client type and lead source, shows your take-home, and tells you what to adjust. |
 | `/hi5-next` | business-os | live | Anytime | Never done, always available | It tells you the best next step any time you are unsure. |
 | `/hi5-yt-setup` | content-os | live | Content strategy | A Content Profile section exists | It sets your channel goals and posting rhythm so research and planning fit you. |
 | `/hi5-yt-research` | content-os | live | Content strategy | The Content Planner has at least one row | It finds video ideas that are scored for your niche. |
