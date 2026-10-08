@@ -22,7 +22,7 @@ It works for any industry. It is strongest for real estate agents, teams, and br
 >
 > Plugins to install: Business OS, Content OS, and Marketing OS. Business OS comes first, because it holds `/hi5-setup`.
 >
-> **Real estate members also install Real Estate OS.** It is a separate install and it works only for real estate. It adds `/hi5-re-crm`, `/hi5-re-listing-appt`, `/hi5-re-listing-launch`, `/hi5-re-seller-updates`, `/hi5-re-transaction`, `/hi5-re-daily`, `/hi5-re-sphere`, and `/hi5-re-prospect`.
+> **Real estate members also install Real Estate OS.** It is a separate install and it works only for real estate. It adds `/hi5-re-crm`, `/hi5-re-listing-appt`, `/hi5-re-listing-launch`, `/hi5-re-seller-updates`, `/hi5-re-transaction`, `/hi5-re-daily`, `/hi5-re-sphere`, `/hi5-re-prospect`, and `/hi5-re-buyer`.
 
 ---
 
@@ -103,6 +103,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-re-daily` | Shows what matters today and this week from your CRM, inbox, and calendar, read only: a morning briefing, who to call today, who needs attention this week, a Friday deal rescue review, an end-of-day shutdown, week-ahead calendar prep, and inbox triage that rescues forgotten leads. Optional browser-assisted jobs on your own MLS login (market pulse, active listing pricing check, buyer alert matching, and competing listing positioning), with export or paste as the fallback. Never writes or sends anything |
 | `/hi5-re-sphere` | Keeps past clients and your sphere close: a database touch plan, the 12 month post-close plan, past client reconnect as Gmail drafts, no-agenda check-in texts, the home anniversary note, referral and review asks, a milestone calendar, closing gift ideas and card notes, and handwritten notes. Texting consent and do-not-contact status are checked on every touch, and nothing of value is ever tied to a referral or a review. |
 | `/hi5-re-prospect` | Runs your own prospecting to expireds, FSBOs, and a farm: ranks expired listings from an export or an optional browser-assisted review on your own MLS login, writes the comeback and FSBO sequences, farm plans and letters, door-knock and call scripts, and equity conversation questions. Works with lists from your own data vendor. It never skip traces, never bulk texts, and checks Do Not Call and texting consent on every touch. |
+| `/hi5-re-buyer` | Guides buyers and renters from the first conversation to an offer: the consultation game plan, a one-page Buyer Brief built on property needs only, the buyer agreement conversation (compensation is set by agreement, never a standard rate), search and showing plans, after-showing follow-up, offer strategy and multiple-offer prep, weekly buyer updates, nurture for buyers who are not ready yet, and answers to "I want to wait". Covers first-time, move-up, relocation, investor, luxury, 55+ community, new construction, land, and tenant representation. Drafts only. |
 
 ---
 

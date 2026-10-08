@@ -31,7 +31,7 @@ Search Notion for "Hi5 Success OS Workspace" and for "hi5-os-root". Open each re
 ### Marketing Hub safety net
 This skill saves to the Marketing Hub, so make sure it exists before you start.
 1. If `marketing_hub_db_id` is missing, or that database cannot be opened, search the member's workspace under the root page for a database titled "Marketing Hub". If you find one, save its ID as `marketing_hub_db_id` in the Page IDs section and continue.
-2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Funnel, Listing Appointment, Listing Launch, Seller Update, Transaction, Sphere Plan, Prospecting, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
+2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Funnel, Listing Appointment, Listing Launch, Seller Update, Transaction, Sphere Plan, Prospecting, Buyer, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
 3. If they say no, or the database cannot be created, do not lose the work. Give the member the full result in the chat, say "I couldn't save this to your Notion. Run /hi5-setup and it will offer to add your Marketing Hub, then ask me to save it," and stop trying to save. Never create a second Marketing Hub, and never create any other database.
 
 From the profile, read: `client_categories`, `brokerage`, `states_licensed`, `primary_market`, `sms_consent_status`, the fee and referral details the member saved, the Voice Profile, the CRM Map (`consent_source`), and the Compliance Guardrails page (`disclosure_line_full`, `required_notices`, `protected_class_jurisdictions`, `brokerage_ad_rules`).
@@ -62,7 +62,7 @@ Ask what the member wants. If they already said, go straight to it.
 > 11. Closing gift ideas and card notes, and pop-bys
 > 12. Handwritten notes for the week
 
-Run the job as written in `references/jobs.md`. For the homeowner market letter, point to /hi5-newsletter. For video and reels, point to Content OS. For a past client who is ready to sell, point to /hi5-re-listing-appt. For a past client who is ready to buy again, say buyer skills are coming in a later release. For a cold contact who is not a past client, point to /hi5-re-prospect.
+Run the job as written in `references/jobs.md`. For the homeowner market letter, point to /hi5-newsletter. For video and reels, point to Content OS. For a past client who is ready to sell, point to /hi5-re-listing-appt. For a past client who is ready to buy again, point to /hi5-re-buyer. For a cold contact who is not a past client, point to /hi5-re-prospect.
 
 ## Step 3: Save
 

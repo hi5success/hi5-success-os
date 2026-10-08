@@ -57,7 +57,7 @@ Ask what the member wants. If they already said, go straight to it.
 
 Run jobs 1 to 7 as written in `references/jobs.md`. Run jobs 8 to 11 as written in `references/browser-jobs.md`.
 
-For a past client reconnect or a 12 month plan, point to /hi5-re-sphere. For expireds, FSBOs, and farming, point to /hi5-re-prospect. For a business scorecard or goals, point to /hi5-bizreview and /hi5-goals.
+For a past client reconnect or a 12 month plan, point to /hi5-re-sphere. For expireds, FSBOs, and farming, point to /hi5-re-prospect. For a buyer consultation, search, or offer strategy, point to /hi5-re-buyer. For a business scorecard or goals, point to /hi5-bizreview and /hi5-goals.
 
 ## Step 3: Make it run itself (offer once)
 
