@@ -78,6 +78,9 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - last_crm_map: the date the CRM Map was last updated (written by /hi5-re-crm)
 - mls_name: the member's MLS (asked once by /hi5-re-listing-appt)
 - cma_adjustments: the member's own adjustment values for a CMA, in their words (asked once by /hi5-re-listing-appt)
+- mls_remarks_limit: the member's MLS remarks length limit (asked once by /hi5-re-listing-launch, only if unknown)
+- coming_soon_policy: whether the member's MLS and broker allow coming soon marketing before the list date (asked once by /hi5-re-listing-launch, only if unknown)
+- sold_price_policy: whether sold prices may be published in the member's state and MLS (asked once by /hi5-re-listing-launch, only if unknown)
 
 ### Presence
 - social_platforms: each platform with its URL

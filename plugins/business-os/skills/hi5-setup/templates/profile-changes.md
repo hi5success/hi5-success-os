@@ -47,3 +47,5 @@ These fields are collected inside the skill that uses them, not by setup, so `pr
 | crm_connection, ghl_location_name, last_crm_map, crm_map_page_id | Tools, Page IDs | /hi5-re-crm, the first time it maps the member's CRM |
 | mls_name, cma_adjustments | Tools | /hi5-re-listing-appt, asked once when a CMA is built |
 | One Listing Appointment row per kit | Marketing Hub | /hi5-re-listing-appt |
+| mls_remarks_limit, coming_soon_policy, sold_price_policy | Tools | /hi5-re-listing-launch, asked once and only if the profile does not already say |
+| One Listing Launch row per piece, and one Seller Update row per update or plan | Marketing Hub | /hi5-re-listing-launch, /hi5-re-seller-updates |
