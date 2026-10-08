@@ -11,7 +11,11 @@ Shared by every hi5-re- skill. Read this file before you do anything else in the
 
 ## 2. Texting, calls, and do-not-contact
 Before you draft or send any text, voicemail, or call script:
-1. **Consent.** Does the member have documented consent to text this person (they opted in on a form, texted first, or gave their number for texting)? Check `sms_consent_status` on the Compliance Guardrails page and any consent tag, field, or note on the contact.
+1. **Consent.** Does the member have documented consent to text this person (they opted in on a form, texted first, or gave their number for texting)? Consent can live in different places, so check the member's own `consent_source` on the CRM Map, and `sms_consent_status` on the Compliance Guardrails page.
+   - If the source is a **form**, read this contact's submission for that form through the connection and look for the consent checkbox. In GoHighLevel the consent is often stored in the form submission itself, not as a tag or a contact field.
+   - If the source is a tag, a field, or a note, read it on the contact.
+   - If the connection cannot read it, the source is unknown, or you are in paste mode, ask the member whether this person has consented.
+   - Consent captured once, earlier, counts. Never flag a later form for missing an opt-in when consent was captured earlier.
 2. **Do not contact.** Skip and list anyone marked do-not-disturb, unsubscribed, or on a do-not-call list the member uses. If someone replies STOP or says they do not want messages, plan to mark them do-not-disturb (a change that needs the member's OK) and draft nothing more.
 3. **Time window.** Texts and calls only between 8am and 9pm in the person's own time zone. Some states are stricter, so tell the member to check with their broker.
 4. **Unknown means no.** If consent or status is unknown, do not draft a text. Offer an email instead and say why.

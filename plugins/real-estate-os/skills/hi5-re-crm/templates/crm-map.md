@@ -10,7 +10,7 @@ The first line of the page is: `Made by /hi5-re-crm. Last mapped: <date>.`
 The route (`ghl-connector`, `other-connector`, or `paste-mode`), the CRM name, and for GoHighLevel the sub-account name.
 
 ### Pipelines
-One block per pipeline, with its stages in order. Beside each pipeline, name the client type it is for (buyers, sellers, renters, landlords, investors, 55+ communities, luxury, commercial, land, relocation, new construction) if that is clear from the name. Say which client types the member works with that have no pipeline.
+One block per pipeline, with its stages in order. Beside each pipeline, name the client type it is for in the member's own words. If the member told you how they handle a client type with no pipeline of its own, write their answer. Never write that something is missing.
 
 ### Custom fields
 A table: field name, field type, and whether it is on the contact or the opportunity. Flag the transaction fields (contract date, closing date, inspection or due diligence deadline, appraisal deadline, financing deadline, sale price, earnest money, lender, title company, co-op agent), and for rentals the lease start, lease end, rent, and renewal notice fields.
@@ -28,13 +28,24 @@ Names only.
 Name and status, and for each stage change that triggers a workflow, say which one if it can be seen.
 
 ### Consent and do-not-contact
-Which tag, field, or setting shows that a contact has agreed to texts and which shows do-not-disturb. This is what the consent check reads.
+- `consent_source`: where texting consent is captured, in the member's words (which form, tag, field, or other place). In GoHighLevel it is often the consent checkbox in a form submission. List each source if there is more than one, and the group of contacts it covers (for example older leads or open house sign-ins).
+- Which tag, field, or setting shows do-not-disturb.
+This is what the consent check reads before any text.
 
 ### Paste-mode map (only for paste mode)
 The member's pipeline and stage names, tags, and fields, in their words.
 
-### Gaps and not readable
-Gaps noticed (missing stages, near-duplicate tags, transaction fields that do not exist yet, client types with no pipeline), and anything that could not be read and why. Never fill an empty section with examples. Write "None found".
+### How you work
+The member's own answers about how they use their CRM: how leads arrive, which forms they use, where they record the source, how they track a deal in progress, and anything they set up on purpose. In their words.
+
+### Differences I noticed
+Neutral observations the member did not call problems, for example "you track deals in notes, not fields". Not gaps.
+
+### Confirmed gaps
+Only what the member said matters to them, each in their words. Write "None confirmed" if there are none. Never add a gap the member did not confirm.
+
+### Could not read
+Anything that could not be read and why. Never fill an empty section with examples. Write "None found".
 
 ## Rules
 - No em dashes. Plain words.

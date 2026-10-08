@@ -95,7 +95,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 ### Real Estate OS (real estate members only, a separate install)
 | Command | What it does |
 |---|---|
-| `/hi5-re-crm` | Runs your CRM by conversation, GoHighLevel first with a paste mode for any other CRM. Tests the connection, maps your CRM, logs leads, showings, and appointments, turns contracts and leases into CRM updates, books meetings, moves and cleans up deals, closes or loses deals, forecasts your pipeline, and drafts and sends one message at a time. Covers every client type. Shows a plan and waits for your OK before any change or send, checks texting consent, and keeps Fair Housing out of every record |
+| `/hi5-re-crm` | Runs your CRM by conversation, GoHighLevel first with a paste mode for any other CRM. Tests the connection, maps your CRM, logs leads, showings, and appointments, turns contracts and leases into CRM updates, books meetings, moves and cleans up deals, closes or loses deals, forecasts your pipeline, runs a CRM tune-up from the gaps you confirm, and drafts and sends one message at a time. Covers every client type. Shows a plan and waits for your OK before any change or send, checks texting consent, and keeps Fair Housing out of every record |
 | `/hi5-re-listing-appt` | Prepares you for a listing appointment and follows up after it. Builds the game plan, the pre-appointment intake, a CMA from comps you export from your own MLS (or an optional browser-assisted search on your own login), the pricing conversation, objection answers, and the follow-up sequence. Works for home sellers, landlords, investors, 55+ community sellers, luxury, and land, new construction, and commercial. Never quotes a standard commission. Drafts only |
 
 ---

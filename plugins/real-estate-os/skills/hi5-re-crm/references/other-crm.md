@@ -12,6 +12,7 @@ The member pastes a record, a note, a message, an email thread, or a contract, o
 - **Produce a CRM update sheet** instead of a write plan. It uses the same plan table, with a column for where the member enters it:
   | Record | Field or action | Value to enter | Where to enter it |
   Then the note text to paste, the tasks to create (title and due date), the tags to add or remove, and any messages as drafts.
+- **Ask where consent is captured** (which form, tag, field, or other), save it as `consent_source` on the CRM Map, and ask the member to confirm consent for each person before any text draft.
 - **Say what is missing.** List anything not given under "Missing", and leave it blank in the sheet.
 - **Drafts only.** The member copies a draft into their own CRM or email and sends it themselves. The consent check in the guardrails file still runs before any text draft.
 - **Reports** (forecast, stalled deals, duplicates) work from an export the member pastes or uploads (for example a CSV of opportunities). Say the limits of what was pasted, for example "this covers the 40 rows you gave me".

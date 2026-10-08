@@ -23,6 +23,9 @@ Members may have more than one GoHighLevel sub-account (location). List the loca
    Offer screenshot help and never assume menu names.
 5. Output a short status report that starts with "Connected: yes" or "Connected: no". If yes, save `crm_connection: ghl-connector`.
 
+## Reading consent
+The member's `consent_source` on the CRM Map says where texting consent is captured. When it is a form, find the contact's submission for that form (through the connection's submissions or contact activity operations) and read the consent field on it. Show the member what you found (the form name, the date, and the answer) and never infer consent from the existence of a phone number. If the connection cannot read submissions, say so and ask the member. Never ask the member to paste a password or a key to get at this.
+
 ## Hi5 Connect and the Snapshot
 If the member runs the Real Estate GHL Snapshot or Hi5 Connect, their pipelines, custom fields, tags, and workflows already exist. Mapping only teaches Claude the names. A pipeline stage change can fire a workflow, so before moving a deal, say which workflow the stage might trigger (from the CRM Map) so the member is not surprised by a message going out or a duplicate task.
 
