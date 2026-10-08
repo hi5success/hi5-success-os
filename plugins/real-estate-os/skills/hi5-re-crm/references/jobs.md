@@ -46,18 +46,12 @@ Types: showing, listing appointment, buyer consult, rental showing, landlord con
 4. Draft a 2 sentence follow-up that names one specific thing from the appointment, with the consent check for a text.
 
 ### 5. Contract or lease into the CRM
-Inputs: the document (PDF or pasted text), which side the member represents, and which pipeline.
-1. **Name the document type:** purchase contract, listing agreement, lease (tenant side or landlord side), commercial letter of intent or lease, or land contract. Commercial documents need attorney review.
-2. **Extract, with the page or section for each item:**
-   - Purchase or listing: party names, property address, price, earnest money, option or due diligence fee, contract (effective) date, every deadline the document states (inspection or due diligence, appraisal, financing), closing date, financing type, lender, title company, co-op agent, and special terms or addenda.
-   - Lease: parties, property, lease start and end, rent amount and due date, deposit amount, renewal and notice dates, and special terms. Do not record the number of occupants or anything about the household.
-   - Commercial or land: parties, property, term or due diligence period, rent schedule or price, options, notice dates, and contingencies.
-   - Include emails and phones only if printed. Leave out sensitive data (see guardrails).
-3. **Dates.** Work out a date only if the document states the rule, and show the math.
-4. Match the client in the CRM by email, then phone, then name. Say whether you found one, several, or none.
-5. **Plan** (table): find or create the contact, the status tags, the opportunity in the right pipeline stage with value, the transaction fields, a 5 to 8 line note of key dates, and one task per deadline, due 2 days before it, titled "[Deadline name], [Address]".
-6. After the OK and the writes, draft (do not send) a short email to the client: congratulations, the next three dates that matter, what they need to do this week, and who to call. Under 175 words.
-7. End with: "Confirm every date against the executed document. This is not legal advice."
+Inputs: the document (PDF or pasted text), which side the member represents, and which pipeline. Scan first: use what the CRM already holds for this client and property, and ask only about what the document and the record do not answer.
+1. **Read the document** using `documents.md`: name the document type, extract each item with the page or section it came from, compute a date only where the document states the rule, and list what needs confirmation. It covers purchase contracts, listing agreements, leases (tenant or landlord side), commercial and land documents, new construction, and 55+ community resales.
+2. Match the client in the CRM by email, then phone, then name. Say whether you found one, several, or none.
+3. **Plan** (table): find or create the contact, the status tags, the opportunity in the right pipeline stage with value, the transaction fields, a 5 to 8 line note of key dates, and one task per deadline, due 2 days before it, titled "[Deadline name], [Address]".
+4. After the OK and the writes, draft (do not send) a short email to the client: congratulations, the next three dates that matter, what they need to do this week, and who to call. Under 175 words.
+5. End with: "Confirm every date against the executed document. This is not legal advice." For the full file (checklist, calendar, status updates, and the steps through closing), point to /hi5-re-transaction.
 
 ### 6. Sync a record from an email thread
 1. Pull every fact that belongs in the CRM: contact details, lender or title company, price or rent range, timeline, preferences, deal changes, and promises either side made.
