@@ -1,6 +1,6 @@
 {
   "name": "real-estate-os",
-  "description": "Real estate only skills for agents, teams, and brokers. Run your CRM by conversation, prepare for listing appointments, launch listings, and keep sellers informed, with Fair Housing, texting consent, and approval-first guardrails built in.",
-  "version": "1.1.0",
+  "description": "Real estate only skills for agents, teams, and brokers. Run your CRM by conversation, prepare for listing appointments, launch listings, keep sellers informed, run files from contract to keys, and plan your day, with Fair Housing, texting consent, and approval-first guardrails built in.",
+  "version": "1.2.0",
   "author": { "name": "Hi5 Success" }
 }

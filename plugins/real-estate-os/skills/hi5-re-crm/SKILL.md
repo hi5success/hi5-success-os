@@ -68,7 +68,7 @@ Run the job exactly as written in `references/jobs.md`. If there is no CRM Map a
 
 If the member asks what to fix in their CRM, or says something about it is not working for them, run job 15.
 
-For a morning briefing or a weekly who-needs-attention list, say those are coming in a later skill, and offer job 13 or job 12 for now. For listing appointment preparation, point to /hi5-re-listing-appt. For a new listing's copy and announcements, point to /hi5-re-listing-launch, and for seller updates, offers, and a stalled listing, point to /hi5-re-seller-updates.
+For a morning briefing, who to call today, or a weekly who-needs-attention list, point to /hi5-re-daily. For the full file after a contract is signed (checklist, key dates, client updates), point to /hi5-re-transaction. For listing appointment preparation, point to /hi5-re-listing-appt. For a new listing's copy and announcements, point to /hi5-re-listing-launch, and for seller updates, offers, and a stalled listing, point to /hi5-re-seller-updates.
 
 ## Step 3: Save
 
