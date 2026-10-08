@@ -178,10 +178,10 @@ for skill_dir in plugins/*/skills/*/; do
 done
 [ -f plugins/real-estate-os/skills/hi5-re-crm/references/guardrails.md ] || ERRORS+=("real-estate-os is missing hi5-re-crm/references/guardrails.md")
 
-# 14. Browser-assisted search is allowed in two places, the optional CMA step and the optional market jobs in hi5-re-daily, both on the member's own MLS login
-if grep -rIl 'Claude for Chrome' plugins 2>/dev/null | grep -vE 'hi5-re-listing-appt/references/cma.md|hi5-re-daily/references/browser-jobs.md' | grep -q .; then
-  for f in $(grep -rIl 'Claude for Chrome' plugins | grep -vE 'hi5-re-listing-appt/references/cma.md|hi5-re-daily/references/browser-jobs.md'); do
-    ERRORS+=("$f: mentions Claude for Chrome. Browser-assisted search is allowed only in the optional CMA step and the optional market jobs in hi5-re-daily")
+# 14. Browser-assisted search is allowed in three places, the optional CMA step, the optional market jobs in hi5-re-daily, and the optional expired ranking in hi5-re-prospect, all on the member's own MLS login
+if grep -rIl 'Claude for Chrome' plugins 2>/dev/null | grep -vE 'hi5-re-listing-appt/references/cma.md|hi5-re-daily/references/browser-jobs.md|hi5-re-prospect/references/expired-research.md' | grep -q .; then
+  for f in $(grep -rIl 'Claude for Chrome' plugins | grep -vE 'hi5-re-listing-appt/references/cma.md|hi5-re-daily/references/browser-jobs.md|hi5-re-prospect/references/expired-research.md'); do
+    ERRORS+=("$f: mentions Claude for Chrome. Browser-assisted search is allowed only in the optional CMA step, the optional market jobs in hi5-re-daily, and the optional expired ranking in hi5-re-prospect")
   done
 fi
 

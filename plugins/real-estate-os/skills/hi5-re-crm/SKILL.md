@@ -68,7 +68,7 @@ Run the job exactly as written in `references/jobs.md`. If there is no CRM Map a
 
 If the member asks what to fix in their CRM, or says something about it is not working for them, run job 15.
 
-For a morning briefing, who to call today, or a weekly who-needs-attention list, point to /hi5-re-daily. For the full file after a contract is signed (checklist, key dates, client updates), point to /hi5-re-transaction. For listing appointment preparation, point to /hi5-re-listing-appt. For a new listing's copy and announcements, point to /hi5-re-listing-launch, and for seller updates, offers, and a stalled listing, point to /hi5-re-seller-updates.
+For a morning briefing, who to call today, or a weekly who-needs-attention list, point to /hi5-re-daily. For past clients, referrals, and staying in touch, point to /hi5-re-sphere. For expireds, FSBOs, and farming, point to /hi5-re-prospect. For the full file after a contract is signed (checklist, key dates, client updates), point to /hi5-re-transaction. For listing appointment preparation, point to /hi5-re-listing-appt. For a new listing's copy and announcements, point to /hi5-re-listing-launch, and for seller updates, offers, and a stalled listing, point to /hi5-re-seller-updates.
 
 ## Step 3: Save
 
