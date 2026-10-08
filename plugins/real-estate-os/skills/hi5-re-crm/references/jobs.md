@@ -1,6 +1,6 @@
 # The 15 Jobs
 
-Used by `SKILL.md`. Every job follows the guardrails file: read first, show the plan, wait for the member's OK, then write, then confirm. In paste mode the "write" is a CRM update sheet (see `other-crm.md`). Ask only for inputs the member has not given and the CRM Map does not answer. Every job names fields in the member's words from the CRM Map. If there is no CRM Map yet and the route is a connector, run job 2 (read only) first.
+Used by `SKILL.md`. Every job follows the guardrails file: read first, show the plan, wait for the member's OK, then write, then confirm. In paste mode the "write" is a CRM update sheet (see `other-crm.md`). Scan first, then ask: before you ask for anything, read what is available (the CRM Map, the profile, the contact's record and recent activity through the connection, and what the member pasted). Ask only for inputs that none of that answers, and point to what you found. Every job names fields in the member's words from the CRM Map. If there is no CRM Map yet and the route is a connector, run job 2 (read only) first.
 
 Every job works for every client type: buyers, sellers, renters, landlords, investors, 55+ communities, luxury, relocation, new construction, commercial, and land. Use the member's own pipelines and tags for each type. If a client type has no pipeline, say so and offer the closest pipeline, and never create one without the member's OK.
 
@@ -12,18 +12,20 @@ Every job works for every client type: buyers, sellers, renters, landlords, inve
 Follow "Connection check" in `ghl.md`, or the connector check in `other-crm.md`.
 
 ### 2. Map my CRM (read only, then save)
-Never judge the CRM against a standard build. Ask first, and call something a gap only after the member confirms it matters to them.
-1. **Read** pipelines with every stage in order, custom fields (contact or opportunity, with type), tags, forms (names, and the fields each one holds, if the connection shows them), calendars, users (names only), and workflows (name and status) if visible. Never fill a section that comes back empty. Write "None found".
-2. **Ask how they work.** Short questions, one at a time, only about what the read left unclear. Use these as a menu, not a script:
-   - Which pipeline do you use for each kind of client you work with (buyers, sellers, renters, landlords, investors, and any others)?
-   - How do leads reach you: intake forms, calls, texts, DMs, your website, or something else? Which forms do you actually use?
-   - Where do you record where a lead came from?
-   - How do you track a deal in progress: fields on the opportunity, notes, or another system?
-   - Is there anything in your CRM you set up on purpose that I should not treat as missing?
-   Never say a pipeline, tag, field, or form is missing. If a client type has no pipeline, ask "How do you handle renters in your CRM?" and write down their answer.
-3. **Where is texting consent captured?** Ask which form, tag, field, or other place holds it. In GoHighLevel it is often stored in the form submission itself (the consent checkbox on the form entry), not as a tag or a contact field. If the member has more than one source (for example older leads, open house sign-ins, a website form), record each one in their words. Save the answer as `consent_source` on the CRM Map. Consent captured earlier counts. Never flag a later form for lacking an opt-in when consent was captured earlier.
-4. **Draft the CRM Map** using `templates/crm-map.md`: the structure you read, how the member works in their words, `consent_source`, "Differences I noticed" (neutral observations the member did not call problems), and "Confirmed gaps" (only what the member said matters to them, otherwise "None confirmed"), plus "Could not read". Show it to the member.
-5. After their OK, save it as the CRM Map page and set `crm_map_page_id`, `crm_connection`, and `last_crm_map` (today). If there are confirmed gaps, offer job 15 (CRM tune-up). If there are none, say so and ask whether anything feels off. Change nothing in the CRM.
+Scan first, then ask. Never judge the CRM against a standard build.
+1. **Scan everything available before you ask anything.**
+   - From the CRM: pipelines with every stage and how many opportunities sit in each, custom fields (contact or opportunity, with type), tags and how many contacts carry each, forms with the fields each one holds (note any field that looks like a consent checkbox), calendars, users (names only), and workflows (name and status).
+   - From the profile and saved pages: `crm`, `crm_usage`, `client_categories`, `lead_sources_ranked`, `sms_consent_status` and the notes on the Compliance Guardrails page, and any CRM Map page that already exists.
+   - Anything that cannot be read goes on the "Could not read" list. Do not stop for it.
+2. **Say what the scan answers**, as statements the member can correct. For example: "I see a Buyer Pipeline with 41 opportunities, so I am treating it as your buyer pipeline." Never ask a question the scan already answers.
+3. **Ask only about what could not be determined**, one question at a time, each pointing to what you found. For example:
+   - "I see 3 forms with a consent checkbox: Website Contact, Open House Sign-In, and Seller Intake. Which one captures texting consent?"
+   - "Your profile lists renters, and I see a renter tag on 12 contacts but no renter pipeline. How do you track renters?"
+   - "I do not see a source field, but a tag called ig is on 30 contacts. Is that how you track where leads come from?"
+   If nothing is unclear, ask nothing. Never say a pipeline, tag, field, or form is missing.
+4. **Consent source.** Start from the scan. If exactly one form, tag, or field looks like consent, confirm it ("The Website Contact form has a consent checkbox. Is that where texting consent comes from?"). If there are several candidates, ask which. If there are none, ask where consent is captured. If the member has more than one source (for example older leads, open house sign-ins, a website form), record each one in their words. In GoHighLevel consent is often stored in the form submission itself, not as a tag or a contact field. Save the answer as `consent_source` on the CRM Map. Consent captured earlier counts. Never flag a later form for lacking an opt-in when consent was captured earlier.
+5. **Draft the CRM Map** using `templates/crm-map.md`: the structure you read, how the member works in their words, `consent_source`, "Differences I noticed" (neutral observations the member did not call problems), and "Confirmed gaps" (only what the member said matters to them, otherwise "None confirmed"), plus "Could not read". Show it to the member.
+6. After their OK, save it as the CRM Map page and set `crm_map_page_id`, `crm_connection`, and `last_crm_map` (today). If there are confirmed gaps, offer job 15 (CRM tune-up). If there are none, say so and ask whether anything feels off. Change nothing in the CRM.
 
 ---
 
@@ -126,7 +128,7 @@ Inputs: the pipeline and stage, how many days count as idle, and where stale one
 
 ### 15. CRM tune-up
 Turns the gaps the member has confirmed into a fix plan. It never judges the CRM against a standard build.
-1. **Start from confirmed gaps.** Read the "Confirmed gaps" section of the CRM Map. If it is empty, or the map is old, ask the short questions from job 2 about how the member works and what is getting in their way, and record what they confirm. Do not add anything the member did not say matters to them.
+1. **Start from confirmed gaps.** Read the "Confirmed gaps" section of the CRM Map. If it is empty, or the map is old, scan the CRM again first (as in job 2), then ask short questions only about what the scan could not answer, pointing to what you found, and record what the member confirms. Do not add anything the member did not say matters to them.
 2. **Build the fix plan, ordered by impact.** For each confirmed gap, one line on what it costs the member in their own terms, and the fix. Put each fix in one of two lists:
    - **Fixes I can make through the connection** (for example adding a tag, moving contacts between stages, filling a field, merging a duplicate if the connection allows it).
    - **Fixes you make in GoHighLevel** (anything the connection cannot do, such as building a form, a pipeline, or a workflow). Give numbered steps with screenshot help, and never assume menu names.
