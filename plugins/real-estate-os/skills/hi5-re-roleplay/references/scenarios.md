@@ -23,7 +23,7 @@ Offer the list, and let the member choose or say "pick for me". Each scenario us
 **Other client types**
 10. **An investor.** A buyer who wants the member to promise a return. The member never states returns.
 11. **A tenant or a landlord.** Practice a tenant representation conversation or a landlord leasing conversation. Screening criteria are written and applied the same way to everyone.
-12. **A steering request.** A client who asks about who lives in an area or wants to avoid a kind of neighbor. Practice the compliant redirect: describe the property, point to official sources for schools and safety, say what the member can and cannot do, and keep the relationship. The persona stays polite and never gives a protected-trait statement for the member to repeat.
+12. **A steering request.** A client who asks about who lives in an area or wants to avoid a kind of neighbor. Practice the compliant redirect: describe the property, point to the school district and the local police department's public data for schools and safety (never demographic or census data about who lives there, and never a rating site), say that Fair Housing rules keep the member from describing who lives in an area, and keep the relationship. The persona stays polite and never gives a protected-trait statement for the member to repeat.
 
 If the member asks for something else (for example a new agent recruiting conversation or a conversation with an agent on the other side), build the scenario from what they describe, keeping to the same rules.
 

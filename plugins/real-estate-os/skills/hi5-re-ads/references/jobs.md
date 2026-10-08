@@ -69,7 +69,7 @@ Deliver:
 2. A fatigue check: ads with rising frequency or cost and falling CTR, only if the numbers show it.
 3. What is winning and why, in terms of the angle, hook, and format.
 4. Next week's plan: what to pause, what to keep, and 3 creative tests (one change per test), using copy and creative variations only, never audience traits.
-5. Sample size: if there are few clicks or leads (the member's own judgment, ask if unsure), say the data is too thin to decide and recommend waiting. Never state a benchmark or a "good" cost.
+5. Sample size: if there are few clicks or leads (the member's own judgment, ask if unsure), say the data is too thin to decide and recommend waiting. Never state a benchmark, a "good" cost, or a rule of thumb for how many clicks, leads, or days are enough. Ask what the member considers enough, or say it is the member's call.
 Offer to save the review as a row.
 
 ### 9. Audit an ad or a page I already have
