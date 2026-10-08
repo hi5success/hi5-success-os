@@ -22,7 +22,7 @@ It works for any industry. It is strongest for real estate agents, teams, and br
 >
 > Plugins to install: Business OS, Content OS, and Marketing OS. Business OS comes first, because it holds `/hi5-setup`.
 >
-> **Real estate members also install Real Estate OS.** It is a separate install and it works only for real estate. It adds `/hi5-re-crm` and `/hi5-re-listing-appt`.
+> **Real estate members also install Real Estate OS.** It is a separate install and it works only for real estate. It adds `/hi5-re-crm`, `/hi5-re-listing-appt`, `/hi5-re-listing-launch`, `/hi5-re-seller-updates`, `/hi5-re-transaction`, `/hi5-re-daily`, `/hi5-re-sphere`, and `/hi5-re-prospect`.
 
 ---
 
@@ -101,6 +101,8 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-re-seller-updates` | Keeps sellers informed from signing to closing and rescues listings that stall: prep plan, honest weekly updates (including slow weeks), showing feedback requests, offer presentations, the final two weeks to closing, the review and referral ask, price adjustment cases, stalled listing diagnoses, condition plans, withdraw and relaunch plans, hard seller conversations, and re-earning an expired listing. Filters steering remarks out of showing feedback. Drafts only |
 | `/hi5-re-transaction` | Runs a file from signed contract or lease to keys. Reads the executed document, builds the phase-by-phase checklist and the key dates calendar, writes the weekly client status update, offer acknowledgments and buyer cover letters, inspection repair requests and responses, appraisal gap briefs, the final walkthrough sheet, the closing day message, and the message after a deal falls apart. Works for buyers, sellers, tenants, landlords, investors, 55+ resales, new construction, land, and commercial files. Every date comes from the executed document, and nothing is sent or changed without your OK |
 | `/hi5-re-daily` | Shows what matters today and this week from your CRM, inbox, and calendar, read only: a morning briefing, who to call today, who needs attention this week, a Friday deal rescue review, an end-of-day shutdown, week-ahead calendar prep, and inbox triage that rescues forgotten leads. Optional browser-assisted jobs on your own MLS login (market pulse, active listing pricing check, buyer alert matching, and competing listing positioning), with export or paste as the fallback. Never writes or sends anything |
+| `/hi5-re-sphere` | Keeps past clients and your sphere close: a database touch plan, the 12 month post-close plan, past client reconnect as Gmail drafts, no-agenda check-in texts, the home anniversary note, referral and review asks, a milestone calendar, closing gift ideas and card notes, and handwritten notes. Texting consent and do-not-contact status are checked on every touch, and nothing of value is ever tied to a referral or a review. |
+| `/hi5-re-prospect` | Runs your own prospecting to expireds, FSBOs, and a farm: ranks expired listings from an export or an optional browser-assisted review on your own MLS login, writes the comeback and FSBO sequences, farm plans and letters, door-knock and call scripts, and equity conversation questions. Works with lists from your own data vendor. It never skip traces, never bulk texts, and checks Do Not Call and texting consent on every touch. |
 
 ---
 
