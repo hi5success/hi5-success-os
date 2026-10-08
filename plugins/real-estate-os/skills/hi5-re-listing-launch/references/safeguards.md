@@ -24,7 +24,7 @@ Read `brokerage_ad_rules`. If broker approval, team-name rules, or a license or 
 Follow up only with people who gave contact information and agreed to be contacted. Provide sign-in wording that says why you ask and how you will use it, and that texts need their agreement, for the member's broker to review. Log visitors in the CRM with /hi5-re-crm job 3 after the member's OK, and run the consent check before any text. Never use phrasing that lets visitors choose who moves into the neighborhood.
 
 ## 6. Paid ads
-Paid listing ads are coming in /hi5-re-ads. Until then /hi5-funnel follows Meta's Housing special ad category. Any ad task in a calendar says: no age, gender, or ZIP targeting, and a radius of about 15 miles or more.
+Paid listing ads are written in /hi5-re-ads (job 3), which follows Meta's Housing special ad category. Any ad task in a calendar says: no age, gender, or ZIP targeting, and a radius of about 15 miles or more.
 
 ## 7. Posting
 Nothing is posted or scheduled by this skill. The member copies the drafts into their own tools. If they want steps for their scheduler, give numbered instructions with screenshot help and never ask for a password.

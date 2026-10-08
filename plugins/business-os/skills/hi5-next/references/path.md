@@ -19,7 +19,7 @@ The single source of truth for what /hi5-next recommends. Every release that add
 
 Anytime (never part of the path, offer only when it fits): /hi5-linkedin
 
-Real estate members with Real Estate OS installed (never part of the main path, offer only when it fits): /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer
+Real estate members with Real Estate OS installed (never part of the main path, offer only when it fits): /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay
 
 ## Skills
 
@@ -55,6 +55,8 @@ Real estate members with Real Estate OS installed (never part of the main path, 
 | `/hi5-re-sphere` | real-estate-os | live | Real estate | The Marketing Hub has a row of Type Sphere Plan | It keeps past clients and your sphere close: the touch plan, the 12 month post-close plan, past client reconnect, referral and review asks, and the milestone calendar, with texting consent checked on every touch. |
 | `/hi5-re-prospect` | real-estate-os | live | Real estate | The Marketing Hub has a row of Type Prospecting | It runs your own prospecting to expireds, FSBOs, and a farm, with Do Not Call and texting-consent checks on every touch. |
 | `/hi5-re-buyer` | real-estate-os | live | Real estate | The Marketing Hub has a row of Type Buyer | It guides buyers and renters from the first conversation to an offer: the consultation, the needs brief, the agreement conversation, search and showing plans, offer strategy, and nurture for buyers who are not ready yet. |
+| `/hi5-re-ads` | real-estate-os | live | Real estate | The Marketing Hub has a row of Type Ad Campaign | It writes Meta and Google ad packs as drafts that follow the Housing Special Ad Category, plus the setup steps and the 5-minute follow-up for ad leads. It never connects to an ad account. |
+| `/hi5-re-roleplay` | real-estate-os | live | Real estate | Never done, always available | It lets you practice a hard conversation, such as the fee talk, a listing appointment, or a cold call, then scores you and shows a stronger answer in your voice. Practice only. |
 | `/hi5-re-daily` | real-estate-os | live | Real estate | Never done, always available | It shows what matters today and this week from your CRM, inbox, and calendar: who to call, which deals are at risk, and what is due. It only reads. |
 
 ## Setup stages
@@ -86,6 +88,8 @@ Used by /hi5-next ("Show me everything") and by the "Show me what I can do" opti
 | Run a file from contract to keys (real estate) | /hi5-re-transaction |
 | Plan my day and week from my CRM, inbox, and calendar (real estate) | /hi5-re-daily |
 | Work with a buyer or renter (real estate) | /hi5-re-buyer |
+| Write compliant Meta and Google ads (real estate) | /hi5-re-ads |
+| Practice a hard conversation (real estate) | /hi5-re-roleplay |
 | Stay in touch with past clients and my sphere (real estate) | /hi5-re-sphere |
 | Prospect expireds, FSBOs, and a farm (real estate) | /hi5-re-prospect |
 
@@ -93,5 +97,5 @@ Used by /hi5-next ("Show me everything") and by the "Show me what I can do" opti
 - **Real estate only steps:** skip Stage 4 and Stage 5 when `industry_flow` is not `real-estate`.
 - **Members with no YouTube channel:** if the member said they have no channel and are not planning one (`youtube_url` says so), skip /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, and /hi5-repurpose. In the Create stage, point to /hi5-blog and /hi5-social instead. If they have not answered yet, or said they are interested in starting a channel, keep YouTube in the path.
 - **Not installed:** only recommend a skill that is in your available skills list. If the next step is in a plugin that is not installed, name the plugin and say to install it from the Hi5 marketplace.
-- **Real estate stage:** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, and /hi5-re-buyer are for real estate members only. Skip them when `industry_flow` is not `real-estate`, and when Real Estate OS is not installed, say it is a separate install from the Hi5 marketplace. They are never the main recommendation unless the member asks for one of them or Step 4 says so.
+- **Real estate stage:** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, and /hi5-re-roleplay are for real estate members only. Skip them when `industry_flow` is not `real-estate`, and when Real Estate OS is not installed, say it is a separate install from the Hi5 marketplace. They are never the main recommendation unless the member asks for one of them or Step 4 says so.
 - **Never recommend `coming` skills.**

@@ -29,7 +29,7 @@ Search Notion for "Hi5 Success OS Workspace" and for "hi5-os-root". Open each re
 ### Marketing Hub safety net
 This skill saves to the Marketing Hub, so make sure it exists before you start.
 1. If `marketing_hub_db_id` is missing, or that database cannot be opened, search the member's workspace under the root page for a database titled "Marketing Hub". If you find one, save its ID as `marketing_hub_db_id` in the Page IDs section and continue.
-2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Funnel, Listing Appointment, Listing Launch, Seller Update, Transaction, Sphere Plan, Prospecting, Buyer, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
+2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Funnel, Listing Appointment, Listing Launch, Seller Update, Transaction, Sphere Plan, Prospecting, Buyer, Ad Campaign, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
 3. If they say no, or the database cannot be created, do not lose the work. Give the member the full result in the chat, say "I couldn't save this to your Notion. Run /hi5-setup and it will offer to add your Marketing Hub, then ask me to save it," and stop trying to save. Never create a second Marketing Hub, and never create any other database.
 
 From the profile, read: `client_categories`, `brokerage`, `states_licensed`, `primary_market`, `niche`, `differentiator`, `proof_point` and `proof_point_public`, `brand_color`, `brand_font`, `mls_name`, `mls_remarks_limit`, `coming_soon_policy`, `sold_price_policy`, the Voice Profile, and the Compliance Guardrails page (`disclosure_line_short`, `disclosure_line_full`, `required_notices`, `sms_consent_status`, `protected_class_jurisdictions`, `brokerage_ad_rules`).
@@ -60,7 +60,7 @@ Ask what the member wants. If they already said, go straight to it.
 > 9. An under contract post
 > 10. A price improvement announcement
 
-Run the job as written in `references/jobs.md`. For paid listing ads, say they are coming in /hi5-re-ads, and until then /hi5-funnel follows Meta's Housing category rules. For the weekly seller update, point to /hi5-re-seller-updates. For a homeowner market letter, point to /hi5-newsletter.
+Run the job as written in `references/jobs.md`. For paid listing ads, point to /hi5-re-ads (job 3). For the weekly seller update, point to /hi5-re-seller-updates. For a homeowner market letter, point to /hi5-newsletter.
 
 ## Step 4: Save
 
