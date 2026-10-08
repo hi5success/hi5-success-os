@@ -185,6 +185,14 @@ if grep -rIl 'Claude for Chrome' plugins 2>/dev/null | grep -vE 'hi5-re-listing-
   done
 fi
 
+# 15. The Meta Housing rules in /hi5-re-ads and in /hi5-funnel must carry the same key limits
+for f in plugins/real-estate-os/skills/hi5-re-ads/references/meta-housing.md plugins/marketing-os/skills/hi5-funnel/references/meta-special-categories.md; do
+  for k in 'No targeting by age' 'No targeting by gender' 'ZIP' '15 miles' 'lookalike'; do
+    grep -qi "$k" "$f" || ERRORS+=("$f: missing the Meta Housing limit '$k'")
+  done
+done
+[ -f plugins/real-estate-os/skills/hi5-re-ads/references/meta-housing.md ] && grep -q 'never connect' plugins/real-estate-os/skills/hi5-re-ads/SKILL.md || ERRORS+=("hi5-re-ads: SKILL.md must say it never connects to an ad account")
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

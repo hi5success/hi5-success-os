@@ -22,7 +22,7 @@ It works for any industry. It is strongest for real estate agents, teams, and br
 >
 > Plugins to install: Business OS, Content OS, and Marketing OS. Business OS comes first, because it holds `/hi5-setup`.
 >
-> **Real estate members also install Real Estate OS.** It is a separate install and it works only for real estate. It adds `/hi5-re-crm`, `/hi5-re-listing-appt`, `/hi5-re-listing-launch`, `/hi5-re-seller-updates`, `/hi5-re-transaction`, `/hi5-re-daily`, `/hi5-re-sphere`, `/hi5-re-prospect`, and `/hi5-re-buyer`.
+> **Real estate members also install Real Estate OS.** It is a separate install and it works only for real estate. It adds `/hi5-re-crm`, `/hi5-re-listing-appt`, `/hi5-re-listing-launch`, `/hi5-re-seller-updates`, `/hi5-re-transaction`, `/hi5-re-daily`, `/hi5-re-sphere`, `/hi5-re-prospect`, `/hi5-re-buyer`, `/hi5-re-ads`, and `/hi5-re-roleplay`.
 
 ---
 
@@ -104,6 +104,8 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-re-sphere` | Keeps past clients and your sphere close: a database touch plan, the 12 month post-close plan, past client reconnect as Gmail drafts, no-agenda check-in texts, the home anniversary note, referral and review asks, a milestone calendar, closing gift ideas and card notes, and handwritten notes. Texting consent and do-not-contact status are checked on every touch, and nothing of value is ever tied to a referral or a review. |
 | `/hi5-re-prospect` | Runs your own prospecting to expireds, FSBOs, and a farm: ranks expired listings from an export or an optional browser-assisted review on your own MLS login, writes the comeback and FSBO sequences, farm plans and letters, door-knock and call scripts, and equity conversation questions. Works with lists from your own data vendor. It never skip traces, never bulk texts, and checks Do Not Call and texting consent on every touch. |
 | `/hi5-re-buyer` | Guides buyers and renters from the first conversation to an offer: the consultation game plan, a one-page Buyer Brief built on property needs only, the buyer agreement conversation (compensation is set by agreement, never a standard rate), search and showing plans, after-showing follow-up, offer strategy and multiple-offer prep, weekly buyer updates, nurture for buyers who are not ready yet, and answers to "I want to wait". Covers first-time, move-up, relocation, investor, luxury, 55+ community, new construction, land, and tenant representation. Drafts only. |
+| `/hi5-re-ads` | Writes Meta and Google ad packs as drafts that follow the Meta Housing Special Ad Category (no age, gender, or ZIP targeting, a radius of at least 15 miles, no lookalikes). Campaign brief and setup steps, seller ads, listing and open house ads, buyer and relocation ads, retargeting, Google search ads, the 5-minute follow-up for ad leads with texting consent checked, a weekly ad review, and an audit of an ad you already have. It never connects to an ad account and never launches anything. |
+| `/hi5-re-roleplay` | Practice a hard conversation before it counts: a listing appointment, the fee conversation, a buyer who wants to wait, a multiple-offer talk, a cold call to an expired or FSBO owner, an investor, a tenant, or a steering request. It plays the other person, scores you, quotes where you lost them, and rewrites your weakest answer in your voice. Practice only, nothing is sent. |
 
 ---
 
