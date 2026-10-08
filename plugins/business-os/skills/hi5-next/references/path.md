@@ -19,7 +19,7 @@ The single source of truth for what /hi5-next recommends. Every release that add
 
 Anytime (never part of the path, offer only when it fits): /hi5-linkedin
 
-Real estate members with Real Estate OS installed (never part of the main path, offer only when it fits): /hi5-re-crm, /hi5-re-listing-appt
+Real estate members with Real Estate OS installed (never part of the main path, offer only when it fits): /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates
 
 ## Skills
 
@@ -49,6 +49,8 @@ Real estate members with Real Estate OS installed (never part of the main path, 
 | `/hi5-linkedin` | marketing-os | live | Anytime | The Marketing Hub has a row of Type LinkedIn Posts | LinkedIn reaches referral partners and professionals. |
 | `/hi5-re-crm` | real-estate-os | live | Real estate | The Master Profile Page IDs has `crm_map_page_id` | It lets you run your CRM by chat: log leads and showings, turn contracts and leases into updates, and see your pipeline, with your OK before anything changes. |
 | `/hi5-re-listing-appt` | real-estate-os | live | Real estate | The Marketing Hub has a row of Type Listing Appointment | It prepares you for a listing appointment and follows up until the seller decides. |
+| `/hi5-re-listing-launch` | real-estate-os | live | Real estate | The Marketing Hub has a row of Type Listing Launch | It writes the listing copy, graphics brief, 30-day calendar, open house kit, and the just-sold, under contract, and price improvement posts, with Fair Housing built in. |
+| `/hi5-re-seller-updates` | real-estate-os | live | Real estate | The Marketing Hub has a row of Type Seller Update | It keeps sellers informed from signing to closing, presents offers, and rescues listings that stall. |
 
 ## Setup stages
 These are not separate commands. They are stages of /hi5-setup. Recommend them as "run /hi5-setup and choose Continue setup". Real estate only means skip for other industries.
@@ -74,10 +76,12 @@ Used by /hi5-next ("Show me everything") and by the "Show me what I can do" opti
 | Proof and trust | /hi5-casestudy |
 | Run my CRM by chat (real estate) | /hi5-re-crm |
 | Listing appointments (real estate) | /hi5-re-listing-appt |
+| Launch a listing (real estate) | /hi5-re-listing-launch |
+| Keep sellers informed and rescue a stalled listing (real estate) | /hi5-re-seller-updates |
 
 ## Skip rules
 - **Real estate only steps:** skip Stage 4 and Stage 5 when `industry_flow` is not `real-estate`.
 - **Members with no YouTube channel:** if the member said they have no channel and are not planning one (`youtube_url` says so), skip /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, and /hi5-repurpose. In the Create stage, point to /hi5-blog and /hi5-social instead. If they have not answered yet, or said they are interested in starting a channel, keep YouTube in the path.
 - **Not installed:** only recommend a skill that is in your available skills list. If the next step is in a plugin that is not installed, name the plugin and say to install it from the Hi5 marketplace.
-- **Real estate stage:** /hi5-re-crm and /hi5-re-listing-appt are for real estate members only. Skip them when `industry_flow` is not `real-estate`, and when Real Estate OS is not installed, say it is a separate install from the Hi5 marketplace. They are never the main recommendation unless the member asks for one of them or Step 4 says so.
+- **Real estate stage:** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, and /hi5-re-seller-updates are for real estate members only. Skip them when `industry_flow` is not `real-estate`, and when Real Estate OS is not installed, say it is a separate install from the Hi5 marketplace. They are never the main recommendation unless the member asks for one of them or Step 4 says so.
 - **Never recommend `coming` skills.**

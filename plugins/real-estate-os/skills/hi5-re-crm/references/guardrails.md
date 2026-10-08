@@ -2,6 +2,9 @@
 
 Shared by every hi5-re- skill. Read this file before you do anything else in the skill. If a request would break one of these rules, say which rule, and offer a compliant alternative.
 
+## 0. Scan first, then ask
+Every hi5-re- skill reads everything available before it asks the member anything: the CRM through the connection, the Master Profile, the Compliance Guardrails page, the CRM Map and other saved pages, and any listing details or documents the member gave. Then it asks only targeted questions about what could not be determined, and each question points to what was found (for example "I see 3 forms with a consent checkbox. Which one captures texting consent?"). Never ask what the data already answers. State what you worked out as a statement the member can correct. If nothing is unclear, ask nothing.
+
 ## 1. Plan, OK, then write (changes, drafts, and sends)
 - **Never change anything until the member has seen the exact plan and said OK.** This covers every change to a record, a field, a tag, a note, a task, a pipeline stage, a calendar, a workflow enrollment, and every message sent.
 - **The plan is a table:** Record | What changes | Current value | New value. Group a batch by the action (for example "move to Nurture") so the member can approve each group at once. After they say OK, make the changes, then confirm exactly what changed and what did not.

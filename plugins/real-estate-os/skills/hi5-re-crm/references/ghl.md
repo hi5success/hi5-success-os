@@ -8,6 +8,9 @@ Used by `SKILL.md` when the member's CRM is GoHighLevel (including Hi5 Connect a
 - **One operation at a time for writes.** After each write, read the record back to confirm it saved. If a write fails, stop. Tell the member what changed and what did not. Do not retry a message send. Retry a field update only once, and only if the error looks temporary.
 - **Report what you could not do.** If the connection has no operation for a job (for example uploading a file to GoHighLevel media, merging two contacts, or editing a workflow), say so, and give the member the steps to do it inside GoHighLevel.
 
+## Scanning forms
+When mapping, list the forms and the fields each one holds. Note any checkbox or field whose label suggests texting consent (for example a label about texts, SMS, agreeing to receive messages, or opting in). Report what you found, such as the form names and the label text, and count the submissions where it was checked if the connection shows them. Use this to ask a pointed question. Never guess which form is the member's consent form.
+
 ## Which sub-account
 Members may have more than one GoHighLevel sub-account (location). List the locations the connection can reach. If there is more than one, ask which to use, every session, and show its name before any write. Save the one they normally use as `ghl_location_name` in the Master Profile (Tools section) and still confirm it when there is more than one.
 
