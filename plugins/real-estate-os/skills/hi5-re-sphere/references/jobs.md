@@ -2,7 +2,7 @@
 
 Used by `SKILL.md`. For every job: scan first (the CRM record or list, the profile, the CRM Map, earlier Marketing Hub rows, and anything the member pasted), ask only about what could not be found, and point to what you found. Every touch passes the gate in `touch-rules.md` and shows the result. Use only details the client shared. Drafts only. Every email ends with the disclosure line. If something important is still missing after the scan, ask up to 3 questions before writing.
 
-Messages avoid "just checking in", never pitch in a first touch, and never contain a market number or a value the member did not give.
+Never use the words "checking in" or "just checking" in a subject line or a message body (a subject like "Thinking of you" or a specific detail works better). Messages avoid "just checking in", never pitch in a first touch, and never contain a market number or a value the member did not give.
 
 ---
 
