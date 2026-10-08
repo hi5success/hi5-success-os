@@ -1,4 +1,4 @@
-# The 14 Jobs
+# The 15 Jobs
 
 Used by `SKILL.md`. Every job follows the guardrails file: read first, show the plan, wait for the member's OK, then write, then confirm. In paste mode the "write" is a CRM update sheet (see `other-crm.md`). Ask only for inputs the member has not given and the CRM Map does not answer. Every job names fields in the member's words from the CRM Map. If there is no CRM Map yet and the route is a connector, run job 2 (read only) first.
 
@@ -12,10 +12,18 @@ Every job works for every client type: buyers, sellers, renters, landlords, inve
 Follow "Connection check" in `ghl.md`, or the connector check in `other-crm.md`.
 
 ### 2. Map my CRM (read only, then save)
-1. Read pipelines with every stage in order, custom fields (contact or opportunity, with type), tags, calendars, users (names only), and workflows (name and status) if visible. Never fill a section that comes back empty. Write "None found".
-2. Check each client type in `client_categories` against the pipelines and tags, and list the types with none.
-3. Draft the CRM Map using `templates/crm-map.md`, plus a "Gaps I noticed" list and a "Could not read" list. Show it to the member.
-4. After their OK, save it as the CRM Map page and set `crm_map_page_id`, `crm_connection`, and `last_crm_map` (today). Offer to turn the gaps into a fix plan, ordered by impact, saying which fixes Claude can make and which the member makes in the CRM. Change nothing yet.
+Never judge the CRM against a standard build. Ask first, and call something a gap only after the member confirms it matters to them.
+1. **Read** pipelines with every stage in order, custom fields (contact or opportunity, with type), tags, forms (names, and the fields each one holds, if the connection shows them), calendars, users (names only), and workflows (name and status) if visible. Never fill a section that comes back empty. Write "None found".
+2. **Ask how they work.** Short questions, one at a time, only about what the read left unclear. Use these as a menu, not a script:
+   - Which pipeline do you use for each kind of client you work with (buyers, sellers, renters, landlords, investors, and any others)?
+   - How do leads reach you: intake forms, calls, texts, DMs, your website, or something else? Which forms do you actually use?
+   - Where do you record where a lead came from?
+   - How do you track a deal in progress: fields on the opportunity, notes, or another system?
+   - Is there anything in your CRM you set up on purpose that I should not treat as missing?
+   Never say a pipeline, tag, field, or form is missing. If a client type has no pipeline, ask "How do you handle renters in your CRM?" and write down their answer.
+3. **Where is texting consent captured?** Ask which form, tag, field, or other place holds it. In GoHighLevel it is often stored in the form submission itself (the consent checkbox on the form entry), not as a tag or a contact field. If the member has more than one source (for example older leads, open house sign-ins, a website form), record each one in their words. Save the answer as `consent_source` on the CRM Map. Consent captured earlier counts. Never flag a later form for lacking an opt-in when consent was captured earlier.
+4. **Draft the CRM Map** using `templates/crm-map.md`: the structure you read, how the member works in their words, `consent_source`, "Differences I noticed" (neutral observations the member did not call problems), and "Confirmed gaps" (only what the member said matters to them, otherwise "None confirmed"), plus "Could not read". Show it to the member.
+5. After their OK, save it as the CRM Map page and set `crm_map_page_id`, `crm_connection`, and `last_crm_map` (today). If there are confirmed gaps, offer job 15 (CRM tune-up). If there are none, say so and ask whether anything feels off. Change nothing in the CRM.
 
 ---
 
@@ -115,3 +123,14 @@ Inputs: the pipeline and stage, how many days count as idle, and where stale one
 2. Report: likely duplicates (same phone or email, or similar name with a matching phone or email) with a recommended record to keep and a confidence; contacts missing basics; open deals missing key fields; near duplicate tags.
 3. Summary counts first, then the top 25 rows of each table.
 4. Change nothing. If the member approves a merge or fix, show the exact before and after for that one record and wait for the OK again. If the CRM cannot merge, give the steps. Never guess a missing phone or email. Offer a short message to ask the contact to confirm their best contact info, with the consent check.
+
+### 15. CRM tune-up
+Turns the gaps the member has confirmed into a fix plan. It never judges the CRM against a standard build.
+1. **Start from confirmed gaps.** Read the "Confirmed gaps" section of the CRM Map. If it is empty, or the map is old, ask the short questions from job 2 about how the member works and what is getting in their way, and record what they confirm. Do not add anything the member did not say matters to them.
+2. **Build the fix plan, ordered by impact.** For each confirmed gap, one line on what it costs the member in their own terms, and the fix. Put each fix in one of two lists:
+   - **Fixes I can make through the connection** (for example adding a tag, moving contacts between stages, filling a field, merging a duplicate if the connection allows it).
+   - **Fixes you make in GoHighLevel** (anything the connection cannot do, such as building a form, a pipeline, or a workflow). Give numbered steps with screenshot help, and never assume menu names.
+3. **Warn about side effects.** A new tag, stage move, or enrollment can fire a workflow. Say which one it might trigger before the member approves.
+4. **OK first.** Show the plan for the connector fixes as a table (Record, What changes, Current value, New value), grouped by action, and wait for the member's OK on each group. Make the changes, read each back, and confirm what changed and what did not.
+5. **Update the CRM Map.** After a fix, offer to update the CRM Map page (moving the gap out of "Confirmed gaps" and noting the change). Save only with the member's OK.
+6. Nothing in this job creates a pipeline, a form, a field, or a workflow without the member's OK, and it never deletes anything.
