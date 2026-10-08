@@ -1,6 +1,6 @@
 # The Ten Jobs
 
-Used by `SKILL.md`. For every job: scan first (the CRM opportunity and its fields, the profile, earlier Marketing Hub rows for this address, and the document), ask only about what could not be found, and point to what you found. Dates come only from the executed document. Drafts only. Every message ends with the disclosure line where it is public or goes to a client by email, and every closing-phase message carries the wire fraud reminder: never act on wiring instructions received by email without calling the title company at a known number. If something important is still missing after the scan, ask up to 3 questions before writing.
+Used by `SKILL.md`. For every job: scan first (the CRM opportunity and its fields, the profile, earlier Marketing Hub rows for this address, and the document), ask only about what could not be found, and point to what you found. Dates come only from the executed document. Drafts only. Every message ends with the disclosure line where it is public or goes to a client by email, and every message sent before closing day that is about closing carries the wire fraud reminder: never act on wiring instructions received by email without calling the title company at a known number. If something important is still missing after the scan, ask up to 3 questions before writing.
 
 ---
 
@@ -13,7 +13,7 @@ Follow `../hi5-re-crm/references/documents.md` exactly: name the document type a
 Use the phases for the file type in `by-file-type.md`. Build one table per phase with the columns Task, Owner, Due date, and Done [ ]. Dates come only from the executed document. If a date is not in the document or the CRM, write "confirm with contract". Mark the 5 items most likely to slip on this side of the file with [!] and add one line on how to prevent each. Then write a short "Your job this week" list in plain English that the member can paste into a text to the client. Add the line: "Reminder: this is a working checklist, not legal advice. Your state contract, local addenda, and broker's requirements control every deadline and task. Confirm dates against the executed contract."
 
 ### 3. The key dates calendar
-Use the extraction from job 1 (or the CRM fields). Ask only whether deadlines count business or calendar days if the document and the CRM do not say. Build:
+Use the extraction from job 1 (or the CRM fields). Ask only whether deadlines count business or calendar days if the document and the CRM do not say. If it is unknown, do not compute the dates that depend on it: show the clause and write "confirm" in the date column until the member answers. Build:
 1. A table: Deadline, Date, Time (if stated), What must happen, Who acts, Reminder 3 days before, Reminder 1 day before, and a 48 hour warning.
 2. A "Needs confirmation" list with the paragraph to re-read.
 3. Draft event titles in the form [Address], [Deadline], [Owner].
@@ -54,7 +54,7 @@ Deliver:
 2. A prep table for the member: Option, What it costs the client, Risk, Deadline, and Who needs to act.
 3. Talking points for a 10 minute call, including 3 questions that help the client choose.
 4. If a reconsideration of value makes sense, an outline of what to send the lender, using only comps the member supplies.
-Be calm and factual with no blame on the appraiser. Never describe a value in terms of the neighborhood's character or the people in it. Present trade-offs and never choose for the client. Loan impact goes to the lender, and termination rights go to the contract and the member's broker.
+Be calm and factual with no blame on the appraiser. Never propose a compromise number or a split that the member did not give. Present only the options the member listed, with the numbers the member supplied. Never describe a value in terms of the neighborhood's character or the people in it. Present trade-offs and never choose for the client. Loan impact goes to the lender, and termination rights go to the contract and the member's broker.
 
 ---
 

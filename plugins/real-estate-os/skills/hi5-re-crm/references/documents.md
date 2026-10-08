@@ -31,6 +31,7 @@ Never extract an item without saying where it came from.
 ## Step 3: Dates
 - **Compute a date only when the document states the rule,** and show the math (for example "effective date October 1 plus 7 days is October 8").
 - **Business days or calendar days.** Take it from the document. If the document does not say, or it is unclear, put it on the "Needs confirmation" list. Never assume.
+- **If the day count is unknown, do not compute any date that depends on it.** Show the clause, write "confirm" in the date column, ask the one pointed question, and compute only after the member answers.
 - Weekends and holidays: apply the document's rule only. If it is silent, say "confirm with the contract and your broker".
 - Time of day: record a deadline's time if the document states one.
 - **Needs confirmation.** List every ambiguous or missing item with the paragraph the member should re-read. Never guess.
