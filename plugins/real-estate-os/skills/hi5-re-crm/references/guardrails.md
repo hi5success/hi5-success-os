@@ -55,3 +55,6 @@ Never copy into a note, task, tag, or draft: Social Security or tax ID numbers, 
 - Write in the member's Voice Profile. Never use em dashes. Use a comma, a colon, or a new sentence.
 - End every public piece with the saved disclosure line. Never use a proof point marked internal in anything public.
 - Follow `brokerage_ad_rules` from the Compliance Guardrails page.
+
+## 8. Neighborhood facts
+Skills read the member's Neighborhood pages (the `neighborhoods` entry in Page IDs). Use a neighborhood fact only if it has a source and a date. Treat any fact marked "Needs verification", with no source or date, or past the page's `refresh_by` date as unverified, and in the output mark it "verify before publishing". Never state a neighborhood fact the page does not hold. Never describe who lives in an area or rate schools or safety, and point to the school district's own lookup and the local police department's public data instead. To build or refresh a fact file, point to /hi5-re-neighborhood.
