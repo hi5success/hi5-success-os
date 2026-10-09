@@ -17,7 +17,7 @@
       "name": "business-os",
       "source": "./plugins/business-os",
       "description": "Business planning, goal setting, and performance review tools for entrepreneurs and small business owners.",
-      "version": "1.6.6",
+      "version": "1.6.7",
       "author": { "name": "Hi5 Success" },
       "keywords": ["business", "planning", "goals", "strategy", "notion", "entrepreneur"]
     },
@@ -25,15 +25,15 @@
       "name": "marketing-os",
       "source": "./plugins/marketing-os",
       "description": "Email, newsletter, SEO, LinkedIn, website copy, landing pages, and case study tools for consistent marketing execution.",
-      "version": "1.5.6",
+      "version": "1.5.7",
       "author": { "name": "Hi5 Success" },
       "keywords": ["marketing", "email", "seo", "linkedin", "website", "landing-page", "newsletter", "notion"]
     },
     {
       "name": "real-estate-os",
       "source": "./plugins/real-estate-os",
-      "description": "Real estate only skills for agents, teams, and brokers. Run your CRM by conversation, prepare for listing appointments, launch listings, keep sellers informed, run files from contract to keys, plan your day, keep past clients close, prospect expireds, FSBOs, and farms, guide buyers and renters, write compliant ad packs, and practice hard conversations, with Fair Housing, texting consent, and approval-first guardrails built in.",
-      "version": "1.5.0",
+      "description": "Real estate only skills for agents, teams, and brokers. Run your CRM by conversation, prepare for listing appointments, launch listings, keep sellers informed, run files from contract to keys, plan your day, keep past clients close, prospect expireds, FSBOs, and farms, guide buyers and renters, write compliant ad packs, practice hard conversations, and support rentals, investors, commercial, and land, with Fair Housing, texting consent, and approval-first guardrails built in.",
+      "version": "1.6.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["real estate", "crm", "gohighlevel", "listing appointment", "cma", "fair housing", "notion"]
     }

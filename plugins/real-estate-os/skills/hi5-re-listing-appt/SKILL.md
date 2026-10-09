@@ -30,7 +30,7 @@ Search Notion for "Hi5 Success OS Workspace" and for "hi5-os-root". Open each re
 ### Marketing Hub safety net
 This skill saves to the Marketing Hub, so make sure it exists before you start.
 1. If `marketing_hub_db_id` is missing, or that database cannot be opened, search the member's workspace under the root page for a database titled "Marketing Hub". If you find one, save its ID as `marketing_hub_db_id` in the Page IDs section and continue.
-2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Funnel, Listing Appointment, Listing Launch, Seller Update, Transaction, Sphere Plan, Prospecting, Buyer, Ad Campaign, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
+2. If there is none, say: "Your Marketing Hub isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Marketing Hub" inside the root page with these properties: Title (title); Type (select: Email Sequence, Newsletter, SEO Strategy, SEO Audit, Website Copy, Landing Page, Case Study, LinkedIn Posts, Funnel, Listing Appointment, Listing Launch, Seller Update, Transaction, Sphere Plan, Prospecting, Buyer, Ad Campaign, Property Plan, Other); Status (select: Draft, Approved, Published); Source Skill (text); Date (date). Save its ID as `marketing_hub_db_id` in the Page IDs section, and continue.
 3. If they say no, or the database cannot be created, do not lose the work. Give the member the full result in the chat, say "I couldn't save this to your Notion. Run /hi5-setup and it will offer to add your Marketing Hub, then ask me to save it," and stop trying to save. Never create a second Marketing Hub, and never create any other database.
 
 From the profile, read: `client_categories`, `brokerage`, `states_licensed`, `primary_market`, `niche`, `differentiator`, `proof_point` and `proof_point_public`, `client_words`, `mls_name`, `cma_adjustments`, the fee details saved by /hi5-bizplan, the Voice Profile, the Compliance Guardrails page (`disclosure_line_full`, `required_notices`, `sms_consent_status`, `protected_class_jurisdictions`, `brokerage_ad_rules`), the Objection Bank page, and the Neighborhood page for the area.
@@ -58,7 +58,7 @@ Ask what the member wants. If they already said, go straight to it.
 > 5. Objection answers
 > 6. Follow up with a seller who has not signed
 
-Run the job as written in `references/jobs.md`. Job 3 follows `references/cma.md`. For a morning briefing, point to /hi5-re-daily. For role-play practice, point to /hi5-re-roleplay.
+Run the job as written in `references/jobs.md`. Job 3 follows `references/cma.md`. For a morning briefing, point to /hi5-re-daily. For role-play practice, point to /hi5-re-roleplay. After a landlord signs, point to /hi5-re-rental. For investor, commercial, land, or new construction listings, point to /hi5-re-investor, /hi5-re-commercial, or /hi5-re-land-newbuild.
 
 ## Step 3: Save
 
