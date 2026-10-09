@@ -67,5 +67,5 @@ Inputs to look for: the fact file (use only facts with a source and a date, or m
 Build:
 1. **10 content angles** (posts or short videos), each tied to a fact or feature on the page (a park, a route, a seasonal quirk, a street feature, a local event), with the fact it uses. No angle about who lives there, and none that rates schools or safety.
 2. **A "Living in [Area]" guide outline** for the member's website: sections (the place, the homes, getting around, things to do, seasonal notes, questions to ask before buying or selling here, how to verify what matters to you with official sources), each with the facts it draws on. The final line of the guide says to verify every detail with the official source, and the page ends with the disclosure line.
-3. **5 short video hooks** for this week, each a fact the member can show on camera, written in the member's voice.
+3. **5 short video hooks** for this week, each a fact the member can show on camera, written in the member's voice. Write what to film and the line to say with [PLACEHOLDERS] for anything personal (a time of day, a favorite, a client story, an experience). Never write a first-person claim the member did not give you.
 Every piece is a draft and goes through the Fair Housing scan. For the finished copy, point to /hi5-social, /hi5-blog, /hi5-website, and /hi5-seo.
