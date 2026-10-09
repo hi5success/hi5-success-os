@@ -120,7 +120,7 @@ Write this on the Dashboard page:
 > 5. **Nurture:** /hi5-email, /hi5-newsletter
 > 6. **Grow:** /hi5-landing, /hi5-funnel, /hi5-casestudy
 >
-> **Real estate members with Real Estate OS installed:** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, and /hi5-re-land-newbuild
+> **Real estate members with Real Estate OS installed:** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, /hi5-re-land-newbuild, and /hi5-re-neighborhood
 >
 > **Tip:** keep a few separate Claude Projects, one per topic. Run /hi5-next and I'll show you how.
 >
@@ -130,7 +130,7 @@ Write this on the Dashboard page:
 A short table the member can reference. One section per plugin, one line per skill: command and what it does. Mark each plugin "if installed". Use the skill descriptions from the plugins:
 - **Business OS:** /hi5-setup, /hi5-next, /hi5-self, /hi5-bizplan, /hi5-goals, /hi5-bizreview
 - **Content OS:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose, /hi5-blog, /hi5-social
-- **Real Estate OS (real estate members, a separate install):** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, /hi5-re-land-newbuild
+- **Real Estate OS (real estate members, a separate install):** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, /hi5-re-land-newbuild, /hi5-re-neighborhood
 - **Marketing OS:** /hi5-email, /hi5-newsletter, /hi5-seo, /hi5-site-audit, /hi5-linkedin, /hi5-website, /hi5-landing, /hi5-funnel, /hi5-casestudy
 
 Finish with: "Run /hi5-next any time for your best next step, and /hi5-setup to update your profile or continue setup."

@@ -193,6 +193,13 @@ for f in plugins/real-estate-os/skills/hi5-re-ads/references/meta-housing.md plu
 done
 [ -f plugins/real-estate-os/skills/hi5-re-ads/references/meta-housing.md ] && grep -q 'never connect' plugins/real-estate-os/skills/hi5-re-ads/SKILL.md || ERRORS+=("hi5-re-ads: SKILL.md must say it never connects to an ad account")
 
+# 16. The neighborhood fact file in /hi5-re-neighborhood keeps the same 8 section names as the setup template
+for sec in 'Snapshot' 'Homes and Prices' 'Getting Around' 'Things to Do' 'Insider Notes' 'What Buyers, Renters, and Investors Should Ask' 'What Sellers and Landlords Should Know' 'Content Angles'; do
+  for f in plugins/business-os/skills/hi5-setup/templates/neighborhood-profile.md plugins/real-estate-os/skills/hi5-re-neighborhood/templates/fact-file.md; do
+    grep -qF "**$sec**" "$f" || ERRORS+=("$f: missing the neighborhood section '$sec'")
+  done
+done
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

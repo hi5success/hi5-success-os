@@ -22,7 +22,7 @@ It works for any industry. It is strongest for real estate agents, teams, and br
 >
 > Plugins to install: Business OS, Content OS, and Marketing OS. Business OS comes first, because it holds `/hi5-setup`.
 >
-> **Real estate members also install Real Estate OS.** It is a separate install and it works only for real estate. It adds `/hi5-re-crm`, `/hi5-re-listing-appt`, `/hi5-re-listing-launch`, `/hi5-re-seller-updates`, `/hi5-re-transaction`, `/hi5-re-daily`, `/hi5-re-sphere`, `/hi5-re-prospect`, `/hi5-re-buyer`, `/hi5-re-ads`, `/hi5-re-roleplay`, `/hi5-re-rental`, `/hi5-re-investor`, `/hi5-re-commercial`, and `/hi5-re-land-newbuild`.
+> **Real estate members also install Real Estate OS.** It is a separate install and it works only for real estate. It adds `/hi5-re-crm`, `/hi5-re-listing-appt`, `/hi5-re-listing-launch`, `/hi5-re-seller-updates`, `/hi5-re-transaction`, `/hi5-re-daily`, `/hi5-re-sphere`, `/hi5-re-prospect`, `/hi5-re-buyer`, `/hi5-re-ads`, `/hi5-re-roleplay`, `/hi5-re-rental`, `/hi5-re-investor`, `/hi5-re-commercial`, `/hi5-re-land-newbuild`, and `/hi5-re-neighborhood`.
 
 ---
 
@@ -110,6 +110,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-re-investor` | Works with investor clients: the buy box, a deal numbers worksheet where the investor supplies every figure and the math is shown, side by side property comparisons, the due diligence checklist, the portfolio sale and exchange timeline, and investor updates. It never states or promises a return. |
 | `/hi5-re-commercial` | Supports commercial sales and leases: the requirements intake, a total occupancy cost comparison from the documents, a letter of intent outline for the client and attorney to complete, tenant rep and landlord rep talk tracks, the due diligence and lease review checklist, and the weekly client update. Attorney review is a step in every phase. |
 | `/hi5-re-land-newbuild` | Supports land and new construction: a land due diligence plan, the new construction buyer guide (builder contract questions, selections tracker, inspections, punch list), builder and community comparisons from the builders' own materials, and the timeline. It never states what can be built or a cost to build. |
+| `/hi5-re-neighborhood` | Builds and keeps current the neighborhood fact file for each area you serve, the reference page the other skills read. Every fact carries a source and a date, stale or unverified facts get refreshed, and a where-to-verify sheet points to official sources. It describes the place, the homes, and the amenities only, never who lives there, and never rates schools or safety. |
 
 ---
 

@@ -463,7 +463,7 @@ Then build the page from the template, mark every stat [VERIFY + DATE], and run 
 
 Update Setup Status: `stage_5_neighborhoods: complete <date> (N areas)`.
 
-When saved, tell the member: "Your [area] fact file is saved as a page under your Master Profile. To add another area later, run /hi5-setup and choose Add a neighborhood. To refresh the numbers, choose Redo a stage."
+When saved, tell the member: "Your [area] fact file is saved as a page under your Master Profile. To add another area later, run /hi5-setup and choose Add a neighborhood. To refresh the numbers, choose Redo a stage, or if you have Real Estate OS, run /hi5-re-neighborhood, which adds a source and a date to every fact."
 
 Ask: "Want to add another area now, or stop here?"
 
