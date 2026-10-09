@@ -1,6 +1,6 @@
 # Module: Renter With Tenant Representation
 
-Someone looking to rent, where the member represents the tenant. The landlord side is a separate plan, coming in /hi5-re-rental.
+Someone looking to rent, where the member represents the tenant. The landlord side is in /hi5-re-rental.
 
 ## Discovery questions (skip anything the scan answered)
 1. When do you need to move in, and when does your current lease end (if you have one)?
