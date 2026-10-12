@@ -9,15 +9,15 @@
       "name": "content-os",
       "source": "./plugins/content-os",
       "description": "YouTube-first content creation and repurposing system. Research competitors, plan content, write scripts, repurpose into blog posts, and generate platform-specific social captions, all from one content engine.",
-      "version": "1.3.1",
+      "version": "1.4.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["youtube", "content", "blog", "social media", "repurpose", "marketing", "notion", "real estate", "captions", "scripts"]
     },
     {
       "name": "business-os",
       "source": "./plugins/business-os",
-      "description": "Business planning, goal setting, and performance review tools for entrepreneurs and small business owners.",
-      "version": "1.6.8",
+      "description": "Business planning, goal setting, performance review, and voice creation tools for entrepreneurs and small business owners.",
+      "version": "1.7.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["business", "planning", "goals", "strategy", "notion", "entrepreneur"]
     },
@@ -25,7 +25,7 @@
       "name": "marketing-os",
       "source": "./plugins/marketing-os",
       "description": "Email, newsletter, SEO, LinkedIn, website copy, landing pages, and case study tools for consistent marketing execution.",
-      "version": "1.5.7",
+      "version": "1.6.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["marketing", "email", "seo", "linkedin", "website", "landing-page", "newsletter", "notion"]
     },
@@ -33,7 +33,7 @@
       "name": "real-estate-os",
       "source": "./plugins/real-estate-os",
       "description": "Real estate only skills for agents, teams, and brokers. Run your CRM by conversation, prepare for listing appointments, launch listings, keep sellers informed, run files from contract to keys, plan your day, keep past clients close, prospect expireds, FSBOs, and farms, guide buyers and renters, write compliant ad packs, practice hard conversations, support rentals, investors, commercial, and land, and keep area fact files current, with Fair Housing, texting consent, and approval-first guardrails built in.",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "author": { "name": "Hi5 Success" },
       "keywords": ["real estate", "crm", "gohighlevel", "listing appointment", "cma", "fair housing", "notion"]
     }
