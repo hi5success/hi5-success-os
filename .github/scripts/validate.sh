@@ -224,6 +224,14 @@ done
 grep -q 'Estimated by' plugins/business-os/skills/hi5-self/references/teammate-profiles.md || ERRORS+=("hi5-self teammate profiles must keep the Estimated by label")
 grep -q '### 👥 People' plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md is missing the People database")
 
+# 21. The org chart skill keeps its files, the one human manager rule, and the AI Employees database
+for f in SKILL.md references/interview.md references/chart-artifact.md references/highlights.md references/edits.md; do
+  [ -f "plugins/business-os/skills/hi5-org-chart/$f" ] || ERRORS+=("hi5-org-chart is missing $f")
+done
+grep -q 'exactly one human manager' plugins/business-os/skills/hi5-org-chart/SKILL.md || ERRORS+=("hi5-org-chart/SKILL.md must keep the exactly one human manager rule")
+grep -q 'AI Operations' plugins/business-os/skills/hi5-org-chart/SKILL.md || ERRORS+=("hi5-org-chart/SKILL.md must keep the optional AI Operations suggestion")
+grep -q '### 🤖 AI Employees' plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md is missing the AI Employees database")
+
 # 18. The dashboard skill keeps its discovery, widget library, email actions, Notion rules, and the no repeated connector prompt test
 for f in SKILL.md references/discovery.md references/widgets.md references/email-actions.md references/notion-trackers.md references/build.md references/connectors.md industries/real-estate.md industries/generic.md; do
   [ -f "plugins/business-os/skills/hi5-dashboard/$f" ] || ERRORS+=("hi5-dashboard is missing $f")
