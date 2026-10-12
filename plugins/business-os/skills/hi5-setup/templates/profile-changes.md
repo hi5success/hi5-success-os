@@ -52,6 +52,8 @@ These fields are collected inside the skill that uses them, not by setup, so `pr
 | One Dashboards row per dashboard (pages, widgets, data sources, connected apps, the Notion databases used, email button settings, discovery answers) | Dashboards | /hi5-dashboard |
 | people_db_id (Page IDs) and people_page_id (Self Profile) | Page IDs, Self Profile | /hi5-self, the first time it saves a People row. The People database is in the workspace template, and the setup workspace check offers it to older workspaces |
 | One People row and page per person (role, reports to, personality and Human Design profile, communication tips, status, profile source, profile date) | People | /hi5-self, with the member's OK |
+| ai_employees_db_id (Page IDs) | Page IDs | /hi5-org-chart, the first time it saves an AI employee. The AI Employees database is in the workspace template, and the setup workspace check offers it to older workspaces |
+| One AI Employees row per AI employee (role, human manager, status, review cadence and date, Claude Project link), and an Org chart link and overload threshold under Notes on the member's own People page | AI Employees, People | /hi5-org-chart, with the member's OK |
 | One Listing Appointment row per kit | Marketing Hub | /hi5-re-listing-appt |
 | mls_remarks_limit, coming_soon_policy, sold_price_policy | Tools | /hi5-re-listing-launch, asked once and only if the profile does not already say |
 | One Listing Launch row per piece, and one Seller Update row per update or plan | Marketing Hub | /hi5-re-listing-launch, /hi5-re-seller-updates |

@@ -52,6 +52,7 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - voice_library_db_id (added by /hi5-voice-creator, or by the setup workspace check)
 - dashboards_db_id (added by /hi5-dashboard, or by the setup workspace check)
 - people_db_id (added by /hi5-self, or by the setup workspace check)
+- ai_employees_db_id (added by /hi5-org-chart, or by the setup workspace check)
 - objection_bank_page_id (added by Stage 4)
 - neighborhoods: `Name = page id` pairs, comma separated (added by Stage 5)
 

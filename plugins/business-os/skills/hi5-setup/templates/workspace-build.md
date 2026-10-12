@@ -8,9 +8,9 @@ Create only what is listed here. Objection Bank, neighborhood pages, compliance,
 
 Used when the member copied the official Hi5 Success OS Workspace template into their Notion. Their copy's first line is already the marker `hi5-os-root: v1`. Do not create a new root page.
 
-Template items: Master Profile, Business OS, Business Plan, Quarterly Goals, Business Reviews, Skill Guide, Content Planner, Marketing Hub, Voice Library, Dashboards, People
+Template items: Master Profile, Business OS, Business Plan, Quarterly Goals, Business Reviews, Skill Guide, Content Planner, Marketing Hub, Voice Library, Dashboards, People, AI Employees
 
-1. Open the member's copy (the marked page). Read its child pages and databases and match them by title: Master Profile, Business OS, Skill Guide, Reference Hub, Content Planner, Keyword Tracker, Marketing Hub, Voice Library, Dashboards, People, Tasks, Client Meeting Notes, Internal Meeting Notes. Open Business OS and match Business Plan, Quarterly Goals, and Business Reviews.
+1. Open the member's copy (the marked page). Read its child pages and databases and match them by title: Master Profile, Business OS, Skill Guide, Reference Hub, Content Planner, Keyword Tracker, Marketing Hub, Voice Library, Dashboards, People, AI Employees, Tasks, Client Meeting Notes, Internal Meeting Notes. Open Business OS and match Business Plan, Quarterly Goals, and Business Reviews.
 2. Save the IDs in the Master Profile's Page IDs section: `root_page_id` (the copy's own page), `dashboard_page_id` (the same page, because the template's first page is the Dashboard), `business_os_page_id`, `business_plan_page_id`, `quarterly_goals_page_id`, `business_reviews_page_id`, `content_planner_db_id`, `marketing_hub_db_id`, `skill_guide_page_id`, and `keyword_tracker_db_id` if the copy has a Keyword Tracker.
 3. Create only what is missing from the Template items list, using the titles and lines in step 2 and the database layouts in step 3 below. If the member deleted or renamed one, search under the root by title before creating anything. Never create a second copy of anything. Never remove, rename, or move anything the member has. Tasks, Client Meeting Notes, Internal Meeting Notes, and the Reference Hub are not required, so never recreate them.
 4. Check the Master Profile page. If it has the Setup Status, Page IDs, and Linked pages headings, keep it and fill in values. If it has no Setup Status heading and its body is only the template's bracketed placeholders, replace the body with the skeleton from `master-profile.md`. If it has other content, ask the member before changing it.
@@ -142,6 +142,20 @@ One row per person on the team (the member included), with the person's full pro
 | Profile source | select | Own answers, Estimated |
 | Profile date | date | |
 
+### 🤖 AI Employees
+One row per AI employee, with its job description in the row's page body. Each has exactly one human manager. Rows are created by /hi5-org-chart (name, role, and manager) and filled in by /hi5-bottleneck (the full job description). The official Hi5 Success OS Workspace Template includes this database with these properties. Properties:
+
+| Property | Type | Options |
+|---|---|---|
+| Name | title | |
+| Role | text | |
+| Human manager | text | The manager's name exactly as it is in People. Exactly one |
+| Status | select | Draft, Active, Paused, Retired |
+| Review cadence | select | Monthly, Quarterly, Twice a year |
+| Review date | date | |
+| Claude Project link | url | |
+| Created | date | |
+
 ## 4. Master Profile page
 Write the skeleton from `master-profile.md` into the Master Profile page: the heading 2 sections in order (Setup Status, Page IDs, Identity, Market, Tools, Presence, Brand, Business, Edge, Self Profile, and last of all Linked pages, which holds only the heading) with empty field bullets, then fill in Setup Status (including `profile_version: 3`, `workspace_source: built`, and `template_version: none`) and Page IDs from what you just created. The Linked pages heading must stay the last block on the page.
 
@@ -165,11 +179,11 @@ Write this on the Dashboard page:
 >
 > **Tip:** keep a few separate Claude Projects, one per topic. Run /hi5-next and I'll show you how.
 >
-> **Your workspace:** Master Profile · Business OS · Content Planner · Marketing Hub · Voice Library · Dashboards · People · Skill Guide
+> **Your workspace:** Master Profile · Business OS · Content Planner · Marketing Hub · Voice Library · Dashboards · People · AI Employees · Skill Guide
 
 ## Skill Guide content
 A short table the member can reference. One section per plugin, one line per skill: command and what it does. Mark each plugin "if installed". Use the skill descriptions from the plugins:
-- **Business OS:** /hi5-setup, /hi5-next, /hi5-self, /hi5-voice-creator, /hi5-dashboard, /hi5-bizplan, /hi5-goals, /hi5-bizreview
+- **Business OS:** /hi5-setup, /hi5-next, /hi5-self, /hi5-voice-creator, /hi5-dashboard, /hi5-org-chart, /hi5-bizplan, /hi5-goals, /hi5-bizreview
 - **Content OS:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose, /hi5-blog, /hi5-social
 - **Real Estate OS (real estate members, a separate install):** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, /hi5-re-land-newbuild, /hi5-re-neighborhood
 - **Marketing OS:** /hi5-email, /hi5-newsletter, /hi5-seo, /hi5-site-audit, /hi5-linkedin, /hi5-website, /hi5-landing, /hi5-funnel, /hi5-casestudy

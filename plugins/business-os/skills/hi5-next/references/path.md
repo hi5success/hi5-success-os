@@ -17,7 +17,7 @@ The single source of truth for what /hi5-next recommends. Every release that add
 5. **Nurture:** /hi5-email, /hi5-newsletter
 6. **Grow:** /hi5-landing, /hi5-funnel, /hi5-casestudy
 
-Anytime (never part of the path, offer only when it fits): /hi5-linkedin
+Anytime (never part of the path, offer only when it fits): /hi5-linkedin, /hi5-org-chart (suggest it right after the first AI employee row exists in the AI Employees database and the member has no org chart yet)
 
 Real estate members with Real Estate OS installed (never part of the main path, offer only when it fits): /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, /hi5-re-land-newbuild, /hi5-re-neighborhood
 
@@ -29,6 +29,7 @@ Real estate members with Real Estate OS installed (never part of the main path, 
 | `/hi5-self` | business-os | live | Foundation | The Self Profile section has a `behavioral_style` | It lets everything I write match how you think and communicate, and you can build a profile for each teammate so messages fit how they read best. |
 | `/hi5-voice-creator` | business-os | live | Foundation | The Voice Library has an entry whose For is Self | It creates a voice skill that writes like you, or like a teammate or a client, so every draft sounds like the right person. |
 | `/hi5-dashboard` | business-os | live | Foundation | The Dashboards database has an entry with Status Active | It builds a live dashboard from what you need to see and act on each day, using your own apps, with email actions, a follow-up queue, trackers, and a Command Center page. |
+| `/hi5-org-chart` | business-os | live | Anytime | The member's own People page has an `Org chart:` link under Notes | It shows your humans and AI employees in one picture, so every AI employee has one human owner and nothing is left without an owner. |
 | `/hi5-bizplan` | business-os | live | Foundation | Business Numbers has `last_plan_date` | It turns your goals into numbers and a 90 day roadmap, and other skills read those numbers. |
 | `/hi5-goals` | business-os | live | Foundation | Business Numbers `current_quarter` is the quarter we are in, and the Quarterly Goals page has a section for it | It breaks your plan into this quarter's targets and a 13 week plan, and a weekly check-in keeps you on track. |
 | `/hi5-bizreview` | business-os | live | Foundation | Business Numbers has `last_review_date` | It compares your results with your plan by client type and lead source, shows your take-home, and tells you what to adjust. |
@@ -89,6 +90,7 @@ Used by /hi5-next ("Show me everything") and by the "Show me what I can do" opti
 | Business plan and goals | /hi5-self, /hi5-bizplan |
 | A voice skill that writes like me, a teammate, or a client | /hi5-voice-creator |
 | A live dashboard of what I need to see and act on | /hi5-dashboard |
+| My team and AI employees in one org chart | /hi5-org-chart |
 | Proof and trust | /hi5-casestudy |
 | Run my CRM by chat (real estate) | /hi5-re-crm |
 | Listing appointments (real estate) | /hi5-re-listing-appt |
