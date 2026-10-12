@@ -218,6 +218,11 @@ done
 grep -q 'two-open test' plugins/business-os/skills/hi5-dashboard/references/build.md || ERRORS+=("hi5-dashboard/references/build.md must keep the two-open test for repeated connector prompts")
 grep -q 'If you saw this, what would you do' plugins/business-os/skills/hi5-dashboard/references/discovery.md || ERRORS+=("hi5-dashboard/references/discovery.md must keep the action filter")
 
+# 19. The Follow-Up Queue keeps one message per click, no bulk or automatic sending, and its spec file
+[ -f plugins/business-os/skills/hi5-dashboard/references/follow-up-queue.md ] || ERRORS+=("hi5-dashboard is missing references/follow-up-queue.md")
+grep -q 'No Send all, ever' plugins/business-os/skills/hi5-dashboard/SKILL.md || ERRORS+=("hi5-dashboard/SKILL.md must keep the No Send all rule")
+grep -q 'Send all' plugins/business-os/skills/hi5-dashboard/references/follow-up-queue.md || ERRORS+=("hi5-dashboard/references/follow-up-queue.md must keep the no Send all rule")
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"
