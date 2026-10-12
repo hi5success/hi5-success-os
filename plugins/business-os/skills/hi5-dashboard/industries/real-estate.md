@@ -7,6 +7,7 @@ Used by `SKILL.md` Step 4 for members in real estate. These are suggestions, off
 - **Email:** emails that need a reply, with drafted replies in the member's voice.
 - **CRM summary:** new leads, active leads, and needs follow-up, by sub-account if the member uses more than one.
 - **Listings:** active listings with the next action for each (a price talk, a showing feedback request, a seller update due). The data comes from the CRM opportunities or a Notion Listings tracker. Never pull data from a listing site.
+- **Follow-Up Queue:** people who need a follow-up or have gone stale, in four groups: new leads, active buyers and sellers, past clients, and sphere. The member sets the stale days and the channel for each group. It follows the ranking signals in `/hi5-re-daily` and the touch rules in `/hi5-re-sphere` when Real Estate OS is installed, drafts in the member's voice with the disclosure line where email requires it, and runs the texting consent gate from the CRM Map's `consent_source` for every text. Never rank or filter by who someone is or where they live.
 - **Clients:** buyers and sellers in the pipeline, grouped by stage, with the last touch.
 - **Transaction tracker:** every file under contract, with its stage, the key dates, the documents needed, what is missing, and the next step (see below).
 - **Important dates:** from the Transactions tracker and the calendar.

@@ -46,6 +46,9 @@ The connectors the dashboard uses (declared once at build time), and any the mem
 ### Notion databases used
 Each database by name and ID, whether it already existed or was created for this dashboard, and its fields. This list is what lets the dashboard be rebuilt.
 
+### Follow-Up Queue settings
+If the dashboard has a Follow-Up Queue widget: the stale days per group, the pipelines and stages included and skipped, the channel per group, the list length, whether sends are logged as a CRM note (and that the member was told), the freshness approach chosen and why, the scheduled task (what it does and the time of day, if the member approved it), and the Follow-Up Queue database ID and fields. See `follow-up-queue.md`.
+
 ### Email button settings
 The no-reply action chosen (nothing, add a label, mark as read, or archive), the label name if any, and whether the spam confirm has been given.
 
