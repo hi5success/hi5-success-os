@@ -211,6 +211,13 @@ for f in SKILL.md references/generated-skill.md references/voice-guide.md templa
   [ -f "plugins/business-os/skills/hi5-voice-creator/$f" ] || ERRORS+=("hi5-voice-creator is missing $f")
 done
 
+# 18. The dashboard skill keeps its discovery, widget library, email actions, Notion rules, and the no repeated connector prompt test
+for f in SKILL.md references/discovery.md references/widgets.md references/email-actions.md references/notion-trackers.md references/build.md references/connectors.md industries/real-estate.md industries/generic.md; do
+  [ -f "plugins/business-os/skills/hi5-dashboard/$f" ] || ERRORS+=("hi5-dashboard is missing $f")
+done
+grep -q 'two-open test' plugins/business-os/skills/hi5-dashboard/references/build.md || ERRORS+=("hi5-dashboard/references/build.md must keep the two-open test for repeated connector prompts")
+grep -q 'If you saw this, what would you do' plugins/business-os/skills/hi5-dashboard/references/discovery.md || ERRORS+=("hi5-dashboard/references/discovery.md must keep the action filter")
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"
