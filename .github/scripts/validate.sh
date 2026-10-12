@@ -224,6 +224,13 @@ done
 grep -q 'Estimated by' plugins/business-os/skills/hi5-self/references/teammate-profiles.md || ERRORS+=("hi5-self teammate profiles must keep the Estimated by label")
 grep -q '### 👥 People' plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md is missing the People database")
 
+# 23. Every writing skill carries the no invented commitments rule
+for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/real-estate-os/skills/*/ plugins/business-os/skills/hi5-dashboard/; do
+  sk=$(basename "$d")
+  case "$sk" in hi5-seo|hi5-site-audit|hi5-context|hi5-yt-plan|hi5-yt-research|hi5-yt-setup) continue;; esac
+  grep -q '**No invented commitments.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the no invented commitments rule")
+done
+
 # 21. The org chart skill keeps its files, the one human manager rule, and the AI Employees database
 for f in SKILL.md references/interview.md references/chart-artifact.md references/highlights.md references/edits.md; do
   [ -f "plugins/business-os/skills/hi5-org-chart/$f" ] || ERRORS+=("hi5-org-chart is missing $f")
