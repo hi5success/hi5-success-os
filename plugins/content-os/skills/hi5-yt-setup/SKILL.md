@@ -123,7 +123,7 @@ Say: "Based on your niche, here are some content category suggestions: [list the
 Store: content_categories
 
 **13. Voice card**
-First open the Voice Profile page (`voice_profile_page_id`), if one exists. Ask ONLY the questions below whose fields are missing or empty on it. If none are missing, skip this step and say: "I already have your writing voice saved, so I'll use that." Stage 3 of /hi5-setup already covers formality, sentences, and phrases, so for most members only the on-camera questions (energy level and CTA style) remain.
+First open the Voice Profile page (`voice_profile_page_id`), if one exists. Ask ONLY the questions below whose fields are missing or empty on it. If none are missing, skip this step and say: "I already have your writing voice saved, so I'll use that. For a full voice skill built from your real writing, run /hi5-voice-creator." Stage 3 of /hi5-setup already covers formality, sentences, and phrases, so for most members only the on-camera questions (energy level and CTA style) remain.
 
 Ask the missing ones, one at a time:
 - "How would you describe your vocabulary style? Casual and conversational, professional and polished, or somewhere in between?" → vocabulary_style

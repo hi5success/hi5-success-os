@@ -200,6 +200,17 @@ for sec in 'Snapshot' 'Homes and Prices' 'Getting Around' 'Things to Do' 'Inside
   done
 done
 
+# 17. Every writing skill carries the shared voice rule (Voice Library, one voice per piece, Hi5 rules win)
+for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/real-estate-os/skills/*/; do
+  sk=$(basename "$d")
+  case "$sk" in hi5-seo|hi5-site-audit|hi5-context|hi5-yt-plan|hi5-yt-research|hi5-yt-setup) continue;; esac
+  grep -q '**Voice.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the shared voice rule")
+  grep -q 'Voice Library' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md voice rule does not mention the Voice Library")
+done
+for f in SKILL.md references/generated-skill.md references/voice-guide.md templates/voice-library-entry.md; do
+  [ -f "plugins/business-os/skills/hi5-voice-creator/$f" ] || ERRORS+=("hi5-voice-creator is missing $f")
+done
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"
