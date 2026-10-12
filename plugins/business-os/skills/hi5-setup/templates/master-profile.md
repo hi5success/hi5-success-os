@@ -49,6 +49,7 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - channel_pages (added by /hi5-yt-setup, only with multiple channels): `Name = page id` pairs, comma separated
 - compliance_page_id (added by Stage 2)
 - voice_profile_page_id (added by Stage 3, or by /hi5-yt-setup if the member has not done Stage 3)
+- voice_library_db_id (added by /hi5-voice-creator, or by the setup workspace check)
 - objection_bank_page_id (added by Stage 4)
 - neighborhoods: `Name = page id` pairs, comma separated (added by Stage 5)
 
@@ -158,7 +159,7 @@ Added by /hi5-yt-setup (Content OS). Not created by /hi5-setup; the skeleton doe
 A child page of the Master Profile created by Stage 2, ID in `compliance_page_id`. Its Inputs section holds `disclosure_line`, `last_confirmed`, and (real estate) `protected_class_jurisdictions`, `brokerage_ad_rules`, `sms_consent_status`, or (any industry) `industry_rules`, `messaging_consent_status`, `brand_policy`. Below the inputs are the guardrails every writing skill follows. Templates: `compliance-real-estate.md`, `compliance-generic.md`.
 
 ### Voice Profile (child page, not a section)
-A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `emoji_use`, `preferred_length`, `phrases_used`, `phrases_never_used`, `how_to_come_across`, `energy_level`, `cta_style`, followed by a voice summary, proof samples, and gaps. Stage 3 of /hi5-setup creates it (template `voice-profile.md`). /hi5-yt-setup adds `energy_level` and `cta_style` if missing, and creates the page only if the member has not done Stage 3.
+A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `emoji_use`, `preferred_length`, `phrases_used`, `phrases_never_used`, `how_to_come_across`, `energy_level`, `cta_style`, `default_voice` (the Skill Name of the member's own voice in the Voice Library, added by /hi5-voice-creator), followed by a voice summary, proof samples, and gaps. Stage 3 of /hi5-setup creates it (template `voice-profile.md`). /hi5-yt-setup adds `energy_level` and `cta_style` if missing, and creates the page only if the member has not done Stage 3.
 
 ### Linked pages
 Always the last section. It holds only the heading. Child pages created by the stages appear below it.

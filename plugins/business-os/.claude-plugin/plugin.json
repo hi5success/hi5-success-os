@@ -1,6 +1,6 @@
 {
   "name": "business-os",
-  "description": "Business planning, goal setting, and performance review tools for entrepreneurs and small business owners.",
-  "version": "1.6.8",
+  "description": "Business planning, goal setting, performance review, and voice creation tools for entrepreneurs and small business owners.",
+  "version": "1.7.0",
   "author": { "name": "Hi5 Success" }
 }

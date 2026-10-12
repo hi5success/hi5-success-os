@@ -320,6 +320,8 @@ Before showing it, compare each proof sample to their originals. If a sample use
 
 Save: the Edge fields to the Master Profile's Edge section, and everything else to the Voice Profile page using the template. Then continue the general procedure (confirm, save, say where it is saved).
 
+When Stage 3 is saved, add one line: "If you want a skill that writes in your exact voice, and one for a teammate or a client, run /hi5-voice-creator. It builds from your real writing and speaking samples."
+
 ---
 
 # SELF-TEST SCENARIO
