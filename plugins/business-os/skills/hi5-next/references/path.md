@@ -10,7 +10,7 @@ The single source of truth for what /hi5-next recommends. Every release that add
 - **Why it matters:** one sentence, in plain words, for the recommendation.
 
 ## The path, in order
-1. **Foundation:** Setup Stage 1, Stage 2, Stage 3, /hi5-self, /hi5-voice-creator (optional, never blocks the next step), /hi5-dashboard (optional, after setup and the voice step, never blocks the next step), /hi5-bizplan, /hi5-goals, /hi5-bizreview, then for real estate Setup Stage 4 and Stage 5
+1. **Foundation:** Setup Stage 1, Stage 2, Stage 3, /hi5-self, /hi5-voice-creator (optional, never blocks the next step), /hi5-dashboard (optional, after setup and the voice step, never blocks the next step), /hi5-bottleneck (optional, after setup, the voice step, and the dashboard, never blocks the next step), /hi5-bizplan, /hi5-goals, /hi5-bizreview, then for real estate Setup Stage 4 and Stage 5
 2. **Content strategy:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan
 3. **Create:** /hi5-yt-script, /hi5-repurpose, /hi5-social, /hi5-blog
 4. **Get found:** /hi5-seo, /hi5-site-audit, /hi5-website
@@ -29,6 +29,7 @@ Real estate members with Real Estate OS installed (never part of the main path, 
 | `/hi5-self` | business-os | live | Foundation | The Self Profile section has a `behavioral_style` | It lets everything I write match how you think and communicate, and you can build a profile for each teammate so messages fit how they read best. |
 | `/hi5-voice-creator` | business-os | live | Foundation | The Voice Library has an entry whose For is Self | It creates a voice skill that writes like you, or like a teammate or a client, so every draft sounds like the right person. |
 | `/hi5-dashboard` | business-os | live | Foundation | The Dashboards database has an entry with Status Active | It builds a live dashboard from what you need to see and act on each day, using your own apps, with email actions, a follow-up queue, trackers, and a Command Center page. |
+| `/hi5-bottleneck` | business-os | live | Foundation | The Bottlenecks database has at least one row | It finds what is slowing you down and fixes it with the lightest right tool: a simpler step, a Hi5 skill, platform automation, AI help, or an AI employee. |
 | `/hi5-org-chart` | business-os | live | Anytime | The member's own People page has an `Org chart:` link under Notes | It shows your humans and AI employees in one picture, so every AI employee has one human owner and nothing is left without an owner. |
 | `/hi5-bizplan` | business-os | live | Foundation | Business Numbers has `last_plan_date` | It turns your goals into numbers and a 90 day roadmap, and other skills read those numbers. |
 | `/hi5-goals` | business-os | live | Foundation | Business Numbers `current_quarter` is the quarter we are in, and the Quarterly Goals page has a section for it | It breaks your plan into this quarter's targets and a 13 week plan, and a weekly check-in keeps you on track. |
@@ -91,6 +92,7 @@ Used by /hi5-next ("Show me everything") and by the "Show me what I can do" opti
 | A voice skill that writes like me, a teammate, or a client | /hi5-voice-creator |
 | A live dashboard of what I need to see and act on | /hi5-dashboard |
 | My team and AI employees in one org chart | /hi5-org-chart |
+| Find what is slowing me down and fix it with automation, AI help, or an AI employee | /hi5-bottleneck |
 | Proof and trust | /hi5-casestudy |
 | Run my CRM by chat (real estate) | /hi5-re-crm |
 | Listing appointments (real estate) | /hi5-re-listing-appt |

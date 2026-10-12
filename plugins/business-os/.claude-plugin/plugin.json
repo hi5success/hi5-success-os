@@ -1,6 +1,6 @@
 {
   "name": "business-os",
-  "description": "Business planning, goal setting, performance review, voice creation, dashboard, and team org chart tools for entrepreneurs and small business owners.",
-  "version": "1.11.0",
+  "description": "Business planning, goal setting, performance review, voice creation, dashboard, team org chart, and bottleneck finding tools for entrepreneurs and small business owners.",
+  "version": "1.12.0",
   "author": { "name": "Hi5 Success" }
 }

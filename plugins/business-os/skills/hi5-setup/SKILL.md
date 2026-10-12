@@ -273,11 +273,11 @@ If they want to continue, run the next available stage from the industry file.
 
 On a re-run, quietly check the member's databases against `templates/workspace-build.md`. This is how members who set up earlier receive anything that was added later, and how a missing database never makes a skill's save fail.
 
-**1. Missing databases.** For each database defined in `templates/workspace-build.md` that Hi5 skills save to (the Content Planner, the Marketing Hub, the Voice Library, the Dashboards database, the People database, and the AI Employees database), confirm that the saved ID (`content_planner_db_id`, `marketing_hub_db_id`, `voice_library_db_id`, `dashboards_db_id`, `people_db_id`, `ai_employees_db_id`) opens a database.
+**1. Missing databases.** For each database defined in `templates/workspace-build.md` that Hi5 skills save to (the Content Planner, the Marketing Hub, the Voice Library, the Dashboards database, the People database, the AI Employees database, and the Bottlenecks database), confirm that the saved ID (`content_planner_db_id`, `marketing_hub_db_id`, `voice_library_db_id`, `dashboards_db_id`, `people_db_id`, `ai_employees_db_id`, `bottlenecks_db_id`) opens a database.
 - If it does not, search under the root page for a database with that exact title. If you find one, fix the saved ID in Page IDs.
 - If none exists, say: "Your [name] isn't in your workspace yet. I can add it with the standard Hi5 layout. OK?" If they agree, create ONE database with that name inside the root page, using the properties and options in `templates/workspace-build.md`, and save its ID in Page IDs. If they say no, skip it and do not ask again in this session.
 - Never create a duplicate, never create any other database, and never touch existing rows.
-- Members who duplicated the official Hi5 template already have a Marketing Hub, so they will not see this. Members who copied the template before the Voice Library, the People database, or the AI Employees database was added will be offered it once.
+- Members who duplicated the official Hi5 template already have a Marketing Hub, so they will not see this. Members who copied the template before the Voice Library, the People database, the AI Employees database, or the Bottlenecks database was added will be offered it once.
 
 **2. Missing select options.** For the Content Planner (Status, Deliverable Type, and the others with listed options) and the Marketing Hub (Type and Status), compare the live options with `templates/workspace-build.md`.
 - If every option is there, say nothing.
@@ -288,7 +288,7 @@ This is how members who set up earlier receive new labels such as the Marketing 
 
 **3. Template items.** Read the line that starts "Template items:" in `templates/workspace-build.md`. Confirm each page and database on it exists under the root page, using the saved ID first and the exact title second, and fix any wrong ID in Page IDs.
 - If a page is missing, recreate only that page with the title and line given in `templates/workspace-build.md`, save its ID, and tell the member in one line.
-- A missing Content Planner, Marketing Hub, Voice Library, Dashboards, People, or AI Employees database follows item 1.
+- A missing Content Planner, Marketing Hub, Voice Library, Dashboards, People, AI Employees, or Bottlenecks database follows item 1.
 - Never create a duplicate, never remove or rename anything, and never touch rows.
 
 ## PROFILE UPDATE
