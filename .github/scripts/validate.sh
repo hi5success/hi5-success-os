@@ -211,6 +211,19 @@ for f in SKILL.md references/generated-skill.md references/voice-guide.md templa
   [ -f "plugins/business-os/skills/hi5-voice-creator/$f" ] || ERRORS+=("hi5-voice-creator is missing $f")
 done
 
+# 20. Every writing skill carries the shared reader rule, and /hi5-self keeps its teammate profile files
+for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/real-estate-os/skills/*/ plugins/business-os/skills/hi5-dashboard/; do
+  sk=$(basename "$d")
+  case "$sk" in hi5-seo|hi5-site-audit|hi5-context|hi5-yt-plan|hi5-yt-research|hi5-yt-setup) continue;; esac
+  grep -q '**Reader.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the shared reader rule")
+  grep -q 'People database' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md reader rule does not mention the People database")
+done
+for f in references/teammate-profiles.md references/teammate-questions.md templates/person-page.md; do
+  [ -f "plugins/business-os/skills/hi5-self/$f" ] || ERRORS+=("hi5-self is missing $f")
+done
+grep -q 'Estimated by' plugins/business-os/skills/hi5-self/references/teammate-profiles.md || ERRORS+=("hi5-self teammate profiles must keep the Estimated by label")
+grep -q '### 👥 People' plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md is missing the People database")
+
 # 18. The dashboard skill keeps its discovery, widget library, email actions, Notion rules, and the no repeated connector prompt test
 for f in SKILL.md references/discovery.md references/widgets.md references/email-actions.md references/notion-trackers.md references/build.md references/connectors.md industries/real-estate.md industries/generic.md; do
   [ -f "plugins/business-os/skills/hi5-dashboard/$f" ] || ERRORS+=("hi5-dashboard is missing $f")
