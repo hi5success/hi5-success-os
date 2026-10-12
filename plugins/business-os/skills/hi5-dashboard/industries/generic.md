@@ -10,6 +10,9 @@ Used by `SKILL.md` Step 4. These are suggestions, offered after discovery, and n
 - **Money snapshot:** the quarter's targets against actual from `/hi5-goals`, and cash in if a finance tool is connected.
 - **Marketing snapshot:** the Marketing Hub and Content Planner at a glance.
 
+## Follow-Up Queue (for any business with a CRM or a list of people to follow up with)
+Groups the member names, for example leads, open quotes, and past customers. The member sets what counts as stale and the channel for each group. Ranked by behavior only (days since contact, stage, recent activity, value if set), with a one-line reason and a draft in the member's voice. Text only with consent, otherwise email, otherwise "Call or skip". Full detail in `follow-up-queue.md`.
+
 ## A service business (contractor, cleaner, consultant, repair)
 - **Leads and quotes:** new leads, quotes sent and waiting, quotes to chase. From the CRM, or a Notion tracker (Quote, Client, Amount, Sent date, Status).
 - **Jobs this week:** from the calendar, with what is needed for each.

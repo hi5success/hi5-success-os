@@ -12,6 +12,7 @@ Build a dashboard the member opens many times a day, made from their real answer
 - **Discovery before widgets.** Never start from a list of widgets. Every item on the dashboard must pass one test: "If you saw this, what would you do?" Drop anything that leads to no action.
 - **Scan first, then ask.** Before asking anything, read the Master Profile (industry, business, brand, languages, tools), the `/hi5-self` profile, the Dashboards database (every entry's name, version, and pages), existing Notion trackers and the Hi5 databases, and which connectors you can see in this session (email, calendar, CRM or GoHighLevel and how many sub-accounts, Notion, Slack, Google Chat, finance tools). Say in one or two lines what you found, for example "I can see Gmail, Google Calendar, and GoHighLevel with 3 sub-accounts, and a Tasks database. Slack is not connected." Ask only about what is missing. Never re-ask anything already known.
 - **Read from the app, store the rest in Notion.** Data that lives in an app (CRM, email, calendar) is read from that app. Never copy it into Notion just to display it. For anything that has no app (a transaction checklist, important dates the CRM does not hold, goals, onboarding steps, content status, custom trackers), use a Notion database. Reuse an existing Hi5 database (Tasks, the Marketing Hub, goals, the Voice Library) before creating a new one, and never duplicate one. A new Notion database needs the member's OK on the fields first. See `references/notion-trackers.md`.
+- **No Send all, ever.** No widget has a bulk send, an overnight send, a scheduled send, or an automatic send. Every message goes out only when the member clicks send on that one message.
 - **Nothing sends unless the member clicks.** Clicking send on one message is the approval for that one message. Check texting consent and do-not-contact status before any text. Never change a CRM record without showing the change and getting an OK. A mailbox action (label, mark as read, archive, spam) happens only from the member's button click, using the setting they chose.
 - **Never ask about a connector again and again.** Declare every connector the dashboard needs once, at build time. Opening or refreshing reads data without asking. Only when a connector fails (expired or disconnected) show one "Reconnect [app]" message on that widget while the rest keeps working. See `references/build.md`.
 - **No sensitive data the member did not ask for.** Do not show or store account numbers, full card numbers, health details, or private notes unless the member asked for that widget. Keep client details to what the member's job needs.
@@ -41,7 +42,7 @@ Follow `references/connectors.md`. Ask which apps they use day to day (email, ca
 
 ## Step 3: Discovery interview
 
-Follow `references/discovery.md`. A few questions at a time, skipping what the scan answered, and filter every item with "If you saw this, what would you do?"
+Follow `references/discovery.md`. A few questions at a time, skipping what the scan answered, and filter every item with "If you saw this, what would you do?" If the member wants follow-ups (people who need a reply or have gone stale), add the Follow-Up Queue questions from `references/follow-up-queue.md` (what counts as stale per group, which pipelines and stages, the channel per group, and the logging heads-up).
 
 ## Step 4: Plan
 
@@ -53,10 +54,11 @@ Show a plan and wait for the member's OK:
 - New Notion databases with their proposed fields, for the member's OK.
 - Who uses it (just them, a team, or an assistant) and what that changes.
 - The email button settings (see `references/email-actions.md`) if there is an email widget.
+- For a Follow-Up Queue widget: the stale days per group, the pipelines and stages included and skipped, the channel per group, the freshness approach (a daily scheduled task writing to a Notion Follow-Up Queue database, or live ranking with drafts on a click) and why, and the proposed database fields for the member's OK. See `references/follow-up-queue.md`.
 
 ## Step 5: Build
 
-Follow `references/build.md`: set up any approved Notion databases first, then build the artifact. Check which live data features this session's Claude supports and use live connector data where it can; otherwise build a snapshot with a clear Refresh path (run /hi5-dashboard again to refresh). Declare every connector once at build time. Run the two-open test.
+Follow `references/build.md`: set up any approved Notion databases first, then build the artifact. Check which live data features this session's Claude supports and use live connector data where it can; otherwise build a snapshot with a clear Refresh path (run /hi5-dashboard again to refresh). Declare every connector once at build time (including Notion if the dashboard reads or writes a database). Run the two-open test.
 
 ## Step 6: Review
 

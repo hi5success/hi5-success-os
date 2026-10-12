@@ -23,6 +23,9 @@ Used by `SKILL.md` Step 5. The dashboard is a Claude artifact. Check what this s
 - **Keep last good data** visible with a "last updated" stamp taken from the result's own time (`cache.storedAt`), not the page clock.
 - **Never ask again on open or refresh.** Opening or refreshing the dashboard only reads data. It never shows a prompt of its own.
 
+## The Follow-Up Queue (freshness)
+Choose the approach from `follow-up-queue.md` and say why in the plan. Prefer the daily scheduled task that writes drafts to a Notion Follow-Up Queue database when the member's Claude can run scheduled tasks and the member agrees, because live drafting for a whole list on every open is slow, asks consent, and is rate limited. The dashboard then reads the database with `watchTool` and shows "Last updated". Otherwise rank live from CRM reads and draft one message on a click. Declare the Notion tools it reads and writes (query, update a row, create a task row) and the CRM and email tools it calls once at publish. Send is a real connector call only from a click, and a send is followed by one CRM note write the member was told about during setup.
+
 ## Snapshot (when `mcp` is not available)
 - At build or refresh time, read the data yourself through the connectors in this session (read only), and embed it as data in the page.
 - Put a clear banner at the top: "Snapshot from [date and time]. To refresh, run /hi5-dashboard and choose Refresh." Show the time on every widget.

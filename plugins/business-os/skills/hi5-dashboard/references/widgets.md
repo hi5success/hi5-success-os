@@ -53,6 +53,12 @@ Used by `SKILL.md` Step 4. Offer a widget only when the member's discovery answe
 - **Shows:** a list, a board grouped by a status field, or counts, as the member chooses.
 - **Actions:** add a row, change a status, mark done, all written back to that Notion database.
 
+## Follow-Up Queue
+- **Data source:** the CRM (read only) for last contact, stage, source, open tasks, and the last message, and, when the member chose the daily scheduled task, a Notion "Follow-Up Queue" database the task fills. Full spec in `follow-up-queue.md`.
+- **Shows:** people who need a follow-up or have gone stale, in the member's groups, each with a one-line reason and a recommended text or email in the member's voice, ready to edit. Text is suggested only with consent and not do-not-contact, otherwise email, otherwise "Call or skip" with the reason.
+- **Actions:** Send (that one message, after edits, then a CRM note is logged), Snooze (3, 7, or 14 days), Make a task (Notion, and the CRM if connected), and Not now (today only). Any other CRM change is shown first and needs an OK.
+- **Notes:** ranked by behavior only, never by a protected characteristic. No Send all and no automatic sending.
+
 ## Summary cards
 - **Data source:** the other widgets and pages.
 - **Shows:** one card per page on the Command Center home page, each with the one or two numbers that matter and a link to the full page.

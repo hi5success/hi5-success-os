@@ -10,6 +10,15 @@ Used by `SKILL.md` Step 3. Discovery comes first and widgets serve the answers. 
 5. **What you track now.** Where do you track things today (a spreadsheet, a notebook, a CRM, a board, your head)? Any dashboards you already have? Offer to review one they paste or describe.
 6. **Anything you need to act on, not just see.** What would you want to do with one click (reply, make a task, mark something done, move something)?
 
+## Follow-Up Queue questions (add when the member wants follow-ups)
+Full detail in `follow-up-queue.md`. Scan the CRM first so the questions use the member's real pipelines and stages.
+1. **Stale.** What counts as stale for you: no contact in how many days, for each group (new leads, active clients, past clients, sphere, or your own groups)? Offer starting points (for example 3, 7, 90, and 180 days) and say they are only a starting point. They decide.
+2. **Pipelines and stages.** Which pipelines and stages should it include, and which should it skip (lost, closed, do-not-contact)?
+3. **Channel.** For each group, do you prefer text or email? (Texts are still checked for consent for each person.)
+4. **List size.** How many people do you want to see at once?
+5. **Logging.** Tell them: "When you send from the dashboard, I log the touch as a note in your CRM." Ask whether that is OK.
+6. **Freshness.** Offer a daily scheduled task that builds the queue and drafts ahead of time, and ask what time of day.
+
 ## The filter (apply to every item)
 For every item they mention, ask: **"If you saw this, what would you do?"**
 - If the answer is a clear action (reply, call, send, approve, chase, decide, delegate), keep it and note the action. Make the action a button where the tools allow.
