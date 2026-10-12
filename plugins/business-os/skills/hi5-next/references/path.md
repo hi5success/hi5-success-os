@@ -26,7 +26,7 @@ Real estate members with Real Estate OS installed (never part of the main path, 
 | Skill | Plugin | Status | Path stage | Done when | Why it matters |
 |---|---|---|---|---|---|
 | `/hi5-setup` | business-os | live | Foundation | Setup Status `stage_1_core_profile` is complete | Every other skill reads your profile, so you never re-explain your business. |
-| `/hi5-self` | business-os | live | Foundation | The Self Profile section has a `behavioral_style` | It lets everything I write match how you think and communicate. |
+| `/hi5-self` | business-os | live | Foundation | The Self Profile section has a `behavioral_style` | It lets everything I write match how you think and communicate, and you can build a profile for each teammate so messages fit how they read best. |
 | `/hi5-voice-creator` | business-os | live | Foundation | The Voice Library has an entry whose For is Self | It creates a voice skill that writes like you, or like a teammate or a client, so every draft sounds like the right person. |
 | `/hi5-dashboard` | business-os | live | Foundation | The Dashboards database has an entry with Status Active | It builds a live dashboard from what you need to see and act on each day, using your own apps, with email actions, a follow-up queue, trackers, and a Command Center page. |
 | `/hi5-bizplan` | business-os | live | Foundation | Business Numbers has `last_plan_date` | It turns your goals into numbers and a 90 day roadmap, and other skills read those numbers. |

@@ -51,6 +51,7 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - voice_profile_page_id (added by Stage 3, or by /hi5-yt-setup if the member has not done Stage 3)
 - voice_library_db_id (added by /hi5-voice-creator, or by the setup workspace check)
 - dashboards_db_id (added by /hi5-dashboard, or by the setup workspace check)
+- people_db_id (added by /hi5-self, or by the setup workspace check)
 - objection_bank_page_id (added by Stage 4)
 - neighborhoods: `Name = page id` pairs, comma separated (added by Stage 5)
 
@@ -151,7 +152,7 @@ Written by Stage 3.
 - client_words: three words their best clients would use
 
 ### Self Profile
-Written by /hi5-self. Not part of /hi5-setup.
+Written by /hi5-self. Not part of /hi5-setup. It ends with `people_page_id`, the member's own page in the People database.
 
 ### Content Profile
 Added by /hi5-yt-setup (Content OS). Not created by /hi5-setup; the skeleton does not include it. Fields: `channels` (list of channel names), `offer`, `youtube_audience`, `affiliate_links`, `channel_goal`, `content_model`, `posting_frequency`, `weekly_rhythm`, `recording_schedule`, `edit_turnaround_days`, `competitor_channel_ids`, `content_categories`, `distribution`, `default_deliverable_type`, `primary_platform`, and the operator preferences `output_format`, `script_depth`, `number_of_options`, `explanation_level`. With more than one channel, each extra channel is a child page "Channel – [name]" whose fields override these.

@@ -1,6 +1,6 @@
 ---
 name: hi5-self
-description: Personality and communication profile builder for Hi5 Success OS. Assesses the member's behavioral style, decision-making patterns, energy type, and communication preferences using 30 guided questions with multiple choice answers. Used to tailor all Hi5 skill outputs to the member's personality. Triggers when the user runs /hi5-self, says "personality assessment", "learn about me", or "profile assessment". Can also be triggered automatically at the end of /hi5-setup.
+description: Personality and communication profile builder for Hi5 Success OS. Assesses the member's behavioral style, decision-making patterns, energy type, and communication preferences using 30 guided questions with multiple choice answers. Also builds a profile for a teammate, saved in the People database, so messages can fit how each person reads best. Used to tailor all Hi5 skill outputs to the member's personality. Triggers when the user runs /hi5-self, says "personality assessment", "learn about me", or "profile assessment". Can also be triggered automatically at the end of /hi5-setup.
 ---
 
 # Hi5 Self: Personality Profile Skill
@@ -15,6 +15,13 @@ Learn how the member thinks, communicates, makes decisions, and is motivated. St
 - After scoring, always explain what their profile means in plain language
 - Always recommend free external tools to go deeper
 - Combination answers: if the member says they are between two options (for example "B and C"), record both. Ask "Which one is more like you?" if they do not say. Score mainly on the primary answer: it counts as a full answer, and the secondary answer only breaks ties between letters. Save both answers in the notes so nothing is lost. Never score a combination as half and half
+
+---
+
+## WHO IS THIS FOR
+Scan first: read the Self Profile section of the Master Profile and the People database (`people_db_id` in the Page IDs). Then ask: "Is this for you or for someone on your team?"
+- **For the member:** continue below. If a Self Profile already exists, say so and ask whether to update it.
+- **For a teammate:** follow `references/teammate-profiles.md` (the best way is the copy-paste question set in `references/teammate-questions.md`, answered by the teammate). Do not run the 30 questions on the member's behalf. Human Design needs the person's OK. Come back here for the storage rules only when the member's own profile is saved.
 
 ---
 
@@ -396,6 +403,12 @@ Fields stored:
 - receives_info_best (derived from scoring)
 - assessment_sources (which results the member supplied, such as DISC or Enneagram, or "30 questions")
 - answer_notes (any combination answers, with the primary marked)
+- people_page_id (the member's own page in the People database, added when the row is created)
+
+---
+
+## ALSO SAVE TO THE PEOPLE DATABASE
+After the member's Self Profile is saved, create or refresh the member's own row and page in the People database (`people_db_id`), using `templates/person-page.md` and the field rules in `references/teammate-profiles.md`. The row links to the Self Profile and does not copy every answer. Show the row first and write it after the member's OK. If there is no People database, offer to add it once (see `references/teammate-profiles.md`), and never block the profile on it. Save `people_page_id` in the Self Profile section (add the field at the end of the section, never rename or remove one).
 
 ---
 
