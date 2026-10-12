@@ -48,6 +48,8 @@ These fields are collected inside the skill that uses them, not by setup, so `pr
 | mls_name, cma_adjustments | Tools | /hi5-re-listing-appt, asked once when a CMA is built |
 | voice_library_db_id (Page IDs) and default_voice (Voice Profile page) | Page IDs, Voice Profile page | /hi5-voice-creator, the first time it saves a voice. The Voice Library is a database in the workspace template, and the setup workspace check offers it to older workspaces |
 | One Voice Library row per voice (guide, Learned notes, samples list), and Learned lessons saved by voice-using skills | Voice Library | /hi5-voice-creator and every Hi5 writing skill that uses a voice, with the member's OK |
+| dashboards_db_id (Page IDs) | Page IDs | /hi5-dashboard, the first time it saves a dashboard. The Dashboards database is in the workspace template, and the setup workspace check offers it to older workspaces |
+| One Dashboards row per dashboard (pages, widgets, data sources, connected apps, the Notion databases used, email button settings, discovery answers) | Dashboards | /hi5-dashboard |
 | One Listing Appointment row per kit | Marketing Hub | /hi5-re-listing-appt |
 | mls_remarks_limit, coming_soon_policy, sold_price_policy | Tools | /hi5-re-listing-launch, asked once and only if the profile does not already say |
 | One Listing Launch row per piece, and one Seller Update row per update or plan | Marketing Hub | /hi5-re-listing-launch, /hi5-re-seller-updates |
