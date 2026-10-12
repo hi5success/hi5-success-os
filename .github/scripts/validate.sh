@@ -232,6 +232,15 @@ grep -q 'exactly one human manager' plugins/business-os/skills/hi5-org-chart/SKI
 grep -q 'AI Operations' plugins/business-os/skills/hi5-org-chart/SKILL.md || ERRORS+=("hi5-org-chart/SKILL.md must keep the optional AI Operations suggestion")
 grep -q '### 🤖 AI Employees' plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md is missing the AI Employees database")
 
+# 22. The bottleneck skill keeps its files, the fix ladder order, the platform rule, and the Bottlenecks database
+for f in SKILL.md references/interview.md references/ranking.md references/fix-ladder.md references/quick-win.md references/platform-instructions.md references/ai-employees.md templates/job-description.md templates/project-instructions.md industries/real-estate.md industries/generic.md; do
+  [ -f "plugins/business-os/skills/hi5-bottleneck/$f" ] || ERRORS+=("hi5-bottleneck is missing $f")
+done
+grep -q 'never change their CRM or platform' plugins/business-os/skills/hi5-bottleneck/SKILL.md || ERRORS+=("hi5-bottleneck/SKILL.md must keep the never change their CRM or platform rule")
+grep -q 'exactly one human manager' plugins/business-os/skills/hi5-bottleneck/SKILL.md || ERRORS+=("hi5-bottleneck/SKILL.md must keep the exactly one human manager rule")
+grep -q 'Check Hi5 first' plugins/business-os/skills/hi5-bottleneck/SKILL.md || ERRORS+=("hi5-bottleneck/SKILL.md must keep the check Hi5 first rule")
+grep -q '### 🚧 Bottlenecks' plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md is missing the Bottlenecks database")
+
 # 18. The dashboard skill keeps its discovery, widget library, email actions, Notion rules, and the no repeated connector prompt test
 for f in SKILL.md references/discovery.md references/widgets.md references/email-actions.md references/notion-trackers.md references/build.md references/connectors.md industries/real-estate.md industries/generic.md; do
   [ -f "plugins/business-os/skills/hi5-dashboard/$f" ] || ERRORS+=("hi5-dashboard is missing $f")
