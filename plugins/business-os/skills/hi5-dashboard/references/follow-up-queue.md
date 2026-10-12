@@ -26,7 +26,7 @@ Never rank, filter, group, or describe contacts by a protected characteristic or
 
 ## The recommended message
 - Written in the member's voice (the voice rule in `SKILL.md`), based on the last conversation and the stage. Short (a text under 40 words, an email under 90), personal, with one clear next step. Never "just checking in". No em dashes.
-- Use only facts from the CRM and the last conversation. Never invent a listing, a price, a date, a promise, or a result. Use a [PLACEHOLDER] and say what is missing.
+- Use only facts from the CRM and the last conversation, and only the part that helps the next step (a question, a request, a date). Do not riff on small talk, do not guess at context, and never draw on private notes. Never mention anything that points to a protected characteristic. Never invent a listing, a price, a date, a promise, or a result. Use a [PLACEHOLDER] and say what is missing.
 - Follow every other rule that applies (disclosure lines and notices for email, no claims, privacy).
 - **Channel and the gate.** Before suggesting a text, run the texting gate in `email-actions.md` ("Texting from the dashboard"): consent from the member's `consent_source` (unknown means no), not do-not-disturb or STOP, and inside 8am to 9pm in the person's time zone. If the text passes, suggest it for groups the member chose text for. Otherwise suggest an email. If neither is allowed (no consent and no usable email, or marked do-not-contact), show "Call or skip" with the reason in one line, and write no draft. A call is the member's own action and needs the member's own scrub confirmation.
 
