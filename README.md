@@ -86,7 +86,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 ### Marketing OS
 | Command | What it does |
 |---|---|
-| `/hi5-email` | Builds email nurture sequences |
+| `/hi5-email` | Writes any kind of email or sequence for any business, by the type you name (welcome, nurture, launch, event reminders, after a purchase, win-back, review ask, announcement), in your own voice. Briefs from your profile first, shows the sequence plan for your OK, drafts with the right style and rules, and checks every draft before you see it. Can also audit an email you paste. Drafts only, it never sends |
 | `/hi5-newsletter` | Writes a weekly or monthly newsletter issue |
 | `/hi5-seo` | Builds a local SEO and Google Business Profile plan |
 | `/hi5-site-audit` | Audits your live website page by page: titles, descriptions, headings, schema, speed, links, languages, and Fair Housing language. Gives a prioritized fix list with steps for your platform, and compares with your last audit |
