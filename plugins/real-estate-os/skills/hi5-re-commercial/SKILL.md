@@ -1,12 +1,15 @@
 ---
 name: hi5-re-commercial
-description: Supports a real estate member on commercial sales and leases for tenants, buyers, owners, and landlords. Builds the requirements intake, a total occupancy cost comparison worksheet from the documents and the client's own numbers, a letter of intent outline for the client and attorney to complete, tenant representation and landlord representation talk tracks, the due diligence and lease review checklist, and the deal tracker and weekly client update. Never states a market rate, a value, or what a lease or rule provides, never suggests terms the client did not state, treats zoning as questions for the planning office, and puts attorney review in every phase. Reads the profile, CRM, and saved pages first and asks only about what is missing. Drafts only. Real estate only. Triggers when the user runs /hi5-re-commercial, says "commercial lease", "letter of intent", "tenant rep", "landlord rep", "occupancy cost", or "commercial due diligence".
+description: Supports a real estate member on commercial sales and leases, covering requirements intake, an occupancy cost comparison from the client's own numbers, a letter of intent outline for the client and attorney, tenant and landlord rep talk tracks, due diligence and lease review checklists, and weekly updates. Never states a market rate, a value, or what a lease provides, never suggests terms the client did not state, and puts attorney review in every phase. Drafts only. Real estate only. Triggers when the user runs /hi5-re-commercial, says "commercial lease", "letter of intent", "tenant rep", "landlord rep", "occupancy cost", or "commercial due diligence".
 ---
 
 # Hi5 Commercial: Requirements, Occupancy Costs, and Letters of Intent for Counsel
 
 ## Purpose
 Help a member run commercial work with discipline: capture the client's real requirements, compare occupancy costs from the documents, outline a letter of intent for the client and attorney, and keep every phase on a checklist with attorney review. The member prepares and communicates. Counsel decides what the documents say and mean.
+
+## What it covers
+Supports a real estate member on commercial sales and leases for tenants, buyers, owners, and landlords. Builds the requirements intake, a total occupancy cost comparison worksheet from the documents and the client's own numbers, a letter of intent outline for the client and attorney to complete, tenant representation and landlord representation talk tracks, the due diligence and lease review checklist, and the deal tracker and weekly client update. Never states a market rate, a value, or what a lease or rule provides, never suggests terms the client did not state, treats zoning as questions for the planning office, and puts attorney review in every phase. Reads the profile, CRM, and saved pages first and asks only about what is missing. Drafts only. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.

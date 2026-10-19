@@ -17,7 +17,7 @@
       "name": "business-os",
       "source": "./plugins/business-os",
       "description": "Business planning, goal setting, performance review, voice creation, dashboard, team org chart, and bottleneck finding tools for entrepreneurs and small business owners.",
-      "version": "1.12.2",
+      "version": "1.12.3",
       "author": { "name": "Hi5 Success" },
       "keywords": ["business", "planning", "goals", "strategy", "notion", "entrepreneur"]
     },
@@ -32,8 +32,8 @@
     {
       "name": "real-estate-os",
       "source": "./plugins/real-estate-os",
-      "description": "Real estate only skills for agents, teams, and brokers. Run your CRM by conversation, prepare for listing appointments, launch listings, keep sellers informed, run files from contract to keys, plan your day, keep past clients close, prospect expireds, FSBOs, and farms, guide buyers and renters, write compliant ad packs, practice hard conversations, support rentals, investors, commercial, and land, and keep area fact files current, with Fair Housing, texting consent, and approval-first guardrails built in.",
-      "version": "1.9.1",
+      "description": "Real estate only skills for agents, teams, and brokers: CRM by conversation, listings, sellers, buyers, transactions, daily planning, sphere, prospecting, ads, role-play, rentals, investors, commercial, land, and area fact files, with Fair Housing, texting consent, and approval-first guardrails.",
+      "version": "1.9.2",
       "author": { "name": "Hi5 Success" },
       "keywords": ["real estate", "crm", "gohighlevel", "listing appointment", "cma", "fair housing", "notion"]
     }

@@ -1,12 +1,15 @@
 ---
 name: hi5-re-prospect
-description: Runs a real estate member's own prospecting to homeowners they do not yet work with, with Do Not Call and texting-consent checks on every touch. Ranks expired listings from an export or paste (or an optional browser-assisted review on the member's own MLS login), builds the expired owner comeback sequence, the For Sale By Owner help sequence, the farm plan, monthly farm letters, the door-knock script, equity conversation questions, and call and voicemail scripts, and works from contact lists the member brings from their own data vendor such as REDX, Vulcan7, or Landvoice. Never skip traces, scrapes, or bulk texts, and never calls or texts until the member confirms the number was scrubbed. Chooses farms on business criteria only, never on who lives there, and never states a home's value. Drafts only, with a plan and the member's OK before anything is logged or sent. Real estate only. Triggers when the user runs /hi5-re-prospect, says "expired listings", "FSBO", "farm area", "door knock script", "prospecting", or "call script for expireds".
+description: Runs a real estate member's own prospecting to homeowners they do not yet work with, with Do Not Call and texting-consent checks on every touch, covering expired listing ranking, comeback and FSBO sequences, farm plans and letters, door-knock, call, and voicemail scripts, and lists from the member's own data vendor. Never skip traces, scrapes, or bulk texts, and never calls or texts until the member confirms the number was scrubbed. Drafts only, with the member's OK before anything is logged or sent. Real estate only. Triggers when the user runs /hi5-re-prospect, says "expired listings", "FSBO", "farm area", "door knock script", "prospecting", or "call script for expireds".
 ---
 
 # Hi5 Prospect: Expireds, FSBOs, and Your Farm
 
 ## Purpose
 Help a member reach homeowners who might need an agent (their own expireds, For Sale By Owner sellers, and a geographic farm) with honest, helpful outreach that passes the Do Not Call and texting-consent checks on every single touch. The member makes every call, text, visit, and send. This skill researches, ranks, drafts, and keeps the records.
+
+## What it covers
+Runs a real estate member's own prospecting to homeowners they do not yet work with, with Do Not Call and texting-consent checks on every touch. Ranks expired listings from an export or paste (or an optional browser-assisted review on the member's own MLS login), builds the expired owner comeback sequence, the For Sale By Owner help sequence, the farm plan, monthly farm letters, the door-knock script, equity conversation questions, and call and voicemail scripts, and works from contact lists the member brings from their own data vendor such as REDX, Vulcan7, or Landvoice. Never skip traces, scrapes, or bulk texts, and never calls or texts until the member confirms the number was scrubbed. Chooses farms on business criteria only, never on who lives there, and never states a home's value. Drafts only, with a plan and the member's OK before anything is logged or sent. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.

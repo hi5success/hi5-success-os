@@ -241,6 +241,18 @@ grep -q 'Emojis' "$EM/intake.md" || ERRORS+=("hi5-email intake.md must ask the e
 grep -q 'always italic' "$EM/rules.md" || ERRORS+=("hi5-email rules.md must keep the italic P.S. rule")
 grep -q 'platform-output.md' plugins/marketing-os/skills/hi5-email/SKILL.md || ERRORS+=("hi5-email SKILL.md Step 5 must name platform-output.md")
 
+# 25. Description length limits: skills 900 characters, plugins 450 characters
+for f in plugins/*/skills/*/SKILL.md; do
+  d=$(grep -m1 '^description: ' "$f" | tr -d '\r' | sed 's/^description: //')
+  [ ${#d} -le 900 ] || ERRORS+=("$f: description is ${#d} characters, the limit is 900")
+done
+for f in plugins/*/.claude-plugin/plugin.json marketplace.json; do
+  while IFS= read -r line; do
+    d=$(printf '%s' "$line" | tr -d '\r' | sed 's/^ *"description": "//; s/",\{0,1\}$//')
+    [ ${#d} -le 450 ] || ERRORS+=("$f: a plugin description is ${#d} characters, the limit is 450")
+  done < <(grep '"description": "' "$f" | grep -v 'A suite of Claude plugins')
+done
+
 # 21. The org chart skill keeps its files, the one human manager rule, and the AI Employees database
 for f in SKILL.md references/interview.md references/chart-artifact.md references/highlights.md references/edits.md; do
   [ -f "plugins/business-os/skills/hi5-org-chart/$f" ] || ERRORS+=("hi5-org-chart is missing $f")

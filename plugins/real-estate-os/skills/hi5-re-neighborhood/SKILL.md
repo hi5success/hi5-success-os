@@ -1,12 +1,15 @@
 ---
 name: hi5-re-neighborhood
-description: Builds and keeps current the neighborhood fact file for each area a real estate member serves, the reference page every other Hi5 skill reads. Scans the existing fact file, saved pages, CRM, and anything the member pastes first, then interviews only for gaps. Puts a source and a date on every fact, refreshes stale or unverified facts, converts old verify marks, adds notes for rentals, investors, commercial, land, new construction, 55+ communities, luxury, and relocation, writes a where-to-verify sheet, and drafts content angles and a Living in guide outline. Describes the place, the homes, and the amenities only, never who lives in an area, never rates schools or safety, and points to official sources instead. Never scrapes or pulls statistics from listing sites, and changes the member's page only after showing a plan and getting an OK. Real estate only. Triggers when the user runs /hi5-re-neighborhood, says "area fact file", "neighborhood profile", "refresh my neighborhood", "verify my area facts", or "Living in guide".
+description: Builds and keeps current the neighborhood fact file for each area a real estate member serves, the page every other Hi5 skill reads. Puts a source and a date on every fact, refreshes stale ones, adds notes by client type, and drafts a where-to-verify sheet and content angles. Describes the place only, never who lives there, never rates schools or safety, and changes the member's page only after a plan and an OK. Real estate only. Triggers when the user runs /hi5-re-neighborhood, says "area fact file", "neighborhood profile", "refresh my neighborhood", "verify my area facts", or "Living in guide".
 ---
 
 # Hi5 Neighborhood: Area Fact Files With a Source and a Date on Every Fact
 
 ## Purpose
 Keep a trustworthy fact file for every area the member serves, so listings, buyer plans, ads, posts, and emails draw on real local detail that is current and verified. The file describes the place, the homes, and the amenities. Every number carries its source and date, and nothing is invented.
+
+## What it covers
+Builds and keeps current the neighborhood fact file for each area a real estate member serves, the reference page every other Hi5 skill reads. Scans the existing fact file, saved pages, CRM, and anything the member pastes first, then interviews only for gaps. Puts a source and a date on every fact, refreshes stale or unverified facts, converts old verify marks, adds notes for rentals, investors, commercial, land, new construction, 55+ communities, luxury, and relocation, writes a where-to-verify sheet, and drafts content angles and a Living in guide outline. Describes the place, the homes, and the amenities only, never who lives in an area, never rates schools or safety, and points to official sources instead. Never scrapes or pulls statistics from listing sites, and changes the member's page only after showing a plan and getting an OK. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.

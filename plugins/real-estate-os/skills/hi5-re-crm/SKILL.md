@@ -1,12 +1,15 @@
 ---
 name: hi5-re-crm
-description: Runs a real estate member's CRM by conversation, GoHighLevel first with a paste-mode fallback for any other CRM. Tests the connection, maps how the member actually works (pipelines, fields, tags, forms, calendars, and where texting consent is captured), then logs leads, appointments, and showings, turns contracts and leases into CRM updates, books appointments, moves and cleans up deals, closes or loses deals, forecasts the pipeline, runs a CRM tune-up from the gaps the member confirms, enrolls contacts in workflows, and drafts and sends one message at a time. Works for every client type. Shows a plan and waits for the member's OK before any change or send, checks texting consent and do-not-contact status, and keeps Fair Housing out of every record. Real estate only. Triggers when the user runs /hi5-re-crm, says "update my CRM", "log this lead", "map my CRM", "contract to CRM", or "move these deals".
+description: Runs a real estate member's CRM by conversation, GoHighLevel first with a paste-mode fallback for any other CRM, covering tests the connection, maps how the member works, logs leads and appointments, turns contracts into CRM updates, moves and cleans up deals, forecasts the pipeline, and drafts one message at a time. Shows a plan and waits for the member's OK before any change or send, checks texting consent, and keeps Fair Housing out of records. Real estate only. Triggers when the user runs /hi5-re-crm, says "update my CRM", "log this lead", "map my CRM", "contract to CRM", or "move these deals".
 ---
 
 # Hi5 Real Estate CRM: Run Your CRM by Conversation
 
 ## Purpose
 Let a real estate member work in their CRM by talking: log a lead, log a showing, turn a contract or lease into CRM updates, book a meeting, move deals, and see where the pipeline stands. GoHighLevel first, with a paste mode for every other CRM. Everything is a draft or a plan until the member says OK.
+
+## What it covers
+Runs a real estate member's CRM by conversation, GoHighLevel first with a paste-mode fallback for any other CRM. Tests the connection, maps how the member actually works (pipelines, fields, tags, forms, calendars, and where texting consent is captured), then logs leads, appointments, and showings, turns contracts and leases into CRM updates, books appointments, moves and cleans up deals, closes or loses deals, forecasts the pipeline, runs a CRM tune-up from the gaps the member confirms, enrolls contacts in workflows, and drafts and sends one message at a time. Works for every client type. Shows a plan and waits for the member's OK before any change or send, checks texting consent and do-not-contact status, and keeps Fair Housing out of every record. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.

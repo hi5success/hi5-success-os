@@ -1,12 +1,15 @@
 ---
 name: hi5-re-daily
-description: Plans a real estate member's day and week from their CRM, inbox, and calendar, read only. Builds the morning briefing, the who-to-call-today hit list, the weekly who-needs-attention list, the Friday deal rescue review, the end-of-day shutdown, the week-ahead calendar prep, and the inbox triage that rescues forgotten leads, plus optional browser-assisted market jobs on the member's own MLS login (market pulse, active listing pricing check, buyer alert matching, and competing listing positioning) with export or paste as the fallback. Scans every connected source first, ranks only on business facts and never on a protected characteristic, filters steering remarks out of notes, checks texting consent before suggesting any text, and never writes, sends, or changes anything. Real estate only. Triggers when the user runs /hi5-re-daily, says "morning briefing", "who should I call today", "who needs attention this week", "end of day", "week ahead", "triage my inbox", or "market pulse".
+description: Plans a real estate member's day and week from their CRM, inbox, and calendar, read only, covering morning briefing, who to call today, who needs attention, the Friday deal rescue review, end-of-day shutdown, week-ahead prep, inbox triage, and optional market jobs on the member's own MLS login. Ranks only on business facts, checks texting consent before suggesting a text, and never writes, sends, or changes anything. Real estate only. Triggers when the user runs /hi5-re-daily, says "morning briefing", "who should I call today", "who needs attention this week", "end of day", "week ahead", "triage my inbox", or "market pulse".
 ---
 
 # Hi5 Daily: Your Day and Your Week, Read Only
 
 ## Purpose
 Show a real estate member what matters today and this week, in a few minutes: who to call, which deals are at risk, what is due, and who is waiting, drawn from their CRM, inbox, and calendar. It reads and ranks, and it drafts. It never writes, sends, or changes anything.
+
+## What it covers
+Plans a real estate member's day and week from their CRM, inbox, and calendar, read only. Builds the morning briefing, the who-to-call-today hit list, the weekly who-needs-attention list, the Friday deal rescue review, the end-of-day shutdown, the week-ahead calendar prep, and the inbox triage that rescues forgotten leads, plus optional browser-assisted market jobs on the member's own MLS login (market pulse, active listing pricing check, buyer alert matching, and competing listing positioning) with export or paste as the fallback. Scans every connected source first, ranks only on business facts and never on a protected characteristic, filters steering remarks out of notes, checks texting consent before suggesting any text, and never writes, sends, or changes anything. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.

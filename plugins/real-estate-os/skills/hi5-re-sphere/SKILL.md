@@ -1,12 +1,15 @@
 ---
 name: hi5-re-sphere
-description: Keeps a real estate member's past clients and sphere close so referrals and repeat business come back. Builds the database touch plan, the 12-month post-close plan, the past-client reconnect (Gmail drafts per batch, read only in the CRM), no-agenda check-in texts, the home anniversary and equity note, the referral ask and review ask, the milestone calendar with closing gift ideas and card notes, the reactivation emails, and timely notes after a life event. Scans the CRM, profile, and saved pages first, uses only what the client shared, checks texting consent and do-not-contact status on every touch, never ties a gift or anything of value to a referral or a review, and never sends or changes a record without the member's OK. Works for buyers, sellers, renters, landlords, investors, and 55+ communities. Real estate only. Triggers when the user runs /hi5-re-sphere, says "past client follow up", "12 month plan after closing", "reconnect with past clients", "home anniversary", "referral ask", or "stay in touch".
+description: Keeps a real estate member's past clients and sphere close so referrals and repeat business come back, covering touch plans, the 12-month post-close plan, past-client reconnect drafts, check-in texts, anniversary and equity notes, referral and review asks, and gift ideas. Checks texting consent and do-not-contact status on every touch, never ties a gift or anything of value to a referral or review, and never sends or changes a record without the member's OK. Real estate only. Triggers when the user runs /hi5-re-sphere, says "past client follow up", "12 month plan after closing", "reconnect with past clients", "home anniversary", "referral ask", or "stay in touch".
 ---
 
 # Hi5 Sphere: Past Clients, Referrals, and Staying in Touch
 
 ## Purpose
 Keep every past client and sphere contact warm with a few real touches a month, so referrals and repeat business come back without a pitch. Every touch uses what the member actually knows about the person, passes the consent check, and is a draft until the member says OK.
+
+## What it covers
+Keeps a real estate member's past clients and sphere close so referrals and repeat business come back. Builds the database touch plan, the 12-month post-close plan, the past-client reconnect (Gmail drafts per batch, read only in the CRM), no-agenda check-in texts, the home anniversary and equity note, the referral ask and review ask, the milestone calendar with closing gift ideas and card notes, the reactivation emails, and timely notes after a life event. Scans the CRM, profile, and saved pages first, uses only what the client shared, checks texting consent and do-not-contact status on every touch, never ties a gift or anything of value to a referral or a review, and never sends or changes a record without the member's OK. Works for buyers, sellers, renters, landlords, investors, and 55+ communities. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.

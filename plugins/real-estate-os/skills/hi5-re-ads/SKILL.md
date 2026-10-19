@@ -1,12 +1,15 @@
 ---
 name: hi5-re-ads
-description: Writes real estate ad packs for Meta and Google as drafts, following the Meta Housing Special Ad Category (no age, gender, or ZIP targeting, a radius of at least 15 miles, no lookalikes) and never connecting to an ad account. Builds the campaign brief and setup sheet, seller ads (home value, neighborhood expert, and an expired-seller offer), listing and open house ads, buyer and relocation ads, retargeting sequences, Google search campaigns, the 5-minute follow-up for ad leads with texting consent checked, the weekly ad review and creative test plan, and an audit of an existing ad. Scans the profile, Compliance page, funnel pages, and saved campaigns first and asks only about what is missing, runs every line through a Fair Housing scan, and gives a graphics brief with an optional Canva build as drafts. Works for sellers, buyers, relocation, rentals, investors, 55+ communities, luxury, new construction, and land. Real estate only. Triggers when the user runs /hi5-re-ads, says "Facebook ads", "Meta ads", "Google ads", "home value ad", "listing ad", "ad copy", "retargeting", or "ad leads".
+description: Writes real estate ad packs for Meta and Google as drafts, following the Meta Housing Special Ad Category (no age, gender, or ZIP targeting, a radius of at least 15 miles, no lookalikes). Builds campaign briefs, seller, listing, buyer, and retargeting ads, Google search campaigns, ad lead follow-up, and the weekly review. Never connects to an ad account, runs every line through a Fair Housing scan, and checks texting consent. Real estate only. Triggers when the user runs /hi5-re-ads, says "Facebook ads", "Meta ads", "Google ads", "home value ad", "listing ad", "ad copy", "retargeting", or "ad leads".
 ---
 
 # Hi5 Ads: Compliant Real Estate Ad Packs, Drafts Only
 
 ## Purpose
 Give a real estate member ad copy, setup steps, and follow-up plans that follow Meta's Housing rules, so they can set up the campaign themselves with confidence. This skill never connects to an ad account, never launches or edits a campaign, and never states a number it was not given.
+
+## What it covers
+Writes real estate ad packs for Meta and Google as drafts, following the Meta Housing Special Ad Category (no age, gender, or ZIP targeting, a radius of at least 15 miles, no lookalikes) and never connecting to an ad account. Builds the campaign brief and setup sheet, seller ads (home value, neighborhood expert, and an expired-seller offer), listing and open house ads, buyer and relocation ads, retargeting sequences, Google search campaigns, the 5-minute follow-up for ad leads with texting consent checked, the weekly ad review and creative test plan, and an audit of an existing ad. Scans the profile, Compliance page, funnel pages, and saved campaigns first and asks only about what is missing, runs every line through a Fair Housing scan, and gives a graphics brief with an optional Canva build as drafts. Works for sellers, buyers, relocation, rentals, investors, 55+ communities, luxury, new construction, and land. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.
