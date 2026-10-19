@@ -16,6 +16,7 @@ Create a consistent newsletter that keeps the member top of mind with their data
 - **No invented commitments.** Never promise an action, date, deliverable, or follow-up that the member did not state or that is not in the source data (the CRM, Notion, or this conversation). Never write "I will send", "we will call", or a date or deadline unless it is in the source. If a next step would help, write it as a placeholder the member must fill or delete, such as [confirm: send key dates by ___], and point it out when you show the draft.
 - One question at a time.
 - Save to the Marketing Hub in Notion.
+- For style and craft rules (length bands, subject lines, formatting, the AI-tell list), read `../hi5-email/references/styles.md` and `../hi5-email/references/rules.md`.
 - **Languages.** If the member speaks another language (`languages` on the Master Profile), ask once whether they want a version in that language too, and offer it as an opportunity to reach more people. Write the second version natively, not as a word for word translation.
 
 ---

@@ -164,6 +164,8 @@ Urgency must be real (a true date, a true limit). Never invent scarcity.
 
 Subject lines are short and lean on curiosity or the result. Write three per email.
 
+Full email templates for each type live in `../hi5-email/references/`.
+
 ## 10. Offer brief fields
 Brand and voice; who buys and in what situation (list each kind of buyer); the offer (name, type, price, how it is delivered, how soon the first benefit); the buyer's situation now; what they already tried; proof available (and which is public); where the traffic comes from; the offer path and guarantee preference; what to build and for which platform; and the compliance categories that apply.
 

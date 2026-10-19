@@ -4,55 +4,37 @@ Used by `SKILL.md`. Use the member's own words for who they serve ("clients", "c
 
 ## OPENING
 
-Read from the Master Profile: `name`, `industry`, `niche`, `primary_market`, `offer`, `behavioral_style`, `crm`.
+Read from the Master Profile: `name`, `industry`, `niche`, `primary_market`, `offer`, `offers`, `agent_facing_offers`, `crm`.
 
-> "Let's build an email sequence that sounds like you and converts. I already know what you offer and who you serve. A few quick questions and I will write the whole thing."
+> "Let's write the email that gets the job done. I already know what you offer and who you serve. Tell me what you want the email to do, and I will fill in the rest."
 
-## SEQUENCE SELECTION
+## GOAL MENU
 
-> "What type of email sequence do you need?
+Ask this first, as one question, unless the member already named an email type.
+
+> "What do you want this email or sequence to do?
 >
-> A) New lead nurture: someone just joined my list or inquired
-> B) Prospect nurture: people who are interested but not ready
-> C) Past client or customer: staying top of mind
-> D) Post-sale follow up or onboarding
-> E) Event or webinar follow up
-> F) Win-back: people who went quiet
-> G) Something else: I will describe it
-> H) Free resource follow-up (five to seven emails after someone downloads or requests something)
-> I) After a purchase or booking (three to five emails)"
+> A) Sell or launch an offer
+> B) Book calls or consultations
+> C) Nurture: stay useful to people who are not ready yet
+> D) Welcome or onboard someone new
+> E) Follow up after a purchase or booking (including onboarding someone who just bought)
+> F) Promote an event or webinar, with reminders
+> G) Win back people who went quiet
+> H) Ask for a review or a referral
+> I) Announce something, or send an update or notice
+> J) Something else: I will describe it
+> K) Audit an email I already have (paste it)"
 
-## SEQUENCE DETAILS
+Map the answer to the type files the plan will use: A sales and launch or flash offer, B book a call, C nurture and value or story, D welcome, E post-purchase (or abandoned checkout or milestone when the trigger fits), F event invite and reminders, G win-back, H review and referral ask, I broadcast announcement or update notice, K audit mode. Check-ins and customer research fit under C or J.
 
-**Q1: Length**
-> "How many emails in this sequence?
->
-> A) 3 emails: quick follow up series
-> B) 5 emails: standard nurture
-> C) 7 emails: full campaign
-> D) 10+ emails: long term nurture"
+## DETAILS
 
-**Q2: Timing**
-> "How should the emails be spaced?
->
-> A) Daily for the first week
-> B) Every 2-3 days
-> C) Weekly
-> D) Mix: frequent at first then taper off"
+Ask length and timing only if the brief does not already answer them. When you do, offer lettered options: for length, 3, 5, 7, or "recommend"; for timing, daily for a short burst, every 2 to 3 days, weekly, or a mix. Spacing never goes above one email a day until the last 2 to 3 days of a real deadline.
 
-**Q3: Goal**
-> "What is the goal of this sequence?
->
-> A) Book a call or consultation
-> B) Get them to buy, sign up, or start
-> C) Stay top of mind until they are ready
-> D) Get a referral or review"
+## AUDIENCE NOTES
 
-## CONTENT BY SEQUENCE TYPE
-
-- New lead: a helpful insight, a value offer, and a clear next step
-- Prospect nurture: education that answers their biggest question, proof, and a gentle ask
-- Past client or customer: a personal touch, something useful, and a referral ask
-- Post-sale or onboarding: a welcome, what happens next, quick wins, and a review request
-- Event follow up: a thank you, the key takeaways, and the next step
-- Win-back: a check in, a reason to come back, and an easy way to reply
+- **Business to business and agencies.** Write for the buyer's job: time saved, the revenue process, and proof from similar businesses. Short plain notes from a named person work best. One case study, one number the member can back up, one calendar link.
+- **Creators and digital products.** Warm, personal, and short. One tip with the do-it-yourself link, and a soft done-for-you line if the member has one. Launches are free value first, then a short, honest, real-deadline sale.
+- **Selling to other businesses.** If `agent_facing_offers` is yes, or the member sells to other businesses, write for business owners (time saved, a revenue process, proof from similar businesses), not for consumers.
+- **Consumers.** Describe the offer and the result. Never describe who people are.
