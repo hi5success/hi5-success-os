@@ -20,7 +20,7 @@ Used by `SKILL.md` Step 4 (before anything is shown) and in audit mode. Check ea
 
 15. Formatting matches the style the member chose for this campaign (A plain note, B light, C designed).
 16. The P.S. is italic in styles B and C.
-17. Every results claim or statistic (including the member's own sales count) has an asterisk and its small-print disclaimer at the bottom.
+17. Every results claim the reader might expect (client outcomes, testimonials, "you could..." claims) has an asterisk and the results disclaimer in small print. The member's own stats (homes sold, years in business, reviews) have no "not typical" disclaimer, come from the profile or the member, and carry a small-print source or date only if the profile has one.
 18. No dash lists, and no underline on anything that is not a link (unless the member asked for it in this email).
 19. Bold and emoji counts are inside the limits and the chosen option (bold at most 4, emoji as chosen).
 20. The HTML body renders with proper line breaks (separate p and li lines, not one long line), uses inline styles only, and has no scripts or external CSS. A plain-text version is included.

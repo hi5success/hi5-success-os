@@ -16,7 +16,7 @@ Used by `SKILL.md` Step 1. Fill every field from the Master Profile, the Complia
 
 **6. Next tier.** A higher-touch or done-for-you option and its link, read from `offers`. If the member's profile defines an upsell rule, apply it as written. If there is none, do not add one.
 
-**7. Allowed proof.** Which results, names, and quotes the member may use, and whether each is named, permitted, and public. Anything else is [PROOF NEEDED].
+**7. Allowed proof.** Which results, names, and quotes the member may use, and whether each is named, permitted, and public. Anything else is [PROOF NEEDED]. For each stat, note its source and date if the profile has them (for example "Per MLS, Jan to Dec 2025").
 
 **8. Constraints.** Compliance categories that apply (`offer_categories`), and words or topics to avoid.
 
