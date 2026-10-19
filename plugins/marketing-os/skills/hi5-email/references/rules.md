@@ -9,7 +9,7 @@ Used by `SKILL.md` Step 3, read once per run. These apply to every email. A type
 ## Subject and preview
 - Subjects run 1 to 9 words. Rotate the pattern: a specific number, a confession, a contrarian claim, a status tag in brackets ([tomorrow], [replay], [last call], [Action Required], [No Action Needed]), a one-word curiosity, or the reader's own data. Lowercase is fine for a personal brand, and Title Case suits a company. Put the reader's name in a subject rarely.
 - Preview text is a second hook that adds something the subject did not say. Never repeat the subject. Aim for about 40 to 90 characters.
-- At most one emoji in a subject, and none if the brand is formal.
+- Emojis follow the emoji choice for the campaign (see Formatting below). None if the brand is formal.
 
 ## Opening and close
 - Open with a stat, a scene with a time or place, a question the reader is already asking, or a confession. Never open with a greeting about how they are doing or hoping they are well.
@@ -22,8 +22,18 @@ Used by `SKILL.md` Step 3, read once per run. These apply to every email. A type
 ## Length bands (words)
 Plain friend note 50 to 180 · reminder 60 to 150 · pitch 120 to 220 · post-purchase 80 to 200 · branded column 270 to 450 · story 450 to 800 (a founder letter up to about 1,500, once per launch) · digest 450 to 800 · tutorial 900 or more. Launch emails use the band in the sales and launch type file instead. When in doubt, shorter wins. A "we are live" email stays under 150 words.
 
-## Formatting for plain notes
-Paragraphs of one or two lines. Bullets only for three or more items. No images, little or no bold, one text link rather than a button.
+## Formatting (set by the formatting style and emoji choice for this campaign)
+Follow the style the member chose in the brief (A plain note, B light formatting, C designed newsletter). The choice wins on markup, and the email style wins on length and structure.
+- The P.S. is always italic in styles B and C.
+- Bold is for scanning only: the key benefit, the deadline, the price. Never a whole sentence, and at most 4 per email (2 to 4 in style B).
+- Use real bullets for lists of 3 or more. Never dashes as list markers.
+- Headers appear only in style C, or in style B when the email has 3 or more distinct sections. Otherwise use a short bold label line or nothing.
+- Never underline anything that is not a link, because readers think underlined text is clickable. Underline only if the member asks for it in this email.
+- Results the reader might expect (client outcomes, testimonials, "you could..." claims, savings figures, or any promise-like number) get an asterisk on the claim, with the results disclaimer in small print at the bottom: the member's saved `results_disclaimer` on the Compliance Guardrails page, or "*Results vary and are not typical." if none is saved. Offer once to save the member's own wording.
+- The member's own stats (homes sold, years in business, review counts) are not results the reader should expect, so they get no "not typical" disclaimer. They must come from the profile or the member, otherwise write [PROOF NEEDED]. If the profile has a source or date for the stat, add it as an asterisk with small print at the bottom, for example "*Per MLS, Jan to Dec 2025". With no source or date, no asterisk.
+- Emojis follow the choice: A none, B a few where they fit (the subject or section labels, at most 3 per email counting the subject), C the subject line only (at most 1). Never in a serious notice. The member can override one email.
+- Keep plain notes available where they fit: personal check-ins, review asks, and last-call reminders read best as style A.
+- Paragraphs of one or two lines, one text link rather than a button in a plain note, and no images unless the member supplied them.
 
 ## Frequency and timing
 - At most one email a day, except in the last 2 to 3 days of a real deadline, when up to three short sends in a day are fine (never more than three).
