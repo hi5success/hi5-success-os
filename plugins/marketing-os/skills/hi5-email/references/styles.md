@@ -13,6 +13,15 @@ Used by `SKILL.md` Step 2. Pick the style before the type template. Defaults onl
 8. **Lifecycle automation.** Triggered by what the reader did: a purchase, a milestone, an abandoned checkout, a failed payment, inactivity. Short and specific to the reader's own data. Best for software, memberships, and CRM-driven follow-up.
 9. **Member notice.** The topic, why it matters, the time with the time zone, and one join link. Best for memberships and team or brokerage announcements.
 
+## Formatting style (asked every campaign)
+The style above decides length and structure. The formatting style decides the markup, and it wins on markup. Ask it, and the emoji choice, in the brief for every campaign.
+| Formatting style | What it looks like | Best for |
+|---|---|---|
+| A) Plain note | Minimal formatting, short paragraphs, no bullets unless needed, a personal one-to-one feel | Personal check-ins, review asks, win-backs, last-call reminders |
+| B) Light formatting (recommended) | Bold 2 to 4 key phrases (the key benefit, deadline, price), an italic P.S., real bullets for lists of 3 or more, short labeled sections when an email has more than one part | Most emails: nurture, welcome, sales, post-purchase, announcements |
+| C) Designed newsletter | Section headers, bold labels, bullets, clear visual blocks | Digests, newsletters, update notices, and a monthly market or client report |
+Emoji options: A none, B a few where they fit (subject or section labels, at most 3 per email), C subject line only. Pre-select the last choice used for this segment, and let the member override one email. The exact rules for bold, italic, underline, bullets, headers, and asterisked claims are in the craft rules.
+
 ## Do not use: the hard launch blitz
 All caps warnings, "final notice" subjects, a name in every subject, five or six sends in one day, and unproven income claims. It trains readers to ignore or report the sender, it breaks the honest-urgency rule, and the claims are unsafe. Borrow only this: the last day of a real deadline can carry two or three short emails.
 

@@ -18,5 +18,12 @@ Used by `SKILL.md` Step 4 (before anything is shown) and in audit mode. Check ea
 13. Compliance categories for the offer (`offer_categories`) are met. For a real estate member, the Fair Housing scan in the real estate industry file passes.
 14. The next-tier line appears only where the member's upsell rule allows it, and in sales emails never as the primary call to action.
 
+15. Formatting matches the style the member chose for this campaign (A plain note, B light, C designed).
+16. The P.S. is italic in styles B and C.
+17. Every results claim or statistic (including the member's own sales count) has an asterisk and its small-print disclaimer at the bottom.
+18. No dash lists, and no underline on anything that is not a link (unless the member asked for it in this email).
+19. Bold and emoji counts are inside the limits and the chosen option (bold at most 4, emoji as chosen).
+20. The HTML body renders with proper line breaks (separate p and li lines, not one long line), uses inline styles only, and has no scripts or external CSS. A plain-text version is included.
+
 ## Score and fix
 Give the draft a score from 1 to 10 and name the three most important improvements. Fix them before delivering. In audit mode, show the score, the three fixes, and before and after rewrites of the subject, the preview text, and the opening lines. Never add a claim the member did not supply. A price, date, or number in a pasted email stays only if the member confirms it, otherwise it becomes a placeholder in the rewrite.

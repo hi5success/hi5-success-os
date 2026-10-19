@@ -81,6 +81,8 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - crm_connection: `ghl-connector`, `other-connector`, or `paste-mode` (written by /hi5-re-crm)
 - ghl_location_name: the GoHighLevel sub-account the member normally uses (written by /hi5-re-crm)
 - last_crm_map: the date the CRM Map was last updated (written by /hi5-re-crm)
+- email_platform: GoHighLevel, Mailchimp, Constant Contact, Klaviyo, Gmail, or other (asked once by /hi5-email, only if the profile does not already say)
+- email_format_by_segment: the last formatting style and emoji choice used for each audience segment, as `Segment = style/emojis` pairs, for example `Past buyers = B/C` (written by /hi5-email)
 - mls_name: the member's MLS (asked once by /hi5-re-listing-appt)
 - cma_adjustments: the member's own adjustment values for a CMA, in their words (asked once by /hi5-re-listing-appt)
 - mls_remarks_limit: the member's MLS remarks length limit (asked once by /hi5-re-listing-launch, only if unknown)

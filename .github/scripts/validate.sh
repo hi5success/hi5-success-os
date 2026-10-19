@@ -231,6 +231,16 @@ for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/rea
   grep -q '**No invented commitments.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the no invented commitments rule")
 done
 
+# 24. hi5-email keeps its formatting choices, formatting rules, and platform output rules
+EM="plugins/marketing-os/skills/hi5-email/references"
+[ -f "$EM/platform-output.md" ] || ERRORS+=("hi5-email is missing references/platform-output.md")
+grep -q 'Never send' "$EM/platform-output.md" 2>/dev/null || ERRORS+=("hi5-email platform-output.md must keep the never send rule")
+grep -q 'inline styles only' "$EM/platform-output.md" 2>/dev/null || ERRORS+=("hi5-email platform-output.md must keep the inline styles only rule")
+grep -q 'Formatting style' "$EM/intake.md" || ERRORS+=("hi5-email intake.md must ask the formatting style")
+grep -q 'Emojis' "$EM/intake.md" || ERRORS+=("hi5-email intake.md must ask the emoji choice")
+grep -q 'always italic' "$EM/rules.md" || ERRORS+=("hi5-email rules.md must keep the italic P.S. rule")
+grep -q 'platform-output.md' plugins/marketing-os/skills/hi5-email/SKILL.md || ERRORS+=("hi5-email SKILL.md Step 5 must name platform-output.md")
+
 # 21. The org chart skill keeps its files, the one human manager rule, and the AI Employees database
 for f in SKILL.md references/interview.md references/chart-artifact.md references/highlights.md references/edits.md; do
   [ -f "plugins/business-os/skills/hi5-org-chart/$f" ] || ERRORS+=("hi5-org-chart is missing $f")

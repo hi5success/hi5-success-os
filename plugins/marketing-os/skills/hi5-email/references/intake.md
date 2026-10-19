@@ -22,6 +22,20 @@ Used by `SKILL.md` Step 1. Fill every field from the Master Profile, the Complia
 
 **9. Sending.** The platform or CRM, the audience's time zone, the start date, and the number of emails (or "recommend").
 
+**10. Formatting style (ask every campaign).** Offer these as lettered options, with the member's last choice for this segment pre-selected (read `email_format_by_segment` from the Master Profile):
+> A) Plain note: minimal formatting, a personal one-to-one feel
+> B) Light formatting (recommended): bold 2 to 4 key phrases, an italic P.S., real bullets for lists of 3 or more, short labeled sections when an email has more than one part
+> C) Designed newsletter: section headers, bold labels, bullets, clear visual blocks
+Recommend A for personal check-ins, review asks, win-backs, and last-call reminders, and C for digests and newsletters. B is the default for everything else.
+
+**11. Emojis (ask every campaign).**
+> A) None
+> B) A few where they fit (subject or section labels, at most 3 per email)
+> C) Subject line only
+The right choice changes with the audience, so ask both questions every campaign, even when a saved choice exists. The member can override one email ("no emojis on this one").
+
+**12. Email platform.** GoHighLevel, Mailchimp, Constant Contact, Klaviyo, Gmail, or other. Read `email_platform` first, then `crm`. Ask only if both are missing, then save it as `email_platform`.
+
 ## Audience check
 If `agent_facing_offers` is yes, or the member sells to other businesses, write for business owners (time saved, revenue process, proof from similar businesses). Otherwise write for the consumers the member serves.
 
@@ -35,5 +49,6 @@ If `agent_facing_offers` is yes, or the member sells to other businesses, write 
 > Proof allowed: ...
 > Constraints: ...
 > Sending: platform, time zone, start date, number of emails
+> Format: formatting style (A, B, or C) and emojis (A, B, or C) for each segment, with the pre-selected last choice marked
 > Assumed: (anything you defaulted, one line)
 > Placeholders so far: [PRICE], [DEADLINE: ...], [LINK: ...], [PROOF NEEDED] as needed
