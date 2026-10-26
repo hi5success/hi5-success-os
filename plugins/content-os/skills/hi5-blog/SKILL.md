@@ -1,6 +1,6 @@
 ---
 name: hi5-blog
-description: Writes a full SEO-optimized blog post from a video transcript, a script, or a topic. Expands the content into a long-form article for organic search, with an SEO title, meta description, headers, and a call to action. Works from a pasted transcript or topic on its own, or from the Notion content calendar when a long-form is Published, as a draft only. Used by the Blog Writer AI employee. Triggers when the user runs /hi5-blog, says "write a blog post", "turn this into a blog", "blog from my video", or "blog from this transcript".
+description: Writes a full SEO-optimized blog post from a video transcript, a script, or a topic. Expands the content into a long-form article for organic search, with an SEO title, meta description, headers, and a call to action. Works from a pasted transcript or topic on its own, or from the Notion content calendar when a long-form is Published, as a draft only. Used by the Blog Writer AI employee. Triggers when the user runs /hi5-blog, says "write a blog post", "turn this into a blog", "blog from my video", "blog from this transcript", or "write an article".
 ---
 
 # /hi5-blog: The Blog Writer

@@ -31,6 +31,7 @@ The Master Profile is one Notion page called "Master Profile" inside the root pa
 - workspace_source: `template` (copied the official Hi5 template) or `built` (created by setup). Set automatically, never asked
 - template_version: the version of the template layout (`2` for the current template, `none` for a built workspace). Set automatically, never asked
 - self_test: `passed <date>` or `needs work <date>: <gaps>` (written by the setup self-test)
+- hi5_first_shown: the date setup showed the Hi5 first line (the one line the member pastes into Claude's personal preferences). It is written once and never asked again. Not a setup question
 - projects_offered: the date /hi5-next offered the Claude Projects tip. It is set once, and it is the only thing /hi5-next ever writes. Not a setup question
 
 ### Page IDs

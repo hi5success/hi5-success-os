@@ -1,6 +1,6 @@
 ---
 name: hi5-content-plan
-description: Plans and runs all of a member's content. Sets up the Notion content calendar, builds the monthly plan for long-form videos, one-off reels, statics, carousels, and blogs, researches topics and YouTube keywords, writes scripts and production notes, sets recording days, and creates the rows and folders. Research and scripts also work on their own with no setup. Used by the Content Manager AI employee. Triggers when the user runs /hi5-content-plan, says "plan my month", "plan my content", "content calendar", "research topics", "write a script", "set up my content calendar", "check my queue", or "content manager".
+description: Plans and runs all of a member's content. Sets up the Notion content calendar, builds the monthly plan for long-form videos, one-off reels, statics, carousels, and blogs, researches topics and YouTube keywords, writes scripts and production notes, sets recording days, and creates the rows and folders. Research and scripts also work on their own with no setup. Used by the Content Manager AI employee. Triggers when the user runs /hi5-content-plan, says "plan my month", "plan my content", "content calendar", "what should I post", "research topics", "write a script", "set up my content calendar", or "check my queue".
 ---
 
 # /hi5-content-plan: The Content Manager

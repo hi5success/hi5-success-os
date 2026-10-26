@@ -91,10 +91,9 @@ else
         fi;;
       *) ERRORS+=("path.md row for $name has status '$status'. Use live or coming");;
     esac
-    # live skills must be in the README and the Skill Guide in workspace-build.md
+    # live skills must be in the README (the Skill Guide is built from the installed skills, so it is not a list here)
     if [ "$status" = "live" ]; then
       grep -q "/$name" README.md || ERRORS+=("README.md does not list /$name")
-      grep -q "/$name" plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md (Dashboard and Skill Guide) does not list /$name")
     fi
   done <<< "$rows"
 fi
@@ -323,6 +322,30 @@ grep -q 'If you saw this, what would you do' plugins/business-os/skills/hi5-dash
 [ -f plugins/business-os/skills/hi5-dashboard/references/follow-up-queue.md ] || ERRORS+=("hi5-dashboard is missing references/follow-up-queue.md")
 grep -q 'No Send all, ever' plugins/business-os/skills/hi5-dashboard/SKILL.md || ERRORS+=("hi5-dashboard/SKILL.md must keep the No Send all rule")
 grep -q 'Send all' plugins/business-os/skills/hi5-dashboard/references/follow-up-queue.md || ERRORS+=("hi5-dashboard/references/follow-up-queue.md must keep the no Send all rule")
+
+
+# 27. Hi5 skills first: every description carries everyday phrases, setup shows the Hi5 first line, and the Skill Guide is built from installed skills, never a hardcoded list
+for f in plugins/*/skills/*/SKILL.md; do
+  d=$(grep -m1 '^description: ' "$f" | tr -d '\r' | sed 's/^description: //')
+  q=$(printf '%s' "$d" | tr -cd '"' | wc -c)
+  [ "$q" -ge 10 ] || ERRORS+=("$f: the description needs at least 5 quoted everyday phrases members actually say, found $((q / 2))")
+done
+SD="plugins/business-os/skills/hi5-setup"
+for f in references/hi5-first.md references/skill-guide.md; do
+  [ -f "$SD/$f" ] || ERRORS+=("hi5-setup is missing $f")
+done
+grep -q "When a Hi5 skill fits what I'm asking, use it first" "$SD/references/hi5-first.md" 2>/dev/null || ERRORS+=("hi5-first.md must carry the Hi5 first line")
+grep -q 'personal preferences' "$SD/references/hi5-first.md" 2>/dev/null || ERRORS+=("hi5-first.md must say where to paste the line")
+grep -q "can't change your Claude settings" "$SD/references/hi5-first.md" 2>/dev/null || ERRORS+=("hi5-first.md must say Claude cannot change the setting")
+grep -q 'hi5_first_shown' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must note that the Hi5 first line was shown")
+grep -q 'hi5_first_shown' "$SD/templates/master-profile.md" || ERRORS+=("master-profile.md must list hi5_first_shown")
+grep -q 'hi5-first.md' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must run hi5-first.md")
+grep -q 'skill-guide.md' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must run skill-guide.md")
+grep -q 'refresh my skill guide' "$SD/SKILL.md" || ERRORS+=("hi5-setup must answer refresh my skill guide")
+grep -q 'never a hardcoded list' "$SD/references/skill-guide.md" 2>/dev/null || ERRORS+=("skill-guide.md must say the guide is never a hardcoded list")
+if sed -n '/^## Skill Guide content/,$p' "$SD/templates/workspace-build.md" | grep -q '/hi5-'; then ERRORS+=("workspace-build.md Skill Guide content must not list skills")
+fi
+grep -q "When a Hi5 skill fits what I'm asking, use it first" plugins/business-os/skills/hi5-bottleneck/templates/project-instructions.md || ERRORS+=("the AI employee Project instructions template must carry the Hi5 first line")
 
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""

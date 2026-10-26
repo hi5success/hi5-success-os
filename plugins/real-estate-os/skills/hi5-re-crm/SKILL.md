@@ -1,6 +1,6 @@
 ---
 name: hi5-re-crm
-description: Runs a real estate member's CRM by conversation, GoHighLevel first with a paste-mode fallback for any other CRM, covering tests the connection, maps how the member works, logs leads and appointments, turns contracts into CRM updates, moves and cleans up deals, forecasts the pipeline, and drafts one message at a time. Shows a plan and waits for the member's OK before any change or send, checks texting consent, and keeps Fair Housing out of records. Real estate only. Triggers when the user runs /hi5-re-crm, says "update my CRM", "log this lead", "map my CRM", "contract to CRM", or "move these deals".
+description: Runs a real estate member's CRM by conversation, GoHighLevel first with a paste-mode fallback for any other CRM, covering testing the connection, mapping how the member works, logging leads and appointments, turning contracts into CRM updates, moving and cleaning up deals, forecasting the pipeline, and drafting one message at a time. Shows a plan and waits for the member's OK before any change or send, checks texting consent, and keeps Fair Housing out of records. Real estate only. Triggers when the user runs /hi5-re-crm, says "update my CRM", "log this lead", "map my CRM", "contract to CRM", "add this lead to my CRM", or "move these deals".
 ---
 
 # Hi5 Real Estate CRM: Run Your CRM by Conversation

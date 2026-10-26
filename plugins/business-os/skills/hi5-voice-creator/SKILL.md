@@ -1,6 +1,6 @@
 ---
 name: hi5-voice-creator
-description: Creates a voice skill that writes like one specific person (the member, a teammate, or a client or brand), callable by name such as jacobs-voice. Reads the profile and Voice Library first, collects real writing samples, interviews a few questions at a time, builds and tests the guide until the member says that's me, then saves a Voice Library entry, an installable skill, and a backup file. Never invents stories or claims, and never changes a voice without the member's OK. Triggers when the user runs /hi5-voice-creator, says "create my voice", "make a voice skill", "write like me", "capture my writing style", "add a voice for a client", or "update my voice".
+description: Creates a voice skill that writes like one specific person (the member, a teammate, or a client or brand), callable by name such as jacobs-voice. Reads the profile and Voice Library first, collects real writing samples, interviews a few questions at a time, builds and tests the guide until the member says that's me, then saves a Voice Library entry, an installable skill, and a backup file. Never invents stories or claims, and never changes a voice without the member's OK. Triggers when the user runs /hi5-voice-creator, says "create my voice", "make a voice skill", "write like me", "make it sound like me", "capture my writing style", "add a voice for a client", or "update my voice".
 ---
 
 # Hi5 Voice Creator: A Voice Skill for One Person

@@ -1,6 +1,6 @@
 ---
 name: hi5-goals
-description: Sets and tracks quarterly goals from the member's business plan. Breaks the annual target into the quarter and into 13 weeks of milestones, shows the math step by step with the member's own numbers, and runs a weekly check-in. Works for any brokerage or business and never assumes anyone's commission rules. Reads the numbers saved by /hi5-bizplan. Triggers when the user runs /hi5-goals, says "set my goals", "quarterly goals", "90 day plan", or "weekly check in".
+description: Sets and tracks quarterly goals from the member's business plan. Breaks the annual target into the quarter and into 13 weeks of milestones, shows the math step by step with the member's own numbers, and runs a weekly check-in. Works for any brokerage or business and never assumes anyone's commission rules. Reads the numbers saved by /hi5-bizplan. Triggers when the user runs /hi5-goals, says "set my goals", "quarterly goals", "90 day plan", "weekly check in", "track my goals", or "am I hitting my goals".
 ---
 
 # Hi5 Goals: Quarterly Goals and Weekly Check-ins

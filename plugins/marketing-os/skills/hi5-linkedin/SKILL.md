@@ -1,6 +1,6 @@
 ---
 name: hi5-linkedin
-description: Creates LinkedIn content from the member's existing videos, blog posts, or ideas. Formats content specifically for LinkedIn's professional audience with the member's brand voice. Works for any industry. Triggers when the user runs /hi5-linkedin, says "write LinkedIn posts", "LinkedIn content", or "post to LinkedIn".
+description: Creates LinkedIn content from the member's existing videos, blog posts, or ideas. Formats content specifically for LinkedIn's professional audience with the member's brand voice. Works for any industry. Triggers when the user runs /hi5-linkedin, says "write LinkedIn posts", "LinkedIn content", "post to LinkedIn", "turn this video into a LinkedIn post", or "what should I post on LinkedIn".
 ---
 
 # Hi5 LinkedIn: LinkedIn Content Creator

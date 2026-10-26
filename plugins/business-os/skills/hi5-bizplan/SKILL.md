@@ -1,6 +1,6 @@
 ---
 name: hi5-bizplan
-description: Generates a personalized business plan tailored to the member's industry, goals, personality profile, and market. Reads the Master Profile from /hi5-setup and personality data from /hi5-self. Works for any brokerage or business model and uses only the commission or pricing rules the member gives. Saves the plan and the numbers to Notion and offers a markdown, Google Doc, or PDF copy. Triggers when the user runs /hi5-bizplan, says "business plan", "build my plan", or "create my business plan".
+description: Generates a personalized business plan tailored to the member's industry, goals, personality profile, and market. Reads the Master Profile from /hi5-setup and personality data from /hi5-self. Works for any brokerage or business model and uses only the commission or pricing rules the member gives. Saves the plan and the numbers to Notion and offers a markdown, Google Doc, or PDF copy. Triggers when the user runs /hi5-bizplan, says "write my business plan", "build my plan", "how much do I need to make", "plan my year", "what are my numbers", or "create my business plan".
 ---
 
 # Hi5 Bizplan: Business Plan Generator

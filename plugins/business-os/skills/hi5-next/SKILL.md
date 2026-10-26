@@ -1,6 +1,6 @@
 ---
 name: hi5-next
-description: Guides the member to the best next step in Hi5 Success OS. Reads their progress from Notion, recommends one next step with a short reason and two alternatives, and offers to start it. Read-only, and it never skips ahead to skills that have not shipped. Triggers when the user runs /hi5-next, says "what should I do next", "what's next", "where do I start", "what can I do", or "help me pick a skill".
+description: Guides the member to the best next step in Hi5 Success OS. Reads their progress from Notion, recommends one next step with a short reason and two alternatives, and offers to start it. Read-only, and it never skips ahead to skills that have not shipped. Triggers when the user runs /hi5-next, says "what should I do next", "what's next", "where do I start", "what can I do", "I'm stuck", or "help me pick a skill".
 ---
 
 # Hi5 Next: Your Best Next Step

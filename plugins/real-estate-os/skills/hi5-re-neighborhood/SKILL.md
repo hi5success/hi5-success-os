@@ -1,6 +1,6 @@
 ---
 name: hi5-re-neighborhood
-description: Builds and keeps current the neighborhood fact file for each area a real estate member serves, the page every other Hi5 skill reads. Puts a source and a date on every fact, refreshes stale ones, adds notes by client type, and drafts a where-to-verify sheet and content angles. Describes the place only, never who lives there, never rates schools or safety, and changes the member's page only after a plan and an OK. Real estate only. Triggers when the user runs /hi5-re-neighborhood, says "area fact file", "neighborhood profile", "refresh my neighborhood", "verify my area facts", or "Living in guide".
+description: Builds and keeps current the neighborhood fact file for each area a real estate member serves, the page every other Hi5 skill reads. Puts a source and a date on every fact, refreshes stale ones, adds notes by client type, and drafts a where-to-verify sheet and content angles. Describes the place only, never who lives there, never rates schools or safety, and changes the member's page only after a plan and an OK. Real estate only. Triggers when the user runs /hi5-re-neighborhood, says "area fact file", "write about my area", "neighborhood profile", "refresh my neighborhood", "verify my area facts", or "Living in guide".
 ---
 
 # Hi5 Neighborhood: Area Fact Files With a Source and a Date on Every Fact

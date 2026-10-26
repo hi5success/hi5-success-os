@@ -1,6 +1,6 @@
 ---
 name: hi5-site-audit
-description: Audits the member's live website page by page and gives a prioritized SEO fix list. Checks titles, meta descriptions, headings, local keywords, schema, internal links, broken links, mobile and speed using Google's free PageSpeed Insights, multilingual pages, and Fair Housing and compliance language in the copy. Detects the website platform (GoHighLevel, Astro, WordPress, or other) and gives platform-specific fix steps. Works for any industry. Saves results to the Marketing Hub and compares them with the last audit. Triggers when the user runs /hi5-site-audit, says "audit my website", "check my site", "SEO audit", or "why isn't my site ranking".
+description: Audits the member's live website page by page and gives a prioritized SEO fix list. Checks titles, meta descriptions, headings, local keywords, schema, internal links, broken links, mobile and speed using Google's free PageSpeed Insights, multilingual pages, and Fair Housing and compliance language in the copy. Detects the website platform (GoHighLevel, Astro, WordPress, or other) and gives platform-specific fix steps. Works for any industry. Saves results to the Marketing Hub and compares them with the last audit. Triggers when the user runs /hi5-site-audit, says "audit my website", "check my site", "SEO audit", "why isn't my site ranking", or "how is my website doing".
 ---
 
 # Hi5 Site Audit: Page by Page SEO Check

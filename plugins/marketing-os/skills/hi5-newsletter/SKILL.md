@@ -1,6 +1,6 @@
 ---
 name: hi5-newsletter
-description: Builds a weekly or monthly newsletter for the member's database. Pulls from their content, market, and brand voice to create a consistent touchpoint that keeps them top of mind. Works for any industry. Triggers when the user runs /hi5-newsletter, says "write my newsletter", "build a newsletter", or "monthly email".
+description: Builds a weekly or monthly newsletter for the member's database. Pulls from their content, market, and brand voice to create a consistent touchpoint that keeps them top of mind. Works for any industry. Triggers when the user runs /hi5-newsletter, says "write my newsletter", "build a newsletter", "monthly email", "weekly email to my list", or "newsletter ideas".
 ---
 
 # Hi5 Newsletter: Newsletter Builder

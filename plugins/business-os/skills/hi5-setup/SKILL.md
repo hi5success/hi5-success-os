@@ -1,6 +1,6 @@
 ---
 name: hi5-setup
-description: Master onboarding skill for Hi5 Success OS. Connects the member's Notion, captures their industry, sets up their Hi5 Success OS workspace from the official Hi5 template (or builds a basic one), and runs a staged, resumable interview that fills the Master Profile every other Hi5 skill reads. Run this first before any other Hi5 skill. Run it again any time to continue setup, update the profile, or add to it. Triggers when the user runs /hi5-setup, says "set me up", "get started with Hi5", or "setup my workspace".
+description: Master onboarding skill for Hi5 Success OS. Connects the member's Notion, captures their industry, sets up their Hi5 Success OS workspace from the official Hi5 template (or builds a basic one), and runs a staged, resumable interview that fills the Master Profile every other Hi5 skill reads. Run this first before any other Hi5 skill. Run it again any time to continue setup, update the profile, or add to it. Triggers when the user runs /hi5-setup, says "set me up", "get started with Hi5", "setup my workspace", "continue setup", "update my profile", "refresh my skill guide", or "connect my Notion".
 ---
 
 # Hi5 Success OS: Master Setup
@@ -245,6 +245,8 @@ When every group is done, mark Stage 1 complete with today's date.
 
 ## PHASE 6: Wrap Up
 
+Before the message below, do two things. First, make Hi5 skills the default: follow `references/hi5-first.md` (the member pastes one line into Claude's personal preferences, asked once). Second, build the member's Skill Guide from the skills that are installed: follow `references/skill-guide.md`. Then give the wrap-up.
+
 Use the member's name and these facts. Say what was created, what works now, and what gets better with each remaining stage (use the stages table, only the stages available for their industry).
 
 > "You're all set, [name]. Here's what was just created:
@@ -254,7 +256,8 @@ Use the member's name and these facts. Say what was created, what works now, and
 > ✅ Content Planner: ready for your first ideas
 > ✅ Business OS pages: ready for your business plan
 > ✅ Marketing Hub: ready for your first campaign
-> ✅ Skill Guide: your reference for every Hi5 skill
+> ✅ Skill Guide: built from the Hi5 skills you have installed, in plain words ("If you want X, just say Y")
+> ✅ Hi5 first line: shown, so Claude reaches for your Hi5 skills without you remembering their names
 >
 > **You can start using skills right now.** Here's what the other stages add:
 > [one line per available stage: what it is, time, which skills improve]
@@ -291,6 +294,10 @@ This is how members who set up earlier receive new labels such as the Marketing 
 - A missing Content Planner, Marketing Hub, Voice Library, Dashboards, People, AI Employees, or Bottlenecks database follows item 1.
 - Never create a duplicate, never remove or rename anything, and never touch rows.
 
+**4. The Hi5 first line.** If `hi5_first_shown` is not in Setup Status (a member who set up before this step existed), offer it once: "Want one small step that makes Claude reach for your Hi5 skills on its own?" If yes, follow `references/hi5-first.md`. If no, do not ask again in this session.
+
+**5. Skill Guide freshness.** Compare the installed Hi5 skill names with the snapshot line on the Skill Guide, as described in `references/skill-guide.md`. If they differ, offer a refresh once. If there is no Skill Guide content yet, offer to build it.
+
 ## PROFILE UPDATE
 
 When a member's `profile_version` is lower than the current version:
@@ -312,15 +319,17 @@ When /hi5-setup is run and a workspace already exists, read the Master Profile's
 > 3. Redo a stage
 > 4. Add a neighborhood *(real estate only)*
 > 5. Run the setup self-test
-> 6. Show me what I can do"
+> 6. Show me what I can do
+> 7. Refresh my skill guide, or show me the Hi5 first line again"
 
-Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Options 5 and 6 are always shown.
+Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Options 5, 6, and 7 are always shown. If the member says "refresh my skill guide" or "update my skill guide" at any time, run `references/skill-guide.md` without the menu.
 
 - **1** → run that stage from the industry file. If Stage 1 is unfinished, resume at the first question group that is not saved yet (see Checkpoints in Phase 5) instead of starting over.
 - **2** → ask which section (Identity, Market, Tools, Presence, Brand, or another section on the profile) or which saved page (such as Compliance Guardrails or Voice Profile), show the current values, ask what to change, confirm, then update that section only.
 - **3** → ask which stage, then run it. Show the current saved content first and ask "Replace it or add to it?"
 - **4** → run the neighborhoods stage for one new area, save it as a new child page, and add it to the Page IDs section.
 - **5** → run the SELF-TEST below.
+- **7** → ask which one (or do both). Run `references/skill-guide.md` to rebuild the Skill Guide, or `references/hi5-first.md` to show the Hi5 first line again.
 - **6** → show what they can do, grouped by goal. Read the "Goal menu" in `../hi5-next/references/path.md` and show only the skills whose Status is `live`, with one short line each, for these goals: YouTube content, social media, blog and SEO, email and newsletter, website and landing pages, and business plan and goals. Ask which goal they want to work on, then recommend the first step for it (the same logic as /hi5-next, which is read-only). Mention that /hi5-next can do this any time.
 
 Never rebuild the workspace on a re-run. If a page is missing, recreate only that page and update its ID.

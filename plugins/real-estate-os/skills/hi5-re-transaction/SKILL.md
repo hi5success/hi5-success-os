@@ -1,6 +1,6 @@
 ---
 name: hi5-re-transaction
-description: Runs a real estate file from a signed contract or lease to keys, covering reads the executed document, builds the checklist and key dates calendar, and writes weekly client updates, repair requests, appraisal gap briefs, the walkthrough sheet, and closing day and fall-through messages. Confirms every date against the executed document, and never sends or changes a record or calendar without the member's OK. Real estate only. Triggers when the user runs /hi5-re-transaction, says "contract to close", "key dates", "weekly escrow update", "repair request", "appraisal gap", "final walkthrough", or "closing day".
+description: Runs a real estate file from a signed contract or lease to keys, covering reading the executed document, building the checklist and key dates calendar, and writing weekly client updates, repair requests, appraisal gap briefs, the walkthrough sheet, and closing day and fall-through messages. Confirms every date against the executed document, and never sends or changes a record or calendar without the member's OK. Real estate only. Triggers when the user runs /hi5-re-transaction, says "contract to close", "key dates", "weekly escrow update", "repair request", "appraisal gap", "final walkthrough", or "closing day".
 ---
 
 # Hi5 Transaction: From Signed Contract to Keys

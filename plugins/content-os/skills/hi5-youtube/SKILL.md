@@ -1,6 +1,6 @@
 ---
 name: hi5-youtube
-description: Writes the YouTube title, description, chapters with timestamps, and tags for a long-form video from its transcript, then uploads and schedules it through the local YouTube bridge with the thumbnail, and does the YouTube Studio steps the API cannot (end screen, cards) in the browser. Adds YouTube notes for short-form. Works from a pasted transcript on its own, or from the Notion content calendar by status. Used by the YouTube Manager AI employee. Triggers when the user runs /hi5-youtube, says "write my YouTube title and description", "make chapters", "upload my video", "schedule my video", or "YouTube notes".
+description: Writes the YouTube title, description, chapters with timestamps, and tags for a long-form video from its transcript, then uploads and schedules it through the local YouTube bridge with the thumbnail, and does the YouTube Studio steps the API cannot (end screen, cards) in the browser. Adds YouTube notes for short-form. Works from a pasted transcript on its own, or from the Notion content calendar by status. Used by the YouTube Manager AI employee. Triggers when the user runs /hi5-youtube, says "write my YouTube title and description", "make chapters", "YouTube tags", "upload my video", "schedule my video", or "YouTube notes".
 ---
 
 # /hi5-youtube: The YouTube Manager

@@ -1,6 +1,6 @@
 ---
 name: hi5-website
-description: Writes or rewrites website page copy for the member's business website. Covers Home, About, service or client-type pages, and Contact. Tailored to their market, niche, brand voice, and personality. Works for any industry. Triggers when the user runs /hi5-website, says "write my website copy", "rewrite my about page", "website content", or "write my home page".
+description: Writes or rewrites website page copy for the member's business website. Covers Home, About, service or client-type pages, and Contact. Tailored to their market, niche, brand voice, and personality. Works for any industry. Triggers when the user runs /hi5-website, says "write my website copy", "rewrite my about page", "website content", "write my home page", or "update my website text".
 ---
 
 # Hi5 Website: Website Copy Writer

@@ -1,6 +1,6 @@
 ---
 name: hi5-re-land-newbuild
-description: Supports a real estate member on land and new construction, covering land due diligence plans, the new construction buyer guide, builder and community comparisons, the builder relationship plan, land sale support, and timelines. Never states what can be built, a cost, a permit timeline, or a builder's rules, treats zoning as questions for the planning office, and sends builder contracts to the client's attorney. Drafts only. Real estate only. Triggers when the user runs /hi5-re-land-newbuild, says "land due diligence", "new construction buyer", "builder contract questions", "selections deadlines", "punch list", or "lot".
+description: Supports a real estate member on land and new construction, covering land due diligence plans, the new construction buyer guide, builder and community comparisons, the builder relationship plan, land sale support, and timelines. Never states what can be built, a cost, a permit timeline, or a builder's rules, treats zoning as questions for the planning office, and sends builder contracts to the client's attorney. Drafts only. Real estate only. Triggers when the user runs /hi5-re-land-newbuild, says "land due diligence", "buying land", "new construction buyer", "builder contract questions", "selections deadlines", "punch list", or "new build questions".
 ---
 
 # Hi5 Land and New Construction: Due Diligence, Builder Contracts, and Selections

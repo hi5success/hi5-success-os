@@ -1,6 +1,6 @@
 ---
 name: hi5-landing
-description: Writes landing page copy and structure for lead magnets, opt-ins, and campaign pages. Designed to convert traffic into leads with a single focused CTA. Works for any industry. Triggers when the user runs /hi5-landing, says "write a landing page", "lead magnet page", "opt-in page", or "build a landing page".
+description: Writes landing page copy and structure for lead magnets, opt-ins, and campaign pages. Designed to convert traffic into leads with a single focused CTA. Works for any industry. Triggers when the user runs /hi5-landing, says "write a landing page", "lead magnet page", "opt-in page", "build a landing page", or "page for my free guide".
 ---
 
 # Hi5 Landing: Landing Page Copy Writer

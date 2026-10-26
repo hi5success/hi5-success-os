@@ -1,6 +1,6 @@
 ---
 name: hi5-casestudy
-description: Turns a client success story or closed deal into a professional case study. Creates a compelling narrative that builds credibility and can be used across website, social, email, and presentations. Works for any industry. Triggers when the user runs /hi5-casestudy, says "write a case study", "turn this deal into a story", "client success story", or "closed deal story".
+description: Turns a client success story or closed deal into a professional case study. Creates a compelling narrative that builds credibility and can be used across website, social, email, and presentations. Works for any industry. Triggers when the user runs /hi5-casestudy, says "write a case study", "turn this deal into a story", "client success story", "closed deal story", or "write up this client win".
 ---
 
 # Hi5 Case Study: Client Success Story Builder

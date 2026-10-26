@@ -25,7 +25,7 @@
       "name": "marketing-os",
       "source": "./plugins/marketing-os",
       "description": "Email, newsletter, SEO, LinkedIn, website copy, landing pages, and case study tools for consistent marketing execution.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "author": { "name": "Hi5 Success" },
       "keywords": ["marketing", "email", "seo", "linkedin", "website", "landing-page", "newsletter", "notion"]
     },
@@ -33,7 +33,7 @@
       "name": "real-estate-os",
       "source": "./plugins/real-estate-os",
       "description": "Real estate only skills for agents, teams, and brokers: CRM by conversation, listings, sellers, buyers, transactions, daily planning, sphere, prospecting, ads, role-play, rentals, investors, commercial, land, and area fact files, with Fair Housing, texting consent, and approval-first guardrails.",
-      "version": "1.9.2",
+      "version": "1.9.3",
       "author": { "name": "Hi5 Success" },
       "keywords": ["real estate", "crm", "gohighlevel", "listing appointment", "cma", "fair housing", "notion"]
     }

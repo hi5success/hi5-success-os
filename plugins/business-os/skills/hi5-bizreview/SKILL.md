@@ -1,6 +1,6 @@
 ---
 name: hi5-bizreview
-description: Reviews how the business is doing against the plan for this quarter so far, last quarter, or the year to date. Reads the quarter numbers and weekly check-ins saved by /hi5-goals and the fee-aware take-home from /hi5-bizplan, compares actual with plan by client type or offer and by lead source, finds the bottleneck, and suggests at most three adjustments. Works for any industry and never assumes anyone's commission rules. Triggers when the user runs /hi5-bizreview, says "business review", "how am I doing", or "review my numbers".
+description: Reviews how the business is doing against the plan for this quarter so far, last quarter, or the year to date. Reads the quarter numbers and weekly check-ins saved by /hi5-goals and the fee-aware take-home from /hi5-bizplan, compares actual with plan by client type or offer and by lead source, finds the bottleneck, and suggests at most three adjustments. Works for any industry and never assumes anyone's commission rules. Triggers when the user runs /hi5-bizreview, says "business review", "how am I doing", "review my numbers", "am I on track", "how did this quarter go", or "what should I adjust".
 ---
 
 # Hi5 Bizreview: Business Performance Review

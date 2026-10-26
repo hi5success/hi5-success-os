@@ -1,6 +1,6 @@
 ---
 name: hi5-video-edit
-description: Edits videos in CapCut through the local CapCut bridge, finds the clips in a long-form, pulls and saves the transcript as a file, makes covers and thumbnails from the member's cover template, and exports to the row's folder. Works from one video on its own, or from the Notion content calendar by status. Used by the Video Editor AI employee. Triggers when the user runs /hi5-video-edit, says "edit my video", "find the clips", "save the transcript", "make the cover", "make the thumbnail", or "check my queue" for editing.
+description: Edits videos in CapCut through the local CapCut bridge, finds the clips in a long-form, pulls and saves the transcript as a file, makes covers and thumbnails from the member's cover template, and exports to the row's folder. Works from one video on its own, or from the Notion content calendar by status. Used by the Video Editor AI employee. Triggers when the user runs /hi5-video-edit, says "edit this video", "edit my video", "cut this into clips", "find the clips", "get the transcript", "make a thumbnail", "make the cover", or "check my editing queue".
 ---
 
 # /hi5-video-edit: The Video Editor

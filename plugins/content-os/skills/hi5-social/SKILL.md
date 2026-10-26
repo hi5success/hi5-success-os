@@ -1,6 +1,6 @@
 ---
 name: hi5-social
-description: Writes captions, posts, and short-form content for Instagram, Facebook, TikTok, LinkedIn, and email, and turns one video, script, or post into short-form scripts, pull quotes, and snippets. Makes static posts and carousels, writes captions from the transcript, runs the YouTube Shorts checklist, and schedules each piece on every platform at once at Optimizing. Works on a pasted script or idea on its own, or from the Notion content calendar. Used by the Social Media Manager AI employee. Triggers when the user runs /hi5-social, says "write captions", "social media posts", "turn this into posts", "repurpose this", "make a carousel", or "post this to social".
+description: Writes captions, posts, and short-form content for Instagram, Facebook, TikTok, LinkedIn, and email, and turns one video, script, or post into short-form scripts, pull quotes, and snippets. Makes static posts and carousels, writes captions from the transcript, runs the YouTube Shorts checklist, and schedules each piece on every platform at once at Optimizing. Works on a pasted script or idea on its own, or from the Notion content calendar. Used by the Social Media Manager AI employee. Triggers when the user runs /hi5-social, says "write captions", "write my captions", "social media posts", "turn this into posts", "repurpose this video", "make a carousel", "schedule my posts", or "post this to social".
 ---
 
 # /hi5-social: The Social Media Manager
