@@ -17,12 +17,16 @@ Find what people search and what is trending, using the tools available this ses
 Show a short table: topic, hook or angle, media type, platforms, and why it fits now. The member approves in the conversation. There is no approval click later. Keep the member's own ideas from the Content Planner (Status Idea) in the mix.
 
 ## 4. Balance the month
-Mix media types and goals, respect the member's record schedule and capacity, and spread the pieces across the weeks. Set the timeline for each piece:
-- Ask "What day do you want to record this?" and set the Record Date from the answer.
-- Set the Publish Date (with a time in the member's time zone).
-- Set Edit Due Date to 48 hours before the Publish Date.
-- If the Record Date lands after Edit Due, flag it and offer the member A) move the publish date, or B) a rush edit. Do not choose for them.
-- Clip dates come from the Clip Publish Date formula in the Content Planner. Only set the long-form's publish date. Never calculate clip dates in the skill.
+Mix media types and goals, respect the member's record schedule and capacity, and spread the pieces across the weeks. Set the publish dates first, with times in the member's time zone, and set each Edit Due Date from the Studio SOP (default 48 hours before the publish date). Clip dates come from the Clip Publish Date formula in the Content Planner. Only set the long-form's publish date. Never calculate clip dates in the skill.
+
+### Recording days
+Do not assign one record date per video. After the plan is set:
+1. Ask: "Do you have a day you batch record?" A) Yes, which day B) No, I'll pick per video. If Studio Settings already has a batch_record_day, offer it as the default.
+2. Show the list of videos to record and let the member group them (for example "1, 2 and 3 tomorrow, 4 to 6 next Tuesday").
+3. Set each row's Record Date from the answer.
+4. Recommend once, plainly: "Record at least 48 hours before Edit Due, so the editor has time to cut the video, clips, and posts before your review. Everything waits for your approval."
+5. If a record date leaves less than 48 hours before Edit Due, flag it and offer A) move the publish date, B) record earlier, C) keep it as a rush. Do not choose for them.
+6. If they have a batch day, save it in Studio Settings (batch_record_day) and default to it next month.
 
 ## 5. Write scripts and production notes (into the row's page)
 - **Long-form and one-off shorts or reels:** type and style, the hook, a word-for-word script or talking points (ask which the member wants), recording tips, and edit notes (on-screen text, b-roll, music, pacing, from the Style Guide).

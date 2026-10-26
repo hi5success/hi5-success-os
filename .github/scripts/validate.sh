@@ -275,7 +275,11 @@ grep -q 'synced_folder_path' plugins/content-os/skills/hi5-studio/references/fol
 grep -q 'Studio Bridges' plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("bridges.md must note the optional Studio Bridges plugin")
 grep -q 'Edit Due = 48 hours' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md must keep the Edit Due 48 hours rule")
 grep -q 'Clip Publish Date' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must leave clip dates to the formula")
-grep -q 'What day do you want to record this' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must ask for the record day")
+grep -q 'Do you have a day you batch record' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must ask about a batch record day")
+grep -q 'Skill vs SOP' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md must keep the Skill vs SOP rule")
+grep -q 'Clips post daily after the long-form' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md must keep the daily clips SOP line")
+grep -q 'Canva' plugins/content-os/skills/hi5-studio/references/covers.md || ERRORS+=("covers.md must keep the Canva option")
+grep -q 'skip for now' plugins/content-os/skills/hi5-studio/references/setup.md || ERRORS+=("setup.md must ask for examples and accept skip for now")
 grep -qi 'brokerage' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md pre-review check must apply the Compliance page brokerage rules")
 if grep -rnE 'eXp' plugins/content-os/skills/hi5-studio/references plugins/content-os/skills/hi5-studio-edit plugins/content-os/skills/hi5-studio-producer >/dev/null 2>&1; then ERRORS+=("Studio files must not hardcode a brokerage"); fi
 grep -q 'Never claim' plugins/content-os/skills/hi5-studio/references/bridges.md || grep -q 'Never claim a bridge' plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("bridges.md must keep the never claim a bridge rule")

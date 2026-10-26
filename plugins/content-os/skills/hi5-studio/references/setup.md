@@ -9,15 +9,20 @@ Used by `SKILL.md` mode A. Scan first. Skip any question the profile or an exist
 4. **Working hours?** A) Weekdays, business hours B) Mornings only C) My own hours (ask the days, hours, and time zone).
 5. **Where is your synced folder?** Ask for the path once, for the Google Drive, Dropbox, or OneDrive desktop app, or a plain folder on the computer (look for the app's folder first and offer what you find). Save it in Studio Settings as synced_folder_path. Every role writes files straight into it.
 6. **Where do posts get scheduled?** A) The Hi5 scheduler (GoHighLevel) B) Another scheduler (name it) C) I schedule them myself.
-7. **Cover images?** Say the default (Claude picks an approved photo or cutout from Content/Brand/ and builds the cover from the Cover Template). Ask only if they want a still from the video or new images made in ChatGPT instead.
+7. **Cover tool?** A) Claude Design or a Claude artifact (default) B) Canva. Save it in Studio Settings as cover_tool. **Cover images?** Say the default (Claude picks an approved photo or cutout from Content/Brand/ and builds the cover from the Cover Template). Ask only if they want a still from the video or new images made in ChatGPT instead.
 8. **What's different in how you work?** (open) Use the answer to edit the SOP.
+9. **Examples for each channel's Style Guide.** Ask for these, one at a time, with A/B/C where possible, and accept "skip for now":
+   - **Edits they like** (pacing, captions on screen, b-roll style): A) paste links B) share files from the synced folder C) describe it. Skip for now.
+   - **Social posts and covers they like:** A) paste links B) put images in Content/Brand/Cover examples C) describe it. Skip for now.
+   - **Captions that sound like them:** A) paste a few B) point me to where they live (a page or a post) C) use my Voice Profile. Skip for now.
+   Save what they give, as links or file names with a one-line note, in each picked channel's Style Guide under "Examples". If they skip, save "examples: skipped" in Studio Settings. The first review reminds them once (the pipeline reference).
 
 ## What setup creates (in this order, only for the channels picked)
 1. The Hi5 Studio page under the workspace root.
 2. Studio Settings, from the answers above.
-3. The Studio SOP: the default pipeline, edited to match answer 8.
+3. The Studio SOP: the default pipeline and process lines from the pipeline reference (Skill vs SOP), edited to match answer 8. The SOP holds the process, so the skills read it and follow it.
 4. The Content Calendar changes (append only), following the notion structure reference.
-5. A Style Guide and an Edit Log for each channel picked.
+5. A Style Guide (with the examples from question 9) and an Edit Log for each channel picked.
 6. The Cover Template page, plus a cover example the member likes if they have one.
 7. The top-level folders inside the synced folder (the folders reference). Ask the member to drop approved photos and cutouts into Content/Brand/.
 8. Save the Studio page IDs in the Master Profile Page IDs.

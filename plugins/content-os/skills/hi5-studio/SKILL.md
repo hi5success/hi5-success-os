@@ -10,6 +10,7 @@ A simple, status-based content pipeline the member runs from their Notion Conten
 
 ## Core Rules
 - **Skills hold the craft. The member's Notion holds everything about the member** (settings, SOP, style guides, edit logs, the cover template). Never write member-specific details into a skill.
+- **Skill vs SOP.** The skills hold only hard rules and craft defaults the member should never have to prompt for. How the member works (when each status moves, who does what, Edit Due, approval habits, clip cadence) lives in the Studio SOP in Notion as editable defaults, and every role reads the SOP and follows it. If the SOP and a skill conflict, the hard rules win and process follows the SOP. See the pipeline reference.
 - **Reuse the Content OS skills.** The Content Manager is /hi5-yt-plan, Social is /hi5-social, the Blog Writer is /hi5-blog, the Editor is /hi5-studio-edit, and the YouTube Producer is /hi5-studio-producer.
 - **Nothing is scheduled before Optimizing, and nothing posts that the member has not reviewed.** No exceptions.
 - **Scan first, then ask.** Read the Master Profile, the Content Profile, the Voice Profile, and any Studio pages first. Ask only what is missing, one short question at a time with A, B, C options.

@@ -13,6 +13,9 @@ A page under the workspace root called "Hi5 Studio" holds the Studio pages below
 - working_hours: days, hours, and time zone for scheduled roles
 - synced_folder_path: the path to the member's synced folder (the Google Drive, Dropbox, or OneDrive desktop app folder, or a plain local folder). Asked once in setup, and every role writes files straight into it
 - scheduler: Hi5 scheduler or GoHighLevel (default), or another named scheduler
+- cover_tool: Claude Design or a Claude artifact (default), or Canva
+- batch_record_day: the day the member batch records, if any (the default for next month)
+- examples: added, or skipped. examples_reminder: done once the member has been reminded after their first review
 - cover_image_option: default (Claude picks a photo or cutout from Content/Brand/ and builds the cover from the Cover Template), a still from the video, or a new image made in ChatGPT
 - bridges_detected: capcut, youtube-manager, ghl-social (matched by exact tool names), with the date they were last seen working
 - youtube_channel: the connected YouTube channel, saved the first time list_youtube_channels confirms it (YouTube members only)
@@ -21,7 +24,7 @@ A page under the workspace root called "Hi5 Studio" holds the Studio pages below
 - channel pages: one Style Guide page and one Edit Log page per channel (names and IDs)
 
 ## Studio SOP (one page)
-The default pipeline from the pipeline reference, written in plain language, edited to match the member's answer to "what's different in how you work?" Keep the statuses and the order. Record the differences as short bullets at the top under "How we work here". Anyone who joins (a VA or a team member) reads this page first.
+The default pipeline from the pipeline reference, written in plain language, edited to match the member's answer to "what's different in how you work?" Keep the statuses and the order. Record the differences as short bullets at the top under "How we work here". The SOP is where the member's process lives, as editable defaults: when each status moves, who does what, Edit Due (48 hours before publish), clip cadence ("Clips post daily after the long-form. Change this here if you skip weekends."), recording guidance, and approval habits. Every role reads it and follows it. Hard rules stay in the skills and win if the SOP conflicts. Anyone who joins (a VA or a team member) reads this page first.
 
 ## Content Calendar changes (append only)
 Add to the Content Planner. Never rename or remove anything.
@@ -34,7 +37,7 @@ Add to the Content Planner. Never rename or remove anything.
 To add options and properties, use the Notion connector's data source update with SQL statements (ALTER COLUMN "Status" SET SELECT(...) listing every existing option to keep plus the new ones, ADD COLUMN ...). Listing every option keeps the old ones, so nothing is removed. If a property cannot be added (the connector refuses), put it as the first line of each row's page ("Clip Number: 2", "Needs from member: ...") and say so once. If adding a select option errors, create a row that uses the new option and then trash it (the seed row workaround).
 
 ## Per channel
-- **Style Guide** (one page per channel): hook habits, pacing, caption voice and length, hashtag rules, edit style (cuts, captions, music, b-roll), cover style, and things to never do. Start from what the Master Profile and Voice Profile already say, then add the member's answers.
+- **Style Guide** (one page per channel): hook habits, pacing, caption voice and length, hashtag rules, edit style (cuts, captions, music, b-roll), cover style, and things to never do. Start from what the Master Profile and Voice Profile already say, then add the member's answers and an "Examples" section (edits, social posts and covers, and captions they like, as links or file names with a one-line note).
 - **Edit Log** (one page per channel): a dated list of every correction (see the learning edits reference).
 
 ## Cover Template page

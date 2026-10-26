@@ -16,6 +16,10 @@ The choice is saved in Studio Settings (cover_image_option), per channel if they
 | Static post | 1080 x 1350 |
 | Any other post | The size on the Cover Template page |
 
+## Cover tool (Studio Settings, cover_tool)
+- **A) Claude Design or a Claude artifact (default).** The steps below.
+- **B) Canva.** Claude builds or edits the design in the member's Canva with the Canva connector, using the Cover Template and a photo or cutout from Content/Brand/. The member then downloads the design from Canva into the row's Covers folder by hand. Say that once, plainly: "I'll build it in Canva. You download it into the Covers folder yourself, and then I'll tick Cover made." Do not tick Cover made until the member says it is in the folder. Nothing is exported automatically yet. If the Canva connector is not connected, say so and use option A.
+
 ## Default: Claude Design or a Claude artifact
 1. Read the Cover Template page and the last cover link. Match size, text position, fonts, colors, and logo exactly.
 2. Pick the photo or cutout from Content/Brand/ and read the cover text (a few words from the title or hook).

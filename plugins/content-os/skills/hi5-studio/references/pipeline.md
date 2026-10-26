@@ -2,6 +2,12 @@
 
 Used by every Studio role. The member's Notion Content Calendar (the Content Planner database, `content_planner_db_id`) is the single queue. Status and the handoff checklist on each row tell every role what to do next.
 
+## Skill vs SOP
+- **Hard rules (these skills, never overridden by the SOP):** nothing is scheduled before Optimizing, nothing posts that the member has not reviewed, the pre-review check, no invented facts or commitments, no income or results claims, the member's Compliance page, Fair Housing, no em dashes, confirm the account before posting, files go straight into the synced folder, and the Content Manager never writes captions.
+- **Process (the Studio SOP in Notion, editable by the member):** when each status moves, who does what, Edit Due, approval habits, and clip cadence. The tables and defaults in this reference are the starting text setup writes into the SOP. After that, roles follow what the SOP says.
+- **Default SOP lines to write at setup:** "Edit Due is 48 hours before the publish date." "Clips post daily after the long-form. Change this here if you skip weekends." "Record at least 48 hours before Edit Due, so the editor has time to cut the video, clips, and posts before your review. Everything waits for your approval."
+- If the SOP and a hard rule conflict, tell the member in one line which rule won.
+
 ## Statuses
 | Status | Set by | Who works | What happens |
 |---|---|---|---|
@@ -41,11 +47,12 @@ The Video Editor makes the cover for long-forms, clips, and one-off shorts. Soci
 ## Where files go
 Every role writes files straight into the member's synced folder (Studio Settings, synced_folder_path), never through the Drive connector. The connector is only for share links. The CapCut bridge exports into that folder and splits large files, so no role adds export or split steps.
 
-## Dates
-- The Content Manager asks "What day do you want to record this?" and sets the Record Date and the Publish Date.
-- **Edit Due = 48 hours before the publish date.**
-- Clip publish dates come from the Clip Publish Date formula in the Content Planner. Set only the long-form's publish date, never calculate clip dates.
-- If the Record Date lands after Edit Due, flag it and offer the member: A) move the publish date, or B) a rush edit.
+## Dates (defaults from the Studio SOP)
+- The Content Manager sets the publish date, then the record dates from the member's recording days (see the studio-manager reference). It does not assign one record date per video.
+- **Edit Due = 48 hours before the publish date** (the SOP's default, the member can change it).
+- Record at least 48 hours before Edit Due, so the editor has time to cut the video, clips, and posts before the member's review.
+- Clip publish dates come from the Clip Publish Date formula in the Content Planner, daily after the long-form, weekends included. Set only the long-form's publish date, never calculate clip dates, and never make the formula skip days. A member who skips weekends changes the SOP line.
+- If a record date leaves less than 48 hours before Edit Due, flag it and offer A) move the publish date, B) record earlier, or C) keep it as a rush.
 
 ## Handoffs
 1. The Editor finishes a long-form: it ticks Edit done and Transcript saved and makes the cover. The Producer drafts the title, description, chapters, and tags. When every box for the row is ticked the last role sets Reviewing.
@@ -64,6 +71,7 @@ Before any role sets Reviewing, it runs this self-check on everything it wrote o
 Then add the Log line "check passed" (add "with N placeholders for the member" if any [confirm: ...] remain), and only then set Reviewing. If something cannot be fixed without the member, leave the placeholder, write it in Needs from member, and say so in the Log.
 
 ## Reviewing and revising
+- After the member's first review, if the Style Guide has no examples (the member skipped them in setup), remind them once: "You can add examples of edits, posts, covers, and captions you like to the Style Guide any time, and I will match them." Note in Studio Settings (examples_reminder: done) so it is never repeated.
 - The member reviews in Notion and puts notes in the Revisions checklist, then sets Revising. Each note names what to change.
 - The role fixes every item, ticks it, logs it, and sets Reviewing again.
 - On any revision, ask the learning-edits question once (see the learning edits reference) and write the answer to the Edit Log right away.
@@ -72,7 +80,7 @@ Then add the Log line "check passed" (add "with N placeholders for the member" i
 If a row needs a photo, screenshot, or answer, write it in the row's Needs from member field (or as the first line of the page if the property is missing), add a Log line, skip the row, and keep working the rest of the queue. When the member clears it, the row returns to the queue.
 
 ## A queue pass
-1. Read the Style Guide and the Edit Log for the row's channel first. Detect the bridges by their exact tool names (the bridges reference).
+1. Read the Studio SOP, then the Style Guide and the Edit Log for the row's channel. Follow the SOP for process. Detect the bridges by their exact tool names (the bridges reference).
 2. List the rows for your role in publish-date order. Say how many you found in one line.
 3. Work one row at a time. Update the checklist, the Log, and the status as you go.
 4. Never block the queue on one row.

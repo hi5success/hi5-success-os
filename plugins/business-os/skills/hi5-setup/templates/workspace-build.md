@@ -61,7 +61,7 @@ Every video, blog, and piece of content is one row. Properties:
 | Status | select | Idea, Scheduled, Scripted, Draft, Published, Planned, Ready to Edit, In Progress, Reviewing, Revising, Finalizing, Optimizing |
 | Publish Date | date | |
 | Record Date | date | |
-| Edit Due Date | date | |
+| Edit Due Date | date | 48 hours before Publish Date (set in the Studio SOP) |
 | Content Category | select | (created as used) |
 | Content Type | select | (created as used) |
 | Deliverable Type | select | Long Form, Short Form, Blog, Podcast, Social Post, Clip, Static Post, Carousel |
