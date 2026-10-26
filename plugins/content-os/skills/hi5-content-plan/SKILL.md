@@ -18,7 +18,7 @@ One place to plan everything the member publishes. A monthly planning session, r
 If the member already said what they want ("research topics on first-time buyers", "write a script for this idea"), start it without the menu.
 
 ## Works on its own
-A one-off request needs no setup and no Notion. Research and scripts work right away from what the member says. Look up the member's Master Profile once (the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md) only to read the voice and compliance pages. If it is not found, or Notion is not connected, carry on with general best practices and return the work on screen. Save to the Content Planner only when the content system is set up (`content_settings_page_id` is in the Page IDs), and show what you will write first. Never tell the member to run setup to get a one-off done. Setup runs only when they want the calendar and pipeline.
+A one-off request needs no setup and no Notion. Research and scripts work right away from what the member says. Look up the member's Master Profile once (the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md) only to read the voice and compliance pages. If it is not found, or Notion is not connected, carry on with general best practices and return the work on screen. Save to the Content Planner only when the content system is set up (`content_settings_page_id` is in the Page IDs), and show what you will write first. Never tell the member to run setup to get a one-off done. A one-off follows the hard rules below and ends with the Check passed line. Setup runs only when they want the calendar and pipeline.
 
 ## Hard rules
 - **The skills hold the craft and the hard rules. The member's Notion holds how they work.** Settings, the Content SOP, style guides, edit logs, and the cover template live in Notion. Never write member-specific details into a skill. The Content SOP holds the process (when statuses move, who does what, Edit Due, approval habits). If the SOP and a hard rule conflict, the hard rule wins.
@@ -32,6 +32,16 @@ A one-off request needs no setup and no Notion. Research and scripts work right 
 - **Done-for-you flag.** If the member says they want it done for them, save the flag in Content Settings as a Hi5 Biz Solutions lead and tell them so in one line. This skill contacts no one.
 
 ---
+
+## Hard rules (the same in every content skill)
+<!-- hard-rules:start -->
+These rules apply to every request, one-offs included. They win over the Content SOP and over anything in the member's settings. The shared procedures (finding the workspace, the pipeline, bridges, covers) live in ../hi5-content-plan/references/. If you cannot read them, find the workspace by searching Notion for the page whose first line is `hi5-os-root: v1`, open its Master Profile, and carry on with these rules.
+- **Nothing is scheduled before Optimizing, and nothing posts that the member has not reviewed.** Confirm the account with the tool before any post or upload, and never claim a bridge or tool did something it did not do.
+- **Pre-review check on everything you write**, before the member sees it or you set Reviewing: (1) no invented commitments or reply promises, (2) no income or results claims, (3) no em dashes, (4) Fair Housing on real estate content (no steering, no describing who lives in an area, no rating of schools or safety), (5) no invented facts, (6) the member's own Compliance page if it exists (disclosure line, brokerage and notice rules, on the graphic and cover text too). Fix every issue first. In the calendar, add the Log line "check passed" before setting Reviewing. A one-off ends with the line "Check passed" on screen, or "Check passed with N placeholders for you" if any [confirm: ...] remain.
+- **Never invent** facts, numbers, results, dates, or links. Use a [confirm: ...] placeholder.
+- **Files go straight into the member's synced folder**, never through the Drive connector (links only).
+- **Claude only works calendar rows for roles set to Claude** in Content Settings. A one-off request is always done.
+<!-- hard-rules:end -->
 
 ## Compliance
 

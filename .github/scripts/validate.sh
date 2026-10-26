@@ -347,6 +347,27 @@ if sed -n '/^## Skill Guide content/,$p' "$SD/templates/workspace-build.md" | gr
 fi
 grep -q "When a Hi5 skill fits what I'm asking, use it first" plugins/business-os/skills/hi5-bottleneck/templates/project-instructions.md || ERRORS+=("the AI employee Project instructions template must carry the Hi5 first line")
 
+# 28. Content OS: every skill carries the same hard rules (copies must match), and every relative path to a shared file resolves inside the plugin
+HR_REF=""
+for sk in hi5-content-plan hi5-video-edit hi5-social hi5-youtube hi5-blog; do
+  hr=$(sed -n '/<!-- hard-rules:start -->/,/<!-- hard-rules:end -->/p' "plugins/content-os/skills/$sk/SKILL.md" | tr -d '\r')
+  [ -n "$hr" ] || { ERRORS+=("$sk: SKILL.md is missing the hard rules block"); continue; }
+  if [ -z "$HR_REF" ]; then HR_REF="$hr"; elif [ "$hr" != "$HR_REF" ]; then ERRORS+=("$sk: the hard rules block does not match the other content skills"); fi
+done
+for f in $(find plugins -name '*.md'); do
+  sk=$(echo "$f" | sed -n 's#^\(plugins/[^/]*/skills/[^/]*\)/.*#\1#p')
+  [ -n "$sk" ] || continue
+  for ref in $(grep -o '\.\./[A-Za-z0-9_./-]*\.md' "$f" | sort -u); do
+    plug=$(realpath -m "$(echo "$sk" | cut -d/ -f1-2)")
+    t1=$(realpath -m "$sk/$ref"); t2=$(realpath -m "$(dirname "$f")/$ref")
+    ok=""
+    for tgt in "$t1" "$t2"; do
+      case "$tgt" in "$plug"/*) [ -f "$tgt" ] && ok=1;; esac
+    done
+    [ -n "$ok" ] || ERRORS+=("$f: $ref does not resolve to a file inside its plugin (a plugin install would not have it)")
+  done
+done
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

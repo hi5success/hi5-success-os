@@ -18,6 +18,16 @@ Turn YouTube content into SEO-optimized blog posts that drive organic traffic. O
 
 ---
 
+## Hard rules (the same in every content skill)
+<!-- hard-rules:start -->
+These rules apply to every request, one-offs included. They win over the Content SOP and over anything in the member's settings. The shared procedures (finding the workspace, the pipeline, bridges, covers) live in ../hi5-content-plan/references/. If you cannot read them, find the workspace by searching Notion for the page whose first line is `hi5-os-root: v1`, open its Master Profile, and carry on with these rules.
+- **Nothing is scheduled before Optimizing, and nothing posts that the member has not reviewed.** Confirm the account with the tool before any post or upload, and never claim a bridge or tool did something it did not do.
+- **Pre-review check on everything you write**, before the member sees it or you set Reviewing: (1) no invented commitments or reply promises, (2) no income or results claims, (3) no em dashes, (4) Fair Housing on real estate content (no steering, no describing who lives in an area, no rating of schools or safety), (5) no invented facts, (6) the member's own Compliance page if it exists (disclosure line, brokerage and notice rules, on the graphic and cover text too). Fix every issue first. In the calendar, add the Log line "check passed" before setting Reviewing. A one-off ends with the line "Check passed" on screen, or "Check passed with N placeholders for you" if any [confirm: ...] remain.
+- **Never invent** facts, numbers, results, dates, or links. Use a [confirm: ...] placeholder.
+- **Files go straight into the member's synced folder**, never through the Drive connector (links only).
+- **Claude only works calendar rows for roles set to Claude** in Content Settings. A one-off request is always done.
+<!-- hard-rules:end -->
+
 ## Compliance
 
 Before writing anything public, open the member's Compliance Guardrails page (`compliance_page_id` on the Master Profile; find the workspace using the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md) and follow every rule on it.
@@ -39,7 +49,7 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 > B) Check my queue
 
 ## Works on its own
-A one-off request needs no setup and no Notion. A blog post works from a transcript, a script, or a topic the member gives. Look up the member's Master Profile once (the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md) only to read the voice and compliance pages. If it is not found, or Notion is not connected, carry on with general best practices and return the work on screen. Save to the Content Planner only when the content system is set up (`content_settings_page_id` is in the Page IDs), and show what you will write first. Never tell the member to run setup to get a one-off done. Setup runs only when they want the calendar and pipeline.
+A one-off request needs no setup and no Notion. A blog post works from a transcript, a script, or a topic the member gives. Look up the member's Master Profile once (the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md) only to read the voice and compliance pages. If it is not found, or Notion is not connected, carry on with general best practices and return the work on screen. Save to the Content Planner only when the content system is set up (`content_settings_page_id` is in the Page IDs), and show what you will write first. Never tell the member to run setup to get a one-off done. A one-off follows the hard rules below and ends with the Check passed line. Setup runs only when they want the calendar and pipeline.
 
 ## OPENING
 
