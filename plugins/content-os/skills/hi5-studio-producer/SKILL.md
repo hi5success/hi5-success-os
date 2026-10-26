@@ -39,19 +39,19 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill. If it is not set up, tell the member to run /hi5-setup first and stop. The Content Calendar is the Content Planner (`content_planner_db_id`). Read the Studio IDs from the Page IDs (`studio_page_id`, `studio_settings_page_id`, `studio_sop_page_id`, `cover_template_page_id`). If there is no Studio yet, offer /hi5-studio to set it up and stop.
 
 ## Step 1: Check the bridge
-Detect the YouTube uploader (../hi5-studio/references/bridges.md). If it is missing, say so in one line, write the full upload package, and give the manual steps for YouTube Studio.
+Detect the youtube-manager bridge by its exact tool names (upload_youtube_video, list_youtube_channels, list_youtube_videos, add_youtube_channel, see ../hi5-studio/references/bridges.md). If it is missing, say so in one line, write the full upload package, and give the manual steps for YouTube Studio. Never ask the member to reconfirm a bridge that works.
 
 ## Step 2: Pick up the queue
 Follow "A queue pass" in the pipeline reference. Your rows: long-forms with Transcript saved ticked and Title and description drafted open.
 
 ## Step 3: Write the package
-From the transcript, write the title, description, chapters with timestamps, and tags, following `references/youtube-rules.md`. Put them in the row's Title and description section, tick Title and description drafted, and add a Log line. When every box on the row is ticked, set Reviewing (the video, the cover, and the title and description are reviewed together).
+From the transcript, write the title, description, chapters with timestamps, and tags, following `references/youtube-rules.md`. Put them in the row's Title and description section, tick Title and description drafted, and add a Log line. Run the pre-review check from the pipeline reference (../hi5-studio/references/pipeline.md) on everything you wrote, fix any issue, and log "check passed". When every box on the row is ticked, set Reviewing (the video, the cover, and the title and description are reviewed together).
 
 ## Step 4: Notes for Social
 Read the short-form rows (clips and shorts) from this long-form. Add YouTube notes (tag ideas, title ideas, the related long-form link) to each row's YouTube notes section for Social to use. Never post or schedule them.
 
 ## Step 5: Optimizing
-At Optimizing, upload and schedule the long-form through the YouTube uploader with its thumbnail, on the date and time in the row. Do the YouTube Studio steps the API cannot do (end screen, cards) with Claude's built-in browser, asking the member to sign in if needed. Tick Scheduled and set the status Scheduled. Never claim an upload happened unless the bridge confirms it.
+At Optimizing, first call list_youtube_channels and check that the channel matches the Studio's youtube_channel (offer add_youtube_channel, with the member's OK, if it is not connected). Then upload and schedule the long-form with upload_youtube_video and its thumbnail, on the date and time in the row. Do the YouTube Studio steps the API cannot do (end screen, cards) with Claude's built-in browser, asking the member to sign in if needed. Tick Scheduled and set the status Scheduled. Never claim an upload happened unless the bridge confirms it.
 
 ## Step 6: Revisions
 On Revising, fix every note, tick it, log it, ask the learning-edits question once (../hi5-studio/references/learning-edits.md), write the answer to the Edit Log, and set Reviewing.

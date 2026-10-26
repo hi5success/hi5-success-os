@@ -263,6 +263,14 @@ done
 grep -q 'Nothing is scheduled before Optimizing' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("hi5-studio pipeline.md must keep the nothing scheduled before Optimizing rule")
 grep -q 'Never write captions' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must keep the never write captions rule")
 grep -q 'Edit Log' plugins/content-os/skills/hi5-studio/references/learning-edits.md || ERRORS+=("learning-edits.md must keep the Edit Log")
+grep -q 'Pre-review check' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("hi5-studio pipeline.md must keep the Pre-review check")
+grep -q 'check passed' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("hi5-studio pipeline.md must keep the check passed log line")
+for f in plugins/content-os/skills/hi5-studio-edit/SKILL.md plugins/content-os/skills/hi5-studio-producer/SKILL.md plugins/content-os/skills/hi5-social/references/studio-social.md plugins/content-os/skills/hi5-blog/SKILL.md plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md; do
+  grep -q 'pre-review check' "$f" || ERRORS+=("$f must run the pre-review check")
+done
+for t in capcut_save_draft upload_youtube_video list_youtube_channels create_post list_social_accounts; do
+  grep -q "$t" plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("hi5-studio bridges.md must name the exact tool $t")
+done
 grep -q 'Never claim' plugins/content-os/skills/hi5-studio/references/bridges.md || grep -q 'Never claim a bridge' plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("bridges.md must keep the never claim a bridge rule")
 
 # 21. The org chart skill keeps its files, the one human manager rule, and the AI Employees database

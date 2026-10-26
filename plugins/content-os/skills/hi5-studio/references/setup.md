@@ -23,7 +23,7 @@ Used by `SKILL.md` mode A. Scan first. Skip any question the profile or an exist
 8. Save the Studio page IDs in the Master Profile Page IDs.
 
 ## Bridges
-Detect them (the bridges reference). Point to the install notes and the install video if any are missing, and say once: "The desktop app has to be running for the bridges to work." Do not write API key or Google Cloud steps.
+Detect them by exact tool names (the bridges reference). Point to the install notes and the install video if any are missing, and say once: "The desktop app has to be running for the bridges to work." Do not write API key or Google Cloud steps.
 
 ## Scheduled tasks
 Offer them (the tasks reference), only with the member's OK.

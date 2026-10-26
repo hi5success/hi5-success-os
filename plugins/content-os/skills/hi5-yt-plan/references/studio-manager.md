@@ -25,6 +25,8 @@ Mix media types and goals, respect the member's record schedule and capacity, an
 - **Clips:** no notes. The Editor finds them.
 Write in the member's voice. Never invent facts, numbers, or results. For real estate content, run the Fair Housing check: no steering, and never describe who lives somewhere. Listing content uses only the listing facts the member gives.
 
+Before the member sees any script or notes, run the pre-review check from the pipeline reference (no invented commitments, no income or results claims, no em dashes, Fair Housing on real estate content), and log "check passed" on each row.
+
 ## 6. Create the rows, folders, and starting statuses
 For each approved piece:
 - A row in the Content Planner with Deliverable Type, Platforms (Distribution), Record Date, Publish Date and time, and the Asset Folder URL. Status is Planned.

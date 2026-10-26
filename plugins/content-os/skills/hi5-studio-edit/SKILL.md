@@ -37,25 +37,25 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill. If it is not set up, tell the member to run /hi5-setup first and stop. The Content Calendar is the Content Planner (`content_planner_db_id`). Read the Studio IDs from the Page IDs (`studio_page_id`, `studio_settings_page_id`, `studio_sop_page_id`, `cover_template_page_id`). If there is no Studio yet, offer /hi5-studio to set it up and stop.
 
 ## Step 1: Check the bridge
-Detect the CapCut bridge (see the bridges reference). If it is missing, say so in one line, give the manual step, and continue with the parts that do not need it (transcripts from a file the member provides, covers, handoffs).
+Detect the capcut bridge by its exact tool names (capcut_create_draft, capcut_save_draft, and the rest, listed in the bridges reference). If it is missing, say so in one line, give the manual step, and continue with the parts that do not need it (a transcript from the order in the bridges reference, covers, handoffs). Never ask the member to reconfirm a bridge that works.
 
 ## Step 2: Pick up the queue
 Follow "A queue pass" in the pipeline reference. Your rows: Ready to Edit long-forms and one-off shorts, and clip rows whose parent long-form is In Progress and not yet cut. Set a row to In Progress when you start, and add a Log line.
 
 ## Step 3: Edit
-Edit the long-form or one-off short from the Raw and B-roll folders using the Edit notes and the Style Guide. Export a review copy (name it with "-review") to the row's Exports folder through the bridge. The bridge splits files over the upload limit and joins them back.
+Build the edit from the Raw and B-roll folders as a CapCut draft with the capcut tools (create the draft, add video, audio, text, subtitles, images, effects, and keyframes, join parts, and save the draft), using the Edit notes and the Style Guide. Read each tool's description first and never guess an argument. For a review copy (named with "-review") in the row's Exports folder, use the bridge's export tool if its docs name one, otherwise ask the member to export from CapCut into the folder and tell you. Add a Log line saying what you did and which path you used.
 
 ## Step 4: Find the clips
 For a long-form, find the planned number of clips (the clip rows already on the calendar, or the number in Studio Settings). Choose self-contained moments with a strong first line, one idea, and a clean ending, taken from the transcript. Record each clip's start and end time in its row's Edit notes, move the clip row to In Progress, and export the clip to Exports/Clips. Never invent a moment that is not in the video.
 
 ## Step 5: Transcript
-Save a timestamped transcript of every video and clip (lines like "[00:00:12] text") to the row's Transcript folder, and link it on the row. Chapters, descriptions, captions, and blogs all come from it, so nobody waits for YouTube's transcript. If the bridge cannot make one, ask the member to paste one or name another local tool that made it. Tick Transcript saved.
+Save a timestamped transcript of every video and clip (lines like "[00:00:12] text") to the row's Transcript folder, and link it on the row. Chapters, descriptions, captions, and blogs all come from it, so nobody waits for YouTube's transcript. Do not assume a CapCut caption export. Use the order in the bridges reference: the bridge if it has a tool for it, otherwise a local tool, otherwise ask the member to paste it. Say which one you used in the row's Log ("Transcript: via the capcut bridge tool [name]", "via local tool [name]", or "pasted by the member"). Tick Transcript saved.
 
 ## Step 6: Cover
 Make the cover or thumbnail from the Cover Template and the image option in Studio Settings (../hi5-studio/references/covers.md). Save it to the piece's Covers folder. Tick Cover made.
 
 ## Step 7: Hand off
-Tick Edit done. Then follow the Handoffs section of the pipeline reference: clips and shorts go to Social for captions, long-forms go to the Producer for the title, description, chapters, and tags (or, if YouTube is not used, to Social). Add a Log line. Never set Reviewing until the video, the cover, and the text are all ready.
+Tick Edit done. Run the pre-review check from the pipeline reference on everything you wrote (cover text and notes) and log "check passed". Then follow the Handoffs section of the pipeline reference: clips and shorts go to Social for captions, long-forms go to the Producer for the title, description, chapters, and tags (or, if YouTube is not used, to Social). Add a Log line. Never set Reviewing until the video, the cover, and the text are all ready.
 
 ## Step 8: Revisions and finals
 On Revising, fix every note in the Revisions checklist, tick it, log it, ask the learning-edits question once (../hi5-studio/references/learning-edits.md), write the answer to the Edit Log, and set Reviewing. On Finalizing, export the finals (no "-review") to the right folder (Exports for a long-form or short, Exports/Clips for a clip), tick Finals in the Exports folder, and tell Social or the Producer.

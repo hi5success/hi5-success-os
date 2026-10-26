@@ -14,7 +14,9 @@ A page under the workspace root called "Hi5 Studio" holds the Studio pages below
 - file_location: Google Drive app, Dropbox app, or a local folder (with the path)
 - scheduler: Hi5 scheduler or GoHighLevel (default), or another named scheduler
 - cover_image_option: A (a still from the video), B (a cutout on a textured solid background), or C (a new image made in ChatGPT)
-- bridges_detected: CapCut, YouTube uploader, GHL social, with the date they were last seen working
+- bridges_detected: capcut, youtube-manager, ghl-social (matched by exact tool names), with the date they were last seen working
+- youtube_channel: the connected YouTube channel, saved the first time list_youtube_channels confirms it (YouTube members only)
+- social_accounts: the connected social accounts per platform, saved the first time list_social_accounts confirms them
 - scheduled_tasks: which role tasks the member turned on
 - channel pages: one Style Guide page and one Edit Log page per channel (names and IDs)
 

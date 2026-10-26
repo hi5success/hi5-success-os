@@ -11,7 +11,7 @@ Each task prompt: "Read the Studio Settings, the Studio SOP, and the channel Sty
 - Blog Writer: Published long-forms with no blog draft.
 
 ## One daily task: the Published check
-"Read the Content Calendar. For each Scheduled row whose publish time has passed, ask the scheduler or bridge whether it posted. If it confirms, set the row to Published and log it. If it cannot confirm, leave the row Scheduled, add the Log line 'past due, not confirmed', and put it in the report. Never mark a row Published on a guess."
+"Read the Content Calendar. For each Scheduled row whose publish time has passed, call list_posts (ghl-social) or list_youtube_videos (youtube-manager) and check whether it posted. If it confirms, set the row to Published and log it. If it cannot confirm, leave the row Scheduled, add the Log line 'past due, not confirmed', and put it in the report. Never mark a row Published on a guess."
 
 ## Rules
 - Tasks run only inside the member's working hours.

@@ -35,7 +35,7 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 ---
 
 ## Studio mode (Blog Writer)
-If the Master Profile has `studio_settings_page_id`, the member runs the Hi5 Studio. Look in the Content Calendar for long-form rows with Status Published and no blog row yet. For each one, read its saved transcript from the row's Transcript folder and write the post from it using the OUTPUT section below. Embed the video (the YouTube link, or the link where it was published), create a Blog row (Deliverable Type Blog, Related To the long-form's title, Status Draft) with the post in its page, and stop. A blog post is saved as a draft only, never published or scheduled. Follow the Studio pipeline reference (../hi5-studio/references/pipeline.md) and log the action. Without a Studio, continue below as before.
+If the Master Profile has `studio_settings_page_id`, the member runs the Hi5 Studio. Look in the Content Calendar for long-form rows with Status Published and no blog row yet. For each one, read its saved transcript from the row's Transcript folder and write the post from it using the OUTPUT section below. Embed the video (the YouTube link, or the link where it was published), create a Blog row (Deliverable Type Blog, Related To the long-form's title, Status Draft) with the post in its page, and stop. Run the pre-review check from the Studio pipeline reference on the post before saving it, and log "check passed". A blog post is saved as a draft only, never published or scheduled. Follow the Studio pipeline reference (../hi5-studio/references/pipeline.md) and log the action. Without a Studio, continue below as before.
 
 ## OPENING
 
