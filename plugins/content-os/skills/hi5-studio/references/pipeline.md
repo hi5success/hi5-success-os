@@ -18,7 +18,7 @@ Legacy statuses (Idea, Scripted, Draft) from older flows are left alone. Never r
 
 ## Rows by type (Deliverable Type)
 - **Long Form:** Planned, Ready to Edit, In Progress, Reviewing, Revising, Finalizing, Optimizing, Scheduled, Published. Skipped publishing steps if YouTube is not used.
-- **Clip:** one row per planned clip, a child of its long-form (Related To holds the parent title, Clip Number holds the order). Created at Planned, staggered one a day by default. The Editor moves each to In Progress as it cuts it from the long-form. No notes needed, the Editor finds the clips.
+- **Clip:** one row per planned clip, a child of its long-form (the Parent long-form relation and Related To hold the parent, Clip Number holds the order). Created at Planned. Its publish date comes from the Clip Publish Date formula in the Content Planner, not from the skill. The Editor moves each to In Progress as it cuts it from the long-form. No notes needed, the Editor finds the clips.
 - **Short Form (one-off short):** like a long-form, with its own Raw folder and a script from the Content Manager. Social writes the captions.
 - **Static Post and Carousel:** skip Ready to Edit. Social takes a Planned row to In Progress, makes the graphic, and sets Reviewing.
 - **Blog:** created by the Blog Writer when the long-form is Published.
@@ -30,13 +30,22 @@ Sections in this order: Script and production notes, Edit notes, Captions, Title
 
 ## Who picks up what (queue rules)
 - **Content Manager:** the monthly session only. Creates rows, folders, notes, clip rows, and starting statuses, then hands off.
-- **Video Editor:** Ready to Edit rows (long-form, one-off short), and clip rows whose parent long-form is In Progress and not yet cut. When the edit and transcript are done, tick Edit done and Transcript saved, make the cover, and hand off (see below).
+- **Video Editor:** Ready to Edit rows (long-form, one-off short), and clip rows whose parent long-form is In Progress and not yet cut. When the edit is done, pull the transcript from CapCut and export it as a file into the same folder as the video (if that fails, the member pastes it, and the Log says which path was used), tick Edit done and Transcript saved, make the cover, and hand off (see below).
 - **Social Media:** clip, short, and one-off short rows where Edit done is ticked and Captions drafted is open. Planned statics and carousels. At Optimizing, clips, shorts, statics, and the non-YouTube platforms of a long-form.
 - **YouTube Producer:** long-form rows where Transcript saved is ticked and Title and description drafted is open. At Optimizing, the YouTube upload and schedule.
 - **Blog Writer:** Published long-form rows with no blog row yet.
 
 ## Who makes the cover
-The Video Editor makes the cover for long-forms, clips, and one-off shorts. Social makes the cover for statics and carousels as part of the graphic.
+The Video Editor makes the cover for long-forms, clips, and one-off shorts. Social makes the cover for statics and carousels as part of the graphic. Both follow the covers reference.
+
+## Where files go
+Every role writes files straight into the member's synced folder (Studio Settings, synced_folder_path), never through the Drive connector. The connector is only for share links. The CapCut bridge exports into that folder and splits large files, so no role adds export or split steps.
+
+## Dates
+- The Content Manager asks "What day do you want to record this?" and sets the Record Date and the Publish Date.
+- **Edit Due = 48 hours before the publish date.**
+- Clip publish dates come from the Clip Publish Date formula in the Content Planner. Set only the long-form's publish date, never calculate clip dates.
+- If the Record Date lands after Edit Due, flag it and offer the member: A) move the publish date, or B) a rush edit.
 
 ## Handoffs
 1. The Editor finishes a long-form: it ticks Edit done and Transcript saved and makes the cover. The Producer drafts the title, description, chapters, and tags. When every box for the row is ticked the last role sets Reviewing.
@@ -51,7 +60,7 @@ Before any role sets Reviewing, it runs this self-check on everything it wrote o
 3. **No em dashes.**
 4. **Fair Housing on real estate content.** No steering, no preference or limitation, no describing who lives in an area, no rating of schools or safety, and no wording that points to a protected class. Listing content uses only facts the member gave.
 5. **No invented facts.** Nothing the transcript, the notes, or the member did not supply.
-6. **The disclosure line and the brokerage rules** on the Compliance page. The saved disclosure line (the short version for captions and descriptions) is on public text that needs it, and every brokerage or advertising rule applies to graphics, cover text, and captions too (for example, how the team name must be written and that the broker name appears). Check the graphic itself, not only the caption.
+6. **The member's own Compliance page.** Read it and apply whatever disclosure and brokerage lines it lists, to captions, descriptions, graphics, and cover text (check the graphic itself, not only the caption). Never hardcode a brokerage or a disclosure into a skill. If the page does not exist, skip this line (setup already told the member once).
 Then add the Log line "check passed" (add "with N placeholders for the member" if any [confirm: ...] remain), and only then set Reviewing. If something cannot be fixed without the member, leave the placeholder, write it in Needs from member, and say so in the Log.
 
 ## Reviewing and revising

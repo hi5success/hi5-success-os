@@ -7,9 +7,9 @@ Used by `SKILL.md` mode A. Scan first. Skip any question the profile or an exist
 2. **Who does the work?** A) Me B) A VA C) My team D) I want it done for me. If D, save the Hi5 Biz Solutions flag and tell the member in one line.
 3. **Clips per long-form video?** A) 3 B) 5 (recommended) C) 8 D) Another number. It can be changed per video later.
 4. **Working hours?** A) Weekdays, business hours B) Mornings only C) My own hours (ask the days, hours, and time zone).
-5. **Where do your files live?** A) Google Drive B) Dropbox C) A folder on my computer.
+5. **Where is your synced folder?** Ask for the path once, for the Google Drive, Dropbox, or OneDrive desktop app, or a plain folder on the computer (look for the app's folder first and offer what you find). Save it in Studio Settings as synced_folder_path. Every role writes files straight into it.
 6. **Where do posts get scheduled?** A) The Hi5 scheduler (GoHighLevel) B) Another scheduler (name it) C) I schedule them myself.
-7. **Cover images?** A) A still from the video B) A cutout on a textured solid background C) A new image made in ChatGPT.
+7. **Cover images?** Say the default (Claude picks an approved photo or cutout from Content/Brand/ and builds the cover from the Cover Template). Ask only if they want a still from the video or new images made in ChatGPT instead.
 8. **What's different in how you work?** (open) Use the answer to edit the SOP.
 
 ## What setup creates (in this order, only for the channels picked)
@@ -19,11 +19,15 @@ Used by `SKILL.md` mode A. Scan first. Skip any question the profile or an exist
 4. The Content Calendar changes (append only), following the notion structure reference.
 5. A Style Guide and an Edit Log for each channel picked.
 6. The Cover Template page, plus a cover example the member likes if they have one.
-7. The top-level folders in the member's file location (the folders reference). The Brand folders ask the member to drop in no-background photos (for cover option B) or reference photos (for option C).
+7. The top-level folders inside the synced folder (the folders reference). Ask the member to drop approved photos and cutouts into Content/Brand/.
 8. Save the Studio page IDs in the Master Profile Page IDs.
+9. The Content Planner fields for clip dates (the notion structure reference): add the Parent long-form relation, the Parent publish date rollup, and the Clip Publish Date formula if the Content Planner does not have them.
+
+## Compliance page
+Check that the member's Compliance page exists. If it does not, skip the disclosure and brokerage line in the pre-review check and tell the member once: "I could not find your Compliance page, so the pre-review check will skip the disclosure and brokerage lines until it exists." Never hardcode a brokerage or a disclosure.
 
 ## Bridges
-Detect them by exact tool names (the bridges reference). Point to the install notes and the install video if any are missing, and say once: "The desktop app has to be running for the bridges to work." Do not write API key or Google Cloud steps.
+Setup only detects them by exact tool names (the bridges reference). If any are missing, point to the install guide and the install video. Do not install anything and do not write Node, Google Cloud, or API key steps. Say once: "The bridges run in the Claude desktop app, which has to be open for them to work."
 
 ## Scheduled tasks
 Offer them (the tasks reference), only with the member's OK.

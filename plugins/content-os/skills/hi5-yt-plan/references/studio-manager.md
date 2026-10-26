@@ -17,7 +17,12 @@ Find what people search and what is trending, using the tools available this ses
 Show a short table: topic, hook or angle, media type, platforms, and why it fits now. The member approves in the conversation. There is no approval click later. Keep the member's own ideas from the Content Planner (Status Idea) in the mix.
 
 ## 4. Balance the month
-Mix media types and goals, respect the member's record schedule and capacity, and spread the pieces across the weeks. Set the timeline: record dates, then publish dates with times in the member's time zone. Set each Edit Due Date to the publish date minus edit_turnaround_days from the Content Profile, but never before the record date. If the window between recording and publishing is shorter than the turnaround, set Edit Due to the day before publish and say so in one line, so the member can move the publish date.
+Mix media types and goals, respect the member's record schedule and capacity, and spread the pieces across the weeks. Set the timeline for each piece:
+- Ask "What day do you want to record this?" and set the Record Date from the answer.
+- Set the Publish Date (with a time in the member's time zone).
+- Set Edit Due Date to 48 hours before the Publish Date.
+- If the Record Date lands after Edit Due, flag it and offer the member A) move the publish date, or B) a rush edit. Do not choose for them.
+- Clip dates come from the Clip Publish Date formula in the Content Planner. Only set the long-form's publish date. Never calculate clip dates in the skill.
 
 ## 5. Write scripts and production notes (into the row's page)
 - **Long-form and one-off shorts or reels:** type and style, the hook, a word-for-word script or talking points (ask which the member wants), recording tips, and edit notes (on-screen text, b-roll, music, pacing, from the Style Guide).
@@ -32,7 +37,7 @@ For each approved piece:
 - A row in the Content Planner with Deliverable Type, Platforms (Distribution), Record Date, Publish Date and time, and the Asset Folder URL. Status is Planned.
 - A folder in the member's file location (../hi5-studio/references/folders.md).
 - The notes in the page sections from the pipeline reference, with an empty Handoff checklist and Log.
-For each long-form, create the clip rows: the count from Studio Settings (clips_per_long_form), adjustable per video. Each clip row has Deliverable Type Clip, Clip Number, Related To (the parent title), the parent's platforms, Status Planned, and a publish date staggered one a day starting the day after the long-form, skipping days the member does not post (read weekly_rhythm), at the long-form's time unless the member asks otherwise. Say the dates in one line so the member can change them.
+For each long-form, create the clip rows: the count from Studio Settings (clips_per_long_form), adjustable per video. Each clip row has Deliverable Type Clip, Clip Number, the Parent long-form relation (and Related To with the parent title), the parent's platforms, and Status Planned. Leave the clip's publish date to the formula, then read the dates it shows and say them in one line so the member can change them.
 Only create rows, folders, and roles for the channels the member picked. No YouTube means no YouTube-only rows or notes.
 
 ## 7. Hand off

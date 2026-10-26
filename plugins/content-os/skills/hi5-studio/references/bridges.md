@@ -1,6 +1,9 @@
 # Local Bridges
 
-The CapCut bridge, the YouTube manager, and the GHL social bridge run on the member's computer as local MCP servers and are bundled with the plugin install notes. Setup points to the install notes and the install video: [BRIDGE INSTALL VIDEO LINK: add before release]. Do not write Google Cloud, API key, or developer console steps. Point to the video and the install notes.
+The CapCut bridge, the YouTube manager, and the GHL social bridge run on the member's computer as local MCP servers. The plugin cannot install them. Setup only detects them (exact tool names below) and points to the install guide and the install video: [BRIDGE INSTALL VIDEO LINK: add before release]. Do not write Google Cloud, API key, or developer console steps.
+
+## Where the bridges are set up
+Bridges are set up in the Claude desktop app, not in Claude Code. The member installs Node, the CapCut desktop app, Google Cloud OAuth for YouTube, and their GoHighLevel key by hand, following the install guide. The CapCut drafts folder is different on Mac and on Windows, so never hardcode it: the bridge knows it, and the member sets it during install. A separate, optional "Studio Bridges" plugin may package the bridges later. It is not part of this plugin.
 
 ## Detect by exact tool names
 Match on the end of the tool name. A prefix may appear in front (for example mcp__capcut__capcut_save_draft is the tool capcut_save_draft). Do not match on words in a name, only on these tool names.
@@ -18,12 +21,12 @@ The tool confirms the account, never the member.
 - Use list_youtube_videos to check whether a long-form is public yet, and list_posts to confirm a scheduled post and for the daily Published check.
 If a call succeeds, move on. Do not ask the member to confirm it again.
 
-## Transcript and export: use the real tools
-Do not assume a CapCut caption export. The bridge files and docs in the repo name the export and transcript tools, so read them and use those tools. Until the docs say otherwise, get the transcript in this order:
-1. The bridge, if it has a tool for it (read the tool's description first).
-2. A local tool on the member's computer (name the tool you used).
-3. Ask the member to paste it.
-Say which one you used in the row's Log, for example "Transcript: via the capcut bridge tool [name]", "Transcript: via local tool [name]", or "Transcript: pasted by the member". Do the same for exporting a rendered video: use the bridge's export tool if it has one, and otherwise ask the member to export from CapCut into the row's Exports folder. The capcut tools above build and save a draft, they do not by themselves produce a rendered file.
+## Transcript and export
+The synced folder is where files live (the folders reference). The CapCut bridge already exports into it and splits files that are over the size limit, so never add an export or split step.
+- **Transcript, the default:** the Video Editor pulls the transcript from CapCut and exports it as a file (a .txt or .srt) into the same folder as the video. Do not assume a particular CapCut caption export tool, read the tool's description first and use what the bridge or CapCut offers.
+- **Fallback:** if the transcript cannot be pulled, ask the member to paste it, and save the pasted text as a file in the same folder.
+- **Log which path was used** in the row's Log: "Transcript: pulled from CapCut" or "Transcript: pasted by the member".
+- **Exporting a rendered video:** use the bridge's export tool if it has one. Otherwise ask the member to export from CapCut into the row's Exports folder. The capcut tools above build and save a draft, they do not by themselves produce a rendered file.
 
 ## What each bridge does
 - **capcut:** create a draft, add video, audio, text, subtitles, images, stickers, effects, and keyframes, get a duration, join parts, and save the draft.
@@ -33,7 +36,7 @@ Read each tool's description before calling it, and never guess an argument. If 
 
 ## If a bridge is missing
 Say so in one line and give the manual step, then keep the pipeline moving.
-- **capcut missing:** "I can't reach the CapCut bridge, so I can't edit for you. Edit this one in CapCut yourself, drop the finals in the Exports folder, tell me, and I'll continue with the transcript, captions, and cover." If there is no transcript, use the transcript order above.
+- **capcut missing:** "I can't reach the CapCut bridge, so I can't edit for you. Edit this one in CapCut yourself, drop the finals in the Exports folder, tell me, and I'll continue with the transcript, captions, and cover." If there is no transcript, use the fallback above.
 - **youtube-manager missing:** "I can't reach the YouTube manager. Here is the title, description, chapters, tags, and thumbnail to paste into YouTube Studio when you upload. Tell me when it is scheduled."
 - **ghl-social missing:** "I can't reach the scheduler. Here is each post with its time to paste into your scheduler. Tell me when they are scheduled."
 Mark the matching checklist item only after the member says it is done. Never claim a bridge did something it did not do.

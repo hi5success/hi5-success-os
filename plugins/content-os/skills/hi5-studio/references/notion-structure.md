@@ -11,9 +11,9 @@ A page under the workspace root called "Hi5 Studio" holds the Studio pages below
 - done_for_you_lead: yes or no, with the date (a flag for Hi5 Biz Solutions, nobody is contacted by this skill)
 - clips_per_long_form: default 5
 - working_hours: days, hours, and time zone for scheduled roles
-- file_location: Google Drive app, Dropbox app, or a local folder (with the path)
+- synced_folder_path: the path to the member's synced folder (the Google Drive, Dropbox, or OneDrive desktop app folder, or a plain local folder). Asked once in setup, and every role writes files straight into it
 - scheduler: Hi5 scheduler or GoHighLevel (default), or another named scheduler
-- cover_image_option: A (a still from the video), B (a cutout on a textured solid background), or C (a new image made in ChatGPT)
+- cover_image_option: default (Claude picks a photo or cutout from Content/Brand/ and builds the cover from the Cover Template), a still from the video, or a new image made in ChatGPT
 - bridges_detected: capcut, youtube-manager, ghl-social (matched by exact tool names), with the date they were last seen working
 - youtube_channel: the connected YouTube channel, saved the first time list_youtube_channels confirms it (YouTube members only)
 - social_accounts: the connected social accounts per platform, saved the first time list_social_accounts confirms them
@@ -29,6 +29,7 @@ Add to the Content Planner. Never rename or remove anything.
 - Deliverable Type options: Clip, Static Post, Carousel (Long Form, Short Form, and Blog already exist). Short Form is a one-off short.
 - Distribution is the Platforms field (multi-select). Add options as used.
 - New properties: Clip Number (number), Needs from member (text).
+- Clip dates come from the calendar, not from the skill: a relation Parent long-form (to the Content Planner itself, with the reverse Clips), a rollup Parent publish date (the Publish Date of the Parent long-form), and a formula Clip Publish Date (the parent publish date plus the Clip Number in days). Roles set only the long-form's publish date, and the formula sets the clips'. Setup adds these if the Content Planner does not have them (the template has them).
 - Record Date, Publish Date (with a time), Related To (the parent long-form title), and Asset Folder URL (the folder link) already exist.
 To add options and properties, use the Notion connector's data source update with SQL statements (ALTER COLUMN "Status" SET SELECT(...) listing every existing option to keep plus the new ones, ADD COLUMN ...). Listing every option keeps the old ones, so nothing is removed. If a property cannot be added (the connector refuses), put it as the first line of each row's page ("Clip Number: 2", "Needs from member: ...") and say so once. If adding a select option errors, create a row that uses the new option and then trash it (the seed row workaround).
 

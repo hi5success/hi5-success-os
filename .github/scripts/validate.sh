@@ -271,6 +271,13 @@ done
 for t in capcut_save_draft upload_youtube_video list_youtube_channels create_post list_social_accounts; do
   grep -q "$t" plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("hi5-studio bridges.md must name the exact tool $t")
 done
+grep -q 'synced_folder_path' plugins/content-os/skills/hi5-studio/references/folders.md || ERRORS+=("folders.md must name the synced folder path")
+grep -q 'Studio Bridges' plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("bridges.md must note the optional Studio Bridges plugin")
+grep -q 'Edit Due = 48 hours' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md must keep the Edit Due 48 hours rule")
+grep -q 'Clip Publish Date' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must leave clip dates to the formula")
+grep -q 'What day do you want to record this' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must ask for the record day")
+grep -qi 'brokerage' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md pre-review check must apply the Compliance page brokerage rules")
+if grep -rnE 'eXp' plugins/content-os/skills/hi5-studio/references plugins/content-os/skills/hi5-studio-edit plugins/content-os/skills/hi5-studio-producer >/dev/null 2>&1; then ERRORS+=("Studio files must not hardcode a brokerage"); fi
 grep -q 'Never claim' plugins/content-os/skills/hi5-studio/references/bridges.md || grep -q 'Never claim a bridge' plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("bridges.md must keep the never claim a bridge rule")
 
 # 21. The org chart skill keeps its files, the one human manager rule, and the AI Employees database

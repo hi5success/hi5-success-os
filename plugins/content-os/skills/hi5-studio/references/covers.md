@@ -1,32 +1,32 @@
 # Covers and Images
 
-Claude builds covers itself from the member's Cover Template page, so every cover has the same layout with a new image and new text. There is no Canva step in this version. Claude never claims to generate images itself.
+Claude builds covers itself from the member's Cover Template page, so every cover has the same layout with a new image and new text. Claude never claims to generate images itself.
 
-## Image options (set in Studio Settings, per channel if they differ)
-- **A) A still from the video.** Pull a frame (a good expression, clean background) from the exported video or the edit project.
-- **B) A cutout on a textured solid background.** Use a no-background photo from Brand/Cutouts on a textured solid color from the member's brand colors.
-- **C) A new image made in ChatGPT.** Use Claude's built-in browser to open the member's ChatGPT, upload the reference photos from Brand/Reference photos, ask for the image, and save the result to the piece's Covers folder. Ask the member to sign in if needed.
+## Where the images come from
+- **The member's Brand folder.** The member keeps approved photos and cutouts in Content/Brand/ (Cutouts, Reference photos, Cover examples) in the synced folder. Claude looks at what is there and picks the right one for the piece (a good expression, a clean background, the same look as the Cover examples). If nothing fits, say so in the row's Needs from member.
+- **A still from the video**, if the Cover Template or Studio Settings says so for that channel.
+- **A new image made in ChatGPT**, when the member needs one that does not exist yet. Use Claude's built-in browser to open the member's ChatGPT, upload the reference photos from Brand/Reference photos, ask for the image, and save the result into Content/Brand/ so it can be reused. Ask the member to sign in if needed.
+The choice is saved in Studio Settings (cover_image_option), per channel if they differ.
 
 ## Exact sizes
 | Use | Size |
 |---|---|
 | YouTube thumbnail | 1280 x 720 |
 | Reel or short cover | 1080 x 1920 |
-| Any other post | The size on the Cover Template page (for example 1080 x 1350) |
+| Static post | 1080 x 1350 |
+| Any other post | The size on the Cover Template page |
 
-## Default: HTML layout, screenshot
+## Default: Claude Design or a Claude artifact
 1. Read the Cover Template page and the last cover link. Match size, text position, fonts, colors, and logo exactly.
-2. Build the cover as one HTML page at the exact pixel size: html and body with no margin, a fixed width and height, and overflow hidden. Use the image and a few words of cover text from the title or hook.
-3. Open it in Claude's built-in browser. The browser may block local files, so serve the page from a small local page server on 127.0.0.1 or open it as a data URL.
-4. Set the browser window to exactly the cover size (viewport 1280 by 720, or 1080 by 1920), keep the device scale at 1 (css pixels), and take a PNG screenshot.
-5. The screenshot tool may only save inside its allowed folders, so save it there first, then copy the file into the row's Covers folder with the Drive connector or the local file tools. Name it cover-<use>-<width>x<height>.png.
-5b. If the Drive connector cannot take the image (an image upload has to be sent inline and is large), keep the file in a local folder the member can reach (for example a Hi5 Studio folder in Documents), say the exact path in the row's Log, and ask the member to drag it into the Covers folder. Small files can go through the connector.
-6. Read the PNG's width and height from its header and check they match the size exactly. If they do not, redo it. A test run produced exactly 1280 x 720 and 1080 x 1920.
-7. Update the Cover Template page's last cover link, link the file on the row, and tick Cover made.
-8. Cover text is short (a few words). No income or results claims, no invented facts, and nothing that points to a protected class.
+2. Pick the photo or cutout from Content/Brand/ and read the cover text (a few words from the title or hook).
+3. Build the cover from the Cover Template in Claude Design, or as a Claude artifact, at the exact pixel size for the use.
+4. Export a PNG at the exact size and write it straight into the row's folder in the synced folder (Covers for a video, Exports for a static post), named cover-<use>-<width>x<height>.png. Never upload it through the Drive connector.
+5. Read the PNG's width and height from its header and check they match the size exactly. If they do not, redo it.
+6. Update the Cover Template page's last cover link, link the file on the row, and tick Cover made.
+7. Cover text is short. No income or results claims, no invented facts, nothing that points to a protected class, and the disclosure and brokerage lines the member's Compliance page requires.
+
+## Fallback: HTML and a screenshot
+Use this only if Claude Design and artifacts are not available. Build one HTML page at the exact pixel size (no margin, fixed width and height, overflow hidden), open it in Claude's built-in browser, set the window to the cover size at device scale 1, take a PNG screenshot, copy it into the row's folder, and check the size as above. Do not walk the member through any local server steps. If the browser cannot open the page, give the member the layout notes, the size, and the image to place, and tick Cover made only when they say it is done.
 
 ## Optional: a CapCut draft
-For a cover that is built into the first frame of a video, add the image and the text to the draft with capcut_add_image and capcut_add_text instead. That puts the cover inside the video edit, not in a separate file, so it does not replace the screenshot for thumbnails or post covers. Use it only when the Style Guide asks for it.
-
-## If the browser is not available
-Give the member the exact layout notes, the size, and the image to place, and tick Cover made only when they say it is done.
+Only for a cover that is built into the first frame of a video: add the image and the text to the draft with capcut_add_image and capcut_add_text. That puts the cover inside the video edit, so it does not replace the PNG for thumbnails or post covers.

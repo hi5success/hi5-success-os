@@ -89,6 +89,9 @@ Every video, blog, and piece of content is one row. Properties:
 | Last Analytics Pull | date | |
 | Clip Number | number | The order of a clip within its long-form (Hi5 Studio) |
 | Needs from member | text | What a role is waiting for from the member, for example a photo (Hi5 Studio) |
+| Parent long-form | relation | The long-form a clip belongs to, to this same database, with the reverse relation Clips (Hi5 Studio) |
+| Parent publish date | rollup | The Publish Date of the Parent long-form (Hi5 Studio) |
+| Clip Publish Date | formula | The parent publish date plus the Clip Number in days, so clip dates are never calculated by a skill (Hi5 Studio) |
 
 Status is a **select** (not Notion's built-in status type) so the exact values above can be set.
 
