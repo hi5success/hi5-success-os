@@ -45,14 +45,14 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - marketing_hub_db_id
 - skill_guide_page_id
 - crm_map_page_id (added by /hi5-re-crm)
-- keyword_tracker_db_id (added by /hi5-yt-setup)
-- channel_pages (added by /hi5-yt-setup, only with multiple channels): `Name = page id` pairs, comma separated
+- keyword_tracker_db_id (added by /hi5-content-plan)
+- channel_pages (added by /hi5-content-plan, only with multiple channels): `Name = page id` pairs, comma separated
 - compliance_page_id (added by Stage 2)
-- voice_profile_page_id (added by Stage 3, or by /hi5-yt-setup if the member has not done Stage 3)
+- voice_profile_page_id (added by Stage 3, or by /hi5-content-plan if the member has not done Stage 3)
 - voice_library_db_id (added by /hi5-voice-creator, or by the setup workspace check)
 - dashboards_db_id (added by /hi5-dashboard, or by the setup workspace check)
 - people_db_id (added by /hi5-self, or by the setup workspace check)
-- studio_page_id, studio_settings_page_id, studio_sop_page_id, cover_template_page_id (added by /hi5-studio, only for members who run the Hi5 Studio)
+- content_page_id, content_settings_page_id, content_sop_page_id, cover_template_page_id (added by /hi5-content-plan, only for members who set up the content calendar)
 - ai_employees_db_id (added by /hi5-org-chart, or by the setup workspace check)
 - bottlenecks_db_id (added by /hi5-bottleneck, or by the setup workspace check)
 - objection_bank_page_id (added by Stage 4)
@@ -160,13 +160,13 @@ Written by Stage 3.
 Written by /hi5-self. Not part of /hi5-setup. It ends with `people_page_id`, the member's own page in the People database.
 
 ### Content Profile
-Added by /hi5-yt-setup (Content OS). Not created by /hi5-setup; the skeleton does not include it. Fields: `channels` (list of channel names), `offer`, `youtube_audience`, `affiliate_links`, `channel_goal`, `content_model`, `posting_frequency`, `weekly_rhythm`, `recording_schedule`, `edit_turnaround_days`, `competitor_channel_ids`, `content_categories`, `distribution`, `default_deliverable_type`, `primary_platform`, and the operator preferences `output_format`, `script_depth`, `number_of_options`, `explanation_level`. With more than one channel, each extra channel is a child page "Channel – [name]" whose fields override these.
+Added by /hi5-content-plan (Content OS). Not created by /hi5-setup; the skeleton does not include it. Fields: `channels` (list of channel names), `offer`, `youtube_audience`, `affiliate_links`, `channel_goal`, `content_model`, `posting_frequency`, `weekly_rhythm`, `recording_schedule`, `competitor_channel_ids`, `content_categories`, `distribution`, `default_deliverable_type`, `primary_platform`, and the operator preferences `output_format`, `script_depth`, `number_of_options`, `explanation_level`. With more than one channel, each extra channel is a child page "Channel – [name]" whose fields override these.
 
 ### Compliance Guardrails (child page, not a section)
 A child page of the Master Profile created by Stage 2, ID in `compliance_page_id`. Its Inputs section holds `disclosure_line`, `last_confirmed`, and (real estate) `protected_class_jurisdictions`, `brokerage_ad_rules`, `sms_consent_status`, or (any industry) `industry_rules`, `messaging_consent_status`, `brand_policy`. Below the inputs are the guardrails every writing skill follows. Templates: `compliance-real-estate.md`, `compliance-generic.md`.
 
 ### Voice Profile (child page, not a section)
-A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `emoji_use`, `preferred_length`, `phrases_used`, `phrases_never_used`, `how_to_come_across`, `energy_level`, `cta_style`, `default_voice` (the Skill Name of the member's own voice in the Voice Library, added by /hi5-voice-creator), followed by a voice summary, proof samples, and gaps. Stage 3 of /hi5-setup creates it (template `voice-profile.md`). /hi5-yt-setup adds `energy_level` and `cta_style` if missing, and creates the page only if the member has not done Stage 3.
+A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `emoji_use`, `preferred_length`, `phrases_used`, `phrases_never_used`, `how_to_come_across`, `energy_level`, `cta_style`, `default_voice` (the Skill Name of the member's own voice in the Voice Library, added by /hi5-voice-creator), followed by a voice summary, proof samples, and gaps. Stage 3 of /hi5-setup creates it (template `voice-profile.md`). /hi5-content-plan adds `energy_level` and `cta_style` if missing, and creates the page only if the member has not done Stage 3.
 
 ### Linked pages
 Always the last section. It holds only the heading. Child pages created by the stages appear below it.

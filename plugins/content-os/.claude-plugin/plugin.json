@@ -1,6 +1,6 @@
 {
   "name": "content-os",
-  "description": "YouTube-first content system with the Hi5 Studio pipeline. Research, plan, script, edit, caption, upload, and repurpose from one Notion Content Calendar, with roles for content manager, editor, social, YouTube producer, and blog writer, and a simple status-based queue.",
-  "version": "1.6.0",
+  "description": "A content system in five skills: plan, research, script, edit, caption, upload, and blog. The Content Manager, Video Editor, Social Media Manager, YouTube Manager, and Blog Writer each run from one Notion Content Calendar, done by Claude, a person, or nobody. Every skill also works on its own.",
+  "version": "2.0.0",
   "author": { "name": "Hi5 Success" }
 }

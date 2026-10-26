@@ -56,11 +56,10 @@ if grep -rIl $'\xe2\x80\x94' plugins marketplace.json .claude-plugin README.md >
   done
 fi
 
-# 4. Every skill points members to /hi5-next (hi5-context is a reference file, not a command)
+# 4. Every skill points members to /hi5-next
 for skill_dir in plugins/*/skills/*/; do
   skill_name=$(basename "$skill_dir")
-  [ "$skill_name" = "hi5-context" ] && continue
-  grep -q '/hi5-next' "${skill_dir}SKILL.md" 2>/dev/null || ERRORS+=("$skill_name: SKILL.md never mentions /hi5-next. Every skill ends with a Next line")
+    grep -q '/hi5-next' "${skill_dir}SKILL.md" 2>/dev/null || ERRORS+=("$skill_name: SKILL.md never mentions /hi5-next. Every skill ends with a Next line")
 done
 
 # 5. path.md is the single source of truth for what /hi5-next recommends.
@@ -74,8 +73,7 @@ else
   # every skill folder has a row
   for skill_dir in plugins/*/skills/*/; do
     skill_name=$(basename "$skill_dir")
-    [ "$skill_name" = "hi5-context" ] && continue
-    echo "$rows" | awk -F'|' '{gsub(/[ `\/]/,"",$2); print $2}' | grep -qx "$skill_name" || ERRORS+=("path.md has no row for $skill_name. Add it, with a status of live or coming")
+        echo "$rows" | awk -F'|' '{gsub(/[ `\/]/,"",$2); print $2}' | grep -qx "$skill_name" || ERRORS+=("path.md has no row for $skill_name. Add it, with a status of live or coming")
   done
   # every row has a valid status that matches the folder
   while IFS= read -r row; do
@@ -203,7 +201,7 @@ done
 # 17. Every writing skill carries the shared voice rule (Voice Library, one voice per piece, Hi5 rules win)
 for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/real-estate-os/skills/*/; do
   sk=$(basename "$d")
-  case "$sk" in hi5-seo|hi5-site-audit|hi5-context|hi5-yt-plan|hi5-yt-research|hi5-yt-setup) continue;; esac
+  case "$sk" in hi5-seo|hi5-site-audit) continue;; esac
   grep -q '**Voice.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the shared voice rule")
   grep -q 'Voice Library' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md voice rule does not mention the Voice Library")
 done
@@ -214,7 +212,7 @@ done
 # 20. Every writing skill carries the shared reader rule, and /hi5-self keeps its teammate profile files
 for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/real-estate-os/skills/*/ plugins/business-os/skills/hi5-dashboard/; do
   sk=$(basename "$d")
-  case "$sk" in hi5-seo|hi5-site-audit|hi5-context|hi5-yt-plan|hi5-yt-research|hi5-yt-setup) continue;; esac
+  case "$sk" in hi5-seo|hi5-site-audit) continue;; esac
   grep -q '**Reader.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the shared reader rule")
   grep -q 'People database' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md reader rule does not mention the People database")
 done
@@ -227,7 +225,7 @@ grep -q '### 👥 People' plugins/business-os/skills/hi5-setup/templates/workspa
 # 23. Every writing skill carries the no invented commitments rule
 for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/real-estate-os/skills/*/ plugins/business-os/skills/hi5-dashboard/; do
   sk=$(basename "$d")
-  case "$sk" in hi5-seo|hi5-site-audit|hi5-context|hi5-yt-plan|hi5-yt-research|hi5-yt-setup) continue;; esac
+  case "$sk" in hi5-seo|hi5-site-audit) continue;; esac
   grep -q '**No invented commitments.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the no invented commitments rule")
 done
 
@@ -253,36 +251,49 @@ for f in plugins/*/.claude-plugin/plugin.json marketplace.json; do
   done < <(grep '"description": "' "$f" | grep -v 'A suite of Claude plugins')
 done
 
-# 26. The Hi5 Studio keeps its skills, shared references, and the core pipeline rules
-for f in SKILL.md references/setup.md references/pipeline.md references/notion-structure.md references/folders.md references/bridges.md references/learning-edits.md references/tasks.md references/covers.md; do
-  [ -f "plugins/content-os/skills/hi5-studio/$f" ] || ERRORS+=("hi5-studio is missing $f")
+# 26. Content OS is one system in five skills, with the shared references and the core pipeline rules
+for f in SKILL.md references/core.md references/setup.md references/setup-calendar.md references/plan.md references/research.md references/script.md references/pipeline.md references/notion-structure.md references/folders.md references/bridges.md references/covers.md references/learning-edits.md references/tasks.md; do
+  [ -f "plugins/content-os/skills/hi5-content-plan/$f" ] || ERRORS+=("hi5-content-plan is missing $f")
 done
-for f in plugins/content-os/skills/hi5-studio-edit/SKILL.md plugins/content-os/skills/hi5-studio-producer/SKILL.md plugins/content-os/skills/hi5-studio-producer/references/youtube-rules.md plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md plugins/content-os/skills/hi5-social/references/studio-social.md; do
-  [ -f "$f" ] || ERRORS+=("the Studio is missing $f")
+for f in plugins/content-os/skills/hi5-video-edit/SKILL.md plugins/content-os/skills/hi5-youtube/SKILL.md plugins/content-os/skills/hi5-youtube/references/youtube-rules.md plugins/content-os/skills/hi5-social/SKILL.md plugins/content-os/skills/hi5-social/references/queue.md plugins/content-os/skills/hi5-social/references/repurpose.md plugins/content-os/skills/hi5-blog/SKILL.md; do
+  [ -f "$f" ] || ERRORS+=("Content OS is missing $f")
 done
-grep -q 'Nothing is scheduled before Optimizing' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("hi5-studio pipeline.md must keep the nothing scheduled before Optimizing rule")
-grep -q 'Never write captions' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must keep the never write captions rule")
-grep -q 'Edit Log' plugins/content-os/skills/hi5-studio/references/learning-edits.md || ERRORS+=("learning-edits.md must keep the Edit Log")
-grep -q 'Pre-review check' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("hi5-studio pipeline.md must keep the Pre-review check")
-grep -q 'check passed' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("hi5-studio pipeline.md must keep the check passed log line")
-for f in plugins/content-os/skills/hi5-studio-edit/SKILL.md plugins/content-os/skills/hi5-studio-producer/SKILL.md plugins/content-os/skills/hi5-social/references/studio-social.md plugins/content-os/skills/hi5-blog/SKILL.md plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md; do
+n=$(ls -d plugins/content-os/skills/*/ | wc -l)
+[ "$n" -eq 5 ] || ERRORS+=("Content OS must have exactly 5 skills, found $n")
+for old in hi5-yt-plan hi5-yt-research hi5-yt-script hi5-yt-setup hi5-studio hi5-studio-edit hi5-studio-producer hi5-repurpose hi5-context; do
+  [ ! -d "plugins/content-os/skills/$old" ] || ERRORS+=("the old skill $old must be gone")
+done
+if grep -rnE '/hi5-(yt-|studio|repurpose)|hi5-context' plugins README.md marketplace.json .claude-plugin >/dev/null 2>&1; then ERRORS+=("old Content OS skill names are still referenced"); fi
+if grep -rnwE 'Studio' plugins README.md marketplace.json .claude-plugin | grep -v 'YouTube Studio' >/dev/null 2>&1; then ERRORS+=("the word Studio must not appear (except YouTube Studio)"); fi
+grep -q 'Nothing is scheduled before Optimizing' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the nothing scheduled before Optimizing rule")
+grep -q 'Never write captions' plugins/content-os/skills/hi5-content-plan/references/plan.md || ERRORS+=("plan.md must keep the never write captions rule")
+grep -q 'Edit Log' plugins/content-os/skills/hi5-content-plan/references/learning-edits.md || ERRORS+=("learning-edits.md must keep the Edit Log")
+grep -q 'Pre-review check' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the Pre-review check")
+grep -q 'check passed' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the check passed log line")
+for f in plugins/content-os/skills/hi5-video-edit/SKILL.md plugins/content-os/skills/hi5-youtube/SKILL.md plugins/content-os/skills/hi5-social/references/queue.md plugins/content-os/skills/hi5-blog/SKILL.md plugins/content-os/skills/hi5-content-plan/references/plan.md; do
   grep -q 'pre-review check' "$f" || ERRORS+=("$f must run the pre-review check")
 done
 for t in capcut_save_draft upload_youtube_video list_youtube_channels create_post list_social_accounts; do
-  grep -q "$t" plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("hi5-studio bridges.md must name the exact tool $t")
+  grep -q "$t" plugins/content-os/skills/hi5-content-plan/references/bridges.md || ERRORS+=("bridges.md must name the exact tool $t")
 done
-grep -q 'synced_folder_path' plugins/content-os/skills/hi5-studio/references/folders.md || ERRORS+=("folders.md must name the synced folder path")
-grep -q 'Studio Bridges' plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("bridges.md must note the optional Studio Bridges plugin")
-grep -q 'Edit Due = 48 hours' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md must keep the Edit Due 48 hours rule")
-grep -q 'Clip Publish Date' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must leave clip dates to the formula")
-grep -q 'Do you have a day you batch record' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must ask about a batch record day")
-grep -q 'Skill vs SOP' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md must keep the Skill vs SOP rule")
-grep -q 'Clips post daily after the long-form' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md must keep the daily clips SOP line")
-grep -q 'Canva' plugins/content-os/skills/hi5-studio/references/covers.md || ERRORS+=("covers.md must keep the Canva option")
-grep -q 'skip for now' plugins/content-os/skills/hi5-studio/references/setup.md || ERRORS+=("setup.md must ask for examples and accept skip for now")
-grep -qi 'brokerage' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("pipeline.md pre-review check must apply the Compliance page brokerage rules")
-if grep -rnE 'eXp' plugins/content-os/skills/hi5-studio/references plugins/content-os/skills/hi5-studio-edit plugins/content-os/skills/hi5-studio-producer >/dev/null 2>&1; then ERRORS+=("Studio files must not hardcode a brokerage"); fi
-grep -q 'Never claim' plugins/content-os/skills/hi5-studio/references/bridges.md || grep -q 'Never claim a bridge' plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("bridges.md must keep the never claim a bridge rule")
+grep -q 'synced_folder_path' plugins/content-os/skills/hi5-content-plan/references/folders.md || ERRORS+=("folders.md must name the synced folder path")
+grep -q 'Edit Due = 48 hours' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the Edit Due 48 hours rule")
+if grep -rnE '7 days before|edit_turnaround_days' plugins/content-os >/dev/null 2>&1; then ERRORS+=("the 7 day Edit Due rule must be gone from Content OS"); fi
+grep -q 'Clip Publish Date' plugins/content-os/skills/hi5-content-plan/references/plan.md || ERRORS+=("plan.md must leave clip dates to the formula")
+grep -q 'Do you have a day you batch record' plugins/content-os/skills/hi5-content-plan/references/plan.md || ERRORS+=("plan.md must ask about a batch record day")
+grep -q 'Skill vs SOP' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the Skill vs SOP rule")
+grep -q 'Clips post daily after the long-form' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the daily clips SOP line")
+grep -q 'Canva' plugins/content-os/skills/hi5-content-plan/references/covers.md || ERRORS+=("covers.md must keep the Canva option")
+grep -q 'skip for now' plugins/content-os/skills/hi5-content-plan/references/setup-calendar.md || ERRORS+=("setup-calendar.md must ask for examples and accept skip for now")
+grep -qi 'brokerage' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md pre-review check must apply the Compliance page brokerage rules")
+if grep -rnE '\beXp\b' plugins/content-os >/dev/null 2>&1; then ERRORS+=("Content OS files must not hardcode a brokerage"); fi
+grep -q 'Never claim' plugins/content-os/skills/hi5-content-plan/references/bridges.md || grep -q 'Never claim a bridge' plugins/content-os/skills/hi5-content-plan/references/bridges.md || ERRORS+=("bridges.md must keep the never claim a bridge rule")
+for sk in hi5-content-plan hi5-video-edit hi5-social hi5-youtube hi5-blog; do
+  grep -q 'What do you want to do?' plugins/content-os/skills/$sk/SKILL.md || ERRORS+=("$sk must open with a menu")
+  grep -q 'Works on its own' plugins/content-os/skills/$sk/SKILL.md || ERRORS+=("$sk must say it works on its own for one-off requests")
+  grep -q 'Check my queue' plugins/content-os/skills/$sk/SKILL.md || ERRORS+=("$sk must have Check my queue")
+done
+grep -q 'role_video_editing' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must define the per-role owner setting")
 
 # 21. The org chart skill keeps its files, the one human manager rule, and the AI Employees database
 for f in SKILL.md references/interview.md references/chart-artifact.md references/highlights.md references/edits.md; do

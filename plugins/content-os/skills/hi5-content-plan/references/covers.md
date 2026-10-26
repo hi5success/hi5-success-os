@@ -4,9 +4,9 @@ Claude builds covers itself from the member's Cover Template page, so every cove
 
 ## Where the images come from
 - **The member's Brand folder.** The member keeps approved photos and cutouts in Content/Brand/ (Cutouts, Reference photos, Cover examples) in the synced folder. Claude looks at what is there and picks the right one for the piece (a good expression, a clean background, the same look as the Cover examples). If nothing fits, say so in the row's Needs from member.
-- **A still from the video**, if the Cover Template or Studio Settings says so for that channel.
+- **A still from the video**, if the Cover Template or Content Settings says so for that channel.
 - **A new image made in ChatGPT**, when the member needs one that does not exist yet. Use Claude's built-in browser to open the member's ChatGPT, upload the reference photos from Brand/Reference photos, ask for the image, and save the result into Content/Brand/ so it can be reused. Ask the member to sign in if needed.
-The choice is saved in Studio Settings (cover_image_option), per channel if they differ.
+The choice is saved in Content Settings (cover_image_option), per channel if they differ.
 
 ## Exact sizes
 | Use | Size |
@@ -16,7 +16,7 @@ The choice is saved in Studio Settings (cover_image_option), per channel if they
 | Static post | 1080 x 1350 |
 | Any other post | The size on the Cover Template page |
 
-## Cover tool (Studio Settings, cover_tool)
+## Cover tool (Content Settings, cover_tool)
 - **A) Claude Design or a Claude artifact (default).** The steps below.
 - **B) Canva.** Claude builds or edits the design in the member's Canva with the Canva connector, using the Cover Template and a photo or cutout from Content/Brand/. The member then downloads the design from Canva into the row's Covers folder by hand. Say that once, plainly: "I'll build it in Canva. You download it into the Covers folder yourself, and then I'll tick Cover made." Do not tick Cover made until the member says it is in the folder. Nothing is exported automatically yet. If the Canva connector is not connected, say so and use option A.
 

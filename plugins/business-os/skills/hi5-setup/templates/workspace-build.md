@@ -61,7 +61,7 @@ Every video, blog, and piece of content is one row. Properties:
 | Status | select | Idea, Scheduled, Scripted, Draft, Published, Planned, Ready to Edit, In Progress, Reviewing, Revising, Finalizing, Optimizing |
 | Publish Date | date | |
 | Record Date | date | |
-| Edit Due Date | date | 48 hours before Publish Date (set in the Studio SOP) |
+| Edit Due Date | date | 48 hours before Publish Date (set in the Content SOP) |
 | Content Category | select | (created as used) |
 | Content Type | select | (created as used) |
 | Deliverable Type | select | Long Form, Short Form, Blog, Podcast, Social Post, Clip, Static Post, Carousel |
@@ -87,11 +87,11 @@ Every video, blog, and piece of content is one row. Properties:
 | Performance Tier | select | (created as used) |
 | Repurpose Status | select | Not Started, Clips Created, Captions Written, Posted |
 | Last Analytics Pull | date | |
-| Clip Number | number | The order of a clip within its long-form (Hi5 Studio) |
-| Needs from member | text | What a role is waiting for from the member, for example a photo (Hi5 Studio) |
-| Parent long-form | relation | The long-form a clip belongs to, to this same database, with the reverse relation Clips (Hi5 Studio) |
-| Parent publish date | rollup | The Publish Date of the Parent long-form (Hi5 Studio) |
-| Clip Publish Date | formula | The parent publish date plus the Clip Number in days, so clip dates are never calculated by a skill (Hi5 Studio) |
+| Clip Number | number | The order of a clip within its long-form (content calendar) |
+| Needs from member | text | What a role is waiting for from the member, for example a photo (content calendar) |
+| Parent long-form | relation | The long-form a clip belongs to, to this same database, with the reverse relation Clips (content calendar) |
+| Parent publish date | rollup | The Publish Date of the Parent long-form (content calendar) |
+| Clip Publish Date | formula | The parent publish date plus the Clip Number in days, so clip dates are never calculated by a skill (content calendar) |
 
 Status is a **select** (not Notion's built-in status type) so the exact values above can be set.
 
@@ -191,8 +191,8 @@ Write this on the Dashboard page:
 >
 > **The path**
 > 1. **Foundation:** finish your setup (run /hi5-setup and choose "Continue setup"), then /hi5-self, /hi5-bizplan, /hi5-goals, and /hi5-bizreview
-> 2. **Content strategy:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan (if you plan to make videos)
-> 3. **Create:** /hi5-yt-script, /hi5-repurpose, /hi5-social, /hi5-blog
+> 2. **Content strategy:** /hi5-content-plan (plan, research, scripts, and your content calendar)
+> 3. **Create:** /hi5-social, /hi5-blog, /hi5-video-edit, /hi5-youtube
 > 4. **Get found:** /hi5-seo, /hi5-site-audit, /hi5-website
 > 5. **Nurture:** /hi5-email, /hi5-newsletter
 > 6. **Grow:** /hi5-landing, /hi5-funnel, /hi5-casestudy
@@ -206,7 +206,7 @@ Write this on the Dashboard page:
 ## Skill Guide content
 A short table the member can reference. One section per plugin, one line per skill: command and what it does. Mark each plugin "if installed". Use the skill descriptions from the plugins:
 - **Business OS:** /hi5-setup, /hi5-next, /hi5-self, /hi5-voice-creator, /hi5-dashboard, /hi5-org-chart, /hi5-bottleneck, /hi5-bizplan, /hi5-goals, /hi5-bizreview
-- **Content OS:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose, /hi5-blog, /hi5-social, /hi5-studio, /hi5-studio-edit, /hi5-studio-producer
+- **Content OS:** /hi5-content-plan, /hi5-video-edit, /hi5-social, /hi5-youtube, /hi5-blog
 - **Real Estate OS (real estate members, a separate install):** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, /hi5-re-land-newbuild, /hi5-re-neighborhood
 - **Marketing OS:** /hi5-email, /hi5-newsletter, /hi5-seo, /hi5-site-audit, /hi5-linkedin, /hi5-website, /hi5-landing, /hi5-funnel, /hi5-casestudy
 

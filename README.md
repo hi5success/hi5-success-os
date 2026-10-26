@@ -10,7 +10,7 @@ It works for any industry. It is strongest for real estate agents, teams, and br
 
 - **Claude** (the Cowork plugin marketplace)
 - **Notion** (free at [notion.so](https://www.notion.so)). Notion is required for now, because that is where your profile and your work are saved. If you don't have it, `/hi5-setup` walks you through creating a free account and connecting it, which takes about 2 minutes.
-- **A YouTube Data API key** (free), only if you use the YouTube research skills. `/hi5-yt-setup` walks you through getting one.
+- **A YouTube Data API key** (free), only if you use the YouTube research skills. the setup in `/hi5-content-plan` walks you through getting one.
 
 ---
 
@@ -75,16 +75,11 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 ### Content OS
 | Command | What it does |
 |---|---|
-| `/hi5-yt-setup` | Adds your content and voice details to your Master Profile and helps you get a YouTube API key |
-| `/hi5-yt-research` | Finds video ideas from keywords and competitors, scores them, and adds them to your Content Planner |
-| `/hi5-studio` | Sets up and runs the Hi5 Studio content pipeline from your Notion Content Calendar: Studio Settings, the Studio SOP, style guides, edit logs, a cover template, calendar fields, and folders. Every role (content manager, editor, social, YouTube producer, blog writer) follows the calendar by status, and nothing is scheduled before Optimizing or posted without your review |
-| `/hi5-studio-edit` | The Studio's video editor. Edits in CapCut through the local bridge, finds the clips, saves a timestamped transcript of every video and clip, makes covers from your cover template, and exports to the right folder |
-| `/hi5-studio-producer` | The Studio's YouTube producer, for long-form only. Writes the title, description, chapters, and tags from the transcript, uploads and schedules through the local YouTube bridge, and leaves YouTube notes for social |
-| `/hi5-yt-plan` | Builds your monthly content calendar in Notion. In the Studio it is the content manager: research, topics, scripts and production notes, rows, folders, and clip rows |
-| `/hi5-yt-script` | Writes a script or outline in your voice |
-| `/hi5-repurpose` | Turns a video or script into short form scripts, pull quotes, and snippets |
+| `/hi5-content-plan` | The Content Manager. Sets up your content calendar in Notion, builds your monthly plan for long-form videos, reels, statics, carousels, and blogs, researches topics and YouTube keywords, writes scripts and production notes, and sets your recording days. Research and scripts also work on their own with no setup |
+| `/hi5-video-edit` | The Video Editor. Edits in CapCut through the local bridge, finds the clips, saves the transcript of every video and clip, makes covers from your cover template, and exports to the right folder |
+| `/hi5-youtube` | The YouTube Manager, for long-form. Writes the title, description, chapters, and tags from the transcript, uploads and schedules through the local YouTube bridge, and leaves YouTube notes for social |
 | `/hi5-blog` | Writes an SEO blog post from a video, script, or topic |
-| `/hi5-social` | Writes platform specific captions |
+| `/hi5-social` | The Social Media Manager. Writes captions and posts for every platform, turns one video or script into short form scripts, quotes, and snippets, makes static posts and carousels, and schedules them |
 
 ### Marketing OS
 | Command | What it does |

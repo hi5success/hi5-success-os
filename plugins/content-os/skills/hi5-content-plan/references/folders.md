@@ -14,10 +14,10 @@ Content/
 - **Brand/Cutouts** holds no-background photos for thumbnails and covers. Reference photos feed image option C. Cover examples hold finished covers to match.
 - **Transcripts** are saved as files in the same folder as the video they belong to (Exports for a long-form or short, Exports/Clips for a clip), so there is no separate Transcript folder.
 - **Covers** inside a piece's folder holds that piece's cover files.
-- Only create the pieces the member's picked channels need. Skip the Covers folder if no platform uses a cover.
+- Only create the folders the roles in use need. No video editing means no Long-form or Short-form folders. No social media means no Posts folder. Skip the Covers folder if no platform uses a cover.
 
 ## The synced folder
-Everything lives in the member's synced folder: the Google Drive, Dropbox, or OneDrive desktop app, or a plain local folder. Setup asks for that path once and saves it in Studio Settings (synced_folder_path). Every role reads and writes files straight into it with the local file tools, never through the Drive connector. The Drive connector is only for getting a share link. The CapCut bridge exports into this folder and splits files that are over the size limit, so no role adds any export or split step.
+Everything lives in the member's synced folder: the Google Drive, Dropbox, or OneDrive desktop app, or a plain local folder. Setup asks for that path once and saves it in Content Settings (synced_folder_path). Every role reads and writes files straight into it with the local file tools, never through the Drive connector. The Drive connector is only for getting a share link. The CapCut bridge exports into this folder and splits files that are over the size limit, so no role adds any export or split step.
 - Create the folders with the local file tools, inside the saved path.
-- If the path does not exist or cannot be written, say so in one line, ask the member for the right path, and update Studio Settings.
+- If the path does not exist or cannot be written, say so in one line, ask the member for the right path, and update Content Settings.
 - Link each folder in the row's Asset Folder URL (a share link from the connector if the member wants one, otherwise the local path).

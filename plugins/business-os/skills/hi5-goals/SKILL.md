@@ -105,6 +105,6 @@ When the member chooses C, or a new quarter has started:
 
 ## NEXT STEP
 
-Recommend ONE next step, following the Recommended path in /hi5-setup. If real estate Stage 4 or Stage 5 is not complete, recommend /hi5-setup and Continue setup. Otherwise, if Content OS is installed, recommend /hi5-yt-setup. If not, recommend /hi5-email. Always add: "Do your first weekly check-in in 7 days. Run /hi5-goals and choose a weekly check-in, and I'll nudge you through /hi5-next."
+Recommend ONE next step, following the Recommended path in /hi5-setup. If real estate Stage 4 or Stage 5 is not complete, recommend /hi5-setup and Continue setup. Otherwise, if Content OS is installed, recommend /hi5-content-plan. If not, recommend /hi5-email. Always add: "Do your first weekly check-in in 7 days. Run /hi5-goals and choose a weekly check-in, and I'll nudge you through /hi5-next."
 
 End your message with: "You can run /hi5-next any time and I'll tell you your best next step."

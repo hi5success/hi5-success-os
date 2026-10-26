@@ -2,11 +2,12 @@
 
 The core rule: skills hold the craft, the member's Notion holds everything about the member. Plugin updates replace skill files, so nothing member-specific is ever written into a skill.
 
-## Hi5 Studio page
-A page under the workspace root called "Hi5 Studio" holds the Studio pages below. Save these IDs in the Master Profile Page IDs: `studio_page_id`, `studio_settings_page_id`, `studio_sop_page_id`, `cover_template_page_id`. The Content Calendar is the existing Content Planner (`content_planner_db_id`), so never create a second one.
+## Hi5 Content page
+A page under the workspace root called "Hi5 Content" holds the content system pages below. Save these IDs in the Master Profile Page IDs: `content_page_id`, `content_settings_page_id`, `content_sop_page_id`, `cover_template_page_id`. The Content Calendar is the existing Content Planner (`content_planner_db_id`), so never create a second one.
 
-## Studio Settings (one page, a bullet per field)
+## Content Settings (one page, a bullet per field)
 - platforms_in_use: Instagram, Facebook, TikTok, LinkedIn, YouTube (optional), other
+- role_video_editing, role_social, role_youtube, role_blog: claude, person: <name>, or none (who does each role; a role set to none creates no rows, folders, or steps)
 - who_does_the_work: me, VA, team, or done-for-you
 - done_for_you_lead: yes or no, with the date (a flag for Hi5 Biz Solutions, nobody is contacted by this skill)
 - clips_per_long_form: default 5
@@ -23,7 +24,7 @@ A page under the workspace root called "Hi5 Studio" holds the Studio pages below
 - scheduled_tasks: which role tasks the member turned on
 - channel pages: one Style Guide page and one Edit Log page per channel (names and IDs)
 
-## Studio SOP (one page)
+## Content SOP (one page)
 The default pipeline from the pipeline reference, written in plain language, edited to match the member's answer to "what's different in how you work?" Keep the statuses and the order. Record the differences as short bullets at the top under "How we work here". The SOP is where the member's process lives, as editable defaults: when each status moves, who does what, Edit Due (48 hours before publish), clip cadence ("Clips post daily after the long-form. Change this here if you skip weekends."), recording guidance, and approval habits. Every role reads it and follows it. Hard rules stay in the skills and win if the SOP conflicts. Anyone who joins (a VA or a team member) reads this page first.
 
 ## Content Calendar changes (append only)
@@ -44,7 +45,7 @@ To add options and properties, use the Notion connector's data source update wit
 Layout notes (size, text position, fonts, colors, how the face or image is placed, the logo), plus a link to the last cover made, so every cover matches. Update the link whenever a cover is finished.
 
 ## Only build for the channels picked
-Create Style Guides, Edit Logs, rows, folders, and roles only for the platforms the member chose. No YouTube means no Producer rows and no YouTube notes.
+Create Style Guides, Edit Logs, rows, folders, and role steps only for the platforms and roles in use. No YouTube means no YouTube rows or notes. A role set to none creates nothing.
 
-## If a Studio already exists
-Find "Hi5 Studio" under the workspace. If it exists, skip setup, read Studio Settings and the SOP, save the IDs in the Master Profile, ask the member which role they are (me, VA, editor, team), and connect. Never recreate pages that exist.
+## If a content system already exists
+Find "Hi5 Content" under the workspace. If it exists, skip setup, read Content Settings and the SOP, save the IDs in the Master Profile, ask the member which role they are (me, VA, editor, team), and connect. Never recreate pages that exist.
