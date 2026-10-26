@@ -17,7 +17,7 @@ Find what people search and what is trending, using the tools available this ses
 Show a short table: topic, hook or angle, media type, platforms, and why it fits now. The member approves in the conversation. There is no approval click later. Keep the member's own ideas from the Content Planner (Status Idea) in the mix.
 
 ## 4. Balance the month
-Mix media types and goals, respect the member's record schedule and capacity, and spread the pieces across the weeks. Set the timeline: record dates, then publish dates with times in the member's time zone.
+Mix media types and goals, respect the member's record schedule and capacity, and spread the pieces across the weeks. Set the timeline: record dates, then publish dates with times in the member's time zone. Set each Edit Due Date to the publish date minus edit_turnaround_days from the Content Profile, but never before the record date. If the window between recording and publishing is shorter than the turnaround, set Edit Due to the day before publish and say so in one line, so the member can move the publish date.
 
 ## 5. Write scripts and production notes (into the row's page)
 - **Long-form and one-off shorts or reels:** type and style, the hook, a word-for-word script or talking points (ask which the member wants), recording tips, and edit notes (on-screen text, b-roll, music, pacing, from the Style Guide).

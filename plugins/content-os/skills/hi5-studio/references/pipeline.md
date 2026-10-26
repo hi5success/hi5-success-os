@@ -51,7 +51,7 @@ Before any role sets Reviewing, it runs this self-check on everything it wrote o
 3. **No em dashes.**
 4. **Fair Housing on real estate content.** No steering, no preference or limitation, no describing who lives in an area, no rating of schools or safety, and no wording that points to a protected class. Listing content uses only facts the member gave.
 5. **No invented facts.** Nothing the transcript, the notes, or the member did not supply.
-6. **The disclosure line** is on public text that needs it.
+6. **The disclosure line and the brokerage rules** on the Compliance page. The saved disclosure line (the short version for captions and descriptions) is on public text that needs it, and every brokerage or advertising rule applies to graphics, cover text, and captions too (for example, how the team name must be written and that the broker name appears). Check the graphic itself, not only the caption.
 Then add the Log line "check passed" (add "with N placeholders for the member" if any [confirm: ...] remain), and only then set Reviewing. If something cannot be fixed without the member, leave the placeholder, write it in Needs from member, and say so in the Log.
 
 ## Reviewing and revising

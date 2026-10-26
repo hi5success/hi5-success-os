@@ -16,7 +16,7 @@ Content/
 - Only create the pieces the member's picked channels need. Skip the Covers folder if no platform uses a cover.
 
 ## Making the folders by file location
-- **Google Drive app:** use the Drive connector to create folders (look for a create file option with the folder type).
+- **Google Drive app:** use the Drive connector's create file operation with the folder type, one level at a time (the parent id comes from the level above, so create the siblings of one level together). Text files (a transcript) upload fine. Images are large, so see the covers reference.
 - **Dropbox app:** use the Dropbox connector if it can create folders.
 - **A local folder:** create them with the local file tools Claude has on the member's computer, inside the folder path saved in Studio Settings.
 If the connector cannot create a folder, say so in one line, give the exact folder path to make by hand, and continue. Link every folder in the row's Asset Folder URL (or the local path if there is no link).

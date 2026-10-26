@@ -30,7 +30,7 @@ Add to the Content Planner. Never rename or remove anything.
 - Distribution is the Platforms field (multi-select). Add options as used.
 - New properties: Clip Number (number), Needs from member (text).
 - Record Date, Publish Date (with a time), Related To (the parent long-form title), and Asset Folder URL (the folder link) already exist.
-If a property cannot be added (the connector refuses), put it as the first line of each row's page ("Clip Number: 2", "Needs from member: ...") and say so once. If adding a select option errors, create a row that uses the new option and then trash it (the seed row workaround).
+To add options and properties, use the Notion connector's data source update with SQL statements (ALTER COLUMN "Status" SET SELECT(...) listing every existing option to keep plus the new ones, ADD COLUMN ...). Listing every option keeps the old ones, so nothing is removed. If a property cannot be added (the connector refuses), put it as the first line of each row's page ("Clip Number: 2", "Needs from member: ...") and say so once. If adding a select option errors, create a row that uses the new option and then trash it (the seed row workaround).
 
 ## Per channel
 - **Style Guide** (one page per channel): hook habits, pacing, caption voice and length, hashtag rules, edit style (cuts, captions, music, b-roll), cover style, and things to never do. Start from what the Master Profile and Voice Profile already say, then add the member's answers.

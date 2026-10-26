@@ -20,6 +20,7 @@ Claude builds covers itself from the member's Cover Template page, so every cove
 3. Open it in Claude's built-in browser. The browser may block local files, so serve the page from a small local page server on 127.0.0.1 or open it as a data URL.
 4. Set the browser window to exactly the cover size (viewport 1280 by 720, or 1080 by 1920), keep the device scale at 1 (css pixels), and take a PNG screenshot.
 5. The screenshot tool may only save inside its allowed folders, so save it there first, then copy the file into the row's Covers folder with the Drive connector or the local file tools. Name it cover-<use>-<width>x<height>.png.
+5b. If the Drive connector cannot take the image (an image upload has to be sent inline and is large), keep the file in a local folder the member can reach (for example a Hi5 Studio folder in Documents), say the exact path in the row's Log, and ask the member to drag it into the Covers folder. Small files can go through the connector.
 6. Read the PNG's width and height from its header and check they match the size exactly. If they do not, redo it. A test run produced exactly 1280 x 720 and 1080 x 1920.
 7. Update the Cover Template page's last cover link, link the file on the row, and tick Cover made.
 8. Cover text is short (a few words). No income or results claims, no invented facts, and nothing that points to a protected class.
