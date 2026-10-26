@@ -253,6 +253,18 @@ for f in plugins/*/.claude-plugin/plugin.json marketplace.json; do
   done < <(grep '"description": "' "$f" | grep -v 'A suite of Claude plugins')
 done
 
+# 26. The Hi5 Studio keeps its skills, shared references, and the core pipeline rules
+for f in SKILL.md references/setup.md references/pipeline.md references/notion-structure.md references/folders.md references/bridges.md references/learning-edits.md references/tasks.md references/covers.md; do
+  [ -f "plugins/content-os/skills/hi5-studio/$f" ] || ERRORS+=("hi5-studio is missing $f")
+done
+for f in plugins/content-os/skills/hi5-studio-edit/SKILL.md plugins/content-os/skills/hi5-studio-producer/SKILL.md plugins/content-os/skills/hi5-studio-producer/references/youtube-rules.md plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md plugins/content-os/skills/hi5-social/references/studio-social.md; do
+  [ -f "$f" ] || ERRORS+=("the Studio is missing $f")
+done
+grep -q 'Nothing is scheduled before Optimizing' plugins/content-os/skills/hi5-studio/references/pipeline.md || ERRORS+=("hi5-studio pipeline.md must keep the nothing scheduled before Optimizing rule")
+grep -q 'Never write captions' plugins/content-os/skills/hi5-yt-plan/references/studio-manager.md || ERRORS+=("studio-manager.md must keep the never write captions rule")
+grep -q 'Edit Log' plugins/content-os/skills/hi5-studio/references/learning-edits.md || ERRORS+=("learning-edits.md must keep the Edit Log")
+grep -q 'Never claim' plugins/content-os/skills/hi5-studio/references/bridges.md || grep -q 'Never claim a bridge' plugins/content-os/skills/hi5-studio/references/bridges.md || ERRORS+=("bridges.md must keep the never claim a bridge rule")
+
 # 21. The org chart skill keeps its files, the one human manager rule, and the AI Employees database
 for f in SKILL.md references/interview.md references/chart-artifact.md references/highlights.md references/edits.md; do
   [ -f "plugins/business-os/skills/hi5-org-chart/$f" ] || ERRORS+=("hi5-org-chart is missing $f")

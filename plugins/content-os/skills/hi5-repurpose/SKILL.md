@@ -8,6 +8,9 @@ description: Repurposes a YouTube video or script into multiple content formats.
 ## Purpose
 Take one YouTube video or script and extract maximum value from it by turning it into multiple content formats. This is the engine behind the Hi5 one content piece repurposed everywhere strategy.
 
+## In the Hi5 Studio
+This is a standalone command and is not part of the Studio pipeline. In the Studio, the Video Editor finds the clips from the long-form (/hi5-studio-edit), the Content Manager writes scripts for one-off shorts (/hi5-yt-plan), and Social writes the captions (/hi5-social). Use /hi5-repurpose on its own when you want extra short-form scripts or pull quotes.
+
 ## Core Rules
 - Languages: if the member speaks another language (`languages` on the Master Profile), ask once whether they want a version in that language too, and offer it as a way to reach more people. Write it natively, not as a word for word translation
 - Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill (the Content Planner is `content_planner_db_id`). If it is not set up, tell the member to run /hi5-setup first

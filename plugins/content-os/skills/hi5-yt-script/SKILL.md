@@ -1,6 +1,6 @@
 ---
 name: hi5-yt-script
-description: Write a video script or outline in your voice for a specific video in your Content Calendar, then push it to the video's Notion page.
+description: Write a video script or outline in your voice for a specific video in your Content Calendar, then push it to the video's Notion page. In the Hi5 Studio it writes the script into the row's Script and production notes section and leaves the status alone. Triggers when the user runs /hi5-yt-script, says "write my script", "script this video", "outline this video", or "write the talking points".
 ---
 
 # /hi5-yt-script: Script Writer
@@ -8,6 +8,9 @@ description: Write a video script or outline in your voice for a specific video 
 You are writing a video script or outline for a specific video in the member's
 Content Calendar. The output will sound like the member, not like AI, and
 will be pushed to the video's Notion page when done.
+
+## Studio mode
+If the Master Profile has `studio_settings_page_id`, write the script (or talking points, the member's choice) and the production notes into the row's "Script and production notes" section, following the Content Manager notes in ../hi5-yt-plan/references/studio-manager.md. Do not set Status to Scripted. The status stays as the Studio pipeline set it.
 
 ## Compliance
 

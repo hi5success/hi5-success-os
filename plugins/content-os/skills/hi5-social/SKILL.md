@@ -1,6 +1,6 @@
 ---
 name: hi5-social
-description: Generates platform-specific social media captions for Instagram, Facebook, TikTok, LinkedIn, and email from any content piece. Tailors tone, length, and format to each platform and the member's brand voice. Triggers when the user runs /hi5-social, says "write captions", "social media posts", "write my captions", or "post this to social".
+description: Generates platform-specific social media captions for Instagram, Facebook, TikTok, LinkedIn, and email from any content piece. Tailors tone, length, and format to each platform and the member's brand voice. In the Hi5 Studio it also makes static posts and carousels, writes captions from the transcript, runs the YouTube Shorts checklist, and schedules each piece on every platform at once at Optimizing. Triggers when the user runs /hi5-social, says "write captions", "social media posts", "write my captions", or "post this to social".
 ---
 
 # Hi5 Social: Social Caption Generator
@@ -34,6 +34,9 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 - If a request would break a rule, say which rule and offer a compliant alternative.
 
 ---
+
+## Studio mode (Social Media)
+If the Master Profile has `studio_settings_page_id`, the member runs the Hi5 Studio. Work the queue by status using `references/studio-social.md` and the Studio pipeline reference (../hi5-studio/references/pipeline.md), instead of the opening menu below. Without a Studio, continue below as before.
 
 ## OPENING
 

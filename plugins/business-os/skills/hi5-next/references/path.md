@@ -11,8 +11,8 @@ The single source of truth for what /hi5-next recommends. Every release that add
 
 ## The path, in order
 1. **Foundation:** Setup Stage 1, Stage 2, Stage 3, /hi5-self, /hi5-voice-creator (optional, never blocks the next step), /hi5-dashboard (optional, after setup and the voice step, never blocks the next step), /hi5-bottleneck (optional, after setup, the voice step, and the dashboard, never blocks the next step), /hi5-bizplan, /hi5-goals, /hi5-bizreview, then for real estate Setup Stage 4 and Stage 5
-2. **Content strategy:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan
-3. **Create:** /hi5-yt-script, /hi5-repurpose, /hi5-social, /hi5-blog
+2. **Content strategy:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-studio (optional, the Hi5 Studio content pipeline, never blocks the next step)
+3. **Create:** /hi5-yt-script, /hi5-repurpose, /hi5-social, /hi5-blog, and for Studio members /hi5-studio-edit and /hi5-studio-producer
 4. **Get found:** /hi5-seo, /hi5-site-audit, /hi5-website
 5. **Nurture:** /hi5-email, /hi5-newsletter
 6. **Grow:** /hi5-landing, /hi5-funnel, /hi5-casestudy
@@ -37,6 +37,9 @@ Real estate members with Real Estate OS installed (never part of the main path, 
 | `/hi5-next` | business-os | live | Anytime | Never done, always available | It tells you the best next step any time you are unsure. |
 | `/hi5-yt-setup` | content-os | live | Content strategy | A Content Profile section exists | It sets your channel goals and posting rhythm so research and planning fit you. |
 | `/hi5-yt-research` | content-os | live | Content strategy | The Content Planner has at least one row | It finds video ideas that are scored for your niche. |
+| `/hi5-studio` | content-os | live | Content strategy | The Master Profile Page IDs has `studio_settings_page_id` | It sets up your content pipeline in Notion, so one planning session a month and a simple queue keep every video and post moving. |
+| `/hi5-studio-edit` | content-os | live | Create | A Content Planner row has Status Reviewing, Finalizing, Optimizing, Scheduled, or Published and its Deliverable Type is Long Form or Clip | It edits your videos, finds the clips, saves the transcripts, and makes the covers, so you only record and review. |
+| `/hi5-studio-producer` | content-os | live | Create | A Content Planner row with Deliverable Type Long Form has Status Optimizing, Scheduled, or Published | It writes the YouTube title, description, chapters, and tags from the transcript and schedules the upload. |
 | `/hi5-yt-plan` | content-os | live | Content strategy | The Content Planner has a row with Status Scheduled, Scripted, or Published | It turns your ideas into a calendar with publish dates. |
 | `/hi5-yt-script` | content-os | live | Create | The Content Planner has a row with Status Scripted or Published | It writes the script in your voice for a scheduled video. |
 | `/hi5-repurpose` | content-os | live | Create | A Content Planner row has a Repurpose Status other than Not Started | One piece of content becomes short form scripts, quotes, and snippets. |
@@ -83,6 +86,7 @@ Used by /hi5-next ("Show me everything") and by the "Show me what I can do" opti
 
 | Goal | Skills |
 |---|---|
+| A content pipeline that runs from my Notion calendar | /hi5-studio |
 | YouTube content | /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose |
 | Social media | /hi5-social, /hi5-repurpose, /hi5-linkedin |
 | Blog and SEO | /hi5-blog, /hi5-seo |
@@ -113,6 +117,7 @@ Used by /hi5-next ("Show me everything") and by the "Show me what I can do" opti
 
 ## Skip rules
 - **Real estate only steps:** skip Stage 4 and Stage 5 when `industry_flow` is not `real-estate`.
+- **The Hi5 Studio:** if the Master Profile has `studio_settings_page_id`, /hi5-yt-plan stays available even without a YouTube channel, because it is the Studio's Content Manager. Skip /hi5-studio-producer when the Studio does not use YouTube.
 - **Members with no YouTube channel:** if the member said they have no channel and are not planning one (`youtube_url` says so), skip /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, and /hi5-repurpose. In the Create stage, point to /hi5-blog and /hi5-social instead. If they have not answered yet, or said they are interested in starting a channel, keep YouTube in the path.
 - **Not installed:** only recommend a skill that is in your available skills list. If the next step is in a plugin that is not installed, name the plugin and say to install it from the Hi5 marketplace.
 - **Real estate stage:** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, /hi5-re-land-newbuild, and /hi5-re-neighborhood are for real estate members only. Skip them when `industry_flow` is not `real-estate`, and when Real Estate OS is not installed, say it is a separate install from the Hi5 marketplace. They are never the main recommendation unless the member asks for one of them or Step 4 says so.

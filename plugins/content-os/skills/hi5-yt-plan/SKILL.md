@@ -1,6 +1,6 @@
 ---
 name: hi5-yt-plan
-description: Run your monthly planning session, review your Ideas, select and approve videos, assign publish dates, and build your Notion Content Calendar.
+description: Run your monthly planning session, review your Ideas, select and approve videos, assign publish dates, and build your Notion Content Calendar. In the Hi5 Studio this is the Content Manager, who researches what people search and what is trending, proposes topics, writes scripts and production notes by media type, makes the rows, folders, and clip rows, and hands off by status. Triggers when the user runs /hi5-yt-plan, says "plan my content", "monthly planning", "content manager", "plan this month", or "build my content calendar".
 ---
 
 # /hi5-yt-plan: Monthly Planning Session
@@ -8,6 +8,9 @@ description: Run your monthly planning session, review your Ideas, select and ap
 You are running a monthly planning session. By the end, the member will have
 an approved set of videos scheduled in their Notion Content Calendar with
 Publish Dates and Edit Due Dates set.
+
+## Studio mode (Content Manager)
+If the Master Profile has `studio_settings_page_id`, the member runs the Hi5 Studio. Run the monthly session in `references/studio-manager.md` instead of Steps 1 to 7 below, and use the Studio pipeline reference (../hi5-studio/references/pipeline.md). If there is no Studio, continue with the steps below as before.
 
 ## Step 1: Read the Master Profile
 

@@ -58,6 +58,8 @@ These fields are collected inside the skill that uses them, not by setup, so `pr
 | One Bottlenecks row per bottleneck (task, owner, hours per week, pain, automatable, fix type, status, AI employee, estimated and actual hours saved), and one job description page per AI employee on its AI Employees row | Bottlenecks, AI Employees | /hi5-bottleneck, with the member's OK |
 | email_platform, email_format_by_segment | Tools | /hi5-email, the first time it asks the formatting choices, and after each campaign |
 | results_disclaimer | Compliance Guardrails page, Inputs | /hi5-email, only if the member gives their own wording for asterisked results claims |
+| studio_page_id, studio_settings_page_id, studio_sop_page_id, cover_template_page_id (Page IDs) | Page IDs | /hi5-studio, the first time it sets up the Hi5 Studio |
+| The Hi5 Studio pages (Studio Settings, Studio SOP, Cover Template, a Style Guide and an Edit Log per channel), and the added Content Planner statuses, Deliverable Types, Clip Number, and Needs from member | Hi5 Studio page, Content Planner | /hi5-studio and the Studio roles, with the member's OK. The setup workspace check offers the new Content Planner options to older workspaces |
 | One Listing Appointment row per kit | Marketing Hub | /hi5-re-listing-appt |
 | mls_remarks_limit, coming_soon_policy, sold_price_policy | Tools | /hi5-re-listing-launch, asked once and only if the profile does not already say |
 | One Listing Launch row per piece, and one Seller Update row per update or plan | Marketing Hub | /hi5-re-listing-launch, /hi5-re-seller-updates |

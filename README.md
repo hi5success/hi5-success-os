@@ -77,7 +77,10 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 |---|---|
 | `/hi5-yt-setup` | Adds your content and voice details to your Master Profile and helps you get a YouTube API key |
 | `/hi5-yt-research` | Finds video ideas from keywords and competitors, scores them, and adds them to your Content Planner |
-| `/hi5-yt-plan` | Builds your monthly content calendar in Notion |
+| `/hi5-studio` | Sets up and runs the Hi5 Studio content pipeline from your Notion Content Calendar: Studio Settings, the Studio SOP, style guides, edit logs, a cover template, calendar fields, and folders. Every role (content manager, editor, social, YouTube producer, blog writer) follows the calendar by status, and nothing is scheduled before Optimizing or posted without your review |
+| `/hi5-studio-edit` | The Studio's video editor. Edits in CapCut through the local bridge, finds the clips, saves a timestamped transcript of every video and clip, makes covers from your cover template, and exports to the right folder |
+| `/hi5-studio-producer` | The Studio's YouTube producer, for long-form only. Writes the title, description, chapters, and tags from the transcript, uploads and schedules through the local YouTube bridge, and leaves YouTube notes for social |
+| `/hi5-yt-plan` | Builds your monthly content calendar in Notion. In the Studio it is the content manager: research, topics, scripts and production notes, rows, folders, and clip rows |
 | `/hi5-yt-script` | Writes a script or outline in your voice |
 | `/hi5-repurpose` | Turns a video or script into short form scripts, pull quotes, and snippets |
 | `/hi5-blog` | Writes an SEO blog post from a video, script, or topic |

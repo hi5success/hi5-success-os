@@ -58,13 +58,13 @@ Every video, blog, and piece of content is one row. Properties:
 | Property | Type | Options |
 |---|---|---|
 | Title | title | |
-| Status | select | Idea, Scheduled, Scripted, Draft, Published |
+| Status | select | Idea, Scheduled, Scripted, Draft, Published, Planned, Ready to Edit, In Progress, Reviewing, Revising, Finalizing, Optimizing |
 | Publish Date | date | |
 | Record Date | date | |
 | Edit Due Date | date | |
 | Content Category | select | (created as used) |
 | Content Type | select | (created as used) |
-| Deliverable Type | select | Long Form, Short Form, Blog, Podcast, Social Post |
+| Deliverable Type | select | Long Form, Short Form, Blog, Podcast, Social Post, Clip, Static Post, Carousel |
 | Production Style | select | (created as used) |
 | Goal | select | Affiliate, Community, Awareness, Mixed |
 | Primary Platform | select | (created as used) |
@@ -87,6 +87,8 @@ Every video, blog, and piece of content is one row. Properties:
 | Performance Tier | select | (created as used) |
 | Repurpose Status | select | Not Started, Clips Created, Captions Written, Posted |
 | Last Analytics Pull | date | |
+| Clip Number | number | The order of a clip within its long-form (Hi5 Studio) |
+| Needs from member | text | What a role is waiting for from the member, for example a photo (Hi5 Studio) |
 
 Status is a **select** (not Notion's built-in status type) so the exact values above can be set.
 
@@ -201,7 +203,7 @@ Write this on the Dashboard page:
 ## Skill Guide content
 A short table the member can reference. One section per plugin, one line per skill: command and what it does. Mark each plugin "if installed". Use the skill descriptions from the plugins:
 - **Business OS:** /hi5-setup, /hi5-next, /hi5-self, /hi5-voice-creator, /hi5-dashboard, /hi5-org-chart, /hi5-bottleneck, /hi5-bizplan, /hi5-goals, /hi5-bizreview
-- **Content OS:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose, /hi5-blog, /hi5-social
+- **Content OS:** /hi5-yt-setup, /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose, /hi5-blog, /hi5-social, /hi5-studio, /hi5-studio-edit, /hi5-studio-producer
 - **Real Estate OS (real estate members, a separate install):** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, /hi5-re-land-newbuild, /hi5-re-neighborhood
 - **Marketing OS:** /hi5-email, /hi5-newsletter, /hi5-seo, /hi5-site-audit, /hi5-linkedin, /hi5-website, /hi5-landing, /hi5-funnel, /hi5-casestudy
 
