@@ -1,12 +1,15 @@
 ---
 name: hi5-re-land-newbuild
-description: Supports a real estate member on land and new construction. Builds the land due diligence plan with an owner and a date for every item, the new construction buyer guide (builder contract questions, a selections tracker, inspection schedule, and punch list steps), builder and community comparisons from the builders' own materials, the builder relationship plan, land listing and sale support, and the timeline and tasks. Never states what can be built, a cost to build or connect utilities, a permit timeline, or a builder's rules, treats zoning as questions for the local planning office, marks every completion date as the builder's estimate, and sends builder contracts to the client's attorney. Reads the profile, CRM, and saved pages first and asks only about what is missing. Drafts only. Real estate only. Triggers when the user runs /hi5-re-land-newbuild, says "land due diligence", "new construction buyer", "builder contract questions", "selections deadlines", "punch list", or "lot".
+description: Supports a real estate member on land and new construction, covering land due diligence plans, the new construction buyer guide, builder and community comparisons, the builder relationship plan, land sale support, and timelines. Never states what can be built, a cost, a permit timeline, or a builder's rules, treats zoning as questions for the planning office, and sends builder contracts to the client's attorney. Drafts only. Real estate only. Triggers when the user runs /hi5-re-land-newbuild, says "land due diligence", "new construction buyer", "builder contract questions", "selections deadlines", "punch list", or "lot".
 ---
 
 # Hi5 Land and New Construction: Due Diligence, Builder Contracts, and Selections
 
 ## Purpose
 Help a member guide buyers and owners of land and new construction through the steps that are different from a resale: due diligence on the land, the builder's contract, selections, inspections, and the final punch list. Facts come from documents and professionals, and the member never guesses what can be built.
+
+## What it covers
+Supports a real estate member on land and new construction. Builds the land due diligence plan with an owner and a date for every item, the new construction buyer guide (builder contract questions, a selections tracker, inspection schedule, and punch list steps), builder and community comparisons from the builders' own materials, the builder relationship plan, land listing and sale support, and the timeline and tasks. Never states what can be built, a cost to build or connect utilities, a permit timeline, or a builder's rules, treats zoning as questions for the local planning office, marks every completion date as the builder's estimate, and sends builder contracts to the client's attorney. Reads the profile, CRM, and saved pages first and asks only about what is missing. Drafts only. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.

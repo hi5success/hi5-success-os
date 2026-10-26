@@ -1,12 +1,15 @@
 ---
 name: hi5-re-transaction
-description: Runs a real estate file from a signed contract or lease to keys. Reads the executed document, builds the phase-by-phase checklist and the key dates calendar, writes the weekly client status update, offer acknowledgments and buyer cover letters, inspection repair requests and responses, appraisal gap briefs, the final walkthrough sheet, the closing day message, and the message after a deal falls apart. Works for buyers, sellers, tenants, landlords, investors, 55+ community resales, new construction, land, and commercial files, and builds on the contract reading in /hi5-re-crm. Scans the CRM, profile, and document first and asks only about what is missing, confirms every date against the executed document, and never sends or changes a record or calendar without the member's OK. Real estate only. Triggers when the user runs /hi5-re-transaction, says "contract to close", "key dates", "weekly escrow update", "repair request", "appraisal gap", "final walkthrough", or "closing day".
+description: Runs a real estate file from a signed contract or lease to keys, covering reads the executed document, builds the checklist and key dates calendar, and writes weekly client updates, repair requests, appraisal gap briefs, the walkthrough sheet, and closing day and fall-through messages. Confirms every date against the executed document, and never sends or changes a record or calendar without the member's OK. Real estate only. Triggers when the user runs /hi5-re-transaction, says "contract to close", "key dates", "weekly escrow update", "repair request", "appraisal gap", "final walkthrough", or "closing day".
 ---
 
 # Hi5 Transaction: From Signed Contract to Keys
 
 ## Purpose
 Keep every file on track and every client informed from the day a contract or lease is signed until closing and the keys. Dates come only from the executed document, every message is in the member's voice, and nothing is sent or changed without the member's OK.
+
+## What it covers
+Runs a real estate file from a signed contract or lease to keys. Reads the executed document, builds the phase-by-phase checklist and the key dates calendar, writes the weekly client status update, offer acknowledgments and buyer cover letters, inspection repair requests and responses, appraisal gap briefs, the final walkthrough sheet, the closing day message, and the message after a deal falls apart. Works for buyers, sellers, tenants, landlords, investors, 55+ community resales, new construction, land, and commercial files, and builds on the contract reading in /hi5-re-crm. Scans the CRM, profile, and document first and asks only about what is missing, confirms every date against the executed document, and never sends or changes a record or calendar without the member's OK. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.

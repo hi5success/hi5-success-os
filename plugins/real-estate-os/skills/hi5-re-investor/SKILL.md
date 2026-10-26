@@ -1,12 +1,15 @@
 ---
 name: hi5-re-investor
-description: Works with real estate investor clients as a real estate member. Builds the buy box intake, a deal numbers worksheet where the investor supplies every figure and the math is shown step by step, side by side property comparisons on the investor's own metrics, the due diligence checklist for income property, the portfolio sale and exchange timeline fitted to the investor's own dates, and short numbers-only investor updates and nurture. Never states or promises a return, yield, market rent, appreciation, or a good deal, never chooses areas or properties by who lives there, and sends tax, 1031, and lending questions to the investor's CPA, qualified intermediary, and lender. Reads the profile, CRM, and saved pages first and asks only about what is missing. Drafts only. Real estate only. Triggers when the user runs /hi5-re-investor, says "investor client", "buy box", "deal numbers", "compare these properties", "due diligence checklist", or "1031 timeline".
+description: Works with real estate investor clients, covering buy box intake, a deal numbers worksheet where the investor supplies every figure and the math is shown, property comparisons on the investor's own metrics, due diligence checklists, exchange timelines, and numbers-only updates. Never states or promises a return, rent, or a good deal, and sends tax, 1031, and lending questions to the investor's CPA, intermediary, and lender. Drafts only. Real estate only. Triggers when the user runs /hi5-re-investor, says "investor client", "buy box", "deal numbers", "compare these properties", "due diligence checklist", or "1031 timeline".
 ---
 
 # Hi5 Investor: Buy Box, Numbers the Investor Owns, and Due Diligence
 
 ## Purpose
 Help a member serve investor clients with a clear buy box, a worksheet for the investor's own numbers, honest comparisons, and a due diligence plan. The investor owns every assumption, and the skill never recommends a deal, projects a return, or gives tax or lending advice.
+
+## What it covers
+Works with real estate investor clients as a real estate member. Builds the buy box intake, a deal numbers worksheet where the investor supplies every figure and the math is shown step by step, side by side property comparisons on the investor's own metrics, the due diligence checklist for income property, the portfolio sale and exchange timeline fitted to the investor's own dates, and short numbers-only investor updates and nurture. Never states or promises a return, yield, market rent, appreciation, or a good deal, never chooses areas or properties by who lives there, and sends tax, 1031, and lending questions to the investor's CPA, qualified intermediary, and lender. Reads the profile, CRM, and saved pages first and asks only about what is missing. Drafts only. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.

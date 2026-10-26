@@ -1,12 +1,15 @@
 ---
 name: hi5-re-seller-updates
-description: Keeps a real estate member's sellers informed from signing to closing and rescues listings that stall. Writes the pre-listing prep plan, honest weekly updates (including slow weeks), showing feedback requests, offer presentations, the final two weeks to closing, and the review and referral ask, plus price adjustment cases, stalled listing diagnoses, condition improvement plans, withdraw and relaunch plans, hard seller conversations, and the plan to re-earn an expired listing. Works for home sellers, landlords with rentals, investors, 55+ communities, luxury, and land, new construction, and commercial listings. Reads the profile, the CRM, saved pages, and the numbers the member gives first, filters steering remarks out of showing feedback, and never sends, posts, or changes records without the member's OK. Real estate only. Triggers when the user runs /hi5-re-seller-updates, says "weekly seller update", "present this offer", "price adjustment", "stalled listing", "relist my expired listing", or "prep for a hard seller conversation".
+description: Keeps a real estate member's sellers informed from signing to closing and rescues listings that stall, covering prep plans, honest weekly updates, showing feedback requests, offer presentations, price adjustment cases, stalled listing diagnoses, relaunch plans, hard seller conversations, and re-earning an expired listing. Filters steering remarks out of showing feedback, and never sends, posts, or changes records without the member's OK. Real estate only. Triggers when the user runs /hi5-re-seller-updates, says "weekly seller update", "present this offer", "price adjustment", "stalled listing", "relist my expired listing", or "prep for a hard seller conversation".
 ---
 
 # Hi5 Seller Updates: Keep Sellers Informed and Rescue Stalled Listings
 
 ## Purpose
 Keep every seller informed before they have to ask, present offers clearly and calmly, run a calm road to closing, and when a listing stalls, give the seller an honest diagnosis and clear paths. Every number comes from the member and the data, and every draft is in the member's voice.
+
+## What it covers
+Keeps a real estate member's sellers informed from signing to closing and rescues listings that stall. Writes the pre-listing prep plan, honest weekly updates (including slow weeks), showing feedback requests, offer presentations, the final two weeks to closing, and the review and referral ask, plus price adjustment cases, stalled listing diagnoses, condition improvement plans, withdraw and relaunch plans, hard seller conversations, and the plan to re-earn an expired listing. Works for home sellers, landlords with rentals, investors, 55+ communities, luxury, and land, new construction, and commercial listings. Reads the profile, the CRM, saved pages, and the numbers the member gives first, filters steering remarks out of showing feedback, and never sends, posts, or changes records without the member's OK. Real estate only.
 
 ## Core Rules
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.
