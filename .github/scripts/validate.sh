@@ -312,7 +312,7 @@ grep -q 'Check Hi5 first' plugins/business-os/skills/hi5-bottleneck/SKILL.md || 
 grep -q '### 🚧 Bottlenecks' plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md is missing the Bottlenecks database")
 
 # 18. The dashboard skill keeps its discovery, widget library, email actions, Notion rules, and the no repeated connector prompt test
-for f in SKILL.md references/discovery.md references/widgets.md references/email-actions.md references/notion-trackers.md references/build.md references/connectors.md industries/real-estate.md industries/generic.md; do
+for f in SKILL.md references/discovery.md references/widgets.md references/email-actions.md references/notion-trackers.md references/build.md references/connectors.md references/menu.md references/tasks.md references/email-tasks.md references/dashboard-content.md industries/real-estate.md industries/generic.md; do
   [ -f "plugins/business-os/skills/hi5-dashboard/$f" ] || ERRORS+=("hi5-dashboard is missing $f")
 done
 grep -q 'two-open test' plugins/business-os/skills/hi5-dashboard/references/build.md || ERRORS+=("hi5-dashboard/references/build.md must keep the two-open test for repeated connector prompts")
@@ -391,6 +391,23 @@ grep -q 'Empty board' "$BD/hi5-advisor/SKILL.md" || ERRORS+=("hi5-advisor must g
 for sk in hi5-library hi5-advisor hi5-board; do
   grep -q 'Dollar signs' "$BD/$sk/SKILL.md" || ERRORS+=("$sk must carry the dollar sign rule")
 done
+
+# 30. The dashboard keeps its menu, separate dashboards, email hard rules, email to task, one task home, content dashboard, and potential revenue rules
+DB="plugins/business-os/skills/hi5-dashboard"
+grep -q 'Menu first' "$DB/SKILL.md" || ERRORS+=("hi5-dashboard SKILL.md must keep the menu first rule")
+grep -q 'Separate dashboards' "$DB/SKILL.md" || ERRORS+=("hi5-dashboard SKILL.md must keep the separate dashboards rule")
+grep -q 'Never link or redirect to Gmail' "$DB/SKILL.md" || ERRORS+=("hi5-dashboard SKILL.md must keep the email hard rule: never link to Gmail")
+grep -q 'Never link or redirect to Gmail' "$DB/references/email-actions.md" || ERRORS+=("email-actions.md must keep the never link to Gmail rule")
+grep -q 'recent threads with the same sender' "$DB/references/email-actions.md" || ERRORS+=("email-actions.md must read recent threads with the same sender for context")
+grep -q 'Send is one click per message' "$DB/references/email-actions.md" || ERRORS+=("email-actions.md must keep send is one click per message")
+grep -q 'No reply needed' "$DB/references/email-tasks.md" || ERRORS+=("email-tasks.md must close the task on No reply needed")
+grep -q 'scheduled task' "$DB/references/email-tasks.md" || ERRORS+=("email-tasks.md must offer the scheduled task")
+grep -q 'Where do you keep your tasks' "$DB/references/tasks.md" || ERRORS+=("tasks.md must ask where the member keeps tasks")
+grep -q 'Never split tasks across two places' "$DB/references/tasks.md" || ERRORS+=("tasks.md must keep tasks in one place")
+grep -q 'never reads local bridges' "$DB/references/dashboard-content.md" || grep -q 'never read.*local bridges' "$DB/references/dashboard-content.md" || ERRORS+=("dashboard-content.md must never read local bridges")
+grep -q 'Potential, not guaranteed' "$DB/references/widgets.md" || ERRORS+=("widgets.md must label potential revenue as potential, not guaranteed")
+grep -q 'commission_rate' "$DB/industries/real-estate.md" || ERRORS+=("real-estate.md must use the member's own commission rate")
+if grep -rniE 'open in gmail|mail\.google\.com|gmail\.com/mail' "$DB" | grep -viE 'never|no "open in gmail"|not ' >/dev/null; then ERRORS+=("hi5-dashboard must not link to Gmail"); fi
 
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""

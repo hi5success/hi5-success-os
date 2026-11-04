@@ -1,6 +1,6 @@
 # Connecting the Apps They Already Use
 
-Used by `SKILL.md` Step 2. Menus differ between Claude apps and versions, so every step is hedged ("look for"), and you ask for a screenshot if they get stuck. Never claim an exact menu name.
+Used by `SKILL.md` Step 3, only for the apps the picked dashboards need. Menus differ between Claude apps and versions, so every step is hedged ("look for"), and you ask for a screenshot if they get stuck. Never claim an exact menu name.
 
 ## Step 1: Ask what they use
 Ask which of these they use day to day: email, calendar, CRM (including GoHighLevel and how many sub-accounts), tasks, chat (Slack or Google Chat), finance (accounting, payments), and anything else important. Skip anything they do not use. Never push an app they do not use.

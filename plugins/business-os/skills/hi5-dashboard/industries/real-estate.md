@@ -1,6 +1,9 @@
 # Real Estate Dashboard Preset
 
-Used by `SKILL.md` Step 4 for members in real estate. These are suggestions, offered after discovery, and never forced. Drop anything the member would take no action on. Real estate rules apply: Fair Housing (no widget that shows or filters by who someone is), texting consent and do-not-contact before any text, and dates come only from the executed document or the source.
+Used by `SKILL.md` Step 5 for members in real estate. These are suggestions, offered after discovery, and never forced. Drop anything the member would take no action on. Real estate rules apply: Fair Housing (no widget that shows or filters by who someone is), texting consent and do-not-contact before any text, and dates come only from the executed document or the source.
+
+## How the menu uses this
+The menu (`menu.md`) offers these as separate dashboards: the Command Center (Today, Email, Tasks, and a card for each other dashboard), CRM (CRM summary, Clients by stage, Potential revenue, Follow-Up Queue), Content, Money, and Transactions (the tracker below).
 
 ## Suggested widgets
 - **Today:** appointments and showings from the calendar.
@@ -8,7 +11,8 @@ Used by `SKILL.md` Step 4 for members in real estate. These are suggestions, off
 - **CRM summary:** new leads, active leads, and needs follow-up, by sub-account if the member uses more than one.
 - **Listings:** active listings with the next action for each (a price talk, a showing feedback request, a seller update due). The data comes from the CRM opportunities or a Notion Listings tracker. Never pull data from a listing site.
 - **Follow-Up Queue:** people who need a follow-up or have gone stale, in four groups: new leads, active buyers and sellers, past clients, and sphere. The member sets the stale days and the channel for each group. It follows the ranking signals in `/hi5-re-daily` and the touch rules in `/hi5-re-sphere` when Real Estate OS is installed, drafts in the member's voice with the disclosure line where email requires it, and runs the texting consent gate from the CRM Map's `consent_source` for every text. Never rank or filter by who someone is or where they live.
-- **Clients:** buyers and sellers in the pipeline, grouped by stage, with the last touch.
+- **Clients by stage:** buyers and sellers in the pipeline, a count for each stage and the last touch for each client (see `widgets.md`).
+- **Potential revenue:** pipeline value by stage from the CRM opportunities, times the member's own commission rate and brokerage split from their profile (`commission_rate`, `brokerage_split`), with the math shown for each stage and in total, labeled "Potential, not guaranteed". If the rate is not in the profile, ask once and save it. Never a standard or typical rate, because compensation is set by agreement and is negotiable. See `widgets.md`.
 - **Transaction tracker:** every file under contract, with its stage, the key dates, the documents needed, what is missing, and the next step (see below).
 - **Important dates:** from the Transactions tracker and the calendar.
 - **Tasks:** from Notion and GoHighLevel.

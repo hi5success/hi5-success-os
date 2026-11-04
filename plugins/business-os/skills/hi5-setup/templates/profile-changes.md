@@ -59,6 +59,8 @@ These fields are collected inside the skill that uses them, not by setup, so `pr
 | coach_library_db_id, advisory_board_db_id, board_meetings_db_id and coach_library_ds_id, advisory_board_ds_id, board_meetings_ds_id (Page IDs) | Page IDs | /hi5-library, /hi5-advisor, /hi5-board, the first time each one saves. The skill creates the database with the member's OK |
 | Library Folders and Board Updates sections | Master Profile | /hi5-library |
 | One Coach Library row per saved post, one Advisory Board row per advisor (its brain is the row's page), and one Board Meetings row per meeting (the full notes are the row's page) | Coach Library, Advisory Board, Board Meetings | /hi5-library, /hi5-advisor, /hi5-board |
+| commission_rate (Business Numbers) | Business Numbers | /hi5-dashboard, the first time the Potential revenue widget needs it. Never filled from a preset |
+| A Type property on the Dashboards database | Dashboards | /hi5-dashboard adds it on first use |
 | email_platform, email_format_by_segment | Tools | /hi5-email, the first time it asks the formatting choices, and after each campaign |
 | results_disclaimer | Compliance Guardrails page, Inputs | /hi5-email, only if the member gives their own wording for asterisked results claims |
 | content_page_id, content_settings_page_id, content_sop_page_id, cover_template_page_id (Page IDs) | Page IDs | /hi5-content-plan, the first time it sets up the content calendar |

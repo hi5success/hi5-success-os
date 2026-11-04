@@ -1,6 +1,6 @@
 # The Follow-Up Queue Widget
 
-Used by `SKILL.md` (Steps 3, 4, 5, and 7), `widgets.md`, and `build.md`. It shows people in the CRM who need a follow-up or have gone stale, each with a short reason and a recommended text or email ready to send. The member edits the message and sends it from the dashboard. Nothing ever sends automatically, and there is no "Send all" button.
+Used by `SKILL.md` (Steps 4, 5, 6, and 8), `widgets.md`, and `build.md`. It shows people in the CRM who need a follow-up or have gone stale, each with a short reason and a recommended text or email ready to send. The member edits the message and sends it from the dashboard. Nothing ever sends automatically, and there is no "Send all" button.
 
 ## Settings to collect (add to discovery)
 Scan first, then ask only what is missing. Suggest starting points, and the member decides. Say plainly that a suggestion is a starting point to change, not a standard.
@@ -35,7 +35,7 @@ Never rank, filter, group, or describe contacts by a protected characteristic or
   - If the send fails, say so, do not send again, and check the conversation first, because a failed call can be an unknown outcome. The member may click Send again.
   - If the send worked but the note failed, say so, and offer to retry only the note, never the message.
 - **Snooze.** Hide the contact for 3, 7, or 14 days (the member picks), and bring it back after.
-- **Make a task.** Create a follow-up task in the Notion Tasks database (title, a due date the member picks, a link to the contact) and in GoHighLevel too if it is connected and the member wants it, after showing it. Mark the row "Task made".
+- **Make a task.** Create a follow-up task in the member's task home (see `tasks.md`; title, a due date the member picks, a link to the contact), after showing it. Mark the row "Task made".
 - **Not now.** Remove it from today's queue only. It can come back tomorrow if it is still stale.
 - **Any other CRM change** (a stage move, mark lost, change an owner) is shown first and made only after the member's OK. The logged note is the only CRM write the member has agreed to in advance.
 - **Never** a "Send all" button, a bulk send, an overnight or scheduled send, or an automatic send. Never send on a retry. Never send without the member's click on that one message.

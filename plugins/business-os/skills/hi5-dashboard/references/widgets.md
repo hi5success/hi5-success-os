@@ -1,16 +1,16 @@
 # Widget Library
 
-Used by `SKILL.md` Step 4. Offer a widget only when the member's discovery answers call for it, and every widget must lead to an action. Each entry gives the data source, what it shows, and the actions. Data in an app is read from the app. Data with no app lives in a Notion database (see `notion-trackers.md`). Every widget handles its own failure: if its connector fails, show one "Reconnect [app]" message on that widget and keep the rest of the page working.
+Used by `SKILL.md` Step 5. Offer a widget only when the member's discovery answers call for it, and every widget must lead to an action. Each entry gives the data source, what it shows, and the actions. Data in an app is read from the app. Data with no app lives in a Notion database (see `notion-trackers.md`). Every widget handles its own failure: if its connector fails, show one "Reconnect [app]" message on that widget and keep the rest of the page working.
 
 ## CRM summary
 - **Data source:** the CRM or GoHighLevel connector. For GoHighLevel, list the sub-accounts first and show one summary per sub-account (a tab or a card each), so a member with several sub-accounts sees them all.
 - **Shows:** new leads (created within the window the member chose), active leads (in an open stage), and needs follow-up (no activity for the number of days the member chose). Thresholds come from the member, never from a standard.
-- **Actions:** open the record in the CRM; make a task (shown first, then created after the member's OK); a text only after the consent and do-not-contact check (see `email-actions.md` for the gate).
+- **Actions:** open the record in the CRM; make a task (in the member's task home, see `tasks.md`; shown first, then created after the member's OK); a text only after the consent and do-not-contact check (see `email-actions.md` for the gate).
 - **Notes:** never show protected-class details or private notes. Show the source and the stage only.
 
 ## Email
-- **Data source:** the email connector. See `email-actions.md` for the filter, the drafted reply, and the four buttons (Send, Make a task, No reply needed, Spam).
-- **Shows:** emails that need a reply, newest need first, with who, the subject, how long it has waited, one line on why it needs a reply, and a drafted reply in the member's voice. Obvious spam and low-priority mail are filtered out.
+- **Data source:** the email connector. See `email-actions.md` for the hard rules, the filter, the auto-draft, and the four buttons (Send, Make a task, No reply needed, Spam), and `email-tasks.md` for the automatic task for every email that needs a reply.
+- **Shows:** emails that need a reply, newest need first, with who, the subject, how long it has waited, and one line on why. Opening one shows the full thread inside the dashboard (never a link to the mail app) with a drafted reply in the member's voice already in an editable box. Obvious spam and low-priority mail are filtered out.
 
 ## Messages (optional)
 - **Data source:** the Slack or Google Chat connector, only if the member uses it.
@@ -29,9 +29,9 @@ Used by `SKILL.md` Step 4. Offer a widget only when the member's discovery answe
 - **Notes:** dates come only from the source (the CRM, the calendar, or the document the member entered). Never compute a date from a rule.
 
 ## Tasks
-- **Data source:** the Tasks database in Notion, and GoHighLevel tasks if connected.
-- **Shows:** due today, overdue, and next 7 days, by priority, with the owner.
-- **Actions:** mark done; change the due date; add a task (written to the Notion Tasks database, and to GoHighLevel if connected and the member wants it, after showing it).
+- **Data source:** the member's task home, the one place they keep tasks (GoHighLevel, another task app, or Notion; see `tasks.md`). Never two places.
+- **Shows:** due today, overdue, and next 7 days, by priority, with the owner. Tasks made from email show the sender and open that thread inside the dashboard.
+- **Actions:** mark done; change the due date; add a task (written to the task home only, after showing it).
 
 ## Pipeline or deal tracker
 - **Data source:** the CRM for stage and value, and a Notion tracker for what the CRM does not hold (the checklist, documents needed, key dates). See `notion-trackers.md`.
@@ -56,13 +56,27 @@ Used by `SKILL.md` Step 4. Offer a widget only when the member's discovery answe
 ## Follow-Up Queue
 - **Data source:** the CRM (read only) for last contact, stage, source, open tasks, and the last message, and, when the member chose the daily scheduled task, a Notion "Follow-Up Queue" database the task fills. Full spec in `follow-up-queue.md`.
 - **Shows:** people who need a follow-up or have gone stale, in the member's groups, each with a one-line reason and a recommended text or email in the member's voice, ready to edit. Text is suggested only with consent and not do-not-contact, otherwise email, otherwise "Call or skip" with the reason.
-- **Actions:** Send (that one message, after edits, then a CRM note is logged), Snooze (3, 7, or 14 days), Make a task (Notion, and the CRM if connected), and Not now (today only). Any other CRM change is shown first and needs an OK.
+- **Actions:** Send (that one message, after edits, then a CRM note is logged), Snooze (3, 7, or 14 days), Make a task (in the member's task home), and Not now (today only). Any other CRM change is shown first and needs an OK.
 - **Notes:** ranked by behavior only, never by a protected characteristic. No Send all and no automatic sending.
 
-## Summary cards
-- **Data source:** the other widgets and pages.
-- **Shows:** one card per page on the Command Center home page, each with the one or two numbers that matter and a link to the full page.
-- **Actions:** the card opens its page. A card that has an overdue or urgent item says so in one line.
+## Potential revenue (pipeline value turned into the member's own earnings)
+- **Data source:** the CRM opportunities (read only): the count and the value in each stage. The member's own commission rate and brokerage split come from their profile (`commission_rate` and `brokerage_split` in Business Numbers). Other industries use the member's own margin or rate, if they want profit shown, and otherwise show value only.
+- **Shows:** for each stage, the opportunity value, then value x commission rate x split = the potential for that stage, with the math written out, and the total. Label it "Potential, not guaranteed" on the widget. No guessing and no weighting by a chance of closing unless the member gives their own close rate.
+- **If the rate is missing:** ask once ("What is your commission rate, the way you state it? If it differs for buyers and sellers, give both."), save it as a bullet in Business Numbers, and never use a standard or typical rate. If a value is missing on an opportunity, say how many were left out.
+- **Actions:** open the stage in the CRM. It writes nothing.
+
+## Clients by stage
+- **Data source:** the CRM (read only).
+- **Shows:** a count for each stage of the member's pipeline, and for each client the last touch (days since the last activity, from the CRM's own record). Show the stage and the source only, never protected-class or private details.
+- **Actions:** open the contact in the CRM; make a task (in the member's task home); a text only after the consent and do-not-contact check.
+
+## Content dashboard
+Its own dashboard. See `dashboard-content.md`. It reads the Content Planner only.
+
+## Summary cards (Command Center)
+- **Data source:** a small read-only subset of each other dashboard's own data source (one or two counts per card), so the card is live. The full dashboard declares everything it needs, the Command Center declares only the few read tools its cards use.
+- **Shows:** one card per other dashboard the member picked (CRM, Content, Money, an industry one), each with the one or two numbers that matter, and a link to that dashboard's own artifact. A card with an overdue or urgent item says so in one line.
+- **Actions:** the card opens its dashboard (a separate artifact link). The links are saved on the Dashboards entries.
 
 ## Rules for every widget
 - Show freshness ("updated 4 minutes ago") from the data's own time stamp, never from the page clock.

@@ -127,6 +127,7 @@ One row per dashboard built by /hi5-dashboard, with its pages, widgets, data sou
 | Status | select | Active, Draft, Retired |
 | Version | number | |
 | Date | date | |
+| Type | select | Command Center, CRM, Content, Money, Transactions, Industry, Custom |
 | Industry | text | |
 | Artifact link | url | |
 

@@ -1,6 +1,6 @@
 ---
 name: hi5-dashboard
-description: Builds a live dashboard for any business, starting with what the member needs to see and act on, then widgets for each answer. Reads the profile, connected apps, and Dashboards database first, uses Notion for data that lives nowhere else, and sends or changes nothing without a click and the member's OK. Includes email actions, a follow-up queue, CRM, tasks, dates, pipeline, and money snapshots. Works for every industry. Triggers when the user runs /hi5-dashboard, says "build me a dashboard", "command center", "what should I see every morning", "dashboard for my business", or "update my dashboard".
+description: Builds live dashboards for any business as separate Claude artifacts, a Command Center (today, email, tasks, and a card for each other dashboard) plus CRM, Content, Money, and industry dashboards the member picks from a menu. Scans the profile, connected apps, and Dashboards database first, then runs discovery only on the picks, and sends or changes nothing without a click. Email opens inside the dashboard with an auto-drafted reply, and every email that needs a reply becomes a task in the member's own task tool. Real estate adds potential revenue, clients by stage, and transactions. Works for every industry. Triggers when the user runs /hi5-dashboard, says "build me a dashboard", "command center", "what should I see every morning", "dashboard for my business", "update my dashboard", or "add a CRM dashboard".
 ---
 
 # Hi5 Dashboard: See What Matters and Act On It
@@ -9,10 +9,15 @@ description: Builds a live dashboard for any business, starting with what the me
 Build a dashboard the member opens many times a day, made from their real answers to "what do you check first, what slips through, and what would you do if you saw it?" Discovery comes first, and widgets serve the answers. It works for any industry, with presets as suggestions only.
 
 ## What it covers
-Builds a live dashboard for any business by first finding out what the member needs to see and act on, then building widgets to serve those answers. Scans the Master Profile, the personality profile, the connectors available in the session, and the Dashboards database first and never re-asks what is known. Helps connect the apps they already use (email, calendar, CRM or GoHighLevel, tasks, chat, finance) with step by step help, interviews a few questions at a time, plans pages and widgets with a data source for each, and builds a Claude artifact with live connector data where it is supported, or a snapshot with a clear refresh path. Uses Notion as the database for anything not stored in another app, with the member's OK on the fields first. Includes email actions (send one reply on click, make a task, no reply needed, spam), a CRM summary, today, important dates, tasks, a pipeline tracker, a money snapshot, a marketing snapshot, and custom trackers. Saves each dashboard to a Dashboards database so it can be rebuilt or updated. Works for every industry.
+Builds live dashboards for any business, each as its own Claude artifact. After scanning the Master Profile, the personality profile, the connectors available in the session, and the Dashboards database, it shows a menu of what is possible (a Command Center, CRM, Content, Money, and an industry dashboard such as Transactions) and runs discovery only on what the member picks. The Command Center is the daily feed: today, email, tasks, and one summary card for each other dashboard, each linking to its own dashboard. Email opens inside the dashboard with an auto-drafted reply in the member's voice, and every email that needs a reply becomes a task in the member's own task tool. Helps connect the apps they already use (email, calendar, CRM or GoHighLevel, tasks, chat, finance) with step by step help, builds a live artifact where it is supported or a snapshot with a clear refresh path, and uses Notion as the database for anything not stored in another app, with the member's OK on the fields first. Saves each dashboard as its own entry in the Dashboards database so it can be rebuilt or updated on its own. Works for every industry.
 
 ## Core Rules
 - **Discovery before widgets.** Never start from a list of widgets. Every item on the dashboard must pass one test: "If you saw this, what would you do?" Drop anything that leads to no action.
+- **Menu first, then discovery on the picks.** After the scan, show what is possible for their industry and connected apps as A/B/C picks (`references/menu.md`), then run discovery only on what they pick. Members do not know what they can have, so suggest. The "If you saw this, what would you do?" filter still applies to every item.
+- **Separate dashboards, not one big one.** The Command Center is the daily feed: today, email, tasks, and one summary card for each other dashboard. CRM, Content, Money, and an industry dashboard are each their own artifact, their own entry in the Dashboards database, built and updated on their own, with only the connectors each one needs (`references/build.md`).
+- **Email hard rules.** Never link or redirect to Gmail or any mail app: a thread opens inside the dashboard. Opening an email auto-drafts a reply in the member's voice, using only the full thread and recent threads from the same sender (read only), with placeholders for anything missing. The reply box is editable, and Send is one click per message (`references/email-actions.md`).
+- **Email to task, automatic.** Every email that needs a reply (no promos, newsletters, no-reply senders, or receipts) becomes a task linked to the thread, and the task closes when the member replies or clicks No reply needed. It runs from a scheduled task the member approves at setup, or on open if scheduled tasks are not available, and the plan says which (`references/email-tasks.md`).
+- **One task home.** Ask where the member keeps tasks (GoHighLevel, another app, or Notion), scan that tool, and write tasks there only. If their tool has no connector, use Notion and say so once. Never split tasks across two places (`references/tasks.md`).
 - **Scan first, then ask.** Before asking anything, read the Master Profile (industry, business, brand, languages, tools), the `/hi5-self` profile, the Dashboards database (every entry's name, version, and pages), existing Notion trackers and the Hi5 databases, and which connectors you can see in this session (email, calendar, CRM or GoHighLevel and how many sub-accounts, Notion, Slack, Google Chat, finance tools). Say in one or two lines what you found, for example "I can see Gmail, Google Calendar, and GoHighLevel with 3 sub-accounts, and a Tasks database. Slack is not connected." Ask only about what is missing. Never re-ask anything already known.
 - **Read from the app, store the rest in Notion.** Data that lives in an app (CRM, email, calendar) is read from that app. Never copy it into Notion just to display it. For anything that has no app (a transaction checklist, important dates the CRM does not hold, goals, onboarding steps, content status, custom trackers), use a Notion database. Reuse an existing Hi5 database (Tasks, the Marketing Hub, goals, the Voice Library) before creating a new one, and never duplicate one. A new Notion database needs the member's OK on the fields first. See `references/notion-trackers.md`.
 - **No Send all, ever.** No widget has a bulk send, an overnight send, a scheduled send, or an automatic send. Every message goes out only when the member clicks send on that one message.
@@ -34,48 +39,53 @@ Search Notion for "Hi5 Success OS Workspace" and for "hi5-os-root". Open each re
 ### Dashboards safety net
 This skill saves to the Dashboards database, so make sure it exists before you start.
 1. If `dashboards_db_id` is missing, or that database cannot be opened, search the member's workspace under the root page for a database titled "Dashboards". If you find one, save its ID as `dashboards_db_id` in the Page IDs section and continue.
-2. If there is none, say: "Your Dashboards database isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Dashboards" inside the root page with these properties: Name (title); Status (select: Active, Draft, Retired); Version (number); Date (date); Industry (text); Artifact link (url). Save its ID as `dashboards_db_id` in the Page IDs section, and continue.
+2. If there is none, say: "Your Dashboards database isn't in your workspace yet. I can add it now with the standard Hi5 layout. OK?" If they agree, create ONE database called "Dashboards" inside the root page with these properties: Name (title); Type (select: Command Center, CRM, Content, Money, Transactions, Industry, Custom); Status (select: Active, Draft, Retired); Version (number); Date (date); Industry (text); Artifact link (url). Save its ID as `dashboards_db_id` in the Page IDs section, and continue.
 3. If they say no, or the database cannot be created, do not lose the work. Give the member the plan and the build in the chat, say "I couldn't save this to your Notion. Run /hi5-setup and it will offer to add your Dashboards database, then ask me to save it," and stop trying to save. Never create a second Dashboards database, and never create any other database without the member's OK on its fields.
 
 ## Step 1: Scan
 
-Read what is listed in the Core Rules. If the Dashboards database has an entry for this member, say so and offer to update it instead of starting over (Step 8). Otherwise go to Step 2.
+Read what is listed in the Core Rules. If the Dashboards database has entries for this member, list them (name, type, version, link) and offer to update one instead of starting over (Step 9). Otherwise go to Step 2.
 
-## Step 2: Connect the apps they already use
+## Step 2: Menu
 
-Follow `references/connectors.md`. Ask which apps they use day to day (email, calendar, CRM, tasks, chat, finance). For any app they use that is not connected and has a Claude connector, recommend connecting it and say in one line what it would add to the dashboard. Guide them step by step with hedged wording ("look for Connectors in Settings") and ask for a screenshot if they get stuck, because menus vary. Never push an app they do not use. After they connect one, confirm it with one read-only test, then continue. If they skip a connector, plan around it (a Notion tracker or a paste option) and offer it once more later, never repeatedly.
+Follow `references/menu.md`. Show what is possible for their industry and connected apps as A/B/C picks, for example "A) Command Center B) CRM C) Content D) Money E) Transactions", say which connected apps each one uses, and recommend starting with the Command Center. One question. The member can pick several. Everything after this runs only for what they pick.
 
-## Step 3: Discovery interview
+## Step 3: Connect the apps they already use
 
-Follow `references/discovery.md`. A few questions at a time, skipping what the scan answered, and filter every item with "If you saw this, what would you do?" If the member wants follow-ups (people who need a reply or have gone stale), add the Follow-Up Queue questions from `references/follow-up-queue.md` (what counts as stale per group, which pipelines and stages, the channel per group, and the logging heads-up).
+Follow `references/connectors.md`, only for the apps the picked dashboards need. Ask which they use day to day (email, calendar, CRM, tasks, chat, finance). For any app they use that is not connected and has a Claude connector, recommend connecting it and say in one line what it would add to the dashboard. Guide them step by step with hedged wording ("look for Connectors in Settings") and ask for a screenshot if they get stuck, because menus vary. Never push an app they do not use. After they connect one, confirm it with one read-only test, then continue. If they skip a connector, plan around it (a Notion tracker or a paste option) and offer it once more later, never repeatedly.
 
-## Step 4: Plan
+## Step 4: Discovery interview, on the picks
 
-Show a plan and wait for the member's OK:
-- The pages (a Command Center home page with summary cards, and a full page for each card).
-- The widgets on each page, from `references/widgets.md` and the industry presets (`industries/real-estate.md` or `industries/generic.md`, as suggestions only, never forced).
-- The data source for each widget: which app, or which Notion database (existing or new).
+Follow `references/discovery.md`, for the picked dashboards only. A few questions at a time, skipping what the scan answered, and filter every item with "If you saw this, what would you do?" Ask where they keep their tasks (`references/tasks.md`) and, if the Command Center and email are picked, how email to task should run (`references/email-tasks.md`). If the member wants follow-ups (people who need a reply or have gone stale), add the Follow-Up Queue questions from `references/follow-up-queue.md`. For the Content dashboard, ask the days after which a row counts as stuck (`references/dashboard-content.md`). For Potential revenue, check the profile for the member's own commission rate and split and ask once only if the rate is missing (`references/widgets.md`).
+
+## Step 5: Plan
+
+Show a plan and wait for the member's OK. Show one section per dashboard:
+- Its widgets, from `references/widgets.md` and the industry presets (`industries/real-estate.md` or `industries/generic.md`, as suggestions only, never forced), each with the data source (which app, or which Notion database, existing or new).
+- The connectors it needs, and only those. The Command Center's cards use a small read-only subset of each other dashboard's data.
 - Flags: anything a missing connector cannot support, with the Notion tracker or paste alternative.
 - New Notion databases with their proposed fields, for the member's OK.
 - Who uses it (just them, a team, or an assistant) and what that changes.
-- The email button settings (see `references/email-actions.md`) if there is an email widget.
-- For a Follow-Up Queue widget: the stale days per group, the pipelines and stages included and skipped, the channel per group, the freshness approach (a daily scheduled task writing to a Notion Follow-Up Queue database, or live ranking with drafts on a click) and why, and the proposed database fields for the member's OK. See `references/follow-up-queue.md`.
+- The email settings (`references/email-actions.md`): the four hard rules, the no-reply action, and how email to task runs. Say which: a scheduled task the member approves (with the exact prompt and schedule, created only after their OK), or on open because scheduled tasks are not available.
+- The task home and what the scan found, or that their tool has no connector and tasks go to Notion.
+- For a Follow-Up Queue: the stale days per group, the pipelines and stages included and skipped, the channel per group, the freshness approach and why, and the proposed database fields (`references/follow-up-queue.md`).
+- The build order (the picked dashboards first, then the Command Center with its cards) and that each is saved as its own entry in the Dashboards database.
 
-## Step 5: Build
+## Step 6: Build
 
-Follow `references/build.md`: set up any approved Notion databases first, then build the artifact. Check which live data features this session's Claude supports and use live connector data where it can; otherwise build a snapshot with a clear Refresh path (run /hi5-dashboard again to refresh). Declare every connector once at build time (including Notion if the dashboard reads or writes a database). Run the two-open test.
+Follow `references/build.md`: set up any approved Notion databases first, then build one dashboard at a time, each as its own artifact. Check which live data features this session's Claude supports and use live connector data where it can; otherwise build a snapshot with a clear Refresh path (run /hi5-dashboard again to refresh). Declare only the connectors each dashboard needs, once, at build time. Publish each, record its link, then build the Command Center with cards that link to them. Run the two-open test on every artifact. If the member approved the email to task scheduled task, create it now, show the prompt, and say which scheduling feature made it.
 
-## Step 6: Review
+## Step 7: Review
 
-Let the member try it and ask for changes, and iterate on the same artifact (publish to the same link). Ask "What would you change?" and "What do you never look at?" Remove anything unused.
+Let the member try each dashboard and ask for changes, and iterate on the same artifact (publish to the same link). Ask "What would you change?" and "What do you never look at?" Remove anything unused.
 
-## Step 7: Save
+## Step 8: Save
 
-After the build, save or update the entry in the Dashboards database from `references/notion-trackers.md`: name, pages, widgets, data sources, connected apps, the Notion databases used, the email button settings, the discovery answers, the artifact link, version, and date. This is what lets the dashboard be rebuilt or updated later.
+After the build, save or update one entry per dashboard in the Dashboards database from `references/notion-trackers.md`: name, type, sections, widgets, data sources, connected apps, the Notion databases used, the email button settings, the task home, the discovery answers, the artifact link, version, and date. The Command Center entry also lists its cards and their links. This is what lets each dashboard be rebuilt or updated later.
 
-## Step 8: Update an existing dashboard
+## Step 9: Update an existing dashboard
 
-Read the entry, show what it has, and ask what changed (new widgets, a new connector, a new page, or something that is not used). Show a Before and After plan, wait for the OK, rebuild or republish the same artifact, bump the Version by 1, and update the entry. Never start over unless the member asks.
+Read the entries, ask which dashboard they want to change (or which one to add from the menu, including any they passed on earlier), show what it has, and ask what changed (new widgets, a new connector, or something that is not used). Show a Before and After plan, wait for the OK, rebuild or republish that one artifact, bump its Version by 1, and update its entry. Rebuild the Command Center only if its cards or links change. Never start over unless the member asks.
 
 ## NEXT STEP
 
