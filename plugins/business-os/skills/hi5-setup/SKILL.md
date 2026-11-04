@@ -300,7 +300,7 @@ This is how members who set up earlier receive new labels such as the Marketing 
 
 **5. Skill Guide and Reference Hub.** They were removed from the template. If the member still has one, leave it alone. Never recreate it, never refresh it, and point to the Hi5 Vault (vault.hi5success.com) for skills and the setup order.
 
-**6. Content Planner statuses.** If the Content Planner has old Status options (Idea, Planned, Scripted, Draft), offer once to add the current ones (Not Started, Brainstorming, and the rest of the list in `templates/workspace-build.md`) and the new properties (Role, Channel, Review Notes, Published Links, Status Changed). Keep every option and property the member has. Never rename or remove.
+**6. Content Planner statuses.** If the Content Planner has old Status options (Idea, Planned, Scripted, Draft), offer once to add the current ones (Not Started, Brainstorming, and the rest of the list in `templates/workspace-build.md`) and the new properties (Role, Channel, Review Notes, Published Links, Status Changed). Also offer the one property the template lacks, Needs from member (text), and accept Carousel Post as the carousel option. Say each offer once. Keep every option and property the member has. Never rename or remove.
 
 ## PROFILE UPDATE
 

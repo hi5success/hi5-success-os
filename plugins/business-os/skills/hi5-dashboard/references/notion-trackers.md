@@ -24,7 +24,7 @@ Used by `SKILL.md` Steps 5, 6, and 8. Notion stores anything the dashboard track
 Dashboard actions that create or update tracking (make a task, mark a document received, change a status, add a date) write to the matching Notion database. Each write is one row or one property change from a button click, and the action says what it will do. Never write anything the member did not click.
 
 ## The Dashboards database
-One row per dashboard (database title "Dashboards", ID in `dashboards_db_id`). The Command Center and every other dashboard each have their own row, built and updated on their own.
+One row per dashboard (database title "Dashboards", ID in `dashboards_db_id`). If two Dashboards databases exist, use the one in Page IDs, never create or delete one, and tell the member in one line. The Command Center and every other dashboard each have their own row, built and updated on their own.
 
 **Properties:** Name (title), Type (select: Command Center, CRM, Content, Money, Transactions, Industry, Custom), Status (Active, Draft, Retired), Version (number), Date (date), Industry (text), Artifact link (url). An unpublished dashboard has Status Draft, an empty Artifact link (never a placeholder), and the line "Not published yet" at the top of its page body. On publish, set Status to Active, fill the link, and remove that line. If an existing Dashboards database has no Type property, add it on first use, fill it for the rows it already has from their names, and say so in one line.
 

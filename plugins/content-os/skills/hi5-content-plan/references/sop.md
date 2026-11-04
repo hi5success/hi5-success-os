@@ -26,4 +26,6 @@ Assume the member has never written a process.
 - Suggest the most efficient, highest-impact option for their goal, and name the time it costs.
 - When an answer is vague, offer a default.
 - Read the brain first (Master Profile, Content Settings, Style Guides) and never ask what it already holds.
-- Log the choices in the SOP and the learnings in AI Memory.
+- Log the choices in the SOP and the learnings in AI Memory. A real learning is a preference or correction that applies beyond this one SOP (for example "never use stock music"). Choices that only fill the SOP's own blanks stay in the SOP and the Decisions Log row, not in AI Memory.
+- If the brain has no channel yet (an empty Master Profile), set the SOP's Channel to "All channels" and say so. If Decided By is unknown, use "Member".
+- When the SOP says who does a step, also set the matching role in Content Settings (`role_video_editing`, `role_social`, `role_youtube`, `role_blog`) and `content_roles` in the Master Profile, after showing the change, so the SOP and the settings never disagree. If Content Settings does not exist yet, offer the calendar setup once.

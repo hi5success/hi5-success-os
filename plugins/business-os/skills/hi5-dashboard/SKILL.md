@@ -86,7 +86,7 @@ After the build, save or update one entry per dashboard in the Dashboards databa
 
 ## Step 9: Update an existing dashboard
 
-Read the entries, ask which dashboard they want to change (or which one to add from the menu, including any they passed on earlier), show what it has, and ask what changed (new widgets, a new connector, or something that is not used). Show a Before and After plan, wait for the OK, rebuild or republish that one artifact, bump its Version by 1, and update its entry. Rebuild the Command Center only if its cards or links change. Never start over unless the member asks.
+Read the entries (a Draft that was never published counts too: update it in place, bump its Version, and keep Status Draft until it is published), ask which dashboard they want to change (or which one to add from the menu, including any they passed on earlier), show what it has, and ask what changed (new widgets, a new connector, or something that is not used). Show a Before and After plan, wait for the OK, rebuild or republish that one artifact, bump its Version by 1, and update its entry. Rebuild the Command Center only if its cards or links change. Never start over unless the member asks.
 
 ## NEXT STEP
 

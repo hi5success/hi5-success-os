@@ -14,7 +14,7 @@ Template items: Master Profile, Brain Index, Business OS, Business Plan, Quarter
 2. Save the IDs in the Master Profile's Page IDs section: `root_page_id` (the copy's own page), `dashboard_page_id` (the same page, because the template's first page is the Dashboard), `business_os_page_id`, `business_plan_page_id`, `quarterly_goals_page_id`, `business_reviews_page_id`, `content_planner_db_id`, `marketing_hub_db_id`, `brain_index_page_id`, `voice_library_db_id`, `dashboards_db_id`, `people_db_id`, `ai_employees_db_id`, `bottlenecks_db_id`, `sops_db_id`, `software_stack_db_id`, `offers_db_id`, `proof_db_id`, `decisions_log_db_id`, `ai_memory_db_id`, `client_meetings_db_id`, `internal_meetings_db_id`, `tasks_db_id`, and `keyword_tracker_db_id` if the copy has a Keyword Tracker. Find a database by its title. The Tasks database is found by the title "Tasks".
 3. Create only what is missing from the Template items list, using the titles and lines in step 2 and the database layouts in step 3 below. If the member deleted or renamed one, search under the root by title before creating anything. Never create a second copy of anything. Never remove, rename, or move anything the member has. Skill Guide, Reference Hub, and Getting Started are no longer part of the template, so never create or recreate them. Skills and the setup order live in the Hi5 Vault (vault.hi5success.com).
 4. Check the Master Profile page. If it has the Setup Status, Page IDs, and Linked pages headings, keep it and fill in values. If it has no Setup Status heading and its body is only the template's bracketed placeholders, replace the body with the skeleton from `master-profile.md`. If it has other content, ask the member before changing it.
-5. Set `workspace_source: template` and `template_version: 3` in Setup Status. A copy with `template_version: 2` (or none) is older: the workspace check offers it the new databases and the Brain Index, and creates them only on the member's OK. Never touch what it already has. Set `profile_version` to the current version if it is empty.
+5. Set `workspace_source: template` and `template_version: 3` in Setup Status. A copy with `template_version: 2` (or none) is older: the workspace check offers it the new databases and the Brain Index, and creates them only on the member's OK. Never touch what it already has. The template is the source of truth for options: where an option in this file is missing from the member's copy, use the closest existing option, and add one only with the member's OK. Set `profile_version` to the current version if it is empty.
 6. Say nothing technical. Tell the member that their workspace is connected and what you added, if anything.
 
 ---
@@ -69,7 +69,7 @@ Every video, blog, and piece of content is one row. Properties:
 | Edit Due Date | date | 48 hours before Publish Date (set in the Content SOP) |
 | Content Category | select | (created as used) |
 | Content Type | select | (created as used) |
-| Deliverable Type | select | Long Form, Short Form, Blog, Podcast, Social Post, Clip, Static Post, Carousel |
+| Deliverable Type | select | Long Form, Short Form, Blog, Email Newsletter, Carousel Post, Static Post, Podcast, Workflow, Social Post |
 | Production Style | select | (created as used) |
 | Goal | select | Affiliate, Community, Awareness, Mixed |
 | Distribution | multi-select | (created as used) |
@@ -97,7 +97,7 @@ Every video, blog, and piece of content is one row. Properties:
 | Parent publish date | rollup | The Publish Date of the Parent long-form (content calendar) |
 | Clip Publish Date | formula | The parent publish date plus the Clip Number in days, so clip dates are never calculated by a skill (content calendar) |
 
-Status is a **select** (not Notion's built-in status type) so the exact values above can be set. The Content Calendar view has no filter, so every Deliverable Type shows, short-form included. In an older copy, Planned and Idea mean Brainstorming, and Scripted and Draft mean In Progress. Never rename or delete the member's own options or properties (Primary Platform stays if they have it). Skills use only the names above.
+Deliverable Type: the template has Carousel Post (skills treat it as a carousel) and no Clip option, because clips are Short Form rows with a parent. Clip rows use Content Type Repurpose. Needs from member (text) is not in the template: add it with the member's OK (the workspace check offers it), and until then write the need as the first line of the row's page. Status is a **select** (not Notion's built-in status type) so the exact values above can be set. The Content Calendar view has no filter, so every Deliverable Type shows, short-form included. In an older copy, Planned and Idea mean Brainstorming, and Scripted and Draft mean In Progress. Never rename or delete the member's own options or properties (Primary Platform stays if they have it). Skills use only the names above.
 
 ### 📧 Marketing Hub
 Every email sequence, newsletter issue, website page, landing page, SEO plan or audit, and case study is one row, with the full text in the row's page body. The official Hi5 Success OS Workspace Template already includes this database with these properties. Properties:
@@ -193,7 +193,7 @@ Every task for the member, their team, and their AI employees. Used by /hi5-dash
 | Property | Type | Options |
 |---|---|---|
 | Task | title | |
-| Status | select | To Do, In Progress, Waiting on Me, Waiting on Others, Done |
+| Status | status (select in a built workspace) | To Do, In Progress, Waiting on Me, Waiting on Others, Done. The template uses Notion's status type |
 | Due Date | date | |
 | Category | select | Real Estate, (others created as used) |
 | Owner | text | A person or AI employee name, exactly as in People or AI Employees |
@@ -221,7 +221,7 @@ One row per meeting with a client or prospect. Written by /hi5-meetings. Propert
 | Follow-up Date | date | |
 
 ### 🗒️ Internal Meeting Notes
-One row per team meeting, where every attendee is in People. Written by /hi5-meetings. Properties: Title (title), Date (date), Attendees (text), Source (select: Google Meet, Zoom, Fathom, Otter, Fireflies, Phone call, Manual), Transcript Link (url).
+One row per team meeting, where every attendee is in People. Written by /hi5-meetings. Properties: Title (title), Date (date), Attendees (text), Source (select: Google Meet, Zoom, Fathom, Otter, Fireflies, Manual; add Phone call with the member's OK), Transcript Link (url).
 
 ### 📘 SOPs
 One row per standard operating procedure, with the steps in the row's page body. Content skills read the SOP for their role before any work. Five Sample rows ship with the template (Content Management, Video Editing, Social Media Scheduling, YouTube Publishing, Blog Writing). Properties:
@@ -239,13 +239,13 @@ One row per standard operating procedure, with the steps in the row's page body.
 | Last Reviewed | date | |
 
 ### 🧰 Software Stack
-One row per tool the business uses. Never passwords. Properties: Tool (title), Category (select, created as used), What It Is For (text), Owner (text), Connected to Claude (select: Yes, No, Not yet), Login Kept In (text, where the login is kept, never the login itself), Monthly Cost (number), Status (select: Active, Trial, Retired).
+One row per tool the business uses. Never passwords. Properties: Tool (title), Category (select, created as used), What It Is For (text), Owner (text), Connected to Claude (select: Yes, No, Not possible), Login Kept In (text, where the login is kept, never the login itself), Monthly Cost (number), Status (select: Active, Trial, Cancelled).
 
 ### 🏷️ Offers and Services
-One row per thing the member sells, in their own words. Never a suggested price. Properties: Offer (title), Who It Is For (text), What Is Included (text), Price or Fee (text, the member's own words), Status (select: Active, Paused, Retired), Last Reviewed (date).
+One row per thing the member sells, in their own words. Never a suggested price. Properties: Offer (title), Who It Is For (text), What Is Included (text), Price or Fee (text, the member's own words), Status (select: Active, Coming Soon, Retired), Last Reviewed (date).
 
 ### 🏆 Proof
-Reviews, results, and stories. Properties: Proof (title), Type (select: Review, Result, Story, Award, Other), Client or Source (text), Link (url), Date (date), Approved for Public Use (select: Approved, Ask First, Private). New rows are Ask First until the member approves.
+Reviews, results, and stories. Properties: Proof (title), Type (select: Review, Testimonial, Result, Award, Media), Client or Source (text), Link (url), Date (date), Approved for Public Use (select: Approved, Ask First, Private). New rows are Ask First until the member approves.
 
 ### 🧭 Decisions Log
 One row per business or process decision. Properties: Decision (title), Date (date), Area (select, created as used), Why (text), Decided By (text), Changes (text, the pages or SOPs it changed), Status (select: Active, Replaced).

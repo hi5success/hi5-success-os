@@ -10,7 +10,7 @@ Read the Content Planner's properties and the Status options. If the content cal
 2. **Scheduled this week.** Rows with Status Scheduled and a Publish Date in the next 7 days, in date order. Action: open the row.
 3. **Needs my review.** Rows with Status Reviewing, oldest first. Each shows how long it has waited. Actions: open the row, approve, add a revision note.
 4. **Waiting on me.** Rows where Needs from member is not empty, with that text. Action: open the row.
-5. **Stuck.** Rows not Published and not Scheduled whose Status Changed date is older than the threshold in the channel's Content SOP (default: 3 days in the same status). Status Changed is a property every content skill sets to today each time it moves a Status, so one query is enough and no row is fetched one at a time. A row with no Status Changed date uses its created time and is labeled "no status date". Never use the last edited time. Action: open the row.
+5. **Stuck.** Rows not Published and not Scheduled whose Status Changed date is more than the threshold ago, from the channel's SOP (default: 3 days in the same status, so a row is stuck from the fourth day). Status Changed is a property every content skill sets to today each time it moves a Status, so one query is enough and no row is fetched one at a time. A row with no Status Changed date uses its created time and is labeled "no status date". Never use the last edited time. Action: open the row.
 Counts go on the card the Command Center shows ("2 to review, 1 waiting on you").
 
 ## Actions (each from a click, each says what it will do)
