@@ -197,6 +197,8 @@ Write this on the Dashboard page:
 > 5. **Nurture:** /hi5-email, /hi5-newsletter
 > 6. **Grow:** /hi5-landing, /hi5-funnel, /hi5-casestudy
 >
+> **Anytime:** /hi5-library (save the posts you learn from), /hi5-advisor (build your advisory board), /hi5-board (run a decision past your board)
+>
 > **Real estate members with Real Estate OS installed:** /hi5-re-crm, /hi5-re-listing-appt, /hi5-re-listing-launch, /hi5-re-seller-updates, /hi5-re-transaction, /hi5-re-daily, /hi5-re-sphere, /hi5-re-prospect, /hi5-re-buyer, /hi5-re-ads, /hi5-re-roleplay, /hi5-re-rental, /hi5-re-investor, /hi5-re-commercial, /hi5-re-land-newbuild, and /hi5-re-neighborhood
 >
 > **Tip:** keep a few separate Claude Projects, one per topic. Run /hi5-next and I'll show you how.
