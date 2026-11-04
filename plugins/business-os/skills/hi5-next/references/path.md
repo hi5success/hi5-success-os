@@ -88,6 +88,8 @@ Used by /hi5-next ("Show me everything") and by the "Show me what I can do" opti
 | YouTube content | /hi5-content-plan, /hi5-video-edit, /hi5-youtube |
 | Social media | /hi5-social, /hi5-linkedin |
 | Blog and SEO | /hi5-blog, /hi5-seo |
+| Better decisions, with advisors I trust | /hi5-advisor, /hi5-board |
+| Save and search the posts I learn from | /hi5-library |
 | Email and newsletter | /hi5-email, /hi5-newsletter |
 | Website and landing pages | /hi5-website, /hi5-landing |
 | Business plan and goals | /hi5-self, /hi5-bizplan |
