@@ -9,6 +9,7 @@ description: Writes a full SEO-optimized blog post from a video transcript, a sc
 Turn YouTube content into SEO-optimized blog posts that drive organic traffic. One video becomes one article that works for search, your website, and email content.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Languages: if the member speaks another language (`languages` on the Master Profile), ask once whether they want a version in that language too, and offer it as a way to reach more people. Write it natively, not as a word for word translation
 - Find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md (the Content Planner is `content_planner_db_id`)
 - Read Master Profile for market, niche, and brand voice
@@ -27,6 +28,9 @@ These rules apply to every request, one-offs included. They win over the Content
 - **Files go straight into the member's synced folder**, never through the Drive connector (links only).
 - **Claude only works calendar rows for roles set to Claude** in Content Settings. A one-off request is always done.
 <!-- hard-rules:end -->
+
+## SOP first
+Before any work on the calendar, read the Blog Writing SOP (the SOPs database; see `../hi5-content-plan/references/sop.md`). If it is still the sample (Status Sample, or a `[fill in` blank), offer once: "Your Blog Writing SOP is still the sample. Want to set it up now? About 5 minutes." If yes, run the smart interviewer, then set the SOP Active and add a Decisions Log row. If no, use the defaults and offer again next time. Set Status Changed and Role on every status move. A one-off request needs none of this.
 
 ## Compliance
 

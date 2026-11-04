@@ -85,6 +85,6 @@ lines."
 Make any requested revisions before pushing to Notion.
 
 ## Step 6: Save it
-When the content calendar is set up and the script belongs to a row, put the script and the production notes in that row's "Script and production notes" section. Do not change the row's Status: the pipeline sets it (a row stays Planned until the member records). For an older row that is not in the pipeline, the status can be set to Scripted. Confirm what you wrote. If the calendar is not set up, the script stays on screen and the member can copy it.
+When the content calendar is set up and the script belongs to a row, put the script and the production notes in that row's "Script and production notes" section. Do not change the row's Status: the pipeline sets it: when the script is ready the Content Manager sets Not Started (with Status Changed today), and the row stays there until the member records. For an older row that is not in the pipeline, leave its status alone. Confirm what you wrote. If the calendar is not set up, the script stays on screen and the member can copy it.
 
 For short-form, reels, statics, and carousels the notes follow the plan reference. Next: "turn this script into posts with /hi5-social. You can run /hi5-next any time and I'll tell you your best next step."

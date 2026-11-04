@@ -18,6 +18,7 @@ If the member already said what they want, start it without the menu.
 A one-off request needs no setup and no Notion. Option A works from a transcript the member pastes. Look up the member's Master Profile once (the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md) only to read the voice and compliance pages. If it is not found, or Notion is not connected, carry on with general best practices and return the work on screen. Save to the Content Planner only when the content system is set up (`content_settings_page_id` is in the Page IDs), and show what you will write first. Never tell the member to run setup to get a one-off done. A one-off follows the hard rules below and ends with the Check passed line. Setup runs only when they want the calendar and pipeline.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Long-form rows only. Skip the whole role if the member does not use YouTube.
 - In the queue, work by status (../hi5-content-plan/references/pipeline.md). Never change a status the member owns.
 - Everything comes from the saved transcript and the row's notes. Never invent facts, numbers, or claims. No income or results claims. No em dashes.
@@ -37,6 +38,9 @@ These rules apply to every request, one-offs included. They win over the Content
 - **Files go straight into the member's synced folder**, never through the Drive connector (links only).
 - **Claude only works calendar rows for roles set to Claude** in Content Settings. A one-off request is always done.
 <!-- hard-rules:end -->
+
+## SOP first
+Before any work on the calendar, read the YouTube Publishing SOP (the SOPs database; see `../hi5-content-plan/references/sop.md`). If it is still the sample (Status Sample, or a `[fill in` blank), offer once: "Your YouTube Publishing SOP is still the sample. Want to set it up now? About 5 minutes." If yes, run the smart interviewer, then set the SOP Active and add a Decisions Log row. If no, use the defaults and offer again next time. Set Status Changed and Role on every status move. A one-off request needs none of this.
 
 ## Compliance
 

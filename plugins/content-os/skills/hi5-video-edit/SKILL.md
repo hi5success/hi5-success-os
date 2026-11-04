@@ -20,6 +20,7 @@ If the member already said what they want, start it without the menu.
 A one-off request needs no setup and no Notion. "Make a cover for this", "find the clips in this" (a transcript or file), and "save the transcript" work from what the member gives you. Look up the member's Master Profile once (the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md) only to read the voice and compliance pages. If it is not found, or Notion is not connected, carry on with general best practices and return the work on screen. Save to the Content Planner only when the content system is set up (`content_settings_page_id` is in the Page IDs), and show what you will write first. Never tell the member to run setup to get a one-off done. A one-off follows the hard rules below and ends with the Check passed line. Setup runs only when they want the calendar and pipeline.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - CapCut only, through the local CapCut bridge (../hi5-content-plan/references/bridges.md). Never claim the bridge did something it did not do.
 - In the queue, work by status from the Content Calendar, following the pipeline reference (../hi5-content-plan/references/pipeline.md). Never change a status the member owns.
 - Read the channel's Style Guide and Edit Log and the row's Edit notes before every edit, apply them, and say in one line which Edit Log lines you applied.
@@ -37,6 +38,9 @@ These rules apply to every request, one-offs included. They win over the Content
 - **Files go straight into the member's synced folder**, never through the Drive connector (links only).
 - **Claude only works calendar rows for roles set to Claude** in Content Settings. A one-off request is always done.
 <!-- hard-rules:end -->
+
+## SOP first
+Before any work on the calendar, read the Video Editing SOP (the SOPs database; see `../hi5-content-plan/references/sop.md`). If it is still the sample (Status Sample, or a `[fill in` blank), offer once: "Your Video Editing SOP is still the sample. Want to set it up now? About 5 minutes." If yes, run the smart interviewer, then set the SOP Active and add a Decisions Log row. If no, use the defaults and offer again next time. Set Status Changed and Role on every status move. A one-off request needs none of this.
 
 ## Compliance
 
@@ -64,22 +68,22 @@ Detect the capcut bridge by its exact tool names (capcut_create_draft, capcut_sa
 Works only the Video editing rows, oldest first. Read Content Settings first. If `role_video_editing` is a person, say "Video editing is set to <name>, so I leave those rows for them" and stop. If it is none, say there are no Video editing rows and stop. If it is Claude, follow "A queue pass" in the pipeline reference (../hi5-content-plan/references/pipeline.md). Your rows: Ready to Edit long-forms and one-off shorts, and clip rows whose parent long-form is In Progress and not yet cut. Set a row to In Progress when you start, and add a Log line.
 
 ## Step 2: Edit
-Build the edit from the Raw and B-roll folders as a CapCut draft with the capcut tools (create the draft, add video, audio, text, subtitles, images, effects, and keyframes, join parts, and save the draft), using the Edit notes and the Style Guide. Read each tool's description first and never guess an argument. For a review copy (named with "-review") in the row's Exports folder, use the bridge's export tool if its docs name one, otherwise ask the member to export from CapCut into the folder and tell you. Add a Log line saying what you did and which path you used.
+Build the edit from the Clips and B-Roll folders as a CapCut draft with the capcut tools (create the draft, add video, audio, text, subtitles, images, effects, and keyframes, join parts, and save the draft), using the Edit notes and the Style Guide. Read each tool's description first and never guess an argument. For a review copy (named with "-review") in the row's Exports folder, use the bridge's export tool if its docs name one, otherwise ask the member to export from CapCut into the folder and tell you. Add a Log line saying what you did and which path you used.
 
 ## Step 3: Find the clips
-For a long-form, find the planned number of clips (the clip rows already on the calendar, or the number in Content Settings). Choose self-contained moments with a strong first line, one idea, and a clean ending, taken from the transcript. Record each clip's start and end time in its row's Edit notes, move the clip row to In Progress, and export the clip to Exports/Clips. Never invent a moment that is not in the video.
+For a long-form, find the planned number of clips (the clip rows already on the calendar, or the number in Content Settings). Choose self-contained moments with a strong first line, one idea, and a clean ending, taken from the transcript. Record each clip's start and end time in its row's Edit notes, move the clip row to In Progress, and export the clip to Exports/Short Form (named "Reel N - [hook] - [Video Title]"). Do this once the long-form is Finalizing. Replace "Reel N" in the clip row's title with the hook, keep the Clip Number, and save the file link in Export / Deliverables URL. Never invent a moment that is not in the video.
 
 ## Step 4: Transcript
 Pull the transcript from CapCut and export it as a file (timestamped lines like "[00:00:12] text") into the same folder as the video, and link it on the row. Chapters, descriptions, captions, and blogs all come from it, so nobody waits for YouTube's transcript. Fallback: ask the member to paste it and save the pasted text as a file in that folder. Say which path you used in the row's Log ("Transcript: pulled from CapCut" or "Transcript: pasted by the member"). Tick Transcript saved. See the bridges reference.
 
 ## Step 5: Cover
-Make the cover or thumbnail from the Cover Template and the cover tool in Content Settings (../hi5-content-plan/references/covers.md). Pick the photo or cutout from Content/Brand/ and export a PNG at the exact size straight into the piece's Covers folder in the synced folder. Tick Cover made.
+Make the cover or thumbnail from the Cover Template and the cover tool in Content Settings (../hi5-content-plan/references/covers.md). Pick the photo or cutout from Content/Brand/ and export a PNG at the exact size straight into the piece's Exports folder in the synced folder, next to the video (" - Cover.png" or " - Thumbnail.png"). Tick Cover made.
 
 ## Step 6: Hand off
 Tick Edit done. Run the pre-review check from the pipeline reference on everything you wrote (cover text and notes) and log "check passed". Then follow the Handoffs section of the pipeline reference: clips and shorts go to Social for captions, long-forms go to the YouTube role for the title, description, chapters, and tags (or, if YouTube is not used, to Social). Add a Log line. Never set Reviewing until the video, the cover, and the text are all ready.
 
 ## Step 7: Revisions and finals
-On Revising, fix every note in the Revisions checklist, tick it, log it, ask the learning-edits question once (../hi5-content-plan/references/learning-edits.md), write the answer to the Edit Log, and set Reviewing. On Finalizing, export the finals (no "-review") to the right folder (Exports for a long-form or short, Exports/Clips for a clip), tick Finals in the Exports folder, and tell Social or the YouTube role.
+On Revising, fix every note in the Revisions checklist, tick it, log it, ask the learning-edits question once (../hi5-content-plan/references/learning-edits.md), write the answer to the Edit Log, and set Reviewing. On Finalizing, export the finals (no "-review") to the right folder (Exports for a long-form, Exports/Short Form for a clip or short), tick Finals in the Exports folder, and tell Social or the YouTube role.
 
 ## NEXT STEP
 Say what is ready for review and what waits on the member. You can run /hi5-next any time and I'll tell you your best next step.

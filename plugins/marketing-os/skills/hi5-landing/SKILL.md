@@ -9,6 +9,7 @@ description: Writes landing page copy and structure for lead magnets, opt-ins, a
 Write high-converting landing pages for lead magnets, guides, valuation or quote offers, workshop registrations, and any campaign that needs a dedicated page.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile for market, niche, and voice.
 - Landing pages have ONE goal and ONE CTA. Never multiple.
 - Every element serves the conversion.

@@ -9,6 +9,7 @@ description: Launches a listing for a real estate member. Writes MLS remarks and
 Take one listing from coming soon to just sold with copy, graphics briefs, a calendar, and announcements that sell the home on specifics, in the member's voice, with Fair Housing built in.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.
 - **Read `../hi5-re-crm/references/guardrails.md` first, every time.** Also read `references/fair-housing-scan.md` and `references/safeguards.md` before drafting. If a file cannot be found, tell the member the Real Estate OS plugin may be incomplete and stop.
 - **Scan first, then ask.** Read the profile, the CRM Map, the Neighborhood page for the area, any earlier Marketing Hub rows for this address, and the listing details and files the member gave (a listing sheet, an MLS export they pasted, or photos) before asking anything. Say what you already have in one line. Ask only about what is unknown, and point to what you found, for example "I have the price, beds, baths, and five features. I do not have your open house date. Is there one?" Never ask what the data already answers.

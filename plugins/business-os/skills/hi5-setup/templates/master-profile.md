@@ -20,16 +20,16 @@ The Master Profile is one Notion page called "Master Profile" inside the root pa
 
 ### Setup Status
 - storage: notion
-- profile_version: the layout version this profile was built with. The current version is 3. A profile with no value was built before versioning, so treat it as version 1
+- profile_version: the layout version this profile was built with. The current version is 4. A profile with no value was built before versioning, so treat it as version 1
 - industry: the member's own words (for example "real estate agent", "business coach")
 - industry_flow: `real-estate` or `generic`. Skills use this to load the right `industries/` file
 - stage_1_core_profile: `not started`, `in progress: <what is done>`, or `complete <date>`
 - stage_2_compliance: same values
 - stage_3_voice: same values
 - stage_4_objection_bank: same values (real estate only; leave out for other industries)
-- stage_5_neighborhoods: same values (real estate only; leave out for other industries)
+- stage_5_neighborhoods: same values (real estate only; leave out for other industries). The template skeleton also lists `stage_4_objections`: read it as the same field as `stage_4_objection_bank`, and never create both
 - workspace_source: `template` (copied the official Hi5 template) or `built` (created by setup). Set automatically, never asked
-- template_version: the version of the template layout (`2` for the current template, `none` for a built workspace). Set automatically, never asked
+- template_version: the version of the template layout (`3` for the current template, `2` for the previous one, `none` for a workspace the Hi5 template was not used for). A built workspace has the same layout as the current template. Set automatically, never asked
 - self_test: `passed <date>` or `needs work <date>: <gaps>` (written by the setup self-test)
 - hi5_first_shown: the date setup showed the Hi5 first line (the one line the member pastes into Claude's personal preferences). It is written once and never asked again. Not a setup question
 - projects_offered: the date /hi5-next offered the Claude Projects tip. It is set once, and it is the only thing /hi5-next ever writes. Not a setup question
@@ -44,7 +44,11 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - business_reviews_page_id
 - content_planner_db_id
 - marketing_hub_db_id
-- skill_guide_page_id
+- skill_guide_page_id (no longer used: the Skill Guide moved to the Hi5 Vault, vault.hi5success.com. Never create it. An old value is left in place)
+- brain_index_page_id (the Brain Index page, the map of the brain every AI reads first)
+- tasks_db_id (the Tasks database. Whoever creates it writes the ID right away)
+- sops_db_id, software_stack_db_id, offers_db_id, proof_db_id, decisions_log_db_id, ai_memory_db_id (added by the workspace build, or by the setup workspace check)
+- client_meetings_db_id, internal_meetings_db_id (the two meeting notes databases, written by /hi5-meetings)
 - crm_map_page_id (added by /hi5-re-crm)
 - keyword_tracker_db_id (added by /hi5-content-plan)
 - channel_pages (added by /hi5-content-plan, only with multiple channels): `Name = page id` pairs, comma separated
@@ -69,6 +73,7 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - brokerage (real estate only)
 - states_licensed (real estate only)
 - team_details (real estate only): the answers to the role follow-up questions, as one line
+- bio, story, mission: the member's short bio, their story, and their mission, in their own words (asked in Stage 1, and used by every writing skill)
 
 ### Market
 - primary_market: main city or area. Fully online members give their main audience region or "online"
@@ -81,6 +86,9 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - crm
 - crm_usage
 - calendar_software
+- meeting_transcripts: where the member's meeting transcripts come from (Google Meet, Zoom, Fathom, Otter, Fireflies, a Drive folder, or pasted), as a list. Used by /hi5-meetings
+- file_storage: the synced folder the member keeps files in (Google Drive, Dropbox, or OneDrive) and its path. Content skills read this before `synced_folder_path` in Content Settings, and files go only there
+- content_roles: for each content role (Content Manager, Video Editor, Social Media, YouTube Producer, Blog Writer), `Role = Claude`, `Role = <person name>`, or `Role = nobody`
 - crm_connection: `ghl-connector`, `other-connector`, or `paste-mode` (written by /hi5-re-crm)
 - ghl_location_name: the GoHighLevel sub-account the member normally uses (written by /hi5-re-crm)
 - last_crm_map: the date the CRM Map was last updated (written by /hi5-re-crm)

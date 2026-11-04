@@ -9,6 +9,7 @@ description: Builds the member's personal advisory board. Adds ready-made role a
 Give the member a board of advisors they trust: ready-made roles, roles they design, and simulated mentors built from the public work of people they already learn from. Each advisor is a row in the Advisory Board with a brain page that /hi5-board reads when the board meets.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Scan first, then ask.** Read the Advisory Board and the Master Profile before asking anything. Say in one or two lines what you found, for example "You have 4 advisors on your board: Marketing Strategist, Sales Closer, Money Mind, and Devil's Advocate." Never re-ask anything already there.
 - **One question at a time.** Wait for the answer before the next one.
 - **Real people are simulations.** An advisor built from a real person is always labeled "(simulated)" in its Name and says so at the top of its brain. It never claims to be the person, and it never says the person agreed with, endorsed, or reviewed anything. Follow every rule in `references/gathering-sources.md`.

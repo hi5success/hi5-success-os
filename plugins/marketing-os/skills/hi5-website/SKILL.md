@@ -9,6 +9,7 @@ description: Writes or rewrites website page copy for the member's business webs
 Write website copy that converts visitors into leads. Every page is written in the member's voice, for their specific market and niche, with a clear call to action.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile for all business details. Never ask for what is already stored.
 - Match behavioral style for tone.
 - Every page needs one clear CTA.

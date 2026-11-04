@@ -1,23 +1,37 @@
 # Folders
 
-Made by setup (the top level) and by the Content Manager (one folder per piece), in the member's file location. Every row links to its folder (Asset Folder URL), and every role exports into that folder.
+Made by setup (the top level) and by the Content Manager (one folder per project, created with the video row), in the member's synced folder (`file_storage` in the Master Profile, or `synced_folder_path` in Content Settings). The row links to its folder in Asset Folder URL, and every role works in it. The layout comes from the channel's SOP, with this default as the fallback.
 
 ```
 Content/
-  Long-form/<YYYY-MM-DD Topic>/   Raw, B-roll, Exports, Exports/Clips, Covers
-  Short-form/<YYYY-MM-DD Topic>/  Raw, B-roll, Exports, Covers
-  Posts/<YYYY-MM-DD Topic>/       Assets, Exports
-  Brand/                          Cutouts, Reference photos, Cover examples
+  [Channel]/
+    [Video Title]/               <- named after the project, no date
+      Clips/                     <- raw footage (members may call it Raw Footage)
+      B-Roll/                    <- photos and videos for the edit
+      Exports/
+        [Video Title] - Final.mp4
+        [Video Title] - Thumbnail.png
+        [Video Title] - Transcript.txt
+        Short Form/
+          Reel 1 - Intro Hook - [Video Title].mp4
+          Reel 1 - Intro Hook - [Video Title] - Cover.png
+          Reel 2 - [hook] - [Video Title].mp4
+          Reel 2 - [hook] - [Video Title] - Cover.png
+  Brand/                         <- cutouts, reference photos, cover examples
 ```
-- **Date in the name** is the publish date (or the record date if there is no publish date yet). Topic is a short, plain title.
-- **Short-form** folders are for one-off shorts only. Clips live in their long-form's Exports/Clips folder.
-- **Brand/Cutouts** holds no-background photos for thumbnails and covers. Reference photos feed image option C. Cover examples hold finished covers to match.
-- **Transcripts** are saved as files in the same folder as the video they belong to (Exports for a long-form or short, Exports/Clips for a clip), so there is no separate Transcript folder.
-- **Covers** inside a piece's folder holds that piece's cover files.
-- Only create the folders the roles in use need. No video editing means no Long-form or Short-form folders. No social media means no Posts folder. Skip the Covers folder if no platform uses a cover.
+
+## Rules
+- **Never rename a folder after it is created.**
+- If the name already exists, add " 2". Never merge into an existing project.
+- The Blog Writer reads the transcript from Exports.
+- Brand photos stay in Content/Brand/ (Cutouts, Reference photos, Cover examples).
+- Statics and carousels use a project folder with Assets and Exports.
+- Transcripts, covers, and finals are files in Exports, next to the video they belong to. There is no separate Transcript or Covers folder.
+- Only create the folders the roles in use need. No video editing means no Clips, B-Roll, or Short Form folders.
+- **No synced folder:** skip the folders and ask the member for links.
 
 ## The synced folder
-Everything lives in the member's synced folder: the Google Drive, Dropbox, or OneDrive desktop app, or a plain local folder. Setup asks for that path once and saves it in Content Settings (synced_folder_path). Every role reads and writes files straight into it with the local file tools, never through the Drive connector. The Drive connector is only for getting a share link. The CapCut bridge exports into this folder and splits files that are over the size limit, so no role adds any export or split step.
+Everything lives in the member's synced folder: the Google Drive, Dropbox, or OneDrive desktop app, or a plain local folder. Setup asks for that path once and saves it as `file_storage` in the Master Profile (and in Content Settings as synced_folder_path). Every role reads and writes files straight into it with the local file tools, never through the Drive connector. The Drive connector is only for getting a share link. The CapCut bridge exports into this folder and splits files that are over the size limit, so no role adds any export or split step.
 - Create the folders with the local file tools, inside the saved path.
-- If the path does not exist or cannot be written, say so in one line, ask the member for the right path, and update Content Settings.
+- If the path does not exist or cannot be written, say so in one line, ask the member for the right path, and update the saved path.
 - Link each folder in the row's Asset Folder URL (a share link from the connector if the member wants one, otherwise the local path).

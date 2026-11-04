@@ -9,6 +9,7 @@ description: Builds, shows, and edits the org chart of the member's humans and A
 Show who is on the team, who reports to whom, and which AI employees work for which human, so nobody and nothing is left without an owner. The People and AI Employees databases in Notion are the source of truth. The chart is a picture of them.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Scan first, then ask.** Read the People database, the AI Employees database, the Master Profile, and (if it exists) the Bottlenecks database before asking anything. Say in one or two lines what you found. Ask only about what is missing.
 - **Every AI employee has exactly one human manager.** Never zero, never two. If a manager leaves or is retired, every AI employee under them must be given a new manager before the change is saved.
 - **Notion is the source of truth.** The chart is rebuilt from the databases. Never keep a fact only in the chart.

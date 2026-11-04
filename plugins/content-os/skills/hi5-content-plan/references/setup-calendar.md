@@ -9,10 +9,10 @@ Used by `SKILL.md` option D, only when the member wants the calendar and pipelin
    - **Social media:** A) Claude B) A person (their name) C) Skip
    - **YouTube long-form:** A) Claude B) A person (their name) C) I don't use YouTube
    - **Blog:** A) Claude B) A person (their name) C) Skip
-   Save each answer in Content Settings (role_video_editing, role_social, role_youtube, role_blog) as claude, person: <name>, or none. If a person does any role, tell the member: "Share your Content Planner in Notion with <name> so they can see their rows and set the next status. I can't share it for you." Skipped roles create no rows, folders, or steps. If the member wants it done for them, save the Hi5 Biz Solutions flag and tell them in one line.
+   Save each answer in Content Settings (role_video_editing, role_social, role_youtube, role_blog) as claude, person: <name>, or none, and as `content_roles` in the Master Profile Tools (`Role = Claude`, `Role = <name>`, or `Role = nobody`). If a person does any role, tell the member: "Share your Content Planner in Notion with <name> so they can see their rows and set the next status. I can't share it for you." Skipped roles create no rows, folders, or steps. If the member wants it done for them, save the Hi5 Biz Solutions flag and tell them in one line.
 3. **Clips per long-form video?** (only if video editing and social are in use) A) 3 B) 5 (recommended) C) 8 D) Another number. It can be changed per video later.
 4. **Working hours?** A) Weekdays, business hours B) Mornings only C) My own hours (ask the days, hours, and time zone).
-5. **Where is your synced folder?** Ask for the path once, for the Google Drive, Dropbox, or OneDrive desktop app, or a plain folder on the computer (look for the app's folder first and offer what you find). Save it in Content Settings as synced_folder_path. Every role writes files straight into it.
+5. **Where is your synced folder?** Ask for the path once, for the Google Drive, Dropbox, or OneDrive desktop app, or a plain folder on the computer (look for the app's folder first and offer what you find). Save it as `file_storage` in the Master Profile Tools and in Content Settings as synced_folder_path. Every role writes files straight into it.
 6. **Where do posts get scheduled?** (only if social is in use) A) The Hi5 scheduler (GoHighLevel) B) Another scheduler (name it) C) I schedule them myself.
 7. **Cover tool?** (only if covers are made) A) Claude Design or a Claude artifact (default) B) Canva. Save it in Content Settings as cover_tool. **Cover images?** Say the default (Claude picks an approved photo or cutout from Content/Brand/ and builds the cover from the Cover Template). Ask only if they want a still from the video or new images made in ChatGPT instead.
 8. **What's different in how you work?** (open) Use the answer to edit the SOP.
@@ -25,7 +25,7 @@ Used by `SKILL.md` option D, only when the member wants the calendar and pipelin
 ## What setup creates (in this order, only for the roles and channels in use)
 1. The Hi5 Content page under the workspace root.
 2. Content Settings, from the answers above.
-3. The Content SOP: the default pipeline and process lines from the pipeline reference (Skill vs SOP), edited to match answer 8. The SOP holds the process, so the skills read it and follow it.
+3. The SOPs: if the workspace has the SOPs database, the five Sample rows are already there, so offer "Want to set up your content SOPs now?" and run `sop.md` for the roles in use (skip roles marked nobody). If there is no SOPs database, write the Content SOP page from the pipeline reference (Skill vs SOP), edited to match answer 8, and offer the SOPs database through the workspace check. The SOP holds the process, so the skills read it and follow it.
 4. The Content Calendar changes (append only), following the notion structure reference. This includes the Parent long-form relation, the Parent publish date rollup, and the Clip Publish Date formula if the Content Planner does not have them.
 5. A Style Guide (with the examples from question 9) and an Edit Log for each channel picked.
 6. The Cover Template page, plus a cover example the member likes if they have one.

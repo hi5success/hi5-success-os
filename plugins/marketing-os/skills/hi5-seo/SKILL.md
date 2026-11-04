@@ -9,6 +9,7 @@ description: Your local SEO hub. Opens by asking what you want to improve, then 
 Help the member get found online in their market. Ask what they want to improve, run that check, and give a short plan they can act on. Local SEO is much more than the Google Business Profile, so this hub covers the profile, the website, listings, reviews, keywords and content, and AI search visibility.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile first. **Never re-ask** what it has: the Google Business Profile status (`gbp_status` in Business Numbers), the website address and platform (`website`, `website_platform`), and the languages the member serves (`languages`). If a detail the skill needs is missing, ask once, save it, and continue.
 - One question at a time.
 - **Free tools only.** Use built-in web reading and web search and free Google tools. Never recommend a paid platform.

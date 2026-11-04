@@ -1,6 +1,6 @@
 {
   "name": "content-os",
   "description": "A content system in five skills: plan, research, script, edit, caption, upload, and blog. The Content Manager, Video Editor, Social Media Manager, YouTube Manager, and Blog Writer each run from one Notion Content Calendar, done by Claude, a person, or nobody. Every skill also works on its own.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": { "name": "Hi5 Success" }
 }

@@ -23,7 +23,7 @@ A one-off request needs no setup and no Notion. Research and scripts work right 
 ## Hard rules
 - **The skills hold the craft and the hard rules. The member's Notion holds how they work.** Settings, the Content SOP, style guides, edit logs, and the cover template live in Notion. Never write member-specific details into a skill. The Content SOP holds the process (when statuses move, who does what, Edit Due, approval habits). If the SOP and a hard rule conflict, the hard rule wins.
 - **Each role is done by Claude, a person, or nobody.** Content Settings says which (the pipeline reference). Plan only for the roles in use. Skipped roles create no rows, folders, or steps.
-- **Edit Due is 48 hours before publish, from the Content SOP.** There is no other date rule.
+- **Edit Due is 48 hours before publish, from the SOP.** There is no other date rule.
 - **Nothing is scheduled before Optimizing, and nothing posts that the member has not reviewed.** No exceptions. The Content Manager never writes captions and never schedules.
 - **Scan first, then ask.** Read the Master Profile, the Content Profile, the Voice Profile, and any content pages first. Ask only what is missing, one short question at a time with A, B, C options.
 - **Never invent.** No made-up numbers, results, claims, or facts. No income or results claims. No em dashes. Run the Fair Housing check on all real estate content.
@@ -42,6 +42,11 @@ These rules apply to every request, one-offs included. They win over the Content
 - **Files go straight into the member's synced folder**, never through the Drive connector (links only).
 - **Claude only works calendar rows for roles set to Claude** in Content Settings. A one-off request is always done.
 <!-- hard-rules:end -->
+
+## SOP first
+Before any work on the calendar, read the Content Management SOP (the SOPs database; see `references/sop.md`). If it is still the sample (Status Sample, or a `[fill in` blank), offer once: "Your Content Management SOP is still the sample. Want to set it up now? About 5 minutes." If yes, run the smart interviewer, then set the SOP Active and add a Decisions Log row. If no, use the defaults and offer again next time. Set Status Changed and Role on every status move. A one-off request needs none of this.
+
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 
 ## Compliance
 
@@ -80,7 +85,7 @@ Run `references/setup.md` only if the Content Profile is missing, then `referenc
 ## E) Check my queue
 Works only the Content Manager's rows, oldest first (the plan reference). Then show a one-line summary of what waits on the member and on each other role, from the Content Calendar. Never change a status the member owns.
 
-## F) Change a setting or my Content SOP
+## F) Change a setting or an SOP ("set up my content SOPs" runs all five)
 Edit Content Settings, a role's owner, a channel, or the Content SOP, showing the change first and writing it after the member's OK. Never remove history.
 
 ## Scheduled tasks
@@ -90,7 +95,7 @@ Offered in setup, one task per role set to Claude, plus the daily Published chec
 Follow `references/learning-edits.md` on every revision.
 
 ## References
-`core.md` (finding the workspace, the Master Profile fields), `setup.md`, `setup-calendar.md`, `plan.md`, `research.md`, `script.md`, `pipeline.md`, `notion-structure.md`, `folders.md`, `bridges.md`, `covers.md`, `tasks.md`, `learning-edits.md`.
+`core.md` (finding the workspace, the Master Profile fields), `setup.md`, `setup-calendar.md`, `plan.md`, `research.md`, `script.md`, `pipeline.md`, `sop.md`, `notion-structure.md`, `folders.md`, `bridges.md`, `covers.md`, `tasks.md`, `learning-edits.md`.
 
 ## NEXT STEP
 After setup, suggest the first monthly plan (option A). After a plan, say what to record and when. After a queue pass, say what is waiting on the member. You can run /hi5-next any time and I'll tell you your best next step.

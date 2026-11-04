@@ -24,12 +24,17 @@ A page under the workspace root called "Hi5 Content" holds the content system pa
 - scheduled_tasks: which role tasks the member turned on
 - channel pages: one Style Guide page and one Edit Log page per channel (names and IDs)
 
-## Content SOP (one page)
+## SOPs (the SOPs database, `sops_db_id`)
+Process lives in the SOPs database: one row per role (Content Management, Video Editing, Social Media Scheduling, YouTube Publishing, Blog Writing), optionally one per channel. The template ships them as Sample rows. Every content skill reads its SOP first and runs the sample setup when the SOP is still Sample (`sop.md`). The older Content SOP page below is used only when the workspace has no SOPs database.
+
+## Content SOP (one page, older workspaces)
 The default pipeline from the pipeline reference, written in plain language, edited to match the member's answer to "what's different in how you work?" Keep the statuses and the order. Record the differences as short bullets at the top under "How we work here". The SOP is where the member's process lives, as editable defaults: when each status moves, who does what, Edit Due (48 hours before publish), clip cadence ("Clips post daily after the long-form. Change this here if you skip weekends."), recording guidance, and approval habits. Every role reads it and follows it. Hard rules stay in the skills and win if the SOP conflicts. Anyone who joins (a VA or a team member) reads this page first.
 
 ## Content Calendar changes (append only)
 Add to the Content Planner. Never rename or remove anything.
-- Status options: Planned, Ready to Edit, In Progress, Reviewing, Revising, Finalizing, Optimizing (Scheduled and Published already exist).
+- Status options, exactly: Not Started, Brainstorming, Ready to Edit, In Progress, Reviewing, Revising, Finalizing, Optimizing, Scheduled, Published. Keep every older option the member has.
+- New properties: Role (select: Content Manager, Video Editor, Social Media, YouTube Producer, Blog Writer), Channel (select, options created as used), Review Notes (text), Published Links (text, one live link per platform), Status Changed (date, set to today by every skill that moves a Status).
+- Primary Platform is no longer part of the template. Never delete it if the member has it.
 - Deliverable Type options: Clip, Static Post, Carousel (Long Form, Short Form, and Blog already exist). Short Form is a one-off short.
 - Distribution is the Platforms field (multi-select). Add options as used.
 - New properties: Clip Number (number), Needs from member (text).

@@ -9,6 +9,7 @@ description: Audits the member's live website page by page and gives a prioritiz
 Read the member's live website, find what is holding it back in search, and give a short prioritized fix list they can act on, with steps for the platform their site is built on. Re-run it after every site change to see progress.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Read only.** Never change the member's website. You read public pages and report.
 - **Free tools only.** Use your built-in web reading and web search, and Google's free PageSpeed Insights. Never recommend a paid platform.
 - **Public pages only.** Read single public pages one at a time. Do not run automated crawlers or scrape sites, and do not try to get around a site that blocks you. If a page cannot be read, say so and ask the member to paste what they see or send a screenshot.

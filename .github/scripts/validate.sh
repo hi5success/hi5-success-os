@@ -91,7 +91,7 @@ else
         fi;;
       *) ERRORS+=("path.md row for $name has status '$status'. Use live or coming");;
     esac
-    # live skills must be in the README (the Skill Guide is built from the installed skills, so it is not a list here)
+    # live skills must be in the README (the skills live in the Hi5 Vault, so there is no Skill Guide list here)
     if [ "$status" = "live" ]; then
       grep -q "/$name" README.md || ERRORS+=("README.md does not list /$name")
     fi
@@ -324,14 +324,14 @@ grep -q 'No Send all, ever' plugins/business-os/skills/hi5-dashboard/SKILL.md ||
 grep -q 'Send all' plugins/business-os/skills/hi5-dashboard/references/follow-up-queue.md || ERRORS+=("hi5-dashboard/references/follow-up-queue.md must keep the no Send all rule")
 
 
-# 27. Hi5 skills first: every description carries everyday phrases, setup shows the Hi5 first line, and the Skill Guide is built from installed skills, never a hardcoded list
+# 27. Hi5 skills first: every description carries everyday phrases, setup shows the Hi5 first line, and the Skill Guide is gone (skills live in the Hi5 Vault)
 for f in plugins/*/skills/*/SKILL.md; do
   d=$(grep -m1 '^description: ' "$f" | tr -d '\r' | sed 's/^description: //')
   q=$(printf '%s' "$d" | tr -cd '"' | wc -c)
   [ "$q" -ge 10 ] || ERRORS+=("$f: the description needs at least 5 quoted everyday phrases members actually say, found $((q / 2))")
 done
 SD="plugins/business-os/skills/hi5-setup"
-for f in references/hi5-first.md references/skill-guide.md; do
+for f in references/hi5-first.md; do
   [ -f "$SD/$f" ] || ERRORS+=("hi5-setup is missing $f")
 done
 grep -q "When a Hi5 skill fits what I'm asking, use it first" "$SD/references/hi5-first.md" 2>/dev/null || ERRORS+=("hi5-first.md must carry the Hi5 first line")
@@ -340,11 +340,25 @@ grep -q "can't change your Claude settings" "$SD/references/hi5-first.md" 2>/dev
 grep -q 'hi5_first_shown' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must note that the Hi5 first line was shown")
 grep -q 'hi5_first_shown' "$SD/templates/master-profile.md" || ERRORS+=("master-profile.md must list hi5_first_shown")
 grep -q 'hi5-first.md' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must run hi5-first.md")
-grep -q 'skill-guide.md' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must run skill-guide.md")
-grep -q 'refresh my skill guide' "$SD/SKILL.md" || ERRORS+=("hi5-setup must answer refresh my skill guide")
-grep -q 'never a hardcoded list' "$SD/references/skill-guide.md" 2>/dev/null || ERRORS+=("skill-guide.md must say the guide is never a hardcoded list")
-if sed -n '/^## Skill Guide content/,$p' "$SD/templates/workspace-build.md" | grep -q '/hi5-'; then ERRORS+=("workspace-build.md Skill Guide content must not list skills")
+[ ! -f "$SD/references/skill-guide.md" ] || ERRORS+=("skill-guide.md must be gone (the Skill Guide moved to the Hi5 Vault)")
+grep -q 'vault.hi5success.com' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must point to vault.hi5success.com")
+if grep -rn 'skill_guide_page_id' plugins --include=*.md | grep -v 'no longer used' | grep -q .; then ERRORS+=("skill_guide_page_id may only appear as no longer used")
 fi
+if grep -n 'Skill Guide' "$SD/templates/workspace-build.md" | grep -viE 'removed|no longer|never|older|moved|Vault' | grep -q .; then ERRORS+=("workspace-build.md must not build or match the Skill Guide")
+fi
+grep -q 'template_version: 3' "$SD/templates/workspace-build.md" || ERRORS+=("workspace-build.md must set template_version 3")
+for id in tasks_db_id sops_db_id software_stack_db_id offers_db_id proof_db_id decisions_log_db_id ai_memory_db_id brain_index_page_id client_meetings_db_id internal_meetings_db_id; do
+  grep -q "$id" "$SD/templates/workspace-build.md" || ERRORS+=("workspace-build.md must save $id")
+  grep -q "$id" "$SD/templates/master-profile.md" || ERRORS+=("master-profile.md must list $id")
+done
+grep -q 'Not Started, Brainstorming, Ready to Edit, In Progress, Reviewing, Revising, Finalizing, Optimizing, Scheduled, Published' "$SD/templates/workspace-build.md" || ERRORS+=("workspace-build.md must carry the exact Content Planner status list")
+for p in content-os marketing-os real-estate-os; do
+  cmp -s plugins/business-os/references/brain-rules.md "plugins/$p/references/brain-rules.md" || ERRORS+=("brain-rules.md in $p must match the business-os copy")
+done
+for f in plugins/*/skills/*/SKILL.md; do
+  case "$f" in */hi5-next/*|*/hi5-re-daily/*|*/hi5-re-roleplay/*|plugins/youtube/*) continue;; esac
+  grep -q 'brain-rules.md' "$f" || ERRORS+=("$f must tell the skill to read brain-rules.md before it saves")
+done
 grep -q "When a Hi5 skill fits what I'm asking, use it first" plugins/business-os/skills/hi5-bottleneck/templates/project-instructions.md || ERRORS+=("the AI employee Project instructions template must carry the Hi5 first line")
 
 # 28. Content OS: every skill carries the same hard rules (copies must match), and every relative path to a shared file resolves inside the plugin

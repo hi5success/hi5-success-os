@@ -9,6 +9,7 @@ description: Builds the member's Coach Library, a Notion swipe file of the socia
 Turn the posts a member already saves into a searchable library of hooks, pitches, and business lessons, and into the raw material for their Master Coach. The member has done the curating by saving; this skill does the logging.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Read only on every social account.** Open and read posts. Never like, follow, comment, message, share, unsave, or post anything, and never change a setting.
 - **The member's own browser, with their OK.** Social posts are read in the member's own browser (the built-in browser or Claude in Chrome), where they are already logged in. Load that browser's skill before the first step in it. If no browser is available, ask the member to paste the caption and transcript, or upload the video file, and log it that way.
 - **Gentle on their account.** Read at most 30 posts in one run, at a normal pace. For a bigger folder, do 30, save them, and say "I logged 30. Want me to keep going?"

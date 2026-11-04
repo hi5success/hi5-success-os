@@ -9,6 +9,7 @@ description: Personality and communication profile builder for Hi5 Success OS. A
 Learn how the member thinks, communicates, makes decisions, and is motivated. Store this profile in their Master Profile so every Hi5 skill, business plan, scripts, emails, goals, is tailored to their personality and not a generic output.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - One question at a time
 - Always provide multiple choice options. They can always add more detail after selecting
 - Never rush: this is one of the most valuable things we can capture

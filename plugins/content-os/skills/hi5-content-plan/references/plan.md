@@ -5,7 +5,7 @@ Used by `SKILL.md` option A. One session a month, worked week by week. The Conte
 If the content calendar is not set up, do not plan blind. Offer: "Plan my month works best with your content calendar in Notion. A) Set it up first, then plan B) Just plan it here on screen." On A run `setup.md` if the Content Profile is missing, then `setup-calendar.md`, then come back here. On B build the plan and return it on screen only, with no rows, folders, or Notion writes.
 
 ## Before the session
-Read Content Settings, the Content SOP, each channel's Style Guide and Edit Log, the Content Profile, and the Content Calendar (what is already planned, and every row with Status Idea). Say in one line what you found. Plan only for the roles in use (Content Settings): no video editing means no long-form, clip, or reel rows, and so on.
+Read Content Settings, the Content Management SOP (`sop.md`, with the sample check), each channel's Style Guide and Edit Log, the Content Profile, and the Content Calendar (what is already planned, and every row with Status Brainstorming that has no script). Say in one line what you found. Plan only for the roles in use (Content Settings): no video editing means no long-form, clip, or reel rows, and so on.
 
 ## 1. The month's goal and what is coming up
 Ask short questions, with A, B, C options where they fit:
@@ -17,7 +17,7 @@ Ask short questions, with A, B, C options where they fit:
 Find what people search and what is trending, using `research.md` (YouTube SEO if YouTube is used, AEO, and social trends for the picked platforms). Use vidIQ if it is connected. Use only data from a tool or the member. Never invent a search volume or a trend, and label anything you could not check.
 
 ## 3. Propose topics
-Show a short table: topic, hook or angle, media type, platforms, and why it fits now. Keep the member's own ideas from the Content Planner (Status Idea) in the mix. The member approves in the conversation. There is no approval click later.
+Show a short table: topic, hook or angle, media type, platforms, and why it fits now. Keep the member's own ideas from the Content Planner (Status Brainstorming) in the mix. The member approves in the conversation. There is no approval click later.
 
 ## 4. Balance the month
 Mix media types and goals, respect the member's record schedule and capacity, and spread the pieces across the weeks. If there are more ideas than slots, ask what to prioritize or defer. If there are fewer, say so and offer more research.
@@ -46,17 +46,25 @@ Before the member sees any script or notes, run the pre-review check from the pi
 
 ## 6. Create the rows, folders, and starting statuses
 For each approved piece:
-- A row in the Content Planner with Deliverable Type, Platforms (Distribution), Record Date, Publish Date and time, Edit Due Date, and the Asset Folder URL. Status is Planned. A topic that came from an Idea row updates that row instead of making a second one.
-- A folder in the member's synced folder (the folders reference), only for the roles in use.
+- A row in the Content Planner with Deliverable Type, Platforms (Distribution), Record Date, Publish Date and time, Edit Due Date, and the Asset Folder URL. Role is Content Manager, Status is Brainstorming, and Status Changed is today. A topic that came from an idea row updates that row instead of making a second one. When the script is written and the row is ready to record, set Not Started (and Status Changed).
+- The project folder in the member's synced folder (the folders reference, "Content/[Channel]/[Video Title]" with Clips, B-Roll, and Exports), only for the roles in use, with the link saved in Asset Folder URL. Set Channel on the row.
 - The notes in the page sections from the pipeline reference, with an empty Handoff checklist and Log.
-For each long-form, create the clip rows when video editing and social are in use: the count from Content Settings (clips_per_long_form), adjustable per video. Each clip row has Deliverable Type Clip, Clip Number, the Parent long-form relation (and Related To with the parent title), the parent's platforms, and Status Planned. Leave the clip's publish date to the formula (it keeps the long-form's time of day), then read the dates it shows and say them in one line so the member can change them.
+For each long-form, create the clip rows right away when video editing and social are in use: the count from the SOP (default 5, `clips_per_long_form` in Content Settings), adjustable per video. Reel 1 is always the intro hook, and Reels 2 to 5 are the best moments. Title them "Reel 1 - Intro Hook - [Video Title]", "Reel 2 - [Video Title]", and so on. Each clip row has Deliverable Type Short Form, Content Type Repurpose, Role Video Editor, Status Not Started, Clip Number, the Parent long-form relation set to the video, the same Channel, and the parent's platforms. Leave the clip's publish date to the formula (it keeps the long-form's time of day), then read the dates it shows and say them in one line so the member can change them. A blog, newsletter, or carousel made from the video is a child row with no Clip Number.
 If a person does a role, tell the member which rows wait for that person.
 
 ## 7. Hand off
-Tell the member what to record and when, and that after recording they drop the files in the piece's Raw folder and set Ready to Edit. Add a Log line to every row. Nothing is scheduled.
+Tell the member what to record and when, and that after recording they drop the files in the piece's Clips folder and say it is recorded (or set Ready to Edit), which moves the row to Ready to Edit with Role Video Editor. Add a Log line to every row. Nothing is scheduled.
 
 ## Check my queue (Content Manager)
-The Content Manager's own rows, oldest first: Planned rows that still need a script or production notes, and Idea rows not yet planned. Show them, then work them with the steps above. Add one line on what else waits on the member.
+The Content Manager's own rows, oldest first: Brainstorming rows that still need a script or production notes. Show them, then work them with the steps above. Add one line on what else waits on the member.
 
 ## Never
-Never write captions. Never change a status past Planned. Never schedule or post.
+Never write captions. Never change a status past Not Started. Never schedule or post.
+
+## How the Content Manager plans (the order)
+1. **Research.** The month's goal and audience, last month's results, local competitors, and the Keyword Tracker.
+2. **Ideas.** Go beyond generic tips: local topics, new construction, tours, "living in [city]", pros and cons, things to know before moving, and market updates. Lean into relocation when that is the strategy. Show the full list (title plus hook) before saving anything.
+3. **Calendar.** Ask frequency, days, recording days, and the first ready-to-edit date. Then write the rows and create the folders.
+4. **Scripts.** One at a time. Always the full hook, then a full script or bullet points, as the SOP says.
+5. **Monthly.** Review results and feed them into the next plan.
+**Fair Housing (real estate):** places, homes, and amenities only, never who lives somewhere. Never rate schools or safety, and point to official sources.

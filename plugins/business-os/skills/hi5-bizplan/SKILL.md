@@ -9,6 +9,7 @@ description: Generates a personalized business plan tailored to the member's ind
 Generate a personalized business plan from the member's Master Profile. Ask only for the numbers and goals that setup did not capture. Show every calculation step by step, using the member's own numbers, so they can check it. Tailor tone and structure to their behavioral style, industry, and biggest blocker.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile first. Never ask for something it already has.
 - One question at a time.
 - Reference their name and specific details throughout.

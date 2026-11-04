@@ -9,6 +9,7 @@ description: Runs a decision past the member's personal advisory board. Builds a
 Help the member make a better decision by hearing several strong, different viewpoints, then a clear summary they can act on. No debate rounds and no show: each advisor gives their honest view once, and the summary weighs them.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Each advisor speaks from their own brain only.** An advisor uses its brain page, the brief, and nothing else. It never borrows another advisor's frameworks, and it never looks up facts about the real person outside its brain.
 - **Independent views.** Advisors do not see each other's views before giving their own. When you can start sub-agents, give each advisor its own (see Step 4). Otherwise write each view in turn, from its brain only, without adjusting it to match the views before it.
 - **Real people are simulations.** Show "(simulated)" after the name of every Mentor or Public figure advisor in every view and summary. Never write that the real person said something unless it is a verbatim line from that advisor's Quotes section, with its source id.

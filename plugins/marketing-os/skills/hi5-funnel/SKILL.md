@@ -9,6 +9,7 @@ description: Builds a complete funnel for any offer in any industry. Writes an O
 Turn any offer into a working funnel: one clear message, a free resource or direct offer, compliant ads, a landing page, a thank-you page, and a follow-up email sequence. It works for every industry. Real estate specifics load only for real estate members. It can also audit an existing page, ad, or email.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Every industry.** The flow below is the same for everyone. Real estate rules, funnel types, and vocabulary live only in `industries/real-estate.md` and load only when `industry_flow` is `real-estate`. Everyone else uses `industries/generic.md`, a full adapter that builds the funnel menu from the member's own offers.
 - **Drafts only.** Never connect to an ad account, publish, post, or send. Never ask for a password. Build-it steps are instructions the member follows themselves.
 - **Never invent proof.** Use only testimonials, numbers, results, and credentials the member supplies. Mark gaps `[PROOF NEEDED: what is missing]`. Proof marked internal never appears in a public asset.

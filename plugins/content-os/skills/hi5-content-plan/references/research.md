@@ -1,6 +1,6 @@
 # Research Topics (YouTube, search, and trends)
 
-Used by `SKILL.md` option B and by step 2 of the monthly plan. Works with no setup: if the member has no workspace, ask for the topic, the niche, and the goal in a few short questions, and return the ideas on screen. When the content calendar is set up, the ideas are added to the Content Planner as Ideas, after the member says so.
+Used by `SKILL.md` option B and by step 2 of the monthly plan. Works with no setup: if the member has no workspace, ask for the topic, the niche, and the goal in a few short questions, and return the ideas on screen. When the content calendar is set up, the ideas are added to the Content Planner with Status Brainstorming, after the member says so.
 
 ## Step 1: Read the Master Profile
 

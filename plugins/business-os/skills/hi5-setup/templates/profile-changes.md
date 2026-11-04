@@ -2,7 +2,7 @@
 
 The Master Profile has a `profile_version` in Setup Status. /hi5-setup compares it with the current version below. When a profile is behind, setup offers to fill in only the new fields (see PROFILE UPDATE in `SKILL.md`).
 
-Current profile_version: 3
+Current profile_version: 4
 
 Rules for adding a version:
 - Only add new fields and sections. Never rename or delete existing ones.
@@ -32,7 +32,22 @@ Both fields are automatic. Setup fills them in without asking.
 | Field | Section | Filled by |
 |---|---|---|
 | workspace_source | Setup Status | Automatic. `template` when the member copied the Hi5 template, `built` otherwise |
-| template_version | Setup Status | Automatic. `2` for the current template, `none` for a built workspace |
+| template_version | Setup Status | Automatic. `2` for the template that ships Skill Guide, `3` for the Nov 4, 2026 template, `none` before the template existed |
+
+## Version 4 (Nov 4, 2026 template)
+Ask only for the ones that are missing. The new databases and the Brain Index are offered by the workspace check, not asked as questions.
+
+| Field | Section | Filled by |
+|---|---|---|
+| bio, story, mission | Identity | Stage 1, a short question for each, in the member's words. Update ID: S1-BIO |
+| meeting_transcripts | Tools | Stage 1, where meeting transcripts come from. Update ID: S1-TRANSCRIPTS |
+| file_storage | Tools | Stage 1, the synced folder. An existing `synced_folder_path` in Content Settings counts as the answer. Update ID: S1-STORAGE |
+| content_roles | Tools | /hi5-content-plan setup, who does each content role. Update ID: S1-ROLES |
+| brain_index_page_id, tasks_db_id, sops_db_id, software_stack_db_id, offers_db_id, proof_db_id, decisions_log_db_id, ai_memory_db_id, client_meetings_db_id, internal_meetings_db_id | Page IDs | The workspace build or the workspace check, by title. Automatic |
+| stage_4_objections (alias of stage_4_objection_bank), self_test | Setup Status | Automatic |
+| template_version 3 | Setup Status | Automatic |
+
+Removed from the template, never created: the Skill Guide and the Reference Hub (skills and the setup order are in the Hi5 Vault, vault.hi5success.com), and the `skill_guide_page_id` field stays in old profiles but is no longer used.
 
 ## Added without a version change
 These fields are collected inside the skill that uses them, not by setup, so `profile_version` stays at 2. Each is asked once, saved to Business Numbers, and never renamed or deleted.

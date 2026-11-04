@@ -9,6 +9,7 @@ description: Sets and tracks quarterly goals from the member's business plan. Br
 Turn the member's business plan into this quarter's targets and a 13 week plan, then keep them on track with a short weekly check-in. Show every calculation step by step, using only the member's own numbers, so they can check each line.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile first. Never ask for something it already has.
 - One question at a time.
 - **Never hardcode any brokerage's or business's rules.** Cap amounts, splits, fees, awards, and revenue share differ everywhere. Use only what the member told /hi5-bizplan. If a rule is unclear, ask. Do not assume.

@@ -9,6 +9,7 @@ description: Creates LinkedIn content from the member's existing videos, blog po
 Turn existing content into LinkedIn-optimized posts. LinkedIn rewards professional insight, personal story, and conversation starters over promotional content.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile for voice, niche, and behavioral style.
 - LinkedIn posts are professional but personal, not corporate.
 - Never repurpose Instagram captions directly to LinkedIn.
