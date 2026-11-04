@@ -56,6 +56,7 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - content_page_id, content_settings_page_id, content_sop_page_id, cover_template_page_id (added by /hi5-content-plan, only for members who set up the content calendar)
 - ai_employees_db_id (added by /hi5-org-chart, or by the setup workspace check)
 - bottlenecks_db_id (added by /hi5-bottleneck, or by the setup workspace check)
+- coach_library_db_id, advisory_board_db_id, board_meetings_db_id (added by /hi5-library, /hi5-advisor, and /hi5-board, the first time each one saves, with the member's OK)
 - objection_bank_page_id (added by Stage 4)
 - neighborhoods: `Name = page id` pairs, comma separated (added by Stage 5)
 
@@ -168,6 +169,12 @@ A child page of the Master Profile created by Stage 2, ID in `compliance_page_id
 
 ### Voice Profile (child page, not a section)
 A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `vocabulary_style`, `sentence_rhythm`, `emoji_use`, `preferred_length`, `phrases_used`, `phrases_never_used`, `how_to_come_across`, `energy_level`, `cta_style`, `default_voice` (the Skill Name of the member's own voice in the Voice Library, added by /hi5-voice-creator), followed by a voice summary, proof samples, and gaps. Stage 3 of /hi5-setup creates it (template `voice-profile.md`). /hi5-content-plan adds `energy_level` and `cta_style` if missing, and creates the page only if the member has not done Stage 3.
+
+### Library Folders
+Added by /hi5-library when the member pulls a saved folder. Not created by /hi5-setup. One bullet per folder: `- platform | folder name | last synced date`. It sits in its own section above Linked pages, never at the end of the page.
+
+### Board Updates
+Added by the monthly creator check that /hi5-library can schedule. A short list of advisors with new content, so /hi5-board and /hi5-advisor can offer a refresh. Cleared after a refresh. It sits in its own section above Linked pages.
 
 ### Linked pages
 Always the last section. It holds only the heading. Child pages created by the stages appear below it.

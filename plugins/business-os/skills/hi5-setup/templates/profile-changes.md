@@ -56,6 +56,9 @@ These fields are collected inside the skill that uses them, not by setup, so `pr
 | One AI Employees row per AI employee (role, human manager, status, review cadence and date, Claude Project link), and an Org chart link and overload threshold under Notes on the member's own People page | AI Employees, People | /hi5-org-chart, with the member's OK |
 | bottlenecks_db_id (Page IDs) | Page IDs | /hi5-bottleneck, the first time it saves a bottleneck. The Bottlenecks database is in the workspace template, and the setup workspace check offers it to older workspaces |
 | One Bottlenecks row per bottleneck (task, owner, hours per week, pain, automatable, fix type, status, AI employee, estimated and actual hours saved), and one job description page per AI employee on its AI Employees row | Bottlenecks, AI Employees | /hi5-bottleneck, with the member's OK |
+| coach_library_db_id, advisory_board_db_id, board_meetings_db_id (Page IDs) | Page IDs | /hi5-library, /hi5-advisor, /hi5-board, the first time each one saves. The skill creates the database with the member's OK |
+| Library Folders and Board Updates sections | Master Profile | /hi5-library |
+| One Coach Library row per saved post, one Advisory Board row per advisor (its brain is the row's page), and one Board Meetings row per meeting (the full notes are the row's page) | Coach Library, Advisory Board, Board Meetings | /hi5-library, /hi5-advisor, /hi5-board |
 | email_platform, email_format_by_segment | Tools | /hi5-email, the first time it asks the formatting choices, and after each campaign |
 | results_disclaimer | Compliance Guardrails page, Inputs | /hi5-email, only if the member gives their own wording for asterisked results claims |
 | content_page_id, content_settings_page_id, content_sop_page_id, cover_template_page_id (Page IDs) | Page IDs | /hi5-content-plan, the first time it sets up the content calendar |
