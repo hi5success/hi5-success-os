@@ -7,3 +7,5 @@ node_modules/
 # Claude Code local config (contains tokens)
 .claude/
 .mcp.json
+
+hi5-board-handoff.zip
