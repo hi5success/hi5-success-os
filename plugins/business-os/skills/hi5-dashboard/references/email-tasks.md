@@ -9,6 +9,7 @@ The same filter as the email widget (see `email-actions.md`): the latest message
 - Title: the subject, with the sender's name.
 - Due: the member's default from setup (for example today, or the next business day), shown in the plan.
 - A link that opens the thread inside the dashboard (the dashboard's address with the thread in the hash), never the mail app.
+- The task home rules in `tasks.md` apply, including the GoHighLevel contact search. In a scheduled run, a sender who is not a contact becomes a Notion task, flagged in the one-line report. Never create a contact in a scheduled run.
 - A note with the key `source: email thread <id>`, and one line on why it needs a reply.
 - No message body beyond that one line.
 

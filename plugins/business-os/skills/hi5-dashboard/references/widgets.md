@@ -30,7 +30,7 @@ Used by `SKILL.md` Step 5. Offer a widget only when the member's discovery answe
 
 ## Tasks
 - **Data source:** the member's task home, the one place they keep tasks (GoHighLevel, another task app, or Notion; see `tasks.md`). Never two places.
-- **Shows:** due today, overdue, and next 7 days, by priority, with the owner. Tasks made from email show the sender and open that thread inside the dashboard.
+- **Shows:** due today, overdue, and next 7 days, by priority, with the owner. Tasks made from email show the sender and open that thread inside the dashboard. When the home is GoHighLevel and no task list operation exists, it shows the Notion Tasks database plus the GoHighLevel tasks this plugin made (their links are in the Notion Notes), and says once: "Tasks made in GoHighLevel outside Claude don't show here yet." See `tasks.md`.
 - **Actions:** mark done; change the due date; add a task (written to the task home only, after showing it).
 
 ## Pipeline or deal tracker
@@ -60,9 +60,10 @@ Used by `SKILL.md` Step 5. Offer a widget only when the member's discovery answe
 - **Notes:** ranked by behavior only, never by a protected characteristic. No Send all and no automatic sending.
 
 ## Potential revenue (pipeline value turned into the member's own earnings)
-- **Data source:** the CRM opportunities (read only): the count and the value in each stage. The member's own commission rate and brokerage split come from their profile (`commission_rate` and `brokerage_split` in Business Numbers). Other industries use the member's own margin or rate, if they want profit shown, and otherwise show value only.
-- **Shows:** for each stage, the opportunity value, then value x commission rate x split = the potential for that stage, with the math written out, and the total. Label it "Potential, not guaranteed" on the widget. No guessing and no weighting by a chance of closing unless the member gives their own close rate.
-- **If the rate is missing:** ask once ("What is your commission rate, the way you state it? If it differs for buyers and sellers, give both."), save it as a bullet in Business Numbers, and never use a standard or typical rate. If a value is missing on an opportunity, say how many were left out.
+- **Data source:** the CRM opportunities (read only): the count and the value in each stage. The member's own numbers come from Business Numbers in the profile: `commission_per_side` (a percent) and `split_to_member` (a percent, the share the member keeps after their brokerage split). Other industries use the member's own margin or rate if they want profit shown, and otherwise show value only.
+- **The math:** potential per deal = value x commission_per_side x sides x split_to_member. `sides` is 1 by default. Use 2 only when the deal is marked as representing both sides, or the member says so.
+- **Shows:** for each stage, the opportunity value, then the math written out with the numbers, the potential for that stage, and the total. Label it "Potential, not guaranteed" on the widget. No guessing and no weighting by a chance of closing unless the member gives their own close rate.
+- **If the numbers are missing:** ask once ("What commission do you earn per side, as a percent? And what share do you keep after your brokerage split? If buyers and sellers differ, give both."), save them as `commission_per_side` and `split_to_member` in Business Numbers, and never use a standard or typical rate. If the profile has the older free-text `commission_rate` or `brokerage_split`, show it back and ask once to convert it to the two percents (never delete the old line). If a value is missing on an opportunity, say how many were left out.
 - **Actions:** open the stage in the CRM. It writes nothing.
 
 ## Clients by stage

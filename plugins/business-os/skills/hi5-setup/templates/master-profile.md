@@ -127,6 +127,7 @@ Written by /hi5-bizplan, not by setup. Skills that need these numbers read them 
 - avg_sale_price, buyer_seller_split (real estate)
 - brokerage_split, cap_amount, cap_year_reset, cap_progress: the member's own split, cap, cap year start date, and how much of the cap is used so far (real estate). Never filled from a preset
 - commission_rate (real estate): the member's own commission rate as they state it, per side if it differs. Added by /hi5-dashboard the first time the Potential revenue widget needs it. Never filled from a preset or a typical rate
+- commission_per_side, split_to_member (real estate): the member's own commission per side as a percent, and the share of it they keep after their brokerage split, as a percent. Added by /hi5-dashboard the first time the Potential revenue widget needs them, or when the member converts an older free-text commission_rate. Never filled from a preset or a typical rate
 - per_deal_fees: one line per fee: name, amount, continues after cap, counts toward cap (real estate)
 - post_cap_terms, royalty_percent, royalty_annual_cap, royalty_ytd: after cap terms, and any franchise or royalty fee with its own annual cap and the amount paid so far (real estate)
 - recurring_fees, team_split, referral_fees, outside_costs: recurring brokerage fees, team split, referral fees, and costs the member wants counted. Lines may be "none" or "not sure"

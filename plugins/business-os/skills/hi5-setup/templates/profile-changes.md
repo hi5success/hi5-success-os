@@ -60,6 +60,8 @@ These fields are collected inside the skill that uses them, not by setup, so `pr
 | Library Folders and Board Updates sections | Master Profile | /hi5-library |
 | One Coach Library row per saved post, one Advisory Board row per advisor (its brain is the row's page), and one Board Meetings row per meeting (the full notes are the row's page) | Coach Library, Advisory Board, Board Meetings | /hi5-library, /hi5-advisor, /hi5-board |
 | commission_rate (Business Numbers) | Business Numbers | /hi5-dashboard, the first time the Potential revenue widget needs it. Never filled from a preset |
+| commission_per_side, split_to_member (Business Numbers) | Business Numbers | /hi5-dashboard, the first time the Potential revenue widget needs them. Ask once to convert an older free-text commission_rate. Never filled from a preset |
+| tasks_db_id | Page IDs | Whoever creates the Tasks database writes it right away |
 | A Type property on the Dashboards database | Dashboards | /hi5-dashboard adds it on first use |
 | email_platform, email_format_by_segment | Tools | /hi5-email, the first time it asks the formatting choices, and after each campaign |
 | results_disclaimer | Compliance Guardrails page, Inputs | /hi5-email, only if the member gives their own wording for asterisked results claims |

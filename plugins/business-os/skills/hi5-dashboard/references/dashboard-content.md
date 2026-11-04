@@ -10,13 +10,13 @@ Read the Content Planner's properties and the Status options. If the content cal
 2. **Scheduled this week.** Rows with Status Scheduled and a Publish Date in the next 7 days, in date order. Action: open the row.
 3. **Needs my review.** Rows with Status Reviewing, oldest first. Each shows how long it has waited. Actions: open the row, approve, add a revision note.
 4. **Waiting on me.** Rows where Needs from member is not empty, with that text. Action: open the row.
-5. **Stuck.** Rows not Published whose last change was more than X days ago. The member sets X (suggest 5, they decide), and it is saved on the Dashboards entry. Notion keeps the time a row was last edited, so call this "no change in X days", not "no status change". Action: open the row.
+5. **Stuck.** Rows not Published and not Scheduled whose Status Changed date is older than the threshold in the channel's Content SOP (default: 3 days in the same status). Status Changed is a property every content skill sets to today each time it moves a Status, so one query is enough and no row is fetched one at a time. A row with no Status Changed date uses its created time and is labeled "no status date". Never use the last edited time. Action: open the row.
 Counts go on the card the Command Center shows ("2 to review, 1 waiting on you").
 
 ## Actions (each from a click, each says what it will do)
 - **Open the row.** Opens the Notion page.
-- **Approve.** Shows "This sets Finalizing", then sets Status to Finalizing and adds one Log line to the row's page: the date and time, "Member: approved from the dashboard." Never edit past Log lines. The role that owns the next step picks it up from the status.
-- **Add a revision note.** An editable box. On click it adds one checkbox item to the row's Revisions section with the member's text, adds a Log line, and sets Status to Revising only if the member ticks "send it back now". The role that owns the row reads the note.
+- **Approve.** Shows "This sets Finalizing", then sets Status to Finalizing, sets Status Changed to today, and adds one Log line to the row's page: the date and time, "Member: approved from the dashboard." Never edit past Log lines. The role that owns the next step picks it up from the status.
+- **Add a revision note.** An editable box. On click it adds one checkbox item to the row's Revisions section with the member's text, adds a Log line, and sets Status to Revising (and Status Changed to today) only if the member ticks "send it back now". The role that owns the row reads the note.
 - Nothing else writes. No scheduling, no posting, no publishing.
 
 ## Rules

@@ -406,7 +406,13 @@ grep -q 'Where do you keep your tasks' "$DB/references/tasks.md" || ERRORS+=("ta
 grep -q 'Never split tasks across two places' "$DB/references/tasks.md" || ERRORS+=("tasks.md must keep tasks in one place")
 grep -q 'never reads local bridges' "$DB/references/dashboard-content.md" || grep -q 'never read.*local bridges' "$DB/references/dashboard-content.md" || ERRORS+=("dashboard-content.md must never read local bridges")
 grep -q 'Potential, not guaranteed' "$DB/references/widgets.md" || ERRORS+=("widgets.md must label potential revenue as potential, not guaranteed")
-grep -q 'commission_rate' "$DB/industries/real-estate.md" || ERRORS+=("real-estate.md must use the member's own commission rate")
+grep -q 'commission_per_side' "$DB/industries/real-estate.md" || ERRORS+=("real-estate.md must use the member's own commission per side")
+grep -q 'split_to_member' "$DB/references/widgets.md" || ERRORS+=("widgets.md potential revenue must use split_to_member")
+grep -q 'Status Changed' "$DB/references/dashboard-content.md" || ERRORS+=("dashboard-content.md stuck must use Status Changed")
+grep -q 'tasks_db_id' "$DB/references/tasks.md" || ERRORS+=("tasks.md must save tasks_db_id")
+grep -q 'Create the contact' "$DB/references/tasks.md" || ERRORS+=("tasks.md must ask before creating a GoHighLevel contact")
+grep -q 'not signed in' "$DB/references/tasks.md" || ERRORS+=("tasks.md must handle a connector that is not signed in")
+grep -q 'Not published yet' "$DB/references/build.md" || ERRORS+=("build.md must say Not published yet for a draft dashboard")
 if grep -rniE 'open in gmail|mail\.google\.com|gmail\.com/mail' "$DB" | grep -viE 'never|no "open in gmail"|not ' >/dev/null; then ERRORS+=("hi5-dashboard must not link to Gmail"); fi
 
 if [ ${#ERRORS[@]} -gt 0 ]; then

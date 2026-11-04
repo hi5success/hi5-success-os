@@ -56,7 +56,7 @@ Follow `references/connectors.md`, only for the apps the picked dashboards need.
 
 ## Step 4: Discovery interview, on the picks
 
-Follow `references/discovery.md`, for the picked dashboards only. A few questions at a time, skipping what the scan answered, and filter every item with "If you saw this, what would you do?" Ask where they keep their tasks (`references/tasks.md`) and, if the Command Center and email are picked, how email to task should run (`references/email-tasks.md`). If the member wants follow-ups (people who need a reply or have gone stale), add the Follow-Up Queue questions from `references/follow-up-queue.md`. For the Content dashboard, ask the days after which a row counts as stuck (`references/dashboard-content.md`). For Potential revenue, check the profile for the member's own commission rate and split and ask once only if the rate is missing (`references/widgets.md`).
+Follow `references/discovery.md`, for the picked dashboards only. A few questions at a time, skipping what the scan answered, and filter every item with "If you saw this, what would you do?" Ask where they keep their tasks (`references/tasks.md`) and, if the Command Center and email are picked, how email to task should run (`references/email-tasks.md`). If the member wants follow-ups (people who need a reply or have gone stale), add the Follow-Up Queue questions from `references/follow-up-queue.md`. For the Content dashboard, stuck comes from the Status Changed date and the Content SOP, so there is nothing to ask unless the SOP has no threshold (`references/dashboard-content.md`). For Potential revenue, check the profile for `commission_per_side` and `split_to_member` and ask once only for what is missing (`references/widgets.md`).
 
 ## Step 5: Plan
 

@@ -6,7 +6,7 @@ Used by `SKILL.md` Steps 5, 6, and 8. Notion stores anything the dashboard track
 - **Data in an app stays in the app.** If it lives in the CRM, the email, or the calendar, read it from there. Never copy it into Notion just to display it.
 - **No app, use Notion.** A transaction checklist and documents needed, important dates the CRM does not hold, goals and KPIs, client onboarding steps, content status, and custom trackers go in a Notion database.
 - **Reuse before create.** Before creating anything, check for an existing database that already fits, and use it:
-  - Tasks: the member's task home (see `tasks.md`). When Notion is the home, the Tasks database in the workspace.
+  - Tasks: the member's task home (see `tasks.md`). When Notion is the home, the Tasks database in the workspace, found by `tasks_db_id` in the Page IDs, then by the title "Tasks". Anything that creates it saves `tasks_db_id` right away.
   - Content and marketing: the Marketing Hub and the Content Planner.
   - Goals and numbers: the Business Numbers section, the Quarterly Goals page, and the Business Reviews page.
   - Voices: the Voice Library.
@@ -26,7 +26,7 @@ Dashboard actions that create or update tracking (make a task, mark a document r
 ## The Dashboards database
 One row per dashboard (database title "Dashboards", ID in `dashboards_db_id`). The Command Center and every other dashboard each have their own row, built and updated on their own.
 
-**Properties:** Name (title), Type (select: Command Center, CRM, Content, Money, Transactions, Industry, Custom), Status (Active, Draft, Retired), Version (number), Date (date), Industry (text), Artifact link (url). If an existing Dashboards database has no Type property, add it on first use, fill it for the rows it already has from their names, and say so in one line.
+**Properties:** Name (title), Type (select: Command Center, CRM, Content, Money, Transactions, Industry, Custom), Status (Active, Draft, Retired), Version (number), Date (date), Industry (text), Artifact link (url). An unpublished dashboard has Status Draft, an empty Artifact link (never a placeholder), and the line "Not published yet" at the top of its page body. On publish, set Status to Active, fill the link, and remove that line. If an existing Dashboards database has no Type property, add it on first use, fill it for the rows it already has from their names, and say so in one line.
 
 **Page body, in this order:**
 > Dashboard: {{name}}, version {{N}}, {{date}}. Re-run /hi5-dashboard to update it.

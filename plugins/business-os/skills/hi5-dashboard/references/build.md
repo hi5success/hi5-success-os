@@ -54,6 +54,9 @@ If a prompt appears on the second open, find where it comes from and tell the me
 - **A duplicate connector choice**, asked once per version of the dashboard when the member has two connectors with the same name.
 Never claim a prompt is gone unless you tested it. If you cannot open the page here to test, say so, and give the member the steps to run the test themselves.
 
+## An unpublished dashboard
+If the dashboard cannot be published yet, save its Dashboards entry with Status Draft and an empty Artifact link (never a placeholder), and add the line "Not published yet" to the entry's page body. A task link that needs the dashboard's address waits until it is published. On publish, set Status to Active and fill the link.
+
 ## Verify after publishing
 Follow the artifact guidance: do one functional pass after the first publish (read back each data collection the page writes, and check that what the rules hide is hidden), and tell the member in one line what you exercised and what you could not.
 
