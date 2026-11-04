@@ -1,12 +1,16 @@
 # Starting Widgets for Any Industry
 
-Used by `SKILL.md` Step 4. These are suggestions, offered after discovery, and never forced. Keep only what the member would act on. Every widget reads from the member's own apps, or from a Notion tracker the member approved.
+Used by `SKILL.md` Step 5. These are suggestions, offered after discovery, and never forced. Keep only what the member would act on. Every widget reads from the member's own apps, or from a Notion tracker the member approved.
+
+## How the menu uses this
+The menu (`menu.md`) offers these as separate dashboards: the Command Center (Today, Email, Tasks, and a card for each other dashboard), a CRM dashboard (for members with a CRM), Content, Money, and one industry dashboard from the sections below.
 
 ## For almost everyone
 - **Today:** appointments and calls from the calendar.
 - **Email:** emails that need a reply, with drafted replies in the member's voice.
 - **Tasks:** from Notion, and from the CRM if connected.
 - **Important dates:** deadlines from the CRM or the calendar, or a Notion tracker.
+- **Pipeline value and clients by stage** (a CRM or a list of opportunities): the count and the value in each stage, and each client with the last touch. If the member wants profit shown, multiply by their own margin or rate and show the math, labeled "Potential, not guaranteed". If the member has no rate or margin, show value only. Never use a typical rate. See "Potential revenue" and "Clients by stage" in `widgets.md`.
 - **Money snapshot:** the quarter's targets against actual from `/hi5-goals`, and cash in if a finance tool is connected.
 - **Marketing snapshot:** the Marketing Hub and Content Planner at a glance.
 

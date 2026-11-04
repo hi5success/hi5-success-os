@@ -1,6 +1,6 @@
 ---
 name: hi5-self
-description: Personality and communication profile builder for Hi5 Success OS. Assesses the member's behavioral style, decision-making patterns, energy type, and communication preferences using 30 guided questions with multiple choice answers. Also builds a profile for a teammate, saved in the People database, so messages can fit how each person reads best. Used to tailor all Hi5 skill outputs to the member's personality. Triggers when the user runs /hi5-self, says "personality assessment", "learn about me", or "profile assessment". Can also be triggered automatically at the end of /hi5-setup.
+description: Personality and communication profile builder for Hi5 Success OS. Assesses the member's behavioral style, decision-making patterns, energy type, and communication preferences using 30 guided questions with multiple choice answers. Also builds a profile for a teammate, saved in the People database, so messages can fit how each person reads best. Used to tailor all Hi5 skill outputs to the member's personality. Triggers when the user runs /hi5-self, says "personality assessment", "learn about me", "how do I communicate", "profile my teammate", "how should I message my team", or "profile assessment". Can also be triggered automatically at the end of /hi5-setup.
 ---
 
 # Hi5 Self: Personality Profile Skill
@@ -9,6 +9,7 @@ description: Personality and communication profile builder for Hi5 Success OS. A
 Learn how the member thinks, communicates, makes decisions, and is motivated. Store this profile in their Master Profile so every Hi5 skill, business plan, scripts, emails, goals, is tailored to their personality and not a generic output.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - One question at a time
 - Always provide multiple choice options. They can always add more detail after selecting
 - Never rush: this is one of the most valuable things we can capture

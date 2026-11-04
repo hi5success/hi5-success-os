@@ -1,6 +1,6 @@
 ---
 name: hi5-landing
-description: Writes landing page copy and structure for lead magnets, opt-ins, and campaign pages. Designed to convert traffic into leads with a single focused CTA. Works for any industry. Triggers when the user runs /hi5-landing, says "write a landing page", "lead magnet page", "opt-in page", or "build a landing page".
+description: Writes landing page copy and structure for lead magnets, opt-ins, and campaign pages. Designed to convert traffic into leads with a single focused CTA. Works for any industry. Triggers when the user runs /hi5-landing, says "write a landing page", "lead magnet page", "opt-in page", "build a landing page", or "page for my free guide".
 ---
 
 # Hi5 Landing: Landing Page Copy Writer
@@ -9,6 +9,7 @@ description: Writes landing page copy and structure for lead magnets, opt-ins, a
 Write high-converting landing pages for lead magnets, guides, valuation or quote offers, workshop registrations, and any campaign that needs a dedicated page.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile for market, niche, and voice.
 - Landing pages have ONE goal and ONE CTA. Never multiple.
 - Every element serves the conversion.

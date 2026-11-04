@@ -1,6 +1,6 @@
 ---
 name: hi5-next
-description: Guides the member to the best next step in Hi5 Success OS. Reads their progress from Notion, recommends one next step with a short reason and two alternatives, and offers to start it. Read-only, and it never skips ahead to skills that have not shipped. Triggers when the user runs /hi5-next, says "what should I do next", "what's next", "where do I start", "what can I do", or "help me pick a skill".
+description: Guides the member to the best next step in Hi5 Success OS. Reads their progress from Notion, recommends one next step with a short reason and two alternatives, and offers to start it. Read-only, and it never skips ahead to skills that have not shipped. Triggers when the user runs /hi5-next, says "what should I do next", "what's next", "where do I start", "what can I do", "I'm stuck", or "help me pick a skill".
 ---
 
 # Hi5 Next: Your Best Next Step
@@ -53,8 +53,8 @@ Recommend the first one that applies:
 - `industry_flow` is `real-estate`, Real Estate OS is installed, the member's `crm` is GoHighLevel, and the Page IDs section has no `crm_map_page_id`: /hi5-re-crm, and say to choose Map my CRM. Offer it only after any weekly check-in nudge.
 - Business Numbers has a goal and `current_quarter` is set, and the last weekly check-in (`last_check_in`) is more than 7 days ago, or no check-in is logged and the quarter began more than 7 days ago: /hi5-goals, and say to choose a weekly check-in.
 - Business Numbers has `current_quarter` and `last_check_in`, and `last_review_date` is missing or more than 30 days ago, and the quarter has at least two check-ins or two weeks or fewer left: /hi5-bizreview. Offer it after any weekly check-in nudge, never before it.
-- The Content Planner has no Scheduled video with a Publish Date in the next 14 days: /hi5-yt-plan (skip if they have no channel).
-- A Scheduled video publishes in the next 7 days and none is Scripted: /hi5-yt-script (skip if they have no channel).
+- The Content Planner has no Planned or Scheduled piece with a Publish Date in the next 14 days: /hi5-content-plan, and say to choose Plan my month.
+- A Planned or Scheduled video publishes in the next 7 days and its row has no script: /hi5-content-plan, and say to choose Write a script (skip if they have no channel).
 - The newest Newsletter row in the Marketing Hub is older than their `newsletter_frequency` allows (weekly 8 days, bi-weekly 16 days, monthly 35 days): /hi5-newsletter.
 - The newest SEO Strategy row is older than 90 days: /hi5-seo.
 - The newest SEO Audit row (or `last_site_audit`) is older than 90 days: /hi5-site-audit, and say to run it again after any website change.

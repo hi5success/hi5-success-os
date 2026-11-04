@@ -1,6 +1,6 @@
 # Discovery Interview
 
-Used by `SKILL.md` Step 3. Discovery comes first and widgets serve the answers. Scan first and skip anything the Master Profile, the personality profile, the Dashboards entry, and the connected apps already answer. Ask a few questions at a time, and show what you inferred as statements the member can correct.
+Used by `SKILL.md` Step 4, after the menu. Run it only for the dashboards the member picked. Discovery comes first and widgets serve the answers. Scan first and skip anything the Master Profile, the personality profile, the Dashboards entry, and the connected apps already answer. Ask a few questions at a time, and show what you inferred as statements the member can correct.
 
 ## The questions
 1. **First look.** What do you check first every morning? What do you open many times a day?
@@ -9,6 +9,8 @@ Used by `SKILL.md` Step 3. Discovery comes first and widgets serve the answers. 
 4. **Who and where.** Who will use this: just you, a team, or an assistant? Do they need to see the same things? Do you use it mostly on a phone or a computer?
 5. **What you track now.** Where do you track things today (a spreadsheet, a notebook, a CRM, a board, your head)? Any dashboards you already have? Offer to review one they paste or describe.
 6. **Anything you need to act on, not just see.** What would you want to do with one click (reply, make a task, mark something done, move something)?
+7. **Where tasks live.** Ask: "Where do you keep your tasks?" A) GoHighLevel B) Asana, ClickUp, Todoist, or another app C) Notion. Then scan that tool and write tasks there (see `tasks.md`). If their tool has no connector, use Notion and say so once. Never split tasks across two places.
+8. **Email to task** (when email is connected and the Command Center is picked). Explain: "Every email that needs a reply becomes a task, linked to the thread, and the task closes when you reply or click No reply needed." Ask for approval of how it runs: a scheduled task they approve, or on open if scheduled tasks are not available (see `email-tasks.md`).
 
 ## Follow-Up Queue questions (add when the member wants follow-ups)
 Full detail in `follow-up-queue.md`. Scan the CRM first so the questions use the member's real pipelines and stages.
@@ -33,6 +35,7 @@ For every item they mention, ask: **"If you saw this, what would you do?"**
 - Each dropped item with the reason.
 - Who uses it and on what device.
 - Existing dashboards reviewed, and what to keep or replace.
+- The task home, and how email to task runs.
 
 ## Rules
 - Never suggest a widget the member did not need. Presets in `industries/` are suggestions, offered after discovery, never forced.

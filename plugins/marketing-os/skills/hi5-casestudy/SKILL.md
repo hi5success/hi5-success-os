@@ -1,6 +1,6 @@
 ---
 name: hi5-casestudy
-description: Turns a client success story or closed deal into a professional case study. Creates a compelling narrative that builds credibility and can be used across website, social, email, and presentations. Works for any industry. Triggers when the user runs /hi5-casestudy, says "write a case study", "turn this deal into a story", "client success story", or "closed deal story".
+description: Turns a client success story or closed deal into a professional case study. Creates a compelling narrative that builds credibility and can be used across website, social, email, and presentations. Works for any industry. Triggers when the user runs /hi5-casestudy, says "write a case study", "turn this deal into a story", "client success story", "closed deal story", or "write up this client win".
 ---
 
 # Hi5 Case Study: Client Success Story Builder
@@ -9,6 +9,7 @@ description: Turns a client success story or closed deal into a professional cas
 Transform a client win into a powerful case study that builds trust, demonstrates expertise, and generates referrals. The best marketing is a real story told well.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile for market, niche, and voice.
 - Match behavioral style for tone.
 - Every case study needs a clear before, during, and after structure.

@@ -12,7 +12,7 @@ Only suggest the Projects that match what the member will actually use. Skip the
 
 | Project name | Purpose (one line) | Skills to run there |
 |---|---|---|
-| Hi5: YouTube and Content | Plan, script, and repurpose your video content | /hi5-yt-research, /hi5-yt-plan, /hi5-yt-script, /hi5-repurpose |
+| Hi5: YouTube and Content | Plan, script, edit, and publish your video content | /hi5-content-plan, /hi5-video-edit, /hi5-youtube |
 | Hi5: Social Media | Write captions and posts for every platform | /hi5-social, /hi5-linkedin |
 | Hi5: Website and SEO | Get found on Google and convert visitors | /hi5-seo, /hi5-website, /hi5-blog, and /hi5-site-audit when it ships |
 | Hi5: Email and Nurture | Follow up with leads and stay top of mind | /hi5-email, /hi5-newsletter |

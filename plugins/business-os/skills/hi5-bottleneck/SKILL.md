@@ -9,6 +9,7 @@ description: Finds what is slowing a business owner down and fixes it with the l
 Help any business owner find the few tasks that cost the most time, and fix each with the lightest tool that works: remove the step, use something Hi5 already does, use a platform's own automation, use AI help, or hire an AI employee. It works in any project or conversation, on one task or on the whole business. Fix one thing first, then plan the rest.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Scan first, then ask.** Before asking anything, read what exists (Step 1). Say in one or two lines what you found, and ask only about what is missing or unclear.
 - **The lightest fix that works wins.** Use the fix ladder in `references/fix-ladder.md` in order. Never recommend an AI employee for something a skill, a widget, or a platform setting already does.
 - **Check Hi5 first.** Before recommending anything new, check the installed Hi5 skills and the dashboard widgets. If one already does the job, point to it and stop. Never rebuild what exists.

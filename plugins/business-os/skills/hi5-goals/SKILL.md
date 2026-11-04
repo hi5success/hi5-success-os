@@ -1,6 +1,6 @@
 ---
 name: hi5-goals
-description: Sets and tracks quarterly goals from the member's business plan. Breaks the annual target into the quarter and into 13 weeks of milestones, shows the math step by step with the member's own numbers, and runs a weekly check-in. Works for any brokerage or business and never assumes anyone's commission rules. Reads the numbers saved by /hi5-bizplan. Triggers when the user runs /hi5-goals, says "set my goals", "quarterly goals", "90 day plan", or "weekly check in".
+description: Sets and tracks quarterly goals from the member's business plan. Breaks the annual target into the quarter and into 13 weeks of milestones, shows the math step by step with the member's own numbers, and runs a weekly check-in. Works for any brokerage or business and never assumes anyone's commission rules. Reads the numbers saved by /hi5-bizplan. Triggers when the user runs /hi5-goals, says "set my goals", "quarterly goals", "90 day plan", "weekly check in", "track my goals", or "am I hitting my goals".
 ---
 
 # Hi5 Goals: Quarterly Goals and Weekly Check-ins
@@ -9,6 +9,7 @@ description: Sets and tracks quarterly goals from the member's business plan. Br
 Turn the member's business plan into this quarter's targets and a 13 week plan, then keep them on track with a short weekly check-in. Show every calculation step by step, using only the member's own numbers, so they can check each line.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile first. Never ask for something it already has.
 - One question at a time.
 - **Never hardcode any brokerage's or business's rules.** Cap amounts, splits, fees, awards, and revenue share differ everywhere. Use only what the member told /hi5-bizplan. If a rule is unclear, ask. Do not assume.
@@ -105,6 +106,6 @@ When the member chooses C, or a new quarter has started:
 
 ## NEXT STEP
 
-Recommend ONE next step, following the Recommended path in /hi5-setup. If real estate Stage 4 or Stage 5 is not complete, recommend /hi5-setup and Continue setup. Otherwise, if Content OS is installed, recommend /hi5-yt-setup. If not, recommend /hi5-email. Always add: "Do your first weekly check-in in 7 days. Run /hi5-goals and choose a weekly check-in, and I'll nudge you through /hi5-next."
+Recommend ONE next step, following the Recommended path in /hi5-setup. If real estate Stage 4 or Stage 5 is not complete, recommend /hi5-setup and Continue setup. Otherwise, if Content OS is installed, recommend /hi5-content-plan. If not, recommend /hi5-email. Always add: "Do your first weekly check-in in 7 days. Run /hi5-goals and choose a weekly check-in, and I'll nudge you through /hi5-next."
 
 End your message with: "You can run /hi5-next any time and I'll tell you your best next step."

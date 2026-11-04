@@ -1,12 +1,12 @@
 # Notion as the Database
 
-Used by `SKILL.md` Steps 4, 5, and 7. Notion stores anything the dashboard tracks that does not live in another app. The dashboard reads from it and writes to it.
+Used by `SKILL.md` Steps 5, 6, and 8. Notion stores anything the dashboard tracks that does not live in another app. The dashboard reads from it and writes to it.
 
 ## The rule
 - **Data in an app stays in the app.** If it lives in the CRM, the email, or the calendar, read it from there. Never copy it into Notion just to display it.
 - **No app, use Notion.** A transaction checklist and documents needed, important dates the CRM does not hold, goals and KPIs, client onboarding steps, content status, and custom trackers go in a Notion database.
 - **Reuse before create.** Before creating anything, check for an existing database that already fits, and use it:
-  - Tasks: the Tasks database in the workspace.
+  - Tasks: the member's task home (see `tasks.md`). When Notion is the home, the Tasks database in the workspace, found by `tasks_db_id` in the Page IDs, then by the title "Tasks". Anything that creates it saves `tasks_db_id` right away.
   - Content and marketing: the Marketing Hub and the Content Planner.
   - Goals and numbers: the Business Numbers section, the Quarterly Goals page, and the Business Reviews page.
   - Voices: the Voice Library.
@@ -24,15 +24,15 @@ Used by `SKILL.md` Steps 4, 5, and 7. Notion stores anything the dashboard track
 Dashboard actions that create or update tracking (make a task, mark a document received, change a status, add a date) write to the matching Notion database. Each write is one row or one property change from a button click, and the action says what it will do. Never write anything the member did not click.
 
 ## The Dashboards database
-One row per dashboard (database title "Dashboards", ID in `dashboards_db_id`).
+One row per dashboard (database title "Dashboards", ID in `dashboards_db_id`). If two Dashboards databases exist, use the one in Page IDs, never create or delete one, and tell the member in one line. The Command Center and every other dashboard each have their own row, built and updated on their own.
 
-**Properties:** Name (title), Status (Active, Draft, Retired), Version (number), Date (date), Industry (text), Artifact link (url).
+**Properties:** Name (title), Type (select: Command Center, CRM, Content, Money, Transactions, Industry, Custom), Status (Active, Draft, Retired), Version (number), Date (date), Industry (text), Artifact link (url). An unpublished dashboard has Status Draft, an empty Artifact link (never a placeholder), and the line "Not published yet" at the top of its page body. On publish, set Status to Active, fill the link, and remove that line. If an existing Dashboards database has no Type property, add it on first use, fill it for the rows it already has from their names, and say so in one line.
 
 **Page body, in this order:**
 > Dashboard: {{name}}, version {{N}}, {{date}}. Re-run /hi5-dashboard to update it.
 
-### Pages
-The pages, in order, each with one line on its purpose. The first is the Command Center.
+### Sections
+The sections of this dashboard, in order, each with one line on its purpose. The Command Center row also lists its cards, each with the name of the dashboard it summarizes and that dashboard's own artifact link.
 
 ### Widgets
 One line per widget: the page it is on, its name, and its action buttons.
@@ -50,7 +50,10 @@ Each database by name and ID, whether it already existed or was created for this
 If the dashboard has a Follow-Up Queue widget: the stale days per group, the pipelines and stages included and skipped, the channel per group, the list length, whether sends are logged as a CRM note (and that the member was told), the freshness approach chosen and why, the scheduled task (what it does and the time of day, if the member approved it), and the Follow-Up Queue database ID and fields. See `follow-up-queue.md`.
 
 ### Email button settings
-The no-reply action chosen (nothing, add a label, mark as read, or archive), the label name if any, and whether the spam confirm has been given.
+The no-reply action chosen (nothing, add a label, mark as read, or archive), the label name if any, whether the spam confirm has been given, and how email to task runs (a scheduled task the member approved, with its schedule, or on open).
+
+### Task home
+Where the member keeps tasks (GoHighLevel, another app and which list, or Notion), what the scan found (lists and fields), and whether their own tool was skipped for lack of a connector (so a later update can offer it once). See `tasks.md`.
 
 ### Discovery answers
 The first-look list, the slips, the weekly decisions, who uses it, and the dropped items with the reason.

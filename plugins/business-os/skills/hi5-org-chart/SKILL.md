@@ -1,6 +1,6 @@
 ---
 name: hi5-org-chart
-description: Builds, shows, and edits the org chart of the member's humans and AI employees from the People and AI Employees databases. Scans the workspace first, then interviews for roles, who reports to whom, and the AI tools or assistants already in use. Every AI employee has exactly one human manager, and each human is shown with their AI team beneath them. Outputs a clean mobile friendly Claude artifact with Notion as the source of truth, edits by chat after the member's OK, and highlights humans with no AI help, overloaded humans, AI employees with no manager or review date, and roles nobody owns. Triggers when the user runs /hi5-org-chart, says "org chart", "who reports to whom", "my team structure", or "add an AI employee to the chart".
+description: Builds, shows, and edits the org chart of the member's humans and AI employees from the People and AI Employees databases. Scans the workspace first, then interviews for roles, who reports to whom, and the AI tools or assistants already in use. Every AI employee has exactly one human manager, and each human is shown with their AI team beneath them. Outputs a clean mobile friendly Claude artifact with Notion as the source of truth, edits by chat after the member's OK, and highlights humans with no AI help, overloaded humans, AI employees with no manager or review date, and roles nobody owns. Triggers when the user runs /hi5-org-chart, says "org chart", "who reports to whom", "my team structure", "show my team", "who does what", or "add an AI employee to the chart".
 ---
 
 # Hi5 Org Chart: Humans and AI Employees in One Picture
@@ -9,6 +9,7 @@ description: Builds, shows, and edits the org chart of the member's humans and A
 Show who is on the team, who reports to whom, and which AI employees work for which human, so nobody and nothing is left without an owner. The People and AI Employees databases in Notion are the source of truth. The chart is a picture of them.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Scan first, then ask.** Read the People database, the AI Employees database, the Master Profile, and (if it exists) the Bottlenecks database before asking anything. Say in one or two lines what you found. Ask only about what is missing.
 - **Every AI employee has exactly one human manager.** Never zero, never two. If a manager leaves or is retired, every AI employee under them must be given a new manager before the change is saved.
 - **Notion is the source of truth.** The chart is rebuilt from the databases. Never keep a fact only in the chart.

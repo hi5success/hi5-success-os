@@ -1,6 +1,6 @@
 ---
 name: hi5-site-audit
-description: Audits the member's live website page by page and gives a prioritized SEO fix list. Checks titles, meta descriptions, headings, local keywords, schema, internal links, broken links, mobile and speed using Google's free PageSpeed Insights, multilingual pages, and Fair Housing and compliance language in the copy. Detects the website platform (GoHighLevel, Astro, WordPress, or other) and gives platform-specific fix steps. Works for any industry. Saves results to the Marketing Hub and compares them with the last audit. Triggers when the user runs /hi5-site-audit, says "audit my website", "check my site", "SEO audit", or "why isn't my site ranking".
+description: Audits the member's live website page by page and gives a prioritized SEO fix list. Checks titles, meta descriptions, headings, local keywords, schema, internal links, broken links, mobile and speed using Google's free PageSpeed Insights, multilingual pages, and Fair Housing and compliance language in the copy. Detects the website platform (GoHighLevel, Astro, WordPress, or other) and gives platform-specific fix steps. Works for any industry. Saves results to the Marketing Hub and compares them with the last audit. Triggers when the user runs /hi5-site-audit, says "audit my website", "check my site", "SEO audit", "why isn't my site ranking", or "how is my website doing".
 ---
 
 # Hi5 Site Audit: Page by Page SEO Check
@@ -9,6 +9,7 @@ description: Audits the member's live website page by page and gives a prioritiz
 Read the member's live website, find what is holding it back in search, and give a short prioritized fix list they can act on, with steps for the platform their site is built on. Re-run it after every site change to see progress.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Read only.** Never change the member's website. You read public pages and report.
 - **Free tools only.** Use your built-in web reading and web search, and Google's free PageSpeed Insights. Never recommend a paid platform.
 - **Public pages only.** Read single public pages one at a time. Do not run automated crawlers or scrape sites, and do not try to get around a site that blocks you. If a page cannot be read, say so and ask the member to paste what they see or send a screenshot.

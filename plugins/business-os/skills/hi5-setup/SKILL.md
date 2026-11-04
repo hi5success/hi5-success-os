@@ -1,6 +1,6 @@
 ---
 name: hi5-setup
-description: Master onboarding skill for Hi5 Success OS. Connects the member's Notion, captures their industry, sets up their Hi5 Success OS workspace from the official Hi5 template (or builds a basic one), and runs a staged, resumable interview that fills the Master Profile every other Hi5 skill reads. Run this first before any other Hi5 skill. Run it again any time to continue setup, update the profile, or add to it. Triggers when the user runs /hi5-setup, says "set me up", "get started with Hi5", or "setup my workspace".
+description: Master onboarding skill for Hi5 Success OS. Connects the member's Notion, captures their industry, sets up their Hi5 Success OS workspace from the official Hi5 template (or builds a basic one), and runs a staged, resumable interview that fills the Master Profile every other Hi5 skill reads. Run this first before any other Hi5 skill. Run it again any time to continue setup, update the profile, or add to it. Triggers when the user runs /hi5-setup, says "set me up", "get started with Hi5", "setup my workspace", "continue setup", "update my profile", "refresh my skill guide", or "connect my Notion".
 ---
 
 # Hi5 Success OS: Master Setup
@@ -9,6 +9,7 @@ description: Master onboarding skill for Hi5 Success OS. Connects the member's N
 Onboard a Hi5 Success OS member. Connect Notion, detect their industry, set up their workspace from the Hi5 template (or build a basic one), and fill their Master Profile in stages so they can start using skills after about 10 minutes and deepen the profile whenever they like.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Ask ONE question at a time, never combine questions
 - Be warm, encouraging, and conversational, not robotic
 - Always explain WHY you are asking before sensitive questions
@@ -71,7 +72,7 @@ The workspace root page is titled "Hi5 Success OS Workspace" and its first line 
 
 > "Welcome to Hi5 Success OS. I'm glad you're here.
 >
-> Here's how this works. Hi5 saves your business profile and everything we create together in Notion, a free tool. That's how every Hi5 skill knows your business without you explaining it again. Notion is required for now. If you don't have it yet, I'll walk you through setting it up, which takes about 2 minutes. Other storage options are coming later.
+> Here's how this works. Hi5 builds your business brain: one place that holds everything true about your business, so any AI (or teammate) can work without you re-explaining it. Every skill and the setup order are in the Hi5 Vault: vault.hi5success.com. Hi5 saves your business profile and everything we create together in Notion, a free tool. That's how every Hi5 skill knows your business without you explaining it again. Notion is required for now. If you don't have it yet, I'll walk you through setting it up, which takes about 2 minutes. Other storage options are coming later.
 >
 > Setup is in stages. The first one takes about 10 minutes:
 > 1. Get Notion ready
@@ -245,6 +246,8 @@ When every group is done, mark Stage 1 complete with today's date.
 
 ## PHASE 6: Wrap Up
 
+Before the message below, do two things. First, make Hi5 skills the default: follow `references/hi5-first.md` (the member pastes one line into Claude's personal preferences, asked once). Second, make sure the Brain Index page exists and its ID is saved as `brain_index_page_id` (see `templates/workspace-build.md`). The Skill Guide is gone: every skill and the setup order live in the Hi5 Vault (vault.hi5success.com), so never build or offer a Skill Guide. Then give the wrap-up.
+
 Use the member's name and these facts. Say what was created, what works now, and what gets better with each remaining stage (use the stages table, only the stages available for their industry).
 
 > "You're all set, [name]. Here's what was just created:
@@ -254,7 +257,9 @@ Use the member's name and these facts. Say what was created, what works now, and
 > ✅ Content Planner: ready for your first ideas
 > ✅ Business OS pages: ready for your business plan
 > ✅ Marketing Hub: ready for your first campaign
-> ✅ Skill Guide: your reference for every Hi5 skill
+> ✅ Brain Index: the map of your brain, and the first page any AI reads
+> ✅ Every skill and the setup order are in the Hi5 Vault: vault.hi5success.com
+> ✅ Hi5 first line: shown, so Claude reaches for your Hi5 skills without you remembering their names
 >
 > **You can start using skills right now.** Here's what the other stages add:
 > [one line per available stage: what it is, time, which skills improve]
@@ -273,11 +278,11 @@ If they want to continue, run the next available stage from the industry file.
 
 On a re-run, quietly check the member's databases against `templates/workspace-build.md`. This is how members who set up earlier receive anything that was added later, and how a missing database never makes a skill's save fail.
 
-**1. Missing databases.** For each database defined in `templates/workspace-build.md` that Hi5 skills save to (the Content Planner, the Marketing Hub, the Voice Library, the Dashboards database, the People database, the AI Employees database, and the Bottlenecks database), confirm that the saved ID (`content_planner_db_id`, `marketing_hub_db_id`, `voice_library_db_id`, `dashboards_db_id`, `people_db_id`, `ai_employees_db_id`, `bottlenecks_db_id`) opens a database.
+**1. Missing databases.** For each database defined in `templates/workspace-build.md` that Hi5 skills save to (the Content Planner, the Marketing Hub, the Voice Library, the Dashboards database, the People database, the AI Employees database, the Bottlenecks database, Tasks, SOPs, Software Stack, Offers and Services, Proof, the Decisions Log, AI Memory, and the two meeting notes databases), confirm that the saved ID (`content_planner_db_id`, `marketing_hub_db_id`, `voice_library_db_id`, `dashboards_db_id`, `people_db_id`, `ai_employees_db_id`, `bottlenecks_db_id`, `tasks_db_id`, `sops_db_id`, `software_stack_db_id`, `offers_db_id`, `proof_db_id`, `decisions_log_db_id`, `ai_memory_db_id`, `client_meetings_db_id`, `internal_meetings_db_id`) opens a database. Find the Tasks database by the title "Tasks".
 - If it does not, search under the root page for a database with that exact title. If you find one, fix the saved ID in Page IDs.
 - If none exists, say: "Your [name] isn't in your workspace yet. I can add it with the standard Hi5 layout. OK?" If they agree, create ONE database with that name inside the root page, using the properties and options in `templates/workspace-build.md`, and save its ID in Page IDs. If they say no, skip it and do not ask again in this session.
 - Never create a duplicate, never create any other database, and never touch existing rows.
-- Members who duplicated the official Hi5 template already have a Marketing Hub, so they will not see this. Members who copied the template before the Voice Library, the People database, the AI Employees database, or the Bottlenecks database was added will be offered it once.
+- Members who duplicated the official Hi5 template already have a Marketing Hub, so they will not see this. Members who copied the template before a database was added (for example the Voice Library, Tasks, SOPs, or the Decisions Log) will be offered it once. A copy with `template_version` 2 or lower is offered all the new databases and the Brain Index in one question, and each is created only on the member's OK. Offer the five Sample SOPs (Content Management, Video Editing, Social Media Scheduling, YouTube Publishing, Blog Writing) with the SOPs database, as Status Sample rows the member can set up later.
 
 **2. Missing select options.** For the Content Planner (Status, Deliverable Type, and the others with listed options) and the Marketing Hub (Type and Status), compare the live options with `templates/workspace-build.md`.
 - If every option is there, say nothing.
@@ -288,8 +293,14 @@ This is how members who set up earlier receive new labels such as the Marketing 
 
 **3. Template items.** Read the line that starts "Template items:" in `templates/workspace-build.md`. Confirm each page and database on it exists under the root page, using the saved ID first and the exact title second, and fix any wrong ID in Page IDs.
 - If a page is missing, recreate only that page with the title and line given in `templates/workspace-build.md`, save its ID, and tell the member in one line.
-- A missing Content Planner, Marketing Hub, Voice Library, Dashboards, People, AI Employees, or Bottlenecks database follows item 1.
+- A missing database on the list in item 1 follows item 1. A missing Brain Index page is recreated with the content in `templates/workspace-build.md`, and its ID saved as `brain_index_page_id`. The Getting Started page is template-only, so never create or check it.
 - Never create a duplicate, never remove or rename anything, and never touch rows.
+
+**4. The Hi5 first line.** If `hi5_first_shown` is not in Setup Status (a member who set up before this step existed), offer it once: "Want one small step that makes Claude reach for your Hi5 skills on its own?" If yes, follow `references/hi5-first.md`. If no, do not ask again in this session.
+
+**5. Skill Guide and Reference Hub.** They were removed from the template. If the member still has one, leave it alone. Never recreate it, never refresh it, and point to the Hi5 Vault (vault.hi5success.com) for skills and the setup order.
+
+**6. Content Planner statuses.** If the Content Planner has old Status options (Idea, Planned, Scripted, Draft), offer once to add the current ones (Not Started, Brainstorming, and the rest of the list in `templates/workspace-build.md`) and the new properties (Role, Channel, Review Notes, Published Links, Status Changed). Also offer the one property the template lacks, Needs from member (text), and accept Carousel Post as the carousel option. Say each offer once. Keep every option and property the member has. Never rename or remove.
 
 ## PROFILE UPDATE
 
@@ -312,16 +323,18 @@ When /hi5-setup is run and a workspace already exists, read the Master Profile's
 > 3. Redo a stage
 > 4. Add a neighborhood *(real estate only)*
 > 5. Run the setup self-test
-> 6. Show me what I can do"
+> 6. Show me what I can do
+> 7. Show me the Hi5 first line again, or point me to the Hi5 Vault"
 
-Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Options 5 and 6 are always shown.
+Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Options 5, 6, and 7 are always shown. If the member asks for the Skill Guide, say it moved: every skill and the setup order are in the Hi5 Vault (vault.hi5success.com).
 
 - **1** → run that stage from the industry file. If Stage 1 is unfinished, resume at the first question group that is not saved yet (see Checkpoints in Phase 5) instead of starting over.
 - **2** → ask which section (Identity, Market, Tools, Presence, Brand, or another section on the profile) or which saved page (such as Compliance Guardrails or Voice Profile), show the current values, ask what to change, confirm, then update that section only.
 - **3** → ask which stage, then run it. Show the current saved content first and ask "Replace it or add to it?"
 - **4** → run the neighborhoods stage for one new area, save it as a new child page, and add it to the Page IDs section.
 - **5** → run the SELF-TEST below.
-- **6** → show what they can do, grouped by goal. Read the "Goal menu" in `../hi5-next/references/path.md` and show only the skills whose Status is `live`, with one short line each, for these goals: YouTube content, social media, blog and SEO, email and newsletter, website and landing pages, and business plan and goals. Ask which goal they want to work on, then recommend the first step for it (the same logic as /hi5-next, which is read-only). Mention that /hi5-next can do this any time.
+- **7** → run `references/hi5-first.md` to show the Hi5 first line again, or give the Hi5 Vault link (vault.hi5success.com).
+- **6** → show what they can do, grouped by goal. Read the "Goal menu" in `../hi5-next/references/path.md` and show only the skills whose Status is `live`, with one short line each, for these goals: YouTube content, social media, blog and SEO, email and newsletter, website and landing pages, and business plan and goals. Ask which goal they want to work on, then recommend the first step for it (the same logic as /hi5-next, which is read-only). Mention that /hi5-next can do this any time, and that every skill is in the Hi5 Vault (vault.hi5success.com).
 
 Never rebuild the workspace on a re-run. If a page is missing, recreate only that page and update its ID.
 

@@ -1,6 +1,6 @@
 ---
 name: hi5-newsletter
-description: Builds a weekly or monthly newsletter for the member's database. Pulls from their content, market, and brand voice to create a consistent touchpoint that keeps them top of mind. Works for any industry. Triggers when the user runs /hi5-newsletter, says "write my newsletter", "build a newsletter", or "monthly email".
+description: Builds a weekly or monthly newsletter for the member's database. Pulls from their content, market, and brand voice to create a consistent touchpoint that keeps them top of mind. Works for any industry. Triggers when the user runs /hi5-newsletter, says "write my newsletter", "build a newsletter", "monthly email", "weekly email to my list", or "newsletter ideas".
 ---
 
 # Hi5 Newsletter: Newsletter Builder
@@ -9,6 +9,7 @@ description: Builds a weekly or monthly newsletter for the member's database. Pu
 Create a consistent newsletter that keeps the member top of mind with their database. Each issue combines useful insight, a personal story or content, and a clear CTA, all in their voice.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile for market, niche, voice, and platforms.
 - Match behavioral style and the Voice Profile for tone.
 - **Voice.** Read `voice_library_db_id` from the Page IDs and `default_voice` from the Voice Profile page. If the member names a voice, or the work is for a client or a teammate, use that voice's Voice Library entry (its guide and its Learned section) or the installed voice skill. Otherwise use the member's own voice (`default_voice`). If there is no voice entry, fall back to the Voice Profile and the Master Profile voice notes. If several voices could apply and it is unclear which, ask which one. Never mix voices in one piece. The voice controls style only: Hi5 rules always win (compliance and advertising rules, privacy and consent rules, no em dashes, drafts only, and every other Hi5 rule). When the member edits a draft or says "I'd never say that", offer to save the lesson to that voice's Learned section, one lesson at a time, only with their OK. To create or update a voice, point to /hi5-voice-creator.

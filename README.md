@@ -10,7 +10,7 @@ It works for any industry. It is strongest for real estate agents, teams, and br
 
 - **Claude** (the Cowork plugin marketplace)
 - **Notion** (free at [notion.so](https://www.notion.so)). Notion is required for now, because that is where your profile and your work are saved. If you don't have it, `/hi5-setup` walks you through creating a free account and connecting it, which takes about 2 minutes.
-- **A YouTube Data API key** (free), only if you use the YouTube research skills. `/hi5-yt-setup` walks you through getting one.
+- **A YouTube Data API key** (free), only if you use the YouTube research skills. the setup in `/hi5-content-plan` walks you through getting one.
 
 ---
 
@@ -67,7 +67,10 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-voice-creator` | Creates a voice skill that writes like one specific person (your own, a teammate's, or a client's), so you can call it by name, like jacobs-voice. Built from your real writing and speaking samples, saved in a Voice Library in Notion, installable as a real skill, with a downloadable backup. It keeps learning from your corrections. Every Hi5 writing skill can use it. |
 | `/hi5-bottleneck` | Finds what is slowing you down and fixes it with the lightest tool that works, in this order: simplify the step, an existing Hi5 skill or dashboard widget, platform automation, AI help, an AI employee, or keep it human. Works on one task or the whole business, owner only or the whole team. Ranks bottlenecks by hours, pain, and how automatable they are, shows estimated hours saved as a range, builds the safe Claude side pieces with your OK, gives exact steps for platforms it never touches, and writes AI employee job descriptions with one human manager each. Saves what it finds in a Bottlenecks database and reviews progress on the next run |
 | `/hi5-org-chart` | Builds, shows, and edits the org chart of your people and your AI employees from the People and AI Employees databases. Every AI employee has exactly one human manager, and each human is shown with their AI team beneath them. Gives you a clean, mobile friendly chart, edits by chat after your OK, and highlights humans with no AI help yet, overloaded people, AI employees with no manager or review date, and roles nobody owns |
-| `/hi5-dashboard` | Builds a live dashboard for any business by first finding out what you need to see and act on each day. It helps you connect the apps you already use (email, calendar, CRM or GoHighLevel, tasks, chat, finance), interviews you, plans the pages and widgets with a data source for each, and builds a Claude artifact. Includes email actions (send one reply on click, make a task, no reply needed, spam), a CRM summary, today, important dates, tasks, a pipeline tracker, a Follow-Up Queue of people who need a follow-up with a recommended message ready to edit and send one at a time, and custom Notion trackers. Saved in a Dashboards database so it can be rebuilt or updated. |
+| `/hi5-library` | Builds your Coach Library, a Notion swipe file of the social posts and videos you learn from. Logs a link, a batch, or a whole saved folder from Instagram, TikTok, Facebook, or YouTube in your own logged-in browser (read only), saves the hook, main point, lesson, and pitch, and lets you search it for hooks and ideas |
+| `/hi5-advisor` | Builds your personal advisory board: ready-made roles, custom roles, simulated mentors built from the public content of creators you follow, and a Master Coach built from your own saves. Every advisor built from a real person is a labeled simulation for your own use |
+| `/hi5-board` | Runs a decision past your board. Each advisor gives an independent view, then you get a group summary, a recommended call, the biggest risk, and next steps. Meetings are saved to Notion, and decisions are reviewed at their follow-up date |
+| `/hi5-dashboard` | Builds live dashboards for any business, each as its own Claude artifact. After scanning your profile and connected apps it shows a menu (Command Center, CRM, Content, Money, and an industry one such as Transactions) and builds only what you pick. The Command Center is the daily feed (today, email, tasks, and a card for each other dashboard). Email opens inside the dashboard with an auto-drafted reply in your voice, every email that needs a reply becomes a task in your own task tool, and you send each reply with one click. Real estate adds potential revenue, clients by stage, and transactions |
 | `/hi5-bizplan` | Builds your business plan with the math shown step by step, using your own split, fees, and goals. Works for any brokerage or business |
 | `/hi5-goals` | Breaks your plan into this quarter's targets and a 13 week plan, shows the math from your own numbers, and runs a weekly check-in. Never assumes anyone's commission rules |
 | `/hi5-bizreview` | Reviews how you are doing against your plan for this quarter, last quarter, or the year to date. Compares actual with plan by client type or offer and by lead source, shows take-home using your own fees, finds the bottleneck, and gives up to three adjustments. Saves each review to your Business Reviews page. Works for any business |
@@ -75,13 +78,11 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 ### Content OS
 | Command | What it does |
 |---|---|
-| `/hi5-yt-setup` | Adds your content and voice details to your Master Profile and helps you get a YouTube API key |
-| `/hi5-yt-research` | Finds video ideas from keywords and competitors, scores them, and adds them to your Content Planner |
-| `/hi5-yt-plan` | Builds your monthly content calendar in Notion |
-| `/hi5-yt-script` | Writes a script or outline in your voice |
-| `/hi5-repurpose` | Turns a video or script into short form scripts, pull quotes, and snippets |
+| `/hi5-content-plan` | The Content Manager. Sets up your content calendar in Notion, builds your monthly plan for long-form videos, reels, statics, carousels, and blogs, researches topics and YouTube keywords, writes scripts and production notes, and sets your recording days. Research and scripts also work on their own with no setup |
+| `/hi5-video-edit` | The Video Editor. Edits in CapCut through the local bridge, finds the clips, saves the transcript of every video and clip, makes covers from your cover template, and exports to the right folder |
+| `/hi5-youtube` | The YouTube Manager, for long-form. Writes the title, description, chapters, and tags from the transcript, uploads and schedules through the local YouTube bridge, and leaves YouTube notes for social |
 | `/hi5-blog` | Writes an SEO blog post from a video, script, or topic |
-| `/hi5-social` | Writes platform specific captions |
+| `/hi5-social` | The Social Media Manager. Writes captions and posts for every platform, turns one video or script into short form scripts, quotes, and snippets, makes static posts and carousels, and schedules them |
 
 ### Marketing OS
 | Command | What it does |

@@ -56,11 +56,10 @@ if grep -rIl $'\xe2\x80\x94' plugins marketplace.json .claude-plugin README.md >
   done
 fi
 
-# 4. Every skill points members to /hi5-next (hi5-context is a reference file, not a command)
+# 4. Every skill points members to /hi5-next
 for skill_dir in plugins/*/skills/*/; do
   skill_name=$(basename "$skill_dir")
-  [ "$skill_name" = "hi5-context" ] && continue
-  grep -q '/hi5-next' "${skill_dir}SKILL.md" 2>/dev/null || ERRORS+=("$skill_name: SKILL.md never mentions /hi5-next. Every skill ends with a Next line")
+    grep -q '/hi5-next' "${skill_dir}SKILL.md" 2>/dev/null || ERRORS+=("$skill_name: SKILL.md never mentions /hi5-next. Every skill ends with a Next line")
 done
 
 # 5. path.md is the single source of truth for what /hi5-next recommends.
@@ -74,8 +73,7 @@ else
   # every skill folder has a row
   for skill_dir in plugins/*/skills/*/; do
     skill_name=$(basename "$skill_dir")
-    [ "$skill_name" = "hi5-context" ] && continue
-    echo "$rows" | awk -F'|' '{gsub(/[ `\/]/,"",$2); print $2}' | grep -qx "$skill_name" || ERRORS+=("path.md has no row for $skill_name. Add it, with a status of live or coming")
+        echo "$rows" | awk -F'|' '{gsub(/[ `\/]/,"",$2); print $2}' | grep -qx "$skill_name" || ERRORS+=("path.md has no row for $skill_name. Add it, with a status of live or coming")
   done
   # every row has a valid status that matches the folder
   while IFS= read -r row; do
@@ -93,10 +91,9 @@ else
         fi;;
       *) ERRORS+=("path.md row for $name has status '$status'. Use live or coming");;
     esac
-    # live skills must be in the README and the Skill Guide in workspace-build.md
+    # live skills must be in the README (the skills live in the Hi5 Vault, so there is no Skill Guide list here)
     if [ "$status" = "live" ]; then
       grep -q "/$name" README.md || ERRORS+=("README.md does not list /$name")
-      grep -q "/$name" plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md (Dashboard and Skill Guide) does not list /$name")
     fi
   done <<< "$rows"
 fi
@@ -203,7 +200,7 @@ done
 # 17. Every writing skill carries the shared voice rule (Voice Library, one voice per piece, Hi5 rules win)
 for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/real-estate-os/skills/*/; do
   sk=$(basename "$d")
-  case "$sk" in hi5-seo|hi5-site-audit|hi5-context|hi5-yt-plan|hi5-yt-research|hi5-yt-setup) continue;; esac
+  case "$sk" in hi5-seo|hi5-site-audit) continue;; esac
   grep -q '**Voice.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the shared voice rule")
   grep -q 'Voice Library' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md voice rule does not mention the Voice Library")
 done
@@ -214,7 +211,7 @@ done
 # 20. Every writing skill carries the shared reader rule, and /hi5-self keeps its teammate profile files
 for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/real-estate-os/skills/*/ plugins/business-os/skills/hi5-dashboard/; do
   sk=$(basename "$d")
-  case "$sk" in hi5-seo|hi5-site-audit|hi5-context|hi5-yt-plan|hi5-yt-research|hi5-yt-setup) continue;; esac
+  case "$sk" in hi5-seo|hi5-site-audit) continue;; esac
   grep -q '**Reader.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the shared reader rule")
   grep -q 'People database' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md reader rule does not mention the People database")
 done
@@ -227,7 +224,7 @@ grep -q '### 👥 People' plugins/business-os/skills/hi5-setup/templates/workspa
 # 23. Every writing skill carries the no invented commitments rule
 for d in plugins/marketing-os/skills/*/ plugins/content-os/skills/*/ plugins/real-estate-os/skills/*/ plugins/business-os/skills/hi5-dashboard/; do
   sk=$(basename "$d")
-  case "$sk" in hi5-seo|hi5-site-audit|hi5-context|hi5-yt-plan|hi5-yt-research|hi5-yt-setup) continue;; esac
+  case "$sk" in hi5-seo|hi5-site-audit) continue;; esac
   grep -q '**No invented commitments.**' "${d}SKILL.md" || ERRORS+=("$sk: SKILL.md is missing the no invented commitments rule")
 done
 
@@ -253,6 +250,50 @@ for f in plugins/*/.claude-plugin/plugin.json marketplace.json; do
   done < <(grep '"description": "' "$f" | grep -v 'A suite of Claude plugins')
 done
 
+# 26. Content OS is one system in five skills, with the shared references and the core pipeline rules
+for f in SKILL.md references/core.md references/setup.md references/setup-calendar.md references/plan.md references/research.md references/script.md references/pipeline.md references/notion-structure.md references/folders.md references/bridges.md references/covers.md references/learning-edits.md references/tasks.md; do
+  [ -f "plugins/content-os/skills/hi5-content-plan/$f" ] || ERRORS+=("hi5-content-plan is missing $f")
+done
+for f in plugins/content-os/skills/hi5-video-edit/SKILL.md plugins/content-os/skills/hi5-youtube/SKILL.md plugins/content-os/skills/hi5-youtube/references/youtube-rules.md plugins/content-os/skills/hi5-social/SKILL.md plugins/content-os/skills/hi5-social/references/queue.md plugins/content-os/skills/hi5-social/references/repurpose.md plugins/content-os/skills/hi5-blog/SKILL.md; do
+  [ -f "$f" ] || ERRORS+=("Content OS is missing $f")
+done
+n=$(ls -d plugins/content-os/skills/*/ | wc -l)
+[ "$n" -eq 5 ] || ERRORS+=("Content OS must have exactly 5 skills, found $n")
+for old in hi5-yt-plan hi5-yt-research hi5-yt-script hi5-yt-setup hi5-studio hi5-studio-edit hi5-studio-producer hi5-repurpose hi5-context; do
+  [ ! -d "plugins/content-os/skills/$old" ] || ERRORS+=("the old skill $old must be gone")
+done
+if grep -rnE '/hi5-(yt-|studio|repurpose)|hi5-context' plugins README.md marketplace.json .claude-plugin >/dev/null 2>&1; then ERRORS+=("old Content OS skill names are still referenced"); fi
+if grep -rnwE 'Studio' plugins README.md marketplace.json .claude-plugin | grep -v 'YouTube Studio' >/dev/null 2>&1; then ERRORS+=("the word Studio must not appear (except YouTube Studio)"); fi
+grep -q 'Nothing is scheduled before Optimizing' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the nothing scheduled before Optimizing rule")
+grep -q 'Never write captions' plugins/content-os/skills/hi5-content-plan/references/plan.md || ERRORS+=("plan.md must keep the never write captions rule")
+grep -q 'Edit Log' plugins/content-os/skills/hi5-content-plan/references/learning-edits.md || ERRORS+=("learning-edits.md must keep the Edit Log")
+grep -q 'Pre-review check' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the Pre-review check")
+grep -q 'check passed' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the check passed log line")
+for f in plugins/content-os/skills/hi5-video-edit/SKILL.md plugins/content-os/skills/hi5-youtube/SKILL.md plugins/content-os/skills/hi5-social/references/queue.md plugins/content-os/skills/hi5-blog/SKILL.md plugins/content-os/skills/hi5-content-plan/references/plan.md; do
+  grep -q 'pre-review check' "$f" || ERRORS+=("$f must run the pre-review check")
+done
+for t in capcut_save_draft upload_youtube_video list_youtube_channels create_post list_social_accounts; do
+  grep -q "$t" plugins/content-os/skills/hi5-content-plan/references/bridges.md || ERRORS+=("bridges.md must name the exact tool $t")
+done
+grep -q 'synced_folder_path' plugins/content-os/skills/hi5-content-plan/references/folders.md || ERRORS+=("folders.md must name the synced folder path")
+grep -q 'Edit Due = 48 hours' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the Edit Due 48 hours rule")
+if grep -rnE '7 days before|edit_turnaround_days' plugins/content-os >/dev/null 2>&1; then ERRORS+=("the 7 day Edit Due rule must be gone from Content OS"); fi
+grep -q 'Clip Publish Date' plugins/content-os/skills/hi5-content-plan/references/plan.md || ERRORS+=("plan.md must leave clip dates to the formula")
+grep -q 'Do you have a day you batch record' plugins/content-os/skills/hi5-content-plan/references/plan.md || ERRORS+=("plan.md must ask about a batch record day")
+grep -q 'Skill vs SOP' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the Skill vs SOP rule")
+grep -q 'Clips post daily after the long-form' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must keep the daily clips SOP line")
+grep -q 'Canva' plugins/content-os/skills/hi5-content-plan/references/covers.md || ERRORS+=("covers.md must keep the Canva option")
+grep -q 'skip for now' plugins/content-os/skills/hi5-content-plan/references/setup-calendar.md || ERRORS+=("setup-calendar.md must ask for examples and accept skip for now")
+grep -qi 'brokerage' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md pre-review check must apply the Compliance page brokerage rules")
+if grep -rnE '\beXp\b' plugins/content-os >/dev/null 2>&1; then ERRORS+=("Content OS files must not hardcode a brokerage"); fi
+grep -q 'Never claim' plugins/content-os/skills/hi5-content-plan/references/bridges.md || grep -q 'Never claim a bridge' plugins/content-os/skills/hi5-content-plan/references/bridges.md || ERRORS+=("bridges.md must keep the never claim a bridge rule")
+for sk in hi5-content-plan hi5-video-edit hi5-social hi5-youtube hi5-blog; do
+  grep -q 'What do you want to do?' plugins/content-os/skills/$sk/SKILL.md || ERRORS+=("$sk must open with a menu")
+  grep -q 'Works on its own' plugins/content-os/skills/$sk/SKILL.md || ERRORS+=("$sk must say it works on its own for one-off requests")
+  grep -q 'Check my queue' plugins/content-os/skills/$sk/SKILL.md || ERRORS+=("$sk must have Check my queue")
+done
+grep -q 'role_video_editing' plugins/content-os/skills/hi5-content-plan/references/pipeline.md || ERRORS+=("pipeline.md must define the per-role owner setting")
+
 # 21. The org chart skill keeps its files, the one human manager rule, and the AI Employees database
 for f in SKILL.md references/interview.md references/chart-artifact.md references/highlights.md references/edits.md; do
   [ -f "plugins/business-os/skills/hi5-org-chart/$f" ] || ERRORS+=("hi5-org-chart is missing $f")
@@ -271,7 +312,7 @@ grep -q 'Check Hi5 first' plugins/business-os/skills/hi5-bottleneck/SKILL.md || 
 grep -q '### 🚧 Bottlenecks' plugins/business-os/skills/hi5-setup/templates/workspace-build.md || ERRORS+=("workspace-build.md is missing the Bottlenecks database")
 
 # 18. The dashboard skill keeps its discovery, widget library, email actions, Notion rules, and the no repeated connector prompt test
-for f in SKILL.md references/discovery.md references/widgets.md references/email-actions.md references/notion-trackers.md references/build.md references/connectors.md industries/real-estate.md industries/generic.md; do
+for f in SKILL.md references/discovery.md references/widgets.md references/email-actions.md references/notion-trackers.md references/build.md references/connectors.md references/menu.md references/tasks.md references/email-tasks.md references/dashboard-content.md industries/real-estate.md industries/generic.md; do
   [ -f "plugins/business-os/skills/hi5-dashboard/$f" ] || ERRORS+=("hi5-dashboard is missing $f")
 done
 grep -q 'two-open test' plugins/business-os/skills/hi5-dashboard/references/build.md || ERRORS+=("hi5-dashboard/references/build.md must keep the two-open test for repeated connector prompts")
@@ -281,6 +322,112 @@ grep -q 'If you saw this, what would you do' plugins/business-os/skills/hi5-dash
 [ -f plugins/business-os/skills/hi5-dashboard/references/follow-up-queue.md ] || ERRORS+=("hi5-dashboard is missing references/follow-up-queue.md")
 grep -q 'No Send all, ever' plugins/business-os/skills/hi5-dashboard/SKILL.md || ERRORS+=("hi5-dashboard/SKILL.md must keep the No Send all rule")
 grep -q 'Send all' plugins/business-os/skills/hi5-dashboard/references/follow-up-queue.md || ERRORS+=("hi5-dashboard/references/follow-up-queue.md must keep the no Send all rule")
+
+
+# 27. Hi5 skills first: every description carries everyday phrases, setup shows the Hi5 first line, and the Skill Guide is gone (skills live in the Hi5 Vault)
+for f in plugins/*/skills/*/SKILL.md; do
+  d=$(grep -m1 '^description: ' "$f" | tr -d '\r' | sed 's/^description: //')
+  q=$(printf '%s' "$d" | tr -cd '"' | wc -c)
+  [ "$q" -ge 10 ] || ERRORS+=("$f: the description needs at least 5 quoted everyday phrases members actually say, found $((q / 2))")
+done
+SD="plugins/business-os/skills/hi5-setup"
+for f in references/hi5-first.md; do
+  [ -f "$SD/$f" ] || ERRORS+=("hi5-setup is missing $f")
+done
+grep -q "When a Hi5 skill fits what I'm asking, use it first" "$SD/references/hi5-first.md" 2>/dev/null || ERRORS+=("hi5-first.md must carry the Hi5 first line")
+grep -q 'personal preferences' "$SD/references/hi5-first.md" 2>/dev/null || ERRORS+=("hi5-first.md must say where to paste the line")
+grep -q "can't change your Claude settings" "$SD/references/hi5-first.md" 2>/dev/null || ERRORS+=("hi5-first.md must say Claude cannot change the setting")
+grep -q 'hi5_first_shown' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must note that the Hi5 first line was shown")
+grep -q 'hi5_first_shown' "$SD/templates/master-profile.md" || ERRORS+=("master-profile.md must list hi5_first_shown")
+grep -q 'hi5-first.md' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must run hi5-first.md")
+[ ! -f "$SD/references/skill-guide.md" ] || ERRORS+=("skill-guide.md must be gone (the Skill Guide moved to the Hi5 Vault)")
+grep -q 'vault.hi5success.com' "$SD/SKILL.md" || ERRORS+=("hi5-setup SKILL.md must point to vault.hi5success.com")
+if grep -rn 'skill_guide_page_id' plugins --include=*.md | grep -v 'no longer used' | grep -q .; then ERRORS+=("skill_guide_page_id may only appear as no longer used")
+fi
+if grep -n 'Skill Guide' "$SD/templates/workspace-build.md" | grep -viE 'removed|no longer|never|older|moved|Vault' | grep -q .; then ERRORS+=("workspace-build.md must not build or match the Skill Guide")
+fi
+grep -q 'template_version: 3' "$SD/templates/workspace-build.md" || ERRORS+=("workspace-build.md must set template_version 3")
+for id in tasks_db_id sops_db_id software_stack_db_id offers_db_id proof_db_id decisions_log_db_id ai_memory_db_id brain_index_page_id client_meetings_db_id internal_meetings_db_id; do
+  grep -q "$id" "$SD/templates/workspace-build.md" || ERRORS+=("workspace-build.md must save $id")
+  grep -q "$id" "$SD/templates/master-profile.md" || ERRORS+=("master-profile.md must list $id")
+done
+grep -q 'Not Started, Brainstorming, Ready to Edit, In Progress, Reviewing, Revising, Finalizing, Optimizing, Scheduled, Published' "$SD/templates/workspace-build.md" || ERRORS+=("workspace-build.md must carry the exact Content Planner status list")
+for p in content-os marketing-os real-estate-os; do
+  cmp -s plugins/business-os/references/brain-rules.md "plugins/$p/references/brain-rules.md" || ERRORS+=("brain-rules.md in $p must match the business-os copy")
+done
+for f in plugins/*/skills/*/SKILL.md; do
+  case "$f" in */hi5-next/*|*/hi5-re-daily/*|*/hi5-re-roleplay/*|plugins/youtube/*) continue;; esac
+  grep -q 'brain-rules.md' "$f" || ERRORS+=("$f must tell the skill to read brain-rules.md before it saves")
+done
+grep -q "When a Hi5 skill fits what I'm asking, use it first" plugins/business-os/skills/hi5-bottleneck/templates/project-instructions.md || ERRORS+=("the AI employee Project instructions template must carry the Hi5 first line")
+
+# 28. Content OS: every skill carries the same hard rules (copies must match), and every relative path to a shared file resolves inside the plugin
+HR_REF=""
+for sk in hi5-content-plan hi5-video-edit hi5-social hi5-youtube hi5-blog; do
+  hr=$(sed -n '/<!-- hard-rules:start -->/,/<!-- hard-rules:end -->/p' "plugins/content-os/skills/$sk/SKILL.md" | tr -d '\r')
+  [ -n "$hr" ] || { ERRORS+=("$sk: SKILL.md is missing the hard rules block"); continue; }
+  if [ -z "$HR_REF" ]; then HR_REF="$hr"; elif [ "$hr" != "$HR_REF" ]; then ERRORS+=("$sk: the hard rules block does not match the other content skills"); fi
+done
+for f in $(find plugins -name '*.md'); do
+  sk=$(echo "$f" | sed -n 's#^\(plugins/[^/]*/skills/[^/]*\)/.*#\1#p')
+  [ -n "$sk" ] || continue
+  for ref in $(grep -o '\.\./[A-Za-z0-9_./-]*\.md' "$f" | sort -u); do
+    plug=$(realpath -m "$(echo "$sk" | cut -d/ -f1-2)")
+    t1=$(realpath -m "$sk/$ref"); t2=$(realpath -m "$(dirname "$f")/$ref")
+    ok=""
+    for tgt in "$t1" "$t2"; do
+      case "$tgt" in "$plug"/*) [ -f "$tgt" ] && ok=1;; esac
+    done
+    [ -n "$ok" ] || ERRORS+=("$f: $ref does not resolve to a file inside its plugin (a plugin install would not have it)")
+  done
+done
+
+# 29. The advisory board skills keep the exact database syntax, data source IDs, industry neutrality, and the dollar sign rule
+BD="plugins/business-os/skills"
+NR="$BD/hi5-advisor/references/notion.md"
+for id in coach_library_ds_id advisory_board_ds_id board_meetings_ds_id; do
+  grep -q "$id" "$NR" || ERRORS+=("notion.md must name $id")
+done
+grep -q 'CREATE TABLE' "$NR" || ERRORS+=("notion.md must give the exact create syntax")
+for t in Marketing Sales Pricing Hiring Money Systems Content Mindset Leadership 'Customer service' Offers Partnerships; do
+  grep -q "'$t'" "$NR" || ERRORS+=("notion.md must seed the Topic $t")
+done
+grep -q 'folder URL' "$BD/hi5-library/SKILL.md" || ERRORS+=("hi5-library must save the folder URL")
+grep -q 'master_coach_refresh_declined' "$BD/hi5-board/SKILL.md" || ERRORS+=("hi5-board must save master_coach_refresh_declined")
+grep -q 'Industry Expert' "$BD/hi5-advisor/templates/starter-roles.md" || ERRORS+=("starter-roles.md must carry the Industry Expert")
+grep -q 'HIPAA' "$BD/hi5-board/SKILL.md" || ERRORS+=("hi5-board must name the member's compliance rules, not only Fair Housing")
+grep -q 'Notion meeting page is the report' "$BD/hi5-board/SKILL.md" || ERRORS+=("hi5-board must have the report fallback")
+grep -q 'Words read' "$NR" || ERRORS+=("notion.md must carry the Words read checkbox")
+grep -q 'Words read' "$BD/hi5-library/SKILL.md" || ERRORS+=("hi5-library must use the Words read checkbox")
+grep -q 'Where creators disagree' "$BD/hi5-advisor/references/brain-spec.md" || ERRORS+=("brain-spec.md must carry the Where creators disagree section")
+grep -q 'L01' "$BD/hi5-advisor/references/brain-spec.md" || ERRORS+=("brain-spec.md must define the Master Coach library source ids")
+grep -q 'Empty board' "$BD/hi5-advisor/SKILL.md" || ERRORS+=("hi5-advisor must go straight to the default board on an empty board")
+for sk in hi5-library hi5-advisor hi5-board; do
+  grep -q 'Dollar signs' "$BD/$sk/SKILL.md" || ERRORS+=("$sk must carry the dollar sign rule")
+done
+
+# 30. The dashboard keeps its menu, separate dashboards, email hard rules, email to task, one task home, content dashboard, and potential revenue rules
+DB="plugins/business-os/skills/hi5-dashboard"
+grep -q 'Menu first' "$DB/SKILL.md" || ERRORS+=("hi5-dashboard SKILL.md must keep the menu first rule")
+grep -q 'Separate dashboards' "$DB/SKILL.md" || ERRORS+=("hi5-dashboard SKILL.md must keep the separate dashboards rule")
+grep -q 'Never link or redirect to Gmail' "$DB/SKILL.md" || ERRORS+=("hi5-dashboard SKILL.md must keep the email hard rule: never link to Gmail")
+grep -q 'Never link or redirect to Gmail' "$DB/references/email-actions.md" || ERRORS+=("email-actions.md must keep the never link to Gmail rule")
+grep -q 'recent threads with the same sender' "$DB/references/email-actions.md" || ERRORS+=("email-actions.md must read recent threads with the same sender for context")
+grep -q 'Send is one click per message' "$DB/references/email-actions.md" || ERRORS+=("email-actions.md must keep send is one click per message")
+grep -q 'No reply needed' "$DB/references/email-tasks.md" || ERRORS+=("email-tasks.md must close the task on No reply needed")
+grep -q 'scheduled task' "$DB/references/email-tasks.md" || ERRORS+=("email-tasks.md must offer the scheduled task")
+grep -q 'Where do you keep your tasks' "$DB/references/tasks.md" || ERRORS+=("tasks.md must ask where the member keeps tasks")
+grep -q 'Never split tasks across two places' "$DB/references/tasks.md" || ERRORS+=("tasks.md must keep tasks in one place")
+grep -q 'never reads local bridges' "$DB/references/dashboard-content.md" || grep -q 'never read.*local bridges' "$DB/references/dashboard-content.md" || ERRORS+=("dashboard-content.md must never read local bridges")
+grep -q 'Potential, not guaranteed' "$DB/references/widgets.md" || ERRORS+=("widgets.md must label potential revenue as potential, not guaranteed")
+grep -q 'commission_per_side' "$DB/industries/real-estate.md" || ERRORS+=("real-estate.md must use the member's own commission per side")
+grep -q 'split_to_member' "$DB/references/widgets.md" || ERRORS+=("widgets.md potential revenue must use split_to_member")
+grep -q 'Status Changed' "$DB/references/dashboard-content.md" || ERRORS+=("dashboard-content.md stuck must use Status Changed")
+grep -q 'tasks_db_id' "$DB/references/tasks.md" || ERRORS+=("tasks.md must save tasks_db_id")
+grep -q 'Create the contact' "$DB/references/tasks.md" || ERRORS+=("tasks.md must ask before creating a GoHighLevel contact")
+grep -q 'not signed in' "$DB/references/tasks.md" || ERRORS+=("tasks.md must handle a connector that is not signed in")
+grep -q 'Not published yet' "$DB/references/build.md" || ERRORS+=("build.md must say Not published yet for a draft dashboard")
+if grep -rniE 'open in gmail|mail\.google\.com|gmail\.com/mail' "$DB" | grep -viE 'never|no "open in gmail"|not ' >/dev/null; then ERRORS+=("hi5-dashboard must not link to Gmail"); fi
 
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""

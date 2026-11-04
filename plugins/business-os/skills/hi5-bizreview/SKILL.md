@@ -1,6 +1,6 @@
 ---
 name: hi5-bizreview
-description: Reviews how the business is doing against the plan for this quarter so far, last quarter, or the year to date. Reads the quarter numbers and weekly check-ins saved by /hi5-goals and the fee-aware take-home from /hi5-bizplan, compares actual with plan by client type or offer and by lead source, finds the bottleneck, and suggests at most three adjustments. Works for any industry and never assumes anyone's commission rules. Triggers when the user runs /hi5-bizreview, says "business review", "how am I doing", or "review my numbers".
+description: Reviews how the business is doing against the plan for this quarter so far, last quarter, or the year to date. Reads the quarter numbers and weekly check-ins saved by /hi5-goals and the fee-aware take-home from /hi5-bizplan, compares actual with plan by client type or offer and by lead source, finds the bottleneck, and suggests at most three adjustments. Works for any industry and never assumes anyone's commission rules. Triggers when the user runs /hi5-bizreview, says "business review", "how am I doing", "review my numbers", "am I on track", "how did this quarter go", or "what should I adjust".
 ---
 
 # Hi5 Bizreview: Business Performance Review
@@ -9,6 +9,7 @@ description: Reviews how the business is doing against the plan for this quarter
 Give the member a clear, honest look at how the business is performing against their own plan, for the timeframe they choose. Show every calculation step by step with the member's own numbers, say what is working and what is not, and suggest a few adjustments.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - Read the Master Profile first. Never ask for something it already has.
 - One question at a time. Offer short lists so answers are quick, and let the member skip any question.
 - **Never hardcode any business's rules.** Splits, caps, fees, awards, and costs differ everywhere. Use only what the member told /hi5-bizplan. If a rule is unclear, ask. Do not assume.

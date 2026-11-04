@@ -9,6 +9,7 @@ description: Prepares a real estate member for a listing appointment and follows
 Walk into a listing appointment ready, and keep following up until the seller decides. Six jobs: the game plan, the pre-appointment intake, the CMA, the pricing conversation, objection answers, and the follow-up sequence. Every line is specific to the seller and the property, in the member's voice.
 
 ## Core Rules
+- **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
 - **Real estate only.** Read `industry_flow` from Setup Status. If it is not `real-estate`, say "This skill is for real estate members. For your business, run /hi5-next and I'll point you to the right step." Then stop.
 - **Read `../hi5-re-crm/references/guardrails.md` first, every time.** It covers drafts and sends, texting consent, Fair Housing, the MLS rule, compensation and contract limits, and sensitive data. Follow all of it. If that file cannot be found, tell the member the Real Estate OS plugin may be incomplete and stop.
 - **Drafts only.** Nothing is sent, posted, or changed in the CRM without the member's OK. To send a message, use /hi5-re-crm job 11. To log the appointment, use /hi5-re-crm job 4.

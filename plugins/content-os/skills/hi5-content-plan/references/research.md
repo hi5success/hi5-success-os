@@ -1,23 +1,17 @@
----
-name: hi5-yt-research
-description: Search YouTube by keyword or competitor channel, score keyword opportunity, generate tailored video ideas, and add them to your Notion Content Planner. Run this whenever you want new content ideas.
----
+# Research Topics (YouTube, search, and trends)
 
-# /hi5-yt-research: YouTube Intelligence
-
-You are running a YouTube research session for this member. By the end, a set
-of scored, tailored video ideas will be added to their Content Planner in Notion as Ideas.
+Used by `SKILL.md` option B and by step 2 of the monthly plan. Works with no setup: if the member has no workspace, ask for the topic, the niche, and the goal in a few short questions, and return the ideas on screen. When the content calendar is set up, the ideas are added to the Content Planner with Status Brainstorming, after the member says so.
 
 ## Step 1: Read the Master Profile
 
-Before doing anything else, find the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in the hi5-context skill. If it is not set up, tell the member to run /hi5-setup first and stop. If the member has more than one channel, ask which one first. You need:
+Before doing anything else, look for the member's workspace and Master Profile using the FINDING THE WORKSPACE rule in core.md. If it is not found, carry on without it. If the member has more than one channel, ask which one first. You need, when they exist:
 - `niche` and `industry`
 - `channel_goal` and `content_model`
 - `content_categories`
 - `competitor_channel_ids`
 - The Voice Profile page (for idea titles that sound like them)
 - Operator preferences (`output_format`, `number_of_options`, `explanation_level`)
-- YouTube Data API key (from Claude Project Instructions as `YOUTUBE_API_KEY`)
+- YouTube Data API key (from Claude Project Instructions as `YOUTUBE_API_KEY`). If there is no key, do the research with web search and Google Trends only, say so once, and offer the key walkthrough from `setup.md`.
 
 ## Step 2: Clarify the Research Focus
 
@@ -98,7 +92,7 @@ For the keyword(s) researched, score competition and opportunity:
 - Trend score > 40 AND competition = Low or Medium → Medium
 - All others → Low
 
-Update the Notion Keyword Tracker (`keyword_tracker_db_id`) with a new row or
+When the calendar is set up, update the Notion Keyword Tracker (`keyword_tracker_db_id`) with a new row or
 update the existing row for this keyword. Fields to write: Keyword, Competition
 Level, Trend Score, Trend Direction, Opportunity Score, YouTube Video Count,
 Avg Views Top 10, Last Updated.
@@ -128,9 +122,8 @@ your Content Planner, select specific ones, or make any changes first?"
 
 ## Step 7: Add to the Content Planner
 
-Once the member confirms, create a new row in the Content Planner (`content_planner_db_id`) for each
-approved idea with Status set to "Idea" and all fields populated. Title is the video title; put the
-hook in Hook / Angle. Set Deliverable Type from `default_deliverable_type` (Long Form if not set).
+Only when the content calendar is set up (`content_settings_page_id` is in the Page IDs). Once the member confirms, create a new row in the Content Planner (`content_planner_db_id`) for each approved idea with Status set to "Idea" and all fields populated. Title is the video title; put the hook in Hook / Angle. Set Deliverable Type from `default_deliverable_type` (Long Form if not set). Also update the Keyword Tracker.
 
-Confirm: "Done: [X] ideas are now in your Content Planner in Notion. Run /hi5-yt-plan when
-you're ready to schedule them. That is the step that builds your content calendar. You can run /hi5-next any time and I'll tell you your best next step."
+If it is not set up, keep the ideas on screen and offer to set up the calendar so they can be saved.
+
+Confirm: "Done: [X] ideas are in your Content Planner in Notion. Run /hi5-content-plan and choose Plan my month when you're ready to schedule them. You can run /hi5-next any time and I'll tell you your best next step."

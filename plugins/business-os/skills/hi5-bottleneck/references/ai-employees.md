@@ -37,3 +37,6 @@ Write it with `../templates/job-description.md`, and show it before saving.
 3. Check that the human manager is one person in People. If not, ask who it is.
 4. Add it to the org chart under that manager: the chart is built from the database, so after saving, offer to run /hi5-org-chart, or, if the member's People page has an org chart link, offer to republish the chart (follow `../../hi5-org-chart/references/chart-artifact.md`).
 5. Ask the member to set a calendar reminder for the review date.
+
+## Note for the AI Employee Creator (not built yet)
+Every AI employee Project's instructions will start with the same Hi5 first line the member puts in their own preferences: "When a Hi5 skill fits what I'm asking, use it first. My brain at [their Notion link] is my source of truth." The Project instructions template already carries it. When the Creator is built, it fills in the member's brain link and never leaves the line out.

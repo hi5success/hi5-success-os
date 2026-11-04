@@ -1,6 +1,6 @@
 # Connecting the Apps They Already Use
 
-Used by `SKILL.md` Step 2. Menus differ between Claude apps and versions, so every step is hedged ("look for"), and you ask for a screenshot if they get stuck. Never claim an exact menu name.
+Used by `SKILL.md` Step 3, only for the apps the picked dashboards need. Menus differ between Claude apps and versions, so every step is hedged ("look for"), and you ask for a screenshot if they get stuck. Never claim an exact menu name.
 
 ## Step 1: Ask what they use
 Ask which of these they use day to day: email, calendar, CRM (including GoHighLevel and how many sub-accounts), tasks, chat (Slack or Google Chat), finance (accounting, payments), and anything else important. Skip anything they do not use. Never push an app they do not use.
@@ -28,6 +28,9 @@ If their screen does not match, ask for a screenshot of the screen they see and 
 
 ## Step 5: Test with one read-only call
 After they connect, run exactly one read-only call to confirm it works (for example list today's calendar events, list the first few email threads, or list the CRM locations). Say what you saw in one line without showing sensitive details. If it fails, show the message, and offer the screenshot route or the paste route. Never run a write to test.
+
+## A connector that is connected but not signed in
+If you can see the connector but a call fails because it is not signed in, say once: "[App] is connected but not signed in. Open Settings, then Connectors, and reconnect it. Want me to use Notion for now?" Do not retry the call, and do not put the data in a second place without the member's OK.
 
 ## Step 6: If they skip it
 Plan around it: a Notion tracker, or a paste option the member refreshes by running the skill again. Say once, in one line, what they would gain by connecting it later. Do not ask again in the same conversation, and never repeatedly across runs. Note the skipped connector on the Dashboards entry so a later update can offer it once.
