@@ -18,6 +18,7 @@ The `_db_id` opens the database. The `_ds_id` is its data source ID (the `collec
 - `compliance_page_id` (added by Stage 2 of /hi5-setup): the member's Compliance Guardrails page. Read it when it exists, wherever the member's compliance rules matter (an Industry Expert's lens, a board meeting).
 
 ## Writing to Notion (rules for every save)
+- **Column names:** write the Coach Library link column as `Link`. Only a column named exactly url or id needs the `userDefined:` prefix, so `Link` does not.
 - **Dollar signs:** write every `$` as `\$` in page content and in text properties. An unescaped `$` can turn into a math block.
 - **Dates with time:** write Saved (Coach Library) and Date (Advisory Board) as a date with a time, in the member's time zone (`date:Saved:is_datetime` set to 1). You have no clock tool, so the time is your best estimate and can be a few minutes off.
 - **Counting what is new:** never decide what is new from those estimated times alone. Use Notion's own timestamps: a Coach Library row's created time (the `createdTime` column in a query) against the last edited time of the Master Coach page (`page_last_edited_at` in its fetch result). For a declined refresh, use the post count saved with the decline (see Board Updates).
