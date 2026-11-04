@@ -12,7 +12,7 @@ Turn the posts a member already saves into a searchable library of hooks, pitche
 - **Read only on every social account.** Open and read posts. Never like, follow, comment, message, share, unsave, or post anything, and never change a setting.
 - **The member's own browser, with their OK.** Social posts are read in the member's own browser (the built-in browser or Claude in Chrome), where they are already logged in. Load that browser's skill before the first step in it. If no browser is available, ask the member to paste the caption and transcript, or upload the video file, and log it that way.
 - **Gentle on their account.** Read at most 30 posts in one run, at a normal pace. For a bigger folder, do 30, save them, and say "I logged 30. Want me to keep going?"
-- **Never invent.** Log only what the post says or shows. If a post has no words at all (music only, no caption), log what is shown on screen and mark it "visual only". If a post has speech but no transcript was available, mark it "words not read", ask the member to paste the words, and log only the caption and what is shown until they do. The hook is the first spoken line, word for word. If nobody speaks, the hook is the first line of the caption.
+- **Never invent.** Log only what the post says or shows. If a post has no words at all (music only, no caption), log what is shown on screen and mark it "visual only". If a post has speech but no transcript was available, mark it "words not read", ask the member to paste the words, and log only the caption and what is shown until they do. Mark such a row by leaving Words read unchecked and starting its Main point with "Words not read." Check Words read on every other row, including "visual only" posts (they have no words to read). The hook is the first spoken line, word for word. If nobody speaks, the hook is the first line of the caption.
 - **Save the summary, not the post.** Save the fields below and a short quote of the hook. Never save the full transcript, the video, or images.
 - **No duplicates.** Before logging, check the Coach Library for the same link. Skip it and count it as "already saved".
 - Where everything is saved, and the safety net if the database is missing: `../hi5-advisor/references/notion.md`.
@@ -59,11 +59,12 @@ Each Coach Library row:
 - Lesson: the business lesson in one line, if there is one
 - Pitch: how it sells, in one line (the offer, the call to action), if it sells
 - Why I liked it: the member's words, or empty
+- Words read (checkbox): checked when the words were read or pasted, or the post has none (visual only); unchecked when the row is marked "words not read"
 - Status (select): New, Used
 
 ## Step 4: Search
 
-When the member asks what they have ("hooks about listings" for a real estate member, "hooks about new patients" for a dental office, "advice on pricing", "what did [creator name] say about hiring"), query the Coach Library by Topics, Use, Creator, and words in the fields. Show up to ten matches: the title, creator, the hook or lesson, and the link. Offer one next step that fits, such as "Want three video ideas from these?" (run /hi5-content-plan and choose Write a script, or run /hi5-social, with them) or "Want to ask your board about this?"
+When the member asks what they have ("hooks about listings" for a real estate member, "hooks about new patients" for a dental office, "advice on pricing", "what did [creator name] say about hiring"), query the Coach Library by Topics, Use, Creator, and words in the fields. Show up to ten matches: the title, creator, the hook or lesson, and the link. When the member asks to fix the unread posts ("show me posts with words not read", "fix my unread posts"), list the rows with Words read unchecked, ask for the pasted words one post at a time, fill in the Hook, Main point, Lesson, and Pitch from them, and check Words read. Offer one next step that fits, such as "Want three video ideas from these?" (run /hi5-content-plan and choose Write a script, or run /hi5-social, with them) or "Want to ask your board about this?"
 
 ## Finish
 

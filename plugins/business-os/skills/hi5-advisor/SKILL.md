@@ -34,11 +34,13 @@ Find the workspace and the Advisory Board using `references/notion.md`. Read eve
 > 5. Refresh an advisor with new content
 > 6. Change who sits on my board
 
-If the Advisory Board is empty, say: "Let's set up your board. I'll start you with five or six ready-made advisors that fit your business, and then you can add mentors you follow." Then go to Step 2 with the default board from `templates/starter-roles.md` already picked.
+If the Advisory Board is empty, skip the menu and the scan questions and go straight to Step 2, "Empty board".
 
 ## Step 2: Add ready-made advisors
 
-List the roles in `templates/starter-roles.md` by Name and Seat, one line each, marking any already on the Advisory Board. Show the Industry Expert to every member, built from the industry in their Master Profile. Show the Listing Strategist and Agent Growth Coach only to real estate members, and never mention real estate roles or language to anyone else. Ask which to add. For each one picked:
+**Empty board (straight to the default board).** Pick the default board from `templates/starter-roles.md` for this member (the Industry Expert for every industry except real estate, the Listing Strategist for real estate). Say: "Let's set up your board. I'll start you with [the number, usually six] ready-made advisors that fit your business: [each name with its Seat, one line each]. Add them like this, or change anything?" That is the only question. If the Advisory Board database does not exist yet, fold its OK into the same question ("I'll also add your Advisory Board to your Notion") instead of asking it separately. On a yes, build every brain from its block (personalized as that file says), save the rows as in item 3 below, and say once that they can add other roles, or mentors they follow, whenever they like by running /hi5-advisor again. Do not list the other roles or ask which to add. If they want a change (swap a role, or add one), make it and ask once more.
+
+**A board that already has advisors.** List the roles in `templates/starter-roles.md` by Name and Seat, one line each, marking any already on the Advisory Board. Show the Industry Expert to every member, built from the industry in their Master Profile. Show the Listing Strategist and Agent Growth Coach only to real estate members, and never mention real estate roles or language to anyone else. Ask which to add. For each one picked:
 1. Build the brain from its block, personalized as that file says.
 2. Show the member the Seat and Lens in three or four lines and ask "Add it like this, or change anything?"
 3. Save the row: Kind Role, Sources 0, Version 1, Status Active, the date and time now, On Board checked unless that would make more than seven (then ask which to swap).
@@ -66,8 +68,9 @@ The Master Coach is one advisor that thinks the way the content the member value
 3. Build the brain from `references/brain-spec.md`:
    - **Seat:** "What would the people I learn from tell me to do, and do they agree?"
    - **Who this is:** "A coach built from the [n] posts [member's first name] saved and the advisors they chose: [names]. It speaks for the ideas, not for any creator."
-   - **Lens, Principles, Frameworks:** the ideas that show up across several saves or creators come first. Give each the library links or advisor source ids it came from. Weigh the member's own "Why I liked it" notes most: they show what the member values.
-   - **Positions:** where creators disagree, say so and name who is on each side.
+   - **Lens, Principles, Frameworks:** the ideas that show up across several saves or creators come first. Give each its library ids (L01, L02, and so on, see `references/brain-spec.md`) or the creator advisor and source id (for example paul-graham S003) it came from. Weigh the member's own "Why I liked it" notes most: they show what the member values.
+   - **Positions:** their stance on the topics the saves cover.
+   - **Where creators disagree:** name who is on each side, with the ids. If nothing is disagreed, say so in one line.
    - **Voice:** plain and direct, in the member's own language. It never imitates one creator.
    - **Quotes:** only hooks or lines saved word for word in the library, with the creator's name.
 4. Show the Seat, the top five principles, and where the creators disagree. Make the changes the member asks for, then save (Version 1, Status Active, On Board checked unless the board is full).

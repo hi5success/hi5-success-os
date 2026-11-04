@@ -383,6 +383,11 @@ grep -q 'master_coach_refresh_declined' "$BD/hi5-board/SKILL.md" || ERRORS+=("hi
 grep -q 'Industry Expert' "$BD/hi5-advisor/templates/starter-roles.md" || ERRORS+=("starter-roles.md must carry the Industry Expert")
 grep -q 'HIPAA' "$BD/hi5-board/SKILL.md" || ERRORS+=("hi5-board must name the member's compliance rules, not only Fair Housing")
 grep -q 'Notion meeting page is the report' "$BD/hi5-board/SKILL.md" || ERRORS+=("hi5-board must have the report fallback")
+grep -q 'Words read' "$NR" || ERRORS+=("notion.md must carry the Words read checkbox")
+grep -q 'Words read' "$BD/hi5-library/SKILL.md" || ERRORS+=("hi5-library must use the Words read checkbox")
+grep -q 'Where creators disagree' "$BD/hi5-advisor/references/brain-spec.md" || ERRORS+=("brain-spec.md must carry the Where creators disagree section")
+grep -q 'L01' "$BD/hi5-advisor/references/brain-spec.md" || ERRORS+=("brain-spec.md must define the Master Coach library source ids")
+grep -q 'Empty board' "$BD/hi5-advisor/SKILL.md" || ERRORS+=("hi5-advisor must go straight to the default board on an empty board")
 for sk in hi5-library hi5-advisor hi5-board; do
   grep -q 'Dollar signs' "$BD/$sk/SKILL.md" || ERRORS+=("$sk must carry the dollar sign rule")
 done

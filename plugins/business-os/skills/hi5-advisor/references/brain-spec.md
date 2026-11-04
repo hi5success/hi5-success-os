@@ -22,6 +22,9 @@ Their named tools or methods, each with: the name, when to use it, the steps in 
 ## Positions
 Their stance on the topics members bring most: pricing, hiring, spending on ads, raising prices, partnerships, new offers, going full time, debt. One line each, with the source id and the year. When their view changed over time, give the newer view and say what it replaced.
 
+## Where creators disagree (Master Coach only)
+Where the creators behind the saves, or the creator advisors blended in, disagree: one line per topic, naming who is on each side and the ids that show it. If nothing is disagreed, say so plainly in one line and do not invent a conflict. Other advisors leave this section out.
+
 ## Voice
 How they talk: sentence length, energy, favorite phrases (in their exact words, only if verbatim in a source), how they push back, what they never say. Five to eight bullets.
 
@@ -36,3 +39,5 @@ Two to four bullets: where this advisor tends to be wrong or one-sided, so the s
 
 ## Sources
 A table: Id (S001, S002, ...), Title, Kind (video, podcast, article, book, post, notes), Date, Link. A Role writes "Built from the Hi5 starter role. No outside sources." Never store raw transcripts here, only the table.
+
+A Master Coach has two kinds of source. Library rows get the ids L01, L02, and so on, in the order they were saved, each with its library link, and every principle that rests on a save cites them. Creator advisors blended in are cited by their key and their own source id, for example (paul-graham S003), and the table has one row for each such advisor. A refresh continues the L numbers.

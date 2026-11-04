@@ -50,6 +50,7 @@ The `_db_id` opens the database. The `_ds_id` is its data source ID (the `collec
 - Title (title); Creator (text); Platform (select: Instagram, TikTok, Facebook, YouTube, LinkedIn, X, Podcast, Web); Link (url); Posted (date); Saved (date with time)
 - Use (multi-select: Hook, Content idea, Business advice, Sales pitch, Story); Topics (multi-select, see below); Folder (text)
 - Hook, Main point, Lesson, Pitch, Why I liked it (text)
+- Words read (checkbox): checked when the post's words were read or pasted, or when the post has no words at all (visual only). Unchecked when the row is marked "words not read", so the member can find those rows and fix them
 - Status (select: New, Used)
 
 ## Exact create syntax (use these, so every member's databases match)
@@ -68,10 +69,13 @@ CREATE TABLE ("Name" TITLE, "Date" DATE, "Call" SELECT('Go':green, 'No go':red, 
 
 Coach Library:
 ```
-CREATE TABLE ("Title" TITLE, "Creator" RICH_TEXT, "Platform" SELECT('Instagram':pink, 'TikTok':gray, 'Facebook':blue, 'YouTube':red, 'LinkedIn':blue, 'X':default, 'Podcast':purple, 'Web':green), "Link" URL, "Posted" DATE, "Saved" DATE, "Use" MULTI_SELECT('Hook':orange, 'Content idea':yellow, 'Business advice':green, 'Sales pitch':blue, 'Story':purple), "Topics" MULTI_SELECT('Marketing':blue, 'Sales':green, 'Pricing':yellow, 'Hiring':orange, 'Money':brown, 'Systems':gray, 'Content':pink, 'Mindset':purple, 'Leadership':red, 'Customer service':default, 'Offers':blue, 'Partnerships':green), "Folder" RICH_TEXT, "Hook" RICH_TEXT, "Main point" RICH_TEXT, "Lesson" RICH_TEXT, "Pitch" RICH_TEXT, "Why I liked it" RICH_TEXT, "Status" SELECT('New':blue, 'Used':green))
+CREATE TABLE ("Title" TITLE, "Creator" RICH_TEXT, "Platform" SELECT('Instagram':pink, 'TikTok':gray, 'Facebook':blue, 'YouTube':red, 'LinkedIn':blue, 'X':default, 'Podcast':purple, 'Web':green), "Link" URL, "Posted" DATE, "Saved" DATE, "Use" MULTI_SELECT('Hook':orange, 'Content idea':yellow, 'Business advice':green, 'Sales pitch':blue, 'Story':purple), "Topics" MULTI_SELECT('Marketing':blue, 'Sales':green, 'Pricing':yellow, 'Hiring':orange, 'Money':brown, 'Systems':gray, 'Content':pink, 'Mindset':purple, 'Leadership':red, 'Customer service':default, 'Offers':blue, 'Partnerships':green), "Folder" RICH_TEXT, "Hook" RICH_TEXT, "Main point" RICH_TEXT, "Lesson" RICH_TEXT, "Pitch" RICH_TEXT, "Why I liked it" RICH_TEXT, "Words read" CHECKBOX, "Status" SELECT('New':blue, 'Used':green))
 ```
 
 After creating a database, save its `_db_id` and `_ds_id` (see above). The create result gives the data source ID and the database URL. The database ID is the 32 characters at the end of that URL, written with hyphens as 8-4-4-4-12. Check it by fetching the database before you save it.
+
+## Words read (Coach Library)
+A Coach Library made before this column existed will not have it. On first use, add it (`ADD COLUMN "Words read" CHECKBOX` on the data source), then check it on every existing row except the ones whose Main point starts with "Words not read".
 
 ## Topics (Coach Library)
 - The starting Topics are Marketing, Sales, Pricing, Hiring, Money, Systems, Content, Mindset, Leadership, Customer service, Offers, and Partnerships.
