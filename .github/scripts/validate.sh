@@ -368,6 +368,25 @@ for f in $(find plugins -name '*.md'); do
   done
 done
 
+# 29. The advisory board skills keep the exact database syntax, data source IDs, industry neutrality, and the dollar sign rule
+BD="plugins/business-os/skills"
+NR="$BD/hi5-advisor/references/notion.md"
+for id in coach_library_ds_id advisory_board_ds_id board_meetings_ds_id; do
+  grep -q "$id" "$NR" || ERRORS+=("notion.md must name $id")
+done
+grep -q 'CREATE TABLE' "$NR" || ERRORS+=("notion.md must give the exact create syntax")
+for t in Marketing Sales Pricing Hiring Money Systems Content Mindset Leadership 'Customer service' Offers Partnerships; do
+  grep -q "'$t'" "$NR" || ERRORS+=("notion.md must seed the Topic $t")
+done
+grep -q 'folder URL' "$BD/hi5-library/SKILL.md" || ERRORS+=("hi5-library must save the folder URL")
+grep -q 'master_coach_refresh_declined' "$BD/hi5-board/SKILL.md" || ERRORS+=("hi5-board must save master_coach_refresh_declined")
+grep -q 'Industry Expert' "$BD/hi5-advisor/templates/starter-roles.md" || ERRORS+=("starter-roles.md must carry the Industry Expert")
+grep -q 'HIPAA' "$BD/hi5-board/SKILL.md" || ERRORS+=("hi5-board must name the member's compliance rules, not only Fair Housing")
+grep -q 'Notion meeting page is the report' "$BD/hi5-board/SKILL.md" || ERRORS+=("hi5-board must have the report fallback")
+for sk in hi5-library hi5-advisor hi5-board; do
+  grep -q 'Dollar signs' "$BD/$sk/SKILL.md" || ERRORS+=("$sk must carry the dollar sign rule")
+done
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

@@ -5,7 +5,7 @@ An advisor's brain is the page body of its Advisory Board row. /hi5-board reads 
 Write the sections in this order, with these exact headings.
 
 ## Seat
-One line: the question this advisor owns at the table, and why it matters. Example: "Will this bring in more listings at a profit? Listings are the inventory everything else runs on."
+One line: the question this advisor owns at the table, and why it matters. Examples: for a real estate team, "Will this bring in more listings at a profit? Listings are the inventory everything else runs on." For a dental office, "Will this bring in more booked new patients at a profit? A full schedule is the inventory everything else runs on."
 
 ## Who this is
 Two or three lines. For a Role: the kind of operator this is and the experience it draws on. For a Mentor or Public figure, always start with: "A simulation built from [name]'s public work. Not [name], and never speaks for them." Then what they are known for, in plain words.

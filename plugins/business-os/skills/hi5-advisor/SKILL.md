@@ -1,6 +1,6 @@
 ---
 name: hi5-advisor
-description: Builds the member's personal advisory board. Adds ready-made role advisors (Marketing Strategist, Sales Closer, Listing Strategist, Agent Growth Coach, Money Mind, Systems Builder, Brand and Content Creator, Devil's Advocate), designs a custom role, or builds an advisor from the public content of a mentor or creator the member follows, with principles, frameworks, positions, and voice tied to sources. Builds the Master Coach from the Coach Library plus chosen creator advisors, refreshes or retires an advisor, and sets the default board. Advisors built from real people are labeled simulations for the member's own use. Saves to the Advisory Board in Notion. Triggers when the user runs /hi5-advisor, says "add an advisor", "build a mentor", "create my advisory board", "build an advisor from [name]'s content", "build my master coach", "refresh my advisor", or "change my board".
+description: Builds the member's personal advisory board. Adds ready-made role advisors (Marketing Strategist, Sales Closer, Money Mind, Systems Builder, Devil's Advocate, an Industry Expert for the member's own field, and real estate roles), designs a custom role, or builds an advisor from the public content of a mentor or creator the member follows, with principles, frameworks, positions, and voice tied to sources. Builds the Master Coach from the Coach Library plus chosen creator advisors, refreshes or retires an advisor, and sets the default board. Advisors built from real people are labeled simulations. Saves to the Advisory Board in Notion. Triggers when the user runs /hi5-advisor, says "add an advisor", "build a mentor", "create my advisory board", "build an advisor from [name]'s content", "build my master coach", "refresh my advisor", or "change my board".
 ---
 
 # Hi5 Advisor: Build Your Advisory Board
@@ -17,13 +17,15 @@ Give the member a board of advisors they trust: ready-made roles, roles they des
 - **Seven at the table, at most.** A member can keep as many advisors as they want, but no more than seven are On Board at once. More voices make a worse meeting.
 - **Never change an advisor without the member's OK.** Show changes as a plan and wait for a yes.
 - Where everything is saved, and the safety net if a database is missing: `references/notion.md`.
+- **Dollar signs.** Write every $ as \$ in anything you save to Notion (see `references/notion.md`).
+- **Dates with time.** Write an advisor row's Date with the date and the time, so a refresh can tell what was saved since.
 - Write in plain words. Never use em dashes in anything you say or write. Before you send anything, scan your message for em dashes and replace each one with a comma, a colon, or a new sentence.
 
 ---
 
 ## Step 1: Scan and choose
 
-Find the workspace and the Advisory Board using `references/notion.md`. Read every row (Name, Kind, Seat, On Board, Status, Sources, Date) and the Master Profile (industry, market, business, stage). If the Master Profile has a Board Updates section, mention the advisors with new content in one line and offer to refresh them. Say what you found, then ask:
+Find the workspace and the Advisory Board using `references/notion.md`. Read every row (Name, Kind, Seat, On Board, Status, Sources, Date) and the Master Profile (industry, market, business, stage). If the Master Profile has a Board Updates section, mention the advisors that have a line there (`- advisor key | what's new | found <date>`) that is not marked declined, in one line, and offer to refresh them. On a yes, refresh with Step 5, which clears that creator's lines. On a no, add `| declined <date>` to those lines and do not offer them again until the next monthly check finds newer content. Say what you found, then ask:
 
 > 1. Add ready-made advisors
 > 2. Build an advisor from someone's content (a mentor, influencer, or creator you follow)
@@ -32,14 +34,14 @@ Find the workspace and the Advisory Board using `references/notion.md`. Read eve
 > 5. Refresh an advisor with new content
 > 6. Change who sits on my board
 
-If the Advisory Board is empty, say: "Let's set up your board. I'll start you with five ready-made advisors that fit your business, and then you can add mentors you follow." Then go to Step 2 with the default board from `templates/starter-roles.md` already picked.
+If the Advisory Board is empty, say: "Let's set up your board. I'll start you with five or six ready-made advisors that fit your business, and then you can add mentors you follow." Then go to Step 2 with the default board from `templates/starter-roles.md` already picked.
 
 ## Step 2: Add ready-made advisors
 
-List the roles in `templates/starter-roles.md` by Name and Seat, one line each, marking any already on the Advisory Board. Show the Listing Strategist and Agent Growth Coach only to real estate members. Ask which to add. For each one picked:
+List the roles in `templates/starter-roles.md` by Name and Seat, one line each, marking any already on the Advisory Board. Show the Industry Expert to every member, built from the industry in their Master Profile. Show the Listing Strategist and Agent Growth Coach only to real estate members, and never mention real estate roles or language to anyone else. Ask which to add. For each one picked:
 1. Build the brain from its block, personalized as that file says.
 2. Show the member the Seat and Lens in three or four lines and ask "Add it like this, or change anything?"
-3. Save the row: Kind Role, Sources 0, Version 1, Status Active, today's date, On Board checked unless that would make more than seven (then ask which to swap).
+3. Save the row: Kind Role, Sources 0, Version 1, Status Active, the date and time now, On Board checked unless that would make more than seven (then ask which to swap).
 
 ## Step 3: Build an advisor from someone's content
 
@@ -69,11 +71,11 @@ The Master Coach is one advisor that thinks the way the content the member value
    - **Voice:** plain and direct, in the member's own language. It never imitates one creator.
    - **Quotes:** only hooks or lines saved word for word in the library, with the creator's name.
 4. Show the Seat, the top five principles, and where the creators disagree. Make the changes the member asks for, then save (Version 1, Status Active, On Board checked unless the board is full).
-5. To refresh, read only the library rows saved since the row's Date and the advisors' newer versions, show what changed as a plan, and update on a yes.
+5. To refresh, read only the library rows saved after the row's Date (date and time) and the creator advisors whose Date is later than the row's, show what changed as a plan, and update on a yes. Set Date to the date and time now, and delete any `master_coach_refresh_declined` line in Board Updates.
 
 ## Step 5: Refresh an advisor
 
-For a Mentor or Public figure: ask for new links or offer to search for their newest long-form content since the row's Date. Gather and read the new sources the same way, continuing the source ids. Show the member what changed (new principles, changed positions, new frameworks) as a short plan. On a yes, update the brain, add 1 to Version, update Sources and Date. For a Role: ask what to change, show the plan, then update.
+For a Mentor or Public figure: ask for new links or offer to search for their newest long-form content since the row's Date. Gather and read the new sources the same way, continuing the source ids. Show the member what changed (new principles, changed positions, new frameworks) as a short plan. On a yes, update the brain, add 1 to Version, update Sources and Date (with the time), and clear that creator's lines from the Board Updates section. For a Role: ask what to change, show the plan, then update.
 
 ## Step 6: Change who sits on the board
 

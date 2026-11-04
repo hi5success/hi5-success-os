@@ -13,18 +13,19 @@ Help the member make a better decision by hearing several strong, different view
 - **Independent views.** Advisors do not see each other's views before giving their own. When you can start sub-agents, give each advisor its own (see Step 4). Otherwise write each view in turn, from its brain only, without adjusting it to match the views before it.
 - **Real people are simulations.** Show "(simulated)" after the name of every Mentor or Public figure advisor in every view and summary. Never write that the real person said something unless it is a verbatim line from that advisor's Quotes section, with its source id.
 - **Never invent facts.** Advisors reason from the brief. When a fact they need is missing, they say what they would need to know, rather than assuming it. Never invent numbers about the member's business.
-- **Advice, not orders.** The member decides. For legal, tax, lending, or licensing questions, the summary says to confirm with the right professional. Hi5 rules still apply in every view: compliance, Fair Housing for real estate, texting consent, and drafts only.
+- **Advice, not orders.** The member decides. For legal, tax, lending, or licensing questions, the summary says to confirm with the right professional. Hi5 rules still apply in every view: the member's compliance rules from their profile (for example Fair Housing for real estate, HIPAA for health care), texting consent, and drafts only.
 - **One question at a time** when you need something from the member.
 - Where everything is saved, and the safety net if a database is missing: `../hi5-advisor/references/notion.md`.
+- **Dollar signs.** Write every $ as \$ in anything you save to Notion (see `../hi5-advisor/references/notion.md`).
 - Write in plain words. Never use em dashes in anything you say or write. Before you send anything, scan your message for em dashes and replace each one with a comma, a colon, or a new sentence.
 
 ---
 
 ## Step 1: Load the board
 
-Find the workspace using `../hi5-advisor/references/notion.md`. Read the Advisory Board rows with Status Active. If there are none, say: "You don't have a board yet. Run /hi5-advisor and I'll set you up with five advisors in a few minutes," and stop.
+Find the workspace using `../hi5-advisor/references/notion.md`. Read the Advisory Board rows with Status Active. If there are none, say: "You don't have a board yet. Run /hi5-advisor and I'll set you up with five or six advisors in a few minutes," and stop.
 
-**Fresh brain check.** If a Master Coach is Active, count the Coach Library rows saved after its Date. If there are 10 or more, offer once before the meeting: "You've saved [n] new posts since your Master Coach was last built. Want me to refresh it first? It takes a few minutes." On a yes, refresh it with /hi5-advisor Step 4B (show the changes and wait for the member's OK, as that step says), then continue. On a no, continue without asking again in this session. If the Master Profile has a Board Updates section with new content for a seated creator advisor, offer the refresh the same way, in one line.
+**Fresh brain check.** If a Master Coach is Active, count the Coach Library rows saved after the later of its Date and the `master_coach_refresh_declined` time in Board Updates (compare date and time). If there are 10 or more, offer once before the meeting: "You've saved [n] new posts since your Master Coach was last built. Want me to refresh it first? It takes a few minutes." On a yes, refresh it with /hi5-advisor Step 4B (show the changes and wait for the member's OK, as that step says), delete the `master_coach_refresh_declined` line, then continue. On a no, save `- master_coach_refresh_declined: <date and time>` in the Board Updates section (see `../hi5-advisor/references/notion.md`), continue, and do not offer again until 10 more posts have been saved after that time. If Board Updates has a line `- advisor key | what's new | found <date>` (not marked declined) for a seated creator advisor, offer the refresh the same way, in one line. On a yes, refresh with /hi5-advisor Step 5, which clears that creator's lines. On a no, add `| declined <date>` to those lines and do not offer them again until the next monthly check finds newer content.
 
 If the member asked one advisor a quick question ("ask the Money Mind if...", "what would [name] say about..."), go to Quick ask below.
 
@@ -40,7 +41,7 @@ If the member asked one advisor a quick question ("ask the Money Mind if...", "w
 
 ## Step 3: Seat the board
 
-Show who sits by default (On Board advisors). If an Active advisor that is not On Board fits this decision clearly better, suggest the swap in one line with the reason, for example "This is a recruiting question, so I'd add your Agent Growth Coach. Swap out Brand and Content Creator?" Seat three to seven advisors. Wait for the member's OK.
+Show who sits by default (On Board advisors). If an Active advisor that is not On Board fits this decision clearly better, suggest the swap in one line with the reason, for example, for a real estate team, "This is a recruiting question, so I'd add your Agent Growth Coach. Swap out Brand and Content Creator?", or for a dental office, "This is a hiring question, so I'd add your Systems Builder. Swap out Brand and Content Creator?" Seat three to seven advisors. Wait for the member's OK.
 
 ## Step 4: Each advisor's view
 
@@ -52,7 +53,7 @@ When you can start sub-agents, start one per advisor at the same time, each with
 
 Otherwise write each advisor's view in turn yourself, with the same task, reading only that advisor's brain for it.
 
-Check each view before you use it: it follows that advisor's Lens, it cites its sources (for a Mentor or Public figure), any quote matches its Quotes section word for word, and it has no em dashes. Fix or drop anything that fails.
+Check each view before you use it: it follows that advisor's Lens, it cites its sources (for a Mentor or Public figure), any quote matches its Quotes section word for word, and it has no em dashes. Trim any view past 8 sentences, and drop any statement of fact about the member's business that is not in the brief or the Master Profile. Fix or drop anything else that fails.
 
 ## Step 5: The group summary
 
@@ -65,13 +66,13 @@ Save the meeting first, so nothing is lost: a Board Meetings row with the full n
 **Quick answer.** Show in chat: the call and confidence, each advisor's stance in one line with the risk they see, where the board agrees and splits in two or three lines, and the next steps. Keep it to one screen.
 
 **Detailed report.** Show the same short version in chat, then make the report from the same notes:
-1. If the session lists a Docs artifact type, create the report from it; otherwise build one self-contained HTML page and publish it as an artifact. It holds the full meeting notes, laid out to read and share: the call up top, the group summary, next steps, each advisor's view, and the facts used. Label simulated advisors and keep the closing simulation note.
-2. Put its link in the meeting row's Report field.
+1. If the session has a way to publish an artifact: if it lists a Docs artifact type, create the report from it; otherwise build one self-contained HTML page and publish it as an artifact. If no artifact tool is available, say so in one line: the Notion meeting page is the report, and it can be exported to PDF from Notion. Leave the Report field empty and skip step 2 below. It holds the full meeting notes, laid out to read and share: the call up top, the group summary, next steps, each advisor's view, and the facts used. Label simulated advisors and keep the closing simulation note.
+2. Put its link in the meeting row's Report field (a second write, after the row was created).
 3. Say in one line that the full report is also saved in their Board Meetings in Notion, and that the report can be downloaded as a PDF.
 
 Then, either way:
 1. One line: "Want to push back on anyone, or ask one of them a follow-up?"
-2. Ask: "When should we check how this turned out? I'd suggest [a date that fits the decision, usually 30 to 90 days out]." Save the Follow-up date.
+2. Ask: "When should we check how this turned out? I'd suggest [a date that fits the decision, usually 30 to 90 days out]." Save the Follow-up date. This is a second write: update the meeting row you already created, never make a second row.
 3. Say "Saved to your Board Meetings in your Hi5 workspace."
 
 **Push back.** When the member pushes back on an advisor, that advisor answers from its own brain in three to six sentences, and holds its view unless the member gave a new fact. If its view changes, update its section and the summary in the saved notes, and say what changed.
