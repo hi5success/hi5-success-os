@@ -15,9 +15,12 @@ Each database has two IDs. Save them side by side:
 
 The `_db_id` opens the database. The `_ds_id` is its data source ID (the `collection://` ID), and it is the one to use for querying rows and for creating rows. When a database is created, its data source ID comes back in the result: save both. If a `_ds_id` is missing (a database made earlier), fetch the database once, read the data source ID from the result, and write it back to the Page IDs section before you go on.
 
+- `compliance_page_id` (added by Stage 2 of /hi5-setup): the member's Compliance Guardrails page. Read it when it exists, wherever the member's compliance rules matter (an Industry Expert's lens, a board meeting).
+
 ## Writing to Notion (rules for every save)
 - **Dollar signs:** write every `$` as `\$` in page content and in text properties. An unescaped `$` can turn into a math block.
-- **Dates with time:** write Saved (Coach Library) and Date (Advisory Board) as a date with a time, in the member's time zone (`date:Saved:is_datetime` set to 1). Compare them as date and time, never as a day.
+- **Dates with time:** write Saved (Coach Library) and Date (Advisory Board) as a date with a time, in the member's time zone (`date:Saved:is_datetime` set to 1). You have no clock tool, so the time is your best estimate and can be a few minutes off.
+- **Counting what is new:** never decide what is new from those estimated times alone. Use Notion's own timestamps: a Coach Library row's created time (the `createdTime` column in a query) against the last edited time of the Master Coach page (`page_last_edited_at` in its fetch result). For a declined refresh, use the post count saved with the decline (see Board Updates).
 - **New select options:** a row cannot use an option the database does not have. To add one, update the database's column and list every option to keep plus the new one (anything left out is removed).
 
 ## The three databases
@@ -67,7 +70,7 @@ Coach Library:
 CREATE TABLE ("Title" TITLE, "Creator" RICH_TEXT, "Platform" SELECT('Instagram':pink, 'TikTok':gray, 'Facebook':blue, 'YouTube':red, 'LinkedIn':blue, 'X':default, 'Podcast':purple, 'Web':green), "Link" URL, "Posted" DATE, "Saved" DATE, "Use" MULTI_SELECT('Hook':orange, 'Content idea':yellow, 'Business advice':green, 'Sales pitch':blue, 'Story':purple), "Topics" MULTI_SELECT('Marketing':blue, 'Sales':green, 'Pricing':yellow, 'Hiring':orange, 'Money':brown, 'Systems':gray, 'Content':pink, 'Mindset':purple, 'Leadership':red, 'Customer service':default, 'Offers':blue, 'Partnerships':green), "Folder" RICH_TEXT, "Hook" RICH_TEXT, "Main point" RICH_TEXT, "Lesson" RICH_TEXT, "Pitch" RICH_TEXT, "Why I liked it" RICH_TEXT, "Status" SELECT('New':blue, 'Used':green))
 ```
 
-After creating a database, save its `_db_id` and `_ds_id` (see above).
+After creating a database, save its `_db_id` and `_ds_id` (see above). The create result gives the data source ID and the database URL. The database ID is the 32 characters at the end of that URL, written with hyphens as 8-4-4-4-12. Check it by fetching the database before you save it.
 
 ## Topics (Coach Library)
 - The starting Topics are Marketing, Sales, Pricing, Hiring, Money, Systems, Content, Mindset, Leadership, Customer service, Offers, and Partnerships.
@@ -77,7 +80,7 @@ After creating a database, save its `_db_id` and `_ds_id` (see above).
 ## Master Profile entries these skills write
 Each goes in its own section of the Master Profile, above the Linked pages heading, never at the end of the page.
 - **Library Folders:** one bullet per saved folder: `- platform | folder name | folder URL | last synced <date and time>`. "Sync my folders" opens the URL. If an older bullet has no URL, ask the member for it once and write it in.
-- **Board Updates:** one bullet per piece of news about an advisor: `- advisor key | what's new | found <date>`. Add `| declined <date>` to a line the member said no to. A refresh of that advisor clears its lines. Also here: `- master_coach_refresh_declined: <date and time>`, saved when the member declines a Master Coach refresh offer.
+- **Board Updates:** one bullet per piece of news about an advisor: `- advisor key | what's new | found <date>`. Add `| declined <date>` to a line the member said no to. A refresh of that advisor clears its lines. Also here: `- master_coach_refresh_declined: <date and time> | <n> posts`, saved when the member declines a Master Coach refresh offer, where n is the number of Business advice, Sales pitch, and Story posts in the library at that moment. If the section does not exist yet, create it above Linked pages.
 
 ## Safety net
 

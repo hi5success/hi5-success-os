@@ -71,11 +71,11 @@ The Master Coach is one advisor that thinks the way the content the member value
    - **Voice:** plain and direct, in the member's own language. It never imitates one creator.
    - **Quotes:** only hooks or lines saved word for word in the library, with the creator's name.
 4. Show the Seat, the top five principles, and where the creators disagree. Make the changes the member asks for, then save (Version 1, Status Active, On Board checked unless the board is full).
-5. To refresh, read only the library rows saved after the row's Date (date and time) and the creator advisors whose Date is later than the row's, show what changed as a plan, and update on a yes. Set Date to the date and time now, and delete any `master_coach_refresh_declined` line in Board Updates.
+5. To refresh, read only the library rows created since the Master Coach page was last edited (a row's created time against the page's last edited time, see references/notion.md) and the creator advisors whose Date is later than the row's, show what changed as a plan, and update on a yes. Set Date to the date and time now, and delete any `master_coach_refresh_declined` line in Board Updates.
 
 ## Step 5: Refresh an advisor
 
-For a Mentor or Public figure: ask for new links or offer to search for their newest long-form content since the row's Date. Gather and read the new sources the same way, continuing the source ids. Show the member what changed (new principles, changed positions, new frameworks) as a short plan. On a yes, update the brain, add 1 to Version, update Sources and Date (with the time), and clear that creator's lines from the Board Updates section. For a Role: ask what to change, show the plan, then update.
+For a Mentor or Public figure: ask for new links or offer to search for their newest long-form content since the row's Date. Gather and read the new sources the same way, continuing the source ids. Show the member what changed (new principles, changed positions, new frameworks) as a short plan. On a yes, update the brain, add 1 to Version, update Sources (the number of rows in the Sources table) and Date (with the time), and clear that creator's lines from the Board Updates section. For a Role: ask what to change, show the plan, then update.
 
 ## Step 6: Change who sits on the board
 

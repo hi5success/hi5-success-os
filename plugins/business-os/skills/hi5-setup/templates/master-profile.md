@@ -174,7 +174,7 @@ A child page of the Master Profile, ID in `voice_profile_page_id`. Bullets: `voc
 Added by /hi5-library when the member pulls a saved folder. Not created by /hi5-setup. One bullet per folder: `- platform | folder name | folder URL | last synced <date and time>`. It sits in its own section above Linked pages, never at the end of the page.
 
 ### Board Updates
-Added by the monthly creator check that /hi5-library can schedule. One bullet per finding, `- advisor key | what's new | found <date>`, so /hi5-board and /hi5-advisor can offer a refresh. A line the member declined ends with `| declined <date>`. A refresh of that advisor clears its lines. It also holds `- master_coach_refresh_declined: <date and time>`, saved when the member says no to a Master Coach refresh. It sits in its own section above Linked pages.
+Added by the monthly creator check that /hi5-library can schedule. One bullet per finding, `- advisor key | what's new | found <date>`, so /hi5-board and /hi5-advisor can offer a refresh. A line the member declined ends with `| declined <date>`. A refresh of that advisor clears its lines. It also holds `- master_coach_refresh_declined: <date and time> | <n> posts`, saved when the member says no to a Master Coach refresh (n is the number of Business advice, Sales pitch, and Story posts at that moment). It sits in its own section above Linked pages.
 
 ### Linked pages
 Always the last section. It holds only the heading. Child pages created by the stages appear below it.

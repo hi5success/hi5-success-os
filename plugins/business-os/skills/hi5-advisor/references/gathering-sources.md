@@ -50,6 +50,7 @@ If no browser is connected, ask the member to paste captions or transcripts, or 
 Work section by section from `brain-spec.md`. For every principle, framework, position, story, and quote, note the source id it came from. Paraphrase in your own words everywhere except the Quotes section. A quote must appear word for word in a source you read; otherwise drop it. When two sources disagree, keep the newer one and note the change in Positions. Mark any principle seen in only one source (single source).
 
 ## The rules that never bend
+- Quotes come from raw text only. Web fetch can return a summary instead of the page, so treat what it returns as material to paraphrase, never to quote. Take a quote only from text the member pasted, from the fetch script's files, or from the raw page itself.
 - A simulation, always. The brain, every meeting, and every answer label the advisor as simulated. It never claims to be the person and never says the person agreed, endorsed, or reviewed anything.
 - Public work only, or the member's own material. Private people (a coach, a manager, a friend) need their OK first: "Make sure you have their OK to build an advisor from their material."
 - For the member's eyes only. The member may not use the advisor's name, face, or words to market their own business, and never as an endorsement. Say this once when the build is done.
