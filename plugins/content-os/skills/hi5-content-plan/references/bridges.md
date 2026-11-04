@@ -1,6 +1,6 @@
 # Local Bridges
 
-The CapCut bridge, the YouTube manager, and the GHL social bridge run on the member's computer as local MCP servers. The plugin cannot install them. Setup only detects them (exact tool names below) and points to the install guide and the install video: [BRIDGE INSTALL VIDEO LINK: add before release]. Do not write Google Cloud, API key, or developer console steps.
+The CapCut bridge, the YouTube manager, and the GHL social bridge run on the member's computer as local MCP servers. The plugin cannot install them. Setup only detects them (exact tool names below) and points to the install guide and the install video. Say: "Install video coming soon. Until then, ask in the Hi5 Success community and we'll walk you through it." Do not write Google Cloud, API key, or developer console steps.
 
 ## Where the bridges are set up
 Bridges are set up in the Claude desktop app, not in Claude Code. The member installs Node, the CapCut desktop app, Google Cloud OAuth for YouTube, and their GoHighLevel key by hand, following the install guide. The CapCut drafts folder is different on Mac and on Windows, so never hardcode it: the bridge knows it, and the member sets it during install. A separate, optional bridges plugin may package them later. It is not part of this plugin.
