@@ -14,7 +14,7 @@ const FROM = roots(process.env.CAPCUT_MOVE_FROM || `${HOME}\\Videos;${HOME}\\Dow
 const SYS = (process.env.SystemDrive || 'C:').toLowerCase() + path.sep;
 const BLOCKED = roots(`${HOME}\\AppData`); // holds the Startup folder and app settings
 // Destinations: any non-system drive (G:, D:, USB...) or the user's own folder (Dropbox, OneDrive, Box, Documents...).
-const allowedDest = (p: string) => process.env.CAPCUT_MOVE_TO ? inside(p, roots(process.env.CAPCUT_MOVE_TO))
+export const allowedDest =(p: string) => process.env.CAPCUT_MOVE_TO ? inside(p, roots(process.env.CAPCUT_MOVE_TO))
     : !inside(p, BLOCKED) && (!(p.toLowerCase() + path.sep).startsWith(SYS) || inside(p, roots(HOME)));
 const MoveSchema = z.object({
     file: z.string().min(3).describe('Absolute path of the exported file, e.g. C:\\Users\\you\\Videos\\My Video.mp4'),

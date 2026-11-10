@@ -14,7 +14,7 @@ Ask short questions, with A, B, C options where they fit:
 - "What date range are we planning for?" Use `posting_frequency` and `weekly_rhythm` from the Content Profile to list the publish slots in that range.
 
 ## 2. Research
-Find what people search and what is trending, using `research.md` (YouTube SEO if YouTube is used, AEO, and social trends for the picked platforms). Use vidIQ if it is connected. Use only data from a tool or the member. Never invent a search volume or a trend, and label anything you could not check.
+Find what people search and what is trending, using `research.md` (YouTube SEO if YouTube is used, AEO, and social trends for the picked platforms). For the member's own channel stats, use youtube_analytics from the YouTube uploader if it is installed. vidIQ is optional: use it only if it is connected, never as a required step. Use only data from a tool or the member. Never invent a search volume or a trend, and label anything you could not check.
 
 ## 3. Propose topics
 Show a short table: topic, hook or angle, media type, platforms, and why it fits now. Keep the member's own ideas from the Content Planner (Status Brainstorming) in the mix. The member approves in the conversation. There is no approval click later.
@@ -47,7 +47,7 @@ Before the member sees any script or notes, run the pre-review check from the pi
 ## 6. Create the rows, folders, and starting statuses
 For each approved piece:
 - A row in the Content Planner with Deliverable Type, Platforms (Distribution), Record Date, Publish Date and time, Edit Due Date, and the Asset Folder URL. Role is Content Manager, Status is Brainstorming, and Status Changed is today. A topic that came from an idea row updates that row instead of making a second one. When the script is written and the row is ready to record, set Not Started (and Status Changed).
-- The project folder in the member's synced folder (the folders reference, "Content/[Channel]/[Video Title]" with Clips, B-Roll, and Exports), only for the roles in use, with the link saved in Asset Folder URL. Set Channel on the row.
+- The project folder in the member's synced folder (the folders reference, "Content/[Channel]/[Video Title]" with Clips, B-Roll, and Export), only for the roles in use, with the link saved in Asset Folder URL. Set Channel on the row.
 - The notes in the page sections from the pipeline reference, with an empty Handoff checklist and Log.
 For each long-form, create the clip rows right away when video editing and social are in use: the count from the SOP (default 5, `clips_per_long_form` in Content Settings), adjustable per video. Reel 1 is always the intro hook, and Reels 2 to 5 are the best moments. Title them "Reel 1 - Intro Hook - [Video Title]", "Reel 2 - [Video Title]", and so on. Each clip row has Deliverable Type Short Form, Content Type Repurpose, Role Video Editor, Status Not Started, Clip Number, the Parent long-form relation set to the video, the same Channel, and the parent's platforms. Leave the clip's publish date to the formula (it keeps the long-form's time of day), then read the dates it shows and say them in one line so the member can change them. A blog, newsletter, or carousel made from the video is a child row with no Clip Number.
 If a person does a role, tell the member which rows wait for that person.

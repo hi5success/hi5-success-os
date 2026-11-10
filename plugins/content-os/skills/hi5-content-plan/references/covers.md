@@ -18,13 +18,13 @@ The choice is saved in Content Settings (cover_image_option), per channel if the
 
 ## Cover tool (Content Settings, cover_tool)
 - **A) Claude Design or a Claude artifact (default).** The steps below.
-- **B) Canva.** Claude builds or edits the design in the member's Canva with the Canva connector, using the Cover Template and a photo or cutout from Content/Brand/. The member then downloads the design from Canva into the row's Exports folder by hand. Say that once, plainly: "I'll build it in Canva. You download it into the Covers folder yourself, and then I'll tick Cover made." Do not tick Cover made until the member says it is in the folder. Nothing is exported automatically yet. If the Canva connector is not connected, say so and use option A.
+- **B) Canva.** Claude builds or edits the design in the member's Canva with the Canva connector, using the Cover Template and a photo or cutout from Content/Brand/. The member then downloads the design from Canva into the row's Export folder by hand. Say that once, plainly: "I'll build it in Canva. You download it into the Covers folder yourself, and then I'll tick Cover made." Do not tick Cover made until the member says it is in the folder. Nothing is exported automatically yet. If the Canva connector is not connected, say so and use option A.
 
 ## Default: Claude Design or a Claude artifact
 1. Read the Cover Template page and the last cover link. Match size, text position, fonts, colors, and logo exactly.
 2. Pick the photo or cutout from Content/Brand/ and read the cover text (a few words from the title or hook).
 3. Build the cover from the Cover Template in Claude Design, or as a Claude artifact, at the exact pixel size for the use.
-4. Export a PNG at the exact size and write it straight into the row's folder in the synced folder (Covers for a video, Exports for a static post), named cover-<use>-<width>x<height>.png. Never upload it through the Drive connector.
+4. Export a PNG at the exact size and write it straight into the row's folder in the synced folder (the Export folder, next to the video or the static post), named cover-<use>-<width>x<height>.png. Never upload it through the Drive connector.
 5. Read the PNG's width and height from its header and check they match the size exactly. If they do not, redo it.
 6. Update the Cover Template page's last cover link, link the file on the row, and tick Cover made.
 7. Cover text is short. No income or results claims, no invented facts, nothing that points to a protected class, and the disclosure and brokerage lines the member's Compliance page requires.

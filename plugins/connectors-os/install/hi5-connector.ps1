@@ -6,13 +6,21 @@
                       GHL social: opens a Windows box for the token (never typed into the chat), tests it, saves it encrypted
     -Action import-accounts
                       GHL social: encrypts the sub-accounts from an older plain ~/.hi5-ghl-social/accounts.json
+    -Action set-client -ClientFile <client_secret...json>
+                      YouTube: saves the member's Google Desktop-app client, encrypted
+    -Action add-channel -ChannelName main
+                      YouTube: opens Google sign-in in the browser; the member picks the channel and clicks Allow; saved encrypted
+    -Action remove-channel -ChannelName main
+                      YouTube: signs the channel out at Google and deletes it from this computer
   Windows PowerShell 5.1 compatible. Writes only inside %USERPROFILE%\.hi5-connector (or -InstallRoot). Not AppData: the Microsoft Store build of
   Claude silently redirects new AppData folders into its private storage, which a Claude reset would wipe.
   It never edits Claude's config files: the plugin itself tells Claude Code how to start each connector.
 #>
 param(
-  [ValidateSet('check', 'install', 'add-account', 'import-accounts')] [string]$Action = 'check',
-  [ValidateSet('capcut', 'ghl-social')] [string]$Connector = 'capcut',
+  [ValidateSet('check', 'install', 'add-account', 'import-accounts', 'set-client', 'add-channel', 'remove-channel')] [string]$Action = 'check',
+  [ValidateSet('capcut', 'ghl-social', 'youtube')] [string]$Connector = 'capcut',
+  [string]$ClientFile,              # YouTube: the Desktop-app OAuth client JSON the member downloaded from Google Cloud
+  [string]$ChannelName,             # YouTube: the name the member gives this channel
   [switch]$InstallMissing,          # let winget install Python, Node.js and FFmpeg (only after the member said yes)
   [string]$AccountName,
   [string]$LocationId,
@@ -60,10 +68,14 @@ function Get-Status {
   try { $ghl['accounts'] = @((Get-GhlAccounts).Keys) } catch { $ghl['accounts'] = 'saved sub-accounts could not be unlocked; add them again' }   # names only, never tokens
   $cap = Get-ConnectorStatus 'capcut' 'capcut\mcp-server\dist\index.js'
   $cap['bridge_running'] = Test-BridgeUp
+  $yt = Get-ConnectorStatus 'youtube' 'youtube\server\node_modules'
+  try { $s = Get-YtStore; $yt['google_client_set'] = [bool]$s.client; $yt['channels'] = @($s.channels | ForEach-Object { "$($_.name) ($($_.title))" }) }
+  catch { $yt['channels'] = 'saved channels could not be unlocked; add them again' }   # names only, never tokens
   [ordered]@{
     windows       = ($env:OS -eq 'Windows_NT')
     capcut        = $cap
     ghl_social    = $ghl
+    youtube       = $yt
     python        = if ($py) { $py.version } else { $null }
     node_major    = Get-NodeMajor
     ffmpeg        = Test-Ffmpeg
@@ -151,6 +163,11 @@ function Install-CapCut {
   if ($LASTEXITCODE) { throw 'Installing the bridge requirements failed. Check the internet connection and run again.' }
   $cfg = Join-Path $bridge 'config.json'
   if (-not (Test-Path $cfg)) { Copy-Item (Join-Path $bridge 'config.json.example') $cfg }
+
+  # Transcripts run on this computer. Fetch the speech model now (about 500 MB, once) so the first transcript doesn't wait on it.
+  Write-Host 'Getting the transcript model (about 500 MB, one time) ...'
+  & $venvPy (Join-Path $bridge 'transcribe.py') --download small.en (Join-Path $dst 'models') | Out-Host
+  if ($LASTEXITCODE) { throw 'Downloading the transcript model failed. Check the internet connection and run again.' }
 
   Write-Host 'Building the connector (Node.js) ...'
   $mcp = Join-Path $dst 'mcp-server'
@@ -286,12 +303,101 @@ function Import-GhlAccounts {
     next = 'The tokens are now saved encrypted. The old plain file still exists; the member can delete it once posting works.' }
 }
 
+#  YouTube
+
+$YtDir = Join-Path $InstallRoot 'youtube'
+$YtStore = Join-Path $YtDir 'youtube.dat'
+
+function Get-YtStore {
+  # Decrypts {client, channels[]} (only this Windows user can). Channels hold Google refresh tokens: never print them.
+  $s = [pscustomobject]@{ client = $null; channels = @() }
+  if (Test-Path $YtStore) {
+    $bytes = [Security.Cryptography.ProtectedData]::Unprotect([Convert]::FromBase64String((Get-Content -Raw $YtStore).Trim()), $null, 'CurrentUser')
+    $j = [Text.Encoding]::UTF8.GetString($bytes) | ConvertFrom-Json
+    $s.client = $j.client; $s.channels = @($j.channels | Where-Object { $_ })
+  }
+  return $s
+}
+function Save-YtStore($s) {
+  New-Item -ItemType Directory -Force -Path $YtDir | Out-Null
+  $bytes = [Text.Encoding]::UTF8.GetBytes((@{ client = $s.client; channels = @($s.channels) } | ConvertTo-Json -Depth 6 -Compress))
+  [IO.File]::WriteAllText($YtStore, [Convert]::ToBase64String([Security.Cryptography.ProtectedData]::Protect($bytes, $null, 'CurrentUser')))
+}
+
+function Install-YouTube {
+  Install-Missing -NodeOnly
+  $src = Join-Path $PluginRoot 'connectors\youtube'
+  New-Item -ItemType Directory -Force -Path $YtDir | Out-Null
+  Copy-Tree (Join-Path $src 'server') (Join-Path $YtDir 'server')
+  Push-Location (Join-Path $YtDir 'server')
+  try {
+    & npm ci --omit=dev --ignore-scripts --no-audit --no-fund --loglevel=error | Out-Host
+    if ($LASTEXITCODE) { throw 'Installing the connector packages failed. Check the internet connection and run again.' }
+  } finally { Pop-Location }
+  $roots = Get-MediaRoots
+  Write-Json ([ordered]@{ mediaRoots = $roots }) (Join-Path $YtDir 'settings.json')
+  $version = (Read-Json (Join-Path $src 'connector.json')).version
+  Save-Stamp 'youtube' $version $YtDir
+  $s = Get-YtStore
+  [ordered]@{ result = 'installed'; connector = 'youtube'; version = $version; google_client_set = [bool]$s.client; channels = @($s.channels | ForEach-Object { $_.name })
+    media_folders = $roots; next = if ($s.client) { 'Add a channel with -Action add-channel.' } else { 'Set up the Google client with -Action set-client, then add a channel.' } }
+}
+
+function Set-YtClient {
+  if (-not $ClientFile -or -not (Test-Path -LiteralPath $ClientFile)) { throw 'Give -ClientFile with the full path of the JSON file downloaded from Google Cloud (Clients, Download JSON).' }
+  try { $j = Get-Content -Raw -LiteralPath $ClientFile | ConvertFrom-Json } catch { throw 'That file is not a Google client file. Download the JSON again from Google Cloud, Clients.' }
+  if ($j.web) { throw 'That client is a Web application. In Google Cloud, create a new client with Application type: Desktop app, and download that one.' }
+  if (-not $j.installed.client_id -or -not $j.installed.client_secret) { throw 'That file is not a Desktop app OAuth client. In Google Cloud, Clients, create one with Application type: Desktop app.' }
+  $s = Get-YtStore
+  $s.client = [ordered]@{ client_id = $j.installed.client_id; client_secret = $j.installed.client_secret; project_id = $j.installed.project_id }
+  Save-YtStore $s
+  [ordered]@{ result = 'client saved'; google_project = $j.installed.project_id; channels = @($s.channels | ForEach-Object { $_.name })
+    next = 'The downloaded file is no longer needed by the connector; the member may keep it somewhere safe or delete it. Next: -Action add-channel.' }
+}
+
+function Add-YtChannel {
+  if (-not $ChannelName) { throw 'Give -ChannelName, the name the member wants for this channel (for example main).' }
+  $server = Join-Path $YtDir 'server'
+  if (-not (Test-Path (Join-Path $server 'node_modules'))) { throw 'Install YouTube first (-Action install -Connector youtube).' }
+  $s = Get-YtStore
+  if (-not $s.client) { throw 'Set up the Google client first (-Action set-client).' }
+  $key = Get-AccountKey $ChannelName
+  $env:HI5_YT_CLIENT = ($s.client | ConvertTo-Json -Compress)
+  Write-Host 'A Google sign-in page is opening in the browser. Sign in, pick the channel, and click Allow.'
+  try { $line = & node (Join-Path $server 'signin.mjs') } finally { Remove-Item Env:HI5_YT_CLIENT -ErrorAction SilentlyContinue }
+  if ($LASTEXITCODE -ne 0 -or -not $line) { throw 'The Google sign-in did not finish, so nothing was saved. Run add-channel again.' }
+  $c = ($line | Select-Object -Last 1) | ConvertFrom-Json
+  $other = $s.channels | Where-Object { $_.channelId -eq $c.channelId -and $_.name -ne $key }
+  if ($other) { throw "That channel ($($c.title)) is already saved as '$($other.name)'. Use that name, or remove it first." }
+  $s.channels = @($s.channels | Where-Object { $_.name -ne $key }) + [pscustomobject]@{ name = $key; channelId = $c.channelId; title = $c.title; handle = $c.handle; tokens = $c.tokens }
+  Save-YtStore $s
+  [ordered]@{ result = 'channel saved'; channel = $key; youtube_channel = $c.title; handle = $c.handle; channels = @($s.channels | ForEach-Object { $_.name })
+    next = 'Fully quit Claude (tray icon, Quit) and open it again so the connector sees the channel.' }
+}
+
+function Remove-YtChannel {
+  if (-not $ChannelName) { throw 'Give -ChannelName.' }
+  $key = Get-AccountKey $ChannelName
+  $s = Get-YtStore
+  $c = $s.channels | Where-Object { $_.name -eq $key }
+  if (-not $c) { throw "No channel is saved as '$key'." }
+  $revoked = $true
+  try { Invoke-RestMethod -Method Post -Uri 'https://oauth2.googleapis.com/revoke' -Body @{ token = $c.tokens.refresh_token } -TimeoutSec 20 | Out-Null } catch { $revoked = $false }
+  $s.channels = @($s.channels | Where-Object { $_.name -ne $key })
+  Save-YtStore $s
+  [ordered]@{ result = 'channel removed'; channel = $key; signed_out_at_google = $revoked; channels = @($s.channels | ForEach-Object { $_.name })
+    next = if ($revoked) { 'Fully quit Claude and open it again.' } else { 'Removed here. Google did not confirm the sign-out: the member can remove access at myaccount.google.com/permissions.' } }
+}
+
 try {
   $out = switch ($Action) {
     'check' { Get-Status }
-    'install' { if ($Connector -eq 'capcut') { Install-CapCut } else { Install-Ghl } }
+    'install' { switch ($Connector) { 'capcut' { Install-CapCut } 'ghl-social' { Install-Ghl } 'youtube' { Install-YouTube } } }
     'add-account' { Add-GhlAccount }
     'import-accounts' { Import-GhlAccounts }
+    'set-client' { Set-YtClient }
+    'add-channel' { Add-YtChannel }
+    'remove-channel' { Remove-YtChannel }
   }
   $out | ConvertTo-Json -Depth 5
 } catch {

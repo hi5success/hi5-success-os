@@ -13,6 +13,7 @@ import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/
 import express from 'express';
 import { registerTools } from './tools/index.js';
 import { registerMoveTool } from './tools/move.js';
+import { registerTranscribeTool } from './tools/transcribe.js';
 
 // Initialize MCP server
 const server = new McpServer({
@@ -23,6 +24,7 @@ const server = new McpServer({
 // Register all tools
 registerTools(server);
 registerMoveTool(server);
+registerTranscribeTool(server);
 
 // Server connection handlers
 async function runStdio(): Promise<void> {

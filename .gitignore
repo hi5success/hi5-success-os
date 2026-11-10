@@ -17,3 +17,6 @@ plugins/connectors-os/**/__pycache__/
 plugins/connectors-os/**/config.json
 plugins/connectors-os/**/accounts.json
 plugins/connectors-os/**/dfd_*/
+plugins/connectors-os/**/client_secret*.json
+plugins/connectors-os/**/*.dat
+plugins/connectors-os/**/models/

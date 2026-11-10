@@ -29,5 +29,7 @@ if (!(await bridgeUp())) {
 }
 
 if (settings.moveFrom?.length) process.env.CAPCUT_MOVE_FROM = settings.moveFrom.join(';');
+process.env.CAPCUT_PYTHON ||= path.join(DIR, 'bridge', 'venv', 'Scripts', 'python.exe');
+process.env.CAPCUT_MODELS ||= path.join(DIR, 'models');
 process.env.CAPCUT_API_URL ||= `http://localhost:${port}`;
 await import(pathToFileURL(SERVER).href);

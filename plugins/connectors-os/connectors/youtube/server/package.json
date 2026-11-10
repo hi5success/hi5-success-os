@@ -1,0 +1,14 @@
+{
+  "name": "hi5-youtube-connector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@googleapis/youtube": "^40.0.2",
+    "@googleapis/youtubeanalytics": "^11.0.1",
+    "@modelcontextprotocol/sdk": "^1.32.1"
+  }
+}

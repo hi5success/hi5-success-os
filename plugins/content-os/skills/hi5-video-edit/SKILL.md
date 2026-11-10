@@ -1,6 +1,6 @@
 ---
 name: hi5-video-edit
-description: Edits videos in CapCut through the local CapCut bridge, finds the clips in a long-form, pulls and saves the transcript as a file, makes covers and thumbnails from the member's cover template, and exports to the row's folder. Works from one video on its own, or from the Notion content calendar by status. Used by the Video Editor AI employee. Triggers when the user runs /hi5-video-edit, says "edit this video", "edit my video", "cut this into clips", "find the clips", "get the transcript", "make a thumbnail", "make the cover", or "check my editing queue".
+description: Edits videos in CapCut through the local CapCut bridge for any industry, first classifying the video (talking head, property tour, community tour, interview, screen share) and following the member's brand and video preferences. Makes infographics, charts, and animated maps with Claude Motion or a fallback and places them in CapCut, finds the clips in a long-form, saves the transcript as a file every time, makes covers and thumbnails from the member's cover template, and finds the video in the member's root folder. Works from one video on its own, or from the Notion content calendar by status. Used by the Video Editor AI employee. Triggers when the user runs /hi5-video-edit, says "edit this video", "edit my video", "cut this into clips", "find the clips", "get the transcript", "make a thumbnail", "make the cover", or "check my editing queue".
 ---
 
 # /hi5-video-edit: The Video Editor
@@ -21,7 +21,9 @@ A one-off request needs no setup and no Notion. "Make a cover for this", "find t
 
 ## Core Rules
 - **Brain rules.** Before you save anything to the member's workspace, read `../../references/brain-rules.md`: where a new thing goes, never a second copy, no passwords, and one Decisions Log or AI Memory row for a lasting change or correction.
-- CapCut only, through the local CapCut bridge (../hi5-content-plan/references/bridges.md). Never claim the bridge did something it did not do.
+- CapCut is the editor, through the local CapCut bridge (../hi5-content-plan/references/bridges.md). Graphics and motion (infographics, charts, animated maps, title cards) are made by Claude Motion or its fallbacks and placed in CapCut (references/graphics-and-motion.md). Never claim the bridge did something it did not do.
+- Follow the member's brand (Style Guide and Brand folder) and their Video Preferences, then the built-in defaults (references/video-defaults.md). Never put graphics or text over anyone's face.
+- A team editor works only inside the client folder they were given, with that client's brand. Never open another client's folder.
 - In the queue, work by status from the Content Calendar, following the pipeline reference (../hi5-content-plan/references/pipeline.md). Never change a status the member owns.
 - Read the channel's Style Guide and Edit Log and the row's Edit notes before every edit, apply them, and say in one line which Edit Log lines you applied.
 - Never schedule or post anything. Never invent facts. No em dashes.
@@ -61,29 +63,38 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 ## Finding the Workspace
 Follow the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md. The Content Calendar is the Content Planner (`content_planner_db_id`). Read the content IDs from the Page IDs (`content_page_id`, `content_settings_page_id`, `content_sop_page_id`, `cover_template_page_id`). If there is no content system, the one-off options above still work.
 
+## Finding the video
+Files live in the member's root folder (Google Drive, a shared drive, Dropbox, OneDrive, or a local folder), saved once as `file_storage`. Never ask for a new folder for each video. When the member says something like "inside the YouTube folder there is a video called X", search the root for it and confirm the path in one line. Follow "Finding a video the member names" and "Teams working on client folders" in ../hi5-content-plan/references/folders.md.
+
 ## Step 1: Check the bridge
-Detect the capcut bridge by its exact tool names (capcut_create_draft, capcut_save_draft, and the rest, listed in the bridges reference). If it is missing, say so in one line, give the manual step, and continue with the parts that do not need it (a transcript, covers, handoffs). Never ask the member to reconfirm a bridge that works.
+Detect the capcut bridge by its exact tool names (capcut_create_draft, capcut_save_draft, and the rest, listed in the bridges reference). Note whether capcut_transcribe is there (references/transcript.md). If the bridge is missing, say so in one line, give the manual step, and continue with the parts that do not need it (a transcript, covers, handoffs). Never ask the member to reconfirm a bridge that works.
 
 ## Check my queue
 Works only the Video editing rows, oldest first. Read Content Settings first. If `role_video_editing` is a person, say "Video editing is set to <name>, so I leave those rows for them" and stop. If it is none, say there are no Video editing rows and stop. If it is Claude, follow "A queue pass" in the pipeline reference (../hi5-content-plan/references/pipeline.md). Your rows: Ready to Edit long-forms and one-off shorts, and clip rows whose parent long-form is In Progress and not yet cut. Set a row to In Progress when you start, and add a Log line.
 
 ## Step 2: Edit
-Build the edit from the Clips and B-Roll folders as a CapCut draft with the capcut tools (create the draft, add video, audio, text, subtitles, images, effects, and keyframes, and save the draft with a project name), using the Edit notes and the Style Guide. Read each tool's description first and never guess an argument. For a review copy (named with "-review") in the row's Exports folder, use the bridge's export tool if its docs name one, otherwise ask the member to export from CapCut into the folder and tell you. If the export landed in Videos, Downloads, or the Desktop, move it into the folder with capcut_move_export. Add a Log line saying what you did and which path you used.
+Save the transcript first (Step 4), because captions, clips, and the text all come from it. Then follow references/capcut-recipe.md:
+1. **Classify the video** (talking head, property tour, community tour, interview or podcast, screen share, other) and say it in one line.
+2. **Read** the Style Guide, the Brand folder, Video Preferences, the row's Edit notes, and the Edit Log. Say in one line which preferences and Edit Log lines you applied.
+3. **Make the graphics** the Edit notes or the type call for (references/graphics-and-motion.md) and save them in B-Roll.
+4. **Build the CapCut project** from Clips, B-Roll, and the graphics with the capcut tools, at the right canvas size, and save it with a project name. Read each tool's description first and never guess an argument.
+5. **Export:** the bridge saves the project but does not render a video. Ask the member to open CapCut and export a review copy (named with "-review") into the row's Export folder, and tell you. If it landed in Videos, Downloads, or the Desktop, move it with capcut_move_export.
+Add a Log line saying what you did.
 
 ## Step 3: Find the clips
-For a long-form, find the planned number of clips (the clip rows already on the calendar, or the number in Content Settings). Choose self-contained moments with a strong first line, one idea, and a clean ending, taken from the transcript. Record each clip's start and end time in its row's Edit notes, move the clip row to In Progress, and export the clip to Exports/Short Form (named "Reel N - [hook] - [Video Title]"). Do this once the long-form is Finalizing. Replace "Reel N" in the clip row's title with the hook, keep the Clip Number, and save the file link in Export / Deliverables URL. Never invent a moment that is not in the video.
+For a long-form, find the planned number of clips (the clip rows already on the calendar, or the number in Content Settings). Choose self-contained moments with a strong first line, one idea, and a clean ending, taken from the transcript. Record each clip's start and end time in its row's Edit notes, move the clip row to In Progress, build each clip as its own CapCut project (9:16, cut from the source with start and end times, captions from the transcript), and have the member export it to Export/Shorts (named "Reel N - [hook] - [Video Title]"). Do this once the long-form is Finalizing. Replace "Reel N" in the clip row's title with the hook, keep the Clip Number, and save the file link in Export / Deliverables URL. Never invent a moment that is not in the video.
 
 ## Step 4: Transcript
-Pull the transcript from CapCut and export it as a file (timestamped lines like "[00:00:12] text") into the same folder as the video, and link it on the row. Chapters, descriptions, captions, and blogs all come from it, so nobody waits for YouTube's transcript. Fallback: ask the member to paste it and save the pasted text as a file in that folder. Say which path you used in the row's Log ("Transcript: pulled from CapCut" or "Transcript: pasted by the member"). Tick Transcript saved. See the bridges reference.
+Save the transcript as files in the Export folder every time ("[Video Title] - Transcript.txt" with timestamped lines like "[00:00:12] text", plus the .srt when there is one), and link it on the row. The YouTube title and description, chapters, captions, and the blog all come from it, so nobody waits hours for YouTube. Use the first available path in references/transcript.md (the CapCut connector's capcut_transcribe, then a CapCut captions export, then a paste), and log which one. Tick Transcript saved.
 
 ## Step 5: Cover
-Make the cover or thumbnail from the Cover Template and the cover tool in Content Settings (../hi5-content-plan/references/covers.md). Pick the photo or cutout from Content/Brand/ and export a PNG at the exact size straight into the piece's Exports folder in the synced folder, next to the video (" - Cover.png" or " - Thumbnail.png"). Tick Cover made.
+Make the cover or thumbnail from the Cover Template and the cover tool in Content Settings (../hi5-content-plan/references/covers.md). Pick the photo or cutout from Content/Brand/ and export a PNG at the exact size straight into the piece's Export folder in the synced folder, next to the video (" - Cover.png" or " - Thumbnail.png"). Tick Cover made.
 
 ## Step 6: Hand off
 Tick Edit done. Run the pre-review check from the pipeline reference on everything you wrote (cover text and notes) and log "check passed". Then follow the Handoffs section of the pipeline reference: clips and shorts go to Social for captions, long-forms go to the YouTube role for the title, description, chapters, and tags (or, if YouTube is not used, to Social). Add a Log line. Never set Reviewing until the video, the cover, and the text are all ready.
 
 ## Step 7: Revisions and finals
-On Revising, fix every note in the Revisions checklist, tick it, log it, ask the learning-edits question once (../hi5-content-plan/references/learning-edits.md), write the answer to the Edit Log, and set Reviewing. On Finalizing, export the finals (no "-review") to the right folder (Exports for a long-form, Exports/Short Form for a clip or short), tick Finals in the Exports folder, and tell Social or the YouTube role.
+On Revising, fix every note in the Revisions checklist, tick it, log it, ask the learning-edits question once (../hi5-content-plan/references/learning-edits.md), write the answer to the Edit Log, and set Reviewing. On Finalizing, export the finals (no "-review") to the right folder (Export for a long-form or a one-off short, Export/Shorts for a clip cut from a long-form), tick Finals in the Export folder, and tell Social or the YouTube role.
 
 ## NEXT STEP
 Say what is ready for review and what waits on the member. You can run /hi5-next any time and I'll tell you your best next step.
