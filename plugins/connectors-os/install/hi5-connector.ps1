@@ -152,6 +152,11 @@ function Install-CapCut {
   $cfg = Join-Path $bridge 'config.json'
   if (-not (Test-Path $cfg)) { Copy-Item (Join-Path $bridge 'config.json.example') $cfg }
 
+  # Transcripts run on this computer. Fetch the speech model now (about 500 MB, once) so the first transcript doesn't wait on it.
+  Write-Host 'Getting the transcript model (about 500 MB, one time) ...'
+  & $venvPy (Join-Path $bridge 'transcribe.py') --download small.en (Join-Path $dst 'models') | Out-Host
+  if ($LASTEXITCODE) { throw 'Downloading the transcript model failed. Check the internet connection and run again.' }
+
   Write-Host 'Building the connector (Node.js) ...'
   $mcp = Join-Path $dst 'mcp-server'
   Push-Location $mcp

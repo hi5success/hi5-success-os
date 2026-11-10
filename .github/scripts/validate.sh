@@ -455,6 +455,9 @@ if [ -d "$CO" ]; then
     [ -n "$node_out" ] && while IFS= read -r l; do ERRORS+=("$l"); done <<< "$node_out"
   fi
   [ ! -f "$CO/connectors/capcut/mcp-server/src/tools/join.ts" ] || ERRORS+=("connectors-os: capcut_join_parts was dropped, join.ts must stay out")
+  grep -q 'registerTranscribeTool' "$CO/connectors/capcut/mcp-server/src/index.ts" || ERRORS+=("capcut: the transcribe tool must be registered")
+  grep -qE '^faster-whisper==' "$CO/connectors/capcut/bridge/requirements.txt" || ERRORS+=("capcut: faster-whisper must be pinned in requirements.txt")
+  grep -q -- '--download small.en' "$CO/install/hi5-connector.ps1" || ERRORS+=("the installer must download the transcript model during install")
   grep -q 'os.homedir()' "$CO/connectors/capcut/mcp-server/src/tools/move.ts" || ERRORS+=("move.ts must use the member's own home folder")
   grep -q 'write_draft_meta' "$CO/connectors/capcut/bridge/save_draft_impl.py" || ERRORS+=("save_draft_impl.py must give every draft its own name and ID")
   grep -q 'HI5_MARKER' "$CO/connectors/capcut/bridge/save_draft_impl.py" || ERRORS+=("save_draft_impl.py must never replace a project the member made")

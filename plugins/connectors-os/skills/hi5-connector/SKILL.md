@@ -41,7 +41,7 @@ Run `-Action check` before asking anything. Then tell the member in two or three
 
 ## Step 2: The menu
 Ask: **"Which connector would you like to install?"**
-1. **CapCut bridge.** Claude builds your CapCut projects: clips, text, images, and music.
+1. **CapCut bridge.** Claude builds your CapCut projects (clips, text, images, and music) and makes transcripts of your videos on your computer.
 2. **GHL social posting.** Claude schedules posts, reels, carousels, and stories in GoHighLevel with photos and videos from your computer.
 3. **YouTube uploader.** Coming soon.
 
@@ -67,6 +67,7 @@ Say: "Last step. Fully quit Claude: right-click the Claude icon by the clock (it
 ## How the folders work (tell CapCut members once)
 - Footage and finished videos live in the project's folder (Google Drive, Dropbox, or Documents).
 - The CapCut project itself stays in CapCut's own folder on the computer. Never move CapCut's drafts folder into Google Drive: syncing a project while CapCut has it open can damage it.
+- Transcripts: Claude can make a transcript of any video on the computer (the capcut_transcribe tool), free and without uploading it. The install downloads a speech model once (about 500 MB). A long video takes a while, and Claude checks on it.
 - When you export in CapCut, pick the project's folder as the export location. If a video lands in Videos, Downloads, or the Desktop, Claude can move it with the capcut_move_export tool. With Google Drive set to stream, the file still has to upload, so leave the computer on for a few minutes after a big video.
 
 ## Troubleshooting
