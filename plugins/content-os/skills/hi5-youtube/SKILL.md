@@ -22,9 +22,9 @@ A one-off request needs no setup and no Notion. Option A works from a transcript
 - Long-form rows only. Skip the whole role if the member does not use YouTube.
 - In the queue, work by status (../hi5-content-plan/references/pipeline.md). Never change a status the member owns.
 - Everything comes from the saved transcript and the row's notes. Never invent facts, numbers, or claims. No income or results claims. No em dashes.
-- Read the channel Style Guide and Edit Log first and apply them.
+- Read the brand's Style Guide and Edit Log first and apply them.
 - Nothing is uploaded or scheduled before Optimizing, and only after the member reviewed the video, the cover, the title, and the description.
-- **No default channel.** Every upload, edit, and analytics call names the channel, confirmed by name with the member each time, even when only one is saved. The saved youtube_channel is only the suggestion in that question.
+- **No default channel.** Every upload, edit, and analytics call names the channel, confirmed by name with the member each time, even when only one is saved. The brand's youtube_upload_channel (../hi5-content-plan/references/brands.md) is only the suggestion in that question.
 - **No default privacy.** Upload as scheduled (private until the publish time) by default in the plan, or unlisted if the member wants. Public only when the member clearly says to post it now. Ask on every upload: "Is this video made for kids? (most are no)". Never set it without their answer.
 - Never post or schedule short-form. You may add YouTube notes to a short-form row's page for Social.
 - Short questions with A, B, C options.
@@ -76,7 +76,7 @@ From the transcript, write the title, description, chapters with timestamps, and
 Read the short-form rows (clips and shorts) from this long-form. Add YouTube notes (tag ideas, title ideas, the related long-form link) to each row's YouTube notes section for Social to use. Never post or schedule them.
 
 ## Step 4: Optimizing
-At Optimizing, call youtube_list_channels and confirm the channel by name with the member ("Schedule this on main (Smith Realty) for Thursday 9:00 AM?"), suggesting the saved youtube_channel. If it is not saved, say "Run /hi5-connector to add it." Then upload with youtube_upload_video: the channel, the final file from the Export folder, the title, description, tags, category, made-for-kids, the thumbnail, and privacy scheduled with publish_at from the row's date and time (with the member's time zone). Use unlisted only if the member asked, and public only if they clearly said to post it now. Do the YouTube Studio steps the API cannot do (end screen, cards) with Claude's built-in browser, asking the member to sign in if needed. Tick Scheduled and set the status Scheduled. Never claim an upload happened unless the bridge confirms it.
+At Optimizing, take the row's brand (its `Channel`), read the brand's youtube_upload_channel (brands.md), call youtube_list_channels, and confirm the channel by name with the member ("Schedule this on learn-ghl (Learn GHL) for Thursday 9:00 AM?"). If it is not saved, say "Run /hi5-connector to add it." Then upload with youtube_upload_video: the channel, the final file from the Export folder, the title, description, tags, category, made-for-kids, the thumbnail, and privacy scheduled with publish_at from the row's date and time (with the member's time zone). Use unlisted only if the member asked, and public only if they clearly said to post it now. Do the YouTube Studio steps the API cannot do (end screen, cards) with Claude's built-in browser, asking the member to sign in if needed. Tick Scheduled and set the status Scheduled. Never claim an upload happened unless the bridge confirms it.
 
 ## Step 5: Revisions
 On Revising, fix every note, tick it, log it, ask the learning-edits question once (../hi5-content-plan/references/learning-edits.md), write the answer to the Edit Log, and set Reviewing.

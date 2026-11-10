@@ -1,6 +1,6 @@
 # SOPs: How Each Role Works
 
-Used by every content skill, before any work. The member's SOPs (the SOPs database, `sops_db_id`) hold how each role works for each channel. The skill holds the hard rules and the defaults. The SOP holds the member's choices. Plugin updates replace skill files but never the member's SOPs.
+Used by every content skill, before any work. The member's SOPs (the SOPs database, `sops_db_id`) hold how each role works for each brand. The skill holds the hard rules and the defaults. The SOP holds the member's choices. Plugin updates replace skill files but never the member's SOPs.
 
 ## Which SOP
 One row per role: Content Management (/hi5-content-plan), Video Editing (/hi5-video-edit), Social Media Scheduling (/hi5-social), YouTube Publishing (/hi5-youtube), Blog Writing (/hi5-blog). A channel can have its own row (the Channel property). Read the channel's row first, then the role's general row. If there is no SOPs database (an older workspace), use the Content SOP page (`content_sop_page_id`) and offer the SOPs database once through the workspace check. If a SOP field is missing, use the default in the pipeline reference.

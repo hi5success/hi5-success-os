@@ -506,6 +506,19 @@ if [ -d "$YT" ]; then
   grep -q 'No default channel' plugins/content-os/skills/hi5-youtube/SKILL.md || ERRORS+=("hi5-youtube must keep the no-default-channel rule")
   grep -q 'No default privacy' plugins/content-os/skills/hi5-youtube/SKILL.md || ERRORS+=("hi5-youtube must keep the no-default-privacy rule")
 fi
+# 34. Brands: the brand decides the accounts; ask only when several brands and no named or project brand
+BR="plugins/content-os/skills/hi5-content-plan/references/brands.md"
+if [ ! -f "$BR" ]; then ERRORS+=("content-os is missing hi5-content-plan/references/brands.md"); else
+  for s in 'What brand is this for?' 'Hi5 brand:' 'Never inherited' 'youtube_upload_channel' 'ghl_subaccount' 'social_account_ids' 'Never post to another brand' 'Never add an "another brand" option'; do
+    grep -qF "$s" "$BR" || ERRORS+=("brands.md must keep: $s")
+  done
+fi
+grep -q 'brands.md' plugins/content-os/skills/hi5-content-plan/references/core.md || ERRORS+=("core.md must resolve the brand with brands.md")
+grep -q 'Add a brand' plugins/content-os/skills/hi5-content-plan/SKILL.md || ERRORS+=("hi5-content-plan must offer Add a brand")
+grep -q 'Add a brand' plugins/business-os/skills/hi5-setup/SKILL.md || ERRORS+=("hi5-setup re-run menu must offer Add a brand")
+grep -q 'social_account_ids' plugins/content-os/skills/hi5-social/references/queue.md || ERRORS+=("hi5-social must post only to the brand's social_account_ids")
+grep -q 'youtube_upload_channel' plugins/content-os/skills/hi5-youtube/SKILL.md || ERRORS+=("hi5-youtube must suggest the brand's youtube_upload_channel and confirm by name")
+for f in youtube_channel social_accounts; do grep -q "^- $f:" plugins/content-os/skills/hi5-content-plan/references/notion-structure.md || ERRORS+=("notion-structure.md must keep the older $f field"); done
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

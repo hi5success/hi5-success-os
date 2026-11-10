@@ -25,7 +25,7 @@ A one-off request needs no setup and no Notion. "Make a cover for this", "find t
 - Follow the member's brand (Style Guide and Brand folder) and their Video Preferences, then the built-in defaults (references/video-defaults.md). Never put graphics or text over anyone's face.
 - A team editor works only inside the client folder they were given, with that client's brand. Never open another client's folder.
 - In the queue, work by status from the Content Calendar, following the pipeline reference (../hi5-content-plan/references/pipeline.md). Never change a status the member owns.
-- Read the channel's Style Guide and Edit Log and the row's Edit notes before every edit, apply them, and say in one line which Edit Log lines you applied.
+- Read the brand's Style Guide and Edit Log and the row's Edit notes before every edit, apply them, and say in one line which Edit Log lines you applied.
 - Never schedule or post anything. Never invent facts. No em dashes.
 - Short questions with A, B, C options.
 

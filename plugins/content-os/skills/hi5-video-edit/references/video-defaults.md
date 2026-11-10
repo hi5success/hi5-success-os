@@ -2,7 +2,7 @@
 
 ## Order of what wins
 1. The hard rules (compliance, Fair Housing, no invented facts).
-2. The member's brand: the channel's Style Guide and the Brand folder (fonts, colors, logo, cover examples).
+2. The member's brand: the brand's Style Guide and the Brand folder (fonts, colors, logo, cover examples).
 3. The member's **Video Preferences** (below).
 4. The row's Edit notes and the Edit Log.
 5. These built-in defaults.

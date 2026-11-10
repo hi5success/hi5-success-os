@@ -16,18 +16,18 @@ Used by `SKILL.md` option D, only when the member wants the calendar and pipelin
 6. **Where do posts get scheduled?** (only if social is in use) A) The Hi5 scheduler (GoHighLevel) B) Another scheduler (name it) C) I schedule them myself.
 7. **Cover tool?** (only if covers are made) A) Claude Design or a Claude artifact (default) B) Canva. Save it in Content Settings as cover_tool. **Cover images?** Say the default (Claude picks an approved photo or cutout from Content/Brand/ and builds the cover from the Cover Template). Ask only if they want a still from the video or new images made in ChatGPT instead.
 8. **What's different in how you work?** (open) Use the answer to edit the SOP.
-9. **Examples for each channel's Style Guide.** Ask for these, one at a time, with A/B/C where possible, and accept "skip for now":
+9. **Examples for each brand's Style Guide.** Ask for these, one at a time, with A/B/C where possible, and accept "skip for now":
    - **Edits they like** (pacing, captions on screen, b-roll style): A) paste links B) share files from the synced folder C) describe it. Skip for now.
    - **Social posts and covers they like:** A) paste links B) put images in Content/Brand/Cover examples C) describe it. Skip for now.
    - **Captions that sound like them:** A) paste a few B) point me to where they live (a page or a post) C) use my Voice Profile. Skip for now.
-   Save what they give, as links or file names with a one-line note, in each picked channel's Style Guide under "Examples". If they skip, save "examples: skipped" in Content Settings. The first review reminds them once (the pipeline reference).
+   Save what they give, as links or file names with a one-line note, in each brand's Style Guide under "Examples". If they skip, save "examples: skipped" in Content Settings. The first review reminds them once (the pipeline reference).
 
 ## What setup creates (in this order, only for the roles and channels in use)
 1. The Hi5 Content page under the workspace root.
 2. Content Settings, from the answers above.
 3. The SOPs: if the workspace has the SOPs database, the five Sample rows are already there, so offer "Want to set up your content SOPs now?" and run `sop.md` for the roles in use (skip roles marked nobody). If there is no SOPs database, write the Content SOP page from the pipeline reference (Skill vs SOP), edited to match answer 8, and offer the SOPs database through the workspace check. The SOP holds the process, so the skills read it and follow it.
 4. The Content Calendar changes (append only), following the notion structure reference. This includes the Parent long-form relation, the Parent publish date rollup, and the Clip Publish Date formula if the Content Planner does not have them.
-5. A Style Guide (with the examples from question 9) and an Edit Log for each channel picked.
+5. A Style Guide (with the examples from question 9) and an Edit Log for each brand.
 6. The Cover Template page, plus a cover example the member likes if they have one.
 7. The top-level folders inside the synced folder (the folders reference), only for the roles in use. Ask the member to drop approved photos and cutouts into Content/Brand/.
 8. Save the page IDs in the Master Profile Page IDs.
@@ -36,7 +36,7 @@ Used by `SKILL.md` option D, only when the member wants the calendar and pipelin
 Check that the member's Compliance page exists. If it does not, skip the disclosure and brokerage line in the pre-review check and tell the member once: "I could not find your Compliance page, so the pre-review check will skip the disclosure and brokerage lines until it exists." Never hardcode a brokerage or a disclosure.
 
 ## Bridges
-Setup only detects them by exact tool names (the bridges reference), and only for roles set to Claude. If the CapCut bridge or GHL social is missing, point to /hi5-connector (Connectors OS), which installs them. For the YouTube manager, point to the Hi5 Success community. Do not install anything from here and do not write Node, Google Cloud, or API key steps. Say once: "The bridges run in the Claude desktop app, which has to be open for them to work."
+Setup only detects them by exact tool names (the bridges reference), and only for roles set to Claude. If the CapCut bridge or GHL social is missing, point to /hi5-connector (Connectors OS), which installs them. The YouTube uploader is installed by /hi5-connector too. When the YouTube uploader or GHL social is installed, ask the first brand's YouTube channel and social accounts as in "Add a brand" (brands.md) and save `youtube_upload_channel`, `ghl_subaccount`, and `social_account_ids` in Content Settings. Do not install anything from here and do not write Node, Google Cloud, or API key steps. Say once: "The bridges run in the Claude desktop app, which has to be open for them to work."
 
 ## Scheduled tasks
 Offer them (the tasks reference): one task per role set to Claude, plus the daily Published check. Only with the member's OK.

@@ -85,10 +85,10 @@ Store: content_model
 "How often do you plan to post? For example: once a week, 3x per week, daily."
 Store: posting_frequency
 
-**7a. Multiple channels**
-"Do you run more than one YouTube channel? If yes, how many and what is each one focused on?"
+**7a. More than one brand**
+"Do you post for more than one brand (for example a personal brand and a business brand, each with its own YouTube channel or social accounts)? If yes, what are they?"
 
-If they say yes, finish this interview for the first channel. Then, for each additional channel, ask only questions 5, 6, 7, 9, 10, and 11 again (goal, model, frequency, weekly rhythm, competitors, categories) plus the channel's name and URL. Save each additional channel as its own page (see Writing to Notion). If they say no, skip this.
+If they say yes, finish this interview for the first brand. Then, for each other brand, ask only questions 5, 6, 7, 9, 10, and 11 again (goal, model, frequency, weekly rhythm, competitors, categories) plus the brand's name and URL. Save each other brand as its own page (see Writing to Notion) and follow "Add a brand" in brands.md for its YouTube channel and social accounts. If they say no, skip this: with one brand the brand is never asked.
 
 **8. Recording schedule**
 "How do you typically record, do you batch record several videos in one session, or do you record one video at a time as you go?"
@@ -145,7 +145,7 @@ Once confirmed, write to the member's Master Profile using the Notion connector.
 
 1. **Content Profile section.** Add a heading 2 called "Content Profile" on the Master Profile page, inserted before the Linked pages heading (or update it if it exists). Never append it after the child pages Under it write one bullet per field in the form `- field_name: value`, using the field names in the questions above. Put `channels:` first, listing the channel names (just the one name if they have one channel).
 2. **Voice Profile page.** If `voice_profile_page_id` is not set, create a child page called "Voice Profile" under the Master Profile. Write one bullet per voice field (`- vocabulary_style: value`, and so on). Save the new page's ID as `voice_profile_page_id` in Page IDs. If it already exists, change nothing in it.
-3. **Extra channels.** For each additional channel, create a child page under the Master Profile called "Channel – [name]" (with an en dash) holding that channel's own fields. Save each as `Name = page id` in `channel_pages` in Page IDs.
+3. **Extra brands.** For each other brand, create a child page under the Master Profile called "Channel – [name]" (with an en dash) holding that channel's own fields. Save each as `Name = page id` in `channel_pages` in Page IDs.
 4. Do not create any other page. Do not touch other sections.
 
 Then confirm: "Your content profile is saved."

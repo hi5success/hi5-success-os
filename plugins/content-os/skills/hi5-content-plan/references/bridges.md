@@ -17,9 +17,10 @@ A bridge counts as installed when its tools are available in this session. Save 
 
 ## Confirm the account before posting
 The tool confirms the account, never the member.
-- **Before any YouTube upload, edit, or report:** call youtube_list_channels. There is no default channel, even when only one is saved: confirm the channel by name with the member every time ("Upload to main (Smith Realty)?"). The content system's youtube_channel is only the suggestion you name in that question, never used on its own. Pass the channel on every call. If the channel is not saved, say: "Run /hi5-connector to add it." Channels are never added from this plugin.
+- **Brands decide the account (brands.md).** The row's brand gives the YouTube channel and the social accounts. Never use another brand's.
+- **Before any YouTube upload, edit, or report:** call youtube_list_channels. There is no default channel, even when only one is saved: confirm the channel by name with the member every time ("Upload to main (Smith Realty)?"). The brand's youtube_upload_channel (brands.md) is only the suggestion you name in that question, never used on its own. Pass the channel on every call. If the channel is not saved, say: "Run /hi5-connector to add it." Channels are never added from this plugin.
 - **Privacy is always explicit.** The normal path is scheduled (private until publish_at, then public). Unlisted is fine when the member wants a link to share or a tool that cannot read private videos. Public only when the member clearly says to post it now.
-- **Before any post or schedule:** call list_social_accounts and check that an account exists for every platform in the row's Platforms field and matches the content system's social_accounts. If a platform has no account, say which one in a single line and keep the rest of the queue moving.
+- **Before any post or schedule:** call list_social_accounts and check that the brand's social_account_ids (brands.md) exist and are not expired for every platform in the row's Platforms field. Post only to those IDs, in the brand's ghl_subaccount. If a platform has no account, say which one in a single line and keep the rest of the queue moving.
 - Use youtube_list_videos to check whether a long-form is public yet, and list_posts to confirm a scheduled post and for the daily Published check.
 If a call succeeds, move on. Do not ask the member to confirm it again.
 

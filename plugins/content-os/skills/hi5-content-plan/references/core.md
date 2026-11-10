@@ -50,7 +50,7 @@ The **Voice Profile** is a child page of the Master Profile (ID in `voice_profil
 
 ## Multiple Channels
 
-If the Content Profile lists more than one channel in `channels`, each channel has a child page called "Channel – [name]" under the Master Profile (IDs in `channel_pages`). A field on a channel page overrides the same field in the Content Profile. At the start of any command, if there is more than one channel, ask: "Which channel are we working on today?" before reading further. With one channel, do not ask.
+**Brands.** The Content Profile's `channels` lists the member's brands (the Content Planner's `Channel` property and the "Channel – [brand]" pages hold them; members only ever see the word "brand"). A field on a brand page overrides the same field in the Content Profile, except the posting fields. At the start of any command, find the brand with the order in `brands.md` (named in the request, then the project's `Hi5 brand:` line, then the only brand, and only then ask "What brand is this for?"). Read `brands.md` before any post, upload, or brand change.
 
 ## Notion Structure
 
