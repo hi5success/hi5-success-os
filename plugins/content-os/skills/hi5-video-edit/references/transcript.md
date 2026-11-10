@@ -6,7 +6,7 @@ Use the first path that is available, in this order. Detect each by its exact to
 
 | # | Path | What it needs | Notes |
 |---|---|---|---|
-| 1 | **capcut_transcribe** (Connectors OS, CapCut connector 1.1.0 or later) | The CapCut connector installed with /hi5-connector. Runs on the computer, free, nothing uploaded. | Long videos take a while (roughly a third to a half of the video's length on a normal laptop). The tool runs in the background: call it again with the same file to check progress. It writes the .txt and .srt itself. |
+| 1 | **capcut_transcribe** (Connectors OS, CapCut connector 1.1.0 or later) | The CapCut connector installed with /hi5-connector. Runs on the computer, free, nothing uploaded. | Long videos take a while (it depends on the computer; there is no firm estimate yet). English only for now. The tool runs in the background: call it again with the same file to check progress. It writes the .txt and .srt itself. |
 | 2 | **Descript** (transcribe_audio_video, export_transcript) | The member's own Descript account connected in Claude. The video is uploaded to Descript. | Ask once before uploading a member's video to Descript. Use export_transcript to get the text and save it as the files above. |
 | 3 | **CapCut auto-captions** | CapCut on the computer. | Ask the member: "In CapCut, open the project, choose Captions, Auto captions, then export the captions as SRT into the Export folder, and tell me." Then make the .txt from the .srt. |
 | 4 | **The member pastes it** | Nothing. | Save the pasted text as the .txt file. |
