@@ -11,7 +11,7 @@ Each task prompt: "Read the Content Settings, the SOP for the role (the SOPs dat
 - Blog: Published long-forms with no blog draft.
 
 ## One daily task: the Published check
-"Read the Content Calendar. For each Scheduled row whose publish time has passed, call list_posts (ghl-social) or list_youtube_videos (youtube-manager) and check whether it posted. If it confirms, set the row to Published and log it. If it cannot confirm, leave the row Scheduled, add the Log line 'past due, not confirmed', and put it in the report. Never mark a row Published on a guess."
+"Read the Content Calendar. For each Scheduled row whose publish time has passed, call list_posts (ghl-social) or youtube_list_videos (youtube, naming the channel the row was scheduled on) and check whether it posted. If it confirms, set the row to Published and log it. If it cannot confirm, leave the row Scheduled, add the Log line 'past due, not confirmed', and put it in the report. Never mark a row Published on a guess."
 
 ## Rules
 - Only roles set to Claude get a task. A role set to a person or to nobody gets none.

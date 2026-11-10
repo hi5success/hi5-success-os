@@ -272,7 +272,7 @@ grep -q 'check passed' plugins/content-os/skills/hi5-content-plan/references/pip
 for f in plugins/content-os/skills/hi5-video-edit/SKILL.md plugins/content-os/skills/hi5-youtube/SKILL.md plugins/content-os/skills/hi5-social/references/queue.md plugins/content-os/skills/hi5-blog/SKILL.md plugins/content-os/skills/hi5-content-plan/references/plan.md; do
   grep -q 'pre-review check' "$f" || ERRORS+=("$f must run the pre-review check")
 done
-for t in capcut_save_draft upload_youtube_video list_youtube_channels create_post list_social_accounts; do
+for t in capcut_save_draft youtube_upload_video youtube_list_channels create_post list_social_accounts; do
   grep -q "$t" plugins/content-os/skills/hi5-content-plan/references/bridges.md || ERRORS+=("bridges.md must name the exact tool $t")
 done
 grep -q 'synced_folder_path' plugins/content-os/skills/hi5-content-plan/references/folders.md || ERRORS+=("folders.md must name the synced folder path")
@@ -489,6 +489,21 @@ grep -q 'never open, read, or write another client' plugins/content-os/skills/hi
 grep -q 'Remotion exists but is tabled' "$VE/references/graphics-and-motion.md" 2>/dev/null || ERRORS+=("graphics-and-motion.md must say Remotion is tabled")
 if grep -n 'CapCut only' "$VE/SKILL.md" >/dev/null; then ERRORS+=("hi5-video-edit: CapCut is the editor, not CapCut only (graphics come from Claude Motion)"); fi
 
+# 33. YouTube connector: no default channel, explicit privacy, installer-only channels, no client files shipped
+YT="plugins/connectors-os/connectors/youtube"
+if [ -d "$YT" ]; then
+  grep -q 'connectors/youtube/launch.mjs' plugins/connectors-os/.claude-plugin/plugin.json || ERRORS+=("connectors-os plugin.json must register the youtube launcher")
+  grep -q 'ProtectedData' "$YT/launch.mjs" || ERRORS+=("youtube launch.mjs must read the Windows-encrypted store")
+  (cd "$YT/server" && node test.js >/dev/null 2>&1) || ERRORS+=("youtube server test.js failed (no-default-channel or privacy rules)")
+  if grep -n 'add_youtube_channel\|startSignIn' "$YT/server/server.js" >/dev/null; then ERRORS+=("youtube: channels are added only by the installer, not by a chat tool"); fi
+  if grep -nE 'yt-analytics-monetary|youtube\.upload"' "$YT/server/signin.mjs" >/dev/null; then ERRORS+=("youtube: request only the scopes in the plan (no monetary scope)"); fi
+  if find plugins/connectors-os -iname 'client_secret*.json' -o -iname '*.dat' | grep -q .; then ERRORS+=("connectors-os: a Google client file or encrypted store is in the repo"); fi
+  grep -q 'no default channel' plugins/connectors-os/skills/hi5-connector/SKILL.md || ERRORS+=("hi5-connector must say there is no default channel")
+  grep -q 'cannot sign in, accept Google' plugins/connectors-os/skills/hi5-connector/SKILL.md || ERRORS+=("hi5-connector must say Claude cannot sign in or accept consent screens")
+  grep -q 'Publish app' plugins/connectors-os/skills/hi5-connector/references/youtube-google-cloud.md || ERRORS+=("youtube-google-cloud.md must publish the app (Testing signs out every 7 days)")
+  grep -q 'No default channel' plugins/content-os/skills/hi5-youtube/SKILL.md || ERRORS+=("hi5-youtube must keep the no-default-channel rule")
+  grep -q 'No default privacy' plugins/content-os/skills/hi5-youtube/SKILL.md || ERRORS+=("hi5-youtube must keep the no-default-privacy rule")
+fi
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"

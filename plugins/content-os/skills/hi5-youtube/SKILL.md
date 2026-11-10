@@ -24,6 +24,8 @@ A one-off request needs no setup and no Notion. Option A works from a transcript
 - Everything comes from the saved transcript and the row's notes. Never invent facts, numbers, or claims. No income or results claims. No em dashes.
 - Read the channel Style Guide and Edit Log first and apply them.
 - Nothing is uploaded or scheduled before Optimizing, and only after the member reviewed the video, the cover, the title, and the description.
+- **No default channel.** Every upload, edit, and analytics call names the channel, confirmed by name with the member each time, even when only one is saved. The saved youtube_channel is only the suggestion in that question.
+- **No default privacy.** Upload as scheduled (private until the publish time) by default in the plan, or unlisted if the member wants. Public only when the member clearly says to post it now. Always ask whether the video is made for kids if it is not on the row.
 - Never post or schedule short-form. You may add YouTube notes to a short-form row's page for Social.
 - Short questions with A, B, C options.
 
@@ -62,7 +64,7 @@ Before writing anything public, open the member's Compliance Guardrails page (`c
 Follow the FINDING THE WORKSPACE rule in ../hi5-content-plan/references/core.md. The Content Calendar is the Content Planner (`content_planner_db_id`). Read the content IDs from the Page IDs (`content_page_id`, `content_settings_page_id`, `content_sop_page_id`, `cover_template_page_id`). If there is no content system, option A still works.
 
 ## Step 1: Check the bridge
-Detect the youtube-manager bridge by its exact tool names (upload_youtube_video, list_youtube_channels, list_youtube_videos, add_youtube_channel, see ../hi5-content-plan/references/bridges.md). If it is missing, say so in one line, write the full upload package, and give the manual steps for YouTube Studio. Never ask the member to reconfirm a bridge that works.
+Detect the YouTube uploader by its exact tool names (youtube_upload_video, youtube_list_channels, and the rest; the older youtube-manager's upload_youtube_video also counts; see ../hi5-content-plan/references/bridges.md). If it is missing, say so in one line, write the full upload package, and give the manual steps for YouTube Studio. Never ask the member to reconfirm a bridge that works.
 
 ## Check my queue
 Works only the YouTube long-form rows, oldest first. Read Content Settings first. If `role_youtube` is a person, say "YouTube long-form is set to <name>, so I leave those rows for them" and stop. If it is none, say there are no YouTube long-form rows and stop. If it is Claude, follow "A queue pass" in the pipeline reference (../hi5-content-plan/references/pipeline.md). Your rows: long-forms with Transcript saved ticked and Title and description drafted open, and rows at Optimizing.
@@ -74,7 +76,7 @@ From the transcript, write the title, description, chapters with timestamps, and
 Read the short-form rows (clips and shorts) from this long-form. Add YouTube notes (tag ideas, title ideas, the related long-form link) to each row's YouTube notes section for Social to use. Never post or schedule them.
 
 ## Step 4: Optimizing
-At Optimizing, first call list_youtube_channels and check that the channel matches the content system's youtube_channel (offer add_youtube_channel, with the member's OK, if it is not connected). Then upload and schedule the long-form with upload_youtube_video and its thumbnail, on the date and time in the row. Do the YouTube Studio steps the API cannot do (end screen, cards) with Claude's built-in browser, asking the member to sign in if needed. Tick Scheduled and set the status Scheduled. Never claim an upload happened unless the bridge confirms it.
+At Optimizing, call youtube_list_channels and confirm the channel by name with the member ("Schedule this on main (Smith Realty) for Thursday 9:00 AM?"), suggesting the saved youtube_channel. If it is not saved, say "Run /hi5-connector to add it." Then upload with youtube_upload_video: the channel, the final file from the Export folder, the title, description, tags, category, made-for-kids, the thumbnail, and privacy scheduled with publish_at from the row's date and time (with the member's time zone). Use unlisted only if the member asked, and public only if they clearly said to post it now. Do the YouTube Studio steps the API cannot do (end screen, cards) with Claude's built-in browser, asking the member to sign in if needed. Tick Scheduled and set the status Scheduled. Never claim an upload happened unless the bridge confirms it.
 
 ## Step 5: Revisions
 On Revising, fix every note, tick it, log it, ask the learning-edits question once (../hi5-content-plan/references/learning-edits.md), write the answer to the Edit Log, and set Reviewing.

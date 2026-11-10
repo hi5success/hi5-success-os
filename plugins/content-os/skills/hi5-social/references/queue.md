@@ -14,7 +14,7 @@ Write captions for every clip, short, reel, and post from the transcript (never 
 ## YouTube Shorts checklist (only if YouTube is a platform)
 1. The hook is in the first line and the first seconds.
 2. A Shorts title and tags. Use vidIQ stats if it is connected, and any YouTube notes in the row's YouTube notes section. Without vidIQ, use the transcript and the YouTube notes.
-3. Link the related long-form in YouTube Studio through Claude's built-in browser (ask the member to sign in if needed). If the long-form is not public yet (check with list_youtube_videos), add the Log line "link pending" and link it on the daily check once it is public.
+3. Link the related long-form in YouTube Studio through Claude's built-in browser (ask the member to sign in if needed). If the long-form is not public yet (check with youtube_list_videos, naming the channel), add the Log line "link pending" and link it on the daily check once it is public.
 
 ## At Optimizing
 First call list_social_accounts (the ghl-social bridge) and check that an account exists for every platform in the row's Platforms field. Then schedule each row on every platform in its Platforms field at the same time with create_post, or through the scheduler named in the SOP (../hi5-content-plan/references/bridges.md). Read the tool's description first and never guess an argument. Use list_posts to confirm each scheduled post. One row is one piece on every platform. For a long-form, the YouTube role handles YouTube and you handle the other platforms. Confirm each scheduled post from the scheduler's response, set the row to Scheduled, and log it. If the scheduler is missing, give the member each post with its time to paste, and mark Scheduled only when they say it is done.

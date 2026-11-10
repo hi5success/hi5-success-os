@@ -80,7 +80,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 |---|---|
 | `/hi5-content-plan` | The Content Manager. Sets up your content calendar in Notion, builds your monthly plan for long-form videos, reels, statics, carousels, and blogs, researches topics and YouTube keywords, writes scripts and production notes, and sets your recording days. Research and scripts also work on their own with no setup |
 | `/hi5-video-edit` | The Video Editor. Edits in CapCut through the local bridge, finds the clips, saves the transcript of every video and clip, makes covers from your cover template, and exports to the right folder |
-| `/hi5-youtube` | The YouTube Manager, for long-form. Writes the title, description, chapters, and tags from the transcript, uploads and schedules through the local YouTube bridge, and leaves YouTube notes for social |
+| `/hi5-youtube` | The YouTube Manager, for long-form. Writes the title, description, chapters, and tags from the transcript, uploads and schedules through the YouTube uploader from Connectors OS (always naming the channel, never public unless you say post now), and leaves YouTube notes for social |
 | `/hi5-blog` | Writes an SEO blog post from a video, script, or topic |
 | `/hi5-social` | The Social Media Manager. Writes captions and posts for every platform, turns one video or script into short form scripts, quotes, and snippets, makes static posts and carousels, and schedules them |
 
@@ -120,7 +120,7 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 ### Connectors OS (Windows, a separate install)
 | Command | What it does |
 |---|---|
-| `/hi5-connector` | Installs, checks, and updates the local connectors on your Windows computer: the CapCut bridge, so Claude builds your CapCut projects, and GHL social posting with photos and videos from your computer. One installer does the work, your GHL token is typed into a Windows box and saved encrypted, and it tells you when an update is ready. |
+| `/hi5-connector` | Installs, checks, and updates the local connectors on your Windows computer: the CapCut bridge, so Claude builds your CapCut projects and makes transcripts on your computer, GHL social posting with photos and videos from your computer, and the YouTube uploader on your own free Google project (upload, schedule, edit, thumbnails, and analytics, always on the channel you name). One installer does the work, your GHL token and YouTube sign-ins are saved encrypted, and it tells you when an update is ready. |
 
 ---
 

@@ -1,0 +1,12 @@
+{
+  "name": "youtube",
+  "title": "YouTube",
+  "version": "1.0.0",
+  "base": {
+    "server": "Hi5 youtube-manager 1.2.0 (sign-in and per-channel logins), rebuilt for Connectors OS"
+  },
+  "requires": { "node": "18", "google_cloud_project": true },
+  "changelog": [
+    { "version": "1.0.0", "date": "2026-11-10", "note": "First release. Upload, schedule, and edit videos and thumbnails on the channel you name, and read YouTube Analytics. Uses your own Google project, saves each channel's sign-in encrypted, never picks a channel or posts publicly unless you say so." }
+  ]
+}
