@@ -29,6 +29,37 @@ logger = logging.getLogger('flask_video_generator')
 # Define task status enumeration type
 TaskStatus = Literal["initialized", "processing", "completed", "failed", "not_found"]
 
+HI5_MARKER = ".hi5_bridge"  # marks project folders the bridge made, so a save never replaces a member's own project
+
+
+def find_capcut_projects_dir():
+    """CapCut's local drafts folder, or None if CapCut was never opened on this computer."""
+    if os.name == 'nt':
+        p = os.path.expandvars(r"%LOCALAPPDATA%\CapCut\User Data\Projects\com.lveditor.draft")
+    else:
+        p = os.path.expanduser('~/Movies/CapCut/User Data/Projects/com.lveditor.draft')
+    return p if os.path.isdir(p) else None
+
+
+def write_draft_meta(draft_dir: str, name: str) -> None:
+    """Give each draft its own name, ID and real paths. The template ships with "0707", one shared ID and the
+    upstream author's Mac paths, which made every saved draft look like the same project to CapCut."""
+    meta_path = os.path.join(draft_dir, "draft_meta_info.json")
+    with open(meta_path, encoding="utf-8") as f:
+        meta = json.load(f)
+    now_us = int(time.time() * 1_000_000)
+    meta.update({
+        "draft_name": name,
+        "draft_id": str(uuid.uuid4()).upper(),
+        "draft_fold_path": os.path.abspath(draft_dir),
+        "draft_root_path": os.path.dirname(os.path.abspath(draft_dir)),
+        "tm_draft_create": now_us,
+        "tm_draft_modified": now_us,
+    })
+    with open(meta_path, "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False)
+
+
 def build_asset_path(draft_folder: str, draft_id: str, asset_type: str, material_name: str) -> str:
     """
     Build asset file path
@@ -75,11 +106,21 @@ def save_draft_background(draft_id, draft_folder, task_id, project_name=None, au
         logger.info(f"Starting to save draft: {draft_id}")
         # Save draft
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        output_base_dir = draft_folder or current_dir
-        draft_dir = os.path.join(output_base_dir, draft_id)
+        # Hi5: build the draft straight inside CapCut's projects folder, named after the project, so media paths
+        # point at the deployed copy and no temp dfd_ folders pile up next to the bridge.
+        folder_name = project_name or draft_id
+        capcut_projects_dir = find_capcut_projects_dir() if (auto_deploy and not draft_folder) else None
+        if auto_deploy and not draft_folder and not capcut_projects_dir:
+            raise FileNotFoundError("CapCut's projects folder was not found on this computer. Open CapCut once, "
+                                    "make sure its drafts folder was not moved, then save again.")
+        output_base_dir = draft_folder or capcut_projects_dir or current_dir
+        draft_dir = os.path.join(output_base_dir, folder_name)
 
-        # Delete possibly existing draft_id folder in the target output location.
+        # Replace an earlier save of the same project, but never a project the member made in CapCut by hand.
         if os.path.exists(draft_dir):
+            if capcut_projects_dir and not os.path.exists(os.path.join(draft_dir, HI5_MARKER)):
+                raise FileExistsError(f'CapCut already has a project named "{folder_name}" that was not made by '
+                                      f'the bridge. Pick a different project name.')
             logger.warning(f"Deleting existing draft folder: {draft_dir}")
             shutil.rmtree(draft_dir)
 
@@ -108,7 +149,7 @@ def save_draft_background(draft_id, draft_folder, task_id, project_name=None, au
                 # Use helper function to build path. This must match output_base_dir
                 # (which falls back to current_dir), since that's where the file is
                 # actually downloaded/copied to below, regardless of draft_folder.
-                audio.replace_path = build_asset_path(output_base_dir, draft_id, "audio", material_name)
+                audio.replace_path = build_asset_path(output_base_dir, folder_name, "audio", material_name)
                 if not remote_url:
                     logger.warning(f"Audio file {material_name} has no remote_url, skipping download.")
                     continue
@@ -117,7 +158,7 @@ def save_draft_background(draft_id, draft_folder, task_id, project_name=None, au
                 download_tasks.append({
                     'type': 'audio',
                     'func': download_file,
-                    'args': (remote_url, os.path.join(output_base_dir, f"{draft_id}/assets/audio/{material_name}")),
+                    'args': (remote_url, os.path.join(output_base_dir, f"{folder_name}/assets/audio/{material_name}")),
                     'material': audio
                 })
         
@@ -131,7 +172,7 @@ def save_draft_background(draft_id, draft_folder, task_id, project_name=None, au
                 if video.material_type == 'photo':
                     # Use helper function to build path. Must match output_base_dir,
                     # since that's where the file is actually downloaded/copied to below.
-                    video.replace_path = build_asset_path(output_base_dir, draft_id, "image", material_name)
+                    video.replace_path = build_asset_path(output_base_dir, folder_name, "image", material_name)
                     if not remote_url:
                         logger.warning(f"Image file {material_name} has no remote_url, skipping download.")
                         continue
@@ -140,14 +181,14 @@ def save_draft_background(draft_id, draft_folder, task_id, project_name=None, au
                     download_tasks.append({
                         'type': 'image',
                         'func': download_file,
-                        'args': (remote_url, os.path.join(output_base_dir, f"{draft_id}/assets/image/{material_name}")),
+                        'args': (remote_url, os.path.join(output_base_dir, f"{folder_name}/assets/image/{material_name}")),
                         'material': video
                     })
                 
                 elif video.material_type == 'video':
                     # Use helper function to build path. Must match output_base_dir,
                     # since that's where the file is actually downloaded/copied to below.
-                    video.replace_path = build_asset_path(output_base_dir, draft_id, "video", material_name)
+                    video.replace_path = build_asset_path(output_base_dir, folder_name, "video", material_name)
                     if not remote_url:
                         logger.warning(f"Video file {material_name} has no remote_url, skipping download.")
                         continue
@@ -156,7 +197,7 @@ def save_draft_background(draft_id, draft_folder, task_id, project_name=None, au
                     download_tasks.append({
                         'type': 'video',
                         'func': download_file,
-                        'args': (remote_url, os.path.join(output_base_dir, f"{draft_id}/assets/video/{material_name}")),
+                        'args': (remote_url, os.path.join(output_base_dir, f"{folder_name}/assets/video/{material_name}")),
                         'material': video
                     })
 
@@ -211,6 +252,9 @@ def save_draft_background(draft_id, draft_folder, task_id, project_name=None, au
         
         written_files = write_profile_content(draft_profile, draft_dir, script.dumps(draft_profile))
         logger.info(f"Draft information has been saved to {[str(path) for path in written_files]}.")
+        write_draft_meta(draft_dir, folder_name)
+        with open(os.path.join(draft_dir, HI5_MARKER), "w", encoding="utf-8") as f:
+            f.write(draft_id)
 
         draft_url = ""
         # Only upload draft information when IS_UPLOAD_DRAFT is True
@@ -246,44 +290,22 @@ def save_draft_background(draft_id, draft_folder, task_id, project_name=None, au
         update_task_field(task_id, "message", "Draft creation completed")
         logger.info(f"Task {task_id} completed, draft URL: {draft_url}")
 
-        # Auto-deploy to CapCut Desktop projects directory
-        deployed_path = None
-        if auto_deploy or project_name:
-            target_name = project_name or draft_id
-            capcut_projects_dir = None
-            if os.name == 'nt':
-                p = os.path.expandvars(r"%LOCALAPPDATA%\CapCut\User Data\Projects\com.lveditor.draft")
-                if os.path.exists(p):
-                    capcut_projects_dir = p
-            else:
-                mac_p = os.path.expanduser('~/Library/Containers/com.lemon.lvpro/Data/Documents/JianyingPro/User Data/Projects/com.lveditor.draft')
-                if os.path.exists(mac_p):
-                    capcut_projects_dir = mac_p
+        # The draft was built in place inside CapCut's projects folder (see the top of this function).
+        if capcut_projects_dir:
+            lock_f = os.path.join(draft_dir, ".locked")
+            if os.path.exists(lock_f):
+                os.remove(lock_f)
+            logger.info(f"Saved draft into CapCut's projects folder: {draft_dir}")
 
-            if capcut_projects_dir:
-                try:
-                    dest_dir = os.path.join(capcut_projects_dir, target_name)
-                    if os.path.exists(dest_dir):
-                        shutil.rmtree(dest_dir)
-                    shutil.copytree(draft_dir, dest_dir)
-                    # Clear any stale .locked file in destination
-                    lock_f = os.path.join(dest_dir, ".locked")
-                    if os.path.exists(lock_f):
-                        os.remove(lock_f)
-                    logger.info(f"Auto-deployed draft to CapCut directory: {dest_dir}")
-                    deployed_path = dest_dir
-                except Exception as ex:
-                    logger.error(f"Failed to auto-deploy draft to CapCut: {str(ex)}")
-
-        return draft_url if IS_UPLOAD_DRAFT else (deployed_path or draft_dir)
+        return draft_url if IS_UPLOAD_DRAFT else draft_dir
 
     except Exception as e:
         # Update task status - Failed
-        update_task_fields(task_id, 
+        update_task_fields(task_id,
                           status="failed",
                           message=f"Failed to save draft: {str(e)}")
         logger.error(f"Saving draft {draft_id} task {task_id} failed: {str(e)}", exc_info=True)
-        return ""
+        raise  # Hi5: surface the reason to the caller instead of returning an empty path
 
 def query_task_status(task_id: str):
     return get_task_status(task_id)

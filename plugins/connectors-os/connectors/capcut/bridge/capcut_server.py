@@ -812,7 +812,10 @@ def save_draft():
     try:
         # Call save_draft_impl method
         draft_result = save_draft_impl(draft_id, draft_folder, project_name=project_name, auto_deploy=auto_deploy)
-        
+        if not draft_result.get("success"):
+            result["error"] = draft_result.get("error") or "Saving the draft failed"
+            return jsonify(result)
+
         # Broadcast live update to Web Preview Player
         broadcast_draft_update(draft_id=draft_id, action="save", project_name=project_name or draft_id)
 

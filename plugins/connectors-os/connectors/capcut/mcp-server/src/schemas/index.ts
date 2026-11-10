@@ -13,9 +13,11 @@ export const ResponseFormatSchema = z.nativeEnum(ResponseFormat)
   .default(ResponseFormat.MARKDOWN)
   .describe("Output format: 'markdown' for human-readable or 'json' for machine-readable");
 
+// A web URL, or a full path to a file on this computer. The bridge copies local files into the draft.
 const UrlSchema = z.string()
-  .url('Must be a valid URL')
-  .describe('URL to the media file');
+  .refine(v => /^https?:\/\//i.test(v) || /^[A-Za-z]:[\\/]/.test(v) || v.startsWith('\\\\'),
+    'Must be a web URL (https://...) or a full path to a file on this computer (C:\\...)')
+  .describe('Web URL or full local file path (e.g. C:\\Users\\you\\Videos\\clip.mp4) of the media file');
 
 // Draft creation schema
 export const CreateDraftSchema = z.object({
@@ -306,6 +308,11 @@ export const SaveDraftSchema = z.object({
   draft_id: z.string()
     .min(1, 'Draft ID is required')
     .describe('The ID of the draft to save'),
+  project_name: z.string()
+    .max(100)
+    .regex(/^[^\\/:*?"<>|]*[^\\/:*?"<>|. ]$/, 'Use a plain name without \\ / : * ? " < > | that does not end in a dot or space')
+    .optional()
+    .describe('Name the project shows in CapCut, e.g. "Open House Reel". Defaults to the draft ID. Saving again with the same name replaces that project'),
   response_format: ResponseFormatSchema
 }).strict();
 

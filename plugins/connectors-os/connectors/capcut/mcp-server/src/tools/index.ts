@@ -516,21 +516,17 @@ Examples:
       title: 'Save Draft',
       description: `Save the draft to a file that can be imported into CapCut.
 
-This tool finalizes the draft and generates a folder that can be copied to the CapCut drafts directory.
+This tool saves the draft straight into CapCut's projects on this computer. Give it a project_name so the member can find it in CapCut (otherwise it is named by the draft ID). Saving again with the same name replaces that project. CapCut may need to be closed and reopened to list a new project.
 
 Args:
   - draft_id (string): The draft ID to save
+  - project_name (string, optional): Name shown in CapCut
   - response_format ('markdown' | 'json'): Output format
 
 Returns:
   {
-    "draft_url": string,    // Path to the saved draft folder
-    "status": "saved"
-  }
-
-The draft folder starts with "dfd_" and should be copied to:
-- Windows: C:\\Users\\<username>\\AppData\\Local\\CapCut\\User Data\\Projects\\Draft Content
-- macOS: ~/Library/Containers/com.lemon.lvpro/Data/Documents/JianyingPro/User Data/Projects/Draft Content`,
+    "draft_url": string    // Folder of the project in CapCut's drafts folder
+  }`,
       inputSchema: SaveDraftSchema,
       annotations: {
         readOnlyHint: false,
@@ -541,7 +537,7 @@ The draft folder starts with "dfd_" and should be copied to:
     },
     async (params: SaveDraftInput) => {
       try {
-        const response = await apiClient.saveDraft(params.draft_id);
+        const response = await apiClient.saveDraft(params.draft_id, params.project_name);
 
         if (!response.success || !response.result) {
           throw new Error(response.error || 'Failed to save draft');

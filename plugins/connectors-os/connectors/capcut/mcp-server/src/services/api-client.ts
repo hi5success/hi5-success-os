@@ -62,7 +62,9 @@ export class CapCutApiClient {
       };
 
       const response = await this.client.request<ApiResponse<T>>(config);
-      return response.data;
+      // VectCutAPI returns its payload as `output`; the tools read `result`.
+      const body = response.data as any;
+      return { ...body, result: body.result ?? body.output };
     } catch (error) {
       if (error instanceof Error) {
         return {
@@ -114,8 +116,8 @@ export class CapCutApiClient {
     return this.request('/add_sticker', 'POST', data);
   }
 
-  async saveDraft(draftId: string) {
-    return this.request('/save_draft', 'POST', { draft_id: draftId });
+  async saveDraft(draftId: string, projectName?: string) {
+    return this.request('/save_draft', 'POST', { draft_id: draftId, ...(projectName && { project_name: projectName }) });
   }
 
   async getDuration(url: string) {
