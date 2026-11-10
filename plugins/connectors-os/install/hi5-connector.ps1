@@ -245,6 +245,8 @@ function Read-TokenBox($title) {
   $ok = New-Object Windows.Forms.Button -Property @{ Text = 'Save'; Left = 252; Top = 90; Width = 85; DialogResult = 'OK' }
   $no = New-Object Windows.Forms.Button -Property @{ Text = 'Cancel'; Left = 347; Top = 90; Width = 85; DialogResult = 'Cancel' }
   $f.Controls.AddRange(@($l, $t, $ok, $no)); $f.AcceptButton = $ok; $f.CancelButton = $no
+  # Started from Claude in the background, the box can open behind other windows; pull it to the front and focus the field.
+  $f.Add_Shown({ $f.Activate(); $f.BringToFront(); $t.Focus() })
   $r = $f.ShowDialog()
   if ($r -ne 'OK' -or -not $t.Text.Trim()) { throw 'No token was entered, so nothing was saved.' }
   return $t.Text.Trim()

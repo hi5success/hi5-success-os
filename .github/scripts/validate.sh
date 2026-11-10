@@ -467,6 +467,7 @@ if [ -d "$CO" ]; then
   grep -q 'Only the installer installs' "$CS" || ERRORS+=("hi5-connector must keep the only-the-installer-installs rule")
   grep -q 'Never ask for a token in the chat' "$CS" || ERRORS+=("hi5-connector must never ask for a token in the chat")
   grep -q 'Ask before installing other programs' "$CS" || ERRORS+=("hi5-connector must ask before installing other programs")
+  grep -q 'Give it time' "$CS" || ERRORS+=("hi5-connector must run install and add-account with a long timeout")
   [ -f "$CO/skills/hi5-connector/references/ghl-token.md" ] || ERRORS+=("hi5-connector is missing references/ghl-token.md")
   for s in socialplanner/post.write socialplanner/post.readonly socialplanner/account.readonly medias.write medias.readonly locations.readonly users.readonly; do
     grep -q "$s" "$CO/skills/hi5-connector/references/ghl-token.md" || ERRORS+=("ghl-token.md must list the $s scope")

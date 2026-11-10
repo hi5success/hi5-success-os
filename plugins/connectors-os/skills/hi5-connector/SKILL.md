@@ -24,6 +24,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "<plugin folder>\install\hi5
 
 It prints JSON. `result: failed` comes with a `reason` written for the member.
 
+**Give it time.** `install` can take 10 minutes or more on a new computer (it may download Python, Node.js, and FFmpeg), and `add-account` waits until the member clicks Save in the token box. Run both with the longest command timeout your tool allows (10 minutes), or run them in the background and wait for them to finish. Never start a second run while one is still going. `check` is quick.
+
 | Action | What it does |
 |---|---|
 | `-Action check` | Read only. Shows each connector's state (not installed, up to date, update available, broken), what is new, saved GHL sub-account names (never tokens), and whether Python, Node.js, FFmpeg, and CapCut are ready. |
@@ -54,7 +56,7 @@ Before starting, say once: "You need the Claude desktop app on Windows. It takes
 ## Step 3b: GHL social posting
 1. Run the install for `ghl-social`. If the member used the older GHL connector (the check shows no accounts, but they say they posted with Claude before), offer `-Action import-accounts` instead of adding the sub-account again.
 2. Ask for two things, one at a time: the name they will call this sub-account (for example "smith-realty"), and the GHL Location ID. Read `references/ghl-token.md` and walk them through where to find the Location ID and how to make the Private Integration Token, with the exact scopes.
-3. Say: "A small Windows box will open. Paste your token there and click Save. Don't paste it here in the chat." Then run `add-account`. On success, say which GHL business it connected to (`ghl_business`). Repeat for each extra sub-account.
+3. Say: "A small Windows box called GHL token will open. Paste your token there and click Save. Don't paste it here in the chat. If you don't see it, look for it on the taskbar at the bottom of the screen." Then run `add-account`. On success, say which GHL business it connected to (`ghl_business`). Repeat for each extra sub-account.
 4. Media folders: the result lists the folders Claude may upload from (Documents, Videos, Pictures, Desktop, Downloads, Google Drive, Dropbox, OneDrive). If their content lives somewhere else, run the install again with `-MediaFolder "<folder>"`.
 
 ## Step 4: Restart and test
