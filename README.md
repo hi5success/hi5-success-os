@@ -117,6 +117,11 @@ Then run `/hi5-self` (a 30 question personality profile, so everything is writte
 | `/hi5-re-land-newbuild` | Supports land and new construction: a land due diligence plan, the new construction buyer guide (builder contract questions, selections tracker, inspections, punch list), builder and community comparisons from the builders' own materials, and the timeline. It never states what can be built or a cost to build. |
 | `/hi5-re-neighborhood` | Builds and keeps current the neighborhood fact file for each area you serve, the reference page the other skills read. Every fact carries a source and a date, stale or unverified facts get refreshed, and a where-to-verify sheet points to official sources. It describes the place, the homes, and the amenities only, never who lives there, and never rates schools or safety. |
 
+### Connectors OS (Windows, a separate install)
+| Command | What it does |
+|---|---|
+| `/hi5-connector` | Installs, checks, and updates the local connectors on your Windows computer: the CapCut bridge, so Claude builds your CapCut projects, and GHL social posting with photos and videos from your computer. One installer does the work, your GHL token is typed into a Windows box and saved encrypted, and it tells you when an update is ready. |
+
 ---
 
 ## How it stays current

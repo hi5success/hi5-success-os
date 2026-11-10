@@ -31,7 +31,7 @@ Content/
 - **No synced folder:** skip the folders and ask the member for links.
 
 ## The synced folder
-Everything lives in the member's synced folder: the Google Drive, Dropbox, or OneDrive desktop app, or a plain local folder. Setup asks for that path once and saves it as `file_storage` in the Master Profile (and in Content Settings as synced_folder_path). Every role reads and writes files straight into it with the local file tools, never through the Drive connector. The Drive connector is only for getting a share link. The CapCut bridge exports into this folder and splits files that are over the size limit, so no role adds any export or split step.
+Everything lives in the member's synced folder: the Google Drive, Dropbox, or OneDrive desktop app, or a plain local folder. Setup asks for that path once and saves it as `file_storage` in the Master Profile (and in Content Settings as synced_folder_path). Every role reads and writes files straight into it with the local file tools, never through the Drive connector. The Drive connector is only for getting a share link. Finished videos are exported from CapCut into this folder, or moved here with capcut_move_export, and no role splits a file into pieces.
 - Create the folders with the local file tools, inside the saved path.
 - If the path does not exist or cannot be written, say so in one line, ask the member for the right path, and update the saved path.
 - Link each folder in the row's Asset Folder URL (a share link from the connector if the member wants one, otherwise the local path).

@@ -36,7 +36,7 @@ Used by `SKILL.md` option D, only when the member wants the calendar and pipelin
 Check that the member's Compliance page exists. If it does not, skip the disclosure and brokerage line in the pre-review check and tell the member once: "I could not find your Compliance page, so the pre-review check will skip the disclosure and brokerage lines until it exists." Never hardcode a brokerage or a disclosure.
 
 ## Bridges
-Setup only detects them by exact tool names (the bridges reference), and only for roles set to Claude. If any are missing, point to the install guide and the install video. Do not install anything and do not write Node, Google Cloud, or API key steps. Say once: "The bridges run in the Claude desktop app, which has to be open for them to work."
+Setup only detects them by exact tool names (the bridges reference), and only for roles set to Claude. If the CapCut bridge or GHL social is missing, point to /hi5-connector (Connectors OS), which installs them. For the YouTube manager, point to the Hi5 Success community. Do not install anything from here and do not write Node, Google Cloud, or API key steps. Say once: "The bridges run in the Claude desktop app, which has to be open for them to work."
 
 ## Scheduled tasks
 Offer them (the tasks reference): one task per role set to Claude, plus the daily Published check. Only with the member's OK.
