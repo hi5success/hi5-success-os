@@ -78,7 +78,7 @@ The person works in the row's folder and in Notion. Claude picks up from what th
 Video editing makes the cover for long-forms, clips, and one-off shorts. Social makes the cover for statics and carousels as part of the graphic. Both follow the covers reference. If a person edits, they drop the cover or thumbnail in the Exports folder with the export, named like the file with " - Cover.png". If none is there, the next role set to Claude makes it from the Cover Template (Social for clips and shorts, YouTube for a long-form thumbnail), and if no role is Claude, write Needs from member.
 
 ## Where files go
-Every role writes files straight into the member's synced folder (`file_storage` in the Master Profile Tools, or Content Settings `synced_folder_path`), never through the Drive connector. The folder layout is in the folders reference, and a folder is never renamed after it is created. The connector is only for share links. The CapCut bridge exports into that folder and splits large files, so no role adds export or split steps.
+Every role writes files straight into the member's synced folder (`file_storage` in the Master Profile Tools, or Content Settings `synced_folder_path`), never through the Drive connector. The folder layout is in the folders reference, and a folder is never renamed after it is created. The connector is only for share links. Finished videos are exported from CapCut into that folder, or moved there with capcut_move_export, and no role splits a file into pieces.
 
 ## Dates (defaults from the Content SOP)
 - The Content Manager sets the publish date, then the record dates from the member's recording days (see the plan reference). It does not assign one record date per video.

@@ -356,7 +356,7 @@ for p in content-os marketing-os real-estate-os; do
   cmp -s plugins/business-os/references/brain-rules.md "plugins/$p/references/brain-rules.md" || ERRORS+=("brain-rules.md in $p must match the business-os copy")
 done
 for f in plugins/*/skills/*/SKILL.md; do
-  case "$f" in */hi5-next/*|*/hi5-re-daily/*|*/hi5-re-roleplay/*|plugins/youtube/*) continue;; esac
+  case "$f" in */hi5-next/*|*/hi5-re-daily/*|*/hi5-re-roleplay/*|*/hi5-connector/*|plugins/youtube/*) continue;; esac
   grep -q 'brain-rules.md' "$f" || ERRORS+=("$f must tell the skill to read brain-rules.md before it saves")
 done
 grep -q "When a Hi5 skill fits what I'm asking, use it first" plugins/business-os/skills/hi5-bottleneck/templates/project-instructions.md || ERRORS+=("the AI employee Project instructions template must carry the Hi5 first line")
@@ -428,6 +428,51 @@ grep -q 'Create the contact' "$DB/references/tasks.md" || ERRORS+=("tasks.md mus
 grep -q 'not signed in' "$DB/references/tasks.md" || ERRORS+=("tasks.md must handle a connector that is not signed in")
 grep -q 'Not published yet' "$DB/references/build.md" || ERRORS+=("build.md must say Not published yet for a draft dashboard")
 if grep -rniE 'open in gmail|mail\.google\.com|gmail\.com/mail' "$DB" | grep -viE 'never|no "open in gmail"|not ' >/dev/null; then ERRORS+=("hi5-dashboard must not link to Gmail"); fi
+
+# 31. Connectors OS: no secrets or machine files shipped, no personal paths, versions and changelogs agree,
+#     the plugin registers each connector through its launcher, and the skill keeps its hard rules
+CO="plugins/connectors-os"
+if [ -d "$CO" ]; then
+  # The CapCut draft template keeps its own draft_info.json.bak (CapCut expects it), so bridge/template/ is exempt from the .bak rule.
+  bad=$(git ls-files "$CO" | grep -E '(^|/)(node_modules|venv[^/]*|dist|__pycache__|\.git)/|(^|/)(\.env|accounts\.json|accounts\.dat|config\.json|settings\.json|installed\.json)$|\.(bak|mcpb|log)$' | grep -v '/bridge/template/')
+  [ -z "$bad" ] || ERRORS+=("connectors-os ships files that must stay on the member's computer: $(echo $bad | tr '\n' ' ')")
+  if git ls-files "$CO" | xargs grep -lIiE 'jshir|Jacob Shireman|G:\\\\Shared drives|sunguannan' 2>/dev/null | grep -v 'draft_meta_info.json' | grep -q .; then
+    ERRORS+=("connectors-os contains a personal path or name: $(git ls-files "$CO" | xargs grep -lIiE 'jshir|Jacob Shireman|G:\\\\Shared drives|sunguannan' | grep -v draft_meta_info.json | tr '\n' ' ')")
+  fi
+  for c in capcut ghl-social; do
+    [ -f "$CO/connectors/$c/connector.json" ] || ERRORS+=("connectors-os: $c is missing connector.json")
+    [ -f "$CO/connectors/$c/launch.mjs" ] || ERRORS+=("connectors-os: $c is missing launch.mjs")
+    grep -q "connectors/$c/launch.mjs" "$CO/.claude-plugin/plugin.json" || ERRORS+=("connectors-os plugin.json must register $c through its launcher")
+  done
+  if command -v node >/dev/null 2>&1; then
+    node_out=$(node -e '
+      const fs=require("fs");
+      for (const c of ["capcut","ghl-social"]) {
+        const j=JSON.parse(fs.readFileSync("plugins/connectors-os/connectors/"+c+"/connector.json","utf8"));
+        if (!/^\d+\.\d+\.\d+$/.test(j.version)) console.log(c+": connector.json version must be x.y.z");
+        if (!j.changelog || j.changelog[0].version!==j.version) console.log(c+": the first changelog entry must match the connector version");
+      }' 2>&1)
+    [ -n "$node_out" ] && while IFS= read -r l; do ERRORS+=("$l"); done <<< "$node_out"
+  fi
+  [ ! -f "$CO/connectors/capcut/mcp-server/src/tools/join.ts" ] || ERRORS+=("connectors-os: capcut_join_parts was dropped, join.ts must stay out")
+  grep -q 'os.homedir()' "$CO/connectors/capcut/mcp-server/src/tools/move.ts" || ERRORS+=("move.ts must use the member's own home folder")
+  grep -q 'write_draft_meta' "$CO/connectors/capcut/bridge/save_draft_impl.py" || ERRORS+=("save_draft_impl.py must give every draft its own name and ID")
+  grep -q 'HI5_MARKER' "$CO/connectors/capcut/bridge/save_draft_impl.py" || ERRORS+=("save_draft_impl.py must never replace a project the member made")
+  grep -q 'ProtectedData' "$CO/connectors/ghl-social/launch.mjs" || ERRORS+=("ghl-social launch.mjs must read the Windows-encrypted accounts")
+  grep -q 'npm ci --ignore-scripts' "$CO/install/hi5-connector.ps1" || ERRORS+=("the installer must build with npm ci --ignore-scripts")
+  grep -q ".hi5-connector" "$CO/install/hi5-connector.ps1" || ERRORS+=("the installer must install into the .hi5-connector user folder, not AppData")
+  if grep -nE 'claude_desktop_config' "$CO/install/hi5-connector.ps1" "$CO"/connectors/*/launch.mjs >/dev/null; then ERRORS+=("connectors-os must never edit Claude's config files"); fi
+  CS="$CO/skills/hi5-connector/SKILL.md"
+  grep -q 'Which connector would you like to install?' "$CS" || ERRORS+=("hi5-connector must ask which connector to install")
+  grep -q 'Only the installer installs' "$CS" || ERRORS+=("hi5-connector must keep the only-the-installer-installs rule")
+  grep -q 'Never ask for a token in the chat' "$CS" || ERRORS+=("hi5-connector must never ask for a token in the chat")
+  grep -q 'Ask before installing other programs' "$CS" || ERRORS+=("hi5-connector must ask before installing other programs")
+  grep -q 'Give it time' "$CS" || ERRORS+=("hi5-connector must run install and add-account with a long timeout")
+  [ -f "$CO/skills/hi5-connector/references/ghl-token.md" ] || ERRORS+=("hi5-connector is missing references/ghl-token.md")
+  for s in socialplanner/post.write socialplanner/post.readonly socialplanner/account.readonly medias.write medias.readonly locations.readonly users.readonly; do
+    grep -q "$s" "$CO/skills/hi5-connector/references/ghl-token.md" || ERRORS+=("ghl-token.md must list the $s scope")
+  done
+fi
 
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""

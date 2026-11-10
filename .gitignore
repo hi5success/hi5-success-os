@@ -9,3 +9,11 @@ node_modules/
 .mcp.json
 
 hi5-board-handoff.zip
+
+# connectors-os build output and member machine files (never ship)
+plugins/connectors-os/**/dist/
+plugins/connectors-os/**/venv*/
+plugins/connectors-os/**/__pycache__/
+plugins/connectors-os/**/config.json
+plugins/connectors-os/**/accounts.json
+plugins/connectors-os/**/dfd_*/

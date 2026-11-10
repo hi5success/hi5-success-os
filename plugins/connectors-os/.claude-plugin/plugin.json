@@ -1,0 +1,22 @@
+{
+  "name": "connectors-os",
+  "description": "Local connectors for Hi5 members, set up by conversation with one command. Edit videos in CapCut with Claude through the CapCut bridge, and schedule GoHighLevel social posts with media from your computer. Checks what is installed and offers updates. Windows, Claude desktop app.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hi5 Success"
+  },
+  "mcpServers": {
+    "capcut": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/connectors/capcut/launch.mjs"
+      ]
+    },
+    "ghl-social": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/connectors/ghl-social/launch.mjs"
+      ]
+    }
+  }
+}

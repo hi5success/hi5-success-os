@@ -9,7 +9,7 @@
       "name": "content-os",
       "source": "./plugins/content-os",
       "description": "A content system in five skills: plan, research, script, edit, caption, upload, and blog. The Content Manager, Video Editor, Social Media Manager, YouTube Manager, and Blog Writer each run from one Notion Content Calendar, done by Claude, a person, or nobody. Every skill also works on its own.",
-      "version": "2.1.0",
+      "version": "2.1.1",
       "author": { "name": "Hi5 Success" },
       "keywords": ["youtube", "content", "blog", "social media", "repurpose", "marketing", "notion", "real estate", "captions", "scripts"]
     },
@@ -17,7 +17,7 @@
       "name": "business-os",
       "source": "./plugins/business-os",
       "description": "Business planning, goal setting, performance review, voice creation, dashboard, team org chart, and bottleneck finding tools, plus a Coach Library of the posts you learn from and a personal advisory board that weighs your decisions, for entrepreneurs and small business owners.",
-      "version": "1.15.0",
+      "version": "1.15.1",
       "author": { "name": "Hi5 Success" },
       "keywords": ["business", "planning", "goals", "strategy", "notion", "entrepreneur"]
     },
@@ -36,6 +36,14 @@
       "version": "1.9.4",
       "author": { "name": "Hi5 Success" },
       "keywords": ["real estate", "crm", "gohighlevel", "listing appointment", "cma", "fair housing", "notion"]
+    },
+    {
+      "name": "connectors-os",
+      "source": "./plugins/connectors-os",
+      "description": "Local connectors for Hi5 members, set up by conversation with one command. Edit videos in CapCut with Claude through the CapCut bridge, and schedule GoHighLevel social posts with media from your computer. Checks what is installed and offers updates. Windows, Claude desktop app.",
+      "version": "1.0.0",
+      "author": { "name": "Hi5 Success" },
+      "keywords": ["capcut", "video editing", "gohighlevel", "social media", "connector", "windows"]
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "name": "capcut",
+  "title": "CapCut bridge",
+  "version": "1.0.0",
+  "base": {
+    "bridge": "VectCutAPI 0596f17b24e6d103a581ba33d8b74f00126348a8 (Apache 2.0)",
+    "mcp-server": "capcut-mcp-server d154070b94b1194894111f016d6dfeaf1a24966f (MIT)"
+  },
+  "requires": { "python": "3.10", "node": "18", "ffmpeg": true, "capcut": true },
+  "changelog": [
+    { "version": "1.0.0", "date": "2026-11-10", "note": "First release. Each draft gets its own name in CapCut, files from your computer work, the bridge starts by itself when Claude needs it, and finished videos can be moved into your project folder." }
+  ]
+}
