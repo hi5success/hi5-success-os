@@ -758,7 +758,3 @@ def download_script(draft_id: str, draft_folder: str = None, script_data: Dict =
     except Exception as e:
         logger.error(f"Unexpected error during download: {e}", exc_info=True)
         return {"success": False, "error": f"An unexpected error occurred: {str(e)}"}
-
-if __name__ == "__main__":
-    print('hello')
-    download_script("dfd_cat_1751012163_a7e8c315",'/Users/sunguannan/Movies/JianyingPro/User Data/Projects/com.lveditor.draft')
