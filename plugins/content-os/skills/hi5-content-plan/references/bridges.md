@@ -9,7 +9,7 @@ The CapCut bridge and GHL social are installed by /hi5-connector (Connectors OS)
 Match on the end of the tool name. A prefix may appear in front (for example mcp__capcut__capcut_save_draft is the tool capcut_save_draft). Do not match on words in a name, only on these tool names.
 | Bridge (server) | Tools |
 |---|---|
-| capcut | capcut_create_draft, capcut_add_video, capcut_add_audio, capcut_add_text, capcut_add_subtitle, capcut_add_image, capcut_add_sticker, capcut_add_effect, capcut_add_keyframe, capcut_get_duration, capcut_save_draft, capcut_move_export |
+| capcut | capcut_create_draft, capcut_add_video, capcut_add_audio, capcut_add_text, capcut_add_subtitle, capcut_add_image, capcut_add_sticker, capcut_add_effect, capcut_add_keyframe, capcut_get_duration, capcut_save_draft, capcut_move_export (and capcut_transcribe from connector 1.1.0) |
 | youtube-manager | upload_youtube_video, list_youtube_channels, list_youtube_videos, add_youtube_channel |
 | ghl-social | create_post, list_posts, list_social_accounts |
 A bridge counts as installed when its tools are available in this session. Save what you find in Content Settings (bridges_detected) with the date, and check again only when something fails or the member says they installed one. Say once, in setup, that the desktop app must be running for the bridges to work. Never ask the member to reconfirm a bridge that works. vidIQ is optional: without it, Social uses the transcript and any Producer notes on the row.
@@ -23,10 +23,8 @@ If a call succeeds, move on. Do not ask the member to confirm it again.
 
 ## Transcript and export
 The synced folder is where files live (the folders reference). Footage and finished exports go in the project's folder. The CapCut project itself stays in CapCut's own folder on the computer and is never synced.
-- **Transcript, the default:** the Video Editor pulls the transcript from CapCut and exports it as a file (a .txt or .srt) into the same folder as the video. Do not assume a particular CapCut caption export tool, read the tool's description first and use what the bridge or CapCut offers.
-- **Fallback:** if the transcript cannot be pulled, ask the member to paste it, and save the pasted text as a file in the same folder.
-- **Log which path was used** in the row's Log: "Transcript: pulled from CapCut" or "Transcript: pasted by the member".
-- **Exporting a rendered video:** use the bridge's export tool if it has one. Otherwise ask the member to export from CapCut into the row's Exports folder. If the export landed in Videos, Downloads, or the Desktop instead, move it there with capcut_move_export (it checks the copy before deleting the original). The capcut tools above build and save a draft, they do not by themselves produce a rendered file.
+- **Transcript:** the Video Editor saves it as files (.txt and .srt) in the Export folder, next to the video, every time. The paths, in order, are in ../../hi5-video-edit/references/transcript.md: the CapCut connector's capcut_transcribe (on the computer, free), Descript if the member has it connected, a CapCut captions export by the member, or a paste. Log which path was used.
+- **Exporting a rendered video:** the bridge saves a project but does not render a video. Ask the member to export from CapCut into the row's Export folder. If the export landed in Videos, Downloads, or the Desktop instead, move it there with capcut_move_export (it checks the copy before deleting the original). The capcut tools above build and save a draft, they do not by themselves produce a rendered file.
 
 ## What each bridge does
 - **capcut:** create a draft, add video, audio, text, subtitles, images, stickers, effects, and keyframes, get a duration, save the draft into CapCut under a project name, and move a finished export into the project's folder.
@@ -36,7 +34,7 @@ Read each tool's description before calling it, and never guess an argument. If 
 
 ## If a bridge is missing
 Say so in one line and give the manual step, then keep the pipeline moving.
-- **capcut missing:** "I can't reach the CapCut bridge, so I can't edit for you. Edit this one in CapCut yourself, drop the finals in the Exports folder, tell me, and I'll continue with the transcript, captions, and cover." If there is no transcript, use the fallback above.
+- **capcut missing:** "I can't reach the CapCut bridge, so I can't edit for you. Edit this one in CapCut yourself, drop the finals in the Export folder, tell me, and I'll continue with the transcript, captions, and cover." If there is no transcript, use the fallback above.
 - **youtube-manager missing:** "I can't reach the YouTube manager. Here is the title, description, chapters, tags, and thumbnail to paste into YouTube Studio when you upload. Tell me when it is scheduled."
 - **ghl-social missing:** "I can't reach the scheduler. Here is each post with its time to paste into your scheduler. Tell me when they are scheduled."
 Mark the matching checklist item only after the member says it is done. Never claim a bridge did something it did not do.

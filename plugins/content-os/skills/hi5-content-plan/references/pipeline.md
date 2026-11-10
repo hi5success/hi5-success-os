@@ -13,7 +13,7 @@ Setup asks once per role who does it: Claude, a person (their name), or nobody. 
 | Blog | /hi5-blog | Blog rows from Published long-forms | role_blog |
 - **Claude only works rows for roles set to Claude.** "Check my queue" in a skill lists only that skill's own rows, oldest first.
 - **A person does the role:** the row waits for them. They drop the file in the row's folder and set the next status in Notion, and Claude picks up from there. Setup tells the member to share the Content Planner with that person (Claude does not share it). The next status each person sets is in "When a person does the role" below.
-- **Nobody does the role:** no rows, folders, or steps for that role. No video editing means no Long Form or Short Form rows and no Clips, B-Roll, or Exports folders. No social media means no Static Post, Carousel, or Clip rows and no caption steps. No YouTube means no YouTube text, upload, or YouTube platform. No blog means no Blog rows.
+- **Nobody does the role:** no rows, folders, or steps for that role. No video editing means no Long Form or Short Form rows and no Clips, B-Roll, or Export folders. No social media means no Static Post, Carousel, or Clip rows and no caption steps. No YouTube means no YouTube text, upload, or YouTube platform. No blog means no Blog rows.
 - A one-off request in a skill ("write captions for this") is always done, whoever does the role in the queue.
 
 ## Skill vs SOP
@@ -40,7 +40,7 @@ Every role reads its SOP first (`sop.md`) and falls back to the defaults here on
 | In Progress | The role starting work | Editor, Social, YouTube | Editing, or making a static post or carousel. |
 | Reviewing | The role that finished, after the pre-review check passes | The member | The Content Manager notifies the member and updates the dashboard. One review of the video or graphic, the cover, and the text together. |
 | Revising | The member | The role named in Review Notes | The feedback is in Review Notes (and the Revisions checklist). The role fixes it and sets Reviewing again. |
-| Finalizing | The member (approved) | Editor, Social, YouTube | Approved. Final exports go to the row's Exports folder. For a long-form, the editor cuts the clips now. |
+| Finalizing | The member (approved) | Editor, Social, YouTube | Approved. Final exports go to the row's Export folder. For a long-form, the editor cuts the clips now. |
 | Optimizing | The role when finals are in the folder | Social or YouTube Producer | A long-form is Optimizing when it and all its clips are approved. The YouTube Producer prepares the title, description, chapters, and thumbnail. Social writes the clip captions and gets approval. Nothing is scheduled before this status. |
 | Scheduled | The publishing role | Daily check | In the scheduler on every platform in the row, or copy and paste if the member has no scheduler. |
 | Published | Daily check | Blog | Marked only when the scheduler or bridge confirms it posted. Published Links are saved. |
@@ -56,13 +56,13 @@ Every role reads its SOP first (`sop.md`) and falls back to the defaults here on
 
 ## The page layout of every row
 Sections in this order: Script and production notes, Edit notes, Captions, Title and description, YouTube notes, Revisions (a checkbox list), Handoff checklist, Log.
-- **Handoff checklist** (checkboxes, only the ones that apply to the type and to the roles in use): Transcript saved, Edit done, Cover made, Captions drafted, Title and description drafted (long-form), Finals in the Exports folder, Scheduled.
+- **Handoff checklist** (checkboxes, only the ones that apply to the type and to the roles in use): Transcript saved, Edit done, Cover made, Captions drafted, Title and description drafted (long-form), Finals in the Export folder, Scheduled.
 - **Log:** one dated line for every action, in the form "2026-10-26 14:05 Editor: set In Progress, started the edit." Never edit past lines. Lines say who acted (Claude or the person's name).
 
 ## When a person does the role
 The person works in the row's folder and in Notion. Claude picks up from what they leave.
-- **Video editing (a person):** they drop the finished export in the row's Exports folder (short-form files in Exports/Short Form) and, if they have one, the transcript as a file in the same folder. They tick Edit done (and Transcript saved if they saved one), and set Reviewing. Claude never edits. If no transcript file is there, Claude writes "Needs from member: the transcript file, or paste it" and skips the text steps for that row.
-- **Social media (a person):** they write the captions in the row's Captions section, make the graphics, drop them in the row's Exports folder, tick Captions drafted, and set the next status. At Optimizing they schedule and set Scheduled.
+- **Video editing (a person):** they drop the finished export in the row's Export folder (short-form files in Export/Shorts) and, if they have one, the transcript as a file in the same folder. They tick Edit done (and Transcript saved if they saved one), and set Reviewing. Claude never edits. If no transcript file is there, Claude writes "Needs from member: the transcript file, or paste it" and skips the text steps for that row.
+- **Social media (a person):** they write the captions in the row's Captions section, make the graphics, drop them in the row's Export folder, tick Captions drafted, and set the next status. At Optimizing they schedule and set Scheduled.
 - **YouTube long-form (a person):** they write the title, description, chapters, and tags in the row's Title and description section, tick it, upload and schedule in YouTube, and set Scheduled.
 - **Blog (a person):** they write the post in a Blog row and set it ready for review.
 - **When a person set Reviewing before Claude's own parts are done** (for example the editor sets Reviewing and Claude writes the captions): Claude picks up Reviewing rows where its own boxes are still open, does its part, runs the pre-review check, and adds the Log line "check passed, ready for your review". The member reviews after that line.
@@ -75,7 +75,7 @@ The person works in the row's folder and in Notion. Claude picks up from what th
 - **Blog:** Published long-form rows with no blog row yet.
 
 ## Who makes the cover
-Video editing makes the cover for long-forms, clips, and one-off shorts. Social makes the cover for statics and carousels as part of the graphic. Both follow the covers reference. If a person edits, they drop the cover or thumbnail in the Exports folder with the export, named like the file with " - Cover.png". If none is there, the next role set to Claude makes it from the Cover Template (Social for clips and shorts, YouTube for a long-form thumbnail), and if no role is Claude, write Needs from member.
+Video editing makes the cover for long-forms, clips, and one-off shorts. Social makes the cover for statics and carousels as part of the graphic. Both follow the covers reference. If a person edits, they drop the cover or thumbnail in the Export folder with the export, named like the file with " - Cover.png". If none is there, the next role set to Claude makes it from the Cover Template (Social for clips and shorts, YouTube for a long-form thumbnail), and if no role is Claude, write Needs from member.
 
 ## Where files go
 Every role writes files straight into the member's synced folder (`file_storage` in the Master Profile Tools, or Content Settings `synced_folder_path`), never through the Drive connector. The folder layout is in the folders reference, and a folder is never renamed after it is created. The connector is only for share links. Finished videos are exported from CapCut into that folder, or moved there with capcut_move_export, and no role splits a file into pieces.

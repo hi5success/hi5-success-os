@@ -474,6 +474,18 @@ if [ -d "$CO" ]; then
   done
 fi
 
+# 32. hi5-video-edit: references, the face rule, the transcript every time, client-folder scope, Remotion tabled
+VE="plugins/content-os/skills/hi5-video-edit"
+for f in transcript.md graphics-and-motion.md video-defaults.md capcut-recipe.md; do
+  [ -f "$VE/references/$f" ] || ERRORS+=("hi5-video-edit is missing references/$f")
+  grep -q "references/$f" "$VE/SKILL.md" || ERRORS+=("hi5-video-edit SKILL.md does not point to references/$f")
+done
+grep -q "over the speaker's face" "$VE/references/video-defaults.md" 2>/dev/null || ERRORS+=("video-defaults.md must keep the never-over-a-face rule")
+grep -q 'every time' "$VE/references/transcript.md" 2>/dev/null || ERRORS+=("transcript.md must save the transcript every time")
+grep -q 'never open, read, or write another client' plugins/content-os/skills/hi5-content-plan/references/folders.md || ERRORS+=("folders.md must keep team editors inside their client's folder")
+grep -q 'Remotion exists but is tabled' "$VE/references/graphics-and-motion.md" 2>/dev/null || ERRORS+=("graphics-and-motion.md must say Remotion is tabled")
+if grep -n 'CapCut only' "$VE/SKILL.md" >/dev/null; then ERRORS+=("hi5-video-edit: CapCut is the editor, not CapCut only (graphics come from Claude Motion)"); fi
+
 if [ ${#ERRORS[@]} -gt 0 ]; then
   echo ""
   echo "Validation failed. Fix the following:"
