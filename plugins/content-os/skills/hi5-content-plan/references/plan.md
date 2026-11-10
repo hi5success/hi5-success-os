@@ -14,7 +14,7 @@ Ask short questions, with A, B, C options where they fit:
 - "What date range are we planning for?" Use `posting_frequency` and `weekly_rhythm` from the Content Profile to list the publish slots in that range.
 
 ## 2. Research
-Find what people search and what is trending, using `research.md` (YouTube SEO if YouTube is used, AEO, and social trends for the picked platforms). Use vidIQ if it is connected. Use only data from a tool or the member. Never invent a search volume or a trend, and label anything you could not check.
+Find what people search and what is trending, using `research.md` (YouTube SEO if YouTube is used, AEO, and social trends for the picked platforms). For the member's own channel stats, use youtube_analytics from the YouTube uploader if it is installed. vidIQ is optional: use it only if it is connected, never as a required step. Use only data from a tool or the member. Never invent a search volume or a trend, and label anything you could not check.
 
 ## 3. Propose topics
 Show a short table: topic, hook or angle, media type, platforms, and why it fits now. Keep the member's own ideas from the Content Planner (Status Brainstorming) in the mix. The member approves in the conversation. There is no approval click later.

@@ -13,7 +13,7 @@ Match on the end of the tool name. A prefix may appear in front (for example mcp
 | youtube | youtube_upload_video, youtube_update_video, youtube_set_thumbnail, youtube_list_videos, youtube_get_video, youtube_list_channels, youtube_list_categories, youtube_analytics |
 | youtube-manager (older, being replaced) | upload_youtube_video, list_youtube_channels, list_youtube_videos, add_youtube_channel |
 | ghl-social | create_post, list_posts, list_social_accounts |
-A bridge counts as installed when its tools are available in this session. Save what you find in Content Settings (bridges_detected) with the date, and check again only when something fails or the member says they installed one. Say once, in setup, that the desktop app must be running for the bridges to work. Never ask the member to reconfirm a bridge that works. vidIQ is optional: without it, Social uses the transcript and any Producer notes on the row.
+A bridge counts as installed when its tools are available in this session. Save what you find in Content Settings (bridges_detected) with the date, and check again only when something fails or the member says they installed one. Say once, in setup, that the desktop app must be running for the bridges to work. Never ask the member to reconfirm a bridge that works. vidIQ is optional and never required: members may not have it. Channel and video stats come from the YouTube uploader (youtube_analytics, youtube_list_videos, youtube_get_video). Without vidIQ, Social uses the transcript, those stats, and any Producer notes on the row.
 
 ## Confirm the account before posting
 The tool confirms the account, never the member.
@@ -25,12 +25,12 @@ If a call succeeds, move on. Do not ask the member to confirm it again.
 
 ## Transcript and export
 The synced folder is where files live (the folders reference). Footage and finished exports go in the project's folder. The CapCut project itself stays in CapCut's own folder on the computer and is never synced.
-- **Transcript:** the Video Editor saves it as files (.txt and .srt) in the Export folder, next to the video, every time. The paths, in order, are in ../../hi5-video-edit/references/transcript.md: the CapCut connector's capcut_transcribe (on the computer, free), Descript if the member has it connected, a CapCut captions export by the member, or a paste. Log which path was used.
+- **Transcript:** the Video Editor saves it as files (.txt and .srt) in the Export folder, next to the video, every time. The paths, in order, are in ../../hi5-video-edit/references/transcript.md: the CapCut connector's capcut_transcribe (on the computer, free), a CapCut captions export by the member, or a paste. Log which path was used.
 - **Exporting a rendered video:** the bridge saves a project but does not render a video. Ask the member to export from CapCut into the row's Export folder. If the export landed in Videos, Downloads, or the Desktop instead, move it there with capcut_move_export (it checks the copy before deleting the original). The capcut tools above build and save a draft, they do not by themselves produce a rendered file.
 
 ## What each bridge does
 - **capcut:** create a draft, add video, audio, text, subtitles, images, stickers, effects, and keyframes, get a duration, save the draft into CapCut under a project name, and move a finished export into the project's folder.
-- **youtube:** upload a video with title, description, tags, category, privacy, schedule, made-for-kids, and thumbnail; edit an existing video and its thumbnail; list the saved channels, videos, and categories; and read YouTube Analytics. Every call names the channel. The older youtube-manager has only upload, list, and add channel: use it the same way (name the channel every time) and suggest updating with /hi5-connector.
+- **youtube:** upload a video with title, description, tags, category, privacy, schedule, made-for-kids (ask every time: "Is this video made for kids? (most are no)"), and thumbnail; edit an existing video and its thumbnail; list the saved channels, videos, and categories; and read YouTube Analytics. Every call names the channel. The older youtube-manager has only upload, list, and add channel: use it the same way (name the channel every time) and suggest updating with /hi5-connector.
 - **ghl-social:** create a post (scheduled) on the connected accounts, list posts, and list the social accounts.
 Read each tool's description before calling it, and never guess an argument. If the ghl-social bridge is missing and the member's GoHighLevel connector is connected, its social planner create-post operation can schedule posts (describe the operation first).
 

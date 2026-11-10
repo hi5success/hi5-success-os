@@ -487,6 +487,8 @@ grep -q "over the speaker's face" "$VE/references/video-defaults.md" 2>/dev/null
 grep -q 'every time' "$VE/references/transcript.md" 2>/dev/null || ERRORS+=("transcript.md must save the transcript every time")
 grep -q 'never open, read, or write another client' plugins/content-os/skills/hi5-content-plan/references/folders.md || ERRORS+=("folders.md must keep team editors inside their client's folder")
 grep -q 'Remotion exists but is tabled' "$VE/references/graphics-and-motion.md" 2>/dev/null || ERRORS+=("graphics-and-motion.md must say Remotion is tabled")
+if grep -rniw 'Descript' plugins/content-os plugins/connectors-os/skills README.md >/dev/null; then ERRORS+=("CapCut is the only editor taught: remove Descript mentions"); fi
+grep -q 'most are no' plugins/content-os/skills/hi5-youtube/SKILL.md || ERRORS+=("hi5-youtube must ask 'Is this video made for kids? (most are no)' on every upload")
 if grep -n 'CapCut only' "$VE/SKILL.md" >/dev/null; then ERRORS+=("hi5-video-edit: CapCut is the editor, not CapCut only (graphics come from Claude Motion)"); fi
 
 # 33. YouTube connector: no default channel, explicit privacy, installer-only channels, no client files shipped

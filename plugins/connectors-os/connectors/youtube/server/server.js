@@ -34,7 +34,7 @@ const channel = { type: "string", description: "Required. The saved channel name
 const privacy = { type: "string", enum: ["scheduled", "private", "unlisted", "public"], description: "Required, no default. scheduled = private until publish_at, then public (the normal path). unlisted = anyone with the link. public = live now, only when the member clearly said to post now (also set post_now)." };
 const publishAt = { type: "string", description: "For scheduled: the publish time in ISO 8601 with a time zone, e.g. 2026-11-14T09:00:00-06:00. Must be in the future." };
 const postNow = { type: "boolean", description: "Set true only when the member clearly said to post it publicly now. Needed for privacy public." };
-const madeForKids = { type: "boolean", description: "Required on upload: is this video made for kids (YouTube's audience setting)? Ask the member if unknown." };
+const madeForKids = { type: "boolean", description: "Required on upload, no default. Ask the member every time: Is this video made for kids? (most are no)" };
 
 const TOOLS = [
   { name: "youtube_list_channels", description: "List the YouTube channels saved on this computer (name, title, handle). Never picks one for you.", inputSchema: { type: "object", properties: {} } },
@@ -82,7 +82,7 @@ async function handle(name, a) {
 
   if (name === "youtube_upload_video") {
     const status = { ...uploadStatus(a.privacy, a.publish_at, a.post_now), selfDeclaredMadeForKids: a.made_for_kids };
-    if (typeof a.made_for_kids !== "boolean") throw new Error("made_for_kids is required. Ask the member whether the video is made for kids.");
+    if (typeof a.made_for_kids !== "boolean") throw new Error("made_for_kids is required. Ask the member: Is this video made for kids? (most are no)");
     const file = localFile(a.file_path, "Video file");
     const thumb = a.thumbnail_path ? localFile(a.thumbnail_path, "Thumbnail") : null;
     const snippet = { title: a.title, description: a.description || "", tags: a.tags || [], ...(a.category_id && { categoryId: String(a.category_id) }) };

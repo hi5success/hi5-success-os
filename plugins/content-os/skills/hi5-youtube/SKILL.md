@@ -25,7 +25,7 @@ A one-off request needs no setup and no Notion. Option A works from a transcript
 - Read the channel Style Guide and Edit Log first and apply them.
 - Nothing is uploaded or scheduled before Optimizing, and only after the member reviewed the video, the cover, the title, and the description.
 - **No default channel.** Every upload, edit, and analytics call names the channel, confirmed by name with the member each time, even when only one is saved. The saved youtube_channel is only the suggestion in that question.
-- **No default privacy.** Upload as scheduled (private until the publish time) by default in the plan, or unlisted if the member wants. Public only when the member clearly says to post it now. Always ask whether the video is made for kids if it is not on the row.
+- **No default privacy.** Upload as scheduled (private until the publish time) by default in the plan, or unlisted if the member wants. Public only when the member clearly says to post it now. Ask on every upload: "Is this video made for kids? (most are no)". Never set it without their answer.
 - Never post or schedule short-form. You may add YouTube notes to a short-form row's page for Social.
 - Short questions with A, B, C options.
 

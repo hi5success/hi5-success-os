@@ -13,7 +13,7 @@ Write captions for every clip, short, reel, and post from the transcript (never 
 
 ## YouTube Shorts checklist (only if YouTube is a platform)
 1. The hook is in the first line and the first seconds.
-2. A Shorts title and tags. Use vidIQ stats if it is connected, and any YouTube notes in the row's YouTube notes section. Without vidIQ, use the transcript and the YouTube notes.
+2. A Shorts title and tags. Use the transcript, any YouTube notes in the row's YouTube notes section, and the channel's stats from youtube_analytics if the YouTube uploader is installed. vidIQ is optional, only if connected.
 3. Link the related long-form in YouTube Studio through Claude's built-in browser (ask the member to sign in if needed). If the long-form is not public yet (check with youtube_list_videos, naming the channel), add the Log line "link pending" and link it on the daily check once it is public.
 
 ## At Optimizing
