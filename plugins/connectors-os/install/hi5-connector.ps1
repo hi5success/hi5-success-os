@@ -2,14 +2,21 @@
   Hi5 Connector installer. The /hi5-connector skill calls this script; the skill never installs anything itself.
     -Action check     read only: prints JSON with what is installed, versions, and what is missing
     -Action install   installs or updates one connector (run again any time to update or repair)
+    -Action add-account -AccountName smith-realty -LocationId abc123
+                      GHL social: opens a Windows box for the token (never typed into the chat), tests it, saves it encrypted
+    -Action import-accounts
+                      GHL social: encrypts the sub-accounts from an older plain ~/.hi5-ghl-social/accounts.json
   Windows PowerShell 5.1 compatible. Writes only inside %USERPROFILE%\.hi5-connector (or -InstallRoot). Not AppData: the Microsoft Store build of
   Claude silently redirects new AppData folders into its private storage, which a Claude reset would wipe.
-  It never edits Claude's config files: the plugin itself tells Claude Code how to start the connector.
+  It never edits Claude's config files: the plugin itself tells Claude Code how to start each connector.
 #>
 param(
-  [ValidateSet('check', 'install')] [string]$Action = 'check',
-  [ValidateSet('capcut')] [string]$Connector = 'capcut',
+  [ValidateSet('check', 'install', 'add-account', 'import-accounts')] [string]$Action = 'check',
+  [ValidateSet('capcut', 'ghl-social')] [string]$Connector = 'capcut',
   [switch]$InstallMissing,          # let winget install Python, Node.js and FFmpeg (only after the member said yes)
+  [string]$AccountName,
+  [string]$LocationId,
+  [string[]]$MediaFolder,           # extra folders GHL social may upload from
   [string]$InstallRoot = (Join-Path $env:USERPROFILE '.hi5-connector')
 )
 $ErrorActionPreference = 'Stop'
@@ -48,22 +55,15 @@ function Test-BridgeUp {
 function Compare-Version($a, $b) { return ([version]$a).CompareTo([version]$b) }
 
 function Get-Status {
-  $plugin = Read-Json (Join-Path $PluginRoot 'connectors\capcut\connector.json')
-  $stamp = Read-Json $Stamp
-  $installed = if ($stamp -and $stamp.capcut) { $stamp.capcut.version } else { $null }
   $py = Get-Python
-  $state = 'not installed'
-  $news = @()
-  if ($installed) {
-    if ((Compare-Version $plugin.version $installed) -gt 0) {
-      $state = 'update available'
-      $news = @($plugin.changelog | Where-Object { (Compare-Version $_.version $installed) -gt 0 } | ForEach-Object { "$($_.version): $($_.note)" })
-    } else { $state = 'up to date' }
-    if (-not (Test-Path (Join-Path $InstallRoot 'capcut\mcp-server\dist\index.js'))) { $state = 'broken'; $news = @('The program files are missing. Install again to repair.') }
-  }
+  $ghl = Get-ConnectorStatus 'ghl-social' 'ghl-social\server\node_modules'
+  try { $ghl['accounts'] = @((Get-GhlAccounts).Keys) } catch { $ghl['accounts'] = 'saved sub-accounts could not be unlocked; add them again' }   # names only, never tokens
+  $cap = Get-ConnectorStatus 'capcut' 'capcut\mcp-server\dist\index.js'
+  $cap['bridge_running'] = Test-BridgeUp
   [ordered]@{
     windows       = ($env:OS -eq 'Windows_NT')
-    capcut        = [ordered]@{ state = $state; installed = $installed; available = $plugin.version; whats_new = $news; bridge_running = (Test-BridgeUp) }
+    capcut        = $cap
+    ghl_social    = $ghl
     python        = if ($py) { $py.version } else { $null }
     node_major    = Get-NodeMajor
     ffmpeg        = Test-Ffmpeg
@@ -74,11 +74,35 @@ function Get-Status {
   }
 }
 
-function Install-Missing {
+function Get-ConnectorStatus($name, $mustExist) {
+  $plugin = Read-Json (Join-Path $PluginRoot "connectors\$name\connector.json")
+  $stamp = Read-Json $Stamp
+  $installed = if ($stamp -and $stamp.$name) { $stamp.$name.version } else { $null }
+  $state = 'not installed'
+  $news = @()
+  if ($installed) {
+    if ((Compare-Version $plugin.version $installed) -gt 0) {
+      $state = 'update available'
+      $news = @($plugin.changelog | Where-Object { (Compare-Version $_.version $installed) -gt 0 } | ForEach-Object { "$($_.version): $($_.note)" })
+    } else { $state = 'up to date' }
+    if (-not (Test-Path (Join-Path $InstallRoot $mustExist))) { $state = 'broken'; $news = @('The program files are missing. Install again to repair.') }
+  }
+  [ordered]@{ state = $state; installed = $installed; available = $plugin.version; whats_new = $news }
+}
+
+function Save-Stamp($name, $version, $dir) {
+  $all = Read-Json $Stamp
+  $h = [ordered]@{}
+  if ($all) { $all.PSObject.Properties | ForEach-Object { $h[$_.Name] = $_.Value } }
+  $h[$name] = [ordered]@{ version = $version; installed_at = (Get-Date).ToString('s'); install_dir = $dir }
+  Write-Json $h $Stamp
+}
+
+function Install-Missing([switch]$NodeOnly) {
   $plan = @()
-  if (-not (Get-Python)) { $plan += 'Python.Python.3.12' }
+  if (-not $NodeOnly -and -not (Get-Python)) { $plan += 'Python.Python.3.12' }
   if ((Get-NodeMajor) -lt 18) { $plan += 'OpenJS.NodeJS.LTS' }
-  if (-not (Test-Ffmpeg)) { $plan += 'Gyan.FFmpeg' }
+  if (-not $NodeOnly -and -not (Test-Ffmpeg)) { $plan += 'Gyan.FFmpeg' }
   if (-not $plan) { return }
   if (-not $InstallMissing) { throw "Missing: $($plan -join ', '). Ask the member, then run again with -InstallMissing." }
   if (-not (Get-Command winget -ErrorAction SilentlyContinue)) { throw "winget is not available on this computer, so $($plan -join ', ') must be installed by hand." }
@@ -87,7 +111,7 @@ function Install-Missing {
     & winget install --id $id -e --silent --accept-package-agreements --accept-source-agreements | Out-Host
     Refresh-Path
   }
-  if (-not (Get-Python) -or (Get-NodeMajor) -lt 18) { throw 'Python or Node.js still cannot be found. Close and reopen Claude, then run the install again.' }
+  if ((-not $NodeOnly -and -not (Get-Python)) -or (Get-NodeMajor) -lt 18) { throw 'Python or Node.js still cannot be found. Close and reopen Claude, then run the install again.' }
 }
 
 function Copy-Tree($from, $to) {
@@ -143,11 +167,7 @@ function Install-CapCut {
   Write-Json ([ordered]@{ port = 9001; moveFrom = @($from) }) (Join-Path $dst 'settings.json')
 
   $version = (Read-Json (Join-Path $src 'connector.json')).version
-  $all = Read-Json $Stamp
-  $h = [ordered]@{}
-  if ($all) { $all.PSObject.Properties | ForEach-Object { $h[$_.Name] = $_.Value } }
-  $h['capcut'] = [ordered]@{ version = $version; installed_at = (Get-Date).ToString('s'); install_dir = $dst }
-  Write-Json $h $Stamp
+  Save-Stamp 'capcut' $version $dst
 
   # Smoke test: start the bridge the same way Claude will and make one draft (it is not saved).
   $log = Join-Path $dst 'bridge.log'
@@ -164,9 +184,114 @@ function Install-CapCut {
   [ordered]@{ result = 'installed'; connector = 'capcut'; version = $version; smoke_test = 'passed'; next = 'Fully quit Claude (tray icon, Quit) and open it again, then start a new chat.' }
 }
 
+#  GHL social
+
+$GhlDir = Join-Path $InstallRoot 'ghl-social'
+$GhlStore = Join-Path $GhlDir 'accounts.dat'
+Add-Type -AssemblyName System.Security
+
+function Get-GhlAccounts {
+  # Decrypts the Windows-protected store (only this Windows user can). Returns a hashtable name -> {locationId, token}.
+  $h = [ordered]@{}
+  if (Test-Path $GhlStore) {
+    $bytes = [Security.Cryptography.ProtectedData]::Unprotect([Convert]::FromBase64String((Get-Content -Raw $GhlStore).Trim()), $null, 'CurrentUser')
+    ([Text.Encoding]::UTF8.GetString($bytes) | ConvertFrom-Json).PSObject.Properties | ForEach-Object { $h[$_.Name] = $_.Value }
+  }
+  return $h
+}
+function Save-GhlAccounts($h) {
+  New-Item -ItemType Directory -Force -Path $GhlDir | Out-Null
+  $bytes = [Text.Encoding]::UTF8.GetBytes(($h | ConvertTo-Json -Depth 4 -Compress))
+  [IO.File]::WriteAllText($GhlStore, [Convert]::ToBase64String([Security.Cryptography.ProtectedData]::Protect($bytes, $null, 'CurrentUser')))
+}
+function Get-AccountKey($name) { return ($name.Trim().ToLower() -replace '\s+', '-') }
+
+function Get-MediaRoots {
+  # Folders the connector may upload from: the usual Windows folders (wherever OneDrive put them) plus cloud drives.
+  $roots = @('MyDocuments', 'MyVideos', 'MyPictures', 'Desktop' | ForEach-Object { Get-KnownFolder $_ }) + (Get-Downloads)
+  # Google Drive for desktop mounts a virtual drive (often G:) that Get-Volume does not list, so match the drive name.
+  Get-PSDrive -PSProvider FileSystem -ErrorAction SilentlyContinue | Where-Object { $_.Description -eq 'Google Drive' } | ForEach-Object { $roots += $_.Root }
+  $dbx = Join-Path $env:LOCALAPPDATA 'Dropbox\info.json'
+  if (Test-Path $dbx) { (Read-Json $dbx).PSObject.Properties | ForEach-Object { $roots += $_.Value.path } }
+  if ($env:OneDrive) { $roots += $env:OneDrive }
+  if ($MediaFolder) { $roots += $MediaFolder }
+  return @($roots | Where-Object { $_ -and (Test-Path $_) } | Select-Object -Unique)
+}
+
+function Install-Ghl {
+  Install-Missing -NodeOnly
+  $src = Join-Path $PluginRoot 'connectors\ghl-social'
+  New-Item -ItemType Directory -Force -Path $GhlDir | Out-Null
+  Copy-Tree (Join-Path $src 'server') (Join-Path $GhlDir 'server')
+  Push-Location (Join-Path $GhlDir 'server')
+  try {
+    & npm ci --omit=dev --ignore-scripts --no-audit --no-fund --loglevel=error | Out-Host
+    if ($LASTEXITCODE) { throw 'Installing the connector packages failed. Check the internet connection and run again.' }
+  } finally { Pop-Location }
+  $roots = Get-MediaRoots
+  Write-Json ([ordered]@{ mediaRoots = $roots }) (Join-Path $GhlDir 'settings.json')
+  $version = (Read-Json (Join-Path $src 'connector.json')).version
+  Save-Stamp 'ghl-social' $version $GhlDir
+  [ordered]@{ result = 'installed'; connector = 'ghl-social'; version = $version; media_folders = $roots; accounts = @((Get-GhlAccounts).Keys)
+    next = 'Add a sub-account with -Action add-account, then fully quit Claude (tray icon, Quit) and open it again.' }
+}
+
+function Read-TokenBox($title) {
+  # A small Windows box with a hidden field, so the token never passes through the chat or a log.
+  Add-Type -AssemblyName System.Windows.Forms, System.Drawing
+  $f = New-Object Windows.Forms.Form -Property @{ Text = $title; Width = 460; Height = 190; StartPosition = 'CenterScreen'; TopMost = $true; FormBorderStyle = 'FixedDialog'; MaximizeBox = $false }
+  $l = New-Object Windows.Forms.Label -Property @{ Text = 'Paste your GHL Private Integration Token, then click Save.'; Left = 12; Top = 15; Width = 420 }
+  $t = New-Object Windows.Forms.TextBox -Property @{ Left = 12; Top = 45; Width = 420; UseSystemPasswordChar = $true }
+  $ok = New-Object Windows.Forms.Button -Property @{ Text = 'Save'; Left = 252; Top = 90; Width = 85; DialogResult = 'OK' }
+  $no = New-Object Windows.Forms.Button -Property @{ Text = 'Cancel'; Left = 347; Top = 90; Width = 85; DialogResult = 'Cancel' }
+  $f.Controls.AddRange(@($l, $t, $ok, $no)); $f.AcceptButton = $ok; $f.CancelButton = $no
+  $r = $f.ShowDialog()
+  if ($r -ne 'OK' -or -not $t.Text.Trim()) { throw 'No token was entered, so nothing was saved.' }
+  return $t.Text.Trim()
+}
+
+function Test-GhlToken($locationId, $token) {
+  $headers = @{ Authorization = "Bearer $token"; Version = '2021-07-28'; Accept = 'application/json' }
+  try { $r = Invoke-RestMethod -Uri "https://services.leadconnectorhq.com/locations/$locationId" -Headers $headers -TimeoutSec 20; return $r.location.name }
+  catch {
+    $code = if ($_.Exception.Response) { [int]$_.Exception.Response.StatusCode } else { 0 }
+    if ($code -eq 401) { throw 'GHL did not accept that token. Copy it again from Settings, Private Integrations, and retry.' }
+    if ($code -eq 403) { throw 'The token works but cannot read this Location. Check the Location ID and that the token has the locations.readonly scope.' }
+    if ($code -eq 400 -or $code -eq 404) { throw 'GHL could not find that Location ID. Copy it from Settings, Business Profile.' }
+    throw "Could not reach GHL to check the token ($($_.Exception.Message))."
+  }
+}
+
+function Add-GhlAccount {
+  if (-not $AccountName -or -not $LocationId) { throw 'Give -AccountName and -LocationId.' }
+  if (-not (Test-Path (Join-Path $GhlDir 'server\node_modules'))) { throw 'Install GHL social first (-Action install -Connector ghl-social).' }
+  $token = Read-TokenBox "GHL token for $AccountName"
+  $business = Test-GhlToken $LocationId.Trim() $token
+  $h = Get-GhlAccounts
+  $h[(Get-AccountKey $AccountName)] = [ordered]@{ locationId = $LocationId.Trim(); token = $token }
+  Save-GhlAccounts $h
+  [ordered]@{ result = 'account saved'; account = (Get-AccountKey $AccountName); ghl_business = $business; accounts = @($h.Keys)
+    next = 'Fully quit Claude (tray icon, Quit) and open it again so the connector sees the new sub-account.' }
+}
+
+function Import-GhlAccounts {
+  $plain = Join-Path $env:USERPROFILE '.hi5-ghl-social\accounts.json'
+  if (-not (Test-Path $plain)) { throw 'There is no older accounts file to import.' }
+  $h = Get-GhlAccounts
+  (Read-Json $plain).PSObject.Properties | ForEach-Object { $h[(Get-AccountKey $_.Name)] = [ordered]@{ locationId = $_.Value.locationId; token = $_.Value.token } }
+  Save-GhlAccounts $h
+  [ordered]@{ result = 'imported'; accounts = @($h.Keys); plain_file = $plain
+    next = 'The tokens are now saved encrypted. The old plain file still exists; the member can delete it once posting works.' }
+}
+
 try {
-  if ($Action -eq 'check') { Get-Status | ConvertTo-Json -Depth 5 }
-  else { Install-CapCut | ConvertTo-Json -Depth 5 }
+  $out = switch ($Action) {
+    'check' { Get-Status }
+    'install' { if ($Connector -eq 'capcut') { Install-CapCut } else { Install-Ghl } }
+    'add-account' { Add-GhlAccount }
+    'import-accounts' { Import-GhlAccounts }
+  }
+  $out | ConvertTo-Json -Depth 5
 } catch {
   [ordered]@{ result = 'failed'; reason = $_.Exception.Message } | ConvertTo-Json
   exit 1

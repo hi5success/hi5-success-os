@@ -1,0 +1,10 @@
+{
+  "name": "ghl-social",
+  "title": "GHL social posting",
+  "version": "1.0.0",
+  "base": { "server": "Hi5 GHL Social Planner connector 1.0.0 (Hi5 Success)" },
+  "requires": { "node": "18" },
+  "changelog": [
+    { "version": "1.0.0", "date": "2026-11-10", "note": "First release. Schedule GoHighLevel posts, reels, carousels and stories with photos and videos from your computer (25 MB each). Your token is saved encrypted by Windows, never in a plain file." }
+  ]
+}
