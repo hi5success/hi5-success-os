@@ -300,7 +300,7 @@ This is how members who set up earlier receive new labels such as the Marketing 
 
 **5. Skill Guide and Reference Hub.** They were removed from the template. If the member still has one, leave it alone. Never recreate it, never refresh it, and point to the Hi5 Vault (vault.hi5success.com) for skills and the setup order.
 
-**6. Content Planner statuses.** If the Content Planner has old Status options (Idea, Planned, Scripted, Draft), offer once to add the current ones (Not Started, Brainstorming, and the rest of the list in `templates/workspace-build.md`) and the new properties (Role, Channel, Review Notes, Published Links, Status Changed). Also offer the one property the template lacks, Needs from member (text), and accept Carousel Post as the carousel option. Say each offer once. Keep every option and property the member has. Never rename or remove.
+**6. Content Planner statuses.** If the Content Planner has old Status options (Idea, Planned, Scripted, Draft), offer once to add the current ones (Not Started, Brainstorming, and the rest of the list in `templates/workspace-build.md`) and the new properties (Role, Channel, the brand tag on each row, Review Notes, Published Links, Status Changed). Also offer the one property the template lacks, Needs from member (text), and accept Carousel Post as the carousel option. Say each offer once. Keep every option and property the member has. Never rename or remove.
 
 ## PROFILE UPDATE
 
@@ -324,15 +324,17 @@ When /hi5-setup is run and a workspace already exists, read the Master Profile's
 > 4. Add a neighborhood *(real estate only)*
 > 5. Run the setup self-test
 > 6. Show me what I can do
-> 7. Show me the Hi5 first line again, or point me to the Hi5 Vault"
+> 7. Show me the Hi5 first line again, or point me to the Hi5 Vault
+> 8. Add a brand"
 
-Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Options 5, 6, and 7 are always shown. If the member asks for the Skill Guide, say it moved: every skill and the setup order are in the Hi5 Vault (vault.hi5success.com).
+Only show option 4 when the member's industry file has a neighborhoods stage. Only show option 1 when a stage is unfinished. Options 5, 6, 7, and 8 are always shown. If the member asks for the Skill Guide, say it moved: every skill and the setup order are in the Hi5 Vault (vault.hi5success.com).
 
 - **1** → run that stage from the industry file. If Stage 1 is unfinished, resume at the first question group that is not saved yet (see Checkpoints in Phase 5) instead of starting over.
 - **2** → ask which section (Identity, Market, Tools, Presence, Brand, or another section on the profile) or which saved page (such as Compliance Guardrails or Voice Profile), show the current values, ask what to change, confirm, then update that section only.
 - **3** → ask which stage, then run it. Show the current saved content first and ask "Replace it or add to it?"
 - **4** → run the neighborhoods stage for one new area, save it as a new child page, and add it to the Page IDs section.
 - **5** → run the SELF-TEST below.
+- **8** → adding a brand belongs to Content OS. If /hi5-content-plan is installed, run its "Add a brand" (option G): the brand name, its YouTube channel, its GHL sub-account and social accounts, its brand page, and optionally this project's brand. If Content OS is not installed, say a brand is only used by the content skills and suggest installing Content OS.
 - **7** → run `references/hi5-first.md` to show the Hi5 first line again, or give the Hi5 Vault link (vault.hi5success.com).
 - **6** → show what they can do, grouped by goal. Read the "Goal menu" in `../hi5-next/references/path.md` and show only the skills whose Status is `live`, with one short line each, for these goals: YouTube content, social media, blog and SEO, email and newsletter, website and landing pages, and business plan and goals. Ask which goal they want to work on, then recommend the first step for it (the same logic as /hi5-next, which is read-only). Mention that /hi5-next can do this any time, and that every skill is in the Hi5 Vault (vault.hi5success.com).
 

@@ -1,6 +1,6 @@
 # Learning Edits
 
-Every session reads the channel's Style Guide and Edit Log first. Corrections are written down the moment they are made, so the next edit already applies them.
+Every session reads the brand's Style Guide and Edit Log first. Corrections are written down the moment they are made, so the next edit already applies them.
 
 ## On any revision
 1. Fix the notes.

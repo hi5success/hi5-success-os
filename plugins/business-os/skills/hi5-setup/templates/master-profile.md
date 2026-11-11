@@ -51,7 +51,7 @@ Written by Phase 4 of /hi5-setup and by later stages. Skills read these instead 
 - client_meetings_db_id, internal_meetings_db_id (the two meeting notes databases, written by /hi5-meetings)
 - crm_map_page_id (added by /hi5-re-crm)
 - keyword_tracker_db_id (added by /hi5-content-plan)
-- channel_pages (added by /hi5-content-plan, only with multiple channels): `Name = page id` pairs, comma separated
+- channel_pages (added by /hi5-content-plan, only with more than one brand): `Brand = page id` pairs, comma separated. Each "Channel – [brand]" page holds that brand's fields, including youtube_upload_channel, ghl_subaccount, and social_account_ids, which are never inherited from another brand
 - compliance_page_id (added by Stage 2)
 - voice_profile_page_id (added by Stage 3, or by /hi5-content-plan if the member has not done Stage 3)
 - voice_library_db_id (added by /hi5-voice-creator, or by the setup workspace check)
@@ -172,7 +172,7 @@ Written by Stage 3.
 Written by /hi5-self. Not part of /hi5-setup. It ends with `people_page_id`, the member's own page in the People database.
 
 ### Content Profile
-Added by /hi5-content-plan (Content OS). Not created by /hi5-setup; the skeleton does not include it. Fields: `channels` (list of channel names), `offer`, `youtube_audience`, `affiliate_links`, `channel_goal`, `content_model`, `posting_frequency`, `weekly_rhythm`, `recording_schedule`, `competitor_channel_ids`, `content_categories`, `distribution`, `default_deliverable_type`, `primary_platform`, and the operator preferences `output_format`, `script_depth`, `number_of_options`, `explanation_level`. With more than one channel, each extra channel is a child page "Channel – [name]" whose fields override these.
+Added by /hi5-content-plan (Content OS). Not created by /hi5-setup; the skeleton does not include it. Fields: `channels` (the member's brands; members see the word "brand"), `offer`, `youtube_audience`, `affiliate_links`, `channel_goal`, `content_model`, `posting_frequency`, `weekly_rhythm`, `recording_schedule`, `competitor_channel_ids`, `content_categories`, `distribution`, `default_deliverable_type`, `primary_platform`, and the operator preferences `output_format`, `script_depth`, `number_of_options`, `explanation_level`. With more than one channel, each extra channel is a child page "Channel – [name]" whose fields override these.
 
 ### Compliance Guardrails (child page, not a section)
 A child page of the Master Profile created by Stage 2, ID in `compliance_page_id`. Its Inputs section holds `disclosure_line`, `last_confirmed`, and (real estate) `protected_class_jurisdictions`, `brokerage_ad_rules`, `sms_consent_status`, or (any industry) `industry_rules`, `messaging_consent_status`, `brand_policy`. Below the inputs are the guardrails every writing skill follows. Templates: `compliance-real-estate.md`, `compliance-generic.md`.

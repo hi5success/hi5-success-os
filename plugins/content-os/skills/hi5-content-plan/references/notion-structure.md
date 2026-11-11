@@ -19,10 +19,11 @@ A page under the workspace root called "Hi5 Content" holds the content system pa
 - examples: added, or skipped. examples_reminder: done once the member has been reminded after their first review
 - cover_image_option: default (Claude picks a photo or cutout from Content/Brand/ and builds the cover from the Cover Template), a still from the video, or a new image made in ChatGPT
 - bridges_detected: capcut, youtube-manager, ghl-social (matched by exact tool names), with the date they were last seen working
-- youtube_channel: the connected YouTube channel, saved the first time list_youtube_channels confirms it (YouTube members only)
+- youtube_channel: the connected YouTube channel, saved the first time list_youtube_channels confirms it (YouTube members only; older field, kept)
+- youtube_upload_channel, ghl_subaccount, social_account_ids: the first brand's posting fields (brands.md). Other brands keep their own on their "Channel – [brand]" page
 - social_accounts: the connected social accounts per platform, saved the first time list_social_accounts confirms them
 - scheduled_tasks: which role tasks the member turned on
-- channel pages: one Style Guide page and one Edit Log page per channel (names and IDs)
+- channel pages: one Style Guide page and one Edit Log page per brand (names and IDs)
 
 ## SOPs (the SOPs database, `sops_db_id`)
 Process lives in the SOPs database: one row per role (Content Management, Video Editing, Social Media Scheduling, YouTube Publishing, Blog Writing), optionally one per channel. The template ships them as Sample rows. Every content skill reads its SOP first and runs the sample setup when the SOP is still Sample (`sop.md`). The older Content SOP page below is used only when the workspace has no SOPs database.
@@ -33,7 +34,7 @@ The default pipeline from the pipeline reference, written in plain language, edi
 ## Content Calendar changes (append only)
 Add to the Content Planner. Never rename or remove anything.
 - Status options, exactly: Not Started, Brainstorming, Ready to Edit, In Progress, Reviewing, Revising, Finalizing, Optimizing, Scheduled, Published. Keep every older option the member has.
-- New properties: Role (select: Content Manager, Video Editor, Social Media, YouTube Producer, Blog Writer), Channel (select, options created as used), Review Notes (text), Published Links (text, one live link per platform), Status Changed (date, set to today by every skill that moves a Status).
+- New properties: Role (select: Content Manager, Video Editor, Social Media, YouTube Producer, Blog Writer), Channel (select, options created as used; it is the brand tag, see brands.md), Review Notes (text), Published Links (text, one live link per platform), Status Changed (date, set to today by every skill that moves a Status).
 - Primary Platform is no longer part of the template. Never delete it if the member has it.
 - Deliverable Type options: Clip, Static Post, Carousel (Long Form, Short Form, and Blog already exist). Short Form is a one-off short.
 - Distribution is the Platforms field (multi-select). Add options as used.
@@ -42,9 +43,10 @@ Add to the Content Planner. Never rename or remove anything.
 - Record Date, Publish Date (with a time), Related To (the parent long-form title), and Asset Folder URL (the folder link) already exist.
 To add options and properties, use the Notion connector's data source update with SQL statements (ALTER COLUMN "Status" SET SELECT(...) listing every existing option to keep plus the new ones, ADD COLUMN ...). Listing every option keeps the old ones, so nothing is removed. If a property cannot be added (the connector refuses), put it as the first line of each row's page ("Clip Number: 2", "Needs from member: ...") and say so once. A select property that ships with no options (Channel does) rejects a row that uses a new value, so add the option with ALTER COLUMN ... SET SELECT(...) before the first row that uses it. If an ALTER on a select option errors on a property that already has options, create a row that uses the new option and then trash it (the seed row workaround).
 
-## Per channel
-- **Style Guide** (one page per channel): hook habits, pacing, caption voice and length, hashtag rules, edit style (cuts, captions, music, b-roll), cover style, and things to never do. Start from what the Master Profile and Voice Profile already say, then add the member's answers and an "Examples" section (edits, social posts and covers, and captions they like, as links or file names with a one-line note).
-- **Edit Log** (one page per channel): a dated list of every correction (see the learning edits reference).
+## Per brand (the "Channel" pages)
+Each brand after the first has a "Channel – [brand]" page under the Master Profile with its own fields, including the three posting fields in brands.md.
+- **Style Guide** (one page per brand): hook habits, pacing, caption voice and length, hashtag rules, edit style (cuts, captions, music, b-roll), cover style, and things to never do. Start from what the Master Profile and Voice Profile already say, then add the member's answers and an "Examples" section (edits, social posts and covers, and captions they like, as links or file names with a one-line note).
+- **Edit Log** (one page per brand): a dated list of every correction (see the learning edits reference).
 
 ## Cover Template page
 Layout notes (size, text position, fonts, colors, how the face or image is placed, the logo), plus a link to the last cover made, so every cover matches. Update the link whenever a cover is finished.

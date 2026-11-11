@@ -5,7 +5,7 @@ Used by `SKILL.md` option A. One session a month, worked week by week. The Conte
 If the content calendar is not set up, do not plan blind. Offer: "Plan my month works best with your content calendar in Notion. A) Set it up first, then plan B) Just plan it here on screen." On A run `setup.md` if the Content Profile is missing, then `setup-calendar.md`, then come back here. On B build the plan and return it on screen only, with no rows, folders, or Notion writes.
 
 ## Before the session
-Read Content Settings, the Content Management SOP (`sop.md`, with the sample check), each channel's Style Guide and Edit Log, the Content Profile, and the Content Calendar (what is already planned, and every row with Status Brainstorming that has no script). Say in one line what you found. Plan only for the roles in use (Content Settings): no video editing means no long-form, clip, or reel rows, and so on.
+Read Content Settings, the Content Management SOP (`sop.md`, with the sample check), each brand's Style Guide and Edit Log, the Content Profile, and the Content Calendar (what is already planned, and every row with Status Brainstorming that has no script). Say in one line what you found. Plan only for the roles in use (Content Settings): no video editing means no long-form, clip, or reel rows, and so on.
 
 ## 1. The month's goal and what is coming up
 Ask short questions, with A, B, C options where they fit:

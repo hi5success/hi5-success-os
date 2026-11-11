@@ -1,6 +1,6 @@
 ---
 name: hi5-content-plan
-description: Plans and runs all of a member's content. Sets up the Notion content calendar, builds the monthly plan for long-form videos, one-off reels, statics, carousels, and blogs, researches topics and YouTube keywords, writes scripts and production notes, sets recording days, and creates the rows and folders. Research and scripts also work on their own with no setup. Used by the Content Manager AI employee. Triggers when the user runs /hi5-content-plan, says "plan my month", "plan my content", "content calendar", "what should I post", "research topics", "write a script", "set up my content calendar", or "check my queue".
+description: Plans and runs all of a member's content. Sets up the Notion content calendar, builds the monthly plan for long-form videos, one-off reels, statics, carousels, and blogs, researches topics and YouTube keywords, writes scripts and production notes, sets recording days, and creates the rows and folders. Research and scripts also work on their own with no setup. Used by the Content Manager AI employee. Triggers when the user runs /hi5-content-plan, says "plan my month", "plan my content", "content calendar", "what should I post", "research topics", "write a script", "set up my content calendar", "check my queue", "add a brand", or "set this project's brand".
 ---
 
 # /hi5-content-plan: The Content Manager
@@ -15,6 +15,7 @@ One place to plan everything the member publishes. A monthly planning session, r
 > D) Set up my content calendar
 > E) Check my queue
 > F) Change a setting or my Content SOP
+> G) Add a brand, or set this project's brand
 If the member already said what they want ("research topics on first-time buyers", "write a script for this idea"), start it without the menu.
 
 ## Works on its own
@@ -86,7 +87,10 @@ Run `references/setup.md` only if the Content Profile is missing, then `referenc
 Works only the Content Manager's rows, oldest first (the plan reference). Then show a one-line summary of what waits on the member and on each other role, from the Content Calendar. Never change a status the member owns.
 
 ## F) Change a setting or an SOP ("set up my content SOPs" runs all five)
-Edit Content Settings, a role's owner, a channel, or the Content SOP, showing the change first and writing it after the member's OK. Never remove history.
+Edit Content Settings, a role's owner, a brand, or the Content SOP, showing the change first and writing it after the member's OK. Never remove history.
+
+## G) Add a brand, or set this project's brand
+Follow `references/brands.md`: "Add a brand" asks the brand name, its YouTube channel, its GHL sub-account and social accounts, creates its brand page, and offers to set this project's brand. "Set this project's brand" adds the line `Hi5 brand: [brand]` to this project's instructions. Adding a brand is only ever this step, never an option in "What brand is this for?".
 
 ## Scheduled tasks
 Offered in setup, one task per role set to Claude, plus the daily Published check (`references/tasks.md`). Create them only with the member's OK.
@@ -95,7 +99,7 @@ Offered in setup, one task per role set to Claude, plus the daily Published chec
 Follow `references/learning-edits.md` on every revision.
 
 ## References
-`core.md` (finding the workspace, the Master Profile fields), `setup.md`, `setup-calendar.md`, `plan.md`, `research.md`, `script.md`, `pipeline.md`, `sop.md`, `notion-structure.md`, `folders.md`, `bridges.md`, `covers.md`, `tasks.md`, `learning-edits.md`.
+`core.md` (finding the workspace, the Master Profile fields), `brands.md` (brands, posting fields, the project brand), `setup.md`, `setup-calendar.md`, `plan.md`, `research.md`, `script.md`, `pipeline.md`, `sop.md`, `notion-structure.md`, `folders.md`, `bridges.md`, `covers.md`, `tasks.md`, `learning-edits.md`.
 
 ## NEXT STEP
 After setup, suggest the first monthly plan (option A). After a plan, say what to record and when. After a queue pass, say what is waiting on the member. You can run /hi5-next any time and I'll tell you your best next step.
